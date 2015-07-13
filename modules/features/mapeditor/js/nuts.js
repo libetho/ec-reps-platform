@@ -1,6 +1,8 @@
 /**
+ * @file
  * Provides custom functionality as input for Webtools' load.js.
  */
+
 L.custom = {
   init: function (obj, params) {
 
@@ -8,14 +10,17 @@ L.custom = {
     obj.style.minHeight = map_height;
 
     // Initializes the map object.
-    var map = L.map(obj, mapeditor_map_settings);
+    var map = L.map(obj, mapeditor_map);
 
     // Adds the tiles layer.
-    var tileLayer = L.wt.TileLayer([{"zoom": mapeditor_map_settings.zoom, "map": mapeditor_map_settings.map}]).addTo(map);
+    var tileLayer = L.wt.TileLayer([{
+      "zoom": mapeditor_map.zoom,
+      "map": mapeditor_map.map
+    }]).addTo(map);
 
     // Defines custom actions for predefined options.
     var nuts_options = {
-      style: function(feature) {
+      style: function (feature) {
         return {
           fillColor: "#C8E9F2",
           weight: 1,
@@ -25,7 +30,7 @@ L.custom = {
         };
       },
       onEachFeature: function (feature, layer) {
-        var id	= (feature.properties.NUTS_ID||feature.properties.CNTR_ID);
+        var id = (feature.properties.NUTS_ID || feature.properties.CNTR_ID);
         var customEvents = {
           click: function (e) {
             window.location.href = mapeditor_nuts[id].url;
@@ -42,6 +47,15 @@ L.custom = {
       "level": 0,
       "countries": mapeditor_nuts_keys
     }], nuts_options).addTo(map);
+
+    // Adds attribution if set.
+    if (mapeditor_map.attributionControl == 1) {
+      var gj = L.geoJson();
+      gj.getAttribution = function () {
+        return mapeditor_map.attribution;
+      };
+      gj.addTo(map);
+    }
 
     // Processes next components.
     $wt._queue("next");

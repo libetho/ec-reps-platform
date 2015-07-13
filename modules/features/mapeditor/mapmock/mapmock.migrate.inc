@@ -133,9 +133,10 @@ class MapMockUserMigration extends MapMockBaseMigration {
    * Tinkers with values before migrating.
    */
   public function prepareRow($row) {
-    $row->nick_name = mapmock_slugify($row->nick_name);
+    $row->nick_name = _mapmock_slugify($row->nick_name);
     $row->country = ucwords(strtoupper($row->country));
   }
+
 }
 
 /**
@@ -218,4 +219,5 @@ class MapMockContentMigration extends MapMockBaseMigration {
   public function prepareRow($row) {
     $row->tags = ucwords(strtolower($row->{'tag 1'}));
   }
+
 }

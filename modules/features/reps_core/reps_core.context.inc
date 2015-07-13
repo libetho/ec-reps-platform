@@ -17,12 +17,9 @@ function reps_core_context_default_contexts() {
   $context->description = '';
   $context->tag = 'REPS';
   $context->conditions = array(
-    'node' => array(
+    'path' => array(
       'values' => array(
-        'mapeditor_map' => 'mapeditor_map',
-      ),
-      'options' => array(
-        'node_form' => '0',
+        'services/contact-points' => 'services/contact-points',
       ),
     ),
   );
@@ -33,7 +30,13 @@ function reps_core_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_contact_points-block',
           'region' => 'content',
-          'weight' => '38',
+          'weight' => '2',
+        ),
+        'views-reps_contact_points-block_1' => array(
+          'module' => 'views',
+          'delta' => 'reps_contact_points-block_1',
+          'region' => 'content',
+          'weight' => '1',
         ),
       ),
     ),

@@ -353,7 +353,7 @@ function reps_core_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'mediafield',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -403,7 +403,7 @@ function reps_core_field_default_field_bases() {
         0 => 'top',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'geofield',
     'settings' => array(
       'backend' => 'default',
@@ -434,7 +434,7 @@ function reps_core_field_default_field_bases() {
         0 => 'tid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
@@ -520,7 +520,7 @@ function reps_core_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'list',
     'no_ui' => TRUE,
     'settings' => array(

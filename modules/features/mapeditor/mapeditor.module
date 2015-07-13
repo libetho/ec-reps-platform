@@ -6,6 +6,10 @@
  */
 
 module_load_include('inc', 'mapeditor', 'mapeditor.formatters');
+module_load_include('inc', 'mapeditor', 'mapeditor.theme');
+module_load_include('inc', 'mapeditor', 'mapeditor.forms');
+module_load_include('inc', 'mapeditor', 'mapeditor.build');
+module_load_include('inc', 'mapeditor', 'mapeditor.data');
 
 define('MAPEDITOR_WEBTOOLS_ENVIRONMENT', '//europa.eu/webtools/load.js');
 
@@ -17,7 +21,7 @@ include_once 'mapeditor.features.inc';
 function mapeditor_menu() {
   $items['mapeditor/example'] = array(
     'title' => 'Example Page',
-    'page callback' => 'example_page',
+    'page callback' => '_mapeditor_example_page',
     'access arguments' => array('access content'),
     'type' => MENU_SUGGESTED_ITEM,
     'file' => 'mapeditor.pages.inc',
@@ -25,7 +29,15 @@ function mapeditor_menu() {
 
   $items['mapeditor/example/nuts'] = array(
     'title' => 'NUTS example Page',
-    'page callback' => 'example_page_nuts',
+    'page callback' => '_mapeditor_example_page_nuts',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'mapeditor.pages.inc',
+  );
+
+  $items['mapeditor/example/more'] = array(
+    'title' => 'Example Page',
+    'page callback' => '_mapeditor_example_page_more',
     'access arguments' => array('access content'),
     'type' => MENU_SUGGESTED_ITEM,
     'file' => 'mapeditor.pages.inc',
@@ -47,7 +59,20 @@ function mapeditor_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('mapeditor_settings'),
     'access arguments' => array('administer site configuration'),
-    'file' => 'mapeditor.forms.inc',
+  );
+
+  $items['admin/config/system/mapeditor/settings'] = array(
+    'title' => 'Mapeditor settings',
+    'description' => 'Settings for Mapeditor',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mapeditor_settings'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  $items['admin/mapeditor/default_center'] = array(
+    'page callback' => '_mapeditor_default_center',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
   );
 
   return $items;
@@ -57,9 +82,10 @@ function mapeditor_menu() {
  * Implements hook_entity_info_alter().
  *
  * Adds a pop up view mode for each entity.
- * @todo consider theme function instead of view mode.
  */
 function mapeditor_entity_info_alter(&$entity_info) {
+
+  // @todo consider theme function instead of view mode.
   $entity_info['node']['view modes']['popup'] = array(
     'label' => t('Pop up'),
     'custom settings' => TRUE,
@@ -72,85 +98,207 @@ function mapeditor_entity_info_alter(&$entity_info) {
  * Cleans up the node edit form.
  */
 function mapeditor_form_mapeditor_map_node_form_alter(&$form, &$form_state, $form_id) {
+  // Gets default map definitions for new node.
+  $map_definition = _mapeditor_form_value_defaults();
+
+  // Fetches map definition from existing node.
+  if (isset($form_state['node'])) {
+    $wrnode = entity_metadata_wrapper('node', $form_state['node']);
+    if (_mapeditor_fieldcheck('mapeditor_map_definition', $wrnode)) {
+      $map_definition = $wrnode->mapeditor_map_definition->value();
+      $map_definition = drupal_json_decode($map_definition);
+    }
+  }
+  $form['data_type'] = array(
+    '#type' => 'radios',
+    '#title' => t('Data type'),
+    '#options' => array(
+      'geofield' => 'Latitude and longitude',
+      'nuts' => 'NUTS regions',
+    ),
+    '#default_value' => isset($map_definition['data_type']) ? $map_definition['data_type'] : 'geofield',
+    '#weight' => 1,
+  );
+  $form['source_data'] = array(
+    '#type' => 'radios',
+    '#title' => t('Map data'),
+    '#options' => array(
+      'entities' => 'Data from website content (nodes)',
+      'csv' => 'Data from CSV field',
+    ),
+    '#default_value' => isset($map_definition['source_data']) ? $map_definition['source_data'] : 'entities',
+    '#weight' => 2,
+  );
+
+  // Defines content type filter fields based on chosen content types in admin
+  // UI.
+  $options = array('0' => t('- Select -'));
+  $content_types = variable_get('mapeditor_node_types', array());
+  $all_content_types = node_type_get_names();
+  foreach ($content_types as $content_type) {
+    if (array_key_exists($content_type, $all_content_types)) {
+      $options[$content_type] = $all_content_types[$content_type];
+    }
+  }
+  $form['mapeditor_content_type'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#title' => t('Content type'),
+    '#description' => t('Content type where to find the data'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="source_data"]' => array('value' => 'entities'),
+      ),
+    ),
+    '#default_value' => isset($map_definition['mapeditor_content_type']) ? $map_definition['mapeditor_content_type'] : 0,
+    '#weight' => 3,
+  );
+
+  // Defines term filter fields based on chosen vocabularies in admin UI.
+  $mapeditor_vocabularies = variable_get('mapeditor_vocabularies', array());
+  foreach ($mapeditor_vocabularies as $mapeditor_vocabulary) {
+    if ($mapeditor_vocabulary) {
+      $vocabulary = taxonomy_vocabulary_machine_name_load($mapeditor_vocabulary);
+      $options = array(0 => t('- Select -')) + _mapeditor_get_taxonomy_term_options($mapeditor_vocabulary);
+      $form[$mapeditor_vocabulary] = array(
+        '#type' => 'select',
+        '#options' => $options,
+        '#title' => $vocabulary->name,
+        '#multiple' => TRUE,
+        '#description' => t('Filter results by @vocab', array('@vocab' => $vocabulary->name)),
+        '#default_value' => isset($map_definition['term_filter'][$mapeditor_vocabulary]) ? $map_definition['term_filter'][$mapeditor_vocabulary] : 0,
+        '#weight' => 4,
+      );
+    }
+  }
+
+  // Customizes the field_ui mapeditor_csv_data field.
+  $form['mapeditor_csv_data']['#states'] = array(
+    'visible' => array(
+      ':input[name="source_data"]' => array('value' => 'csv'),
+    ),
+  );
+  $form['mapeditor_csv_data']['#weight'] = 3;
+  $url = file_create_url(drupal_get_path('module', 'mapeditor') . '/template-csv-entry-nodes.txt');
+  $nuts_url = file_create_url(drupal_get_path('module', 'mapeditor') . '/template-csv-entry-nuts.txt');
+  $form['mapeditor_csv_data'][LANGUAGE_NONE][0]['value']['#description'] .= ' ' . t('Download a <a href="!url">template with CSV data for nodes</a> or a <a href="!nuts_url">template with CSV data for NUTS</a>', array(
+      '!url' => $url,
+      '!nuts_url' => $nuts_url,
+    ));
+
+  $form['height'] = _mapeditor_form_elements('height', $map_definition);
+  $form['center'] = _mapeditor_form_elements('center', $map_definition);
+  $form['popup'] = _mapeditor_form_elements('popup', $map_definition);
+
+  // Defines & validates the zoom fields.
+  $form['zoom'] = _mapeditor_form_elements('zoom', $map_definition);
+  // @todo. figure out if this is broken.
+  $form['#validate'][] = '_mapeditor_validate_zoom';
+
+  // Defines the icon field.
+  $form['icon'] = _mapeditor_form_elements('icon', $map_definition);
+
+  // Defines the tile layer (background map images).
+  $form['tile_layer'] = _mapeditor_form_elements('tile_layer', $map_definition);
+
+  // Defines the attribution (credits).
+  $form['attribution'] = _mapeditor_form_elements('attribution', $map_definition);
+
+  // Customizes the field_ui body field.
   $form['body']['en'][0]['summary']['#access'] = FALSE;
+  $form['body']['#group'] = 'additional_settings';
+  $form['body']['#after_build'][] = '_mapeditor_remove_tips';
   $form['additional_settings'] = array(
     '#type' => 'vertical_tabs',
     '#weight' => 99,
   );
-  $form['body']['#group'] = 'additional_settings';
-  $form['body']['#after_build'][] = 'mapeditor_remove_tips';
-  $form['#validate'][] = 'mapeditor_validate_zoom';
+  $form['show_map_definition'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show map definition'),
+    '#default_value' => isset($map_definition['show_map_definition']) ? $map_definition['show_map_definition'] : 1,
+    '#weight' => 98,
+  );
 
-  // Sets specific field description if there are no mapeditor bundles.
-  $config_text = '';
-  if (isset($form['mapeditor_geobundle'])) {
-    if (count($form['mapeditor_geobundle'][LANGUAGE_NONE]['#options']) < 2) {
-      $config_link = l(t('configure content types'), 'admin/config/system/mapeditor/settings');
-      $config_text = ' ' . t('If there are no options, then !config_link or contact the site administrator.', array('!config_link' => $config_link));
+  // @todo put them all together in a group.
+  $form['mapeditor_map_definition']['#states'] = array(
+    'visible' => array(
+      ':input[name="show_map_definition"]' => array('checked' => TRUE),
+    ),
+  );
+  $form['mapeditor_map_definition']['#weight'] = 99;
+
+  // Calls additional callback to save field values in definition field.
+  $form['actions']['submit']['#submit'][] = '_mapeditor_map_node_form_submit';
+}
+
+/**
+ * Stores form field values in the field ui map definition field.
+ */
+function _mapeditor_map_node_form_submit($form, &$form_state) {
+
+  // Fetches field values from form state.
+  $map_definition = array(
+    'popup' => array(
+      'show' => $form_state['values']['show'],
+      'popin' => $form_state['values']['popin'],
+    ),
+    'icon' => array(
+      'icon' => $form_state['values']['icon'],
+    ),
+    'tile_layer' => array(
+      'tile_layer' => $form_state['values']['tile_layer'],
+    ),
+    'height' => array(
+      'height' => $form_state['values']['height'],
+    ),
+    'center' => array(
+      'lat' => $form_state['values']['lat'],
+      'lon' => $form_state['values']['lon'],
+    ),
+    'zoom' => array(
+      'initialZoom' => $form_state['values']['initialZoom'],
+      'minZoom' => $form_state['values']['minZoom'],
+      'maxZoom' => $form_state['values']['maxZoom'],
+    ),
+    'attribution' => array(
+      'attributionControl' => $form_state['values']['attributionControl'],
+      'attribution' => $form_state['values']['attribution'],
+    ),
+    'source_data' => $form_state['values']['source_data'],
+    'data_type' => $form_state['values']['data_type'],
+    'show_map_definition' => $form_state['values']['show_map_definition'],
+    'mapeditor_content_type' => $form_state['values']['mapeditor_content_type'],
+  );
+
+  // Fetches values from term filters (depend on selected vocabularies).
+  $mapeditor_vocabularies = variable_get('mapeditor_vocabularies', array());
+  foreach ($mapeditor_vocabularies as $mapeditor_vocabulary) {
+    if ($mapeditor_vocabulary) {
+      // Remove empty lists.
+      $vocabulary_filters = $form_state['values'][$mapeditor_vocabulary];
+      $zero = array_search(0, $vocabulary_filters);
+      unset($vocabulary_filters[$zero]);
+      if (count($vocabulary_filters) > 0) {
+        $map_definition['term_filter'][$mapeditor_vocabulary] = $vocabulary_filters;
+      }
     }
   }
 
-  // Sets field description.
-  $form['mapeditor_geobundle'][LANGUAGE_NONE]['#description'] = t('Select the kind of content that should be included in the map.') . $config_text;
+  // Stores form field values in the field ui map definition field.
+  $map_definition = json_encode($map_definition);
+  if (isset($form_state['node'])) {
+    $wrnode = entity_metadata_wrapper('node', $form_state['node']);
+    $wrnode->mapeditor_map_definition->set($map_definition);
+    $wrnode->save();
+  }
 }
 
 /**
  * Removes tips from body field.
  */
-function mapeditor_remove_tips(&$form) {
+function _mapeditor_remove_tips(&$form) {
   $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
   return $form;
-}
-
-/**
- * Provides available content types.
- *
- * Used to populate the content type field in the map node type.
- * @ todo remove
- */
-function mapeditor_content_types_map() {
-  $content_types = node_type_get_names();
-  $content_types_map = variable_get('content_types_map', array());
-  if ($content_types_map) {
-    foreach ($content_types_map as $key => $ctm) {
-      if ($ctm) {
-        $content_types_map[$key] = $content_types[$key];
-      }
-      else {
-        unset($content_types_map[$key]);
-      }
-    }
-    return $content_types_map;
-  }
-  else {
-    return array();
-  }
-}
-
-/**
- * Provides available bundles.
- *
- * Used to provide the geo bundle field with field values in the field.
- */
-function mapeditor_geobundles() {
-  $geobundles = variable_get('geobundles', array());
-  $geobundle_options = array();
-  if ($geobundles) {
-    foreach ($geobundles as $geobundle) {
-      if ($geobundle) {
-        $geobundle_shraps = explode('__', $geobundle);
-
-        // Uses combined entity type and bundle name as key in order to
-        // be unique.
-        $field_info_bundles = field_info_bundles($geobundle_shraps[0]);
-        $geobundle_options[$geobundle] = "{$field_info_bundles[$geobundle_shraps[1]]['label']} ({$geobundle_shraps[0]})";
-      }
-    }
-    return $geobundle_options;
-  }
-  else {
-    return array();
-  }
 }
 
 /**
@@ -178,7 +326,7 @@ function mapeditor_node_view($node, $view_mode, $langcode) {
 
   // Checks if the map field exists and then adds it to the node view.
   if (isset($extrafields['map']) && isset($extrafields['map']['visible']) && $extrafields['map']['visible']) {
-    $node->content['map'] = mapeditor_show_map($node);
+    $node->content['map'] = _mapeditor_show_map($node);
   }
 }
 
@@ -189,218 +337,266 @@ function mapeditor_node_view($node, $view_mode, $langcode) {
  *
  * @todo improve readability.
  */
-function mapeditor_show_map($node) {
+function _mapeditor_show_map($node) {
   $build = array();
 
   // Loads map node.
   $wrnode = entity_metadata_wrapper('node', $node);
+  $map_definition = _mapeditor_map_definition($wrnode);
+  $map = $map_definition['map'];
+  $settings = $map_definition['settings'];
 
-  // Adds filters for bundle field on the map node.
-  $filters = array();
-  if (mapeditor_fieldcheck('mapeditor_geobundle', $wrnode)) {
+  // Builds map with nuts data from csv input field.
+  if ($settings['source_data'] == 'csv' && $settings['data_type'] == 'nuts') {
+    if (_mapeditor_fieldcheck('mapeditor_csv_data', $wrnode)) {
 
-    $geobundle_shraps = explode('__', $wrnode->mapeditor_geobundle->value());
+      // Prepares data for build.
+      $mapeditor_data = new MapeditorMapData();
+      $mapeditor_data->setNuts($wrnode->mapeditor_csv_data->value(), $settings['source_data']);
+      $nuts = $mapeditor_data->getNuts();
 
-    $filters['entity_type'] = $geobundle_shraps[0];
-    $filters['bundle'] = $geobundle_shraps[1];
+      // Builds the map.
+      $mapeditor_map = new MapeditorMapBuild($map, $settings);
+      $mapeditor_map->setCustomJs('nuts.js');
+      $mapeditor_map->setNuts($nuts);
+      return $mapeditor_map->build;
+    }
 
-    // Loads fields and adds filters for each taxo term field on th map node.
-    $field_instances = field_info_instances('node', 'mapeditor_map');
-    foreach ($field_instances as $field) {
-      $field_name = $field['field_name'];
+    else {
+      drupal_set_message('Not enough information to build map.', 'error');
+    }
+  }
 
-      $field_info = field_info_field($field_name);
-
-      if ($field_info['type'] == 'taxonomy_term_reference' && mapeditor_fieldcheck($field_name, $wrnode)) {
-        // @todo verify works with single value fields
-        foreach ($wrnode->$field_name as $terms) {
-          foreach ($terms as $term) {
-            if (isset($term->value()->tid)) {
-              $filters['terms'][$field_name][] = $term->value()->tid;
-            }
-          }
+  // Builds map with geo data (lat & lon) from csv input field.
+  elseif ($settings['source_data'] == 'csv' && $settings['data_type'] == 'geofield') {
+    if (_mapeditor_fieldcheck('mapeditor_csv_data', $wrnode)) {
+      $lines = explode("\n", $wrnode->mapeditor_csv_data->value());
+      $csv_data = array();
+      foreach ($lines as $line) {
+        if (isset($line[0])) {
+          $csv_data[] = str_getcsv($line);
         }
       }
-    }
+      foreach ($csv_data as $item) {
+        $lat = $item[0];
+        $lon = $item[1];
+        $name = check_plain($item[2]);
+        $description = check_plain($item[3]);
+        $url = $item[4];
+        $features[] = array(
+          'type' => 'Feature',
+          'properties' => array(
+            'name' => $name,
+            'popupContent' => theme('popup', array(
+              'title' => $name,
+              'description' => $description,
+              'url' => $url,
+            )),
+          ),
+          'geometry' => array(
+            'type' => 'Point',
+            'coordinates' => array(
+              round($lon, 4),
+              round($lat, 4),
+            ),
+          ),
+        );
+        // Collects all coordinates (lat, lon) for the fitBounds method.
+        $all_coordinates[] = array(
+          round($lat, 4),
+          round($lon, 4),
+        );
+      }
+      $settings['all_coordinates'] = $all_coordinates;
 
-    // Finds geographical field on geo bundle by comparing geofield setting
-    // with instances on bundle. Fetches first found field only.
-    $map_field_instances = field_info_instances($geobundle_shraps[0], $geobundle_shraps[1]);
-    $geofields = array_map('trim', explode(',', variable_get('geofields')));
-    foreach ($geofields as $geofield) {
-      if (array_key_exists($geofield, $map_field_instances)) {
-        $bundle_geofield = $geofield;
-        $filters['bundle_geofield'] = $bundle_geofield;
-        break;
+      // Builds the map.
+      $mapeditor_map = new MapeditorMapBuild($map, $settings);
+      $mapeditor_map->setCustomJs('map.js');
+      $mapeditor_map->setFeatures($features);
+      return $mapeditor_map->build;
+    }
+    else {
+      drupal_set_message('Not enough information to build map.', 'error');
+    }
+  }
+
+  // Builds map with data (NUTS or geofield) from nodes.
+  elseif ($settings['source_data'] == 'entities') {
+    $filters = array();
+    $filters['bundle'] = $settings['mapeditor_content_type'];
+
+    // Finds taxonomy fields in the mapeditor_content_type so that they can be
+    // use as filters in the query.
+    $content_type_fields = field_read_instances(array('bundle' => $settings['mapeditor_content_type']));
+    foreach ($content_type_fields as $content_type_field) {
+      $field_info = field_info_field($content_type_field['field_name']);
+      switch ($field_info['type']) {
+        case 'taxonomy_term_reference':
+          $vocabulary = $field_info['settings']['allowed_values'][0]['vocabulary'];
+
+          // Finds the term fields in the mapeditor_content_type that be used
+          // as filters.
+          if (isset($settings['term_filter'])) {
+            if (array_key_exists($vocabulary, $settings['term_filter'])) {
+              $filters['term_filter'][$content_type_field['field_name']] = $settings['term_filter'][$vocabulary];
+            }
+          }
+
+          // Finds the NUTS regions field in the mapeditor_content_type.
+          if ($vocabulary == 'nuts_regions') {
+            $nuts_regions_field_name = $content_type_field['field_name'];
+            $filters['nuts_regions_field'] = $nuts_regions_field_name;
+          }
+          break;
+
+        case 'geofield':
+
+          // Finds the geofield in the mapeditor_content_type.
+          $geofield_name = $content_type_field['field_name'];
+          $filters['geofield'] = $geofield_name;
+          break;
       }
     }
 
-    $settings = array(
-      'height' => 430,
+    // Builds map with NUTS data from nodes.
+    if ($settings['data_type'] == 'nuts') {
+
+      // Sets the column for the fieldcondition in the EntityFieldQuery.
+      // @todo: find a proper way to fix this.
+      $filters['nuts_regions_field_column'] = 'tid';
+
+      // Fetches the content for the map.
+      $map_items = _mapeditor_fetch_nodes($filters);
+      if ($map_items) {
+
+        // Prepares data for build.
+        $mapeditor_data = new MapeditorMapData();
+        $mapeditor_data->setNutsRegionsFieldName($nuts_regions_field_name);
+        $mapeditor_data->setNuts($map_items, $settings['source_data']);
+        $nuts = $mapeditor_data->getNuts();
+
+        // Builds the map.
+        $mapeditor_map = new MapeditorMapBuild($map, $settings);
+        $mapeditor_map->setCustomJs('nuts.js');
+        $mapeditor_map->setNuts($nuts);
+        return $mapeditor_map->build;
+      }
+    }
+
+    // Builds map with geofield data from nodes.
+    elseif ($settings['data_type'] == 'geofield') {
+      $features = array();
+      $all_coordinates = array();
+
+      // Sets the column for the fieldcondition in the EntityFieldQuery.
+      // @todo: find a proper way to fix this.
+      $filters['geofield_column'] = 'lat';
+
+      // Fetches the content for the map.
+      $map_items = _mapeditor_fetch_nodes($filters);
+      if ($map_items) {
+        foreach ($map_items as $map_item) {
+          $wr_map_item = entity_metadata_wrapper('node', $map_item);
+
+          // Checks if geofield contains points (not other types are
+          // possible atm) and populates the geojson feature.
+          if (_mapeditor_fieldcheck($geofield_name, $wr_map_item) && $wr_map_item->$geofield_name->geo_type->value() == 'point') {
+
+            // @TODO figure neat way to render popup
+            $entity_view = entity_view('node', array($map_item), 'popup');
+
+            // @todo: make configurabe the geofield.
+            $features[] = array(
+              'type' => 'Feature',
+              'properties' => array(
+                'name' => $wr_map_item->title->value(),
+                'popupContent' => drupal_render($entity_view),
+              ),
+              'geometry' => array(
+                'type' => _mapeditor_geojson_type($wr_map_item->$geofield_name->geo_type->value()),
+                'coordinates' => array(
+                  // Sets coordinates in GeoJSON standard: X,Y (lon, lat).
+                  round($wr_map_item->$geofield_name->lon->value(), 4),
+                  round($wr_map_item->$geofield_name->lat->value(), 4),
+                ),
+              ),
+            );
+            // Collects all coordinates (lat, lon) for the fitBounds method.
+            $all_coordinates[] = array(
+              round($wr_map_item->$geofield_name->lat->value(), 4),
+              round($wr_map_item->$geofield_name->lon->value(), 4),
+            );
+          }
+        }
+        $settings['all_coordinates'] = $all_coordinates;
+
+        // Builds the map.
+        $mapeditor_map = new MapeditorMapBuild($map, $settings);
+        $mapeditor_map->setCustomJs('map.js');
+        $mapeditor_map->setFeatures($features);
+        return $mapeditor_map->build;
+      }
+      else {
+        drupal_set_message('Not enough information to build map.', 'error');
+      }
+
+    }
+  }
+}
+
+/**
+ * Fetches map definition from mapeditor map node.
+ */
+function _mapeditor_map_definition($wrnode) {
+
+  // Fetches map default definition and settings.
+  $map_defaults = _mapeditor_map_defaults();
+  $map = $map_defaults['map'];
+  $settings = $map_defaults['settings'];
+
+  if (_mapeditor_fieldcheck('mapeditor_map_definition', $wrnode)) {
+    $map_definition = $wrnode->mapeditor_map_definition->value();
+    $map_definition = drupal_json_decode($map_definition);
+  }
+
+  if ($map_definition) {
+
+    // Groups settings in 'map' in order to pass directly to JavaScript.
+    $map['map'] = $map_definition['tile_layer']['tile_layer'];
+    $map['zoom'] = $map_definition['zoom']['initialZoom'];
+    $map['maxZoom'] = $map_definition['zoom']['maxZoom'];
+    $map['minZoom'] = $map_definition['zoom']['minZoom'];
+    $map['attributionControl'] = $map_definition['attribution']['attributionControl'];
+    $map['attribution'] = $map_definition['attribution']['attribution'];
+    $map['center'] = array(
+      $map_definition['center']['lat'],
+      $map_definition['center']['lon'],
     );
 
-    // Fetches map settings from map node.
-    $map = mapeditor_default_map_settings();
-
-    // Overrides settings if user has provided values in map node.
-    if (mapeditor_fieldcheck('mapeditor_initial_zoom', $wrnode) && $wrnode->mapeditor_initial_zoom->value() > 0) {
-      // @todo figure out what is bugging initialZoom.
-      // $map['settings']['initialZoom'] = $wrnode->initial_zoom->value();
-      $map['settings']['zoom'] = $wrnode->mapeditor_initial_zoom->value();
-    }
-    if (mapeditor_fieldcheck('mapeditor_tile_layer', $wrnode)) {
-      $map['settings']['map'] = $wrnode->mapeditor_tile_layer->value();
-    }
-    if (mapeditor_fieldcheck('mapeditor_max_zoom', $wrnode) && $wrnode->mapeditor_max_zoom->value() > 0) {
-      $map['settings']['maxZoom'] = $wrnode->mapeditor_max_zoom->value();
-    }
-    if (mapeditor_fieldcheck('mapeditor_min_zoom', $wrnode) && $wrnode->mapeditor_min_zoom->value() > 0) {
-      $map['settings']['minZoom'] = $wrnode->mapeditor_min_zoom->value();
-    }
-    if (mapeditor_fieldcheck('mapeditor_height', $wrnode) && $wrnode->mapeditor_height->value() > 0) {
-      $map['settings']['height'] = $wrnode->mapeditor_height->value();
-    }
-
-    $field = field_info_field($bundle_geofield);
-
-    // Switches between field types (leaflet points or nuts)
-    // @todo move large code blocks to separate function for readability.
-    switch ($bundle_geofield) {
-
-      case 'nuts_region':
-        if (!isset($map['settings']['zoom'])) {
-          $map['settings']['zoom'] = 4;
-        }
-
-        // Checks if the field type is usable to build a NUTS map.
-        if ($field['type'] == 'taxonomy_term_reference') {
-
-          $filters['bundle_geofield_column'] = 'tid';
-
-          $map_items = mapeditor_fetch_entities($filters);
-          $nuts = array();
-          $nuts_keys = array();
-          if ($map_items) {
-            foreach ($map_items as $map_item) {
-              $wr_map_item = entity_metadata_wrapper($geobundle_shraps[0], $map_item);
-              if (mapeditor_fieldcheck('nuts_region', $wr_map_item)) {
-                $code = $wr_map_item->nuts_region->nuts_code->value();
-                $nuts_keys[] = $wr_map_item->nuts_region->nuts_code->value();
-                if (mapeditor_fieldcheck('name', $wr_map_item)) {
-                  $nuts[$code]['title'] = $wr_map_item->name->value();
-                }
-                if (mapeditor_fieldcheck('title', $wr_map_item)) {
-                  $nuts[$code]['title'] = $wr_map_item->title->value();
-                }
-                if (mapeditor_fieldcheck('url', $wr_map_item)) {
-                  $nuts[$code]['url'] = $wr_map_item->url->value();
-                }
-              }
-            }
-
-            $nuts = drupal_json_encode($nuts);
-            $nuts_keys = drupal_json_encode($nuts_keys);
-            $js = "var mapeditor_nuts = ${nuts};
-            var mapeditor_nuts_keys = ${nuts_keys};";
-            $build['#attached']['js'][] = array(
-              'data' => $js,
-              'type' => 'inline',
-              'scope' => 'footer',
-            );
-            $build['map'] = mapeditor_build_nuts_map($map, $settings);
-          }
-          else {
-            drupal_set_message('Not enough information to build map.', 'error');
-          }
-        }
-        else {
-          drupal_set_message('Can not build a map with this field type.', 'error');
-        }
-        break;
-
-      // Defaults to geofields.
-      default:
-        if ($field['type'] == 'geofield') {
-
-          // Generates the leaflet map using lat, lon points
-          // Fetches the tiles layer.
-          // todo make configurable.
-          // @todo: see which parts can be made uniform with field formatter.
-          $features = array();
-          $all_coordinates = array();
-
-          // Sets the column for the fieldcondition in the EntityFieldQuery.
-          // @todo: find a proper way to fix this.
-          $filters['bundle_geofield_column'] = 'lat';
-
-          // Fetches the actual content for the map.
-          $map_items = mapeditor_fetch_entities($filters);
-          if ($map_items) {
-            foreach ($map_items as $map_item) {
-              $wr_map_item = entity_metadata_wrapper($geobundle_shraps[0], $map_item);
-
-              // Checks if geofield contains points (not other types are
-              // possible atm) and populates the geojson feature.
-              if (mapeditor_fieldcheck($bundle_geofield, $wr_map_item) && $wr_map_item->$bundle_geofield->geo_type->value() == 'point') {
-                // @TODO figure neat way to render popup
-                $entity_view = entity_view($geobundle_shraps[0], array($map_item), 'popup');
-
-                // @todo: make configurabe the geofield.
-                $features[] = array(
-                  'type' => 'Feature',
-                  'properties' => array(
-                    'name' => $wr_map_item->title->value(),
-                    // 'popupContent' => l($wr_map_item->title->value(),
-                    // 'node/' . $wr_map_item->nid->value()),
-                    // @ todo decide on udage of view mode or theme function.
-                    'popupContent' => drupal_render($entity_view),
-                  ),
-                  'geometry' => array(
-                    'type' => mapeditor_geojson_type($wr_map_item->$bundle_geofield->geo_type->value()),
-                    'coordinates' => array(
-                      // Sets coordinates in GeoJSON standard: X,Y (lon, lat).
-                      round($wr_map_item->$bundle_geofield->lon->value(), 4),
-                      round($wr_map_item->$bundle_geofield->lat->value(), 4),
-                    ),
-                  ),
-                );
-                // Collects all coordinates (lat, lon) for the fitBounds method.
-                $all_coordinates[] = array(
-                  round($wr_map_item->$bundle_geofield->lat->value(), 4),
-                  round($wr_map_item->$bundle_geofield->lon->value(), 4),
-                );
-              }
-            }
-
-            $settings['all_coordinates'] = $all_coordinates;
-
-            // Sets initial map center to first point. Needs to revert
-            // lon & lat.
-            $map['settings']['center'] = array_reverse($features[0]['geometry']['coordinates']);
-            $build['map'] = mapeditor_build_map($map, $features, $settings);
-          }
-          else {
-            drupal_set_message('Not enough information to build map.', 'error');
-          }
-
-        }
-        else {
-          drupal_set_message('Can not build a map with this field type.', 'error');
-        }
-        break;
-
+    // Groups settings in 'settings' in order to be used both by Drupal and
+    // JavaScript.
+    $settings['height'] = $map_definition['height']['height'];
+    $settings['icon'] = $map_definition['icon']['icon'];
+    $settings['popup'] = $map_definition['popup']['popin'];
+    $settings['show_popup'] = $map_definition['popup']['show'];
+    $settings['source_data'] = $map_definition['source_data'];
+    $settings['data_type'] = $map_definition['data_type'];
+    $settings['show_map_definition'] = $map_definition['show_map_definition'];
+    $settings['mapeditor_content_type'] = $map_definition['mapeditor_content_type'];
+    if (isset($map_definition['term_filter'])) {
+      $settings['term_filter'] = $map_definition['term_filter'];
     }
   }
-  else {
-    drupal_set_message('Not enough information to build map.', 'error');
-  }
-  return $build;
+  return array(
+    'map' => $map,
+    'settings' => $settings,
+  );
 }
 
 /**
  * Inspects wrapped entities & fields.
  */
-function mapeditor_wrapper_inspect($w) {
+function _mapeditor_wrapper_inspect($w) {
   $values = array();
   foreach ($w->getPropertyInfo() as $key => $val) {
     $values[$key] = $w->$key->value();
@@ -411,7 +607,7 @@ function mapeditor_wrapper_inspect($w) {
 /**
  * Checks if wrapped entity fields have a value.
  */
-function mapeditor_fieldcheck($field, $wrentity) {
+function _mapeditor_fieldcheck($field, $wrentity) {
   if ($wrentity->__isset($field)) {
     $fieldvalue = $wrentity->$field->value();
     if (!empty($fieldvalue)) {
@@ -424,144 +620,56 @@ function mapeditor_fieldcheck($field, $wrentity) {
 }
 
 /**
- * Fetches entities to be shown on the map.
- *
- * @todo test with users, taxo terms
+ * Fetches nodes.
  */
-function mapeditor_fetch_entities($filters) {
-  $entities = array();
-  $entity_type = $filters['entity_type'];
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', $entity_type)
-    ->entityCondition('bundle', $filters['bundle'])
-    ->fieldCondition($filters['bundle_geofield'], $filters['bundle_geofield_column'], 'NULL', '!=');
-  if ($entity_type == 'node') {
-    $query->propertyCondition('status', 1);
-  }
+function _mapeditor_fetch_nodes($filters) {
+  if ($filters['bundle']) {
+    $nodes = array();
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', $filters['bundle']);
 
-  // Applies taxonomy terms filters;
-  if (isset($filters['terms'])) {
-    foreach ($filters['terms'] as $term_field => $tids) {
-      $query->fieldCondition($term_field, 'tid', $tids, 'in');
+    // Checks for missing coordinates.
+    if (isset($filters['geofield_column'])) {
+      $query->fieldCondition($filters['geofield'], $filters['geofield_column'], 'NULL', '!=');
     }
+
+    // Checks for missing coordinates.
+    if (isset($filters['nuts_regions_field_column'])) {
+      $query->fieldCondition($filters['nuts_regions_field'], 'tid', 'NULL', '!=');
+    }
+
+    // Allows including unpublished nodes in the result.
+    if (variable_get('mapeditor_show_unpublished') == TRUE) {
+      $query->propertyCondition('status', array(0, 1), 'in');
+    }
+    else {
+      $query->propertyCondition('status', 1);
+
+    }
+
+    // Applies taxonomy terms filters.
+    if (isset($filters['term_filter'])) {
+      foreach ($filters['term_filter'] as $term_filter => $tids) {
+        $query->fieldCondition($term_filter, 'tid', $tids, 'in');
+      }
+    }
+    $result = $query->execute();
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      $nodes = entity_load('node', $nids);
+    }
+    return $nodes;
   }
-
-  $result = $query->execute();
-  if (isset($result[$entity_type])) {
-    $eids = array_keys($result[$entity_type]);
-    $entities = entity_load($entity_type, $eids);
+  else {
+    drupal_set_message('Not enough information to build map.', 'error');
   }
-  return $entities;
-}
-
-/**
- * Attaches EC Webtools MAP-required client files and returns render array.
- *
- * Is being used both by map nodes to display multiple nodes with popups and
- * field formatter to show single point.
- */
-function mapeditor_build_map($map, $features = array(), $settings = array()) {
-  global $base_url;
-  $build = array();
-  $features = drupal_json_encode($features);
-
-  $load_js = variable_get('webtools_environment', MAPEDITOR_WEBTOOLS_ENVIRONMENT);
-  $element = array(
-    '#type' => 'markup',
-    '#markup' => "<script async src='${load_js}' type='text/javascript'></script>",
-  );
-  drupal_add_html_head($element, 'async_script');
-
-  // Provides variables for load.js
-  $js_path = base_path() . drupal_get_path('module', 'mapeditor') . '/js/map.js?v=' . rand(0, 33333);
-
-  $options = drupal_json_encode(array(
-      'service' => 'map',
-      'custom' => $js_path,
-    )
-  );
-
-  $build['load_js_vars'] = array(
-    '#type' => 'markup',
-    '#markup' => "<script type='application/json'>${options}</script>",
-  );
-
-  $js_inline = "var map_height = '{$map['settings']['height']}' + 'px';";
-
-  $build['#attached']['js'][] = array(
-    'data' => $js_inline,
-    'type' => 'inline',
-  );
-
-  $mapeditor_map_settings = drupal_json_encode($map['settings']);
-
-  $js = "var mapeditor_map_settings = {$mapeditor_map_settings};
-    var features = {$features};";
-
-  if (isset($settings['all_coordinates'])) {
-    $all_coordinates = drupal_json_encode($settings['all_coordinates']);
-
-    $js .= "
-      var all_coordinates = {$all_coordinates};
-    ";
-  }
-
-  $build['#attached']['js'][] = array(
-    'data' => $js,
-    'type' => 'inline',
-    'scope' => 'footer',
-  );
-  return $build;
-}
-
-/**
- * Attaches EC Webtools MAP-required client files and returns render array.
- *
- * Provides custom data for generating a nuts map.
- */
-function mapeditor_build_nuts_map($map, $settings = array()) {
-  global $base_url;
-
-  $build = array();
-  $map_settings = drupal_json_encode($map['settings']);
-
-  $load_js = variable_get('webtools_environment', MAPEDITOR_WEBTOOLS_ENVIRONMENT);
-  $element = array(
-    '#type' => 'markup',
-    '#markup' => "<script async src='${load_js}' type='text/javascript'></script>",
-  );
-  drupal_add_html_head($element, 'async_script');
-
-  // Provides variables for load.js
-  $js_path = base_path() . drupal_get_path('module', 'mapeditor') . '/js/nuts.js?v=' . rand(0, 33333);
-
-  $options = drupal_json_encode(array(
-      'service' => 'map',
-      'custom' => $js_path,
-    )
-  );
-
-  $build['load_js_vars'] = array(
-    '#type' => 'markup',
-    '#markup' => "<script type='application/json'>${options}</script>",
-  );
-
-  $js_inline = "var mapeditor_map_settings = {$map_settings};
-  var map_height = '{$map['settings']['height']}' + 'px';";
-
-  $build['#attached']['js'][] = array(
-    'data' => $js_inline,
-    'type' => 'inline',
-    'scope' => 'footer',
-  );
-
-  return $build;
 }
 
 /**
  * Provides zoom options.
  */
-function mapeditor_zoom_options() {
+function _mapeditor_zoom_options() {
   $zoom_options = array(
     -1 => t('Use map defined setting'),
     0 => t('0 - Low/Far'),
@@ -575,24 +683,9 @@ function mapeditor_zoom_options() {
 }
 
 /**
- * Returns information about fields.
- */
-function mapeditor_field_information($entity_type, $bundle) {
-  if (module_exists('devel')) {
-    $field_instances = field_info_instances("node", "field_inspector");
-    foreach ($field_instances as $field_instance) {
-      $field = field_info_field($field_instance['field_name']);
-    }
-  }
-  else {
-    drupal_set_message('The devel module is needed to display field info.', 'status');
-  }
-}
-
-/**
  * Validate zoom values.
  */
-function mapeditor_validate_zoom($form, &$form_state) {
+function _mapeditor_validate_zoom($form, &$form_state) {
 
   $initial_zoom = isset($form_state['values']['initial_zoom'][LANGUAGE_NONE]) ? $form_state['values']['initial_zoom'][LANGUAGE_NONE][0]['value'] : NULL;
 
@@ -610,7 +703,7 @@ function mapeditor_validate_zoom($form, &$form_state) {
 /**
  * Translates geofield types to geojson types.
  */
-function mapeditor_geojson_type($type) {
+function _mapeditor_geojson_type($type) {
   switch ($type) {
     case 'point':
       $type = 'Point';
@@ -632,19 +725,62 @@ function mapeditor_feature_set_api() {
 /**
  * Defines default map settings.
  */
-function mapeditor_default_map_settings() {
+function _mapeditor_map_defaults() {
   return array(
-    'settings' => array(
-      'center' => array(48, 9),
+    'map' => array(
+      'center' => array(55.1055, 28.1530),
       'map' => 'osmec',
-      'minZoom' => 0,
-      'maxZoom' => 18,
+      'minZoom' => 2,
+      'maxZoom' => 10,
       'dragging' => TRUE,
       'touchZoom' => TRUE,
       'scrollWheelZoom' => TRUE,
-      'attributionControl' => FALSE,
+      'attributionControl' => TRUE,
+      'zoom' => 3,
+
+    ),
+    'settings' => array(
+      'height' => 430,
+      'icon' => 'blue',
+      'popup' => '',
+      'show_popup' => TRUE,
+      'popin' => FALSE,
+      'source_data' => 'entities',
     ),
   );
+}
+
+/**
+ * Defines default map settings.
+ */
+function _mapeditor_form_value_defaults() {
+  $map_defaults = _mapeditor_map_defaults();
+  $map = $map_defaults['map'];
+  $settings = $map_defaults['settings'];
+
+  // Sets default map definitions for new node.
+  $map_definition = array(
+    'popup' => array(
+      'show' => $settings['show_popup'],
+      'popin' => $settings['popin'],
+    ),
+    'icon' => array(
+      'icon' => $settings['icon'],
+    ),
+    'tile_layer' => array(
+      'tile_layer' => $map['map'],
+    ),
+    'height' => array(
+      'height' => $settings['height'],
+    ),
+    'zoom' => array(
+      'initialZoom' => $map['zoom'],
+      'minZoom' => $map['minZoom'],
+      'maxZoom' => $map['maxZoom'],
+    ),
+    'source_data' => $settings['source_data'],
+  );
+  return $map_definition;
 }
 
 /**
@@ -652,7 +788,7 @@ function mapeditor_default_map_settings() {
  *
  * Populate the tiles field in the map node type.
  */
-function mapeditor_tiles() {
+function _mapeditor_tiles() {
   return array(
     'osmec' => 'Open Street Map customised for European Commission',
     'graybg' => 'Gray background with country outlines',
@@ -660,7 +796,109 @@ function mapeditor_tiles() {
     'gray' => 'Gray shaded relief of earth',
     'hypso' => 'Climate shaded relief of earth',
     'natural' => 'Landcover shaded relief of earth',
-    'bmarble' => 'Sattelite  images of earth',
+    'bmarble' => 'Satellite  images of earth',
     'copernicus003' => 'Copernicus Core003 mosaic',
   );
+}
+
+/**
+ * Provides icon colors.
+ *
+ * Populates the icon field in the map node type.
+ */
+function _mapeditor_icons() {
+  return array(
+    'black' => 'Black',
+    'blue' => 'Blue',
+    'green' => 'Green',
+    'grey' => 'Grey',
+    'orange' => 'Orange',
+    'purple' => 'Purple',
+    'red' => 'Red',
+    'turquoise' => 'Turquoise',
+  );
+}
+
+/**
+ * Validates the height form element.
+ */
+function _mapeditor_validate_height(&$form, &$form_state) {
+  if (!is_numeric($form_state['values']['height']) || $form_state['values']['height'] < 0) {
+    form_error($form['height'], t('Map height needs to be a positive number'));
+  }
+}
+
+/**
+ * Converts a geofield into an array of map points.
+ */
+function _mapeditor_process_geofield($items = array()) {
+  $data = array();
+
+  // geophp_load();
+  // @todo: check what this does.
+  foreach ($items as $delta => $item) {
+    $datum = array('type' => $item['geo_type']);
+    switch ($item['geo_type']) {
+      case 'point':
+        $datum += array(
+          'lat' => (float) $item['lat'],
+          'lon' => (float) $item['lon'],
+          'gj_type' => 'Point',
+        );
+        $data[] = $datum;
+        break;
+    }
+  }
+  return $data;
+}
+
+/**
+ * Populates a list of terms for use in a form api select.
+ */
+function _mapeditor_get_taxonomy_term_options($machine_name) {
+  $options = array();
+  $vid = taxonomy_vocabulary_machine_name_load($machine_name)->vid;
+  $options_source = taxonomy_get_tree($vid);
+  foreach ($options_source as $item) {
+    $key = $item->tid;
+    $value = $item->name;
+    $options[$key] = $value;
+  }
+  return $options;
+}
+
+/**
+ * Provides defaults for lat and lon center field.
+ */
+function _mapeditor_default_center() {
+  if (module_exists('ec_geocoder')) {
+    $locality = $_GET['locality'];
+
+    // Prepares call to geocoder service.
+    $data = array(
+      'request' => 'GetGeocoding',
+      'outputFormat' => 'json',
+      'minquality' => 0,
+      'nbaddresses' => '1',
+      'addresses_0' => $locality,
+    );
+    $url = url(variable_get('ec_geocoder_url', EC_GEOCODER_URL), array('query' => $data));
+
+    // Fetches result from geocoder service.
+    $result = drupal_http_request($url);
+    if ($result->data) {
+      $data = $result->data;
+      $data = $result = substr($data, 1, -1);
+      $data = drupal_json_decode($data);
+      if (isset($data['features'][0]['geometry'])) {
+        $coordinates = $data['features'][0]['geometry']['coordinates'];
+        $lat = $coordinates[1];
+        $lon = $coordinates[0];
+        $commands[] = ajax_command_invoke("input[id^='edit-lat']", 'val', array($lat));
+        $commands[] = ajax_command_invoke("input[id^='edit-lon']", 'val', array($lon));
+        $page = array('#type' => 'ajax', '#commands' => $commands);
+        ajax_deliver($page);
+      }
+    }
+  }
 }

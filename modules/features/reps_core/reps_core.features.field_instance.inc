@@ -521,7 +521,7 @@ function reps_core_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '213x0',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -636,7 +636,7 @@ function reps_core_field_default_field_instances() {
     'description' => 'The Title of the block.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -681,7 +681,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'popup' => array(
         'label' => 'above',
@@ -711,18 +711,14 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
   // Exported field_instance: 'node-mapeditor_map-field_meta_description'
   $field_instances['node-mapeditor_map-field_meta_description'] = array(
     'bundle' => 'mapeditor_map',
-    'default_value' => array(
-      0 => array(
-        'value' => t('We are the local office of the Commission in Malta. Find out more about what we do.'),
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -730,7 +726,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'popup' => array(
         'label' => 'above',
@@ -787,7 +783,7 @@ function reps_core_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -802,7 +798,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'popup' => array(
         'label' => 'above',
@@ -832,7 +828,7 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -847,7 +843,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'popup' => array(
         'label' => 'above',
@@ -878,7 +874,7 @@ function reps_core_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -893,7 +889,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'popup' => array(
         'label' => 'above',
@@ -983,11 +979,7 @@ function reps_core_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_meta_description'
   $field_instances['node-page-field_meta_description'] = array(
     'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => t('We are the local office of the Commission in Malta. Find out more about what we do.'),
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1097,7 +1089,7 @@ function reps_core_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '115x0',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2322,7 +2314,6 @@ function reps_core_field_default_field_instances() {
   t('Title');
   t('Weight');
   t('default instance');
-  t('We are the local office of the Commission in Malta. Find out more about what we do.');
 
   return $field_instances;
 }

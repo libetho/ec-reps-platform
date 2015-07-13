@@ -395,6 +395,39 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'mapeditor_node_types';
+  $strongarm->value = array(
+    'reps_contact_point' => 'reps_contact_point',
+    'article' => 0,
+    'page' => 0,
+    'editorial_team' => 0,
+    'reps_event' => 0,
+    'flexslider_example' => 0,
+    'reps_news' => 0,
+    'reps_publication' => 0,
+    'reps_slide_footer' => 0,
+    'reps_slide_homepage' => 0,
+    'reps_video' => 0,
+    'webform' => 0,
+  );
+  $export['mapeditor_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mapeditor_vocabularies';
+  $strongarm->value = array(
+    'reps_contact_point_categories' => 'reps_contact_point_categories',
+    'classification' => 0,
+    'tags' => 0,
+    'core_user_tasks' => 0,
+    'reps_news_categories' => 0,
+  );
+  $export['mapeditor_vocabularies'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_reps_contact_point';
   $strongarm->value = array();
   $export['menu_options_reps_contact_point'] = $strongarm;

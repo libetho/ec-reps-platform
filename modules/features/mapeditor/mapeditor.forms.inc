@@ -10,8 +10,8 @@
  */
 function mapeditor_settings() {
   $form = array();
-  $form['warning']['#markup'] = t('Warning. At this moment this can only be used to create fields on the destination entity.');
 
+  // Defines input field to change the location of the JavaScript library.
   $form['webtools_environment'] = array(
     '#type' => 'textfield',
     '#title' => t('Webtools environment'),
@@ -20,152 +20,236 @@ function mapeditor_settings() {
     '#size' => '60',
   );
 
-  $geofields = variable_get('geofields', 'field_location, location');
-  $form['geofields'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Geo fields'),
-    '#default_value' => $geofields,
-    '#description' => t('Comma separated list fields that can hold geo data. Bundles that have any of the listed fields will be available in the entity checkboxes list.'),
+  $form['mapeditor_data'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Mapeditor data'),
+    '#collapsed' => TRUE,
+    '#collapsible' => TRUE,
   );
 
-  $geobundles = mapeditor_geo_bundles(array_map('trim', explode(',', $geofields)));
-
-  // Excludes the Map content type to prevent confusion.
-  if (array_key_exists('node__mapeditor_map', $geobundles)) {
-    unset($geobundles['node__mapeditor_map']);
+  // Populates dropdown with system's content types. But excludes the Map
+  // content type to prevent confusion.
+  $node_types = node_type_get_names();
+  if (array_key_exists('mapeditor_map', $node_types)) {
+    unset($node_types['mapeditor_map']);
   }
-  if ($geobundles) {
-    $form['geobundles'] = array(
-      '#type' => 'checkboxes',
-      '#title' => t('Bundles'),
-      '#options' => $geobundles,
-      '#default_value' => variable_get('geobundles', array()),
-      '#description' => t('Choose which bundles are available for creating maps'),
-    );
+  $form['mapeditor_data']['mapeditor_node_types'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Content types'),
+    '#options' => $node_types,
+    '#default_value' => variable_get('mapeditor_node_types', array()),
+    '#description' => t('Content types that are available as data sources in the Mapeditor map node.'),
+  );
 
-    // Iterates through chosen geo bundles to find taxo term fields.
-    // $taxonomy_term_fields_options = array();
-    if (variable_get('geobundles')) {
-      foreach (variable_get('geobundles') as $geobundle) {
-        if ($geobundle !== 0) {
-          $geobundle_shraps = explode('__', $geobundle);
-          $fields = field_info_instances($geobundle_shraps[0], $geobundle_shraps[1]);
-          foreach ($fields as $field) {
-            $field_info = field_info_field($field['field_name']);
-            if ($field_info['type'] == 'taxonomy_term_reference') {
-              $taxonomy_term_fields_options[$field['field_name']] = $field['label'];
-            }
-          }
-        }
-      }
-    }
+  // Allows including unpublished content in the query.
+  // @todo move to mapeditor node level, because it is stupid here.
+  $form['mapeditor_show_unpublished'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show unpublished'),
+    '#default_value' => variable_get('mapeditor_show_unpublished', FALSE),
+    '#description' => t('Show unpublished nodes in a map'),
+  );
 
-    if (isset($taxonomy_term_fields_options)) {
-
-      // Removes nuts_regions to prevent confusion.
-      if (array_key_exists('nuts_region', $taxonomy_term_fields_options)) {
-        unset($taxonomy_term_fields_options['nuts_region']);
-      }
-      $form['taxonomy_term_fields_map'] = array(
-        '#type' => 'checkboxes',
-        '#title' => t('Taxonomy vocabularies'),
-        '#options' => $taxonomy_term_fields_options,
-        '#default_value' => variable_get('taxonomy_term_fields_map', array()),
-        '#description' => t('Choose which vocabularies are available for generating maps'),
-      );
-    }
-    else {
-      $form['taxonomy_term_fields_map']['#markup'] = t('Select a node type first that has taxo terms.');
-    }
+  // Populates dropdown with system's vocabularies. But excludes the NUTS
+  // regions to prevent confusion.
+  $taxonomy_vocabularies = taxonomy_get_vocabularies();
+  $options = array();
+  foreach ($taxonomy_vocabularies as $vocabulary) {
+    $options[$vocabulary->machine_name] = $vocabulary->name;
   }
-  else {
-    $form['notice']['#prefix'] = '<p>';
-    $form['notice']['#markup'] = t('There are no bundles available.');
-    $form['notice']['#suffix'] = '</p>';
+  if (array_key_exists('nuts_regions', $options)) {
+    unset($options['nuts_regions']);
   }
-
-  $form['#submit'][] = 'mapeditor_settings_submit';
+  $form['mapeditor_data']['mapeditor_vocabularies'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Vocabularies'),
+    '#options' => $options,
+    '#default_value' => variable_get('mapeditor_vocabularies', array()),
+    '#description' => t('Vocabularies that are available as filters in the Mapeditor map node.'),
+  );
+  // @todo add default settings as form elements.
   return system_settings_form($form);
 }
 
 /**
- * Provides custom submit functionality for the settings form.
+ * Helper function to standardize forms between field formatters and others.
  *
- * Creates fields on the map node type.
- * // @todo : delete fields.
+ * Returns a fully loaded form element.
  */
-function mapeditor_settings_submit($form, &$form_state) {
+function _mapeditor_form_elements($group, $settings, $options = NULL) {
+  $form_element = NULL;
+  switch ($group) {
+    case 'popup':
+      $form_element = array(
+        '#type' => 'container',
+        '#weight'=> 10,
+      );
+      $form_element['show'] = array(
+        '#title' => t('Show a popup when markers are clicked.'),
+        '#type' => 'checkbox',
+        '#default_value' => $settings[$group]['show'],
+      );
+      $form_element['popin'] = array(
+        '#title' => t('Use pop-in (show details in right side bar).'),
+        '#type' => 'checkbox',
+        '#default_value' => $settings[$group]['popin'],
+      );
+      break;
 
-  if (isset($form_state['values']['taxonomy_term_fields_map'])) {
-    // Fetches selected taxonomy terms.
-    foreach ($form_state['values']['taxonomy_term_fields_map'] as $key => $term) {
-      if ($term !== 0) {
-
-        // Fetches field information to construct fields for the map node.
-        $field = field_info_field($term);
-
-        // Flattens a multivalue bundle list in order to fetch values from first
-        // item.
-        reset($field['bundles']);
-        $first_bundle = key($field['bundles']);
-        $field_instance = field_info_instance($first_bundle, $term, $field['bundles'][$first_bundle][0]);
-
-        // Skips if the field instance already exists on map node type.
-        if ($instance = field_info_instance('node', $key, 'mapeditor_map')) {
-          continue;
-        }
-
-        // Deletes already existing fields.
-        // @todo: futher develop
-        // if ($term == NULL) {
-        // $instance = field_info_instance('node', $key, 'mapeditor_map');
-        // field_delete_instance($instance);
-        // }
-
-        // Defines field instance.
-        $t = get_t();
-        $field_instance = array(
-          'field_name' => $key,
-          'label' => $field_instance['label'],
-          'widget' => array(
-            'active' => 1,
-            'module' => 'options',
-            'settings' => array(),
-            'type' => 'options_select',
-          ),
-          'display' => array(
-            'default' => array(
-              'label' => 'above',
-              'module' => 'taxonomy',
-              'settings' => array(),
-              'type' => 'taxonomy_term_reference_link',
-            ),
-          ),
-          'entity_type' => 'node',
-          'bundle' => 'mapeditor_map',
-        );
-        field_create_instance($field_instance);
+    case 'zoom':
+      // Define zoom options.
+      $zoom_options = array(
+        0 => t('0 - Low/Far'),
+        18 => t('18 - High/Close'),
+      );
+      for ($i = 1; $i < 18; $i++) {
+        $zoom_options[$i] = $i;
       }
-    }
-  }
-}
+      ksort($zoom_options);
 
-/**
- * Provides list of bundles that have geographical field attached to it.
- */
-function mapeditor_geo_bundles($geofields) {
-  $bundles = array();
-  foreach ($geofields as $geofield) {
-    $field = field_info_field($geofield);
-    if ($field['bundles']) {
-      foreach ($field['bundles'] as $entname => $ent) {
-        foreach ($ent as $bundle) {
-          $key = $entname . '__' . $bundle;
-          $field_info = field_info_bundles($entname);
-          $bundles[$key] = "{$field_info[$bundle]['label']} ({$entname})";
+      $form_element = array(
+        '#type' => 'container',
+        '#weight'=> 12,
+      );
+      $form_element['initialZoom'] = array(
+        '#title' => t('Initial zoom level'),
+        '#description' => t('The starting zoom level when this map is rendered.  Restricted by min and max zoom settings.'),
+        '#type' => 'select',
+        '#options' => $zoom_options,
+        '#default_value' => isset($settings[$group]['initialZoom']) ? $settings[$group]['initialZoom'] : 2,
+        '#element_validate' => array('_mapeditor_validate_zoom'),
+      );
+      $form_element['minZoom'] = array(
+        '#title' => t('Minimum zoom level'),
+        '#description' => t('The minimum zoom level allowed. (How far away can you view from?)'),
+        '#type' => 'select',
+        '#options' => $zoom_options,
+        '#default_value' => isset($settings[$group]['minZoom']) ? $settings[$group]['minZoom'] : 1,
+        '#element_validate' => array('_mapeditor_validate_zoom'),
+      );
+      $form_element['maxZoom'] = array(
+        '#title' => t('Maximum zoom level'),
+        '#description' => t('The maximum zoom level allowed. (How close in can you get?).'),
+        '#type' => 'select',
+        '#options' => $zoom_options,
+        '#default_value' => isset($settings[$group]['maxZoom']) ? $settings[$group]['maxZoom'] : 14,
+        '#element_validate' => array('_mapeditor_validate_zoom'),
+      );
+      break;
+
+    case 'icon':
+      $form_element = array(
+        '#type' => 'container',
+        '#weight'=> 14,
+      );
+      $form_element['icon'] = array(
+        '#type' => 'select',
+        '#title' => t('Icon'),
+        '#default_value' => isset($settings[$group]['icon']) ? $settings[$group]['icon'] : 'blue',
+        '#options' => _mapeditor_icons(),
+      );
+      break;
+
+    case 'tile_layer':
+      $form_element = array(
+        '#type' => 'container',
+        '#weight'=> 16,
+      );
+      $form_element['tile_layer'] = array(
+        '#type' => 'select',
+        '#title' => t('Tile layer'),
+        '#default_value' => isset($settings[$group]['tile_layer']) ? $settings[$group]['tile_layer'] : 'osmec',
+        '#options' => _mapeditor_tiles(),
+      );
+      break;
+
+    case 'height':
+      $form_element = array(
+        '#type' => 'container',
+        '#weight'=> 6,
+      );
+      $form_element['height'] = array(
+        '#title' => t('Map height'),
+        '#type' => 'textfield',
+        '#field_suffix' => t('px'),
+        '#size' => 4,
+        '#default_value' => isset($settings[$group]['height']) ? $settings[$group]['height'] : '430',
+        '#required' => FALSE,
+        '#element_validate' => array('_mapeditor_validate_height'),
+      );
+      break;
+
+    case 'center':
+
+      $form_element = array(
+        '#type' => 'fieldset',
+        '#title' => t('Map center'),
+        '#description' => t('Center of the map. E.g. latitude 50.84 and 4.36 longitude for Brussels'),
+        '#weight'=> 8,
+      );
+      $form_element['lat'] = array(
+        '#title' => t('Latitude'),
+        '#type' => 'textfield',
+        '#size' => 10,
+        '#default_value' => isset($settings[$group]['lat']) ? $settings[$group]['lat'] : 50.84,
+        '#required' => FALSE,
+        // @todo do
+        // '#element_validate' => array('mapeditor_validate_center'),
+      );
+      $form_element['lon'] = array(
+        '#title' => t('Longitude'),
+        '#type' => 'textfield',
+        '#size' => 10,
+        '#default_value' => isset($settings[$group]['lon']) ? $settings[$group]['lon'] : 4.36,
+        '#required' => FALSE,
+        // @todo do
+        // '#element_validate' => array('mapeditor_validate_center'),
+      );
+
+      // Kickstarts finding a map center by providing the coordinates of some
+      // European towns.
+      // https://en.wikipedia.org/wiki/Geographical_midpoint_of_Europe
+      if (module_exists('ec_geocoder')) {
+        drupal_add_library('system', 'drupal.ajax');
+        $localities = array();
+        foreach (array(
+                   'Brussels Belgium',
+                   'Budapest Hungary',
+                   'Tallinn Estonia',
+                   'Berlin Germany',
+                   ' Slovakia',
+                   'Warsaw Poland',
+                 ) as $locality) {
+          $localities[] = l($locality, 'admin/mapeditor/default_center', array(
+            'attributes' => array('class' => 'use-ajax'),
+            'query' => array('locality' => $locality),
+          ));
         }
+        // $localities = implode(', ', $localities);
+        // @todo . enable when figuring out the form element selector
+        // $form_element['lon']['#suffix'] = t('Set one of these localities as
+        // map center: ') . $localities;
       }
-    }
+      break;
+
+    case 'attribution':
+      $form_element = array(
+        '#type' => 'container',
+        '#weight'=> 16,
+      );
+      $form_element['attributionControl'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Show attribution'),
+        '#default_value' => isset($settings[$group]['attributionControl']) ? $settings[$group]['attributionControl'] : TRUE,
+      );
+      $form_element['attribution'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Attribution text'),
+        '#default_value' => isset($settings[$group]['attribution']) ? $settings[$group]['attribution'] : t('Map data by Eurostat and the European Commission'),
+        '#size' => 72,
+      );
+      break;
+
   }
-  return $bundles;
+  return $form_element;
 }

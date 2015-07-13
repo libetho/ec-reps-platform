@@ -223,6 +223,124 @@ function reps_core_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contact points in Malta';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'leaflet';
+  $handler->display->display_options['style_options']['data_source'] = 'field_reps_cp_gcoordinates';
+  $handler->display->display_options['style_options']['tile_layer'] = array(
+    'tile_layer' => 'osmec',
+  );
+  $handler->display->display_options['style_options']['height'] = array(
+    'height' => '430',
+  );
+  $handler->display->display_options['style_options']['center']['lat'] = '50.84';
+  $handler->display->display_options['style_options']['center']['lon'] = '4.36';
+  $handler->display->display_options['style_options']['popup']['show'] = 1;
+  $handler->display->display_options['style_options']['popup']['popin'] = 0;
+  $handler->display->display_options['style_options']['zoom']['initialZoom'] = '2';
+  $handler->display->display_options['style_options']['zoom']['minZoom'] = '2';
+  $handler->display->display_options['style_options']['zoom']['maxZoom'] = '12';
+  $handler->display->display_options['style_options']['icon']['icon'] = 'blue';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Geographic Coordinates */
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['id'] = 'field_reps_cp_gcoordinates';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['table'] = 'field_data_field_reps_cp_gcoordinates';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['field'] = 'field_reps_cp_gcoordinates';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['ui_name'] = 'Geographic Coordinates';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['type'] = 'geofield_latlon';
+  $handler->display->display_options['fields']['field_reps_cp_gcoordinates']['settings'] = array(
+    'data' => 'full',
+    'format' => 'decimal_degrees',
+    'labels' => 1,
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_contact_point' => 'reps_contact_point',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Contact point type */
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['id'] = 'field_reps_cp_type_tid';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['table'] = 'field_data_field_reps_cp_type';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['field'] = 'field_reps_cp_type_tid';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['ui_name'] = 'Contact point type';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['expose']['operator_id'] = 'field_reps_cp_type_tid_op';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['expose']['operator'] = 'field_reps_cp_type_tid_op';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['expose']['identifier'] = 'field_reps_cp_type_tid';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_reps_cp_type_tid']['vocabulary'] = 'reps_contact_point_categories';
+  $handler->display->display_options['path'] = 'services/contact-points';
+
+  /* Display: Content */
+  $handler = $view->new_display('block', 'Content', 'block_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mapeditor_map' => 'mapeditor_map',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $export['reps_contact_points'] = $view;
 
   $view = new view();
@@ -413,7 +531,7 @@ function reps_core_views_default_views() {
   $handler = $view->new_display('block', 'Slider Footer', 'block_1');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'flexslider';
-  $handler->display->display_options['style_options']['optionset'] = 'flexslider_default_thumbnail_slider';
+  $handler->display->display_options['style_options']['optionset'] = 'reps_footer_flexslider';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';

@@ -168,12 +168,9 @@ function reps_core_field_group_info() {
     'label' => 'Configuration',
     'weight' => '1',
     'children' => array(
-      0 => 'mapeditor_geobundle',
-      1 => 'mapeditor_height',
-      2 => 'mapeditor_initial_zoom',
-      3 => 'mapeditor_max_zoom',
-      4 => 'mapeditor_min_zoom',
-      5 => 'mapeditor_tile_layer',
+      0 => 'field_reps_cp_type',
+      1 => 'mapeditor_csv_data',
+      2 => 'mapeditor_map_definition',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -200,8 +197,8 @@ function reps_core_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'title_field',
-      1 => 'body',
+      0 => 'body',
+      1 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -232,6 +229,7 @@ function reps_core_field_group_info() {
       1 => 'field_meta_classification',
       2 => 'field_meta_description',
       3 => 'path',
+      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

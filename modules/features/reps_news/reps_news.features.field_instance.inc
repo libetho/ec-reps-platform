@@ -82,8 +82,8 @@ function reps_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -108,11 +108,7 @@ function reps_news_field_default_field_instances() {
   // Exported field_instance: 'node-reps_news-field_meta_description'
   $field_instances['node-reps_news-field_meta_description'] = array(
     'bundle' => 'reps_news',
-    'default_value' => array(
-      0 => array(
-        'value' => t('We are the local office of the Commission in Malta. Find out more about what we do.'),
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -120,8 +116,8 @@ function reps_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -259,7 +255,7 @@ function reps_news_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -625,8 +621,8 @@ function reps_news_field_default_field_instances() {
         'settings' => array(
           'link' => FALSE,
         ),
-        'type' => 'entityreference_label',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -664,7 +660,7 @@ function reps_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -716,7 +712,7 @@ function reps_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
@@ -812,7 +808,6 @@ function reps_news_field_default_field_instances() {
   t('Related video');
   t('Tags');
   t('Title');
-  t('We are the local office of the Commission in Malta. Find out more about what we do.');
 
   return $field_instances;
 }

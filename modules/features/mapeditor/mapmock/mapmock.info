@@ -12,5 +12,4 @@ dependencies[] = entity
 dependencies[] = views
 dependencies[] = geofield
 
-files[] = mapmock.module
 files[] = mapmock.migrate.inc

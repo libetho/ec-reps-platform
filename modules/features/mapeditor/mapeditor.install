@@ -7,8 +7,6 @@
 
 /**
  * Implements hook_install().
- *
- * Create nuts regions taxonmy term.
  */
 function mapeditor_install() {
   $t = get_t();
@@ -61,4 +59,37 @@ function mapeditor_enable() {
 function mapeditor_disable() {
   $t = get_t();
   drupal_set_message($t('Mapeditor was disabled on your site.'));
+}
+
+/**
+ * Deletes obsolete fields.
+ */
+function mapeditor_update_7100() {
+  $fields = array(
+    'mapeditor_initial_zoom',
+    'mapeditor_max_zoom',
+    'mapeditor_min_zoom',
+    'mapeditor_height',
+    'mapeditor_icon',
+    'mapeditor_popup',
+    'mapeditor_tile_layer',
+    'mapeditor_switch',
+    'mapeditor_geobundle',
+  );
+  foreach ($fields as $field) {
+    field_delete_field($field);
+    if ($instance = field_info_instance('node', $field, 'mapeditor_map')) {
+      field_delete_instance($instance);
+    }
+  }
+  field_purge_batch(count($fields));
+
+  // Deletes obsolete variables.
+  foreach (array(
+             'geofields',
+             'geobundles',
+             'taxonomy_term_fields_map',
+           ) as $delvar) {
+    variable_del($delvar);
+  }
 }

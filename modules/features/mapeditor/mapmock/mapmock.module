@@ -10,14 +10,14 @@
  *
  * Used among others in a URL to identify and describe a resource.
  */
-function mapmock_slugify($string) {
+function _mapmock_slugify($string) {
   return strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', check_plain($string)));
 }
 
 /**
  * Creates the topics taxonomy term.
  */
-function mapmock_create_taxonomy_term_topics() {
+function _mapmock_create_taxonomy_term_topics() {
   $t = get_t();
 
   // Creates the vocabulary if it does not exist already.
@@ -39,7 +39,7 @@ function mapmock_create_taxonomy_term_topics() {
 /**
  * Creates the node type den.
  */
-function mapmock_create_node_type_den() {
+function _mapmock_create_node_type_den() {
 
   $t = get_t();
 
@@ -72,7 +72,7 @@ function mapmock_create_node_type_den() {
 /**
  * Defines and creates topic field.
  */
-function mapmock_create_field_topics() {
+function _mapmock_create_field_topics() {
   $t = get_t();
 
   if (field_info_field('topics')) {
@@ -151,7 +151,7 @@ function mapmock_create_field_topics() {
 /**
  * Creates the nuts region field.
  */
-function mapmock_create_field_nuts_region() {
+function _mapmock_create_field_nuts_region() {
 
   // Defines the field instance for the user entity.
   $t = get_t();
@@ -188,7 +188,7 @@ function mapmock_create_field_nuts_region() {
 /**
  * Creates the nuts region field.
  */
-function mapmock_create_field_location() {
+function _mapmock_create_field_location() {
 
   $array_fields = array(
 
@@ -231,7 +231,14 @@ function mapmock_create_field_location() {
 
   // Creates the defined field(s).
   foreach ($array_fields as $field) {
-    field_create_field($field);
+
+    if (field_info_field($field)) {
+      drupal_set_message($t("Field location not created because it exists already"));
+    }
+    else {
+
+      field_create_field($field);
+    }
   }
 
   // Creates the field instance on the user entity.
