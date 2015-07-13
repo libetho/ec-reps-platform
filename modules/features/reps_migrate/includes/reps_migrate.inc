@@ -36,7 +36,7 @@ abstract class RepsMigrationAbstract extends MigrationAbstract {
    * @throws \Exception
    *   TBD.
    */
-  public function __construct(array $migration_key, array $arguments) {
+  public function __construct($migration_key, $arguments) {
 
     parent::__construct($arguments);
     $module = $arguments['group_name'];

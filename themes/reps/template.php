@@ -104,7 +104,6 @@ function reps_menu_link($variables) {
   // Test if there is a sub menu.
   if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
     // Menu item has sub menu.
-
     // Add carret and class.
     $element['#title'] .= '<span><b class="caret"></b></span>';
     $element['#attributes']['class'][] = 'dropdown';
@@ -197,7 +196,7 @@ function reps_js_alter(&$javascript) {
 /**
  * Implements reps_alter-page().
  */
-function reps_page_alter($page){
+function reps_page_alter($page) {
 
   // Reference.
   $meta_reference = array(
@@ -216,7 +215,7 @@ function reps_page_alter($page){
     '#tag' => 'meta',
     '#attributes' => array(
       'name' => 'creator',
-      'content' =>  filter_xss(variable_get('meta_creator')),
+      'content' => filter_xss(variable_get('meta_creator')),
     ),
   );
   drupal_add_html_head($meta_creator, 'meta_creator');

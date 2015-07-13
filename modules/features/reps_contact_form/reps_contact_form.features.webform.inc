@@ -150,9 +150,9 @@ function reps_contact_form_webform_defaults() {
           'form_key' => 'heading',
           'name' => 'Heading',
           'type' => 'markup',
-          'value' => '<p>Please read the privacy_policy statement</p>
-    <h3 class="reps_title_contact">Please submit your enquiry by completing the form below:</h3>
-    <p class="reps_required">(*)= required information</p>',
+          'value' => '<h3 class="reps_title_contact">Please submit your enquiry by completing the form below:</h3>
+            <p>Please read the privacy_policy statement</p>
+            <p class="reps_required">(*)= required information</p>',
           'extra' => array(
             'conditional_operator' => '=',
             'format' => 'full_html',

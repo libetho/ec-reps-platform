@@ -2,8 +2,7 @@
 /**
  * @file
  * Default theme implementation for beans.
- */
-/**
+ *
  * Available variables:
  * - $content: An array of comment items. Use render($content) to print them all, or
  *   print a subset such as render($content['field_example']). Use
@@ -29,11 +28,13 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      print render($content['title_field']);
-      print render($content['field_reps_core_abstract']);
-      print render($content['field_reps_core_more_info_link']);
-    ?>
-  </div>
+  <?php if(isset($content['field_reps_core_abstract'])): ?>
+	<div class="content"<?php print $content_attributes; ?>>
+	  <?php
+        print render($content['title_field']);
+        print render($content['field_reps_core_abstract']);
+        print render($content['field_reps_core_more_info_link']);
+      ?>
+	</div>
+  <?php endif;?>
 </div>

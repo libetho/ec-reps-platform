@@ -39,7 +39,7 @@ function reps_admin_menu() {
     '#weight' => 0,
   );
 
-  $items['admin/config/reps/feedback'] = array(
+  $items['admin/reps/feedback'] = array(
     'title' => 'Feedback form',
     'type' => MENU_DEFAULT_LOCAL_TASK,
     'weight' => 1,
@@ -73,7 +73,7 @@ function reps_admin_menu() {
 
   $items['admin/reps/menu/%/add'] = array(
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('_reps_admin_menu_add', 4),
+    'page arguments' => array('_reps_admin_menu_add', 3),
     'title' => 'Add a menu item',
     'type' => MENU_CALLBACK,
     'file' => 'reps_admin.admin.inc',
@@ -84,27 +84,25 @@ function reps_admin_menu() {
   $languages = locale_language_list('name');
   $enabled = count($languages);
 
-  if ($enabled > 1) {
-    $items['admin/reps/menu/translate'] = array(
-      'page callback' => 'drupal_get_form',
-      'page arguments' => array('_reps_admin_menu_translate'),
-      'title' => 'Translate a menu item',
-      'type' => MENU_LOCAL_TASK,
-      'file' => 'reps_admin.admin.inc',
-      'access arguments' => array('administer reps menu'),
-      'weight' => -7,
-    );
+  $items['admin/reps/menu/translate'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_translate'),
+    'title' => 'Translate a menu item',
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'reps_admin.admin.inc',
+    'access arguments' => array('administer reps menu'),
+    'weight' => -7,
+  );
 
-    $items['admin/reps/menu/%/translate'] = array(
-      'page callback' => 'drupal_get_form',
-      'page arguments' => array('_reps_admin_menu_translate', 4),
-      'title' => 'Translate a menu item',
-      'type' => MENU_CALLBACK,
-      'file' => 'reps_admin.admin.inc',
-      'tab_parent' => 'admin/config/reps/menu/translate',
-      'access arguments' => array('administer reps menu'),
-    );
-  }
+  $items['admin/reps/menu/%/translate'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_translate', 3),
+    'title' => 'Translate a menu item',
+    'type' => MENU_CALLBACK,
+    'file' => 'reps_admin.admin.inc',
+    'tab_parent' => 'admin/config/reps/menu/translate',
+    'access arguments' => array('administer reps menu'),
+  );
 
   $items['admin/reps/menu/delete'] = array(
     'page callback' => 'drupal_get_form',
@@ -118,7 +116,7 @@ function reps_admin_menu() {
 
   $items['admin/reps/menu/%/delete'] = array(
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('_reps_admin_menu_delete', 4),
+    'page arguments' => array('_reps_admin_menu_delete', 3),
     'title' => 'Delete a menu item',
     'type' => MENU_CALLBACK,
     'file' => 'reps_admin.admin.inc',

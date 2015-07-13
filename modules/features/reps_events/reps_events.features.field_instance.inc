@@ -107,11 +107,7 @@ function reps_events_field_default_field_instances() {
   // Exported field_instance: 'node-reps_event-field_meta_description'
   $field_instances['node-reps_event-field_meta_description'] = array(
     'bundle' => 'reps_event',
-    'default_value' => array(
-      0 => array(
-        'value' => t('We are the local office of the Commission in Malta. Find out more about what we do.'),
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -883,7 +879,6 @@ function reps_events_field_default_field_instances() {
   t('Related video');
   t('Tags');
   t('Title');
-  t('We are the local office of the Commission in Malta. Find out more about what we do.');
 
   return $field_instances;
 }

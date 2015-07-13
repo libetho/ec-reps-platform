@@ -1,5 +1,4 @@
 /* screen sizes definition */
-/* screen sizes definition */
 /* custom variables */
 /* custom styles */
 .smallScreensMenu {
@@ -72,7 +71,6 @@ body.reps #mainContainer {
   overflow: hidden;
   background: #FFF;
   /* SIDEBAR RIGHT */
-
 }
 body.reps #mainContainer .container {
   max-width: 984px;
@@ -93,7 +91,6 @@ body.reps #mainContainer #block-menu-menu-service-tools li.first a {
 }
 body.reps #mainContainer .region-featured-wrapper {
   /* MAIN MENU */
-
 }
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
@@ -229,7 +226,6 @@ body.reps #mainContainer #layout-body .block-views {
   box-shadow: none;
   margin-bottom: 10px;
   /* SLIDESHOW */
-
 }
 body.reps #mainContainer #layout-body .block-views .panel-heading {
   color: #878c92;
@@ -522,6 +518,62 @@ body.reps #mainContainer #layout-body #block-system-main {
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body {
   padding: 0;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform .reps_title_contact {
+  color: #b60522;
+  font-size: 150%;
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  margin-top: 10px;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform input[type=text],
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform input[type=email],
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform textarea {
+  border-radius: 0;
+  border: 1px inset #DDD;
+  height: auto;
+  width: 75%;
+  padding: 1px 0;
+  margin: 0;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform textarea {
+  width: 100% !important;
+  height: 200px;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform input[type=submit] {
+  background: ButtonFace;
+  color: ButtonText;
+  border: 2px outset ButtonFace;
+  padding: 2px 10px;
+  font-size: 105%;
+  border-radius: 0;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform input[type=submit]:hover {
+  border-style: inset;
+  -webkit-appearance: push-button;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform input[type=submit]:active:hover {
+  padding: 3px 10px;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform fieldset.captcha {
+  background: #EEE;
+  padding: 5px;
+  border: 1px solid #DDD;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform fieldset.captcha legend {
+  position: absolute;
+  text-transform: lowercase;
+  font-size: 150%;
+  border: none;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform fieldset.captcha legend:first-letter {
+  text-transform: uppercase;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform fieldset.captcha div.fieldset-description {
+  margin-top: 30px;
+  display: block;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-webform fieldset.captcha img {
+  border: 1px solid #DDD;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .view-filters {
   background: #b60522;
@@ -1070,18 +1122,22 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form .panel-body .form-item {
   margin: 0 0 5px;
+  float: left;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form .panel-body .form-item label {
   font-weight: 400;
   margin-bottom: 0;
 }
+body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form .panel-body .form-item .form-radios {
+  margin-top: 5px;
+}
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form .panel-body .form-item .form-radios .form-item:first-child {
   float: left;
-  margin: 0 5px 0 0;
+  margin: 0 10px 0 0;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form .panel-body .form-item .form-radios input {
-  vertical-align: bottom-text;
-  margin-top: 0;
+  vertical-align: middle;
+  margin-top: 2px;
   border: 0;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form .panel-body .form-item input {
@@ -1099,14 +1155,24 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form
   font-size: 120%;
   color: #333;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content {
   border: 1px #268BC1 solid;
   padding: 10px;
+  margin-bottom: 20px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .field-name-title-field {
-  font-size: 100%;
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content h3,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-title-field {
+  font-size: 110%;
+  margin-top: 5px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .field-name-field-reps-core-more-info-link {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content h3 a div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-title-field a div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content h3 a:visited div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-title-field a:visited div {
+  color: #268BC1;
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-reps-core-more-info-link {
   font-size: 90%;
   text-align: right;
   padding-left: 10px;
@@ -1119,22 +1185,25 @@ body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .field-name-field
   float: right;
   width: 200px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .field-name-field-reps-core-more-info-link a {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-reps-core-more-info-link a {
   margin-top: 0;
   padding: 5px 0;
   color: #FFF;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .field-name-field-reps-core-more-info-link a {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-reps-core-more-info-link a {
   padding: 5px 0;
   display: block;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks img {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content img {
   max-width: 213px;
   width: 100%;
   height: auto;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .field-name-field-caption {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-caption {
   display: none;
+}
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row-last .entity-bean .content {
+  margin-bottom: 10px !important;
 }
 body.reps #mainContainer a.btn-back-top {
   z-index: 50;
@@ -1161,14 +1230,17 @@ body.reps #mainContainer #layout-footer .container .block-views .panel-body {
 body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider {
   margin-bottom: 0;
   background: #eeeeee;
-  padding: 2% 5%;
+  padding: 20px 35px;
 }
-body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider li {
-  width: 180px !important;
+body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider .slides li {
+  width: 180px;
+  margin: 0 2px;
+  text-align: center;
+  height: 85px;
 }
-body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider li img {
-  width: 150px;
+body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider .slides li img {
   height: 83px;
+  width: 150px;
   border: 1px #cccccc solid;
 }
 body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider ul.flex-direction-nav li {
@@ -1188,6 +1260,21 @@ body.reps #mainContainer #layout-footer .container .block-views .panel-body .fle
 body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider ul.flex-direction-nav li a.flex-prev {
   background: url(../images/prev-horizontal.png) no-repeat;
   left: 0;
+}
+/* Popup MapEditor. */
+.leaflet-popup-content ul.links.inline {
+  display: none;
+}
+.leaflet-popup-content .field-name-title-field {
+  font-weight: bold;
+  font-size: 110%;
+  margin-bottom: 10px;
+}
+.leaflet-popup-content .field-name-body {
+  border-bottom: none;
+}
+#edit-field-reps-cp-type-tid-wrapper {
+  margin-right: 5px;
 }
 body.not-front #layout-body {
   margin-top: 50px !important;
@@ -1386,6 +1473,13 @@ body.not-front #layout-body {
   #layout-body #block-views-reps-videos-block .view-content .views-row img {
     max-width: 100%;
   }
+  #layout-body .view-reps-events .views-field-field-reps-core-image {
+    max-width: 175px;
+  }
+  #layout-body .view-reps-events .views-field-field-reps-core-image img {
+    width: 100% !important;
+    height: auto !important;
+  }
   #layout-body #sidebar-right.col-sm-4 {
     width: 33.333333333333336%;
     float: right;
@@ -1432,6 +1526,9 @@ body.not-front #layout-body {
   }
   #content-wrapper.col-xs-12 {
     width: 100% !important;
+  }
+  #content-wrapper.col-xs-12 .view-reps-events .views-field-field-reps-core-image {
+    max-width: 125px;
   }
   #sidebar-right.col-xs-12 {
     width: 100% !important;

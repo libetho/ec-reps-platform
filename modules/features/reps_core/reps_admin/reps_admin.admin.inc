@@ -74,7 +74,7 @@ function _reps_admin_menu_add($form, &$form_state, $mlid = NULL) {
   $form['actions']['cancel'] = array(
     '#type' => 'link',
     '#title' => t('Back to the menu list'),
-    '#href' => 'admin/config/reps/menu',
+    '#href' => 'admin/reps/menu',
     '#weight' => 50,
     '#attributes' => array('class' => array('button')),
   );
@@ -156,14 +156,14 @@ function _reps_admin_menu_edit($form, &$form_state) {
             '#type' => 'link',
             '#title' => t('Translate'),
             '#weight' => 1,
-            '#href' => '/admin/config/reps/menu/' . $child_mlid . '/translate',
+            '#href' => '/admin/reps/menu/' . $child_mlid . '/translate',
           );
 
           $form['items'][$parent_mlid]['children'][$child_mlid]['delete'] = array(
             '#type' => 'link',
             '#title' => t('Delete'),
             '#weight' => 1,
-            '#href' => '/admin/config/reps/menu/' . $child_mlid . '/delete',
+            '#href' => '/admin/reps/menu/' . $child_mlid . '/delete',
           );
 
           $form['items'][$parent_mlid]['children'][$child_mlid]['weight'] = array(
@@ -253,7 +253,7 @@ function _reps_admin_menu_translate($form, &$form_state, $mlid = NULL) {
     $form['actions']['cancel'] = array(
       '#type' => 'link',
       '#title' => t('Back to the menu list'),
-      '#href' => 'admin/config/reps/menu',
+      '#href' => 'admin/reps/menu',
       '#weight' => 50,
       '#attributes' => array('class' => array('button')),
     );
@@ -279,7 +279,7 @@ function _reps_admin_menu_translate($form, &$form_state, $mlid = NULL) {
       $form['actions']['cancel'] = array(
         '#type' => 'link',
         '#title' => t('Back to the menu list'),
-        '#href' => 'admin/config/reps/menu',
+        '#href' => 'admin/reps/menu',
         '#weight' => 50,
         '#attributes' => array('class' => array('button')),
       );
@@ -289,7 +289,7 @@ function _reps_admin_menu_translate($form, &$form_state, $mlid = NULL) {
 
       $form['add-item'] = array(
         '#type' => 'link',
-        '#href' => 'admin/config/reps/menu/add',
+        '#href' => 'admin/reps/menu/add',
         '#title' => t('Create a menu item'),
         '#attributes' => array('class' => array('button')),
       );
@@ -297,7 +297,7 @@ function _reps_admin_menu_translate($form, &$form_state, $mlid = NULL) {
       $form['cancel'] = array(
         '#type' => 'link',
         '#title' => t('Back to the menu list'),
-        '#href' => 'admin/config/reps/menu',
+        '#href' => 'admin/reps/menu',
         '#weight' => 50,
         '#attributes' => array('class' => array('button')),
       );
@@ -367,7 +367,7 @@ function _reps_admin_menu_delete($form, &$form_state, $mlid = NULL) {
     $form['cancel'] = array(
       '#type' => 'link',
       '#title' => t('Back to the menu list'),
-      '#href' => 'admin/config/reps/menu',
+      '#href' => 'admin/reps/menu',
       '#weight' => 50,
       '#attributes' => array('class' => array('button')),
     );
@@ -394,7 +394,7 @@ function _reps_admin_menu_delete($form, &$form_state, $mlid = NULL) {
       $form['cancel'] = array(
         '#type' => 'link',
         '#title' => t('Back to the menu list'),
-        '#href' => 'admin/config/reps/menu',
+        '#href' => 'admin/reps/menu',
         '#weight' => 50,
         '#attributes' => array('class' => array('button')),
       );
@@ -405,7 +405,7 @@ function _reps_admin_menu_delete($form, &$form_state, $mlid = NULL) {
     else {
       $form['add-item'] = array(
         '#type' => 'link',
-        '#href' => 'admin/config/reps/menu/add',
+        '#href' => 'admin/reps/menu/add',
         '#title' => t('Create a menu item'),
         '#attributes' => array('class' => array('button')),
       );
@@ -413,7 +413,7 @@ function _reps_admin_menu_delete($form, &$form_state, $mlid = NULL) {
       $form['cancel'] = array(
         '#type' => 'link',
         '#title' => t('Back to the menu list'),
-        '#href' => 'admin/config/reps/menu',
+        '#href' => 'admin/reps/menu',
         '#weight' => 50,
         '#attributes' => array('class' => array('button')),
       );
@@ -618,7 +618,7 @@ function _reps_admin_menu_translate_validate($form, &$form_state) {
 function _reps_admin_menu_delete_redirect($form, &$form_state) {
   if (!empty($form_state['values']['select_mlid'])) {
     $mlid = $form_state['values']['select_mlid'];
-    $form_state['redirect'] = 'admin/config/reps/menu/' . $mlid . '/delete';
+    $form_state['redirect'] = 'admin/reps/menu/' . $mlid . '/delete';
   }
 }
 
@@ -660,7 +660,7 @@ function _reps_admin_menu_delete_submit($form, &$form_state) {
     drupal_set_message(t("We couldn't find a menu item to remove, sorry", 'warning'));
   }
 
-  $form_state['redirect'] = 'admin/config/reps/menu';
+  $form_state['redirect'] = 'admin/reps/menu';
 }
 
 /**
@@ -668,10 +668,10 @@ function _reps_admin_menu_delete_submit($form, &$form_state) {
  */
 function _reps_admin_menu_add_submit($form, &$form_state) {
   $values = $form_state['values'];
-  $item = _reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
+  $item = reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
   if ($item) {
     drupal_set_message(t("We've successfully created the menu item %title", array('%title' => $values['title'])));
-    $form_state['redirect'] = 'admin/config/reps/menu';
+    $form_state['redirect'] = 'admin/reps/menu';
   }
 }
 
@@ -707,7 +707,7 @@ function _reps_admin_menu_translate_submit($form, &$form_state) {
 function _reps_admin_menu_translate_redirect($form, &$form_state) {
   if (!empty($form_state['values']['select_mlid'])) {
     $mlid = $form_state['values']['select_mlid'];
-    $form_state['redirect'] = 'admin/config/reps/menu/' . $mlid . '/translate';
+    $form_state['redirect'] = 'admin/reps/menu/' . $mlid . '/translate';
   }
 }
 

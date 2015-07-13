@@ -599,6 +599,76 @@ body.reps {
         .panel-body {
           padding: 0;
 
+          .node-webform {
+
+            .reps_title_contact {
+              color: @maltaRed;
+              font-size: 150%;
+              font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+              margin-top: 10px;
+            }
+
+            input[type=text],
+            input[type=email],
+            textarea {
+              border-radius: 0;
+              border: 1px inset #DDD;
+              height: auto;
+              width: 75%;
+              padding: 1px 0;
+              margin: 0;
+            }
+
+            textarea {
+              width: 100% !important;
+              height: 200px;
+            }
+
+            input[type=submit] {
+              background:ButtonFace;
+              color:ButtonText;
+              border:2px outset ButtonFace;
+              padding: 2px 10px;
+              font-size: 105%;
+              border-radius: 0;
+            }
+
+            input[type=submit]:hover {
+              border-style:inset;
+              -webkit-appearance:push-button;
+            }
+
+            input[type=submit]:active:hover{
+              padding: 3px 10px;
+            }
+
+            fieldset.captcha {
+              background: #EEE;
+              padding: 5px;
+              border: 1px solid #DDD;
+
+              legend {
+                position: absolute;
+                text-transform: lowercase;
+                font-size: 150%;
+                border: none;
+              }
+
+              legend:first-letter{
+                text-transform: uppercase;
+              }
+
+              div.fieldset-description {
+                margin-top: 30px;
+                display: block;
+              }
+
+              img {
+                border: 1px solid #DDD;
+              }
+            }
+          }
+
           .view-filters {
             background: @maltaRed;
             padding: 6px;
@@ -620,7 +690,7 @@ body.reps {
               .views-submit-button {
                 width: 20%;
               }
-              
+
               .views-exposed-widget {
                 padding: 0;
                 vertical-align: baseline;
@@ -682,8 +752,8 @@ body.reps {
                   font-size: 105%;
                 }
                 input[type=submit] {
-                  background:ButtonFace; 
-                  color:ButtonText; 
+                  background:ButtonFace;
+                  color:ButtonText;
                   border:2px outset ButtonFace;
                   padding: 2px 10px;
                   font-size: 105%;
@@ -836,11 +906,11 @@ body.reps {
 
                   td{
                     padding: 8px 5px 0;
-                    
+
                     a:visited strong {
                       color: #551A8B;
                     }
-                    
+
                     a strong{
                       color: #0065a2;
                     }
@@ -984,7 +1054,7 @@ body.reps {
                 }
               }
             } // .more-info-box
-            
+
             .field-name-field-reps-core-related-video {
               .field-item {
                 list-style: none;
@@ -1059,9 +1129,9 @@ body.reps {
               margin: 10px 0;
             }
           }
-          
-          #site-map { 
-            
+
+          #site-map {
+
             h2 {
               display: none;
             }
@@ -1073,13 +1143,14 @@ body.reps {
               li {
                 list-style-image: none;
                 list-style-type: none;
-                
+
                 a {
                   font-size: 90%;
                 }
               }
             }
           }
+
         } // #block-system-main END
       } // #layout-body END
 
@@ -1088,7 +1159,7 @@ body.reps {
           color: #b60522 !important;
           font-size: 150%;
         }
-          
+
         .views-field-title {
           padding: 5px 0 3px;
 
@@ -1234,6 +1305,7 @@ body.reps {
 
           .form-item {
             margin: 0 0 5px;
+            float: left;
 
             label {
               font-weight: 400;
@@ -1241,14 +1313,16 @@ body.reps {
             }
 
             .form-radios {
+              margin-top: 5px;
+
               .form-item:first-child {
                 float: left;
-                margin: 0 5px 0 0;
+                margin: 0 10px 0 0;
               }
 
               input {
-                vertical-align: bottom-text;
-                margin-top: 0;
+                vertical-align: middle;
+                margin-top: 2px;
                 border: 0;
               }
             } // .form-radios END
@@ -1273,12 +1347,21 @@ body.reps {
         } // .panel-body END
       } // #block-reps-core-reps-core-feedback-form END
 
-      .view-reps-bean-blocks {
+      .view-reps-bean-blocks .entity-bean .content {
         border: 1px #268BC1 solid;
         padding: 10px;
+        margin-bottom: 20px;
 
+        h3,
         .field-name-title-field {
-          font-size: 100%;
+          font-size: 110%;
+          margin-top: 5px;
+
+          a div,
+          a:visited div {
+            color: #268BC1;
+            font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+          }
         }
 
         .field-name-field-reps-core-more-info-link {
@@ -1305,6 +1388,9 @@ body.reps {
           display: none;
         }
       } // .view-reps-bean-blocks END
+      .view-reps-bean-blocks .views-row-last .entity-bean .content {
+        margin-bottom: 10px !important;
+      }
     } // #sidebar-right END
 
     a.btn-back-top {
@@ -1333,14 +1419,17 @@ body.reps {
             .flexslider {
               margin-bottom: 0;
               background: #eeeeee;
-              padding: 2% 5%;
+              padding: 20px 35px;
 
-              li {
-                width: 180px !important;
+              .slides li {
+                width: 180px;
+                margin: 0 2px;
+                text-align: center;
+                height: 85px;
 
                 img {
-                  width: 150px;
                   height: 83px;
+                  width: 150px;
                   border: 1px #cccccc solid;
                 }
               }
@@ -1375,6 +1464,24 @@ body.reps {
     } // #layout-footer END
   } // #mainContainer END
 } // body.reps END
+
+/* Popup MapEditor. */
+.leaflet-popup-content {
+  ul.links.inline {
+    display: none;
+  }
+  .field-name-title-field {
+    font-weight: bold;
+    font-size: 110%;
+    margin-bottom: 10px;
+  }
+  .field-name-body {
+    border-bottom: none;
+  }
+}
+#edit-field-reps-cp-type-tid-wrapper {
+  margin-right: 5px;
+}
 
 body.not-front #layout-body {
   margin-top: 50px !important;
@@ -1588,6 +1695,15 @@ body.not-front #layout-body {
       }
     }
 
+    .view-reps-events .views-field-field-reps-core-image {
+      max-width: 175px;
+
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+
     #sidebar-right.col-sm-4 {
       width: (@fullWidth/12)*4;
       float: right;
@@ -1621,6 +1737,10 @@ body.not-front #layout-body {
 
   #content-wrapper.col-xs-12 {
     width: 100% !important;
+
+    .view-reps-events .views-field-field-reps-core-image {
+      max-width: 125px;
+    }
   }
 
   #sidebar-right.col-xs-12 {

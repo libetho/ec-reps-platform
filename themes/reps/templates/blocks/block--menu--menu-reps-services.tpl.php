@@ -47,7 +47,7 @@
 <div id="block-menu-menu-service-tools">
 
   <div class="content"<?php print $content_attributes; ?>>
-  <?php 
+  <?php
     print $content;
    ?>
   </div>

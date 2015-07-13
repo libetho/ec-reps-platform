@@ -22,7 +22,7 @@ abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
    * @throws \Exception
    *   TDB.
    */
-  public function __construct(array $migration_key, array $arguments) {
+  public function __construct($migration_key, $arguments) {
     parent::__construct($migration_key, $arguments);
 
     $this->addFieldMapping('link_path', 'link');

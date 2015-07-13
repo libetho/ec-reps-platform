@@ -63,6 +63,10 @@ function reps_core_disable() {
  * Implements hook_install().
  */
 function reps_core_install() {
+  // Enable title_field
+  if (!module_exists('multisite_metatags')) {
+    module_enable(array('multisite_metatags'));
+  }
   // Set site name.
   variable_set('site_name', 'Reps');
   variable_set('site_frontpage', 'home');
@@ -72,6 +76,13 @@ function reps_core_install() {
   variable_set('classification', '16000');
   variable_set('meta_configuration', '16000');
   variable_set('file_private_path', '');
+  // Activate drupal search.
+  $active_search = variable_get('search_active_modules');
+  $active_search['node'] = 'node';
+  variable_set('search_active_modules', $active_search);
+
+  // Disable display suite.
+  module_disable(array('ds'));
 
   // Remove first node, created by Multisite deployment script.
   node_delete(1);
@@ -154,6 +165,13 @@ function reps_core_install() {
     $profile = wysiwyg_profile_load('full_html');
     $profile->settings['buttons']['tabber'] = array();
     $profile->settings['buttons']['tabber']['addTab'] = 1;
+    $profile->settings['buttons']['lite'] = array();
+    unset($profile->settings['buttons']['lite']['lite_AcceptAll']);
+    unset($profile->settings['buttons']['lite']['lite_RejectAll']);
+    unset($profile->settings['buttons']['lite']['lite_AcceptOne']);
+    unset($profile->settings['buttons']['lite']['lite_RejectOne']);
+    unset($profile->settings['buttons']['lite']['lite_ToggleShow']);
+    unset($profile->settings['buttons']['lite']['lite_ToggleTracking']);
     $settings = serialize($profile->settings);
     db_update('wysiwyg')
       ->fields(array('settings' => $settings))
@@ -184,4 +202,14 @@ function reps_core_uninstall() {
   variable_set('meta_configuration', '');
   variable_set('site_frontpage', 'node');
   theme_disable(array('reps'));
+}
+
+/**
+ * Implements hook_update().
+ */
+function reps_core_update_7001() {
+  // Activate drupal search.
+  $active_search = variable_get('search_active_modules');
+  $active_search['node'] = 'node';
+  variable_set('search_active_modules', $active_search);
 }

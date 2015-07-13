@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Reps_news.views_default.inc.
+ * reps_news.views_default.inc
  */
 
 /**
@@ -170,8 +170,8 @@ function reps_news_views_default_views() {
     5 => 0,
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Reps News Section */
+  $handler = $view->new_display('page', 'Reps News Section', 'page');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -223,15 +223,16 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_abstract']['field'] = 'field_reps_core_abstract';
   $handler->display->display_options['fields']['field_reps_core_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_reps_core_abstract']['element_label_colon'] = FALSE;
-  /* Field: Content: Category */
-  $handler->display->display_options['fields']['field_reps_news_category']['id'] = 'field_reps_news_category';
-  $handler->display->display_options['fields']['field_reps_news_category']['table'] = 'field_data_field_reps_news_category';
-  $handler->display->display_options['fields']['field_reps_news_category']['field'] = 'field_reps_news_category';
-  $handler->display->display_options['fields']['field_reps_news_category']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_news_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reps_news_category']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_reps_news_category']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_reps_news_category']['delta_offset'] = '0';
+  /* Field: Entity translation: Category: translated */
+  $handler->display->display_options['fields']['field_reps_news_category_et']['id'] = 'field_reps_news_category_et';
+  $handler->display->display_options['fields']['field_reps_news_category_et']['table'] = 'field_data_field_reps_news_category';
+  $handler->display->display_options['fields']['field_reps_news_category_et']['field'] = 'field_reps_news_category_et';
+  $handler->display->display_options['fields']['field_reps_news_category_et']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_news_category_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_news_category_et']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_reps_news_category_et']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -283,10 +284,11 @@ function reps_news_views_default_views() {
     6 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['keys']['remove_score'] = TRUE;
   $handler->display->display_options['path'] = 'news';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Home page news block */
+  $handler = $view->new_display('block', 'Home page news block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['defaults']['css_class'] = FALSE;

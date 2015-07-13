@@ -19,8 +19,8 @@ function reps_admin_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'admin/config/reps/menu' => 'admin/config/reps/menu',
-        'admin/config/reps/menu/*' => 'admin/config/reps/menu/*',
+        'admin/config/reps/menu' => 'admin/reps/menu',
+        'admin/config/reps/menu/*' => 'admin/reps/menu/*',
       ),
     ),
   );

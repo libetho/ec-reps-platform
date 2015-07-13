@@ -229,17 +229,12 @@ function reps_core_overrides() {
     field_update_instance($instances);
   }
 
-  // Set the entity translations options.
-  variable_set('language_content_type_page', '4');
-
   // Enable translations for various fields.
   $field_names = array(
     'body',
-    'mapeditor_geobundle',
     'field_meta_description',
     'field_meta_classification',
     'field_tags',
-    'mapeditor_tile_layer',
   );
 
   foreach ($field_names as $field_name) {
@@ -293,6 +288,19 @@ function reps_core_overrides() {
   user_role_grant_permissions($role->rid, array(
     'access site map',
   ));
+
+  // Remove js code from display of map.
+  $instances = field_read_instance('node', 'mapeditor_map_definition', 'mapeditor_map');
+  if ($instances) {
+    $instances['display']['default'] = array(
+      'label' => 'hidden',
+      'module' => 'text',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 1,
+    );
+    field_update_instance($instances);
+  }
 }
 
 /**
@@ -384,7 +392,7 @@ function reps_core_check_reps_roles($rolename) {
 }
 
 /**
- * Check if the role exists, otherwise create it.
+ * Check if the vocabulary exists, otherwise create it.
  *
  * @param string $voc
  *   Vocabulary machine name.
@@ -403,6 +411,26 @@ function reps_core_check_reps_vocabularies($voc) {
 
   return $check->vid;
 }
+
+/**
+ * Check if the menu exists, otherwise create it.
+ *
+ * @param string $menu
+ *   Menu machine name.
+ */
+function reps_core_check_reps_menus($menu) {
+  $check = menu_load($menu);
+
+  if (!$check) {
+    $menu = array(
+      'menu_name' => $menu,
+      'description' => '',
+      'title' => $menu,
+    );
+    menu_save($menu);
+  }
+}
+
 /**
  * Check if the content type exists, otherwise create it.
  *
@@ -479,42 +507,59 @@ function reps_core_post_features_enable_feature($component) {
       break;
 
     case 'taxonomy':
+      if (!module_exists('taxonomy_access_fix')) {
+        module_enable('taxonomy_access_fix');
+      }
+
       $rid = reps_core_check_reps_roles('REPS Administrator');
       // Get vocabulary vid to set permissions on taxonomies.
       $vid = reps_core_check_reps_vocabularies('reps_news_categories');
       user_role_grant_permissions($rid, array(
         'edit terms in ' . $vid,
         'delete terms in ' . $vid,
+        'add terms in reps_news_categories',
       ));
       $vid = reps_core_check_reps_vocabularies('reps_contact_point_categories');
       user_role_grant_permissions($rid, array(
         'edit terms in ' . $vid,
         'delete terms in ' . $vid,
+        'add terms in reps_contact_point_categories',
       ));
+
       break;
 
-    case 'bean':
+    case 'bean_type':
+      $bean_types = array(
+        'reps_core_sb_right_free_content',
+        'reps_core_quicklinks',
+        'reps_core_sb_right_image_link',
+      );
       $rid = reps_core_check_reps_roles('REPS Administrator');
-      user_role_grant_permissions($rid, array(
-        'create any reps_core_quicklinks bean',
-        'create any reps_core_sb_right_free_content bean',
-        'create any reps_core_sb_right_image_link bean',
-        'access bean overview',
-        'edit any reps_core_quicklinks bean',
-        'edit any reps_core_sb_right_free_content bean',
-        'edit any reps_core_sb_right_image_link bean',
-        'view any reps_core_quicklinks bean',
-        'view any reps_core_sb_right_free_content bean',
-        'view any reps_core_sb_right_image_link bean',
-        'view any reps_core_quicklinks bean',
-        'view any reps_core_sb_right_free_content bean',
-        'view any reps_core_sb_right_image_link bean',
-      ));
+
+      foreach ($bean_types as $bean) {
+        user_role_grant_permissions($rid, array(
+          'create any ' . $bean . ' bean',
+          'edit any ' . $bean . ' bean',
+          'delete any ' . $bean . ' bean',
+          'access bean overview',
+        ));
+      }
 
       $rid = reps_core_check_reps_roles('editor');
       user_role_revoke_permissions($rid, array(
         'view bean page',
       ));
+      break;
+
+    case 'menu_custom':
+      $rid = reps_core_check_reps_roles('REPS Administrator');
+      reps_core_check_reps_menus('menu-reps-services');
+      if (module_exists('menu_admin_per_menu')) {
+        user_role_grant_permissions($rid, array(
+          'administer menu-reps-services menu items',
+          'administer main-menu menu items',
+        ));
+      }
       break;
   }
 }
@@ -656,4 +701,30 @@ function reps_core_social_media_links_platform_info_alter(&$platforms) {
   foreach ($platforms as $service => $values) {
     $platforms[$service]['base url'] = '';
   }
+}
+
+/**
+ * Get the existing instances of fields.
+ *
+ * @param string $field_name
+ *   Select or topic for the moment.
+ *
+ * @return array
+ *   instances
+ */
+function _reps_core_get_instances($field_name) {
+  // Get instances per field.
+  $instances = array();
+  if ($field_name) {
+    $content_types = node_type_get_types();
+    $instances = array();
+    // We loop through the list of content types to find all the instances.
+    foreach ($content_types as $machine_name => $content_type) {
+      $exist = field_info_instance('node', $field_name, $machine_name);
+      if ($exist !== NULL) {
+        $instances[] = $exist['bundle'];
+      }
+    }
+  }
+  return $instances;
 }
