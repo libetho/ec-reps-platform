@@ -1,0 +1,21 @@
+{
+  "_id": "6cls04f8e48a1f369601cfe03005da8",
+  "type": "main-menu",
+  "default_language": "und",
+  "languages": [
+    "und",
+    "mt"
+  ],
+  "fields": {
+    "title": {
+      "und": ["Education"],
+      "mt": ["Edukazzjoni"]
+    },
+    "link": {
+      "und": ["education"]
+    },
+    "weight": {
+      "und": [6]
+    }
+  }
+}

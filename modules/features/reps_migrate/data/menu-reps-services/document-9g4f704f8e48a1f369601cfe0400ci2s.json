@@ -1,0 +1,21 @@
+{
+  "_id": "9g4f704f8e48a1f369601cfe0400ci2s",
+  "type": "menu-reps-services",
+  "default_language": "und",
+  "languages": [
+    "mt",
+    "und"
+  ],
+  "fields": {
+    "title": {
+      "und": ["Contact"],
+      "mt": ["Kuntatt"]
+    },
+    "link": {
+      "und": ["about-us/contact"]
+    },
+    "weight": {
+      "und": [4]
+    }
+  }
+}

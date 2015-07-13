@@ -1,0 +1,21 @@
+{
+  "_id": "2cls04f8e48a1f369601cfe03005da8",
+  "type": "main-menu",
+  "default_language": "und",
+  "languages": [
+    "und",
+    "mt"
+  ],
+  "fields": {
+    "title": {
+      "und": [ "About us"],
+      "mt": ["Dwarna"]
+    },
+    "link": {
+      "und": ["about-us"]
+    },
+    "weight": {
+      "und": [1]
+    }
+  }
+}

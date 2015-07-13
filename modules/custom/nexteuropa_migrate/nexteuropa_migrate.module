@@ -1,0 +1,5 @@
+<?php
+/**
+ * @file
+ * Migrate plugin using standard Integration Layers document format.
+ */
