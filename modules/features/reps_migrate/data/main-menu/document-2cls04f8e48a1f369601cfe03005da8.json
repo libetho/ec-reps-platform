@@ -4,7 +4,8 @@
   "default_language": "und",
   "languages": [
     "und",
-    "mt"
+    "mt",
+    "fr"
   ],
   "fields": {
     "title": {
