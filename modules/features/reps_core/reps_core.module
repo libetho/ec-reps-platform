@@ -383,9 +383,9 @@ function reps_core_check_reps_roles($rolename) {
   if (!$role) {
     // Create specific role for Reps sites administrator.
     $role = new stdClass();
-    $role->name = 'REPS Administrator';
+    $role->name = $rolename;
     user_role_save($role);
-    $role = user_role_load_by_name('REPS Administrator');
+    $role = user_role_load_by_name($rolename);
   }
 
   return $role->rid;
