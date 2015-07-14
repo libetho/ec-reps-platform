@@ -9,7 +9,8 @@
   "fields": {
     "title": {
       "und": ["Events"],
-      "mt": ["Avvenimenti"]
+      "mt": ["Avvenimenti"],
+      "fr": ["Événements"]
     },
     "link": {
       "und": ["events"]

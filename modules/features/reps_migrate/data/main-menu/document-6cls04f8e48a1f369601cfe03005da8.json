@@ -9,7 +9,8 @@
   "fields": {
     "title": {
       "und": ["Education"],
-      "mt": ["Edukazzjoni"]
+      "mt": ["Edukazzjoni"],
+      "fr": ["Jeunesse"]
     },
     "link": {
       "und": ["education"]

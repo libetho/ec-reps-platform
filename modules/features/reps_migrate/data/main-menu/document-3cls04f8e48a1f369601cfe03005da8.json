@@ -9,7 +9,8 @@
   "fields": {
     "title": {
       "und": ["Services"],
-      "mt": ["Servizzi"]
+      "mt": ["Servizzi"],
+      "fr": ["Services"]
     },
     "link": {
       "und": ["services"]

@@ -9,7 +9,8 @@
   "fields": {
     "title": {
       "und": ["News"],
-      "mt": ["Aħbarijiet"]
+      "mt": ["Aħbarijiet"],
+      "fr": ["Actualités"]
     },
     "link": {
       "und": ["news"]

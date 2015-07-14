@@ -9,7 +9,8 @@
   "fields": {
     "title": {
       "und": [ "About us"],
-      "mt": ["Dwarna"]
+      "mt": ["Dwarna"],
+      "fr": ["Qui sommes-nous"]
     },
     "link": {
       "und": ["about-us"]
