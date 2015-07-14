@@ -190,7 +190,8 @@ function reps_preprocess_views_view_unformatted(&$vars) {
  */
 function reps_js_alter(&$javascript) {
   unset($javascript['sites/reps/modules/contrib/ckeditor_tabber/semantic-tabs.js']);
-  drupal_add_js('sites/reps/themes/reps/scripts/reps_tabber.js');
+
+  drupal_add_js('sites/all/themes/reps/scripts/reps_tabber.js');
 }
 
 /**
