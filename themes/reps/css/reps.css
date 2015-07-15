@@ -1,4 +1,5 @@
 /* screen sizes definition */
+/* screen sizes definition */
 /* custom variables */
 /* custom styles */
 .smallScreensMenu {
@@ -71,6 +72,7 @@ body.reps #mainContainer {
   overflow: hidden;
   background: #FFF;
   /* SIDEBAR RIGHT */
+
 }
 body.reps #mainContainer .container {
   max-width: 984px;
@@ -91,6 +93,7 @@ body.reps #mainContainer #block-menu-menu-service-tools li.first a {
 }
 body.reps #mainContainer .region-featured-wrapper {
   /* MAIN MENU */
+
 }
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
@@ -226,6 +229,7 @@ body.reps #mainContainer #layout-body .block-views {
   box-shadow: none;
   margin-bottom: 10px;
   /* SLIDESHOW */
+
 }
 body.reps #mainContainer #layout-body .block-views .panel-heading {
   color: #878c92;
@@ -1155,24 +1159,24 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form
   font-size: 120%;
   color: #333;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row {
   border: 1px #268BC1 solid;
   padding: 10px;
   margin-bottom: 20px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content h3,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-title-field {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row h3,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-title-field {
   font-size: 110%;
   margin-top: 5px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content h3 a div,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-title-field a div,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content h3 a:visited div,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-title-field a:visited div {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row h3 a div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-title-field a div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row h3 a:visited div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-title-field a:visited div {
   color: #268BC1;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-reps-core-more-info-link {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-reps-core-more-info-link {
   font-size: 90%;
   text-align: right;
   padding-left: 10px;
@@ -1185,25 +1189,22 @@ body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .con
   float: right;
   width: 200px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-reps-core-more-info-link a {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-reps-core-more-info-link a {
   margin-top: 0;
   padding: 5px 0;
   color: #FFF;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-reps-core-more-info-link a {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-reps-core-more-info-link a {
   padding: 5px 0;
   display: block;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content img {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row img {
   max-width: 213px;
   width: 100%;
   height: auto;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .entity-bean .content .field-name-field-caption {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-caption {
   display: none;
-}
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row-last .entity-bean .content {
-  margin-bottom: 10px !important;
 }
 body.reps #mainContainer a.btn-back-top {
   z-index: 50;
