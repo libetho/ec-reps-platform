@@ -29,12 +29,10 @@
 ?>
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php if(isset($content['field_reps_core_image'])): ?>
-    <div class="content"<?php print $content_attributes; ?>>
-      <?php if (is_string($content['title_field'])): ?>
-  	    <h3><a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['title_field']));?></a></h3>
-      <?php endif;?>
-	  <a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['field_reps_core_image']));?></a>
-    </div>
-  <?php endif;?>
+  <div class="content"<?php print $content_attributes; ?>>
+    <?php if (render($content['title_field'])): ?>
+  	  <h3><a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['title_field']));?></a></h3>
+    <?php endif;?>
+	<a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['field_reps_core_image']));?></a>
+  </div>
 </div>
