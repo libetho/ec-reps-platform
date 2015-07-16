@@ -77,6 +77,7 @@ function reps_core_set_generic_permissions() {
     'translate taxonomy_term entities',
     'translate user-defined strings',
     'use media wysiwyg',
+    'view all unpublished content',
     'view private files',
     'view the administration theme',
     'schedule (un)publishing of nodes',

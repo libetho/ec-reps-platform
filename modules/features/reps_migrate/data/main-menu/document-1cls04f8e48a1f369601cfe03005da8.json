@@ -4,12 +4,14 @@
   "default_language": "und",
   "languages": [
     "und",
-    "mt"
+    "mt",
+    "fr"
   ],
   "fields": {
     "title": {
       "und": ["Home page"],
-      "mt" : ["Paġna Ewlenija"]
+      "mt" : ["Paġna Ewlenija"],
+      "fr" : ["Accueil"]
     },
     "link": {
       "und": ["<front>"]

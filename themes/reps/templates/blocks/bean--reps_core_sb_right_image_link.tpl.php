@@ -1,11 +1,11 @@
 <?php
 /**
- * @file bean--reps_core_sb_right_image_link.tpl.php
+ * @file
  * Default theme implementation for beans.
  *
  * Available variables:
- * - $content: An array of comment items. Use render($content) to print them all, or
- * print a subset such as render($content['field_example']). Use
+ * - $content: An array of comment items. Use render($content) to print
+ * them all, or print a subset such as render($content['field_example']). Use
  * hide($content['field_example']) to temporarily suppress the printing of a
  * given element.
  * - $title: The (sanitized) entity label.
@@ -29,10 +29,12 @@
 ?>
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php if (render($content['title_field'])): ?>
-  	  <h3><a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['title_field']));?></a></h3>
-    <?php endif;?>
-	<a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['field_reps_core_image']));?></a>
-  </div>
+  <?php if(isset($content['field_reps_core_image'])): ?>
+    <div class="content"<?php print $content_attributes; ?>>
+      <?php if (is_string($content['title_field'])): ?>
+  	    <h3><a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['title_field']));?></a></h3>
+      <?php endif;?>
+	  <a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['field_reps_core_image']));?></a>
+    </div>
+  <?php endif;?>
 </div>

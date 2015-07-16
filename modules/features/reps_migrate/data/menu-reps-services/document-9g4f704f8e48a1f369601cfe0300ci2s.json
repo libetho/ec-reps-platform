@@ -4,12 +4,14 @@
   "default_language": "und",
   "languages": [
     "mt",
-    "und"
+    "und",
+    "fr"
   ],
   "fields": {
     "title": {
       "und": ["Cookies"],
-      "mt": ["Cookies"]
+      "mt": ["Cookies"],
+      "fr": ["Cookies"]
     },
     "link": {
       "und": ["http://ec.europa.eu/cookies/index_en.htm"]
