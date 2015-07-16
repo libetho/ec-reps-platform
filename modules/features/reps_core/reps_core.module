@@ -465,7 +465,8 @@ function reps_core_check_reps_content_type($ct) {
 function reps_core_post_features_enable_feature($component) {
   switch ($component) {
     case 'field_base':
-      // Revert the field component, it seems it is not ready after it's enabled.
+      // Revert the field component, it seems it is not ready
+      // after it's enabled.
       features_revert(array('reps_core' => array($component)));
       break;
 
