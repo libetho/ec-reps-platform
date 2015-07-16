@@ -13,6 +13,21 @@ function reps_core_flexslider_default_presets() {
   $preset = new stdClass();
   $preset->disabled = FALSE; /* Edit this to true to make a default preset disabled initially */
   $preset->api_version = 1;
+  $preset->name = 'reps_homepage_flexslider';
+  $preset->title = 'REPS homepage flexslider';
+  $preset->theme = 'classic';
+  $preset->imagestyle_normal = 'flexslider_full';
+  $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
+  $preset->options = array(
+    'smoothHeight' => 0,
+    'slideshowSpeed' => '700000000'
+    // A little bit dirty but working.
+  );
+  $export['reps_homepage_flexslider'] = $preset;
+
+  $preset = new stdClass();
+  $preset->disabled = FALSE; /* Edit this to true to make a default preset disabled initially */
+  $preset->api_version = 1;
   $preset->name = 'reps_footer_flexslider';
   $preset->title = 'REPS footer flexslider';
   $preset->theme = 'classic';
