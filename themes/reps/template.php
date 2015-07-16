@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the reps theme.
@@ -95,6 +96,31 @@ function reps_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements theme_menu_tree_main_menu().
+ */
+function reps_menu_tree__main_submenu($variables) {
+  if (strpos($variables['tree'], 'dropdown-menu')) {
+    // There is a dropdown in this tree.
+    $variables['tree'] = str_replace('nav navbar-nav', 'list-group list-group-flush list-unstyled', $variables['tree']);
+    return '<ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
+  }
+  else {
+    // There is no dropdown in this tree, simply return it in a <ul>.
+    return '<ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
+  }
+}
+
+/**
+ * Implements theme_menu_tree().
+ */
+function reps_menu_tree__submenu($variables) {
+  $classes = 'dropdown-menu menu clearfix list-group list-group-flush list-unstyled';
+
+  return '<ul class="' . $classes . '">' . $variables['tree'] . '</ul>';
+}
+
+
+/**
  * Implements theme_menu_link().
  */
 function reps_menu_link($variables) {
@@ -112,12 +138,15 @@ function reps_menu_link($variables) {
     $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
     $element['#localized_options']['attributes']['data-toggle'][] = 'dropdown';
 
+    if ($element['#below']['#theme_wrappers'][0] == 'menu_tree__main_menu') {
+      $element['#below']['#theme_wrappers'][0] = 'menu_tree__main_submenu';
+    }
+    else {
+      $element['#below']['#theme_wrappers'][0] = 'menu_tree__submenu';
+    }
+
     // Render sub menu.
     $sub_menu = drupal_render($element['#below']);
-
-    // Add CSS class to ul tag
-    // Dirty, but I see no better way to do it.
-    $sub_menu = str_replace('<ul class="', '<ul class="dropdown-menu ', $sub_menu);
   }
 
   $element['#localized_options']['html'] = TRUE;
@@ -189,8 +218,8 @@ function reps_preprocess_views_view_unformatted(&$vars) {
  * Implements reps_js_alter().
  */
 function reps_js_alter(&$javascript) {
-  unset($javascript['sites/reps/modules/contrib/ckeditor_tabber/semantic-tabs.js']);
-  drupal_add_js('sites/reps/themes/reps/scripts/reps_tabber.js');
+  unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
+  drupal_add_js(drupal_get_path('theme', 'reps') . '/scripts/reps_tabber.js');
 }
 
 /**

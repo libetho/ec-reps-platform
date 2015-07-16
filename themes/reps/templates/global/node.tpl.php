@@ -86,10 +86,10 @@
   <?php print render($title_suffix); ?>
   <div class="content clearfix"<?php print $content_attributes; ?>>
     <?php
-    // We hide the comments and links now so that we can render them later.
+      // We hide the comments and links now so that we can render them later.
       hide($content['field_reps_core_image']);
-  hide($content['field_reps_core_abstract']);
-?>
+      hide($content['field_reps_core_abstract']);
+    ?>
 	<?php if (render($content['field_reps_core_abstract'])): ?>
 		<div class="content-abstract">
 			<?php print render($content['field_reps_core_image']); ?>
