@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation of main page.
