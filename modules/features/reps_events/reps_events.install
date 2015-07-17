@@ -31,10 +31,3 @@ function reps_events_disable() {
 function reps_events_install() {
   multisite_config_service('title')->replaceTitleField('node', 'reps_event', 'title');
 }
-
-/**
- * Implements hook_uninstall().
- */
-function reps_events_uninstall() {
-  // TBD.
-}
