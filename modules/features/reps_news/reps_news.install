@@ -60,10 +60,3 @@ function reps_news_install() {
     title_field_replacement_toggle('taxonomy_term', 'reps_news_categories', 'name');
   }
 }
-
-/**
- * Implements hook_uninstall().
- */
-function reps_news_uninstall() {
-  // TBD.
-}
