@@ -19,9 +19,11 @@ function reps_core_flexslider_default_presets() {
   $preset->imagestyle_normal = 'flexslider_full';
   $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
   $preset->options = array(
+    'slideshowSpeed' => '700000000',
     'smoothHeight' => 0,
-    'slideshowSpeed' => '700000000'
-    // A little bit dirty but working.
+    'startAt' => '0',
+    'initDelay' => '0',
+    'touch' => 1,
   );
   $export['reps_homepage_flexslider'] = $preset;
 
