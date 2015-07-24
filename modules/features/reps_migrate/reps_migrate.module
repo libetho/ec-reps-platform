@@ -194,7 +194,7 @@ function _reps_migrate_import_files($file, $dir) {
     drupal_mkdir($dest, NULL, TRUE);
   }
   // Run the checks.
-  $file = reps_migrate_file_check($file);
+  $file = _reps_migrate_file_check($file);
   if ($file) {
     // Import the file, the TRUE parameter means that it will be managed.
     $dfile = system_retrieve_file($file, $dest, TRUE, FILE_EXISTS_REPLACE);
