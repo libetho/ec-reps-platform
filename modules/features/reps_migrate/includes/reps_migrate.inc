@@ -13,7 +13,8 @@ use Drupal\nexteuropa_migrate\migrate\MigrationAbstract;
 abstract class RepsMigrationAbstract extends MigrationAbstract {
 
   /**
-   * TBD.
+   * Function getSourceKey.
+   *   Get the source key of the Migrate class
    */
   public function getSourceKey() {
     return array(
@@ -26,15 +27,12 @@ abstract class RepsMigrationAbstract extends MigrationAbstract {
   }
 
   /**
-   * TBD.
+   * Constructor of the migrate class.
    *
-   * @param array $migration_key
-   *   TBD.
+   * @param string $migration_key
+   *   Key identifying the folder containing the datas to migrate.
    * @param array $arguments
-   *   TBD.
-   *
-   * @throws \Exception
-   *   TBD.
+   *   properties of the migration class.
    */
   public function __construct($migration_key, $arguments) {
 

@@ -11,16 +11,14 @@ use Drupal\nexteuropa_migrate\migrate\MigrationAbstract;
  * Class RepsMenuMigrationAbstract.
  */
 abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
+  
   /**
-   * TBD.
+   * Constructor of the migrate class for Menus.
    *
-   * @param array $migration_key
-   *   TDB.
+   * @param string $migration_key
+   *   Key identifying the folder containing the datas to migrate.
    * @param array $arguments
-   *   TDB.
-   *
-   * @throws \Exception
-   *   TDB.
+   *   properties of the migration class.
    */
   public function __construct($migration_key, $arguments) {
     parent::__construct($migration_key, $arguments);
@@ -34,7 +32,7 @@ abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
   }
 
   /**
-   * TBD.
+   * Set Translation for menu item.
    */
   public function complete($item, \stdClass $source_row) {
     $this->menuTranslations($item, $source_row);
@@ -44,9 +42,9 @@ abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
    * Save field translations for the specified menu item.
    *
    * @param \stdClass $item
-   *   TDB.
+   *   Item to translate.
    * @param \stdClass $source_row
-   *   TBD.
+   *   Source info for the translation.
    */
   public function menuTranslations(\stdClass $item, \stdClass $source_row) {
     foreach ($source_row->getAvailableLanguages() as $language) {
@@ -86,7 +84,10 @@ abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
 class RepsServicesMenuMigration extends RepsMenuMigrationAbstract {
 
   /**
-   * TBD.
+   * Constructor of the migrate class for services menu.
+   *
+   * @param array $arguments
+   *   properties of the migration class.
    */
   public function __construct($arguments) {
     parent::__construct('menu-reps-services', $arguments);
@@ -108,7 +109,10 @@ class RepsServicesMenuMigration extends RepsMenuMigrationAbstract {
 class RepsMainMenuMigration extends RepsMenuMigrationAbstract {
 
   /**
-   * TBD.
+   * Constructor of the migrate class for services menu.
+   *
+   * @param array $arguments
+   *   properties of the migration class.
    */
   public function __construct($arguments) {
     parent::__construct('main-menu', $arguments);

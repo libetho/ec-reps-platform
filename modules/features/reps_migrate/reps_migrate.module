@@ -42,7 +42,7 @@ function reps_migrate_migrate_api() {
  * @return string|array
  *   Checked file or files.
  */
-function reps_migrate_file_check($files) {
+function _reps_migrate_file_check($files) {
   // Can be a string or an array.
   if (is_array($files)) {
     $i = 0;
@@ -85,7 +85,7 @@ function reps_migrate_file_check($files) {
  * @return array
  *   Term ids of the parameter(s).
  */
-function reps_migrate_get_classification($value) {
+function _reps_migrate_get_classification($value) {
   $values = !is_array($value) ? (array) $value : $value;
   $tids = array();
 
@@ -118,7 +118,7 @@ function reps_migrate_get_classification($value) {
  * @return string
  *   Text filtered.
  */
-function reps_migrate_import_contents_filter($text, $site) {
+function _reps_migrate_import_contents_filter($text, $site) {
   // Remove styles.
   preg_match_all('/style="(.*?)"/s', $text, $styles);
   if (is_array($styles[0])) {
@@ -184,7 +184,7 @@ function reps_migrate_import_contents_filter($text, $site) {
  * @return string
  *   Text filtered.
  */
-function reps_migrate_import_files($file, $dir) {
+function _reps_migrate_import_files($file, $dir) {
   // Build the folder tree if needed.
   $dest = 'public://' . $dir;
   $wrapper = file_stream_wrapper_get_instance_by_uri($dest);
@@ -218,7 +218,7 @@ function reps_migrate_import_files($file, $dir) {
  * @return string
  *   Path.
  */
-function reps_migrate_path($url, $site = FALSE) {
+function _reps_migrate_path($url, $site = FALSE) {
   $lang = locale_language_list('name');
   $lang_keys = array_keys($lang);
   $str = array();
@@ -252,7 +252,7 @@ function reps_migrate_path($url, $site = FALSE) {
  * @param string $nid
  *   Nid to set.
  */
-function reps_migrate_menu_item_link($path, $nid) {
+function _reps_migrate_menu_item_link($path, $nid) {
   $main_menu = menu_build_tree('main-menu');
   $services_menu = menu_build_tree('menu-reps-services');
   $merged = array_merge($main_menu, $services_menu);
