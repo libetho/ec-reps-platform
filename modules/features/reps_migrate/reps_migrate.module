@@ -42,7 +42,7 @@ function reps_migrate_migrate_api() {
  * @return string|array
  *   Checked file or files.
  */
-function reps_migrate_file_check($files) {
+function _reps_migrate_file_check($files) {
   // Can be a string or an array.
   if (is_array($files)) {
     $i = 0;
@@ -85,7 +85,7 @@ function reps_migrate_file_check($files) {
  * @return array
  *   Term ids of the parameter(s).
  */
-function reps_migrate_get_classification($value) {
+function _reps_migrate_get_classification($value) {
   $values = !is_array($value) ? (array) $value : $value;
   $tids = array();
 
@@ -118,7 +118,7 @@ function reps_migrate_get_classification($value) {
  * @return string
  *   Text filtered.
  */
-function reps_migrate_import_contents_filter($text, $site) {
+function _reps_migrate_import_contents_filter($text, $site) {
   // Remove styles.
   preg_match_all('/style="(.*?)"/s', $text, $styles);
   if (is_array($styles[0])) {
@@ -134,7 +134,7 @@ function reps_migrate_import_contents_filter($text, $site) {
   // Handling images.
   if (!empty($images[2])) {
     foreach ($images[2] as $image) {
-      $file_link = reps_migrate_import_files($image, 'img/body');
+      $file_link = _reps_migrate_import_files($image, 'img/body');
       if ($file_link) {
         $text = str_replace($images[2][$i], $file_link, $text);
       }
@@ -154,11 +154,11 @@ function reps_migrate_import_contents_filter($text, $site) {
       preg_match('#(.*?)/(.*?).(doc|docx|xls|ppt|pdf|zip|rar)$#', $link, $file);
       if (!empty($file[2])) {
         // Import the file and replace the href attibute of the link.
-        $reps_link = reps_migrate_import_files('http://ec.europa.eu/' . $site . '/' . $link, 'docs/body');
+        $reps_link = _reps_migrate_import_files('http://ec.europa.eu/' . $site . '/' . $link, 'docs/body');
       }
       else {
         // We assume it is a link to a webpage.
-        $reps_link = $GLOBALS['base_url'] . '/' . reps_migrate_path($link);
+        $reps_link = $GLOBALS['base_url'] . '/' . _reps_migrate_path($link);
       }
       if ($reps_link) {
         $text = str_replace($links[0][$i], '<a ' . $links[1][$i] . ' href="' . $reps_link . '"', $text);
@@ -184,7 +184,7 @@ function reps_migrate_import_contents_filter($text, $site) {
  * @return string
  *   Text filtered.
  */
-function reps_migrate_import_files($file, $dir) {
+function _reps_migrate_import_files($file, $dir) {
   // Build the folder tree if needed.
   $dest = 'public://' . $dir;
   $wrapper = file_stream_wrapper_get_instance_by_uri($dest);
@@ -194,7 +194,7 @@ function reps_migrate_import_files($file, $dir) {
     drupal_mkdir($dest, NULL, TRUE);
   }
   // Run the checks.
-  $file = reps_migrate_file_check($file);
+  $file = _reps_migrate_file_check($file);
   if ($file) {
     // Import the file, the TRUE parameter means that it will be managed.
     $dfile = system_retrieve_file($file, $dest, TRUE, FILE_EXISTS_REPLACE);
@@ -218,7 +218,7 @@ function reps_migrate_import_files($file, $dir) {
  * @return string
  *   Path.
  */
-function reps_migrate_path($url, $site = FALSE) {
+function _reps_migrate_path($url, $site = FALSE) {
   $lang = locale_language_list('name');
   $lang_keys = array_keys($lang);
   $str = array();
@@ -252,7 +252,7 @@ function reps_migrate_path($url, $site = FALSE) {
  * @param string $nid
  *   Nid to set.
  */
-function reps_migrate_menu_item_link($path, $nid) {
+function _reps_migrate_menu_item_link($path, $nid) {
   $main_menu = menu_build_tree('main-menu');
   $services_menu = menu_build_tree('menu-reps-services');
   $merged = array_merge($main_menu, $services_menu);
