@@ -134,7 +134,7 @@ function _reps_migrate_import_contents_filter($text, $site) {
   // Handling images.
   if (!empty($images[2])) {
     foreach ($images[2] as $image) {
-      $file_link = reps_migrate_import_files($image, 'img/body');
+      $file_link = _reps_migrate_import_files($image, 'img/body');
       if ($file_link) {
         $text = str_replace($images[2][$i], $file_link, $text);
       }
@@ -154,7 +154,7 @@ function _reps_migrate_import_contents_filter($text, $site) {
       preg_match('#(.*?)/(.*?).(doc|docx|xls|ppt|pdf|zip|rar)$#', $link, $file);
       if (!empty($file[2])) {
         // Import the file and replace the href attibute of the link.
-        $reps_link = reps_migrate_import_files('http://ec.europa.eu/' . $site . '/' . $link, 'docs/body');
+        $reps_link = _reps_migrate_import_files('http://ec.europa.eu/' . $site . '/' . $link, 'docs/body');
       }
       else {
         // We assume it is a link to a webpage.
