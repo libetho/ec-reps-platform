@@ -11,16 +11,16 @@ use Drupal\nexteuropa_migrate\migrate\MigrationAbstract;
  * Class RepsMenuMigrationAbstract.
  */
 abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
-  
+
   /**
    * Constructor of the migrate class for Menus.
    *
    * @param string $migration_key
    *   Key identifying the folder containing the datas to migrate.
    * @param array $arguments
-   *   properties of the migration class.
+   *   Properties of the migration class.
    */
-  public function __construct($migration_key, $arguments) {
+  public function __construct($migration_key, $arguments = array()) {
     parent::__construct($migration_key, $arguments);
 
     $this->addFieldMapping('link_path', 'link');
@@ -87,9 +87,9 @@ class RepsServicesMenuMigration extends RepsMenuMigrationAbstract {
    * Constructor of the migrate class for services menu.
    *
    * @param array $arguments
-   *   properties of the migration class.
+   *   Properties of the migration class.
    */
-  public function __construct($arguments) {
+  public function __construct($arguments = array()) {
     parent::__construct('menu-reps-services', $arguments);
 
     $this->setMap(new MigrateSQLMap(
@@ -112,9 +112,9 @@ class RepsMainMenuMigration extends RepsMenuMigrationAbstract {
    * Constructor of the migrate class for services menu.
    *
    * @param array $arguments
-   *   properties of the migration class.
+   *   Properties of the migration class.
    */
-  public function __construct($arguments) {
+  public function __construct($arguments = array()) {
     parent::__construct('main-menu', $arguments);
 
     $this->setMap(new MigrateSQLMap(
