@@ -158,7 +158,7 @@ function _reps_migrate_import_contents_filter($text, $site) {
       }
       else {
         // We assume it is a link to a webpage.
-        $reps_link = $GLOBALS['base_url'] . '/' . reps_migrate_path($link);
+        $reps_link = $GLOBALS['base_url'] . '/' . _reps_migrate_path($link);
       }
       if ($reps_link) {
         $text = str_replace($links[0][$i], '<a ' . $links[1][$i] . ' href="' . $reps_link . '"', $text);
