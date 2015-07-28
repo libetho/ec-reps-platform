@@ -4,12 +4,14 @@
   "default_language": "und",
   "languages": [
     "mt",
-    "und"
+    "und",
+    "fr"
   ],
   "fields": {
     "title": {
       "und": ["Sitemap"],
-      "mt": ["Mappa tas-sit"]
+      "mt": ["Mappa tas-sit"],
+      "fr": ["Plan du site"]
     },
     "link": {
       "und": ["sitemap"]

@@ -67,4 +67,3 @@ features_exclude[dependencies][link] = link
 features_exclude[dependencies][reps_core] = reps_core
 features_exclude[dependencies][views] = views
 features_exclude[field_base][name_field] = name_field
-files[] = migrate/reps_news.migrate.inc

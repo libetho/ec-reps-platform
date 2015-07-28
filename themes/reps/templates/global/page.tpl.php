@@ -96,10 +96,6 @@
  */
 ?>
 
-<?php
-global $base_url;
-?>
-
   <a id="top-page"></a>
 
   <div class="container">
@@ -127,7 +123,7 @@ global $base_url;
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header" data-spy="affix" data-offset-top="165">
             <?php if ($menu_visible): ?>
-              <div class="visible-xs hidden-sm home-button"><a href="<?php print ($base_url); ?>"><span><?php print (t('Home'));?></span></a></div>
+              <div class="visible-xs hidden-sm home-button"><?php print l('<span>' . t('Home') . '</span>', '<front>', array('html' => TRUE)); ?></div>
 			  <button id="menu-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <?php print (t('Menu')); ?>
               </button>

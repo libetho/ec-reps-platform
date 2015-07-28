@@ -30,10 +30,3 @@ function reps_publications_disable() {
 function reps_publications_install() {
   multisite_config_service('title')->replaceTitleField('node', 'reps_publication', 'title');
 }
-
-/**
- * Implements hook_uninstall().
- */
-function reps_publications_uninstall() {
-  // TBD.
-}

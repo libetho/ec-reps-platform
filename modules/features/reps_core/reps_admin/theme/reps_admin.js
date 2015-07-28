@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Custom javascript for the reps_core feature.
+ */
+
 (function ($) {
   $(document).ready(function() {
     $('#-reps-admin-menu-edit tr').each(function() {

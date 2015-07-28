@@ -383,9 +383,9 @@ function reps_core_check_reps_roles($rolename) {
   if (!$role) {
     // Create specific role for Reps sites administrator.
     $role = new stdClass();
-    $role->name = 'REPS Administrator';
+    $role->name = $rolename;
     user_role_save($role);
-    $role = user_role_load_by_name('REPS Administrator');
+    $role = user_role_load_by_name($rolename);
   }
 
   return $role->rid;
@@ -465,7 +465,8 @@ function reps_core_check_reps_content_type($ct) {
 function reps_core_post_features_enable_feature($component) {
   switch ($component) {
     case 'field_base':
-      // Revert the field component, it seems it is not ready after it's enabled.
+      // Revert the field component, it seems it is not ready
+      // after it's enabled.
       features_revert(array('reps_core' => array($component)));
       break;
 

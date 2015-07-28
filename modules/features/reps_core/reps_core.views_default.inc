@@ -24,6 +24,7 @@ function reps_core_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['css_class'] = 'bean-right';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -43,7 +44,7 @@ function reps_core_views_default_views() {
     'reps_core_sb_right_free_content' => 'reps_core_sb_right_free_content',
     'reps_core_sb_right_image_link' => 'reps_core_sb_right_image_link',
   );
-  /* Filter criterion: Block: Position (field_reps_rightcol_position) */
+  /* Filter criterion: Field: Position (field_reps_rightcol_position) */
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['id'] = 'field_reps_rightcol_position_value';
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['table'] = 'field_data_field_reps_rightcol_position';
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['field'] = 'field_reps_rightcol_position_value';
@@ -54,10 +55,28 @@ function reps_core_views_default_views() {
   /* Display: Right column top */
   $handler = $view->new_display('block', 'Right column top', 'block');
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Block: Weight (field_reps_rightcol_weight) */
+  /* Sort criterion: Field: Weight (field_reps_rightcol_weight) */
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['id'] = 'field_reps_rightcol_weight_value';
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['table'] = 'field_data_field_reps_rightcol_weight';
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['field'] = 'field_reps_rightcol_weight_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Block: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'bean';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_core_sb_right_blue_button' => 'reps_core_sb_right_blue_button',
+    'reps_core_sb_right_free_content' => 'reps_core_sb_right_free_content',
+    'reps_core_sb_right_image_link' => 'reps_core_sb_right_image_link',
+  );
+  /* Filter criterion: Field: Position (field_reps_rightcol_position) */
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['id'] = 'field_reps_rightcol_position_value';
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['table'] = 'field_data_field_reps_rightcol_position';
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['field'] = 'field_reps_rightcol_position_value';
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Homepage Quicklinks */
   $handler = $view->new_display('block', 'Homepage Quicklinks', 'block_1');
@@ -123,7 +142,7 @@ function reps_core_views_default_views() {
   $handler = $view->new_display('block', 'Right column bottom', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Block: Weight (field_reps_rightcol_weight) */
+  /* Sort criterion: Field: Weight (field_reps_rightcol_weight) */
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['id'] = 'field_reps_rightcol_weight_value';
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['table'] = 'field_data_field_reps_rightcol_weight';
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['field'] = 'field_reps_rightcol_weight_value';
@@ -134,10 +153,11 @@ function reps_core_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'bean';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_core_sb_right_blue_button' => 'reps_core_sb_right_blue_button',
     'reps_core_sb_right_free_content' => 'reps_core_sb_right_free_content',
     'reps_core_sb_right_image_link' => 'reps_core_sb_right_image_link',
   );
-  /* Filter criterion: Block: Position (field_reps_rightcol_position) */
+  /* Filter criterion: Field: Position (field_reps_rightcol_position) */
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['id'] = 'field_reps_rightcol_position_value';
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['table'] = 'field_data_field_reps_rightcol_position';
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['field'] = 'field_reps_rightcol_position_value';
@@ -364,6 +384,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_options']['optionset'] = 'reps_homepage_flexslider';
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Field: Image */

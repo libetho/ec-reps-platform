@@ -109,6 +109,24 @@ function reps_core_add_languages($languages = array()) {
 }
 
 /**
+ * Disable system languages.
+ *
+ * @param array $languages
+ *   Array of languages codes.
+ */
+function reps_core_disable_languages($languages = array()) {
+  $langs = language_list();
+  foreach ($languages as $lang) {
+    if (isset($langs[$lang])) {
+      db_update('languages')
+       ->fields(array('enabled' => 0))
+       ->condition('language', $lang, '=')
+       ->execute();
+    }
+  }
+}
+
+/**
  * Get taxonomy term ID by term name.
  *
  * @param string $term
