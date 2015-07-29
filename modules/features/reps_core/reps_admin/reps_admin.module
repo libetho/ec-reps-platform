@@ -1,0 +1,317 @@
+<?php
+/**
+ * @file
+ * Code for the REPS admin feature.
+ */
+
+include_once 'reps_admin.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function reps_admin_menu() {
+  // Configuration page.
+  $items['admin/reps'] = array(
+    'title' => 'REPS configurations',
+    'description' => 'Configure a REPS website',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_feedback'),
+    'access arguments' => array('administer reps settings'),
+    'file' => 'reps_admin.admin.inc',
+  );
+
+  $items['admin/reps/menu'] = array(
+    'title' => 'Menu',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => '_reps_admin_render_menu_tree',
+    'access arguments' => array('administer reps menu'),
+    'weight' => -1,
+  );
+
+  $items['admin/reps/social'] = array(
+    'title' => 'Social Links',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_settings_social'),
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer reps social links'),
+    'file' => 'reps_admin.admin.inc',
+    '#weight' => 0,
+  );
+
+  $items['admin/reps/feedback'] = array(
+    'title' => 'Feedback form',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 1,
+  );
+
+  $items['admin/reps/menu/list'] = array(
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'title' => 'Menu tree',
+    'weight' => -10,
+  );
+
+  $items['admin/reps/menu/edit'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_edit'),
+    'title' => 'Edit menu items',
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'reps_admin.admin.inc',
+    'access arguments' => array('administer reps menu'),
+    'weight' => -9,
+  );
+
+  $items['admin/reps/menu/add'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_add'),
+    'title' => 'Add a menu item',
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'reps_admin.admin.inc',
+    'access arguments' => array('administer reps menu'),
+    'weight' => -8,
+  );
+
+  $items['admin/reps/menu/%/add'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_add', 3),
+    'title' => 'Add a menu item',
+    'type' => MENU_CALLBACK,
+    'file' => 'reps_admin.admin.inc',
+    'tab_parent' => 'admin/config/reps/menu/add',
+    'access arguments' => array('administer reps menu'),
+  );
+
+  $languages = locale_language_list('name');
+  $enabled = count($languages);
+
+  $items['admin/reps/menu/translate'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_translate'),
+    'title' => 'Translate a menu item',
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'reps_admin.admin.inc',
+    'access arguments' => array('administer reps menu'),
+    'weight' => -7,
+  );
+
+  $items['admin/reps/menu/%/translate'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_translate', 3),
+    'title' => 'Translate a menu item',
+    'type' => MENU_CALLBACK,
+    'file' => 'reps_admin.admin.inc',
+    'tab_parent' => 'admin/config/reps/menu/translate',
+    'access arguments' => array('administer reps menu'),
+  );
+
+  $items['admin/reps/menu/delete'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_delete'),
+    'title' => 'Delete a menu item',
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'reps_admin.admin.inc',
+    'access arguments' => array('administer reps menu'),
+    'weight' => -6,
+  );
+
+  $items['admin/reps/menu/%/delete'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_menu_delete', 3),
+    'title' => 'Delete a menu item',
+    'type' => MENU_CALLBACK,
+    'file' => 'reps_admin.admin.inc',
+    'tab_parent' => 'admin/config/reps/menu/delete',
+    'access arguments' => array('administer reps menu'),
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_permission().
+ */
+function reps_admin_permission() {
+  return array(
+    'administer reps settings' => array(
+      'title' => t('Administer REPS settings'),
+    ),
+    'administer reps menu' => array(
+      'title' => t('Administer REPS menu'),
+    ),
+    'administer reps social links' => array(
+      'title' => t('Administer REPS social links'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function reps_admin_theme($existing, $type, $theme, $path) {
+  return array(
+    'reps_admin_menu' => array(
+      'render element' => 'form',
+    ),
+    'reps_admin_social' => array(
+      'render element' => 'form',
+    ),
+  );
+}
+
+/**
+ * Helper function to get first level menu items.
+ *
+ * @param string $menu
+ *   Menu's machine name.
+ *
+ * @return string
+ *   Menu's machine name.
+ */
+function _reps_admin_get_menu_items($menu = 'main-menu', $level = 1, $lang = NULL) {
+  $items = menu_tree_all_data($menu, NULL, $level);
+  $local_items = i18n_menu_localize_tree($items, $lang);
+
+  foreach ($local_items as $item) {
+    if ($level == 1) {
+      $options[$item['link']['mlid']] = $item['link']['title'];
+    }
+    else {
+      if (!empty($item['below'])) {
+        foreach ($item['below'] as $child) {
+          $options[$item['link']['title']][$child['link']['mlid']] = $child['link']['title'];
+        }
+      }
+    }
+  }
+
+  if (!empty($options)) {
+    return $options;
+  }
+}
+
+/**
+ * Helper function to get the enabled languages.
+ */
+function _reps_admin_get_languages() {
+  $languages = locale_language_list('name');
+
+  foreach ($languages as $code => $name) {
+    $options[$code] = $name;
+  }
+
+  return $options;
+}
+
+/**
+ * Helper function to get the translations.
+ */
+function _reps_admin_get_string_translations($mlid, $string) {
+  $languages = _reps_admin_get_languages();
+  $translations = array();
+
+  if (!empty($languages)) {
+    foreach ($languages as $langcode => $langname) {
+      $name = 'menu:item:' . $mlid . ':title';
+      $translation = i18n_string_translate($name, $string, array('langcode' => $langcode));
+
+      if ($translation != $string) {
+        $translations[$langcode] = $translation;
+      }
+      else {
+        $translations[$langcode] = '';
+      }
+    }
+  }
+
+  return $translations;
+}
+
+/**
+ * Helper function to render a menu tree.
+ *
+ * @param string $menu
+ *   Name of menu.
+ *
+ * @return array
+ *   Output as a markup.
+ */
+function _reps_admin_render_menu_tree($menu = 'main-menu') {
+  drupal_add_css(drupal_get_path('module', 'reps_admin') . '/theme/reps_admin.css', array('group' => CSS_DEFAULT, 'type' => 'file'));
+  $site_name = variable_get('site_name');
+  $tree = menu_tree_all_data($menu, NULL, 2);
+  $output = menu_tree_output($tree);
+  $markup = drupal_render($output);
+  $markup = '<h1>' . $site_name . ' menu</h1>' . $markup;
+  $markup = '<div class="reps-menu-tree">' . $markup . '</div>';
+  return array('#markup' => $markup);
+}
+
+/**
+ * Helper function to get the menu items.
+ *
+ * @param string $menu
+ *   Name of the menu.
+ *
+ * @return array
+ *   Array of menu items.
+ */
+function _reps_admin_prepare_menu_tree($menu = 'main-menu') {
+  $items = menu_tree_all_data($menu, NULL, 2);
+  $tree = menu_tree_output($items);
+  $variables = array();
+  foreach ($tree as $parent_mlid => $values) {
+    if (is_numeric($parent_mlid)) {
+      $variables[$parent_mlid] = array();
+      $variables[$parent_mlid]['title'] = $values['#title'];
+      if (!empty($values['#below'])) {
+        $variables[$parent_mlid]['children'] = array();
+        foreach ($values['#below'] as $child_mlid => $child) {
+          if (is_numeric($child_mlid)) {
+            $variables[$parent_mlid]['children'][$child_mlid] = array(
+              'link_title' => $child['#title'],
+              'mlid' => $child_mlid,
+              'plid' => $parent_mlid,
+              'link_path' => $child['#href'],
+              'weight' => $child['#original_link']['weight'],
+            );
+          }
+        }
+      }
+    }
+  }
+
+  return $variables;
+}
+
+/**
+ * Helper function for sorting entry weights.
+ *
+ * @param array $one
+ *   First parameter for comparison.
+ * @param array $two
+ *   Second parameter for comparison.
+ *
+ * @return -1|0|1
+ *   Value of the comparison.
+ */
+function _reps_admin_form_weight(array $one, array $two) {
+  if (isset($one['weight']) && isset($two['weight'])) {
+    return $one['weight'] < $two['weight'] ? -1 : 1;
+  }
+
+  return 0;
+}
+
+/**
+ * Helper function to get the list of social networks.
+ */
+function _reps_admin_retrieve_socials() {
+  if (module_exists('social_media_links')) {
+    $socials = array_keys(social_media_links_platforms());
+    return $socials;
+  }
+  else {
+    return FALSE;
+  }
+}

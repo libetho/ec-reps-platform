@@ -1,0 +1,60 @@
+/**
+ * Print styles definition.
+ */
+
+// Remove useless border coming from the main coontainer.
+#mainContainer {
+  border: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+
+  // Remove spaces around the page.
+  .container{
+    max-width: 100% !important;
+    width: 100% !important;
+
+    #layout-body {
+    	margin: 0 !important;
+    }
+  }
+}
+
+// Hide useless part for printing.
+#block-menu-menu-service-tools,
+.mobile-user-bar,
+#main-menu,
+#block-views-reps-sliders-block-1,
+#sidebar-right {
+  display: none !important;
+}
+
+// Apply full width on the content area
+#content-wrapper {
+  width: 100% !important;
+  font-size: 75%;
+}
+
+// Increase the height of the breadcrumb to make all the info readable
+#path {
+  height: auto !important;
+
+  div.easy-breadcrumb ,
+  a {
+  	display: block;
+  }
+
+  a:before,
+  div.easy-breadcrumb:before {
+    content: "\003E";
+    margin-right: 6px;
+  }
+
+  span.easy-breadcrumb_segment-separator {
+  	display: none;
+  }
+}
+
+// Formating content for a better rendering
+.reps-img-right {
+  margin-left: 10px;
+}

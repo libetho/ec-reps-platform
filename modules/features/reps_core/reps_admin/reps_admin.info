@@ -1,0 +1,13 @@
+name = REPS admin
+description = The administration tools for the REPS application
+core = 7.x
+php = 5.2.4
+package = REPS
+version = 7.x-1.0
+project = reps_admin
+dependencies[] = reps_core
+configure = admin/config/reps
+features[ctools][] = context:context:3
+features[context][] = reps-admin
+features[features_api][] = api:2
+multisite_version = 1.7

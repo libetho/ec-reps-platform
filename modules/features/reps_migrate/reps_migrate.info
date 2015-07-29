@@ -1,0 +1,15 @@
+name = REPS migrate
+description = The migrate feature for the REPS malta website
+core = 7.x
+package = REPS
+version = 7.x-1.2
+project = reps_migrate
+php = 5.2.4
+multisite_version = 1.7
+features[features_api][] = api:2
+dependencies[] = reps_core
+dependencies[] = nexteuropa_migrate
+features[user_permission][] = migration information
+features[user_permission][] = advanced migration information
+files[] = includes/reps_migrate.inc
+files[] = includes/reps_migrate.menu.inc

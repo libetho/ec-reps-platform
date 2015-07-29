@@ -1,0 +1,23 @@
+{
+  "_id": "5cls04f8e48a1f369601cfe03005da8",
+  "type": "main-menu",
+  "default_language": "und",
+  "languages": [
+    "und",
+    "mt",
+    "fr"
+  ],
+  "fields": {
+    "title": {
+      "und": ["Business and funding"],
+      "mt": ["Biex tagħmel negozju fl-UE"],
+      "und": ["Business and funding"]
+    },
+    "link": {
+      "und": ["business-funding"]
+    },
+    "weight": {
+      "und": [5]
+    }
+  }
+}

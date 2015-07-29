@@ -1,0 +1,23 @@
+{
+  "_id": "9g4f704f8e48a1f369601cfe0500ci2s",
+  "type": "menu-reps-services",
+  "default_language": "und",
+  "languages": [
+    "mt",
+    "und",
+    "fr"
+  ],
+  "fields": {
+    "title": {
+      "und": ["Search"],
+      "mt": ["Fittex"],
+      "fr": ["Recherche"]
+    },
+    "link": {
+      "und": ["http://ec.europa.eu/geninfo/query/index.do?swlang=en"]
+    },
+    "weight": {
+      "und": [5]
+    }
+  }
+}
