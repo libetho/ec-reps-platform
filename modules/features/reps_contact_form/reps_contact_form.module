@@ -47,3 +47,23 @@ function reps_contact_form_post_features_enable_feature($component) {
       break;
   }
 }
+
+/**
+ * Implements _reps_contact_form_override function.
+ * Function to override the variables already exported by another feature.
+ **/
+function _reps_contact_form_override() {
+  variable_set('comment_anonymous_webform', 0);
+  variable_set('comment_default_mode_webform', 0);
+  variable_set('comment_default_per_page_webform', '50');
+  variable_set('comment_form_location_webform', 0);
+  variable_set('comment_preview_webform', '1');
+  variable_set('comment_subject_field_webform', 0);
+  variable_set('comment_webform', '1');
+  variable_set('language_content_type_webform', '4');
+  variable_set('menu_options_webform', array(0 => 'main-menu',));
+  variable_set('menu_parent_webform', 'main-menu:0');
+  variable_set('node_options_webform', array(0 => 'status',));
+  variable_set('node_preview_webform', '1');
+  variable_set('node_submitted_webform', 0);
+}

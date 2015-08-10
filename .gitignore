@@ -1,0 +1,10 @@
+# Ignore configuration files that may contain sensitive information.
+default/*
+settings.php
+.project
+.buildpath
+/.settings
+/.settings/*
+*devel
+*coder
+
