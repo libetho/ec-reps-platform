@@ -502,9 +502,7 @@ function reps_core_post_features_enable_feature($component) {
         'edit any editorial_team content',
         'edit any flexslider_example content',
       ));
-
-      // Set specific permissions for REPS administrator and editor.
-      reps_core_set_generic_permissions();
+      
       break;
 
     case 'taxonomy':
