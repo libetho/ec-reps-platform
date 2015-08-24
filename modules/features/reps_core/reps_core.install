@@ -3,7 +3,6 @@
  * @file
  * Code for the reps core feature.
  */
-
 include_once 'reps_core.api.inc';
 include_once 'reps_core.permissions.inc';
 
@@ -91,6 +90,15 @@ function reps_core_install() {
   _reps_core_create_default_pages();
 
   variable_set('pathauto_node_pattern', '');
+  $entity_translation_entity_types = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'bean' => 'bean',
+    'comment' => 0,
+    'file' => 0,
+    'user' => 0,
+  );
+  variable_set('entity_translation_entity_types', $entity_translation_entity_types);
 
   // Disable Multisite "homepage" context.
   $context = context_load('homepage');

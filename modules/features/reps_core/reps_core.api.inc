@@ -119,9 +119,9 @@ function reps_core_disable_languages($languages = array()) {
   foreach ($languages as $lang) {
     if (isset($langs[$lang])) {
       db_update('languages')
-       ->fields(array('enabled' => 0))
-       ->condition('language', $lang, '=')
-       ->execute();
+        ->fields(array('enabled' => 0))
+        ->condition('language', $lang, '=')
+        ->execute();
     }
   }
 }
