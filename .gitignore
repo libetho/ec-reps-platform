@@ -7,4 +7,63 @@ settings.php
 /.settings/*
 *devel
 *coder
+modules/contrib/social_media_links/*
+
+#Libraries from the platform
+libraries/FusionCharts/
+libraries/FusionMaps XT/
+libraries/chosen/
+libraries/ckeditor/
+libraries/colorbox/
+libraries/fancybox/
+libraries/flexslider/
+libraries/fullcalendar/
+libraries/fullcalendar_resources/
+libraries/history.js/
+libraries/jplayer/
+libraries/jquery.cycle/
+libraries/jquery.imgareaselect/
+libraries/jquery/
+libraries/modernizr/
+libraries/mpdf/
+libraries/plupload/
+libraries/tcpdf/
+
+#Themes from the platform
+themes/README.txt
+themes/bootstrap/
+themes/ec_resp/
+themes/ec_resp_17/
+themes/europa/
+themes/next_europa/
+
+#Modules from the platform
+modules/README.txt
+modules/contrib/ckeditor_lite/
+modules/contributed/
+modules/custom/ecas/
+modules/custom/language_selector_page/
+modules/custom/language_selector_site/
+modules/custom/media_avportal/
+modules/custom/multisite_block_carousel/
+modules/custom/multisite_config/
+modules/custom/multisite_cookie_consent/
+modules/custom/multisite_drupal_features_set_standard/
+modules/custom/multisite_drupal_language_negociation/
+modules/custom/multisite_drupal_toolbox/
+modules/custom/multisite_drupal_wiki_toc/
+modules/custom/multisite_dynamic_basetheme/
+modules/custom/multisite_oracle_access/
+modules/custom/nexteuropa_data_export/
+modules/custom/nexteuropa_ief_views_widget/
+modules/custom/taxonomy_browser/
+modules/custom/tmgmt_mtec/
+modules/custom/tmgmt_og/
+modules/custom/tmgmt_poetry/
+modules/custom/tmgmt_workbench/
+modules/custom/version_management/
+modules/features/custom/
+modules/modified/
+
+
 
