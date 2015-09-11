@@ -106,6 +106,12 @@ function reps_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-5',
         ),
+        'views-reps_sliders-block_1' => array(
+          'module' => 'views',
+          'delta' => 'reps_sliders-block_1',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
@@ -191,12 +197,6 @@ function reps_core_context_default_contexts() {
           'delta' => 'reps_core_feedback_form',
           'region' => 'sidebar_right',
           'weight' => '-5',
-        ),
-        'views-reps_sliders-block_1' => array(
-          'module' => 'views',
-          'delta' => 'reps_sliders-block_1',
-          'region' => 'footer',
-          'weight' => '-10',
         ),
         'cce_basic_config-footer_ipg' => array(
           'module' => 'cce_basic_config',
