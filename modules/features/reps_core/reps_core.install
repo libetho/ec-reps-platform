@@ -68,7 +68,6 @@ function reps_core_install() {
   }
   // Set site name.
   variable_set('site_name', 'Reps');
-  variable_set('site_frontpage', 'home');
   // Enable the reps subtheme.
   theme_enable(array('reps'));
   variable_set('theme_default', 'reps');

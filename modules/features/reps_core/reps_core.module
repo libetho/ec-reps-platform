@@ -129,9 +129,19 @@ function _reps_core_create_default_pages() {
   );
 
   foreach ($pages as $page) {
-    $nids[] = reps_core_create_node($page['type'], $page['title'], $page['path']);
+    if($page['path'] !== 'home'){
+      $nids[] = reps_core_create_node($page['type'], $page['title'], $page['path']);
+    }
   }
   variable_set('reps_core_default_pages_nids', $nids);
+
+  $page = array(
+    'title' => t('Homepage'),
+    'path' => 'home',
+    'type' => 'page',
+  );
+  reps_core_create_node($page['type'], $page['title'], $page['path']);
+  variable_set('site_frontpage', 'home');
 }
 
 /**
