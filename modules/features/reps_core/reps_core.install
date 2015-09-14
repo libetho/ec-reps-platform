@@ -79,9 +79,6 @@ function reps_core_install() {
   $active_search['node'] = 'node';
   variable_set('search_active_modules', $active_search);
 
-  // Disable display suite.
-  // module_disable(array('ds'));
-
   // Remove first node, created by Multisite deployment script.
   node_delete(1);
 
