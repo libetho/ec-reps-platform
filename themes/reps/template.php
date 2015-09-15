@@ -9,6 +9,10 @@
  * Implements theme_preprocess_page().
  */
 function reps_preprocess_page(&$variables) {
+  if (url(current_path()) == url('<front>')) {
+    $variables['is_front'] = 1;
+  }
+
   $title = drupal_get_title();
 
   // Format regions.

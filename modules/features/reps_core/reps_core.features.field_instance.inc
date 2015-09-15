@@ -274,6 +274,44 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-reps_core_sb_right_blue_button-field_reps_core_node_reference'
+  $field_instances['bean-reps_core_sb_right_blue_button-field_reps_core_node_reference'] = array(
+    'bundle' => 'reps_core_sb_right_blue_button',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_core_node_reference',
+    'label' => 'Page(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'bean-reps_core_sb_right_blue_button-field_reps_rightcol_position'
   $field_instances['bean-reps_core_sb_right_blue_button-field_reps_rightcol_position'] = array(
     'bundle' => 'reps_core_sb_right_blue_button',
@@ -301,7 +339,7 @@ function reps_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 13,
     ),
   );
 
@@ -338,7 +376,7 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 14,
     ),
   );
 
@@ -490,6 +528,44 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-reps_core_sb_right_free_content-field_reps_core_node_reference'
+  $field_instances['bean-reps_core_sb_right_free_content-field_reps_core_node_reference'] = array(
+    'bundle' => 'reps_core_sb_right_free_content',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_core_node_reference',
+    'label' => 'Page(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'bean-reps_core_sb_right_free_content-field_reps_rightcol_position'
   $field_instances['bean-reps_core_sb_right_free_content-field_reps_rightcol_position'] = array(
     'bundle' => 'reps_core_sb_right_free_content',
@@ -518,7 +594,7 @@ function reps_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 13,
     ),
   );
 
@@ -556,7 +632,7 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 14,
     ),
   );
 
@@ -713,6 +789,44 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-reps_core_sb_right_image_link-field_reps_core_node_reference'
+  $field_instances['bean-reps_core_sb_right_image_link-field_reps_core_node_reference'] = array(
+    'bundle' => 'reps_core_sb_right_image_link',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_core_node_reference',
+    'label' => 'Page(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'bean-reps_core_sb_right_image_link-field_reps_rightcol_position'
   $field_instances['bean-reps_core_sb_right_image_link-field_reps_rightcol_position'] = array(
     'bundle' => 'reps_core_sb_right_image_link',
@@ -741,7 +855,7 @@ function reps_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 13,
     ),
   );
 
@@ -779,7 +893,7 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 14,
     ),
   );
 
@@ -1551,130 +1665,6 @@ function reps_core_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => -1,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-group_content_access'
-  $field_instances['node-page-group_content_access'] = array(
-    'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'group_content_access',
-    'label' => 'Group content visibility',
-    'required' => TRUE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'label' => 'above',
-        'type' => 'list_default',
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'type' => 'list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-    'widget_type' => 'options_select',
-  );
-
-  // Exported field_instance: 'node-page-og_group_ref'
-  $field_instances['node-page-og_group_ref'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 4,
     ),
   );
 

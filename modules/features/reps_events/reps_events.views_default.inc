@@ -166,7 +166,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_reps_core_image']['settings'] = array(
-    'image_style' => 'thumbs_events_listing__width__250px_',
+    'image_style' => 'homepage_thumbs',
     'image_link' => '',
   );
   /* Field: external link */
