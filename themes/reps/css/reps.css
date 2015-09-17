@@ -1,5 +1,4 @@
 /* screen sizes definition */
-/* screen sizes definition */
 /* custom variables */
 /* custom styles */
 .smallScreensMenu {
@@ -72,7 +71,6 @@ body.reps #mainContainer {
   overflow: hidden;
   background: #FFF;
   /* SIDEBAR RIGHT */
-
 }
 body.reps #mainContainer .container {
   max-width: 984px;
@@ -93,7 +91,6 @@ body.reps #mainContainer #block-menu-menu-service-tools li.first a {
 }
 body.reps #mainContainer .region-featured-wrapper {
   /* MAIN MENU */
-
 }
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
@@ -229,7 +226,6 @@ body.reps #mainContainer #layout-body .block-views {
   box-shadow: none;
   margin-bottom: 10px;
   /* SLIDESHOW */
-
 }
 body.reps #mainContainer #layout-body .block-views .panel-heading {
   color: #878c92;
@@ -420,7 +416,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body
 }
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row {
   float: left;
-  width: 33.333333333333336%;
+  width: 33.33333333%;
   padding: 0 15px;
 }
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row img {
@@ -433,7 +429,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body
 }
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row-last {
   margin-right: 0;
-  width: 33.333333333333336%;
+  width: 33.33333333%;
 }
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .more-link {
   margin-right: 15px;
@@ -443,7 +439,7 @@ body.reps #mainContainer #layout-body #block-views-reps-publications-block .view
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row {
   overflow: hidden;
-  width: 33.333333333333336%;
+  width: 33.33333333%;
   float: left;
   padding: 0 15px;
 }
@@ -504,18 +500,24 @@ body.reps #mainContainer #layout-body #block-views-reps-bean-blocks-block-1 .pan
 body.reps #mainContainer #layout-body .bean-reps-core-sb-right-blue-button {
   margin: -11px;
   background: #004494 url(../images/bk_link_newsletter.gif) no-repeat left;
-  min-height: 50px;
+  height: 50px;
 }
-body.reps #mainContainer #layout-body .bean-reps-core-sb-right-blue-button a {
-  position: absolute;
-  width: 100%;
-  color: #ffffff;
-  padding-left: 65px;
-  padding-top: 14px;
+body.reps #mainContainer #layout-body .bean-reps-core-sb-right-blue-button p {
+  height: 50px;
+  line-height: 50px;
+}
+body.reps #mainContainer #layout-body .bean-reps-core-sb-right-blue-button p a {
+  color: silver;
+  display: inline-block;
   font-weight: bold;
-  float: left;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
   font-size: 110%;
+  line-height: 1.2;
+  padding-left: 65px;
+  padding-top: 0;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100%;
 }
 body.reps #mainContainer #layout-body h1 {
   color: #878c92;
@@ -1474,7 +1476,7 @@ body.not-front #layout-body {
     display: none !important;
   }
   #layout-body #content-wrapper.col-sm-8 {
-    width: 66.66666666666667%;
+    width: 66.66666667%;
     float: left;
   }
   #layout-body #content-wrapper.col-sm-8 #block-system-main .panel-body .view-filters .views-exposed-widgets .views-exposed-widget input[type=text] {
@@ -1498,7 +1500,7 @@ body.not-front #layout-body {
     height: auto !important;
   }
   #layout-body #sidebar-right.col-sm-4 {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
     float: right;
     padding-left: 15px !important;
   }
