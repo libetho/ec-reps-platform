@@ -180,15 +180,15 @@ function reps_core_context_default_contexts() {
           'region' => 'sidebar_right',
           'weight' => '-8',
         ),
-        'views-reps_bean_blocks-block' => array(
-          'module' => 'views',
-          'delta' => 'reps_bean_blocks-block',
-          'region' => 'sidebar_right',
-          'weight' => '-7',
-        ),
         'views-reps_bean_blocks-block_3' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_3',
+          'region' => 'sidebar_right',
+          'weight' => '-7',
+        ),
+        'views-reps_bean_blocks-block' => array(
+          'module' => 'views',
+          'delta' => 'reps_bean_blocks-block',
           'region' => 'sidebar_right',
           'weight' => '-6',
         ),
