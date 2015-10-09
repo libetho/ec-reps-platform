@@ -139,7 +139,6 @@ function reps_menu_link($variables) {
 
     // Add attributes to children items.
     $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
-    // $element['#localized_options']['attributes']['data-toggle'][] = 'dropdown open';
 
     if ($element['#below']['#theme_wrappers'][0] == 'menu_tree__main_menu') {
       $element['#below']['#theme_wrappers'][0] = 'menu_tree__main_submenu';
