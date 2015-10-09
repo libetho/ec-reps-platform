@@ -8,9 +8,6 @@
 jQuery(function($) {
   $(document).ready(function() {
     $('.caret').click(function() {
-      // console.log($(this).parents('.expanded').children('a'));
-      // $(this).parents('.expanded').children('a').attr('aria-expanded',true);
-      // var myClass = $(this).parents('.expanded').attr('class') + ' open';
       $(this).parents('.expanded').toggleClass('open');
     });
     $('.expanded a').click(function() {
