@@ -4,6 +4,9 @@
  * Reps_core.permissions.inc.
  */
 
+/**
+ * Implements reps_core_set_generic_permissions().
+ */
 function reps_core_set_generic_permissions() {
   $modules = array(
     'workbench_moderation',
