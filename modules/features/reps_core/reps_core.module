@@ -319,6 +319,7 @@ function reps_core_overrides() {
 function reps_core_block_info() {
   $blocks = array();
   $blocks['reps_core_feedback_form']['info'] = t('Help us to improve');
+  $blocks['reps_core_share_webtools']['info'] = t('Webtools share button');
   return $blocks;
 }
 
@@ -331,6 +332,11 @@ function reps_core_block_view($delta = '') {
     case 'reps_core_feedback_form':
       $block['subject'] = t('Help us to improve');
       $block['content'] = drupal_get_form('_reps_core_feedback_form');
+      break;
+      
+    case 'reps_core_share_webtools':
+      $block['subject'] = t('Webtools Share');
+      $block['content'] = t('Webtools Share');
       break;
   }
   return $block;
