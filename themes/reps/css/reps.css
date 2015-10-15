@@ -1092,7 +1092,7 @@ body.reps #mainContainer #sidebar-right .block-nexteuropa-europa-search .panel-b
   height: 23px;
   background: url(../images/btn-search.jpg) no-repeat;
 }
-body.reps #mainContainer #sidebar-right #block-social-bookmark-social-bookmark {
+body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools {
   box-shadow: 0px 2px 2px #d4d4d4;
   overflow: hidden;
   position: relative;
@@ -1101,7 +1101,7 @@ body.reps #mainContainer #sidebar-right #block-social-bookmark-social-bookmark {
   padding: 10px;
   margin-bottom: 25px;
 }
-body.reps #mainContainer #sidebar-right #block-social-bookmark-social-bookmark .content {
+body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools .content {
   float: right;
 }
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links {

@@ -168,9 +168,9 @@ function reps_core_context_default_contexts() {
           'region' => 'sidebar_right',
           'weight' => '-10',
         ),
-        'social_bookmark-social-bookmark' => array(
-          'module' => 'social_bookmark',
-          'delta' => 'social-bookmark',
+        'reps_core-reps_core_share_webtools' => array(
+          'module' => 'reps_core',
+          'delta' => 'reps_core_share_webtools',
           'region' => 'sidebar_right',
           'weight' => '-9',
         ),
