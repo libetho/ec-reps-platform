@@ -18,6 +18,7 @@ dependencies[] = multisite_twitterblock
 dependencies[] = nexteuropa_core
 dependencies[] = nexteuropa_europa_search
 dependencies[] = nexteuropa_multilingual
+dependencies[] = nexteuropa_webtools
 dependencies[] = site_map
 dependencies[] = social_bookmark
 dependencies[] = social_media_links
