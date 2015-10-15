@@ -335,7 +335,7 @@ function reps_core_block_view($delta = '') {
       break;
     case 'reps_core_share_webtools':
       $block['subject'] = t('Webtools Share');
-      $block['content'] = '';
+      $block['content'] = t('test');
       break;
   }
   return $block;
