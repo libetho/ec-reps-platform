@@ -334,7 +334,7 @@ function reps_core_block_view($delta = '') {
       $block['subject'] = t('Help us to improve');
       $block['content'] = drupal_get_form('_reps_core_feedback_form');
       break;
-      
+
     case 'reps_core_share_webtools':
       $block['subject'] = t('Webtools Share');
       $block['content'] = t('Webtools Share');
