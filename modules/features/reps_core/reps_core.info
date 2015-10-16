@@ -14,7 +14,6 @@ dependencies[] = flexslider_example
 dependencies[] = mapeditor
 dependencies[] = mapeditor_views
 dependencies[] = multisite_metatags
-dependencies[] = multisite_twitterblock
 dependencies[] = nexteuropa_core
 dependencies[] = nexteuropa_europa_search
 dependencies[] = nexteuropa_multilingual

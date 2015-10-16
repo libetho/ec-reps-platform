@@ -64,9 +64,9 @@ function reps_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'multisite_twitterblock-fpfis_twitter' => array(
-          'module' => 'multisite_twitterblock',
-          'delta' => 'fpfis_twitter',
+        'reps_core-reps_core_twitter_webtools' => array(
+          'module' => 'reps_core',
+          'delta' => 'reps_core_twitter_webtools',
           'region' => 'sidebar_right',
           'weight' => '1',
         ),

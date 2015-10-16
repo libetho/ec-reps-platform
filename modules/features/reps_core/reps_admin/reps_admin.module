@@ -45,6 +45,16 @@ function reps_admin_menu() {
     'weight' => 1,
   );
 
+  $items['admin/reps/twitter-webtools'] = array(
+    'title' => 'Twitter Box',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_reps_admin_settings_twitter_webtools'),
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer reps twitter webtools'),
+    'file' => 'reps_admin.admin.inc',
+    '#weight' => 2,
+  );
+
   $items['admin/reps/menu/list'] = array(
     'type' => MENU_DEFAULT_LOCAL_TASK,
     'title' => 'Menu tree',
@@ -141,6 +151,9 @@ function reps_admin_permission() {
     ),
     'administer reps social links' => array(
       'title' => t('Administer REPS social links'),
+    ),
+    'administer reps twitter webtools' => array(
+      'title' => t('Administer REPS Twitter webtools'),
     ),
   );
 }
