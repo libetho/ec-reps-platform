@@ -1126,14 +1126,6 @@ body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-l
   height: 22px;
   vertical-align: text-bottom;
 }
-body.reps #mainContainer #sidebar-right #block-multisite-twitterblock-fpfis-twitter {
-  background: #eeeeee;
-  padding: 10px;
-}
-body.reps #mainContainer #sidebar-right #block-multisite-twitterblock-fpfis-twitter .panel-body {
-  padding: 0;
-  font-size: 90%;
-}
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form {
   border: 1px #268BC1 solid;
   padding: 10px;

@@ -23,6 +23,27 @@ function _reps_admin_feedback($form, &$form_state) {
 }
 
 /**
+ * Reps core admin form.
+ */
+function _reps_admin_settings_twitter_webtools($form, &$form_state) {
+  $form['twitter_webtools_config_screen'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Screen name'),
+    '#default_value' => variable_get('twitter_webtools_config_screen', NULL),
+  );
+
+  $form['twitter_webtools_config_nbr'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Number of tweets'),
+    '#default_value' => variable_get('twitter_webtools_config_nbr', NULL),
+    '#element_validate' => array('element_validate_number'),
+  );
+  $form['#validate'][] = '_reps_admin_feedback_validate';
+
+  return system_settings_form($form);
+}
+
+/**
  * Reps core menu admin form.
  */
 function _reps_admin_menu_add($form, &$form_state, $mlid = NULL) {
@@ -493,10 +514,15 @@ function _reps_admin_settings_social($form, &$form_state) {
  * Validate function for the reps admin settings.
  */
 function _reps_admin_feedback_validate($form, &$form_state) {
-  if (isset($form_state['values'])) {
+  if (isset($form_state['values']) && isset($form_state['values']['feedback_form_id'])) {
     $value = $form_state['values']['feedback_form_id'];
     if ($value == '' || $value == 'NULL' || !is_numeric($value)) {
       form_error($form['feedback_form_id'], t('%name must be a number.', array('%name' => $form['feedback_form_id']['#title'])));
+    }
+  }else if (isset($form_state['values']) && isset($form_state['values']['twitter_webtools_config_nbr'])) {
+    $value = $form_state['values']['twitter_webtools_config_nbr'];
+    if ($value == '' || $value == 'NULL' || !is_numeric($value)) {
+      form_error($form['twitter_webtools_config_nbr'], t('%name must be a number.', array('%name' => $form['twitter_webtools_config_nbr']['#title'])));
     }
   }
 }

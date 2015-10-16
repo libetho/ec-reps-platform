@@ -12,7 +12,6 @@ function reps_core_set_generic_permissions() {
     'workbench_moderation',
     'scheduler',
     'weight',
-    'multisite_twitterblock',
   );
 
   foreach ($modules as $module) {
@@ -37,8 +36,6 @@ function reps_core_set_generic_permissions() {
     'administer beans',
     'administer content translations',
     'administer files',
-    'administer fpfis twitter feature',
-    'administer fpfis twitter widget',
     'administer languages',
     'administer permissions',
     'administer scheduler',
@@ -105,7 +102,6 @@ function reps_core_set_generic_permissions() {
     'moderate content from validated to needs_review',
     'moderate content from validated to published',
     'multisite_workbench_moderation_view_bulk_update',
-    'override fpfis twitter widget',
     'show format selection for bean',
     'show format selection for comment',
     'show format selection for file',
@@ -231,6 +227,5 @@ function reps_core_set_generic_permissions() {
     'administer quicktabs',
     'administer reps menu',
     'administer reps settings',
-    'override fpfis twitter widget',
   ));
 }
