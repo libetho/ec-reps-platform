@@ -719,13 +719,15 @@ function _reps_core_delete_defaults() {
  * Implements hook_social_media_links_platform_info_alter().
  */
 function reps_core_social_media_links_platform_info_alter(&$platforms) {
-  foreach ($platforms as $service => $values) {
-    $platforms[$service]['base url'] = '';
-  }
+  // Add additional platform(s).
   $platforms['flickr'] = array(
     'title' => t('Flickr'),
     'base url' => 'https://www.flickr.com/',
   );
+  // Clean base urls.
+  foreach ($platforms as $service => $values) {
+    $platforms[$service]['base url'] = '';
+  }
 }
 
 /**
