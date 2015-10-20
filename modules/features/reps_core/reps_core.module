@@ -722,6 +722,10 @@ function reps_core_social_media_links_platform_info_alter(&$platforms) {
   foreach ($platforms as $service => $values) {
     $platforms[$service]['base url'] = '';
   }
+  $platforms['flickr'] = array(
+    'title' => t('Flickr'),
+    'base url' => 'https://www.flickr.com/',
+  );
 }
 
 /**
