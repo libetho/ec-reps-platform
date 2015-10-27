@@ -110,7 +110,7 @@ function reps_menu_tree__main_submenu($variables) {
   }
   else {
     // There is no dropdown in this tree, simply return it in a <ul>.
-    return '<ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
+    return '<span><b class="caret"></b></span><ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
   }
 }
 
@@ -123,7 +123,6 @@ function reps_menu_tree__submenu($variables) {
   return '<ul class="' . $classes . '">' . $variables['tree'] . '</ul>';
 }
 
-
 /**
  * Implements theme_menu_link().
  */
@@ -134,13 +133,11 @@ function reps_menu_link($variables) {
   // Test if there is a sub menu.
   if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
     // Menu item has sub menu.
-    // Add carret and class.
-    $element['#title'] .= '<span><b class="caret"></b></span>';
+    // Add class.
     $element['#attributes']['class'][] = 'dropdown';
 
     // Add attributes to children items.
     $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
-    $element['#localized_options']['attributes']['data-toggle'][] = 'dropdown';
 
     if ($element['#below']['#theme_wrappers'][0] == 'menu_tree__main_menu') {
       $element['#below']['#theme_wrappers'][0] = 'menu_tree__main_submenu';

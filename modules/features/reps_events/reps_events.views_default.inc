@@ -221,11 +221,12 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_date']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_reps_event_date_1']['id'] = 'field_reps_event_date_1';
@@ -234,11 +235,12 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_date_1']['label'] = 'Time';
   $handler->display->display_options['fields']['field_reps_event_date_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_date_1']['settings'] = array(
-    'format_type' => 'just_Y',
+    'format_type' => 'time',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_reps_event_location']['id'] = 'field_reps_event_location';
@@ -343,11 +345,12 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_date']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_reps_event_date_1']['id'] = 'field_reps_event_date_1';
@@ -356,11 +359,12 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_date_1']['label'] = 'Time';
   $handler->display->display_options['fields']['field_reps_event_date_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_date_1']['settings'] = array(
-    'format_type' => 'just_Y',
+    'format_type' => 'time',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_reps_event_location']['id'] = 'field_reps_event_location';

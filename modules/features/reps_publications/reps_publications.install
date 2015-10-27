@@ -13,6 +13,7 @@ function reps_publications_enable() {
       'field_instance',
     ),
   ));
+
   drupal_set_message(t('The REPS publications feature is now active on your site'));
 }
 
