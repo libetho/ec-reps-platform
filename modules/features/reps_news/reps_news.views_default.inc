@@ -257,7 +257,6 @@ function reps_news_views_default_views() {
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['operator_id'] = 'field_reps_news_category_target_id_op';
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['operator'] = 'field_reps_news_category_target_id_op';
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['identifier'] = 'field_reps_news_category_target_id';
-  $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,

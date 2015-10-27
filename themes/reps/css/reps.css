@@ -162,7 +162,7 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
   border-radius: 0;
   text-transform: none;
 }
-body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li a .caret {
+body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li .caret {
   display: none;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li a.active,
@@ -1092,7 +1092,7 @@ body.reps #mainContainer #sidebar-right .block-nexteuropa-europa-search .panel-b
   height: 23px;
   background: url(../images/btn-search.jpg) no-repeat;
 }
-body.reps #mainContainer #sidebar-right #block-social-bookmark-social-bookmark {
+body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools {
   box-shadow: 0px 2px 2px #d4d4d4;
   overflow: hidden;
   position: relative;
@@ -1101,7 +1101,7 @@ body.reps #mainContainer #sidebar-right #block-social-bookmark-social-bookmark {
   padding: 10px;
   margin-bottom: 25px;
 }
-body.reps #mainContainer #sidebar-right #block-social-bookmark-social-bookmark .content {
+body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools .content {
   float: right;
 }
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links {
@@ -1125,14 +1125,6 @@ body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-l
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links .panel-body li img {
   height: 22px;
   vertical-align: text-bottom;
-}
-body.reps #mainContainer #sidebar-right #block-multisite-twitterblock-fpfis-twitter {
-  background: #eeeeee;
-  padding: 10px;
-}
-body.reps #mainContainer #sidebar-right #block-multisite-twitterblock-fpfis-twitter .panel-body {
-  padding: 0;
-  font-size: 90%;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form {
   border: 1px #268BC1 solid;
@@ -1387,18 +1379,23 @@ body.not-front #layout-body {
     line-height: 2.25;
     background: #FFF;
   }
-  #main-menu .visible-sm ul li.active-trail a span,
-  #main-menu .visible-xs ul li.active-trail a span {
-    width: 48px;
-    height: 35px;
+  #main-menu .visible-sm ul li.active-trail span,
+  #main-menu .visible-xs ul li.active-trail span {
     background: #FFF !important;
-    float: right;
     border: 1px solid #cde;
-    padding-top: 7px;
     border-right: none;
+    border-top: none;
+    cursor: pointer;
+    float: right;
+    height: 35px;
+    margin-top: -34px;
+    padding-top: 7px;
+    position: relative;
+    width: 48px;
+    z-index: 1000;
   }
-  #main-menu .visible-sm ul li.active-trail a span .caret,
-  #main-menu .visible-xs ul li.active-trail a span .caret {
+  #main-menu .visible-sm ul li.active-trail span .caret,
+  #main-menu .visible-xs ul li.active-trail span .caret {
     display: block !important;
     margin: 0 auto;
     padding: 0;
@@ -1482,6 +1479,18 @@ body.not-front #layout-body {
   #layout-body #content-wrapper.col-sm-8 #block-system-main .panel-body .view-filters .views-exposed-widgets .views-exposed-widget input[type=text] {
     margin-left: 0 !important;
   }
+  #layout-body #content-wrapper.col-sm-8 #block-system-main .content .content img {
+    max-width: 100%;
+    height: auto !important;
+  }
+  #layout-body #content-wrapper.col-sm-8 #block-system-main .view-reps-videos .views-row {
+    clear: both;
+    width: 100% !important;
+    border-bottom: 1px solid #ddd !important;
+  }
+  #layout-body #content-wrapper.col-sm-8 #block-system-main .view-reps-videos .views-row .views-field-field-reps-core-image-et {
+    float: left;
+  }
   #layout-body div.clearfix.hidden-sm {
     display: none !important;
   }
@@ -1548,6 +1557,9 @@ body.not-front #layout-body {
   }
   #content-wrapper.col-xs-12 .view-reps-events .views-field-field-reps-core-image {
     max-width: 125px;
+  }
+  #content-wrapper.col-xs-12 .view-reps-videos .views-row .views-field-field-reps-core-image-et {
+    width: 33% !important;
   }
   #sidebar-right.col-xs-12 {
     width: 100% !important;

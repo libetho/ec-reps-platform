@@ -121,6 +121,7 @@ function _reps_migrate_get_classification($value) {
 function _reps_migrate_import_contents_filter($text, $site) {
   // Remove styles.
   preg_match_all('/style="(.*?)"/s', $text, $styles);
+  preg_match_all('/class="lead"/s', $text, $styles);
   if (is_array($styles[0])) {
     foreach ($styles[0] as $style) {
       $text = str_replace($style, '', $text);

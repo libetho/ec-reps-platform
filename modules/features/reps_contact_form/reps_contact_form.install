@@ -23,7 +23,7 @@ function reps_contact_form_disable() {
  * Implements hook_install().
  */
 function reps_contact_form_install() {
-  // Overrides already exported variables
+  // Overrides already exported variables.
   _reps_contact_form_override();
 }
 

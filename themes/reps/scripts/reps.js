@@ -7,6 +7,9 @@
 // Add your code in the ready function if you want to be sure the page is fully loaded before execution.
 jQuery(function($) {
   $(document).ready(function() {
+    $('.caret').click(function() {
+      $(this).parents('.expanded').toggleClass('open');
+    });
     $('.expanded a').click(function() {
       window.location = $(this).attr('href');
     });
