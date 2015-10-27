@@ -293,7 +293,6 @@ function reps_core_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'mapeditor_map' => 'mapeditor_map',
           'page' => 'page',
           'reps_event' => 'reps_event',
           'reps_news' => 'reps_news',
@@ -363,58 +362,6 @@ function reps_core_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'media',
-  );
-
-  // Exported field_base: 'field_reps_cp_gcoordinates'
-  $field_bases['field_reps_cp_gcoordinates'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_reps_cp_gcoordinates',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'bbox' => array(
-        0 => 'top',
-        1 => 'bottom',
-        2 => 'left',
-        3 => 'right',
-      ),
-      'bottom' => array(
-        0 => 'bottom',
-      ),
-      'centroid' => array(
-        0 => 'lat',
-        1 => 'lon',
-      ),
-      'geohash' => array(
-        0 => 'geohash',
-      ),
-      'lat' => array(
-        0 => 'lat',
-      ),
-      'left' => array(
-        0 => 'left',
-      ),
-      'lon' => array(
-        0 => 'lon',
-      ),
-      'right' => array(
-        0 => 'right',
-      ),
-      'top' => array(
-        0 => 'top',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'geofield',
-    'settings' => array(
-      'backend' => 'default',
-      'entity_translation_sync' => FALSE,
-      'srid' => 4326,
-    ),
-    'translatable' => 0,
-    'type' => 'geofield',
   );
 
   // Exported field_base: 'field_reps_cp_type'
@@ -507,35 +454,6 @@ function reps_core_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
-    'type' => 'list_integer',
-  );
-
-  // Exported field_base: 'group_content_access'
-  $field_bases['group_content_access'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'group_content_access',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'no_ui' => TRUE,
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'Use group defaults',
-        1 => 'Public - accessible to all site users',
-        2 => 'Private - accessible only to group members',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
     'type' => 'list_integer',
   );
 
