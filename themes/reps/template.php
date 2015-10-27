@@ -134,7 +134,6 @@ function reps_menu_link($variables) {
   if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
     // Menu item has sub menu.
     // Add carret and class.
-    // $element['#title'] .= '<span><b class="caret"></b></span>';
     $element['#attributes']['class'][] = 'dropdown';
 
     // Add attributes to children items.

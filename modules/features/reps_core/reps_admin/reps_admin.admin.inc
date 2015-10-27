@@ -522,7 +522,7 @@ function _reps_admin_feedback_validate($form, &$form_state) {
   }
   elseif (isset($form_state['values']) && isset($form_state['values']['twitter_webtools_config_nbr'])) {
     $value = $form_state['values']['twitter_webtools_config_nbr'];
-    if ($value == '' || $value == 'NULL' || !is_numeric($value)) {
+    if (in_array($value, array('', 'NULL')) || !is_numeric($value)) {
       form_error($form['twitter_webtools_config_nbr'], t('%name must be a number.', array('%name' => $form['twitter_webtools_config_nbr']['#title'])));
     }
   }
