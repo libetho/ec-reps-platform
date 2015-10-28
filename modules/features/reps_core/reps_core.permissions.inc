@@ -166,7 +166,6 @@ function reps_core_set_generic_permissions() {
     'edit any audio files',
     'edit any document files',
     'edit any image files',
-    'edit any mapeditor_map content',
     'edit any page content',
     'edit any reps_contact_point content',
     'edit any reps_core_quicklinks bean',

@@ -935,73 +935,19 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mapeditor_map-field_meta_classification'
-  $field_instances['node-mapeditor_map-field_meta_classification'] = array(
-    'bundle' => 'mapeditor_map',
-    'default_value' => array(
-      0 => array(
-        'tid' => 16,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_meta_classification',
-    'label' => 'IPG Classification',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-mapeditor_map-field_meta_description'
-  $field_instances['node-mapeditor_map-field_meta_description'] = array(
-    'bundle' => 'mapeditor_map',
+  // Exported field_instance: 'node-page-field_json_object'
+  $field_instances['node-page-field_json_object'] = array(
+    'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'nexteuropa_json_field',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'json_settings_default',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1011,8 +957,8 @@ function reps_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_meta_description',
-    'label' => 'Description metatag',
+    'field_name' => 'field_json_object',
+    'label' => 'JSON Object',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -1042,6 +988,9 @@ function reps_core_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'js_to_load' => array(
+        'nexteuropa_webtools_smartloader_prurl' => 0,
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1052,147 +1001,7 @@ function reps_core_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-mapeditor_map-field_reps_cp_type'
-  $field_instances['node-mapeditor_map-field_reps_cp_type'] = array(
-    'bundle' => 'mapeditor_map',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_reps_cp_type',
-    'label' => 'default instance',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-mapeditor_map-field_tags'
-  $field_instances['node-mapeditor_map-field_tags'] = array(
-    'bundle' => 'mapeditor_map',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-mapeditor_map-title_field'
-  $field_instances['node-mapeditor_map-title_field'] = array(
-    'bundle' => 'mapeditor_map',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'title_field',
-    'label' => 'Title',
-    'required' => TRUE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => -2,
     ),
   );
 
@@ -1248,7 +1057,11 @@ function reps_core_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_meta_description'
   $field_instances['node-page-field_meta_description'] = array(
     'bundle' => 'page',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'Représentation au Luxembourg de la Commission européenne',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1891,51 +1704,6 @@ function reps_core_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-reps_contact_point-field_reps_cp_gcoordinates'
-  $field_instances['node-reps_contact_point-field_reps_cp_gcoordinates'] = array(
-    'bundle' => 'reps_contact_point',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_reps_cp_gcoordinates',
-    'label' => 'Geographic coordinates',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'geofield',
-      'settings' => array(
-        'html5_geolocation' => 0,
-      ),
-      'type' => 'geofield_latlon',
-      'weight' => 4,
     ),
   );
 
