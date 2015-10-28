@@ -413,7 +413,7 @@ function reps_core_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_reps_contact_point';
   $strongarm->value = array(
-    0 => 'moderation',
+    0 => 'status',
     1 => 'revision',
   );
   $export['node_options_reps_contact_point'] = $strongarm;
