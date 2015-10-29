@@ -13,7 +13,9 @@ function reps_preprocess_page(&$variables) {
     $variables['is_front'] = 1;
   }
 
-  $title = drupal_get_title();
+  // Change language of the image in the banner depening the current language.
+  global $language;
+  $variables['logo'] = '/wel/template-2013/images/logo/logo_' . $language->language . '.gif';
 
   // Format regions.
   $regions = array();
@@ -133,7 +135,8 @@ function reps_menu_link($variables) {
   // Test if there is a sub menu.
   if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
     // Menu item has sub menu.
-    // Add class.
+    // Add carret and class.
+    // $element['#title'] .= '<span><b class="caret"></b></span>';
     $element['#attributes']['class'][] = 'dropdown';
 
     // Add attributes to children items.
