@@ -10,21 +10,13 @@
 function reps_core_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_reps_core_abstract'
+  // Exported field_base: 'field_reps_core_abstract'.
   $field_bases['field_reps_core_abstract'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_reps_core_abstract',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,7 +31,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_reps_core_date'
+  // Exported field_base: 'field_reps_core_date'.
   $field_bases['field_reps_core_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -70,7 +62,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_reps_core_external_url'
+  // Exported field_base: 'field_reps_core_external_url'.
   $field_bases['field_reps_core_external_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -101,7 +93,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_reps_core_file'
+  // Exported field_base: 'field_reps_core_file'.
   $field_bases['field_reps_core_file'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -135,7 +127,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_reps_core_image'
+  // Exported field_base: 'field_reps_core_image'.
   $field_bases['field_reps_core_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -168,7 +160,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_reps_core_more_info_body'
+  // Exported field_base: 'field_reps_core_more_info_body'.
   $field_bases['field_reps_core_more_info_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -197,7 +189,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_reps_core_more_info_link'
+  // Exported field_base: 'field_reps_core_more_info_link'.
   $field_bases['field_reps_core_more_info_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -228,7 +220,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_reps_core_more_info_title'
+  // Exported field_base: 'field_reps_core_more_info_title'.
   $field_bases['field_reps_core_more_info_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -258,7 +250,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_reps_core_node_reference'
+  // Exported field_base: 'field_reps_core_node_reference'.
   $field_bases['field_reps_core_node_reference'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -293,6 +285,7 @@ function reps_core_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'reps_homepage_additional_block' => 'reps_homepage_additional_block',
           'page' => 'page',
           'reps_event' => 'reps_event',
           'reps_news' => 'reps_news',
@@ -304,7 +297,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_reps_core_related_links'
+  // Exported field_base: 'field_reps_core_related_links'.
   $field_bases['field_reps_core_related_links'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -335,7 +328,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_reps_core_related_video'
+  // Exported field_base: 'field_reps_core_related_video'.
   $field_bases['field_reps_core_related_video'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -364,7 +357,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'media',
   );
 
-  // Exported field_base: 'field_reps_cp_type'
+  // Exported field_base: 'field_reps_cp_type'.
   $field_bases['field_reps_cp_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -400,7 +393,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_reps_rightcol_position'
+  // Exported field_base: 'field_reps_rightcol_position'.
   $field_bases['field_reps_rightcol_position'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -427,7 +420,7 @@ function reps_core_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_reps_rightcol_weight'
+  // Exported field_base: 'field_reps_rightcol_weight'.
   $field_bases['field_reps_rightcol_weight'] = array(
     'active' => 1,
     'cardinality' => 1,

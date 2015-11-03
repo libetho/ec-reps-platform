@@ -88,23 +88,29 @@ function reps_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
+        'views-12da212b2f93e289c2bd907729707482' => array(
+          'module' => 'views',
+          'delta' => '12da212b2f93e289c2bd907729707482',
+          'region' => 'content',
+          'weight' => '-7',
+        ),
         'views-reps_bean_blocks-block_1' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_1',
           'region' => 'content',
-          'weight' => '-7',
+          'weight' => '-6',
         ),
         'views-reps_videos-block' => array(
           'module' => 'views',
           'delta' => 'reps_videos-block',
           'region' => 'content',
-          'weight' => '-6',
+          'weight' => '-5',
         ),
         'views-reps_publications-block' => array(
           'module' => 'views',
           'delta' => 'reps_publications-block',
           'region' => 'content',
-          'weight' => '-5',
+          'weight' => '-4',
         ),
         'views-reps_sliders-block_1' => array(
           'module' => 'views',
