@@ -434,62 +434,81 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .more-link {
   margin-right: 15px;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content {
   margin: 0 -15px;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row {
   overflow: hidden;
   width: 33.33333333%;
   float: left;
   padding: 0 15px;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field {
   text-align: center;
   border: 1px solid #cfcfcf;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field-field-reps-core-image {
   padding: 10px 10px 0;
   border-bottom: none;
   max-height: 400px;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field-field-reps-core-image img,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field-field-reps-core-image img {
-  width: 100%;
   height: auto;
   max-width: 150px;
+  width: 100%;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field-field-reps-core-external-url-1,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field-field-reps-core-external-url-1 {
   border-top: none;
   padding: 0 5px;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field-field-reps-core-external-url-1 h3,
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field-field-reps-core-external-url-1 h3 {
   font-size: 100%;
   font-weight: bold;
   margin: 0;
   padding: 10px 0;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field {
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference {
+  margin-right: -15px;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item {
+  width: 33.33333333%;
+  float: left;
+  padding-right: 15px;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node {
   background: #006fb4;
   border: none;
 }
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks .view-content .views-row .views-field img {
-  width: 100%;
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node .field-name-field-reps-core-image {
+  border-bottom: none;
+  max-height: 400px;
+  padding: 10px 15px 0;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node .field-name-field-reps-core-image .field-item {
+  padding-right: 0;
+  width: auto;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node .field-name-field-reps-core-image .field-image-caption {
+  display: none;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node .field-name-field-reps-core-image img {
+  height: auto;
+  margin: 0 !important;
   max-width: 200px;
+  width: 100%;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node .field-name-field-reps-core-external-url .field-item {
+  padding: 0 15px;
+  width: 100%;
+}
+body.reps #mainContainer #layout-body .field-name-field-reps-core-node-reference .field-items .field-item .node .field-name-field-reps-core-external-url .field-item a {
+  color: #FFFFFF;
+  font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
+  font-size: 1.6em;
 }
 body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks div.views-field-field-reps-core-external-url .field-content {
   padding-left: 10px;
   text-align: left;
-}
-body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks div.views-field-field-reps-core-external-url .field-content a {
-  color: #FFFFFF;
-  font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
-  font-size: 1.6em;
 }
 body.reps #mainContainer #layout-body #block-views-reps-bean-blocks-block-1 .panel-body {
   border: 1px #cfcfcf solid;

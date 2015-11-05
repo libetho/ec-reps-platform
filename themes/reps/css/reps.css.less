@@ -508,7 +508,6 @@ body.reps {
         }
       } // #block-views-reps-videos-block END
 
-      .view-reps-homepage-additional-blocks .view-content,
       #block-views-reps-publications-block .view-content {
         margin: 0 -15px;
 
@@ -529,9 +528,9 @@ body.reps {
             max-height: 400px;
 
             img {
-              width: 100%;
               height: auto;
               max-width: 150px;
+              width: 100%;
             }
           }
 
@@ -549,25 +548,57 @@ body.reps {
         }
       } // #block-views-reps-publications-block .view-content  END
 
-      .view-reps-homepage-additional-blocks .view-content .views-row .views-field {
-        background: #006fb4;
-        border: none;
+      .field-name-field-reps-core-node-reference {
+        margin-right: -15px;
 
-        img{
-          width: 100%;
-          max-width: 200px;
-        }  
+        .field-items .field-item {
+          width: (@fullWidth/3);
+          float: left;
+          padding-right: 15px;
+
+          .node {
+            background: #006fb4;
+            border: none;
+
+            .field-name-field-reps-core-image{
+              border-bottom: none;
+              max-height: 400px;
+              padding: 10px 15px 0;
+
+              .field-item {
+                padding-right: 0;
+                width: auto;
+              }
+
+              .field-image-caption {
+                display: none;
+              }
+              
+              img{
+                height: auto;
+                margin: 0 !important;
+                max-width: 200px;
+                width: 100%;
+              }
+            }
+
+            .field-name-field-reps-core-external-url .field-item{
+              padding: 0 15px;
+              width: 100%;
+
+              a {
+                color: #FFFFFF;
+                font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
+                font-size: 1.6em;
+              }
+            }
+          }
+        } 
       }
 
       .view-reps-homepage-additional-blocks div.views-field-field-reps-core-external-url .field-content{
         padding-left: 10px;
-        text-align: left;
-        
-        a {
-          color: #FFFFFF;
-          font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
-          font-size: 1.6em;
-        }  
+        text-align: left;  
       }
 
       #block-views-reps-bean-blocks-block-1 .panel-body {
