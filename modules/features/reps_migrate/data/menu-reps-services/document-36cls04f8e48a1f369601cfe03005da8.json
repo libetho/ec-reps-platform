@@ -5,13 +5,15 @@
   "languages": [
     "und",
     "mt",
-    "fr"
+    "fr",
+    "de"
   ],
   "fields": {
     "title": {
       "mt": ["Aħdem mal-UE"],
       "und": ["Work for the EU"],
-      "fr": ["Travailler pour l'UE "]
+      "fr": ["Travailler pour l'UE"],
+      "de": ["Arbeiten bei der EU"]
     },
     "link": {
       "und": ["about-us/work-for-eu"]

@@ -5,13 +5,15 @@
   "languages": [
     "mt",
     "und",
-    "fr"
+    "fr",
+    "de"
   ],
   "fields": {
     "title": {
       "und": ["Cookies"],
       "mt": ["Cookies"],
-      "fr": ["Cookies"]
+      "fr": ["Cookies"],
+      "de": ["Cookies"]
     },
     "link": {
       "und": ["http://ec.europa.eu/cookies/index_en.htm"]
