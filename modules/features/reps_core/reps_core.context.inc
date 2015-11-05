@@ -88,12 +88,6 @@ function reps_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
-        'views-12da212b2f93e289c2bd907729707482' => array(
-          'module' => 'views',
-          'delta' => '12da212b2f93e289c2bd907729707482',
-          'region' => 'content',
-          'weight' => '-7',
-        ),
         'views-reps_bean_blocks-block_1' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_1',
