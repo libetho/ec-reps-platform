@@ -92,19 +92,19 @@ function reps_core_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_1',
           'region' => 'content',
-          'weight' => '-7',
+          'weight' => '-6',
         ),
         'views-reps_videos-block' => array(
           'module' => 'views',
           'delta' => 'reps_videos-block',
           'region' => 'content',
-          'weight' => '-6',
+          'weight' => '-5',
         ),
         'views-reps_publications-block' => array(
           'module' => 'views',
           'delta' => 'reps_publications-block',
           'region' => 'content',
-          'weight' => '-5',
+          'weight' => '-4',
         ),
         'views-reps_sliders-block_1' => array(
           'module' => 'views',

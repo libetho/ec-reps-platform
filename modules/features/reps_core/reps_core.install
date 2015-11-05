@@ -41,6 +41,8 @@ function reps_core_enable() {
   multisite_config_service('title')->replaceTitleField('node', 'reps_slide_footer', 'title');
   multisite_config_service('title')->replaceTitleField('node', 'reps_slide_homepage', 'title');
   multisite_config_service('title')->replaceTitleField('node', 'reps_contact_point', 'title');
+  multisite_config_service('title')->replaceTitleField('node', 'reps_homepage', 'title');
+  multisite_config_service('title')->replaceTitleField('node', 'reps_homepage_additional_block', 'title');
 
   // Override some of the options exported in multisite core features.
   reps_core_overrides();
