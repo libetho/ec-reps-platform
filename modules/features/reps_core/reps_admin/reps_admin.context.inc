@@ -37,10 +37,12 @@ function reps_admin_context_default_contexts() {
     ),
   );
   $context->condition_mode = 1;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Admin context for the REPS');
   t('REPS');
   $export['reps-admin'] = $context;
+
   return $export;
 }
