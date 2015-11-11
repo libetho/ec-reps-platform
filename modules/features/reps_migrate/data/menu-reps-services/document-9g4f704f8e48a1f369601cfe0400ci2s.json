@@ -5,13 +5,15 @@
   "languages": [
     "mt",
     "und",
-    "fr"
+    "fr",
+    "de"
   ],
   "fields": {
     "title": {
       "und": ["Contact"],
       "mt": ["Kuntatt"],
-      "fr": ["Contact"]
+      "fr": ["Contact"],
+      "de": ["Kontakt"]
     },
     "link": {
       "und": ["about-us/contact"]

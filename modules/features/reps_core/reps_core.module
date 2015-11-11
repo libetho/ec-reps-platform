@@ -138,7 +138,7 @@ function _reps_core_create_default_pages() {
   $page = array(
     'title' => t('Homepage'),
     'path' => 'home',
-    'type' => 'page',
+    'type' => 'reps_homepage',
   );
   reps_core_create_node($page['type'], $page['title'], $page['path']);
   variable_set('site_frontpage', 'home');
@@ -260,14 +260,6 @@ function reps_core_overrides() {
     }
   }
 
-  // Overrides the variables already exported by the mapeditor feature.
-  variable_set('language_content_type_mapeditor_map', '4');
-  variable_set('menu_options_mapeditor_map', array());
-  variable_set('node_options_mapeditor_map', array(
-    0 => 'moderation',
-    1 => 'revision',
-  ));
-
   // Add permissions to "administrator" role.
   $role = user_role_load_by_name('administrator');
   user_role_grant_permissions($role->rid, array(
@@ -298,19 +290,6 @@ function reps_core_overrides() {
   user_role_grant_permissions($role->rid, array(
     'access site map',
   ));
-
-  // Remove js code from display of map.
-  $instances = field_read_instance('node', 'mapeditor_map_definition', 'mapeditor_map');
-  if ($instances) {
-    $instances['display']['default'] = array(
-      'label' => 'hidden',
-      'module' => 'text',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 1,
-    );
-    field_update_instance($instances);
-  }
 }
 
 /**
@@ -505,10 +484,8 @@ function reps_core_post_features_enable_feature($component) {
         'delete any reps_core_sb_right_image_link bean',
         'delete any reps_slide_footer content',
         'delete any reps_slide_homepage content',
-        'edit any mapeditor_map content',
         'edit any page content',
         'edit any reps_contact_point content',
-        'delete any mapeditor_map content',
         'delete any page content',
         'edit any reps_slide_footer content',
         'edit any reps_slide_homepage content',
@@ -518,7 +495,6 @@ function reps_core_post_features_enable_feature($component) {
       user_role_revoke_permissions($rid, array(
         'create editorial_team content',
         'create flexslider_example content',
-        'create mapeditor_map content',
         'delete any editorial_team content',
         'delete any flexslider_example content',
         'edit any editorial_team content',

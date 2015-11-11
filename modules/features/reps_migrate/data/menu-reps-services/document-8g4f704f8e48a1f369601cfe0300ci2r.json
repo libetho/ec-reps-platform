@@ -5,13 +5,15 @@
   "languages": [
     "mt",
     "und",
-    "fr"
+    "fr",
+    "de"
   ],
   "fields": {
     "title": {
       "und": ["Sitemap"],
       "mt": ["Mappa tas-sit"],
-      "fr": ["Plan du site"]
+      "fr": ["Plan du site"],
+      "de": ["Wegweiser"]
     },
     "link": {
       "und": ["sitemap"]

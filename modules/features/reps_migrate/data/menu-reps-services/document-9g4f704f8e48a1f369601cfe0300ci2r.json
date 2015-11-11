@@ -5,13 +5,15 @@
   "languages": [
     "mt",
     "und",
-    "fr"
+    "fr",
+    "de"
   ],
   "fields": {
     "title": {
       "und": ["Disclaimer"],
       "mt": ["Avviż legali"],
-      "fr": ["Avis juridique"]
+      "fr": ["Avis juridique"],
+      "de": ["Rechtlicher Hinweis"]
     },
     "link": {
       "und": ["http://ec.europa.eu/geninfo/legal_notices_en.htm"]
