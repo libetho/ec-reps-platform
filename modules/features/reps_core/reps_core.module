@@ -138,7 +138,7 @@ function _reps_core_create_default_pages() {
   $page = array(
     'title' => t('Homepage'),
     'path' => 'home',
-    'type' => 'page',
+    'type' => 'reps_homepage',
   );
   reps_core_create_node($page['type'], $page['title'], $page['path']);
   variable_set('site_frontpage', 'home');

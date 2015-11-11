@@ -13,7 +13,9 @@ function reps_preprocess_page(&$variables) {
     $variables['is_front'] = 1;
   }
 
-  $title = drupal_get_title();
+  // Change language of the image in the banner depening the current language.
+  global $language;
+  $variables['logo'] = '/wel/template-2013/images/logo/logo_' . $language->language . '.gif';
 
   // Format regions.
   $regions = array();
