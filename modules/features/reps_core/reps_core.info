@@ -10,7 +10,6 @@ dependencies[] = ec_embedded_video
 dependencies[] = ecas_env
 dependencies[] = entityreference
 dependencies[] = flexslider_example
-dependencies[] = menu_admin_per_menu
 dependencies[] = multisite_metatags
 dependencies[] = nexteuropa_core
 dependencies[] = nexteuropa_europa_search
