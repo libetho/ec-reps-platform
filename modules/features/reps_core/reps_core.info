@@ -160,7 +160,6 @@ features[variable][] = comment_subject_field_reps_contact_point
 features[variable][] = comment_subject_field_reps_slide_footer
 features[variable][] = comment_subject_field_reps_slide_homepage
 features[variable][] = date_format_just_Y
-features[variable][] = date_format_time
 features[variable][] = date_views_day_format_with_year
 features[variable][] = date_views_day_format_without_year
 features[variable][] = date_views_month_format_with_year
