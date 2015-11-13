@@ -9,13 +9,6 @@ include_once 'reps_core.features.inc';
 include_once 'reps_core.api.inc';
 
 /**
- * Implements hook_feature_set_api().
- */
-function reps_core_feature_set_api() {
-  return array('version' => '1.0');
-}
-
-/**
  * Implements hook_menu().
  */
 function reps_core_menu() {

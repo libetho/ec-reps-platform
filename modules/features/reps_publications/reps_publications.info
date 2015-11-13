@@ -1,5 +1,5 @@
 name = REPS Publications
-description = The publications feature fo the REPS websites
+description = The publications feature for the REPS websites
 core = 7.x
 multisite_version = 2.1
 package = REPS

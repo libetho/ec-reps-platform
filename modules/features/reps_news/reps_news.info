@@ -1,5 +1,5 @@
 name = REPS News
-description = The news feature fo the REPS websites
+description = The news feature for the REPS websites
 multisite_version = 2.1
 core = 7.x
 package = REPS
