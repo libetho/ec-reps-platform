@@ -4,8 +4,6 @@
  * Code for the reps_contact_form feature.
  */
 
-include_once 'reps_contact_form.features.inc';
-
 /**
  * Implements hook_form_alter().
  */
