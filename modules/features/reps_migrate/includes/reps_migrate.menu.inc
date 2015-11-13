@@ -65,14 +65,14 @@ abstract class RepsMenuMigrationAbstract extends RepsMigrationAbstract {
     // Get the parent mlid.
     if (property_exists($row, 'parent')) {
       $item = $row->parent;
-      $parent = reps_core_menu_item_name_get($item, 'main-menu');
+      $parent = _reps_core_menu_item_name_get($item, 'main-menu');
 
       if ($parent) {
         $row->parent = $parent;
       }
     }
     // Convert the alias to the node path.
-    $node_path = reps_core_menu_link($row->link);
+    $node_path = _reps_core_menu_link($row->link);
     $row->link = $node_path;
   }
 

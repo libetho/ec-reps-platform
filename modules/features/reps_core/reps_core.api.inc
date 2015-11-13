@@ -13,7 +13,7 @@
  * @return string
  *   The link, revisited.
  */
-function reps_core_menu_link($link, $lang = FALSE) {
+function _reps_core_menu_link($link, $lang = FALSE) {
   global $base_url;
   $lang = $lang ? $lang : LANGUAGE_NONE;
   if ($link != '<front>' &&  $link != '<nolink>') {
@@ -36,67 +36,12 @@ function reps_core_menu_link($link, $lang = FALSE) {
 }
 
 /**
- * Create a taxonomy term for a given vocabulary.
- *
- * @param string $vocabulary
- *   Vocabulary machine name.
- * @param string $name
- *   Name of the term to be created.
- * @param string $parent
- *   Name of the parent term, already existing
- *   in the specified vocabulary.
- *
- * @return string
- *   Return value from Drupal's entity_save() API call,
- *   or FALSE if no vocabulary has been found.
- */
-function reps_core_create_term($vocabulary, $name, $lang = 'en', $weight = 0, $tsid = FALSE, $parent = FALSE) {
-
-  if ($vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary)) {
-    // Exit if term already exists for that vocabulary.
-    $tid = reps_core_term_by_name($name, $vocabulary->vid);
-    if (is_numeric($tid)) {
-      return FALSE;
-    }
-
-    $values = array();
-    $values['vocabulary_machine_name'] = $vocabulary->machine_name;
-    $values['vid'] = $vocabulary->vid;
-    $values['name'] = $name;
-    $values['weight'] = $weight;
-    $values['language'] = $lang;
-    if ($parent) {
-      $values['parent'] = $parent;
-    }
-
-    $entity = entity_create('taxonomy_term', $values);
-    entity_save('taxonomy_term', $entity);
-
-    if (!$tsid) {
-      $ts = i18n_translation_set_create('taxonomy_term');
-      $ts->add_item($entity, $lang);
-      $ts->save(TRUE);
-    }
-    else {
-      $ts = i18n_translation_set_load($tsid);
-      $ts->add_item($entity, $lang);
-      $ts->save(TRUE);
-    }
-    $ret = array(
-      'tid' => $entity->tid,
-      'tsid' => $ts->tsid,
-    );
-    return $ret;
-  }
-}
-
-/**
  * Add system languages.
  *
  * @param array $languages
  *   Array of languages codes.
  */
-function reps_core_add_languages($languages = array()) {
+function _reps_core_add_languages($languages = array()) {
   // Enabling languages. TO BE MOVED!
   if (module_exists('locale')) {
     include_once DRUPAL_ROOT . '/includes/locale.inc';
@@ -114,7 +59,7 @@ function reps_core_add_languages($languages = array()) {
  * @param array $languages
  *   Array of languages codes.
  */
-function reps_core_disable_languages($languages = array()) {
+function _reps_core_disable_languages($languages = array()) {
   $langs = language_list();
   foreach ($languages as $lang) {
     if (isset($langs[$lang])) {
@@ -124,26 +69,6 @@ function reps_core_disable_languages($languages = array()) {
         ->execute();
     }
   }
-}
-
-/**
- * Get taxonomy term ID by term name.
- *
- * @param string $term
- *   Term name.
- * @param int $vid
- *   Vocabulary vid.
- */
-function reps_core_term_by_name($term, $vid) {
-  $query = db_select('taxonomy_term_data', 't');
-  $tid = $query
-    ->fields('t', array('tid'))
-    ->condition('t.name', $term)
-    ->condition('t.vid', $vid)
-    ->execute()
-    ->fetchField();
-
-  return $tid;
 }
 
 /**
@@ -173,8 +98,8 @@ function reps_core_term_by_name($term, $vid) {
  * @return int
  *   The mlid of the created menu item.
  */
-function reps_core_menu_item($menu, $link, $plid, $title, $module, $weight, $lang = 'en', $tsid = NULL, $nolink = FALSE, $logs = FALSE) {
-  $link = reps_core_menu_link($link, $lang);
+function _reps_core_menu_item($menu, $link, $plid, $title, $module, $weight, $lang = 'en', $tsid = NULL, $nolink = FALSE, $logs = FALSE) {
+  $link = _reps_core_menu_link($link, $lang);
   $plid = ($plid > 0) ? $plid : 0;
 
   $item = array(
@@ -215,7 +140,7 @@ function reps_core_menu_item($menu, $link, $plid, $title, $module, $weight, $lan
  * @return string
  *   Return nid.
  */
-function reps_core_create_node($type, $title, $path = 'node', $lang = LANGUAGE_NONE, $menu = NULL) {
+function _reps_core_create_node($type, $title, $path = 'node', $lang = LANGUAGE_NONE, $menu = NULL) {
   $node = new stdClass();
   $node->type = $type;
   node_object_prepare($node);
@@ -240,7 +165,7 @@ function reps_core_create_node($type, $title, $path = 'node', $lang = LANGUAGE_N
 /**
  * Helper function to delete menu, menu links, taxonomies.
  */
-function reps_core_delete($name, $type = 'menu', $op = 'items') {
+function _reps_core_delete($name, $type = 'menu', $op = 'items') {
   switch ($type) {
     case 'menu':
       if ($op == 'items') {
@@ -285,7 +210,7 @@ function reps_core_delete($name, $type = 'menu', $op = 'items') {
 /**
  * Helper function to get the mlid basing on the link name.
  */
-function reps_core_menu_item_name_get($name, $voc) {
+function _reps_core_menu_item_name_get($name, $voc) {
   $mlid = db_select('menu_links', 'ml')
     ->fields('ml', array('mlid'))
     ->condition('link_title', $name)

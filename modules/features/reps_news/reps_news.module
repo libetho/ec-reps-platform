@@ -12,9 +12,9 @@ include_once 'reps_news.features.inc';
  */
 function reps_news_post_features_enable_feature($component) {
   if ($component == 'node') {
-    $type = reps_core_check_reps_content_type('reps_news');
+    $type = _reps_core_check_reps_content_type('reps_news');
     // Set permissions for the Editor role.
-    $rid = reps_core_check_reps_roles('REPS Administrator');
+    $rid = _reps_core_check_reps_roles('REPS Administrator');
     user_role_grant_permissions($rid, array(
       'create ' . $type . ' content',
       'delete any ' . $type . ' content',
@@ -22,7 +22,7 @@ function reps_news_post_features_enable_feature($component) {
     ));
 
     // Set permissions for the Editor role.
-    $rid = reps_core_check_reps_roles('editor');
+    $rid = _reps_core_check_reps_roles('editor');
     user_role_grant_permissions($rid, array(
       'create ' . $type . ' content',
       'edit any ' . $type . ' content',

@@ -1,5 +1,5 @@
 name = REPS Events
-description = The events feature fo the REPS websites
+description = The events feature for the REPS websites
 core = 7.x
 multisite_version = 2.1
 package = REPS

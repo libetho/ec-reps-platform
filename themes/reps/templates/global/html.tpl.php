@@ -11,9 +11,7 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-  <script defer src="//europa.eu/webtools/load.js" type="text/javascript"></script>
   <?php print $scripts; ?>
-
 </head>
 <body class="<?php print $classes; ?> reps" <?php print $attributes;?>>
   <div id="skip-link">
