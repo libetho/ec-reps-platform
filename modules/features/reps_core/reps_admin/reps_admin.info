@@ -10,4 +10,4 @@ configure = admin/config/reps
 features[ctools][] = context:context:3
 features[context][] = reps-admin
 features[features_api][] = api:2
-multisite_version = 1.7
+multisite_version = 2.1

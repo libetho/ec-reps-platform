@@ -45,10 +45,10 @@ function reps_core_enable() {
   multisite_config_service('title')->replaceTitleField('node', 'reps_homepage_additional_block', 'title');
 
   // Override some of the options exported in multisite core features.
-  reps_core_overrides();
+  _reps_core_overrides();
 
   // Set custom permissions for editors and REPS Admin roles.
-  reps_core_set_generic_permissions();
+  _reps_core_set_generic_permissions();
 
   // Drupal set message.
   drupal_set_message(t("The REPS core feature is now active on your site"));
@@ -195,7 +195,7 @@ function reps_core_install() {
   menu_save($main_menu);
 
   // Empty the main menu.
-  reps_core_delete('main-menu');
+  _reps_core_delete('main-menu');
 
   // Force a revert fo the menu component.
   features_revert(array('reps_core' => array('menu_custom')));

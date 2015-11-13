@@ -31,16 +31,16 @@ function reps_contact_form_post_features_enable_feature($component) {
         module_enable(array('title'));
       }
       multisite_config_service('title')->replaceTitleField('node', 'webform', 'title');
-      $type = reps_core_check_reps_content_type('webform');
+      $type = _reps_core_check_reps_content_type('webform');
       // Set permissions for REPS Administrator.
-      $rid = reps_core_check_reps_roles('REPS Administrator');
+      $rid = _reps_core_check_reps_roles('REPS Administrator');
       user_role_grant_permissions($rid, array(
         'delete own ' . $type . ' content',
         'edit any ' . $type . ' content',
       ));
 
       // Set permissions for the Editor role.
-      $rid = reps_core_check_reps_roles('editor');
+      $rid = _reps_core_check_reps_roles('editor');
       user_role_grant_permissions($rid, array(
         'edit any ' . $type . ' content',
       ));

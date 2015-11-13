@@ -15,4 +15,4 @@ features_exclude[dependencies][cce_basic_config] = cce_basic_config
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][nexteuropa_multilingual] = nexteuropa_multilingual
 features_exclude[field_instance][node-webform-body] = node-webform-body
-multisite_version = 1.7
+multisite_version = 2.1

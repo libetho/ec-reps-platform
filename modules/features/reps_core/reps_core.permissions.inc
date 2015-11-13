@@ -5,9 +5,9 @@
  */
 
 /**
- * Implements reps_core_set_generic_permissions().
+ * Implements _reps_core_set_generic_permissions().
  */
-function reps_core_set_generic_permissions() {
+function _reps_core_set_generic_permissions() {
   $modules = array(
     'workbench_moderation',
     'scheduler',
@@ -21,7 +21,7 @@ function reps_core_set_generic_permissions() {
   }
 
   // Set permissions for REPS Administrator.
-  $rid = reps_core_check_reps_roles('REPS Administrator');
+  $rid = _reps_core_check_reps_roles('REPS Administrator');
   user_role_grant_permissions($rid, array(
     'access administration menu',
     'access administration pages',
@@ -45,6 +45,8 @@ function reps_core_set_generic_permissions() {
     'create any reps_core_sb_right_blue_button bean',
     'create files',
     'create page content',
+    'create reps_slide_footer content',
+    'create reps_slide_homepage content',
     'delete any audio files',
     'delete any document files',
     'delete any image files',
@@ -54,7 +56,6 @@ function reps_core_set_generic_permissions() {
     'delete own document files',
     'delete own image files',
     'delete own page content',
-    'delete own reps_contact_point content',
     'delete own reps_slide_footer content',
     'delete own reps_slide_homepage content',
     'delete own video files',
@@ -76,7 +77,6 @@ function reps_core_set_generic_permissions() {
     'edit own document files',
     'edit own image files',
     'edit own page content',
-    'edit own reps_contact_point content',
     'edit own reps_slide_footer content',
     'edit own reps_slide_homepage content',
     'edit own video files',
@@ -131,7 +131,7 @@ function reps_core_set_generic_permissions() {
   ));
 
   // Set permissions for the Editor role.
-  $rid = reps_core_check_reps_roles('editor');
+  $rid = _reps_core_check_reps_roles('editor');
   user_role_grant_permissions($rid, array(
     'access administration pages',
     'access bean overview',
@@ -145,13 +145,11 @@ function reps_core_set_generic_permissions() {
     'bypass workbench moderation',
     'create files',
     'create page content',
-    'create reps_contact_point content',
     'create reps_slide_footer content',
     'create reps_slide_homepage content',
     'delete own audio files',
     'delete own document files',
     'delete own image files',
-    'delete own reps_contact_point content',
     'delete own reps_slide_footer content',
     'delete own reps_slide_homepage content',
     'delete own video files',
@@ -167,7 +165,6 @@ function reps_core_set_generic_permissions() {
     'edit any document files',
     'edit any image files',
     'edit any page content',
-    'edit any reps_contact_point content',
     'edit any reps_core_quicklinks bean',
     'edit any reps_core_sb_right_blue_button bean',
     'edit any reps_core_sb_right_free_content bean',
@@ -179,7 +176,6 @@ function reps_core_set_generic_permissions() {
     'edit own document files',
     'edit own image files',
     'edit own page content',
-    'edit own reps_contact_point content',
     'edit own reps_slide_footer content',
     'edit own reps_slide_homepage content',
     'edit own video files',
