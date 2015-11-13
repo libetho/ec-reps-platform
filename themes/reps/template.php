@@ -99,6 +99,7 @@ function reps_preprocess_page(&$variables) {
   // Adding pathToTheme for Drupal.settings to be used in js files.
   $base_theme = multisite_drupal_toolbox_get_base_theme();
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . drupal_get_path('theme', $base_theme) . '" });', 'inline');
+  drupal_add_js('//europa.eu/webtools/load.js', 'external');
 }
 
 /**
