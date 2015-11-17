@@ -133,7 +133,8 @@ function reps_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_publication-field_reps_core_external_url'
+  // Exported field_instance:
+  // 'node-reps_publication-field_reps_core_external_url'
   $field_instances['node-reps_publication-field_reps_core_external_url'] = array(
     'bundle' => 'reps_publication',
     'default_value' => NULL,
@@ -291,7 +292,8 @@ function reps_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_publication-field_reps_publication_file'
+  // Exported field_instance:
+  // 'node-reps_publication-field_reps_publication_file'
   $field_instances['node-reps_publication-field_reps_publication_file'] = array(
     'bundle' => 'reps_publication',
     'deleted' => 0,

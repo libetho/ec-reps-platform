@@ -552,7 +552,7 @@ function reps_core_post_features_enable_feature($component) {
  * Implements hook_post_features_revert().
  */
 function reps_core_post_features_revert($component) {
-   _reps_core_create_instances($component);
+  _reps_core_create_instances($component);
 }
 
 /**
