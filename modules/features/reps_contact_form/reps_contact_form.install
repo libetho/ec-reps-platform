@@ -26,10 +26,3 @@ function reps_contact_form_install() {
   // Overrides already exported variables.
   _reps_contact_form_override();
 }
-
-/**
- * Implements hook_uninstall().
- */
-function reps_contact_form_uninstall() {
-  // TBD.
-}
