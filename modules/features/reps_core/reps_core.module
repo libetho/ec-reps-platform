@@ -549,13 +549,6 @@ function reps_core_post_features_enable_feature($component) {
 }
 
 /**
- * Implements hook_post_features_revert().
- */
-function reps_core_post_features_revert($component) {
-   _reps_core_create_instances($component);
-}
-
-/**
  * Helper function to create "fake" isntances of exported field bases.
  *
  * @param string $component
@@ -620,7 +613,7 @@ function reps_core_filter_info() {
 /**
  * Filter callback.
  */
-function reps_core_filter_basepath($text, $filter, $format, $langcode, $cache, $cache_id) {
+function _reps_core_filter_basepath($text, $filter, $format, $langcode, $cache, $cache_id) {
   // Add the base path to leading slash links.
   $link = 'href="/';
   $img = 'src="/';
