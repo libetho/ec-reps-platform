@@ -64,7 +64,6 @@ modules/custom/tmgmt_workbench/
 modules/custom/version_management/
 modules/features/custom/
 modules/modified/
-modules/contrib/
-
+modules/contrib/less/
 
 

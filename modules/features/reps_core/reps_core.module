@@ -9,13 +9,6 @@ include_once 'reps_core.features.inc';
 include_once 'reps_core.api.inc';
 
 /**
- * Implements hook_feature_set_api().
- */
-function reps_core_feature_set_api() {
-  return array('version' => '1.0');
-}
-
-/**
  * Implements hook_menu().
  */
 function reps_core_menu() {
@@ -41,7 +34,6 @@ function reps_core_help($path, $arg) {
     case 'admin/help#reps_core':
       $help = '<p></p>';
       break;
-
   }
 
   return $help;
@@ -88,14 +80,14 @@ function reps_core_menu_alter(&$items) {
  * @return string
  *   admin theme variable
  */
-function _reps_core_use_admin_theme() {
+function reps_core_use_admin_theme() {
   return variable_get('admin_theme', 'seven');
 }
 
 /**
  * Empty Callback for the home page.
  */
-function _reps_core_empty() {
+function reps_core_empty() {
   return '';
 }
 
@@ -130,7 +122,7 @@ function _reps_core_create_default_pages() {
 
   foreach ($pages as $page) {
     if ($page['path'] !== 'home') {
-      $nids[] = reps_core_create_node($page['type'], $page['title'], $page['path']);
+      $nids[] = _reps_core_create_node($page['type'], $page['title'], $page['path']);
     }
   }
   variable_set('reps_core_default_pages_nids', $nids);
@@ -140,7 +132,7 @@ function _reps_core_create_default_pages() {
     'path' => 'home',
     'type' => 'reps_homepage',
   );
-  reps_core_create_node($page['type'], $page['title'], $page['path']);
+  _reps_core_create_node($page['type'], $page['title'], $page['path']);
   variable_set('site_frontpage', 'home');
 }
 
@@ -161,7 +153,7 @@ function reps_core_date_format_types() {
  * @param array $vars
  *   Array containing variables name and values.
  */
-function reps_core_site_name($lang, array $vars) {
+function _reps_core_site_name($lang, array $vars) {
   foreach ($vars as $variable => $value) {
     $results = db_select('variable_store')
       ->fields(NULL, array('field'))
@@ -199,7 +191,7 @@ function reps_core_site_name($lang, array $vars) {
  * multisite platform, since we cannot do properly updating those features,
  * we had to find a way to override them not using the features_override module.
  */
-function reps_core_overrides() {
+function _reps_core_overrides() {
   // Page instances of field body.
   $instances = field_read_instance('node', 'body', 'page');
   if ($instances) {
@@ -378,7 +370,7 @@ function _reps_core_feedback_form() {
  * @param string $rolename
  *   Rolename.
  */
-function reps_core_check_reps_roles($rolename) {
+function _reps_core_check_reps_roles($rolename) {
   $role = user_role_load_by_name($rolename);
 
   if (!$role) {
@@ -398,7 +390,7 @@ function reps_core_check_reps_roles($rolename) {
  * @param string $voc
  *   Vocabulary machine name.
  */
-function reps_core_check_reps_vocabularies($voc) {
+function _reps_core_check_reps_vocabularies($voc) {
   $check = taxonomy_vocabulary_machine_name_load($voc);
   if (!$check) {
     $vocab = (object) array(
@@ -419,7 +411,7 @@ function reps_core_check_reps_vocabularies($voc) {
  * @param string $menu
  *   Menu machine name.
  */
-function reps_core_check_reps_menus($menu) {
+function _reps_core_check_reps_menus($menu) {
   $check = menu_load($menu);
 
   if (!$check) {
@@ -438,7 +430,7 @@ function reps_core_check_reps_menus($menu) {
  * @param string $ct
  *   Content type machine name.
  */
-function reps_core_check_reps_content_type($ct) {
+function _reps_core_check_reps_content_type($ct) {
   $type = node_type_get_type($ct);
 
   if (!$type) {
@@ -473,25 +465,20 @@ function reps_core_post_features_enable_feature($component) {
 
     case 'node':
       // Set permissions for REPS Administrator.
-      $rid = reps_core_check_reps_roles('REPS Administrator');
+      $rid = _reps_core_check_reps_roles('REPS Administrator');
       user_role_grant_permissions($rid, array(
-        'create reps_contact_point content',
-        'create reps_slide_footer content',
-        'create reps_slide_homepage content',
-        'delete any reps_contact_point content',
         'delete any reps_core_quicklinks bean',
         'delete any reps_core_sb_right_free_content bean',
         'delete any reps_core_sb_right_image_link bean',
         'delete any reps_slide_footer content',
         'delete any reps_slide_homepage content',
         'edit any page content',
-        'edit any reps_contact_point content',
         'delete any page content',
         'edit any reps_slide_footer content',
         'edit any reps_slide_homepage content',
       ));
 
-      $rid = reps_core_check_reps_roles('editor');
+      $rid = _reps_core_check_reps_roles('editor');
       user_role_revoke_permissions($rid, array(
         'create editorial_team content',
         'create flexslider_example content',
@@ -508,15 +495,15 @@ function reps_core_post_features_enable_feature($component) {
         module_enable('taxonomy_access_fix');
       }
 
-      $rid = reps_core_check_reps_roles('REPS Administrator');
+      $rid = _reps_core_check_reps_roles('REPS Administrator');
       // Get vocabulary vid to set permissions on taxonomies.
-      $vid = reps_core_check_reps_vocabularies('reps_news_categories');
+      $vid = _reps_core_check_reps_vocabularies('reps_news_categories');
       user_role_grant_permissions($rid, array(
         'edit terms in ' . $vid,
         'delete terms in ' . $vid,
         'add terms in reps_news_categories',
       ));
-      $vid = reps_core_check_reps_vocabularies('reps_contact_point_categories');
+      $vid = _reps_core_check_reps_vocabularies('reps_contact_point_categories');
       user_role_grant_permissions($rid, array(
         'edit terms in ' . $vid,
         'delete terms in ' . $vid,
@@ -531,7 +518,7 @@ function reps_core_post_features_enable_feature($component) {
         'reps_core_quicklinks',
         'reps_core_sb_right_image_link',
       );
-      $rid = reps_core_check_reps_roles('REPS Administrator');
+      $rid = _reps_core_check_reps_roles('REPS Administrator');
 
       foreach ($bean_types as $bean) {
         user_role_grant_permissions($rid, array(
@@ -542,15 +529,15 @@ function reps_core_post_features_enable_feature($component) {
         ));
       }
 
-      $rid = reps_core_check_reps_roles('editor');
+      $rid = _reps_core_check_reps_roles('editor');
       user_role_revoke_permissions($rid, array(
         'view bean page',
       ));
       break;
 
     case 'menu_custom':
-      $rid = reps_core_check_reps_roles('REPS Administrator');
-      reps_core_check_reps_menus('menu-reps-services');
+      $rid = _reps_core_check_reps_roles('REPS Administrator');
+      _reps_core_check_reps_menus('menu-reps-services');
       if (module_exists('menu_admin_per_menu')) {
         user_role_grant_permissions($rid, array(
           'administer menu-reps-services menu items',
@@ -559,13 +546,6 @@ function reps_core_post_features_enable_feature($component) {
       }
       break;
   }
-}
-
-/**
- * Implements hook_post_features_revert().
- */
-function reps_core_post_features_revert($component) {
-  _reps_core_create_instances($component);
 }
 
 /**

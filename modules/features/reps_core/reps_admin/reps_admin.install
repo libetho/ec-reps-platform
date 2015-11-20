@@ -23,7 +23,7 @@ function reps_admin_disable() {
  */
 function reps_admin_install() {
   // Set permissions for REPS Administrator.
-  $rid = reps_core_check_reps_roles('REPS Administrator');
+  $rid = _reps_core_check_reps_roles('REPS Administrator');
   user_role_grant_permissions($rid, array(
     'administer reps menu',
     'administer reps settings',
@@ -31,14 +31,14 @@ function reps_admin_install() {
   ));
 
   // Grant permissions to "Contributor" role.
-  $rid = reps_core_check_reps_roles('contributor');
+  $rid = _reps_core_check_reps_roles('contributor');
   user_role_grant_permissions($rid, array(
     'administer reps settings',
     'administer reps social links',
   ));
 
   // Grant permissions to "Editor" role.
-  $rid = reps_core_check_reps_roles('editor');
+  $rid = _reps_core_check_reps_roles('editor');
   user_role_grant_permissions($rid, array(
     'administer reps settings',
     'administer reps social links',

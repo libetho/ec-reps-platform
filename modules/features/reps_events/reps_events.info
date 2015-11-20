@@ -1,5 +1,5 @@
 name = REPS Events
-description = The events feature fo the REPS websites
+description = The events feature for the REPS websites
 core = 7.x
 multisite_version = 2.1
 package = REPS
@@ -38,7 +38,6 @@ features[variable][] = comment_form_location_reps_event
 features[variable][] = comment_preview_reps_event
 features[variable][] = comment_reps_event
 features[variable][] = comment_subject_field_reps_event
-features[variable][] = date_format_event_date_format
 features[variable][] = field_bundle_settings_node__reps_event
 features[variable][] = language_content_type_reps_event
 features[variable][] = menu_options_reps_event

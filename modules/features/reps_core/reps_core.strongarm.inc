@@ -265,13 +265,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_time';
-  $strongarm->value = 'g:ia';
-  $export['date_format_time'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'date_views_day_format_without_year';
   $strongarm->value = 'l, F j';
   $export['date_views_day_format_without_year'] = $strongarm;

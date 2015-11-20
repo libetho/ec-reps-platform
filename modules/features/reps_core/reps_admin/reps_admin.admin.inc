@@ -695,7 +695,7 @@ function _reps_admin_menu_delete_submit($form, &$form_state) {
  */
 function _reps_admin_menu_add_submit($form, &$form_state) {
   $values = $form_state['values'];
-  $item = reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
+  $item = _reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
   if ($item) {
     drupal_set_message(t("We've successfully created the menu item %title", array('%title' => $values['title'])));
     $form_state['redirect'] = 'admin/reps/menu';
