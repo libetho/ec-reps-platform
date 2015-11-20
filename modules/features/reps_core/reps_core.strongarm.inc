@@ -419,7 +419,6 @@ function reps_core_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__reps_homepage'] = $strongarm;
->>>>>>> FETCH_HEAD
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
