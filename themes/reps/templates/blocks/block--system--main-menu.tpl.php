@@ -50,13 +50,11 @@ global $base_url;
 <div id="main-menu" class="<?php print $classes; ?>">
   <div class="navbar navbar-default" data-spy="affix" data-offset-top="165">
     <div class="container">
-      
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse visible-sm visible-xs in">
-		<p class="menu-browse"><?php print (t('Browse section:')); ?></p>
+        <p class="menu-browse"><?php print (t('Browse section:')); ?></p>
         <?php print $content ?>
       </div>
-
     </div><!-- /.container -->
   </div><!-- /.navbar -->
 </div>

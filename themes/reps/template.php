@@ -13,7 +13,9 @@ function reps_preprocess_page(&$variables) {
     $variables['is_front'] = 1;
   }
 
-  $title = drupal_get_title();
+  // Change language of the image in the banner depening the current language.
+  global $language;
+  $variables['logo'] = drupal_get_path('theme', 'reps') . '/images/logos/logo_' . $language->language . '.gif';
 
   // Format regions.
   $regions = array();
@@ -97,6 +99,7 @@ function reps_preprocess_page(&$variables) {
   // Adding pathToTheme for Drupal.settings to be used in js files.
   $base_theme = multisite_drupal_toolbox_get_base_theme();
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . drupal_get_path('theme', $base_theme) . '" });', 'inline');
+  drupal_add_js('//europa.eu/webtools/load.js', 'external');
 }
 
 /**

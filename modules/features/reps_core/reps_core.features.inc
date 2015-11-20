@@ -38,6 +38,21 @@ function reps_core_views_api($module = NULL, $api = NULL) {
 function reps_core_image_default_styles() {
   $styles = array();
 
+  // Exported image style: homepage_additional_block__200_x_200_.
+  $styles['homepage_additional_block__200_x_200_'] = array(
+    'label' => 'Homepage Additional block [200 x 200]',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_resize',
+        'data' => array(
+          'width' => 200,
+          'height' => 200,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: homepage_thumbs.
   $styles['homepage_thumbs'] = array(
     'name' => 'homepage_thumbs',
@@ -190,6 +205,22 @@ function reps_core_node_info() {
       'name' => t('Contact point'),
       'base' => 'node_content',
       'description' => t('Use this content to add a pin on the map "contact points"'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'reps_homepage' => array(
+      'name' => t('Homepage'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'reps_homepage_additional_block' => array(
+      'name' => t('Homepage additional block'),
+      'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

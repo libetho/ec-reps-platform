@@ -29,12 +29,12 @@
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if(isset($content['field_reps_core_abstract'])): ?>
-	<div class="content"<?php print $content_attributes; ?>>
-	  <?php
-        print render($content['title_field']);
-        print render($content['field_reps_core_abstract']);
-        print render($content['field_reps_core_more_info_link']);
-      ?>
-	</div>
+  <div class="content"<?php print $content_attributes; ?>>
+    <?php
+      print render($content['title_field']);
+      print render($content['field_reps_core_abstract']);
+      print render($content['field_reps_core_more_info_link']);
+    ?>
+  </div>
   <?php endif;?>
 </div>

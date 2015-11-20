@@ -71,6 +71,62 @@ function reps_core_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_reps_add_blocks_content|node|reps_homepage_additional_block|form';
+  $field_group->group_name = 'group_reps_add_blocks_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'reps_homepage_additional_block';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '2',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_reps_core_external_url',
+      2 => 'field_reps_core_image',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-reps-add-blocks-content field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_reps_add_blocks_content|node|reps_homepage_additional_block|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_reps_add_blocks_metadata|node|reps_homepage_additional_block|form';
+  $field_group->group_name = 'group_reps_add_blocks_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'reps_homepage_additional_block';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '3',
+    'children' => array(
+      0 => 'path',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-reps-add-blocks-metadata field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_reps_add_blocks_metadata|node|reps_homepage_additional_block|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_reps_bean_ql_content|bean|reps_core_quicklinks|form';
   $field_group->group_name = 'group_reps_bean_ql_content';
   $field_group->entity_type = 'bean';
@@ -170,7 +226,6 @@ function reps_core_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'title_field',
-      2 => 'field_reps_cp_gcoordinates',
       3 => 'field_reps_cp_type',
     ),
     'format_type' => 'tab',
@@ -216,90 +271,57 @@ function reps_core_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_map_config|node|mapeditor_map|form';
-  $field_group->group_name = 'group_reps_map_config';
+  $field_group->identifier = 'group_reps_homepage_content|node|reps_homepage|form';
+  $field_group->group_name = 'group_reps_homepage_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'mapeditor_map';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Configuration',
-    'weight' => '1',
-    'children' => array(
-      0 => 'field_reps_cp_type',
-      1 => 'mapeditor_csv_data',
-      2 => 'mapeditor_map_definition',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_reps_map_config|node|mapeditor_map|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_map_content|node|mapeditor_map|form';
-  $field_group->group_name = 'group_reps_map_content';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'mapeditor_map';
+  $field_group->bundle = 'reps_homepage';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '0',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
-      1 => 'title_field',
+      1 => 'field_reps_core_node_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-reps-map-content field-group-tab',
+        'classes' => 'group-reps-homepage-content field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_reps_map_content|node|mapeditor_map|form'] = $field_group;
+  $export['group_reps_homepage_content|node|reps_homepage|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_map_metadata|node|mapeditor_map|form';
-  $field_group->group_name = 'group_reps_map_metadata';
+  $field_group->identifier = 'group_reps_homepage_metadata|node|reps_homepage|form';
+  $field_group->group_name = 'group_reps_homepage_metadata';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'mapeditor_map';
+  $field_group->bundle = 'reps_homepage';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_meta_classification',
-      2 => 'field_meta_description',
-      3 => 'path',
-      4 => 'language',
+      0 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-reps-map-metadata field-group-tab',
+        'classes' => 'group-reps-homepage-metadata field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_reps_map_metadata|node|mapeditor_map|form'] = $field_group;
+  $export['group_reps_homepage_metadata|node|reps_homepage|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -317,6 +339,7 @@ function reps_core_field_group_info() {
       0 => 'body',
       1 => 'title_field',
       2 => 'field_reps_core_image',
+      3 => 'field_json_object',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

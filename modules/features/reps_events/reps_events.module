@@ -11,9 +11,9 @@ include_once 'reps_events.features.inc';
  */
 function reps_events_post_features_enable_feature($component) {
   if ($component == 'node') {
-    $type = reps_core_check_reps_content_type('reps_event');
+    $type = _reps_core_check_reps_content_type('reps_event');
     // Set permissions for the Editor role.
-    $rid = reps_core_check_reps_roles('editor');
+    $rid = _reps_core_check_reps_roles('editor');
     user_role_grant_permissions($rid, array(
       'create ' . $type . ' content',
       'edit any ' . $type . ' content',
@@ -25,7 +25,7 @@ function reps_events_post_features_enable_feature($component) {
     ));
 
     // Set permissions for REPS Administrator.
-    $rid = reps_core_check_reps_roles('REPS Administrator');
+    $rid = _reps_core_check_reps_roles('REPS Administrator');
     user_role_grant_permissions($rid, array(
       'create ' . $type . ' content',
       'delete any ' . $type . ' content',

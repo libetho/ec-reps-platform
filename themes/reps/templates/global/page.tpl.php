@@ -124,7 +124,7 @@
           <div class="navbar-header" data-spy="affix" data-offset-top="165">
             <?php if ($menu_visible): ?>
               <div class="visible-xs hidden-sm home-button"><?php print l('<span>' . t('Home') . '</span>', '<front>', array('html' => TRUE)); ?></div>
-			          <button id="menu-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+  		          <button id="menu-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <?php print (t('Menu')); ?>
               </button>
             <?php endif; ?>
@@ -180,7 +180,7 @@
         <a id="content"></a>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>
-          <?php $title_image = (isset($node->field_thumbnail['und'][0]['uri']) && $node->type == 'community' ? image_style_url('communities_thumbnail', $node->field_thumbnail['und'][0]['uri']) : '');?>
+          <?php $title_image = (isset($node->field_thumbnail['LANGUAGE_NONE'][0]['uri']) && $node->type == 'community' ? image_style_url('communities_thumbnail', $node->field_thumbnail['und'][0]['uri']) : '');?>
           <?php if ($is_front == 0): ?>
             <h1 class="col-lg-<?php print $cols['title']['lg']; ?> col-md-<?php print $cols['title']['md']; ?> col-sm-<?php print $cols['title']['sm']; ?> col-xs-<?php print $cols['title']['xs']; ?>" id="page-title">
               <?php if ($title_image): ?>
@@ -190,7 +190,7 @@
             </h1>
           <?php endif; ?>  
         <?php endif; ?>
-		    <?php print render($title_suffix); ?>
+  	    <?php print render($title_suffix); ?>
 
         <?php print $regions['content_top']; ?>
 
