@@ -5,31 +5,3 @@
  */
 
 include_once 'reps_publications.features.inc';
-
-/**
- * Implements hook_post_features_enable_feature().
- */
-function reps_publications_post_features_enable_feature($component) {
-  if ($component == 'node') {
-    $type = _reps_core_check_reps_content_type('reps_publication');
-    // Set permissions for REPS Administrator.
-    $rid = _reps_core_check_reps_roles('REPS Administrator');
-    user_role_grant_permissions($rid, array(
-      'create ' . $type . ' content',
-      'delete any ' . $type . ' content',
-      'edit any ' . $type . ' content',
-    ));
-
-    // Set permissions for the Editor role.
-    $rid = _reps_core_check_reps_roles('editor');
-    user_role_grant_permissions($rid, array(
-      'create ' . $type . ' content',
-      'edit any ' . $type . ' content',
-    ));
-
-    // Revoke permissions for the Editor role.
-    user_role_revoke_permissions($rid, array(
-      'delete any ' . $type . ' content',
-    ));
-  }
-}
