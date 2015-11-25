@@ -15,11 +15,11 @@
   <?php endif; ?>
   <div
     <?php if ($classes_array[$id]): ?> 
-  	  <?php print ' class="' . $classes_array[$id] . '"';  ?> 
+      <?php print ' class="' . $classes_array[$id] . '"';  ?> 
     <?php endif; ?>
   >
     <?php print $row; ?>
-	<div class="clearfix"></div>
+  <div class="clearfix"></div>
   </div>
   <?php if (!empty($suffix[$id])): ?>
     <?php print $suffix[$id]; ?>

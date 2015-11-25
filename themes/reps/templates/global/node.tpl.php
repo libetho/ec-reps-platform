@@ -81,7 +81,6 @@
 ?>
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
   <?php print render($title_prefix); ?>
   <?php print render($title_suffix); ?>
   <div class="content clearfix"<?php print $content_attributes; ?>>
@@ -90,15 +89,14 @@
       hide($content['field_reps_core_image']);
       hide($content['field_reps_core_abstract']);
     ?>
-	<?php if (render($content['field_reps_core_abstract'])): ?>
-		<div class="content-abstract">
-			<?php print render($content['field_reps_core_image']); ?>
-			<?php print render($content['field_reps_core_abstract']); ?>
-			<div class="clearfix"></div>
-		</div>
-	<?php endif;?>
-	<?php print render($content); ?>
+  <?php if (render($content['field_reps_core_abstract'])): ?>
+    <div class="content-abstract">
+      <?php print render($content['field_reps_core_image']); ?>
+      <?php print render($content['field_reps_core_abstract']); ?>
+      <div class="clearfix"></div>
+    </div>
+  <?php endif;?>
+  <?php print render($content); ?>
   </div>
   <?php print isset($content['comments']) ? render($content['comments']) : ''; ?>
-
 </div>

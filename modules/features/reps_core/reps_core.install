@@ -5,7 +5,6 @@
  */
 
 include_once 'reps_core.api.inc';
-include_once 'reps_core.permissions.inc';
 
 /**
  * Implements hook_enable().
@@ -46,9 +45,6 @@ function reps_core_enable() {
 
   // Override some of the options exported in multisite core features.
   _reps_core_overrides();
-
-  // Set custom permissions for editors and REPS Admin roles.
-  _reps_core_set_generic_permissions();
 
   // Drupal set message.
   drupal_set_message(t("The REPS core feature is now active on your site"));
@@ -112,48 +108,6 @@ function reps_core_install() {
   // Disable Multisite "workbench_moderate_all" context.
   $context = context_load('workbench_moderate_all');
   ctools_export_set_object_status($context);
-
-  // Grant permissions to "Contributor" role.
-  $role = user_role_load_by_name('contributor');
-  user_role_grant_permissions($role->rid, array(
-    'access workbench',
-  ));
-
-  // Revoke permissions to "Authenticated user" role.
-  $role = user_role_load_by_name('authenticated user');
-  user_role_revoke_permissions($role->rid, array(
-    'access workbench',
-  ));
-
-  // Revoke permissions to "Contributor" role.
-  $role = user_role_load_by_name('contributor');
-  user_role_revoke_permissions($role->rid, array(
-    'create article content',
-    'edit own article content',
-    'edit any article content',
-    'delete own article content',
-    'delete any article content',
-  ));
-
-  // Revoke permissions to "Editor" role.
-  $role = user_role_load_by_name('editor');
-  user_role_revoke_permissions($role->rid, array(
-    'create article content',
-    'edit own article content',
-    'edit any article content',
-    'delete own article content',
-    'delete any article content',
-    'export nodes',
-  ));
-
-  user_role_revoke_permissions($role->rid, array(
-    'administer users',
-    'create article content',
-    'edit own article content',
-    'edit any article content',
-    'delete own article content',
-    'delete any article content',
-  ));
 
   db_delete('block')
     ->condition('theme', 'reps')

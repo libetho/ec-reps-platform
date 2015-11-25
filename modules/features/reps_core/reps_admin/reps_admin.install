@@ -19,34 +19,6 @@ function reps_admin_disable() {
 }
 
 /**
- * Implements hook_install().
- */
-function reps_admin_install() {
-  // Set permissions for REPS Administrator.
-  $rid = _reps_core_check_reps_roles('REPS Administrator');
-  user_role_grant_permissions($rid, array(
-    'administer reps menu',
-    'administer reps settings',
-    'administer reps social links',
-  ));
-
-  // Grant permissions to "Contributor" role.
-  $rid = _reps_core_check_reps_roles('contributor');
-  user_role_grant_permissions($rid, array(
-    'administer reps settings',
-    'administer reps social links',
-  ));
-
-  // Grant permissions to "Editor" role.
-  $rid = _reps_core_check_reps_roles('editor');
-  user_role_grant_permissions($rid, array(
-    'administer reps settings',
-    'administer reps social links',
-    'administer reps menu',
-  ));
-}
-
-/**
  * Implements hook_uninstall().
  */
 function reps_admin_uninstall() {

@@ -251,37 +251,6 @@ function _reps_core_overrides() {
       field_update_field($field);
     }
   }
-
-  // Add permissions to "administrator" role.
-  $role = user_role_load_by_name('administrator');
-  user_role_grant_permissions($role->rid, array(
-     'add media from remote sources',
-     'translate content',
-  ));
-
-  // Add permissions to "Contributor" role.
-  $role = user_role_load_by_name('contributor');
-  user_role_grant_permissions($role->rid, array(
-    'access site map',
-    'access administration menu',
-    'access administration pages',
-  ));
-
-  // Add permissions to "Editor" role.
-  $role = user_role_load_by_name('editor');
-  user_role_grant_permissions($role->rid, array(
-    'access site map',
-    'access administration menu',
-    'access administration pages',
-    'add media from remote sources',
-    'translate content',
-  ));
-
-  // Add permissions to "Anonymouse user" role.
-  $role = user_role_load_by_name('anonymous user');
-  user_role_grant_permissions($role->rid, array(
-    'access site map',
-  ));
 }
 
 /**
@@ -365,47 +334,6 @@ function _reps_core_feedback_form() {
 }
 
 /**
- * Check if the role exists, otherwise create it.
- *
- * @param string $rolename
- *   Rolename.
- */
-function _reps_core_check_reps_roles($rolename) {
-  $role = user_role_load_by_name($rolename);
-
-  if (!$role) {
-    // Create specific role for Reps sites administrator.
-    $role = new stdClass();
-    $role->name = $rolename;
-    user_role_save($role);
-    $role = user_role_load_by_name($rolename);
-  }
-
-  return $role->rid;
-}
-
-/**
- * Check if the vocabulary exists, otherwise create it.
- *
- * @param string $voc
- *   Vocabulary machine name.
- */
-function _reps_core_check_reps_vocabularies($voc) {
-  $check = taxonomy_vocabulary_machine_name_load($voc);
-  if (!$check) {
-    $vocab = (object) array(
-      'name' => $voc,
-      'description' => '',
-      'machine_name' => $voc,
-    );
-    taxonomy_vocabulary_save($vocab);
-    $check = taxonomy_vocabulary_machine_name_load($voc);
-  }
-
-  return $check->vid;
-}
-
-/**
  * Check if the menu exists, otherwise create it.
  *
  * @param string $menu
@@ -463,96 +391,10 @@ function reps_core_post_features_enable_feature($component) {
       features_revert(array('reps_core' => array($component)));
       break;
 
-    case 'node':
-      // Set permissions for REPS Administrator.
-      $rid = _reps_core_check_reps_roles('REPS Administrator');
-      user_role_grant_permissions($rid, array(
-        'delete any reps_core_quicklinks bean',
-        'delete any reps_core_sb_right_free_content bean',
-        'delete any reps_core_sb_right_image_link bean',
-        'delete any reps_slide_footer content',
-        'delete any reps_slide_homepage content',
-        'edit any page content',
-        'delete any page content',
-        'edit any reps_slide_footer content',
-        'edit any reps_slide_homepage content',
-      ));
-
-      $rid = _reps_core_check_reps_roles('editor');
-      user_role_revoke_permissions($rid, array(
-        'create editorial_team content',
-        'create flexslider_example content',
-        'delete any editorial_team content',
-        'delete any flexslider_example content',
-        'edit any editorial_team content',
-        'edit any flexslider_example content',
-      ));
-
-      break;
-
-    case 'taxonomy':
-      if (!module_exists('taxonomy_access_fix')) {
-        module_enable('taxonomy_access_fix');
-      }
-
-      $rid = _reps_core_check_reps_roles('REPS Administrator');
-      // Get vocabulary vid to set permissions on taxonomies.
-      $vid = _reps_core_check_reps_vocabularies('reps_news_categories');
-      user_role_grant_permissions($rid, array(
-        'edit terms in ' . $vid,
-        'delete terms in ' . $vid,
-        'add terms in reps_news_categories',
-      ));
-      $vid = _reps_core_check_reps_vocabularies('reps_contact_point_categories');
-      user_role_grant_permissions($rid, array(
-        'edit terms in ' . $vid,
-        'delete terms in ' . $vid,
-        'add terms in reps_contact_point_categories',
-      ));
-
-      break;
-
-    case 'bean_type':
-      $bean_types = array(
-        'reps_core_sb_right_free_content',
-        'reps_core_quicklinks',
-        'reps_core_sb_right_image_link',
-      );
-      $rid = _reps_core_check_reps_roles('REPS Administrator');
-
-      foreach ($bean_types as $bean) {
-        user_role_grant_permissions($rid, array(
-          'create any ' . $bean . ' bean',
-          'edit any ' . $bean . ' bean',
-          'delete any ' . $bean . ' bean',
-          'access bean overview',
-        ));
-      }
-
-      $rid = _reps_core_check_reps_roles('editor');
-      user_role_revoke_permissions($rid, array(
-        'view bean page',
-      ));
-      break;
-
     case 'menu_custom':
-      $rid = _reps_core_check_reps_roles('REPS Administrator');
       _reps_core_check_reps_menus('menu-reps-services');
-      if (module_exists('menu_admin_per_menu')) {
-        user_role_grant_permissions($rid, array(
-          'administer menu-reps-services menu items',
-          'administer main-menu menu items',
-        ));
-      }
       break;
   }
-}
-
-/**
- * Implements hook_post_features_revert().
- */
-function reps_core_post_features_revert($component) {
-   _reps_core_create_instances($component);
 }
 
 /**
@@ -620,7 +462,7 @@ function reps_core_filter_info() {
 /**
  * Filter callback.
  */
-function reps_core_filter_basepath($text, $filter, $format, $langcode, $cache, $cache_id) {
+function _reps_core_filter_basepath($text, $filter, $format, $langcode, $cache, $cache_id) {
   // Add the base path to leading slash links.
   $link = 'href="/';
   $img = 'src="/';
