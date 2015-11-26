@@ -32,9 +32,9 @@
   <?php if(($content['field_reps_core_image'])): ?>
     <div class="content"<?php print $content_attributes; ?>>
       <?php if (is_string(render($content['title_field']))): ?>
-        <h3><a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['title_field']));?></a></h3>
+        <h3><a href="<?php print ($content['field_reps_core_external_url']['#items'][0]['url']);?>" <?php if ($content['field_reps_core_external_url']['#items'][0]['attributes']['target']): ?>target="<?php print ($content['field_reps_core_external_url']['#items'][0]['attributes']['target']); ?>"<?php endif;?>><?php print (strip_tags(render($content['title_field'])));?></a></h3>
       <?php endif;?>
-      <a href="<?php print (render($content['field_reps_core_external_url']));?>" target="_blank"><?php print (render($content['field_reps_core_image']));?></a>
+      <a href="<?php print ($content['field_reps_core_external_url']['#items'][0]['url']);?>" <?php if ($content['field_reps_core_external_url']['#items'][0]['attributes']['target']): ?>target="<?php print ($content['field_reps_core_external_url']['#items'][0]['attributes']['target']); ?>"<?php endif;?>><?php print (render($content['field_reps_core_image']));?></a>
     </div>
   <?php endif;?>
 </div>
