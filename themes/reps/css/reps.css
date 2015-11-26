@@ -510,6 +510,12 @@ body.reps #mainContainer #layout-body .view-reps-homepage-additional-blocks div.
   padding-left: 10px;
   text-align: left;
 }
+body.reps #mainContainer #layout-body .bean-reps-core-sb-right-image-link h3 a {
+  font-weight: bold;
+}
+body.reps #mainContainer #layout-body .bean-reps-core-sb-right-image-link .field-image-caption {
+  display: none;
+}
 body.reps #mainContainer #layout-body #block-views-reps-bean-blocks-block-1 .panel-body {
   border: 1px #cfcfcf solid;
   margin-top: 10px;
