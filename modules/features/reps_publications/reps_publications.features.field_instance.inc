@@ -134,7 +134,7 @@ function reps_publications_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-reps_publication-field_reps_core_external_url'
+  // 'node-reps_publication-field_reps_core_external_url'.
   $field_instances['node-reps_publication-field_reps_core_external_url'] = array(
     'bundle' => 'reps_publication',
     'default_value' => NULL,
