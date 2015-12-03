@@ -1142,16 +1142,19 @@ body.reps #mainContainer #sidebar-right .block-nexteuropa-europa-search .panel-b
   background: url(../images/btn-search.jpg) no-repeat;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools {
+  background-color: #eeeeee;
   box-shadow: 0px 2px 2px #d4d4d4;
+  margin-bottom: 25px;
+  max-width: 100%;
+  min-height: 10px;
+  padding: 10px;
   overflow: hidden;
   position: relative;
-  min-height: 10px;
-  background-color: #eeeeee;
-  padding: 10px;
-  margin-bottom: 25px;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools .content {
   float: right;
+  max-width: 100%;
+  padding-right: 10px;
 }
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links {
   background: #eeeeee;
@@ -1370,6 +1373,9 @@ body.not-front #layout-body {
   }
   .navbar {
     min-height: 44px;
+  }
+  #layout-header {
+    background-image: none !important;
   }
   #main-menu {
     background: none !important;

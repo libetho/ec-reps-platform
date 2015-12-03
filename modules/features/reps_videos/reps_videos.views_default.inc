@@ -120,7 +120,7 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['fields']['title_field_et']['alter']['path'] = '[field_reps_core_external_url_et]';
   $handler->display->display_options['fields']['title_field_et']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['path'] = 'videos';
+  $handler->display->display_options['path'] = 'news/videos';
   $handler->display->display_options['menu']['title'] = 'Videos';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
