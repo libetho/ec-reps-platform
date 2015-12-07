@@ -1363,6 +1363,9 @@ body.not-front #layout-body {
   .mobile-user-bar {
     z-index: 5000;
   }
+  .mobile-user-bar .affix {
+    position: absolute !important;
+  }
   #path {
     display: block !important;
     padding: 5px 0;
@@ -1373,6 +1376,7 @@ body.not-front #layout-body {
   }
   .navbar {
     min-height: 44px;
+    position: relative;
   }
   #layout-header {
     background-image: none !important;
@@ -1504,6 +1508,14 @@ body.not-front #layout-body {
     background: #036 !important;
     color: #ffffff !important;
   }
+  #main-menu .visible-sm ul li.active-trail.dropdown.open li,
+  #main-menu .visible-xs ul li.active-trail.dropdown.open li {
+    display: block;
+  }
+  #main-menu .visible-sm ul li.active-trail.dropdown li,
+  #main-menu .visible-xs ul li.active-trail.dropdown li {
+    display: none;
+  }
   #main-menu .visible-ex1 p.menu-browse {
     display: none !important;
   }
@@ -1521,6 +1533,9 @@ body.not-front #layout-body {
     display: none !important;
   }
   #main-menu .visible-ex1 ul li ul li {
+    display: none;
+  }
+  #main-menu .visible-ex1 ul li.active-trail span {
     display: none;
   }
   body.front #main-menu .visible-sm p.menu-browse,
