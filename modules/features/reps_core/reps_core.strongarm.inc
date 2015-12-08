@@ -786,6 +786,20 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_reps_homepage_additional_block';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_reps_homepage_additional_block';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_enable_reps_slide_footer';
   $strongarm->value = 1;
   $export['scheduler_publish_enable_reps_slide_footer'] = $strongarm;
@@ -796,6 +810,34 @@ function reps_core_strongarm() {
   $strongarm->name = 'scheduler_publish_enable_reps_slide_homepage';
   $strongarm->value = 1;
   $export['scheduler_publish_enable_reps_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_moderation_state_reps_homepage_additional_block';
+  $strongarm->value = 'published';
+  $export['scheduler_publish_moderation_state_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_reps_homepage_additional_block';
+  $strongarm->value = 'error';
+  $export['scheduler_publish_past_date_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_reps_homepage_additional_block';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_reps_homepage_additional_block';
+  $strongarm->value = 1;
+  $export['scheduler_publish_revision_reps_homepage_additional_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -814,6 +856,27 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_reps_homepage_additional_block';
+  $strongarm->value = 1;
+  $export['scheduler_publish_touch_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_default_time_reps_homepage_additional_block';
+  $strongarm->value = '';
+  $export['scheduler_unpublish_default_time_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_reps_homepage_additional_block';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_enable_reps_slide_footer';
   $strongarm->value = 1;
   $export['scheduler_unpublish_enable_reps_slide_footer'] = $strongarm;
@@ -828,6 +891,13 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_moderation_state_reps_homepage_additional_block';
+  $strongarm->value = 'draft';
+  $export['scheduler_unpublish_moderation_state_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_moderation_state_reps_slide_footer';
   $strongarm->value = 'expired';
   $export['scheduler_unpublish_moderation_state_reps_slide_footer'] = $strongarm;
@@ -838,6 +908,20 @@ function reps_core_strongarm() {
   $strongarm->name = 'scheduler_unpublish_moderation_state_reps_slide_homepage';
   $strongarm->value = 'expired';
   $export['scheduler_unpublish_moderation_state_reps_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_reps_homepage_additional_block';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_reps_homepage_additional_block';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_revision_reps_homepage_additional_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -859,6 +943,13 @@ function reps_core_strongarm() {
   $strongarm->name = 'scheduler_use_vertical_tabs_page';
   $strongarm->value = '1';
   $export['scheduler_use_vertical_tabs_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_reps_homepage_additional_block';
+  $strongarm->value = '1';
+  $export['scheduler_use_vertical_tabs_reps_homepage_additional_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

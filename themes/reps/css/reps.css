@@ -267,6 +267,7 @@ body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li {
 }
 body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li .views-field .sliderImgLarge img {
   position: absolute;
+  min-height: 205px;
 }
 body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li .views-field .sliderImgLarge .content {
   position: absolute;
@@ -293,6 +294,7 @@ body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li .vie
   position: absolute;
   right: 0;
   max-width: 50%;
+  min-height: 265px;
 }
 body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li .views-field .sliderImgSmall .sliderContent {
   max-width: 50%;
@@ -347,6 +349,9 @@ body.reps #mainContainer #layout-body .block-views .flexslider ul.flex-direction
   margin: 0;
   padding: 0;
   position: static;
+}
+body.reps #mainContainer #layout-body .block-views .flexslider ul.flex-direction-nav a:before {
+  content: '';
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row {
@@ -1142,16 +1147,19 @@ body.reps #mainContainer #sidebar-right .block-nexteuropa-europa-search .panel-b
   background: url(../images/btn-search.jpg) no-repeat;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools {
+  background-color: #eeeeee;
   box-shadow: 0px 2px 2px #d4d4d4;
+  margin-bottom: 25px;
+  max-width: 100%;
+  min-height: 10px;
+  padding: 10px;
   overflow: hidden;
   position: relative;
-  min-height: 10px;
-  background-color: #eeeeee;
-  padding: 10px;
-  margin-bottom: 25px;
 }
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools .content {
   float: right;
+  max-width: 100%;
+  padding-right: 10px;
 }
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links {
   background: #eeeeee;
@@ -1307,11 +1315,12 @@ body.reps #mainContainer #layout-footer .container .block-views .panel-body .fle
   width: auto !important;
 }
 body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider ul.flex-direction-nav li a {
-  width: 25px;
-  height: 48px;
-  overflow: hidden;
+  color: transparent;
   display: block;
+  height: 48px;
   opacity: 1;
+  overflow: hidden;
+  width: 25px;
 }
 body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider ul.flex-direction-nav li a.flex-next {
   background: url(../images/next-horizontal.png) no-repeat;
@@ -1321,17 +1330,8 @@ body.reps #mainContainer #layout-footer .container .block-views .panel-body .fle
   background: url(../images/prev-horizontal.png) no-repeat;
   left: 0;
 }
-/* Popup MapEditor. */
-.leaflet-popup-content ul.links.inline {
-  display: none;
-}
-.leaflet-popup-content .field-name-title-field {
-  font-weight: bold;
-  font-size: 110%;
-  margin-bottom: 10px;
-}
-.leaflet-popup-content .field-name-body {
-  border-bottom: none;
+body.reps #mainContainer #layout-footer .container .block-views .panel-body .flexslider ul.flex-direction-nav li a:before {
+  content: '';
 }
 #edit-field-reps-cp-type-tid-wrapper {
   margin-right: 5px;
@@ -1344,6 +1344,9 @@ body.not-front #layout-body {
   #sidebar-right {
     display: block !important;
     width: 25%;
+  }
+  #sidebar-right .wtShareButton {
+    min-width: 0;
   }
   #content-wrapper {
     width: 75% !important;
@@ -1360,6 +1363,9 @@ body.not-front #layout-body {
   .mobile-user-bar {
     z-index: 5000;
   }
+  .mobile-user-bar .affix {
+    position: absolute !important;
+  }
   #path {
     display: block !important;
     padding: 5px 0;
@@ -1370,6 +1376,10 @@ body.not-front #layout-body {
   }
   .navbar {
     min-height: 44px;
+    position: relative;
+  }
+  #layout-header {
+    background-image: none !important;
   }
   #main-menu {
     background: none !important;
@@ -1498,6 +1508,14 @@ body.not-front #layout-body {
     background: #036 !important;
     color: #ffffff !important;
   }
+  #main-menu .visible-sm ul li.active-trail.dropdown.open li,
+  #main-menu .visible-xs ul li.active-trail.dropdown.open li {
+    display: block;
+  }
+  #main-menu .visible-sm ul li.active-trail.dropdown li,
+  #main-menu .visible-xs ul li.active-trail.dropdown li {
+    display: none;
+  }
   #main-menu .visible-ex1 p.menu-browse {
     display: none !important;
   }
@@ -1515,6 +1533,9 @@ body.not-front #layout-body {
     display: none !important;
   }
   #main-menu .visible-ex1 ul li ul li {
+    display: none;
+  }
+  #main-menu .visible-ex1 ul li.active-trail span {
     display: none;
   }
   body.front #main-menu .visible-sm p.menu-browse,
@@ -1540,6 +1561,12 @@ body.not-front #layout-body {
   #layout-body #content-wrapper.col-sm-8 #block-system-main .view-reps-videos .views-row .views-field-field-reps-core-image-et {
     float: left;
   }
+  #layout-body .block-views .flexslider ul.slides li {
+    height: 210px;
+  }
+  #layout-body .block-views .flexslider ul.slides li .views-field .sliderImgSmall img {
+    max-width: 71%;
+  }
   #layout-body div.clearfix.hidden-sm {
     display: none !important;
   }
@@ -1561,6 +1588,9 @@ body.not-front #layout-body {
     width: 33.33333333%;
     float: right;
     padding-left: 15px !important;
+  }
+  #layout-body #sidebar-right.col-sm-4 .wtShareButton {
+    min-width: 0;
   }
 }
 /* xs small only */
