@@ -293,7 +293,7 @@ function reps_publications_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-reps_publication-field_reps_publication_file'.
+  // 'node-reps_publication-field_reps_publication_file'
   $field_instances['node-reps_publication-field_reps_publication_file'] = array(
     'bundle' => 'reps_publication',
     'deleted' => 0,

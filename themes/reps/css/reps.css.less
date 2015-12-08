@@ -311,6 +311,7 @@ body.reps {
                 .sliderImgLarge {
                   img {
                     position: absolute;
+                    min-height: 205px;
                   }
 
                   .content {
@@ -344,6 +345,7 @@ body.reps {
                     position: absolute;
                     right: 0;
                     max-width: 50%;
+                    min-height: 265px;
                   }
 
                   .sliderContent {
@@ -410,6 +412,10 @@ body.reps {
             margin: 0;
             padding: 0;
             position: static;
+
+            a:before {
+              content: '';
+            }
           }
         } // .flexslider END
       } // #layout-body .block-views
@@ -1330,16 +1336,19 @@ body.reps {
       } // .block-nexteuropa-europa-search END
 
       #block-reps-core-reps-core-share-webtools {
+        background-color: #eeeeee;
         box-shadow: 0px 2px 2px #d4d4d4;
+        margin-bottom: 25px;
+        max-width: 100%;
+        min-height: 10px;
+        padding: 10px;
         overflow: hidden;
         position: relative;
-        min-height: 10px;
-        background-color: #eeeeee;
-        padding: 10px;
-        margin-bottom: 25px;
 
         .content {
           float: right;
+          max-width: 100%;
+          padding-right: 10px;
         }
       }
 
@@ -1511,11 +1520,12 @@ body.reps {
                   width: auto !important;
 
                   a {
-                    width: 25px;
-                    height: 48px;
-                    overflow: hidden;
+                    color: transparent;
                     display: block;
+                    height: 48px;
                     opacity: 1;
+                    overflow: hidden;
+                    width: 25px;
                   }
 
                   a.flex-next {
@@ -1527,6 +1537,10 @@ body.reps {
                     background: url(../images/prev-horizontal.png) no-repeat;
                     left: 0;
                   }
+
+                  a:before {
+                    content: '';
+                  }
                 }
               } // ul.flex-direction-nav END
             } // .flexslider END
@@ -1537,20 +1551,6 @@ body.reps {
   } // #mainContainer END
 } // body.reps END
 
-/* Popup MapEditor. */
-.leaflet-popup-content {
-  ul.links.inline {
-    display: none;
-  }
-  .field-name-title-field {
-    font-weight: bold;
-    font-size: 110%;
-    margin-bottom: 10px;
-  }
-  .field-name-body {
-    border-bottom: none;
-  }
-}
 #edit-field-reps-cp-type-tid-wrapper {
   margin-right: 5px;
 }
@@ -1565,6 +1565,10 @@ body.not-front #layout-body {
   #sidebar-right {
     display: block !important;
     width: 25%;
+
+    .wtShareButton {
+      min-width: 0;
+    }
   }
 
   #content-wrapper {
@@ -1583,8 +1587,13 @@ body.not-front #layout-body {
 /* Small and x-small */
 
 @media all and (max-width: @screen-sm-min) {
+
   .mobile-user-bar {
     z-index: 5000;
+
+    .affix {
+      position: absolute !important;
+    }
   }
 
   #path {
@@ -1599,8 +1608,13 @@ body.not-front #layout-body {
 
   .navbar {
     min-height: 44px;
+    position: relative;
   }
 
+  #layout-header {
+    background-image: none !important;
+  }
+  
   #main-menu {
     .smallScreensMenu;
     .visible-sm,
@@ -1705,6 +1719,14 @@ body.not-front #layout-body {
           }
         }
       }
+
+      ul li.active-trail.dropdown.open li {
+        display: block;
+      }
+
+      ul li.active-trail.dropdown li {
+        display: none;
+      }
     } // .visible-sm END
 
     .visible-ex1 {
@@ -1732,6 +1754,10 @@ body.not-front #layout-body {
             }
           }
         }
+
+        li.active-trail span {
+          display: none;
+        }
       }
     } // .visible-ex1 (max-width: @screen-sm-min) END
   } // #main-menu (max-width: @screen-sm-min) END
@@ -1745,7 +1771,7 @@ body.not-front #layout-body {
     }
   } // body.front (max-width: @screen-sm-min) END
 
-
+  
   #layout-body {
     #content-wrapper.col-sm-8 {
       width: (@fullWidth/12)*8;
@@ -1773,6 +1799,14 @@ body.not-front #layout-body {
             float: left;
           }
         }
+      }
+    }
+
+    .block-views .flexslider ul.slides li { 
+      height: 210px;
+
+      .views-field .sliderImgSmall img{
+        max-width: 71%;
       }
     }
 
@@ -1806,6 +1840,10 @@ body.not-front #layout-body {
       width: (@fullWidth/12)*4;
       float: right;
       padding-left: 15px !important;
+
+      .wtShareButton {
+        min-width: 0;
+      }
     }
   } // #layout-body ((max-width: @screen-sm-min)) END
 } // @media all and (max-width: @screen-sm-min) END
