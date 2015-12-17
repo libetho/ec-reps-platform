@@ -187,7 +187,6 @@ function reps_form_alter(&$form, $form_state, $form_id) {
  * Add grouping div to the rendering of the unformated views.
  */
 function reps_preprocess_views_view_unformatted(&$vars) {
-
   $vars['prefix'] = array();
   $vars['suffix'] = array();
   $group = 1;
@@ -223,7 +222,6 @@ function reps_preprocess_views_view_unformatted(&$vars) {
  */
 function reps_js_alter(&$javascript) {
   unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
-
   drupal_add_js(drupal_get_path('theme', 'reps') . '/scripts/reps_tabber.js');
 }
 
@@ -231,7 +229,6 @@ function reps_js_alter(&$javascript) {
  * Implements reps_alter-page().
  */
 function reps_page_alter($page) {
-
   // Reference.
   $meta_reference = array(
     '#type' => 'html_tag',
