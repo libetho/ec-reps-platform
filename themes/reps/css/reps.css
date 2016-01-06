@@ -212,10 +212,6 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 body.reps #mainContainer .region-featured-wrapper #main-menu * {
   background: none;
 }
-body.reps #mainContainer .region-featured-wrapper #main-menu > * {
-  z-index: 100000 !important;
-  background: #ffffff !important;
-}
 body.reps #mainContainer .region-featured-wrapper .menu-breadcrumb .list-group-item {
   display: inline;
   background: none;
@@ -1384,6 +1380,10 @@ body.not-front #layout-body {
   }
   #layout-header {
     background-image: none !important;
+  }
+  #main-menu > * {
+    z-index: 100000 !important;
+    background: #ffffff !important;
   }
   #main-menu {
     background: none !important;
