@@ -212,6 +212,10 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 body.reps #mainContainer .region-featured-wrapper #main-menu * {
   background: none;
 }
+body.reps #mainContainer .region-featured-wrapper #main-menu > * {
+  z-index: 100000 !important;
+  background: #ffffff !important;
+}
 body.reps #mainContainer .region-featured-wrapper .menu-breadcrumb .list-group-item {
   display: inline;
   background: none;
