@@ -26,7 +26,9 @@ function reps_core_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'node',
@@ -86,6 +88,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer file types'] = array(
     'name' => 'administer file types',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -105,6 +108,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer languages'] = array(
     'name' => 'administer languages',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'locale',
@@ -143,7 +147,9 @@ function reps_core_user_default_permissions() {
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -152,6 +158,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
