@@ -34,6 +34,18 @@ function reps_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access media browser'.
+  $permissions['access media browser'] = array(
+    'name' => 'access media browser',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+    ),
+    'module' => 'media',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -100,6 +112,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -219,7 +232,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
   );
@@ -306,7 +318,9 @@ function reps_core_user_default_permissions() {
   // Exported permission: 'create reps_homepage content'.
   $permissions['create reps_homepage content'] = array(
     'name' => 'create reps_homepage content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -1170,6 +1184,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'bean',
