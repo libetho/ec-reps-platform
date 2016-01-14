@@ -945,9 +945,14 @@ body.reps {
           .node-full .content {
             font-size: 89%;
 
-            img:first-child {
+            div:not(.leaflet-map) img:first-child {
               float: left;
               margin: 10px 10px 10px 0;
+            }
+
+            div.leaflet-map img {
+              margin: 0 !important;
+              padding: 0 !important; 
             }
 
             .field-label {
