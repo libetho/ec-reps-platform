@@ -307,6 +307,20 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_entity_types';
+  $strongarm->value = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'bean' => 'bean',
+    'comment' => 0,
+    'file' => 0,
+    'user' => 0,
+  );
+  $export['entity_translation_entity_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__reps_contact_point';
   $strongarm->value = array(
     'view_modes' => array(
@@ -354,20 +368,6 @@ function reps_core_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_entity_types';
-  $strongarm->value = array(
-    'node' => 'node',
-    'taxonomy_term' => 'taxonomy_term',
-    'bean' => 'bean',
-    'comment' => 0,
-    'file' => 0,
-    'user' => 0,
-  );
-  $export['entity_translation_entity_types'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -522,6 +522,13 @@ function reps_core_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__reps_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'file_entity_default_allowed_extensions';
+  $strongarm->value = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm kml xml';
+  $export['file_entity_default_allowed_extensions'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
