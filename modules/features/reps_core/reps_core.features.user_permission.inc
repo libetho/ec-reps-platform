@@ -34,6 +34,16 @@ function reps_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access ecas import users function'.
+  $permissions['access ecas import users function'] = array(
+    'name' => 'access ecas import users function',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'ecas_import_users',
+  );
+
   // Exported permission: 'access media browser'.
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
@@ -171,7 +181,6 @@ function reps_core_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
