@@ -363,6 +363,17 @@ function reps_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create url aliases'.
+  $permissions['create url aliases'] = array(
+    'name' => 'create url aliases',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'path',
+  );
+
   // Exported permission: 'delete any audio files'.
   $permissions['delete any audio files'] = array(
     'name' => 'delete any audio files',

@@ -186,6 +186,7 @@ features[user_permission][] = create reps_homepage content
 features[user_permission][] = create reps_homepage_additional_block content
 features[user_permission][] = create reps_slide_footer content
 features[user_permission][] = create reps_slide_homepage content
+features[user_permission][] = create url aliases
 features[user_permission][] = delete any audio files
 features[user_permission][] = delete any document files
 features[user_permission][] = delete any image files
