@@ -130,32 +130,35 @@ function reps_menu_tree__submenu($variables) {
  * Implements theme_menu_link().
  */
 function reps_menu_link($variables) {
-  $element = $variables['element'];
-  $sub_menu = '';
+  // print_r($variables['element']['#original_link']);
+  if($variables['element']['#original_link']['depth'] < 3) {
+    $element = $variables['element'];
+    $sub_menu = '';
 
-  // Test if there is a sub menu.
-  if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
-    // Menu item has sub menu.
-    // Add class.
-    $element['#attributes']['class'][] = 'dropdown';
+    // Test if there is a sub menu.
+    if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
+      // Menu item has sub menu.
+      // Add class.
+      $element['#attributes']['class'][] = 'dropdown';
 
-    // Add attributes to children items.
-    $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
+      // Add attributes to children items.
+      $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
 
-    if ($element['#below']['#theme_wrappers'][0] == 'menu_tree__main_menu') {
-      $element['#below']['#theme_wrappers'][0] = 'menu_tree__main_submenu';
+      if ($element['#below']['#theme_wrappers'][0] == 'menu_tree__main_menu') {
+        $element['#below']['#theme_wrappers'][0] = 'menu_tree__main_submenu';
+      }
+      else {
+        $element['#below']['#theme_wrappers'][0] = 'menu_tree__submenu';
+      }
+
+      // Render sub menu.
+      $sub_menu = drupal_render($element['#below']);
     }
-    else {
-      $element['#below']['#theme_wrappers'][0] = 'menu_tree__submenu';
-    }
 
-    // Render sub menu.
-    $sub_menu = drupal_render($element['#below']);
+    $element['#localized_options']['html'] = TRUE;
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
   }
-
-  $element['#localized_options']['html'] = TRUE;
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
 /**
