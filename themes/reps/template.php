@@ -131,7 +131,7 @@ function reps_menu_tree__submenu($variables) {
  */
 function reps_menu_link($variables) {
   // print_r($variables['element']['#original_link']);
-  if($variables['element']['#original_link']['depth'] < 3) {
+  if ($variables['element']['#original_link']['depth'] < 3) {
     $element = $variables['element'];
     $sub_menu = '';
 
