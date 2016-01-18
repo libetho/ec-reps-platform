@@ -29,6 +29,6 @@
 ?>
 <?php if (isset($content['title_field'])): ?>
   <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>  
-    <p><a href="<?php print (render($content['field_reps_core_external_url']));?>"><?php print (strip_tags(render($content['title_field'])));?></a></p>
+    <p><a href="<?php print ($content['field_reps_core_external_url']['#items'][0]['url']);?>"><?php print (strip_tags(render($content['title_field'])));?></a></p>
   </div>
 <?php endif;?>

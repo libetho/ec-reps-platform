@@ -1076,11 +1076,7 @@ function reps_core_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_meta_description'.
   $field_instances['node-page-field_meta_description'] = array(
     'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Représentation au Luxembourg de la Commission européenne',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(

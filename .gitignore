@@ -8,6 +8,7 @@ settings.php
 *devel
 *coder
 modules/contrib/social_media_links/*
+nbproject/*
 
 #Libraries from the platform
 libraries/FusionCharts/
