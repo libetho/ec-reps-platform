@@ -34,6 +34,28 @@ function reps_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access ecas import users function'.
+  $permissions['access ecas import users function'] = array(
+    'name' => 'access ecas import users function',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'ecas_import_users',
+  );
+
+  // Exported permission: 'access media browser'.
+  $permissions['access media browser'] = array(
+    'name' => 'access media browser',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+    ),
+    'module' => 'media',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -59,6 +81,7 @@ function reps_core_user_default_permissions() {
     'name' => 'add terms in reps_news_categories',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -99,6 +122,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -136,6 +160,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer menu-reps-services menu items'] = array(
     'name' => 'administer menu-reps-services menu items',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'menu_admin_per_menu',
@@ -156,7 +181,6 @@ function reps_core_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -217,7 +241,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
   );
@@ -304,7 +327,9 @@ function reps_core_user_default_permissions() {
   // Exported permission: 'create reps_homepage content'.
   $permissions['create reps_homepage content'] = array(
     'name' => 'create reps_homepage content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -336,6 +361,17 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'create url aliases'.
+  $permissions['create url aliases'] = array(
+    'name' => 'create url aliases',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'path',
   );
 
   // Exported permission: 'delete any audio files'.
@@ -454,7 +490,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -535,6 +570,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -1073,6 +1109,16 @@ function reps_core_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'translate interface'.
+  $permissions['translate interface'] = array(
+    'name' => 'translate interface',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'locale',
+  );
+
   // Exported permission: 'translate node entities'.
   $permissions['translate node entities'] = array(
     'name' => 'translate node entities',
@@ -1158,6 +1204,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'bean',

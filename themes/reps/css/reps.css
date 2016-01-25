@@ -809,9 +809,13 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body ul.pager li
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content {
   font-size: 89%;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content img:first-child {
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map) img:first-child {
   float: left;
   margin: 10px 10px 10px 0;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-label {
   width: auto;
@@ -1380,6 +1384,10 @@ body.not-front #layout-body {
   }
   #layout-header {
     background-image: none !important;
+  }
+  #main-menu > * {
+    z-index: 100000 !important;
+    background: #ffffff !important;
   }
   #main-menu {
     background: none !important;
