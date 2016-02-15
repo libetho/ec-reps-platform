@@ -224,7 +224,6 @@ function reps_preprocess_views_view_unformatted(&$vars) {
  * Implements reps_js_alter().
  */
 function reps_js_alter(&$javascript) {
-  unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
   drupal_add_js(drupal_get_path('theme', 'reps') . '/scripts/reps_tabber.js');
 }
 
