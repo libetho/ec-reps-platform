@@ -22,6 +22,29 @@ function reps_core_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'access administration pages'.
+  $permissions['access administration pages'] = array(
+    'name' => 'access administration pages',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'editorial team member' => 'editorial team member',
+    ),
+    'module' => 'system',
+  );
+
+  // Exported permission: 'access bean overview'.
+  $permissions['access bean overview'] = array(
+    'name' => 'access bean overview',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editorial team member' => 'editorial team member',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'access content overview'.
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
@@ -65,6 +88,21 @@ function reps_core_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'access site map'.
+  $permissions['access site map'] = array(
+    'name' => 'access site map',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'editorial team member' => 'editorial team member',
+    ),
+    'module' => 'site_map',
+  );
+
   // Exported permission: 'add media from remote sources'.
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
@@ -76,12 +114,20 @@ function reps_core_user_default_permissions() {
     'module' => 'media_internet',
   );
 
+  // Exported permission: 'add terms in reps_contact_point_categories'.
+  $permissions['add terms in reps_contact_point_categories'] = array(
+    'name' => 'add terms in reps_contact_point_categories',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'add terms in reps_news_categories'.
   $permissions['add terms in reps_news_categories'] = array(
     'name' => 'add terms in reps_news_categories',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -90,6 +136,17 @@ function reps_core_user_default_permissions() {
   $permissions['administer bean settings'] = array(
     'name' => 'administer bean settings',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'administer beans'.
+  $permissions['administer beans'] = array(
+    'name' => 'administer beans',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'bean',
@@ -104,6 +161,16 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'i18n_node',
+  );
+
+  // Exported permission: 'administer css injection'.
+  $permissions['administer css injection'] = array(
+    'name' => 'administer css injection',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'css_injector',
   );
 
   // Exported permission: 'administer file types'.
@@ -122,7 +189,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -181,6 +247,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -241,6 +308,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
   );
@@ -309,6 +377,16 @@ function reps_core_user_default_permissions() {
     'name' => 'create any reps_core_sb_right_image_link bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'create any webtools bean'.
+  $permissions['create any webtools bean'] = array(
+    'name' => 'create any webtools bean',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'bean',
   );
@@ -453,7 +531,9 @@ function reps_core_user_default_permissions() {
   // Exported permission: 'delete any reps_homepage content'.
   $permissions['delete any reps_homepage content'] = array(
     'name' => 'delete any reps_homepage content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -494,6 +574,16 @@ function reps_core_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'delete any webtools bean'.
+  $permissions['delete any webtools bean'] = array(
+    'name' => 'delete any webtools bean',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'delete own audio files'.
   $permissions['delete own audio files'] = array(
     'name' => 'delete own audio files',
@@ -530,7 +620,9 @@ function reps_core_user_default_permissions() {
   // Exported permission: 'delete own reps_homepage content'.
   $permissions['delete own reps_homepage content'] = array(
     'name' => 'delete own reps_homepage content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -573,6 +665,16 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete terms in reps_news_categories'.
+  $permissions['delete terms in reps_news_categories'] = array(
+    'name' => 'delete terms in reps_news_categories',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'download any audio files'.
@@ -798,6 +900,16 @@ function reps_core_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'edit any webtools bean'.
+  $permissions['edit any webtools bean'] = array(
+    'name' => 'edit any webtools bean',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'edit link settings'.
   $permissions['edit link settings'] = array(
     'name' => 'edit link settings',
@@ -889,6 +1001,16 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit terms in reps_news_categories'.
+  $permissions['edit terms in reps_news_categories'] = array(
+    'name' => 'edit terms in reps_news_categories',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'moderate content from draft to expired'.
@@ -1067,16 +1189,6 @@ function reps_core_user_default_permissions() {
     'module' => 'multisite_workbench_moderation_view',
   );
 
-  // Exported permission: 'show format selection for bean'.
-  $permissions['show format selection for bean'] = array(
-    'name' => 'show format selection for bean',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'better_formats',
-  );
-
   // Exported permission: 'translate admin strings'.
   $permissions['translate admin strings'] = array(
     'name' => 'translate admin strings',
@@ -1107,6 +1219,17 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate content'.
+  $permissions['translate content'] = array(
+    'name' => 'translate content',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
+    'module' => 'translation',
   );
 
   // Exported permission: 'translate interface'.
@@ -1194,6 +1317,18 @@ function reps_core_user_default_permissions() {
     'name' => 'view any reps_core_sb_right_image_link bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'view any webtools bean'.
+  $permissions['view any webtools bean'] = array(
+    'name' => 'view any webtools bean',
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'bean',
   );
