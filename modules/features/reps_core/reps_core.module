@@ -565,5 +565,5 @@ function _reps_core_get_instances($field_name) {
  * Implements reps_core_js_alter().
  */
 function reps_core_js_alter(&$javascript) {
-  unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
+  // unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
 }
