@@ -10,7 +10,7 @@
 function reps_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-reps_news-body'
+  // Exported field_instance: 'node-reps_news-body'.
   $field_instances['node-reps_news-body'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -19,9 +19,19 @@ function reps_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_link' => FALSE,
+          'trim_options' => array(),
+          'trim_preserve_tags' => '',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 2,
       ),
       'full' => array(
@@ -35,6 +45,18 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -67,7 +89,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_meta_classification'
+  // Exported field_instance: 'node-reps_news-field_meta_classification'.
   $field_instances['node-reps_news-field_meta_classification'] = array(
     'bundle' => 'reps_news',
     'default_value' => array(
@@ -80,7 +102,18 @@ function reps_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
@@ -105,7 +138,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_meta_description'
+  // Exported field_instance: 'node-reps_news-field_meta_description'.
   $field_instances['node-reps_news-field_meta_description'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -114,7 +147,18 @@ function reps_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
@@ -166,7 +210,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_core_abstract'
+  // Exported field_instance: 'node-reps_news-field_reps_core_abstract'.
   $field_instances['node-reps_news-field_reps_core_abstract'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -191,6 +235,20 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -245,7 +303,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_core_date'
+  // Exported field_instance: 'node-reps_news-field_reps_core_date'.
   $field_instances['node-reps_news-field_reps_core_date'] = array(
     'bundle' => 'reps_news',
     'deleted' => 0,
@@ -268,6 +326,18 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -304,7 +374,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_core_file'
+  // Exported field_instance: 'node-reps_news-field_reps_core_file'.
   $field_instances['node-reps_news-field_reps_core_file'] = array(
     'bundle' => 'reps_news',
     'deleted' => 0,
@@ -328,6 +398,18 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -381,7 +463,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_core_image'
+  // Exported field_instance: 'node-reps_news-field_reps_core_image'.
   $field_instances['node-reps_news-field_reps_core_image'] = array(
     'bundle' => 'reps_news',
     'default_value' => array(),
@@ -408,6 +490,22 @@ function reps_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'homepage_thumbs',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -473,7 +571,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_core_related_links'
+  // Exported field_instance: 'node-reps_news-field_reps_core_related_links'.
   $field_instances['node-reps_news-field_reps_core_related_links'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -499,6 +597,18 @@ function reps_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -511,6 +621,7 @@ function reps_news_field_default_field_instances() {
     'label' => 'Related Link(s)',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -525,6 +636,7 @@ function reps_news_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -540,7 +652,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_core_related_video'
+  // Exported field_instance: 'node-reps_news-field_reps_core_related_video'.
   $field_instances['node-reps_news-field_reps_core_related_video'] = array(
     'bundle' => 'reps_news',
     'deleted' => 0,
@@ -548,11 +660,13 @@ function reps_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'flexslider_fields',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'caption' => FALSE,
+          'image_style' => '',
+          'optionset' => 'default',
         ),
-        'type' => 'media',
+        'type' => 'flexslider',
         'weight' => 5,
       ),
       'full' => array(
@@ -566,6 +680,18 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -608,7 +734,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_reps_news_category'
+  // Exported field_instance: 'node-reps_news-field_reps_news_category'.
   $field_instances['node-reps_news-field_reps_news_category'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -617,10 +743,19 @@ function reps_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
       ),
@@ -649,7 +784,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-field_tags'
+  // Exported field_instance: 'node-reps_news-field_tags'.
   $field_instances['node-reps_news-field_tags'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -673,6 +808,18 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -701,7 +848,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_news-title_field'
+  // Exported field_instance: 'node-reps_news-title_field'.
   $field_instances['node-reps_news-title_field'] = array(
     'bundle' => 'reps_news',
     'default_value' => NULL,
@@ -725,6 +872,18 @@ function reps_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'rss_newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -756,7 +915,7 @@ function reps_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-reps_news_categories-name_field'
+  // Exported field_instance: 'taxonomy_term-reps_news_categories-name_field'.
   $field_instances['taxonomy_term-reps_news_categories-name_field'] = array(
     'bundle' => 'reps_news_categories',
     'default_value' => NULL,
