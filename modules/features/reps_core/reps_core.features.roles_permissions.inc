@@ -23,6 +23,7 @@ function reps_core_default_roles_permissions() {
       'access ecas import users function' => TRUE,
       'access media browser' => TRUE,
       'access own broken links report' => TRUE,
+      'access site map' => TRUE,
       'add media from remote sources' => TRUE,
       'add terms in reps_news_categories' => TRUE,
       'administer content translations' => TRUE,
@@ -229,6 +230,7 @@ function reps_core_default_roles_permissions() {
       'administer entity translation' => TRUE,
       'administer facets' => TRUE,
       'administer feature sets' => TRUE,
+      'administer feeds' => TRUE,
       'administer fieldgroups' => TRUE,
       'administer file types' => TRUE,
       'administer files' => TRUE,
@@ -285,6 +287,7 @@ function reps_core_default_roles_permissions() {
       'admin_display_suite' => TRUE,
       'admin_fields' => TRUE,
       'admin_view_modes' => TRUE,
+      'advanced migration information' => TRUE,
       'assign node weight' => TRUE,
       'block IP addresses' => TRUE,
       'bypass conversion video' => TRUE,
@@ -375,6 +378,7 @@ function reps_core_default_roles_permissions() {
       'export own nodes' => TRUE,
       'flush caches' => TRUE,
       'generate features' => TRUE,
+      'migration information' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
       'moderate content from needs_review to published' => TRUE,
@@ -454,6 +458,29 @@ function reps_core_default_roles_permissions() {
     ),
   );
 
+  // Exported role: anonymous user
+  $roles['anonymous user'] = (object) array(
+    'name' => 'anonymous user',
+    'weight' => 0,
+    'permissions' => array(
+      'access comments' => TRUE,
+      'access content' => TRUE,
+      'access PDF version' => TRUE,
+      'access print' => TRUE,
+      'access site map' => TRUE,
+      'access site-wide contact form' => TRUE,
+      'access user contact forms' => TRUE,
+      'access user profiles' => TRUE,
+      'post comments' => TRUE,
+      'search content' => TRUE,
+      'use advanced search' => TRUE,
+      'use text format basic_html' => TRUE,
+      'use text format filtered_html' => TRUE,
+      'view any webtools bean' => TRUE,
+      'view files' => TRUE,
+    ),
+  );
+
   // Exported role: editor
   $roles['editor'] = (object) array(
     'name' => 'editor',
@@ -466,6 +493,7 @@ function reps_core_default_roles_permissions() {
       'access content overview' => TRUE,
       'access media browser' => TRUE,
       'access own broken links report' => TRUE,
+      'access site map' => TRUE,
       'add media from remote sources' => TRUE,
       'add terms in reps_news_categories' => TRUE,
       'administer beans' => TRUE,

@@ -9,7 +9,5 @@ multisite_version = 2.1
 features[features_api][] = api:2
 dependencies[] = reps_core
 dependencies[] = nexteuropa_migrate
-features[user_permission][] = migration information
-features[user_permission][] = advanced migration information
 files[] = includes/reps_migrate.inc
 files[] = includes/reps_migrate.menu.inc

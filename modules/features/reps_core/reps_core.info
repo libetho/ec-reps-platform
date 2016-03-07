@@ -152,6 +152,7 @@ features[node][] = reps_slide_footer
 features[node][] = reps_slide_homepage
 features[roles_permissions][] = REPS Administrator
 features[roles_permissions][] = administrator
+features[roles_permissions][] = anonymous user
 features[roles_permissions][] = editor
 features[taxonomy][] = reps_contact_point_categories
 features[taxonomy][] = reps_news_categories
