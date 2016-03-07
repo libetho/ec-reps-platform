@@ -141,7 +141,6 @@ function reps_news_field_default_field_instances() {
   // Exported field_instance: 'node-reps_news-field_meta_description'.
   $field_instances['node-reps_news-field_meta_description'] = array(
     'bundle' => 'reps_news',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
