@@ -186,6 +186,20 @@ function reps_news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_reps_news';
+  $strongarm->value = '';
+  $export['page_title_type_reps_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_reps_news_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_reps_news_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_reps_news_pattern';
   $strongarm->value = 'news/[node:title-source-translation]';
   $export['pathauto_node_reps_news_pattern'] = $strongarm;
