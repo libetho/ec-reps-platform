@@ -10,14 +10,13 @@
 function reps_events_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_reps_event_date'
+  // Exported field_base: 'field_reps_event_date'.
   $field_bases['field_reps_event_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_reps_event_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 1,
     'module' => 'date',
@@ -41,21 +40,13 @@ function reps_events_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_reps_event_location'
+  // Exported field_base: 'field_reps_event_location'.
   $field_bases['field_reps_event_location'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_reps_event_location',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
