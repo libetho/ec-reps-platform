@@ -130,6 +130,7 @@ function reps_core_default_roles_permissions() {
       'edit own reps_video content' => TRUE,
       'edit own video files' => TRUE,
       'edit terms in 3' => TRUE,
+      'flush caches' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
       'moderate content from needs_review to published' => TRUE,
