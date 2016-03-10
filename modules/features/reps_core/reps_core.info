@@ -207,6 +207,7 @@ features[variable][] = field_bundle_settings_node__reps_homepage
 features[variable][] = field_bundle_settings_node__reps_homepage_additional_block
 features[variable][] = field_bundle_settings_node__reps_slide_footer
 features[variable][] = field_bundle_settings_node__reps_slide_homepage
+features[variable][] = file_entity_default_allowed_extensions
 features[variable][] = language_content_type_reps_contact_point
 features[variable][] = language_content_type_reps_homepage
 features[variable][] = language_content_type_reps_homepage_additional_block
