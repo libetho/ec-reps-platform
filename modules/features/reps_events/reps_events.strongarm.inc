@@ -95,6 +95,9 @@ function reps_events_strongarm() {
       'popup' => array(
         'custom_settings' => FALSE,
       ),
+      'rss_newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
