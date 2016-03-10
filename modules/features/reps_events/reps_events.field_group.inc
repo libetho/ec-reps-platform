@@ -29,6 +29,7 @@ function reps_events_field_group_info() {
       3 => 'field_reps_core_image',
       4 => 'field_reps_event_date',
       5 => 'field_reps_event_location',
+      6 => 'field_reps_registration',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

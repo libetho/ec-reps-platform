@@ -307,7 +307,7 @@ function reps_events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => -4,
+      'weight' => -3,
     ),
   );
 
@@ -762,6 +762,57 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-reps_event-field_reps_registration'.
+  $field_instances['node-reps_event-field_reps_registration'] = array(
+    'bundle' => 'reps_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'registration_default',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reps_registration',
+    'label' => 'Register',
+    'required' => FALSE,
+    'settings' => array(
+      'default_registration_settings' => array(
+        'capacity' => 0,
+        'reminder' => array(
+          'reminder_settings' => array(
+            'reminder_date' => NULL,
+            'reminder_template' => NULL,
+          ),
+          'send_reminder' => 0,
+        ),
+        'scheduling' => array(
+          'close' => NULL,
+          'open' => NULL,
+        ),
+        'settings' => array(
+          'from_address' => 'admin@example.com',
+          'maximum_spaces' => 1,
+          'multiple_registrations' => -1,
+        ),
+        'status' => 0,
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'registration',
+      'settings' => array(),
+      'type' => 'registration_select',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-reps_event-field_tags'.
   $field_instances['node-reps_event-field_tags'] = array(
     'bundle' => 'reps_event',
@@ -879,6 +930,7 @@ function reps_events_field_default_field_instances() {
   t('IPG Classification');
   t('Image');
   t('Location');
+  t('Register');
   t('Related Document(s)');
   t('Related Link(s)');
   t('Related video');

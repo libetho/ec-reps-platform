@@ -62,5 +62,26 @@ function reps_events_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_reps_registration'.
+  $field_bases['field_reps_registration'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_reps_registration',
+    'indexes' => array(
+      'registration_type' => array(
+        0 => 'registration_type',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'registration',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'registration',
+  );
+
   return $field_bases;
 }
