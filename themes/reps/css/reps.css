@@ -830,6 +830,9 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   padding-top: 5px;
   font-size: 97%;
 }
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-name-field-reps-event-date span.date-display-range {
+  display: inline;
+}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary {
   border-bottom: none;
   padding: 5px;
