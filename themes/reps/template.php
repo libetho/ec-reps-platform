@@ -252,4 +252,27 @@ function reps_page_alter($page) {
     ),
   );
   drupal_add_html_head($meta_creator, 'meta_creator');
+
+  // Keywords
+  $keywords = '';
+  if (!empty($node) && !empty($node->field_tags)) {
+    $tags = field_view_field('node', $node, 'field_tags');
+    if (isset($tags['#items'])) {
+      foreach ($tags['#items'] as $key => $value) {
+        $keywords .= $value['taxonomy_term']->name . ', ';
+      }
+    }
+  }
+  $keywords .= filter_xss(variable_get('site_name')) . ', ';
+  $keywords .= t('European Commission, European Union, EU');
+  // Keywords.
+  $meta_keywords = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'keywords',
+      'content' => $keywords,
+    ),
+  );
+  drupal_add_html_head($meta_keywords, 'meta_keywords');
 }
