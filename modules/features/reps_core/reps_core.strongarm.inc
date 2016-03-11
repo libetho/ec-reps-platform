@@ -272,6 +272,13 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short_de_';
+  $strongarm->value = 'd/m/Y H:i\\U\\h\\r';
+  $export['date_format_short_de_'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_time';
   $strongarm->value = 'G:i';
   $export['date_format_time'] = $strongarm;
@@ -421,6 +428,9 @@ function reps_core_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss_newsletter' => array(
         'custom_settings' => FALSE,
       ),
     ),

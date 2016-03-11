@@ -55,17 +55,9 @@ function reps_core_image_default_styles() {
 
   // Exported image style: homepage_thumbs.
   $styles['homepage_thumbs'] = array(
-    'name' => 'homepage_thumbs',
     'label' => 'Homepage Thumbs [Width: 150px]',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 150,
@@ -79,17 +71,9 @@ function reps_core_image_default_styles() {
 
   // Exported image style: quicklinks_homepage__83x76_.
   $styles['quicklinks_homepage__83x76_'] = array(
-    'name' => 'quicklinks_homepage__83x76_',
     'label' => 'Quicklinks Homepage [83x76]',
     'effects' => array(
       4 => array(
-        'label' => 'Resize',
-        'help' => 'Resizing will make images an exact set of dimensions. This may cause images to be stretched or shrunk disproportionately.',
-        'effect callback' => 'image_resize_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_resize',
         'data' => array(
           'width' => 82,
@@ -102,17 +86,9 @@ function reps_core_image_default_styles() {
 
   // Exported image style: right_column_image.
   $styles['right_column_image'] = array(
-    'name' => 'right_column_image',
     'label' => 'Right column image [Width: 213px]',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 213,
@@ -126,17 +102,9 @@ function reps_core_image_default_styles() {
 
   // Exported image style: slide_homepage_large__719x265_.
   $styles['slide_homepage_large__719x265_'] = array(
-    'name' => 'slide_homepage_large__719x265_',
     'label' => 'Slide homepage large [719x265]',
     'effects' => array(
       3 => array(
-        'label' => 'Resize',
-        'help' => 'Resizing will make images an exact set of dimensions. This may cause images to be stretched or shrunk disproportionately.',
-        'effect callback' => 'image_resize_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_resize',
         'data' => array(
           'width' => 719,
@@ -149,17 +117,9 @@ function reps_core_image_default_styles() {
 
   // Exported image style: slider_footer__150x83_.
   $styles['slider_footer__150x83_'] = array(
-    'name' => 'slider_footer__150x83_',
     'label' => 'Slider footer [150x83]',
     'effects' => array(
       3 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 150,
@@ -172,17 +132,9 @@ function reps_core_image_default_styles() {
 
   // Exported image style: slider_homepage__342_x_272_.
   $styles['slider_homepage__342_x_272_'] = array(
-    'name' => 'slider_homepage__342_x_272_',
     'label' => 'Slide homepage small [342 x 272]',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 342,

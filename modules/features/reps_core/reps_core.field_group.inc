@@ -666,7 +666,6 @@ function reps_core_field_group_info() {
   t('Content');
   t('Metadata');
   t('More Info');
-  t('Organic Groups');
   t('Other');
   t('Position');
   t('Related Content');

@@ -1711,7 +1711,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1753,10 +1753,9 @@ function reps_core_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1793,10 +1792,9 @@ function reps_core_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1868,7 +1866,7 @@ function reps_core_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -7,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1907,10 +1905,9 @@ function reps_core_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1950,7 +1947,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
