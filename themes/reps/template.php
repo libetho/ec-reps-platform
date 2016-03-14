@@ -6,6 +6,18 @@
  */
 
 /**
+ * Implements theme_preprocess_html().
+ */
+function reps_preprocess_html(&$variables) {
+  if(empty(page_title_page_get_title())) {
+    $title = strip_tags(drupal_get_title());
+  }else{
+    $title = page_title_page_get_title();
+  }
+  $variables['head_title'] = format_string('!title - European Commission', array('!title' => $title));
+}
+
+/**
  * Implements theme_preprocess_page().
  */
 function reps_preprocess_page(&$variables) {
