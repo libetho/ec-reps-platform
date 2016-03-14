@@ -30,6 +30,7 @@ function reps_core_default_roles_permissions() {
       'administer css injection' => TRUE,
       'administer file types' => TRUE,
       'administer files' => TRUE,
+      'administer js_injector' => TRUE,
       'administer languages' => TRUE,
       'administer main-menu menu items' => TRUE,
       'administer menu-breadcrumb-menu menu items' => TRUE,
