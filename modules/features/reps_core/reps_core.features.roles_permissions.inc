@@ -44,6 +44,7 @@ function reps_core_default_roles_permissions() {
       'administer reps social links' => TRUE,
       'administer reps twitter webtools' => TRUE,
       'administer reps_registration registration' => TRUE,
+      'administer search' => TRUE,
       'administer users' => TRUE,
       'administer workbench moderation' => TRUE,
       'assign node weight' => TRUE,
