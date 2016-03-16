@@ -869,6 +869,10 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary .inside_table tbody td a strong {
   color: #0065a2;
 }
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary blockquote {
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
+}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary img {
   float: none;
 }
