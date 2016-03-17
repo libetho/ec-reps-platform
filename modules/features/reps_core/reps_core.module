@@ -529,6 +529,16 @@ function reps_core_social_media_links_platform_info_alter(&$platforms) {
     'title' => t('Flickr'),
     'base url' => 'https://www.flickr.com/',
   );
+  // Add additional platform(s).
+  $platforms['instagram'] = array(
+    'title' => t('Instagram'),
+    'base url' => 'https://www.instagram.com/',
+  );
+  // Add additional platform(s).
+  $platforms['blog'] = array(
+    'title' => t('Blog'),
+    'base url' => '',
+  );
   // Clean base urls.
   foreach ($platforms as $service => $values) {
     $platforms[$service]['base url'] = '';
