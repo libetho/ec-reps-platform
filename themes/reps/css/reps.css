@@ -813,7 +813,7 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   float: left;
   margin: 10px 10px 10px 0;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img {
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img:not(.leaflet-clickable) {
   margin: 0 !important;
   padding: 0 !important;
 }
