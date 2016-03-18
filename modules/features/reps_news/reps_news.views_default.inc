@@ -199,8 +199,9 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_news_category_et']['id'] = 'field_reps_news_category_et';
   $handler->display->display_options['fields']['field_reps_news_category_et']['table'] = 'field_data_field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category_et']['field'] = 'field_reps_news_category_et';
-  $handler->display->display_options['fields']['field_reps_news_category_et']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_news_category_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_news_category_et']['label'] = 'Category';
+  $handler->display->display_options['fields']['field_reps_news_category_et']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_reps_news_category_et']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_reps_news_category_et']['settings'] = array(
     'link' => 0,
   );
