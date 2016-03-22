@@ -75,7 +75,7 @@ function reps_news_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -1,
+      'weight' => 0,
     ),
   );
 
@@ -289,7 +289,7 @@ function reps_news_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -2,
+      'weight' => -1,
     ),
   );
 
@@ -778,7 +778,7 @@ function reps_news_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => -2,
     ),
   );
 
