@@ -174,6 +174,17 @@ function reps_menu_link($variables) {
 }
 
 /**
+ * Implements reps_preprocess_node().
+ */
+function reps_preprocess_node(&$vars) {
+  if($vars['type'] == 'reps_event') {
+    if($vars['field_reps_event_venue']) {
+      unset($vars['content']['field_reps_event_location']);
+    }
+  }
+}
+
+/**
  * Implements theme_preprocess_block().
  *
  * Remove unused block ipg info (just keep the date and the top link).

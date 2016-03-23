@@ -30,6 +30,7 @@ function reps_events_field_group_info() {
       4 => 'field_reps_event_date',
       5 => 'field_reps_event_location',
       6 => 'field_reps_registration',
+      7 => 'field_reps_event_venue',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

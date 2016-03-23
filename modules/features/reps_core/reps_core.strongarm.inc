@@ -273,7 +273,7 @@ function reps_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_short_de_';
-  $strongarm->value = 'd/m/Y H:i\\U\\h\\r';
+  $strongarm->value = 'd/m/Y H:i \\U\\h\\r';
   $export['date_format_short_de_'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -287,50 +287,8 @@ function reps_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_time_bg';
-  $strongarm->value = 'G \ч. i';
-  $export['date_format_time'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_day_format_without_year';
-  $strongarm->value = 'l, F j';
-  $export['date_views_day_format_without_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_day_format_with_year';
-  $strongarm->value = 'l, F j, Y';
-  $export['date_views_day_format_with_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_month_format_without_year';
-  $strongarm->value = 'F';
-  $export['date_views_month_format_without_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_month_format_with_year';
-  $strongarm->value = 'F Y';
-  $export['date_views_month_format_with_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_week_format_without_year';
-  $strongarm->value = 'F j';
-  $export['date_views_week_format_without_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_week_format_with_year';
-  $strongarm->value = 'F j, Y';
-  $export['date_views_week_format_with_year'] = $strongarm;
+  $strongarm->value = 'G \\ч. i';
+  $export['date_format_time_bg'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -247,7 +247,15 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_location']['table'] = 'field_data_field_reps_event_location';
   $handler->display->display_options['fields']['field_reps_event_location']['field'] = 'field_reps_event_location';
   $handler->display->display_options['fields']['field_reps_event_location']['label'] = 'Venue';
+  $handler->display->display_options['fields']['field_reps_event_location']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_location']['hide_empty'] = TRUE;
+  /* Field: Content: Venue */
+  $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['empty'] = '[field_reps_event_location]';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
