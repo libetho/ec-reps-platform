@@ -18,6 +18,7 @@ dependencies[] = nexteuropa_europa_search
 dependencies[] = nexteuropa_multilingual
 dependencies[] = nexteuropa_webtools
 dependencies[] = page_title
+dependencies[] = redirect
 dependencies[] = reps_admin
 dependencies[] = scheduler
 dependencies[] = site_map
