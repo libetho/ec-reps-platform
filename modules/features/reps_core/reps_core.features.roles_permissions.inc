@@ -10,7 +10,7 @@
 function reps_core_default_roles_permissions() {
   $roles = array();
 
-  // Exported role: REPS Administrator
+  // Exported role: REPS Administrator.
   $roles['REPS Administrator'] = (object) array(
     'name' => 'REPS Administrator',
     'weight' => 5,
@@ -197,7 +197,7 @@ function reps_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: administrator
+  // Exported role: administrator.
   $roles['administrator'] = (object) array(
     'name' => 'administrator',
     'weight' => 2,
@@ -506,7 +506,7 @@ function reps_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: anonymous user
+  // Exported role: anonymous user.
   $roles['anonymous user'] = (object) array(
     'name' => 'anonymous user',
     'weight' => 0,
@@ -530,7 +530,7 @@ function reps_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: editor
+  // Exported role: editor.
   $roles['editor'] = (object) array(
     'name' => 'editor',
     'weight' => 4,
