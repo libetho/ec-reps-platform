@@ -361,7 +361,7 @@ function reps_core_views_default_views() {
     'image_style' => 'slider_homepage__342_x_272_',
     'image_link' => '',
   );
-  /* Field: Field: Link */
+  /* Field: Field: External Url */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';
@@ -433,7 +433,7 @@ function reps_core_views_default_views() {
     'image_style' => 'slide_homepage_large__719x265_',
     'image_link' => '',
   );
-  /* Field: Field: Link */
+  /* Field: Field: External Url */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';
@@ -521,7 +521,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Link */
+  /* Field: Field: External Url */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';

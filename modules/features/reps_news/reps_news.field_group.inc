@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function reps_news_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -21,14 +21,13 @@ function reps_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '0',
+    'weight' => '3',
     'children' => array(
-      0 => 'title_field',
-      1 => 'body',
-      2 => 'field_reps_core_abstract',
-      3 => 'field_reps_core_date',
-      4 => 'field_reps_core_image',
-      5 => 'field_reps_news_category',
+      0 => 'body',
+      1 => 'field_reps_core_abstract',
+      2 => 'field_reps_core_date',
+      3 => 'field_reps_core_image',
+      4 => 'field_reps_news_category',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -40,7 +39,7 @@ function reps_news_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_news_content|node|reps_news|form'] = $field_group;
+  $field_groups['group_reps_news_content|node|reps_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -53,13 +52,11 @@ function reps_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '2',
+    'weight' => '5',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_meta_classification',
-      2 => 'path',
-      3 => 'language',
-      4 => 'field_meta_description',
+      2 => 'field_meta_description',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -71,7 +68,7 @@ function reps_news_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_news_metadata|node|reps_news|form'] = $field_group;
+  $field_groups['group_reps_news_metadata|node|reps_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -84,7 +81,7 @@ function reps_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related content',
-    'weight' => '1',
+    'weight' => '4',
     'children' => array(
       0 => 'field_reps_core_file',
       1 => 'field_reps_core_related_links',
@@ -100,7 +97,13 @@ function reps_news_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_news_rel|node|reps_news|form'] = $field_group;
+  $field_groups['group_reps_news_rel|node|reps_news|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content');
+  t('Metadata');
+  t('Related content');
+
+  return $field_groups;
 }

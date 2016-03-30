@@ -6,6 +6,18 @@
  */
 
 /**
+ * Implements theme_preprocess_html().
+ */
+function reps_preprocess_html(&$variables) {
+  if(empty(page_title_page_get_title())) {
+    $title = strip_tags(drupal_get_title());
+  }else{
+    $title = page_title_page_get_title();
+  }
+  $variables['head_title'] = format_string('!title - European Commission', array('!title' => $title));
+}
+
+/**
  * Implements theme_preprocess_page().
  */
 function reps_preprocess_page(&$variables) {
@@ -130,7 +142,6 @@ function reps_menu_tree__submenu($variables) {
  * Implements theme_menu_link().
  */
 function reps_menu_link($variables) {
-  // print_r($variables['element']['#original_link']);
   if ($variables['element']['#original_link']['depth'] < 3) {
     $element = $variables['element'];
     $sub_menu = '';
@@ -158,6 +169,17 @@ function reps_menu_link($variables) {
     $element['#localized_options']['html'] = TRUE;
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
     return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+  }
+}
+
+/**
+ * Implements reps_preprocess_node().
+ */
+function reps_preprocess_node(&$vars) {
+  if($vars['type'] == 'reps_event') {
+    if($vars['field_reps_event_venue']) {
+      unset($vars['content']['field_reps_event_location']);
+    }
   }
 }
 
@@ -224,7 +246,6 @@ function reps_preprocess_views_view_unformatted(&$vars) {
  * Implements reps_js_alter().
  */
 function reps_js_alter(&$javascript) {
-  unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
   drupal_add_js(drupal_get_path('theme', 'reps') . '/scripts/reps_tabber.js');
 }
 
@@ -253,4 +274,58 @@ function reps_page_alter($page) {
     ),
   );
   drupal_add_html_head($meta_creator, 'meta_creator');
+
+  // Keywords
+  $keywords = '';
+  if (!empty($node) && !empty($node->field_tags)) {
+    $tags = field_view_field('node', $node, 'field_tags');
+    if (isset($tags['#items'])) {
+      foreach ($tags['#items'] as $key => $value) {
+        $keywords .= $value['taxonomy_term']->name . ', ';
+      }
+    }
+  }
+  $keywords .= filter_xss(variable_get('site_name')) . ', ';
+  $keywords .= t('European Commission, European Union, EU');
+  // Keywords.
+  $meta_keywords = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'keywords',
+      'content' => $keywords,
+    ),
+  );
+  drupal_add_html_head($meta_keywords, 'meta_keywords');
+}
+
+/**
+ * Returns HTML for a date element formatted as a range.
+ */
+function reps_date_display_range($variables) {
+  $date1 = $variables['date1'];
+  $date2 = $variables['date2'];
+  $timezone = $variables['timezone'];
+  $attributes_start = $variables['attributes_start'];
+  $attributes_end = $variables['attributes_end'];
+  $show_remaining_days = $variables['show_remaining_days'];
+
+  $start_date = '<span class="date-display-start"' . drupal_attributes($attributes_start) . '>' . $date1 . '</span>';
+  $end_date = '<span class="date-display-end"' . drupal_attributes($attributes_end) . '>' . $date2 . $timezone . '</span>';
+
+  // If microdata attributes for the start date property have been passed in,
+  // add the microdata in meta tags.
+  if (!empty($variables['add_microdata'])) {
+    $start_date .= '<meta' . drupal_attributes($variables['microdata']['value']['#attributes']) . '/>';
+    $end_date .= '<meta' . drupal_attributes($variables['microdata']['value2']['#attributes']) . '/>';
+  }
+
+  // Wrap the result with the attributes.
+  $output = '<div class="date-display-range">' . t('!start-date - !end-date', array(
+    '!start-date' => $start_date,
+    '!end-date' => $end_date,
+  )) . '</div>';
+
+  // Add remaining message and return.
+  return $output . $show_remaining_days;
 }

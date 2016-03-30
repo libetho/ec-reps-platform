@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * reps_events.features.field_instance.inc
+ * Reps_events.features.field_instance.inc.
  */
 
 /**
@@ -10,7 +10,7 @@
 function reps_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-reps_event-body'
+  // Exported field_instance: 'node-reps_event-body'.
   $field_instances['node-reps_event-body'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -22,7 +22,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -67,7 +67,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_meta_classification'
+  // Exported field_instance: 'node-reps_event-field_meta_classification'.
   $field_instances['node-reps_event-field_meta_classification'] = array(
     'bundle' => 'reps_event',
     'default_value' => array(
@@ -82,7 +82,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -104,7 +104,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_meta_description'
+  // Exported field_instance: 'node-reps_event-field_meta_description'.
   $field_instances['node-reps_event-field_meta_description'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -115,7 +115,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -164,7 +164,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_core_abstract'
+  // Exported field_instance: 'node-reps_event-field_reps_core_abstract'.
   $field_instances['node-reps_event-field_reps_core_abstract'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -243,7 +243,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_core_external_url'
+  // Exported field_instance: 'node-reps_event-field_reps_core_external_url'.
   $field_instances['node-reps_event-field_reps_core_external_url'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -254,7 +254,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'above',
@@ -280,6 +280,7 @@ function reps_events_field_default_field_instances() {
     'label' => 'External Link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -294,6 +295,7 @@ function reps_events_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'none',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -305,11 +307,11 @@ function reps_events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => -4,
+      'weight' => -3,
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_core_file'
+  // Exported field_instance: 'node-reps_event-field_reps_core_file'.
   $field_instances['node-reps_event-field_reps_core_file'] = array(
     'bundle' => 'reps_event',
     'deleted' => 0,
@@ -320,7 +322,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -386,7 +388,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_core_image'
+  // Exported field_instance: 'node-reps_event-field_reps_core_image'.
   $field_instances['node-reps_event-field_reps_core_image'] = array(
     'bundle' => 'reps_event',
     'deleted' => 0,
@@ -477,7 +479,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_core_related_links'
+  // Exported field_instance: 'node-reps_event-field_reps_core_related_links'.
   $field_instances['node-reps_event-field_reps_core_related_links'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -489,7 +491,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -515,6 +517,7 @@ function reps_events_field_default_field_instances() {
     'label' => 'Related Link(s)',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -529,6 +532,7 @@ function reps_events_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -544,7 +548,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_core_related_video'
+  // Exported field_instance: 'node-reps_event-field_reps_core_related_video'.
   $field_instances['node-reps_event-field_reps_core_related_video'] = array(
     'bundle' => 'reps_event',
     'deleted' => 0,
@@ -557,7 +561,7 @@ function reps_events_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -612,7 +616,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_event_date'
+  // Exported field_instance: 'node-reps_event-field_reps_event_date'.
   $field_instances['node-reps_event-field_reps_event_date'] = array(
     'bundle' => 'reps_event',
     'deleted' => 0,
@@ -627,6 +631,7 @@ function reps_events_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -678,7 +683,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_reps_event_location'
+  // Exported field_instance: 'node-reps_event-field_reps_event_location'.
   $field_instances['node-reps_event-field_reps_event_location'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -757,7 +762,113 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-field_tags'
+  // Exported field_instance: 'node-reps_event-field_reps_event_venue'.
+  $field_instances['node-reps_event-field_reps_event_venue'] = array(
+    'bundle' => 'reps_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reps_event_venue',
+    'label' => 'Venue',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 'optional',
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_event-field_reps_registration'.
+  $field_instances['node-reps_event-field_reps_registration'] = array(
+    'bundle' => 'reps_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'registration',
+        'settings' => array(
+          'i18n_string_key' => NULL,
+          'label' => NULL,
+        ),
+        'type' => 'registration_link',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reps_registration',
+    'label' => 'Register',
+    'required' => FALSE,
+    'settings' => array(
+      'default_registration_settings' => array(
+        'capacity' => 0,
+        'reminder' => array(
+          'reminder_settings' => array(
+            'reminder_date' => NULL,
+            'reminder_template' => NULL,
+          ),
+          'send_reminder' => 0,
+        ),
+        'scheduling' => array(
+          'close' => NULL,
+          'open' => NULL,
+        ),
+        'settings' => array(
+          'from_address' => 'admin@example.com',
+          'maximum_spaces' => 1,
+          'multiple_registrations' => -1,
+        ),
+        'status' => 0,
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'registration',
+      'settings' => array(),
+      'type' => 'registration_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_event-field_tags'.
   $field_instances['node-reps_event-field_tags'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -768,7 +879,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'above',
@@ -809,7 +920,7 @@ function reps_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reps_event-title_field'
+  // Exported field_instance: 'node-reps_event-title_field'.
   $field_instances['node-reps_event-title_field'] = array(
     'bundle' => 'reps_event',
     'default_value' => NULL,
@@ -820,7 +931,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'full' => array(
         'label' => 'above',
@@ -860,7 +971,69 @@ function reps_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-reps_registration-field_reps_register_name'.
+  $field_instances['registration-reps_registration-field_reps_register_name'] = array(
+    'bundle' => 'reps_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_reps_register_name',
+    'label' => 'Name',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
     ),
   );
 
@@ -874,11 +1047,14 @@ function reps_events_field_default_field_instances() {
   t('IPG Classification');
   t('Image');
   t('Location');
+  t('Name');
+  t('Register');
   t('Related Document(s)');
   t('Related Link(s)');
   t('Related video');
   t('Tags');
   t('Title');
+  t('Venue');
 
   return $field_instances;
 }
