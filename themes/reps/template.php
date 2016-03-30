@@ -142,7 +142,6 @@ function reps_menu_tree__submenu($variables) {
  * Implements theme_menu_link().
  */
 function reps_menu_link($variables) {
-  // print_r($variables['element']['#original_link']);
   if ($variables['element']['#original_link']['depth'] < 3) {
     $element = $variables['element'];
     $sub_menu = '';
