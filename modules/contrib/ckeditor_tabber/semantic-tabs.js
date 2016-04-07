@@ -3,21 +3,31 @@
   var tabIndex = 0;
   var instanceId = 0;
 
-  $.fn.tabs = function () {
+  $.fn.ckeditortabs = function () {
     this.each(function () {
       var el = $(this);
       var current;
 
       var numTabs = el.find('dt').length;
+      var tabHeight = 0;
       el.find('> dt').each(function () {
         var tabId = 'tab-' + instanceId + '-' + tabIndex;
-        // Populate DTs with anchor links
-        $(this).wrapInner('<a href="#' + tabId + '" />')
-          .css('width', (100 / numTabs) + '%');
+        // Populate DTs with anchor links if not already present
+        if (!$(this).has('a').length) {
+          $(this).wrapInner('<a href="#' + tabId + '" class="tab-link" />');
+        }
+        $(this).css({
+          'width': (100 / numTabs) + '%',
+          'left': (100 / numTabs * tabIndex) + '%'
+        });
+        // Determine max tab height
+        tabHeight = Math.max(tabHeight, $(this).find('> a').height());
         // ID attribute on DTs
         $(el.find('> dt').get(tabIndex)).attr('id', tabId);
         tabIndex = tabIndex + 1;
       });
+      // Set the min-height on the tabs for consistency
+      el.find('> dt > a').css('min-height', tabHeight + 'px');
       el.find('> dd').hide();
 
       // Remove text nodes so that display:inline-block behave nicely
@@ -40,7 +50,7 @@
             }
             break;
         }
-      }
+      };
       walk($(this)[0]);
 
       // Initialise tab depending on current hash
@@ -51,28 +61,23 @@
         current = el.find('> dt:first').addClass('current');
       }
 
-      // Calculate height
-      var currentHeight = current.next('dd').show().height();
-      var dlHeight = el.find('> dt').height();
-      var dtHeight = current.height();
-      console.log('height here');
-	  el.css('height', dlHeight + currentHeight + dtHeight + 3); // 3 is borders
+      // Show dd
+      current.next('dd').show();
 
       instanceId = instanceId + 1;
     });
 
     // onclick event
-    $('dl.ckeditor-tabber dt a').click(function (e) {
+    $('dl.ckeditor-tabber dt a.tab-link').click(function (e) {
       e.preventDefault();
 
       var el = $(this).parents('dl.ckeditor-tabber');
       el.find('.current').removeClass('current').next('dd').hide(0);
       var current = $(this).parent('dt').addClass('current');
-      var currentHeight = current.next('dd').show(0).height();
-      var dlHeight = el.removeAttr('style').height();
-      var dtHeight = $(this).parents('dt').height();
 
-      el.css('height', dlHeight + currentHeight + dtHeight + 4);
+      // Show dd
+      current.next('dd').show(0);
+      el.removeAttr('style');
 
       // Update hash with pushState or fallback
       if (history.pushState) {
@@ -89,8 +94,10 @@
 })(jQuery);
 (function ($) {
   Drupal.behaviors.ckeditorTabs = {
-    attach: function (context) {
-      $(Drupal.settings.ckeditor_tabber.elements, context).tabs();
+    attach: function (context, settings) {
+      if (settings.ckeditor_tabber && settings.ckeditor_tabber.elements) {
+        $(settings.ckeditor_tabber.elements, context).ckeditortabs();
+      }
     }
   };
 }(jQuery));

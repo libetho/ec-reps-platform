@@ -52,6 +52,10 @@
   line-height: 1;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
 }
+.content .node-sticky {
+  border: none;
+  background: none;
+}
 /* BODY */
 body.reps {
   font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
@@ -350,8 +354,8 @@ body.reps #mainContainer #layout-body .block-views .flexslider ul.flex-direction
   padding: 0;
   position: static;
 }
-body.reps #mainContainer #layout-body .block-views .flexslider ul.flex-direction-nav a:before {
-  content: '';
+body.reps #mainContainer #layout-body .block-views .flexslider ul.flex-direction-nav a {
+  height: 50px;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row {
@@ -747,6 +751,12 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .views-row 
   color: #333333;
   padding: 10px auto;
 }
+body.reps #mainContainer #layout-body #block-system-main .panel-body .views-row .views-field-field-reps-news-category-et span.views-label {
+  color: #333333;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .views-row .views-field-field-reps-news-category-et div.field-content {
+  color: #999999;
+}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body #block-system-main .panel-body .views-row .views-field-field-reps-core-image-et {
   float: left;
@@ -809,11 +819,16 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body ul.pager li
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content {
   font-size: 89%;
 }
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-name-field-reps-core-date {
+  color: #666666;
+  margin-left: 4px;
+  margin-top: 5px;
+}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map) img:first-child {
   float: left;
   margin: 10px 10px 10px 0;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img {
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img:not(.leaflet-clickable) {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -829,6 +844,9 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   color: #666666;
   padding-top: 5px;
   font-size: 97%;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-name-field-reps-event-date span.date-display-range {
+  display: inline;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary {
   border-bottom: none;
@@ -865,6 +883,10 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary .inside_table tbody td a strong {
   color: #0065a2;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary blockquote {
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary img {
   float: none;
@@ -1373,7 +1395,10 @@ body.not-front #layout-body {
   #path {
     display: block !important;
     padding: 5px 0;
-    height: 31px;
+    height: auto;
+  }
+  #path .easy-breadcrumb {
+    display: inline;
   }
   .home-button.hidden-sm {
     display: none !important;

@@ -83,6 +83,11 @@
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
 }
 
+.content .node-sticky {
+  border: none;
+  background: none;
+}
+
 /* BODY */
 
 body.reps {
@@ -414,8 +419,8 @@ body.reps {
             padding: 0;
             position: static;
 
-            a:before {
-              content: '';
+            a {
+              height: 50px;
             }
           }
         } // .flexslider END
@@ -873,6 +878,16 @@ body.reps {
             color: #333333;
             padding: 10px auto;
 
+            .views-field-field-reps-news-category-et {
+              span.views-label {
+                color: #333333;
+              }
+
+              div.field-content {
+                color: #999999;
+              }
+            }
+
             .views-field-field-reps-core-image,
             .views-field-field-reps-core-image-et {
               float: left;
@@ -945,12 +960,18 @@ body.reps {
           .node-full .content {
             font-size: 89%;
 
+            .field-name-field-reps-core-date {
+              color: #666666;
+              margin-left: 4px;
+              margin-top: 5px;
+            }
+
             div:not(.leaflet-map) img:first-child {
               float: left;
               margin: 10px 10px 10px 0;
             }
 
-            div.leaflet-map img {
+            div.leaflet-map img:not(.leaflet-clickable) {
               margin: 0 !important;
               padding: 0 !important; 
             }
@@ -969,6 +990,10 @@ body.reps {
                 padding-top: 5px;
                 font-size: 97%;
               }
+            }
+
+            .field-name-field-reps-event-date span.date-display-range {
+              display: inline;
             }
 
             .field-type-text-with-summary {
@@ -1013,6 +1038,11 @@ body.reps {
                     }
                   }
                 }
+              }
+
+              blockquote {
+                background-color: #fafafa;
+                border: 1px solid #e8e8e8;
               }
 
               img {
@@ -1605,7 +1635,11 @@ body.not-front #layout-body {
   #path {
     display: block !important;
     padding: 5px 0;
-    height: 31px;
+    height: auto;
+
+    .easy-breadcrumb {
+      display: inline; 
+    }
   }
 
   .home-button.hidden-sm {

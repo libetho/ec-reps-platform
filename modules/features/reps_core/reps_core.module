@@ -141,7 +141,11 @@ function _reps_core_create_default_pages() {
  */
 function reps_core_date_format_types() {
   return array(
-    'just_Y' => t('Year only'),
+    'event_date_format' => t('Event date format'),
+    'just_Y' => t('Just year'),
+    'short_de_' => t('Event date format (de)'),
+    'time' => t('Time format'),
+    'time_bg' => t('Time format (bg)'),
   );
 }
 
@@ -529,6 +533,16 @@ function reps_core_social_media_links_platform_info_alter(&$platforms) {
     'title' => t('Flickr'),
     'base url' => 'https://www.flickr.com/',
   );
+  // Add additional platform(s).
+  $platforms['instagram'] = array(
+    'title' => t('Instagram'),
+    'base url' => 'https://www.instagram.com/',
+  );
+  // Add additional platform(s).
+  $platforms['blog'] = array(
+    'title' => t('Blog'),
+    'base url' => '',
+  );
   // Clean base urls.
   foreach ($platforms as $service => $values) {
     $platforms[$service]['base url'] = '';
@@ -559,11 +573,4 @@ function _reps_core_get_instances($field_name) {
     }
   }
   return $instances;
-}
-
-/**
- * Implements reps_core_js_alter().
- */
-function reps_core_js_alter(&$javascript) {
-  unset($javascript[drupal_get_path('module', 'ckeditor_tabber') . '/semantic-tabs.js']);
 }

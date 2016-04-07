@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function reps_core_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -21,12 +21,8 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => 0,
-    'children' => array(
-      0 => 'title_field',
-      1 => 'title',
-      2 => 'body',
-    ),
+    'weight' => '3',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -36,7 +32,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_page_content|node|page|form'] = $field_group;
+  $field_groups['group_page_content|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -49,14 +45,8 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => 10,
-    'children' => array(
-      0 => 'field_tags',
-      1 => 'language',
-      2 => 'og_group_ref',
-      3 => 'group_content_access',
-      4 => 'scheduler_settings',
-    ),
+    'weight' => '9',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -66,7 +56,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_page_metadata|node|page|form'] = $field_group;
+  $field_groups['group_page_metadata|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -79,7 +69,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'body',
       1 => 'field_reps_core_external_url',
@@ -95,34 +85,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_add_blocks_content|node|reps_homepage_additional_block|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_add_blocks_metadata|node|reps_homepage_additional_block|form';
-  $field_group->group_name = 'group_reps_add_blocks_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'reps_homepage_additional_block';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Metadata',
-    'weight' => '3',
-    'children' => array(
-      0 => 'path',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-reps-add-blocks-metadata field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_reps_add_blocks_metadata|node|reps_homepage_additional_block|form'] = $field_group;
+  $field_groups['group_reps_add_blocks_content|node|reps_homepage_additional_block|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -152,7 +115,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_bean_ql_content|bean|reps_core_quicklinks|form'] = $field_group;
+  $field_groups['group_reps_bean_ql_content|bean|reps_core_quicklinks|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -180,7 +143,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_bean_ql_other|bean|reps_core_quicklinks|form'] = $field_group;
+  $field_groups['group_reps_bean_ql_other|bean|reps_core_quicklinks|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -193,7 +156,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'More Info',
-    'weight' => '3',
+    'weight' => '6',
     'children' => array(
       0 => 'field_reps_core_more_info_body',
       1 => 'field_reps_core_more_info_link',
@@ -209,7 +172,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_core_more_info|node|page|form'] = $field_group;
+  $field_groups['group_reps_core_more_info|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -222,11 +185,10 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '0',
+    'weight' => '3',
     'children' => array(
       0 => 'body',
-      1 => 'title_field',
-      3 => 'field_reps_cp_type',
+      1 => 'field_reps_cp_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -238,35 +200,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_cp_content|node|reps_contact_point|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_cp_meta|node|reps_contact_point|form';
-  $field_group->group_name = 'group_reps_cp_meta';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'reps_contact_point';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Metadata',
-    'weight' => '1',
-    'children' => array(
-      0 => 'path',
-      1 => 'language',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-reps-cp-meta field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_reps_cp_meta|node|reps_contact_point|form'] = $field_group;
+  $field_groups['group_reps_cp_content|node|reps_contact_point|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -279,7 +213,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'body',
       1 => 'field_reps_core_node_reference',
@@ -294,7 +228,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_homepage_content|node|reps_homepage|form'] = $field_group;
+  $field_groups['group_reps_homepage_content|node|reps_homepage|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -307,9 +241,11 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
-      0 => 'path',
+      0 => 'field_meta_description',
+      1 => 'field_meta_classification',
+      2 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -321,7 +257,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_homepage_metadata|node|reps_homepage|form'] = $field_group;
+  $field_groups['group_reps_homepage_metadata|node|reps_homepage|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -334,12 +270,11 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '0',
+    'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'title_field',
-      2 => 'field_reps_core_image',
-      3 => 'field_json_object',
+      1 => 'field_reps_core_image',
+      2 => 'field_json_object',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -351,7 +286,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_page_content|node|page|form'] = $field_group;
+  $field_groups['group_reps_page_content|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -364,13 +299,11 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '4',
+    'weight' => '7',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_meta_classification',
       2 => 'field_meta_description',
-      3 => 'path',
-      4 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -382,36 +315,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_page_metadata|node|page|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_page_og|node|page|form';
-  $field_group->group_name = 'group_reps_page_og';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'page';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Organic Groups',
-    'weight' => '5',
-    'children' => array(
-      0 => 'og_group_ref',
-      1 => 'group_content_access',
-      2 => 'field_core_user_tasks',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'collapsible',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-reps-page-og field-group-fieldset',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_reps_page_og|node|page|form'] = $field_group;
+  $field_groups['group_reps_page_metadata|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -424,7 +328,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related Content',
-    'weight' => '1',
+    'weight' => '5',
     'children' => array(
       0 => 'field_reps_core_related_video',
     ),
@@ -438,7 +342,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_page_related_content|node|page|form'] = $field_group;
+  $field_groups['group_reps_page_related_content|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -466,7 +370,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_content|bean|reps_core_sb_right_blue_button|form'] = $field_group;
+  $field_groups['group_reps_rightcol_content|bean|reps_core_sb_right_blue_button|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -495,7 +399,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_content|bean|reps_core_sb_right_free_content|form'] = $field_group;
+  $field_groups['group_reps_rightcol_content|bean|reps_core_sb_right_free_content|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -524,7 +428,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_content|bean|reps_core_sb_right_image_link|form'] = $field_group;
+  $field_groups['group_reps_rightcol_content|bean|reps_core_sb_right_image_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -552,7 +456,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_other|bean|reps_core_sb_right_blue_button|form'] = $field_group;
+  $field_groups['group_reps_rightcol_other|bean|reps_core_sb_right_blue_button|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -580,7 +484,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_other|bean|reps_core_sb_right_free_content|form'] = $field_group;
+  $field_groups['group_reps_rightcol_other|bean|reps_core_sb_right_free_content|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -608,7 +512,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_other|bean|reps_core_sb_right_image_link|form'] = $field_group;
+  $field_groups['group_reps_rightcol_other|bean|reps_core_sb_right_image_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -637,7 +541,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_position|bean|reps_core_sb_right_blue_button|form'] = $field_group;
+  $field_groups['group_reps_rightcol_position|bean|reps_core_sb_right_blue_button|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -666,7 +570,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_rightcol_position|bean|reps_core_sb_right_free_content|form'] = $field_group;
+  $field_groups['group_reps_rightcol_position|bean|reps_core_sb_right_free_content|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -696,7 +600,7 @@ function reps_core_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_reps_rightcol_position|bean|reps_core_sb_right_image_link|form'] = $field_group;
+  $field_groups['group_reps_rightcol_position|bean|reps_core_sb_right_image_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -709,12 +613,11 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
-      0 => 'title_field',
-      1 => 'body',
-      2 => 'field_reps_core_external_url',
-      3 => 'field_reps_core_image',
+      0 => 'body',
+      1 => 'field_reps_core_external_url',
+      2 => 'field_reps_core_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -726,37 +629,7 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_slide_footer_content|node|reps_slide_footer|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_slide_footer_metadata|node|reps_slide_footer|form';
-  $field_group->group_name = 'group_reps_slide_footer_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'reps_slide_footer';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Metadata',
-    'weight' => '2',
-    'children' => array(
-      0 => 'field_meta_classification',
-      1 => 'language',
-      2 => 'path',
-      3 => 'field_meta_description',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-reps-slide-footer-metadata field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_reps_slide_footer_metadata|node|reps_slide_footer|form'] = $field_group;
+  $field_groups['group_reps_slide_footer_content|node|reps_slide_footer|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -769,13 +642,12 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '0',
+    'weight' => '3',
     'children' => array(
-      0 => 'title_field',
-      1 => 'body',
-      2 => 'field_reps_core_date',
-      3 => 'field_reps_core_external_url',
-      4 => 'field_reps_core_image',
+      0 => 'body',
+      1 => 'field_reps_core_date',
+      2 => 'field_reps_core_external_url',
+      3 => 'field_reps_core_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -787,35 +659,16 @@ function reps_core_field_group_info() {
       ),
     ),
   );
-  $export['group_reps_slide_hp_content|node|reps_slide_homepage|form'] = $field_group;
+  $field_groups['group_reps_slide_hp_content|node|reps_slide_homepage|form'] = $field_group;
 
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_slide_hp_metadata|node|reps_slide_homepage|form';
-  $field_group->group_name = 'group_reps_slide_hp_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'reps_slide_homepage';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Metadata',
-    'weight' => '1',
-    'children' => array(
-      0 => 'path',
-      1 => 'language',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_reps_slide_hp_metadata|node|reps_slide_homepage|form'] = $field_group;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content');
+  t('Metadata');
+  t('More Info');
+  t('Other');
+  t('Position');
+  t('Related Content');
 
-  return $export;
+  return $field_groups;
 }
