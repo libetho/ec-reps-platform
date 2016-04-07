@@ -116,6 +116,11 @@ function reps_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Date (field_reps_core_date) */
   $handler->display->display_options['sorts']['field_reps_core_date_value']['id'] = 'field_reps_core_date_value';
   $handler->display->display_options['sorts']['field_reps_core_date_value']['table'] = 'field_data_field_reps_core_date';
@@ -135,40 +140,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'reps_news' => 'reps_news',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['id'] = 'field_reps_news_category_tid';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['table'] = 'field_data_field_reps_news_category';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['field'] = 'field_reps_news_category_tid';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['expose']['operator_id'] = 'field_reps_news_category_tid_op';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['expose']['label'] = 'Category';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['expose']['operator'] = 'field_reps_news_category_tid_op';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['expose']['identifier'] = 'field_reps_news_category_tid';
-  $handler->display->display_options['filters']['field_reps_news_category_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    6 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  /* Filter criterion: Content: Body (body) */
-  $handler->display->display_options['filters']['body_value']['id'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['table'] = 'field_data_body';
-  $handler->display->display_options['filters']['body_value']['field'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['body_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['body_value']['expose']['operator_id'] = 'body_value_op';
-  $handler->display->display_options['filters']['body_value']['expose']['operator'] = 'body_value_op';
-  $handler->display->display_options['filters']['body_value']['expose']['identifier'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    6 => 0,
-    4 => 0,
-    5 => 0,
-  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Reps News Section */
   $handler = $view->new_display('page', 'Reps News Section', 'page');
@@ -227,8 +199,9 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_news_category_et']['id'] = 'field_reps_news_category_et';
   $handler->display->display_options['fields']['field_reps_news_category_et']['table'] = 'field_data_field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category_et']['field'] = 'field_reps_news_category_et';
-  $handler->display->display_options['fields']['field_reps_news_category_et']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_news_category_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_news_category_et']['label'] = 'Category';
+  $handler->display->display_options['fields']['field_reps_news_category_et']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_reps_news_category_et']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_reps_news_category_et']['settings'] = array(
     'link' => 0,
   );
@@ -365,31 +338,22 @@ function reps_news_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: RSS Feed */
-  $handler = $view->new_display('feed', 'RSS Feed', 'feed_1');
+  /* Display: RSS News */
+  $handler = $view->new_display('feed', 'RSS News', 'feed_2');
+  $handler->display->display_options['display_description'] = 'RSS including news listing for Follow us block';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'reps_news' => 'reps_news',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $handler->display->display_options['path'] = 'news/rss.xml';
+  $handler->display->display_options['row_options']['item_length'] = 'rss';
+  $handler->display->display_options['path'] = 'news.rss';
+
+  /* Display: RSS Newsletter */
+  $handler = $view->new_display('feed', 'RSS Newsletter', 'feed_3');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['row_options']['item_length'] = 'rss_newsletter';
+  $handler->display->display_options['path'] = 'newsletter.rss';
   $export['reps_news'] = $view;
 
   return $export;

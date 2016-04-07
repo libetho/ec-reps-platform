@@ -72,7 +72,7 @@ function reps_news_strongarm() {
         'custom_settings' => FALSE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_index' => array(
         'custom_settings' => FALSE,
@@ -95,14 +95,17 @@ function reps_news_strongarm() {
       'popup' => array(
         'custom_settings' => FALSE,
       ),
+      'rss_newsletter' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '4',
+          'weight' => '2',
         ),
         'language' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'xmlsitemap' => array(
           'weight' => '30',
@@ -115,6 +118,14 @@ function reps_news_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'rss_newsletter' => array(
             'weight' => '9',
             'visible' => FALSE,
           ),
@@ -171,6 +182,20 @@ function reps_news_strongarm() {
   $strongarm->name = 'node_submitted_reps_news';
   $strongarm->value = 0;
   $export['node_submitted_reps_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_reps_news';
+  $strongarm->value = '';
+  $export['page_title_type_reps_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_reps_news_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_reps_news_showfield'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

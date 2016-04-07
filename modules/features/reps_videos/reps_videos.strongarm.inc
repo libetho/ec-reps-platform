@@ -96,13 +96,13 @@ function reps_videos_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'language' => array(
-          'weight' => '4',
+          'weight' => '1',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '2',
         ),
         'xmlsitemap' => array(
           'weight' => '30',
