@@ -304,15 +304,15 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['field_reps_cp_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_reps_cp_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_cp_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Sort criterion: Field: Title (title_field) */
+  $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
+  $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
+  $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Field: Title (title_field) */
-  $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
-  $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
-  $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -321,6 +321,11 @@ function reps_core_views_default_views() {
     'reps_contact_point' => 'reps_contact_point',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
 
   /* Display: Contact points list */
   $handler = $view->new_display('block', 'Contact points list', 'block');
@@ -361,7 +366,7 @@ function reps_core_views_default_views() {
     'image_style' => 'slider_homepage__342_x_272_',
     'image_link' => '',
   );
-  /* Field: Field: External Url */
+  /* Field: Field: Link */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';
@@ -433,7 +438,7 @@ function reps_core_views_default_views() {
     'image_style' => 'slide_homepage_large__719x265_',
     'image_link' => '',
   );
-  /* Field: Field: External Url */
+  /* Field: Field: Link */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';
@@ -510,6 +515,13 @@ function reps_core_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'reps_slide_homepage' => 'reps_slide_homepage',
   );
+  /* Filter criterion: Field: Title (title_field:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Slider Footer */
   $handler = $view->new_display('block', 'Slider Footer', 'block_1');
@@ -521,7 +533,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: External Url */
+  /* Field: Field: Link */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';

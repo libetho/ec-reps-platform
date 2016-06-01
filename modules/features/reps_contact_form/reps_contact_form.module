@@ -24,7 +24,7 @@ function reps_contact_form_form_alter(&$form, &$form_state, $form_id) {
 function reps_contact_form_post_features_enable_feature($component) {
   switch ($component) {
     case 'node':
-      // Enable title_field
+      // Enable title_field.
       if (!module_exists('title')) {
         module_enable(array('title'));
       }

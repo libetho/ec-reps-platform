@@ -14,7 +14,7 @@
       "fr" : ["Accueil"]
     },
     "link": {
-      "und": ["<front>"]
+      "und": ["home"]
     },
     "weight": {
       "und": [0]

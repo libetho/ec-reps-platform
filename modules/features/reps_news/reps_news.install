@@ -54,7 +54,7 @@ function reps_news_install() {
     taxonomy_vocabulary_save($vocabulary);
   }
 
-  // Enable title_field
+  // Enable title_field.
   if (module_exists('title')) {
     multisite_config_service('title')->replaceTitleField('node', 'reps_news', 'title');
     title_field_replacement_toggle('taxonomy_term', 'reps_news_categories', 'name');

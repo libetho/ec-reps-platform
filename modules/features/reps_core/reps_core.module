@@ -9,22 +9,6 @@ include_once 'reps_core.features.inc';
 include_once 'reps_core.api.inc';
 
 /**
- * Implements hook_menu().
- */
-function reps_core_menu() {
-  $items = array();
-  // Empty home page.
-  $items['home'] = array(
-    'title' => '',
-    'page callback' => '_reps_core_empty',
-    'access callback' => TRUE,
-    'type' => MENU_NORMAL_ITEM,
-  );
-
-  return $items;
-}
-
-/**
  * Implements hook_help().
  */
 function reps_core_help($path, $arg) {
@@ -238,18 +222,12 @@ function _reps_core_overrides() {
   // Enable translations for various fields.
   $field_names = array(
     'body',
-    'field_meta_description',
-    'field_meta_classification',
     'field_tags',
   );
 
   foreach ($field_names as $field_name) {
     $field = field_read_field($field_name);
     if ($field) {
-      // Set the classification field to suppot multiple values.
-      if ($field_name == 'field_meta_classification') {
-        $field['cardinality'] = -1;
-      }
       // Make the field translatable.
       $field['translatable'] = 1;
       field_update_field($field);

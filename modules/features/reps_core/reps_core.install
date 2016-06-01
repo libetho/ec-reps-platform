@@ -32,7 +32,7 @@ function reps_core_enable() {
     'reps_contact_form',
   ));
 
-  // Enable title_field
+  // Enable title_field.
   if (!module_exists('title')) {
     module_enable(array('title'));
   }
@@ -63,7 +63,7 @@ function reps_core_disable() {
  * Implements hook_install().
  */
 function reps_core_install() {
-  // Enable title_field
+  // Enable title_field.
   if (!module_exists('multisite_metatags')) {
     module_enable(array('multisite_metatags'));
   }
