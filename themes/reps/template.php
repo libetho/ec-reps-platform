@@ -9,9 +9,10 @@
  * Implements theme_preprocess_html().
  */
 function reps_preprocess_html(&$variables) {
-  if(empty(page_title_page_get_title())) {
+  if (empty(page_title_page_get_title())) {
     $title = strip_tags(drupal_get_title());
-  }else{
+  }
+  else {
     $title = page_title_page_get_title();
   }
   $variables['head_title'] = format_string('!title - European Commission', array('!title' => $title));
@@ -176,8 +177,8 @@ function reps_menu_link($variables) {
  * Implements reps_preprocess_node().
  */
 function reps_preprocess_node(&$vars) {
-  if($vars['type'] == 'reps_event') {
-    if($vars['field_reps_event_venue']) {
+  if ($vars['type'] == 'reps_event') {
+    if ($vars['field_reps_event_venue']) {
       unset($vars['content']['field_reps_event_location']);
     }
   }
@@ -275,7 +276,7 @@ function reps_page_alter($page) {
   );
   drupal_add_html_head($meta_creator, 'meta_creator');
 
-  // Keywords
+  // Keywords.
   $keywords = '';
   if (!empty($node) && !empty($node->field_tags)) {
     $tags = field_view_field('node', $node, 'field_tags');
@@ -328,4 +329,30 @@ function reps_date_display_range($variables) {
 
   // Add remaining message and return.
   return $output . $show_remaining_days;
+}
+
+/**
+ * Processes variables for social-media-links-platform.tpl.php.
+ *
+ * @see theme_social_media_links_platform()
+ */
+function reps_preprocess_social_media_links_platform(&$variables) {
+  $info = $variables['info'];
+  $name = $variables['name'];
+  $value = $variables['value'];
+  $icon_style = $variables['icon_style'];
+  $icon_folder = base_path() . drupal_get_path('theme', 'reps') . '/images/social_media_links/';
+
+  // Call the url callback of the platform to create the link url.
+  $variables['link'] = $info['base url'] . $value;
+  if (isset($info['url callback'])) {
+    $platform_url_changed = call_user_func($info['url callback'], $info['base url'], $value);
+    if ($platform_url_changed) {
+      $variables['link'] = $platform_url_changed;
+    }
+  }
+
+  $variables['attributes']['title'] = check_plain($info['title']);
+  $variables['icon_path']  = $icon_folder . $name . '.png';
+  $variables['icon_alt'] = isset($info['image alt']) ? $info['image alt'] : $info['title'] . ' ' . t('icon');
 }

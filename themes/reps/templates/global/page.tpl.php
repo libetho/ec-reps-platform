@@ -124,7 +124,7 @@
           <div class="navbar-header" data-spy="affix" data-offset-top="165">
             <?php if ($menu_visible): ?>
               <div class="visible-xs hidden-sm home-button"><?php print l('<span>' . t('Home') . '</span>', '<front>', array('html' => TRUE)); ?></div>
-  		          <button id="menu-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <button id="menu-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <?php print (t('Menu')); ?>
               </button>
             <?php endif; ?>
@@ -190,7 +190,7 @@
             </h1>
           <?php endif; ?>  
         <?php endif; ?>
-  	    <?php print render($title_suffix); ?>
+        <?php print render($title_suffix); ?>
 
         <?php print $regions['content_top']; ?>
 
