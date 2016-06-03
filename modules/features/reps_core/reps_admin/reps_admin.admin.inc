@@ -719,7 +719,7 @@ function _reps_admin_menu_translate_submit($form, &$form_state) {
         '%lang' => $language,
         '%title' => $title,
         '%translation' => $value,
-        )
+      )
       ));
     }
   }

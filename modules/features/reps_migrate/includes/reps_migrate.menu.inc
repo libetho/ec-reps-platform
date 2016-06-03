@@ -4,9 +4,6 @@
  * Code for the reps migrate menu feature.
  */
 
-use Drupal\nexteuropa_migrate\migrate\MigrateItemJSON;
-use Drupal\nexteuropa_migrate\migrate\MigrationAbstract;
-
 /**
  * Class RepsMenuMigrationAbstract.
  */

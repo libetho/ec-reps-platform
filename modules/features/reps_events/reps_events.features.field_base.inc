@@ -104,7 +104,7 @@ function reps_events_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -126,7 +126,7 @@ function reps_events_field_default_field_bases() {
         0 => 'registration_type',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'registration',
     'settings' => array(
       'entity_translation_sync' => FALSE,

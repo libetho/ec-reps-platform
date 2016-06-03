@@ -106,11 +106,11 @@
     ?>
     <?php print render($content); ?>
   <?php if (render($content['field_reps_core_more_info_body'])): ?>
-		<div class="more-info-box">
-			<?php print render($content['field_reps_core_more_info_title']); ?>
-			<?php print render($content['field_reps_core_more_info_body']); ?>
-			<?php print render($content['field_reps_core_more_info_link']); ?>
-		</div>
+    <div class="more-info-box">
+      <?php print render($content['field_reps_core_more_info_title']); ?>
+      <?php print render($content['field_reps_core_more_info_body']); ?>
+      <?php print render($content['field_reps_core_more_info_link']); ?>
+    </div>
   <?php endif;?>
     <?php if ($suffix_display): ?>
     <div class="row node-info">

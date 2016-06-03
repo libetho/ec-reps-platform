@@ -1,7 +1,6 @@
 name = reps
 description = Sub theme of default theme, ec_resp
 package = Fpfis_cms_theme
-version = "7.x-1.3"
 core = "7.x"
 base theme = ec_resp
 php = 5.2.4

@@ -10,7 +10,7 @@
 function reps_contact_form_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-webform-title_field'
+  // Exported field_instance: 'node-webform-title_field'.
   $field_instances['node-webform-title_field'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,

@@ -93,9 +93,6 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
-body.reps #mainContainer .region-featured-wrapper {
-  /* MAIN MENU */
-}
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -198,7 +195,7 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a {
   border: none;
   border-left: 1px solid #ffffff;
-  background: : none;
+  background: none;
   color: #e7e7e7;
   margin: 0;
   padding: 0 10px 0;
@@ -1247,7 +1244,7 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form
   border-radius: 0;
   border: 1px solid #cce2ed;
   float: right;
-  background: #FFF;
+  background: #fff;
   padding: 1px 6px;
   font-size: 120%;
   color: #333;

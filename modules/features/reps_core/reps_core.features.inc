@@ -104,13 +104,13 @@ function reps_core_image_default_styles() {
   $styles['slide_homepage_large__719x265_'] = array(
     'label' => 'Slide homepage large [719x265]',
     'effects' => array(
-      3 => array(
-        'name' => 'image_resize',
+      2 => array(
+        'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 719,
           'height' => 265,
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
   );

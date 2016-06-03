@@ -80,6 +80,13 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'reps_video' => 'reps_video',
   );
+  /* Filter criterion: Field: Title (title_field:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -90,7 +97,7 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: External Url: translated */
+  /* Field: Entity translation: Link: translated */
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['id'] = 'field_reps_core_external_url_et';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['field'] = 'field_reps_core_external_url_et';
@@ -142,7 +149,7 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: External Url: translated */
+  /* Field: Entity translation: Link: translated */
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['id'] = 'field_reps_core_external_url_et';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['field'] = 'field_reps_core_external_url_et';
@@ -170,8 +177,8 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['fields']['title_field_et']['alter']['text'] = '<a href="[path]" title="[title_field_et]" target="_blank">[title_field_et]</a>';
   $handler->display->display_options['fields']['title_field_et']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field_et']['alter']['path'] = '[field_reps_core_external_url_et]';
-  $handler->display->display_options['fields']['title_field_et']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title_field_et']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
   $export['reps_videos'] = $view;
 
