@@ -22,7 +22,7 @@ function reps_preprocess_html(&$variables) {
  * Implements theme_preprocess_page().
  */
 function reps_preprocess_page(&$variables) {
-  if (url(current_path()) == url('<front>')) {
+  if (drupal_is_front_page()) {
     $variables['is_front'] = 1;
   }
 
@@ -142,7 +142,7 @@ function reps_menu_tree__submenu($variables) {
 /**
  * Implements theme_menu_link().
  */
-function reps_menu_link($variables) {
+function reps_menu_link(&$variables) {
   if ($variables['element']['#original_link']['depth'] < 3) {
     $element = $variables['element'];
     $sub_menu = '';
@@ -203,7 +203,7 @@ function reps_preprocess_block(&$vars) {
  */
 function reps_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'views_exposed_form') {
-    $form['field_reps_news_category_tid']['#options']['All'] = '- ' . t('Choose a category') . ' -';
+    $form['field_reps_news_category_tid']['#options']['All'] = t('- Choose a category -');
   }
 }
 
@@ -244,17 +244,16 @@ function reps_preprocess_views_view_unformatted(&$vars) {
 }
 
 /**
- * Implements reps_js_alter().
- */
-function reps_js_alter(&$javascript) {
-  drupal_add_js(drupal_get_path('theme', 'reps') . '/scripts/reps_tabber.js');
-}
-
-/**
  * Implements reps_alter-page().
  */
 function reps_page_alter($page) {
   // Reference.
+  $node = menu_get_object();
+  if ($node->type == 'node') {
+    if (isset($node->title)) {
+      $node_title = filter_xss($node->title);
+    }
+  }
   $meta_reference = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
@@ -311,8 +310,8 @@ function reps_date_display_range($variables) {
   $attributes_end = $variables['attributes_end'];
   $show_remaining_days = $variables['show_remaining_days'];
 
-  $start_date = '<span class="date-display-start"' . drupal_attributes($attributes_start) . '>' . $date1 . '</span>';
-  $end_date = '<span class="date-display-end"' . drupal_attributes($attributes_end) . '>' . $date2 . $timezone . '</span>';
+  $start_date = '<span class="date-display-start"' . drupal_attributes($attributes_start) . '>' . $variables['dates']['value']['formatted_date'] . '</span>';
+  $end_date = '<span class="date-display-end"' . drupal_attributes($attributes_end) . '>' . $variables['dates']['value2']['formatted_date'] . ' - ' . $variables['dates']['value']['formatted_time'] . ' - ' . $variables['dates']['value2']['formatted_time'] . '</span>';
 
   // If microdata attributes for the start date property have been passed in,
   // add the microdata in meta tags.
