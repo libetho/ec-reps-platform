@@ -90,8 +90,8 @@ function reps_preprocess_page(&$variables) {
     'xs' => ($has_responsive_sidebar ? 2 : 0),
   );
   $cols['tools'] = array(
-    'lg' => (empty($title) ? 12 : 4),
-    'md' => (empty($title) ? 12 : 4),
+    'lg' => 12,
+    'md' => 12,
     'sm' => 12,
     'xs' => 12,
   );
@@ -174,7 +174,10 @@ function reps_menu_link(&$variables) {
 }
 
 /**
- * Implements reps_preprocess_node().
+ * Implements theme_preprocess_node().
+ *
+ * Remove info about field reps_event_location (old field).
+ * To force usage of the new field_reps_event venue in template (new field).
  */
 function reps_preprocess_node(&$vars) {
   if ($vars['type'] == 'reps_event') {
@@ -197,20 +200,18 @@ function reps_preprocess_block(&$vars) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Change the label of the first option of the exposed filter select box.
  */
-function reps_form_alter(&$form, $form_state, $form_id) {
-  if ($form_id == 'views_exposed_form') {
-    $form['field_reps_news_category_tid']['#options']['All'] = t('- Choose a category -');
-  }
+function reps_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+  $form['field_reps_news_category_tid']['#options']['All'] = t('- Choose a category -');
 }
 
 /**
- * Implements reps_preprocess_views_view_unformatted().
+ * Implements theme_preprocess_views_view_unformatted().
  *
- * Add grouping div to the rendering of the unformated views.
+ * Add div to group items in the rendering of the unformated views.
  */
 function reps_preprocess_views_view_unformatted(&$vars) {
   $vars['prefix'] = array();
@@ -244,16 +245,13 @@ function reps_preprocess_views_view_unformatted(&$vars) {
 }
 
 /**
- * Implements reps_alter-page().
+ * Implements hook_page_alter().
+ *
+ * Alter info in the html header to implment usage of page_title module.
  */
 function reps_page_alter($page) {
   // Reference.
   $node = menu_get_object();
-  if ($node->type == 'node') {
-    if (isset($node->title)) {
-      $node_title = filter_xss($node->title);
-    }
-  }
   $meta_reference = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
@@ -280,7 +278,7 @@ function reps_page_alter($page) {
   if (!empty($node) && !empty($node->field_tags)) {
     $tags = field_view_field('node', $node, 'field_tags');
     if (isset($tags['#items'])) {
-      foreach ($tags['#items'] as $key => $value) {
+      foreach ($tags['#items'] as $value) {
         $keywords .= $value['taxonomy_term']->name . ', ';
       }
     }
@@ -300,12 +298,11 @@ function reps_page_alter($page) {
 }
 
 /**
+ * Implements theme_date_display_range().
+ *
  * Returns HTML for a date element formatted as a range.
  */
 function reps_date_display_range($variables) {
-  $date1 = $variables['date1'];
-  $date2 = $variables['date2'];
-  $timezone = $variables['timezone'];
   $attributes_start = $variables['attributes_start'];
   $attributes_end = $variables['attributes_end'];
   $show_remaining_days = $variables['show_remaining_days'];
@@ -331,6 +328,8 @@ function reps_date_display_range($variables) {
 }
 
 /**
+ * Implements theme_preprocess_social_media_links_platform().
+ *
  * Processes variables for social-media-links-platform.tpl.php.
  *
  * @see theme_social_media_links_platform()
@@ -339,7 +338,6 @@ function reps_preprocess_social_media_links_platform(&$variables) {
   $info = $variables['info'];
   $name = $variables['name'];
   $value = $variables['value'];
-  $icon_style = $variables['icon_style'];
   $icon_folder = base_path() . drupal_get_path('theme', 'reps') . '/images/social_media_links/';
 
   // Call the url callback of the platform to create the link url.

@@ -210,10 +210,10 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['field_reps_publication_file']['label'] = '';
   $handler->display->display_options['fields']['field_reps_publication_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_publication_file']['click_sort_column'] = 'fid';
-  $handler->display->display_options['path'] = 'publications';
+  $handler->display->display_options['path'] = 'services/publications';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Block Hompage */
+  $handler = $view->new_display('block', 'Block Hompage', 'block');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -274,6 +274,9 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['click_sort_column'] = 'url';
+
+  /* Display: Block full listing */
+  $handler = $view->new_display('block', 'Block full listing', 'block_1');
   $export['reps_publications'] = $view;
 
   return $export;

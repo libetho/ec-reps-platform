@@ -256,6 +256,18 @@ body.reps #mainContainer #layout-body .block-views .panel-body .more-link a {
   padding: 5px 0;
   color: #fff;
 }
+body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row {
+  border-top: 1px silver dotted;
+  padding: 15px 0;
+}
+body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row .views-field-field-reps-core-image {
+  float: left;
+  margin-right: 15px;
+}
+body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row .views-field-field-reps-core-external-url-1 h3 {
+  font-size: 135%;
+  margin-top: 5px;
+}
 body.reps #mainContainer #layout-body .block-views .flexslider {
   margin: 0;
 }

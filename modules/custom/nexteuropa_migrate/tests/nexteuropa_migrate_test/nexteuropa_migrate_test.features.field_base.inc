@@ -10,7 +10,7 @@
 function nexteuropa_migrate_test_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -33,7 +33,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_migrate_test_dates'
+  // Exported field_base: 'field_migrate_test_dates'.
   $field_bases['field_migrate_test_dates'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -63,7 +63,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_migrate_test_files'
+  // Exported field_base: 'field_migrate_test_files'.
   $field_bases['field_migrate_test_files'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -89,7 +89,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_migrate_test_images'
+  // Exported field_base: 'field_migrate_test_images'.
   $field_bases['field_migrate_test_images'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -114,7 +114,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_migrate_test_references'
+  // Exported field_base: 'field_migrate_test_references'.
   $field_bases['field_migrate_test_references'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -145,7 +145,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_migrate_test_terms'
+  // Exported field_base: 'field_migrate_test_terms'.
   $field_bases['field_migrate_test_terms'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -173,7 +173,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_migrate_test_text'
+  // Exported field_base: 'field_migrate_test_text'.
   $field_bases['field_migrate_test_text'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -194,7 +194,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'name_field'
+  // Exported field_base: 'name_field'.
   $field_bases['name_field'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -216,7 +216,7 @@ function nexteuropa_migrate_test_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'title_field'
+  // Exported field_base: 'title_field'.
   $field_bases['title_field'] = array(
     'active' => 1,
     'cardinality' => 1,

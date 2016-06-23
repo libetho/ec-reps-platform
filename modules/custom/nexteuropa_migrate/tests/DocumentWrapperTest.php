@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\nexteuropa_migrate\Tests\DocumentWrapperTest.
- */
-
 namespace Drupal\nexteuropa_migrate\Tests;
 
 use Drupal\nexteuropa_migrate\Document;

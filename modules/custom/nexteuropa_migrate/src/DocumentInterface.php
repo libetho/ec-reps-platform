@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\nexteuropa_migrate\DocumentInterface.
- */
-
 namespace Drupal\nexteuropa_migrate;
 
 /**
