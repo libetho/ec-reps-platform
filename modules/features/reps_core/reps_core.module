@@ -152,7 +152,7 @@ function _reps_core_site_name($lang, array $vars) {
       ->fetchField();
 
     if ($results == 0) {
-      $query = db_insert('variable_store')
+      db_insert('variable_store')
         ->fields(array(
           'realm' => 'language',
           'realm_key' => $lang,
@@ -163,7 +163,7 @@ function _reps_core_site_name($lang, array $vars) {
         ->execute();
     }
     else {
-      $query = db_update('variable_store')
+      db_update('variable_store')
         ->fields(array('value' => $value))
         ->condition('name', $variable, '=')
         ->condition('realm_key', $lang, '=')
