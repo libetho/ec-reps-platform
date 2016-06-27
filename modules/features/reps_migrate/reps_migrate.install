@@ -24,9 +24,9 @@ function reps_migrate_install() {
   ));
 
   $migration = Migration::getInstance('RepsServicesMenu');
-  $result = $migration->processImport();
+  $migration->processImport();
   $migration = Migration::getInstance('RepsMainMenu');
-  $result = $migration->processImport();
+  $migration->processImport();
 }
 
 /**

@@ -209,6 +209,7 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li.active-trail {
   border-bottom: 3px solid #fff;
+  margin-bottom: -3px;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu * {
   background: none;
@@ -255,6 +256,18 @@ body.reps #mainContainer #layout-body .block-views .panel-body .more-link a {
   padding: 5px 0;
   color: #fff;
 }
+body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row {
+  border-top: 1px silver dotted;
+  padding: 15px 0;
+}
+body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row .views-field-field-reps-core-image {
+  float: left;
+  margin-right: 15px;
+}
+body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row .views-field-field-reps-core-external-url-1 h3 {
+  font-size: 135%;
+  margin-top: 5px;
+}
 body.reps #mainContainer #layout-body .block-views .flexslider {
   margin: 0;
 }
@@ -268,7 +281,6 @@ body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li {
 }
 body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li .views-field .sliderImgLarge img {
   position: absolute;
-  min-height: 205px;
 }
 body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li .views-field .sliderImgLarge .content {
   position: absolute;
@@ -821,11 +833,15 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   margin-left: 4px;
   margin-top: 5px;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map) img:first-child {
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .date-display-range {
+  display: inline;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map) img:first-child:not(.alIco) {
   float: left;
   margin: 10px 10px 10px 0;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img:not(.leaflet-clickable) {
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img:not(.leaflet-clickable),
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div.leaflet-map img:not(.leaflet-marker-shadow) {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -850,10 +866,12 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   padding: 5px;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary h2 {
+  clear: both;
   color: #b60522;
   font-size: 150%;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
   margin-top: 10px;
+  padding-tio: 10px;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary h3 {
   font-size: 110%;
@@ -861,6 +879,7 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   margin: 4px 0;
   font-weight: bold;
   color: #666666;
+  clear: both;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary a[href$=pdf] {
   background: url(../images/icon_pdf.gif) no-repeat right;
@@ -888,7 +907,10 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary img {
   float: none;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary ul,
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary ul {
+  display: block;
+  overflow: hidden;
+}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary li {
   margin: 5px 0;
 }
@@ -896,57 +918,25 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary strong {
   color: #333;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber {
-  border: none;
-  width: 100%;
-  clear: both;
-  margin: 10px 0 0 0;
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dt {
+  background: #f3f6f9;
+  border-color: #cccccc;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dt.current {
+  background: #ffffff !important;
+  border-bottom-color: #ffffff;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dt.current a {
+  color: #0065a2 !important;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dt:hover {
+  background: #b60522;
+}
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dt:hover a {
+  color: #ffffff;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dd {
-  z-index: 0;
-  position: relative;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dd.tab {
-  float: left;
-  display: block !important;
-  width: auto;
-  cursor: pointer;
-  top: 0px;
-  font-weight: bold;
-  border: 1px solid #cde;
-  margin-right: 3px;
-  background: #f3f6f9;
-  color: #777777;
-  font-size: 110%;
-  padding: 5px 10px;
-  max-height: 30px;
-  z-index: 10;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dd.tab:hover {
-  text-decoration: underline;
-  background: #69c;
-  color: #fff;
-  border-color: #369;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dd.tab.active {
-  z-index: 10;
-  color: #b60522;
-  border: 1px #cccccc solid;
-  background: #fff;
-  border-bottom: none;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dd.panel {
-  position: absolute;
-  top: 29px;
-  z-index: 0;
-  display: none;
-  border-radius: 0;
-  border: 1px #cccccc solid;
-  padding-top: 30px;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary dl.ckeditor-tabber dd.panel.active {
-  z-index: 5;
-  display: block !important;
+  border-color: #cccccc;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .more-info-box,
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-name-field-reps-core-related-video,
@@ -1169,6 +1159,7 @@ body.reps #mainContainer #sidebar-right .block-nexteuropa-europa-search .panel-b
   height: 23px;
   background: url(../images/btn-search.jpg) no-repeat;
 }
+body.reps #mainContainer #sidebar-right #block-bean-share-block,
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools {
   background-color: #eeeeee;
   box-shadow: 0px 2px 2px #d4d4d4;
@@ -1179,10 +1170,11 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtool
   overflow: hidden;
   position: relative;
 }
+body.reps #mainContainer #sidebar-right #block-bean-share-block .content,
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools .content {
   float: right;
   max-width: 100%;
-  padding-right: 10px;
+  padding: 0;
 }
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links {
   background: #eeeeee;
@@ -1622,6 +1614,12 @@ body.not-front #layout-body {
   #layout-body #sidebar-right.col-sm-4 .wtShareButton {
     min-width: 0;
   }
+  .node-type-reps-homepage #main-menu .container > div:not(.visible-ex1) {
+    display: none !important;
+  }
+  body.not-front #layout-body {
+    margin-top: 0 !important;
+  }
 }
 /* xs small only */
 @media all and (max-width: 480px) {
@@ -1673,5 +1671,8 @@ body.not-front #layout-body {
   #sidebar-right.col-xs-12 {
     width: 100% !important;
     clear: both;
+  }
+  body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li {
+    height: 190px;
   }
 }

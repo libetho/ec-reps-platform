@@ -21,7 +21,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -156,7 +156,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'More Info',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_reps_core_more_info_body',
       1 => 'field_reps_core_more_info_link',
@@ -270,11 +270,12 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
-      0 => 'body',
+      0 => 'field_ne_body',
       1 => 'field_reps_core_image',
       2 => 'field_json_object',
+      3 => 'field_reps_core_abstract',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -299,11 +300,13 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_meta_classification',
-      2 => 'field_meta_description',
+      0 => 'og_group_ref',
+      1 => 'group_content_access',
+      2 => 'field_tags',
+      3 => 'field_meta_classification',
+      4 => 'field_meta_description',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -328,7 +331,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related Content',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_reps_core_related_video',
     ),

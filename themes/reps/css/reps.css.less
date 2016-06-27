@@ -260,6 +260,7 @@ body.reps {
 
                   li.active-trail {
                     border-bottom: 3px solid #fff;
+                    margin-bottom: -3px;
                   }
                 } // ul li.active-trail END
               } // ul li.active-trail END
@@ -298,6 +299,24 @@ body.reps {
           .more-link {
             .readMoreLinkStyle;
           }
+
+          .block-publications-full {
+            
+            .views-row {
+              border-top: 1px silver dotted;
+              padding: 15px 0;
+
+              .views-field-field-reps-core-image {
+                float: left;
+                margin-right: 15px;
+              }
+
+              .views-field-field-reps-core-external-url-1 h3 {
+                font-size: 135%;
+                margin-top: 5px;
+              }
+            }
+          } 
         }
 
         /* SLIDESHOW */
@@ -317,7 +336,6 @@ body.reps {
                 .sliderImgLarge {
                   img {
                     position: absolute;
-                    min-height: 205px;
                   }
 
                   .content {
@@ -966,12 +984,17 @@ body.reps {
               margin-top: 5px;
             }
 
-            div:not(.leaflet-map) img:first-child {
+            .date-display-range {
+              display: inline;
+            }
+
+            div:not(.leaflet-map) img:first-child:not(.alIco) {
               float: left;
               margin: 10px 10px 10px 0;
             }
 
-            div.leaflet-map img:not(.leaflet-clickable) {
+            div.leaflet-map img:not(.leaflet-clickable),
+            div.leaflet-map img:not(.leaflet-marker-shadow) {
               margin: 0 !important;
               padding: 0 !important; 
             }
@@ -1001,10 +1024,12 @@ body.reps {
               padding: 5px;
 
               h2 {
+                clear: both;
                 color: @maltaRed;
                 font-size: 150%;
                 font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
                 margin-top: 10px;
+                padding-tio: 10px;
               }
 
               h3 {
@@ -1013,6 +1038,7 @@ body.reps {
                 margin: 4px 0;
                 font-weight: bold;
                 color: #666666;
+                clear: both;
               }
 
               a[href$=pdf]{
@@ -1049,10 +1075,14 @@ body.reps {
                 float: none;
               }
 
-              ul,
+              ul{
+                display: block;
+                overflow: hidden;
+              }
+
               li {
                 margin: 5px 0;
-              }
+              } 
 
               b,
               strong {
@@ -1060,61 +1090,30 @@ body.reps {
               }
 
               dl.ckeditor-tabber {
-                border: none;
-                width: 100%;
-                clear: both;
-                margin: 10px 0 0 0;
+                dt {
+                  background: #f3f6f9;
+                  border-color: #cccccc;
+                }
+
+                dt.current {
+                  background: #ffffff !important;
+                  border-bottom-color: #ffffff;
+
+                  a {
+                    color: #0065a2 !important;
+                  }
+                }
+
+                dt:hover {
+                  background: @maltaRed;
+
+                  a {
+                    color: #ffffff;
+                  }
+                }
 
                 dd {
-                  z-index: 0;
-                  position: relative;
-                }
-
-                dd.tab {
-                  float: left;
-                  display: block !important;
-                  width: auto;
-                  cursor: pointer;
-                  top: 0px;
-                  font-weight: bold;
-                  border: 1px solid #cde;
-                  margin-right: 3px;
-                  background: #f3f6f9;
-                  color: #777777;
-                  font-size: 110%;
-                  padding: 5px 10px;
-                  max-height: 30px;
-                  z-index: 10;
-                }
-
-                dd.tab:hover {
-                  text-decoration: underline;
-                  background: #69c;
-                  color: #fff;
-                  border-color: #369;
-                }
-
-                dd.tab.active {
-                  z-index: 10;
-                  color: @maltaRed;
-                  border: 1px #cccccc solid;
-                  background: #fff;
-                  border-bottom:none;
-                }
-
-                dd.panel {
-                  position: absolute;
-                  top: 29px;
-                  z-index: 0;
-                  display: none;
-                  border-radius: 0;
-                  border: 1px #cccccc solid;
-                  padding-top: 30px;
-                }
-
-                dd.panel.active {
-                  z-index: 5;
-                  display: block !important;
+                  border-color: #cccccc;
                 }
               } // dl.ckeditor-tabber END
             } // .field-type-text-with-summary END
@@ -1371,6 +1370,7 @@ body.reps {
         }
       } // .block-nexteuropa-europa-search END
 
+      #block-bean-share-block,
       #block-reps-core-reps-core-share-webtools {
         background-color: #eeeeee;
         box-shadow: 0px 2px 2px #d4d4d4;
@@ -1384,7 +1384,7 @@ body.reps {
         .content {
           float: right;
           max-width: 100%;
-          padding-right: 10px;
+          padding: 0;
         }
       }
 
@@ -1891,6 +1891,14 @@ body.not-front #layout-body {
       }
     }
   } // #layout-body ((max-width: @screen-sm-min)) END
+
+  .node-type-reps-homepage #main-menu .container > div:not(.visible-ex1) {
+    display: none !important;
+  }
+
+  body.not-front #layout-body {
+    margin-top: 0 !important;
+  }
 } // @media all and (max-width: @screen-sm-min) END
 
 /* xs small only */
@@ -1913,7 +1921,7 @@ body.not-front #layout-body {
         }
       }
     }
-  } // #main-menu  (max-width: @screen-xs-min) END
+  } // #main-menu
 
   #content-wrapper.col-xs-12 {
     width: 100% !important;
@@ -1933,5 +1941,8 @@ body.not-front #layout-body {
   #sidebar-right.col-xs-12 {
     width: 100% !important;
     clear: both;
+  }
+  body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li {
+    height: 190px;
   }
 } // @media all and (max-width: @screen-xs-min) END

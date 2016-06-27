@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\nexteuropa_migrate\migrate\MigrateItemJSON.
- */
-
 namespace Drupal\nexteuropa_migrate\migrate;
 
 use Drupal\nexteuropa_migrate\Document;

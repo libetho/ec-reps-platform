@@ -29,7 +29,6 @@ function reps_core_enable() {
     'reps_events',
     'reps_videos',
     'reps_news',
-    'reps_contact_form',
   ));
 
   // Enable title_field.

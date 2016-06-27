@@ -40,10 +40,11 @@ function reps_news_install() {
   $vocabulary = taxonomy_vocabulary_machine_name_load('reps_news_categories');
 
   if (!$vocabulary) {
+    $t = get_t();
     $vocabulary = array(
-      'name' => $t = get_t('REPS news categories'),
+      'name' => $t('REPS news categories'),
       'machine_name' => 'reps_news_categories',
-      'description' => get_t('A list of categories for the REPS'),
+      'description' => $t('A list of categories for the REPS'),
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 1,
