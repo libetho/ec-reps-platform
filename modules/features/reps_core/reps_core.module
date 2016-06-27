@@ -304,7 +304,7 @@ function _reps_core_feedback_form() {
   $form['reps_core_feeback_form']['form_tools_form_id'] = array(
     '#attributes' => array('id' => 'form_tools_form_id'),
     '#type' => 'hidden',
-    '#default_value' => variable_get('feedback_form_id', '1051'),
+    '#default_value' => variable_get('reps_core_feedback_form_id', '1051'),
   );
 
   $form['actions']['submit'] = array(
