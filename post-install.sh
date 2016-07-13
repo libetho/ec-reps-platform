@@ -11,7 +11,13 @@ mkdir -p lib/modules/custom
 
 # Copy the sources in place.
 cp -r vendor/ec-europa/reps-platform/modules/features/* lib/features/reps
-cp -r vendor/ec-europa/reps-platform/modules/custom/* lib/modules/custom
-cp -r vendor/ec-europa/reps-platform/themes/* lib/themes/reps
+cp -r vendor/ec-europa/reps-platform/modules/custom/* lib/modules
+cp -r vendor/ec-europa/reps-platform/themes/* lib/themes
+cp -r vendor/ec-europa/reps-platform/reps-platform.make resources/reps-platform.make
 
-echo REPS Sources copied, make sure that you update your site.make for libraries and contribs
+echo REPS Sources copied...
+echo Make sure that you add:
+echo =================================
+echo includes[] = "platform-platform.make"
+echo =================================
+echo to your site.make file.
