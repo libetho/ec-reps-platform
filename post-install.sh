@@ -18,6 +18,6 @@ cp -r vendor/ec-europa/reps-platform/reps-platform.make resources/reps-platform.
 echo REPS Sources copied...
 echo Make sure that you add:
 echo =================================
-echo includes[] = "platform-platform.make"
+echo includes[] = "reps-platform.make"
 echo =================================
 echo to your site.make file.
