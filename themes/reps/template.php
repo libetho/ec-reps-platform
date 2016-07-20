@@ -214,7 +214,7 @@ function reps_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
  * Add div to group items in the rendering of the unformated views.
  */
 function reps_preprocess_views_view_unformatted(&$vars) {
-  if($vars['view']->name !== 'reps_bean_blocks') {
+  if ($vars['view']->name !== 'reps_bean_blocks') {
     $vars['prefix'] = array();
     $vars['suffix'] = array();
     $group = 1;
