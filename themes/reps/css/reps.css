@@ -209,7 +209,6 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li.active-trail {
   border-bottom: 3px solid #fff;
-  margin-bottom: -3px;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu * {
   background: none;
