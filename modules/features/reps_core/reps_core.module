@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the REPS core feature.
@@ -304,7 +305,7 @@ function _reps_core_feedback_form() {
   $form['reps_core_feeback_form']['form_tools_form_id'] = array(
     '#attributes' => array('id' => 'form_tools_form_id'),
     '#type' => 'hidden',
-    '#default_value' => variable_get('reps_core_feedback_form_id', '1051'),
+    '#default_value' => variable_get('reps_core_feedback_form_id', NULL),
   );
 
   $form['actions']['submit'] = array(
@@ -448,8 +449,8 @@ function _reps_core_filter_basepath($text, $filter, $format, $langcode, $cache, 
   // Add the base path to leading slash links.
   $link = 'href="/';
   $img = 'src="/';
-  $text = str_replace($link, substr($link, 0, -1) . base_path(), $text);
-  $text = str_replace($img, substr($img, 0, -1) . base_path(), $text);
+  $text = str_replace($link, drupal_substr($link, 0, -1) . base_path(), $text);
+  $text = str_replace($img, drupal_substr($img, 0, -1) . base_path(), $text);
 
   return $text;
 }

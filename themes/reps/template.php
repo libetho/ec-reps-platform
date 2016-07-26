@@ -195,7 +195,7 @@ function reps_preprocess_node(&$vars) {
 function reps_preprocess_block(&$vars) {
   if ($vars['block']->bid === 'cce_basic_config-footer_ipg') {
     $pos = strpos($vars['content'], "<ul");
-    $vars['content'] = substr($vars['content'], 0, ($pos - 3));
+    $vars['content'] = drupal_substr($vars['content'], 0, ($pos - 3));
   }
 }
 
@@ -214,32 +214,34 @@ function reps_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
  * Add div to group items in the rendering of the unformated views.
  */
 function reps_preprocess_views_view_unformatted(&$vars) {
-  $vars['prefix'] = array();
-  $vars['suffix'] = array();
-  $group = 1;
-  $last_row = count($vars['rows']) - 1;
+  if ($vars['view']->name !== 'reps_bean_blocks') {
+    $vars['prefix'] = array();
+    $vars['suffix'] = array();
+    $group = 1;
+    $last_row = count($vars['rows']) - 1;
 
-  foreach ($vars['rows'] as $id => &$row) {
+    foreach ($vars['rows'] as $id => &$row) {
 
-    $vars['prefix'][$id] = '';
-    $vars['suffix'][$id] = '';
+      $vars['prefix'][$id] = '';
+      $vars['suffix'][$id] = '';
 
-    // Apply modular arithmetic.
-    $remainder = $id % 3;
+      // Apply modular arithmetic.
+      $remainder = $id % 3;
 
-    // First div => 3 items.
-    if ($remainder == 0) {
-      $vars['prefix'][$id] = "<div class=\"group group-$group\">";
-    }
+      // First div => 3 items.
+      if ($remainder == 0) {
+        $vars['prefix'][$id] = "<div class=\"group group-$group\">";
+      }
 
-    if ($remainder == 2) {
-      $vars['suffix'][$id] = '<div class="clearfix"></div></div>';
-      $group++;
-    }
+      if ($remainder == 2) {
+        $vars['suffix'][$id] = '<div class="clearfix"></div></div>';
+        $group++;
+      }
 
-    // Close the div in case there are not enough items.
-    if ($last_row == $id && $remainder != 2 && $remainder != 8) {
-      $vars['suffix'][$id] = '</div>';
+      // Close the div in case there are not enough items.
+      if ($last_row == $id && $remainder != 2 && $remainder != 8) {
+        $vars['suffix'][$id] = '</div>';
+      }
     }
   }
 }

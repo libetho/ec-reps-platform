@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_core.features.field_instance.inc
@@ -1044,7 +1045,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1093,7 +1094,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1150,7 +1151,7 @@ function reps_core_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1162,11 +1163,11 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1207,7 +1208,7 @@ function reps_core_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1378,7 +1379,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1519,7 +1520,7 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1585,7 +1586,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'popup' => array(
         'label' => 'above',

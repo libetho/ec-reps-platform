@@ -49,8 +49,8 @@
     <script type="application/json">{
       "service"       : "smk",
       "type"          : "user",
-      "screen_name"   : "<?php print variable_get('twitter_webtools_config_screen', NULL); ?>",
-      "count"         : <?php print variable_get('twitter_webtools_config_nbr', NULL); ?>,
+      "screen_name"   : "<?php print variable_get('reps_core_twitter_webtools_config_screen', NULL); ?>",
+      "count"         : <?php print variable_get('reps_core_twitter_webtools_config_nbr', NULL); ?>,
       "include_rts"   : false
     }</script>
   </div>
