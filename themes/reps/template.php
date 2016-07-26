@@ -195,7 +195,7 @@ function reps_preprocess_node(&$vars) {
 function reps_preprocess_block(&$vars) {
   if ($vars['block']->bid === 'cce_basic_config-footer_ipg') {
     $pos = strpos($vars['content'], "<ul");
-    $vars['content'] = substr($vars['content'], 0, ($pos - 3));
+    $vars['content'] = drupal_substr($vars['content'], 0, ($pos - 3));
   }
 }
 
