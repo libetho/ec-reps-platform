@@ -245,6 +245,7 @@ function reps_core_field_default_field_bases() {
         'target_bundles' => array(
           'page' => 'page',
           'reps_event' => 'reps_event',
+          'reps_homepage' => 'reps_homepage',
           'reps_homepage_additional_block' => 'reps_homepage_additional_block',
           'reps_news' => 'reps_news',
         ),
