@@ -78,7 +78,6 @@ function reps_news_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -383,12 +382,15 @@ function reps_news_views_default_views() {
 
   /* Display: RSS News */
   $handler = $view->new_display('feed', 'RSS News', 'feed_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['display_description'] = 'RSS including news listing for Follow us block';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['row_options']['item_length'] = 'rss';
   $handler->display->display_options['path'] = 'news.rss';
+  $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: RSS Newsletter */
   $handler = $view->new_display('feed', 'RSS Newsletter', 'feed_3');
