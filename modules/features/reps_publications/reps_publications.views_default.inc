@@ -72,7 +72,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
-  /* Field: Field: Link */
+  /* Field: Field: External Url */
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['id'] = 'field_reps_core_external_url_1';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['field'] = 'field_reps_core_external_url';
@@ -175,7 +175,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
-  /* Field: Field: Link */
+  /* Field: Field: External Url */
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['id'] = 'field_reps_core_external_url_1';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['field'] = 'field_reps_core_external_url';
@@ -265,7 +265,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
-  /* Field: Field: Link */
+  /* Field: Field: External Url */
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['id'] = 'field_reps_core_external_url_1';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['field'] = 'field_reps_core_external_url';
@@ -275,6 +275,34 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_publication' => 'reps_publication',
+  );
+  /* Filter criterion: Field: Title (title_field:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Field: Image (field_reps_core_image:fid) */
+  $handler->display->display_options['filters']['field_reps_core_image_fid']['id'] = 'field_reps_core_image_fid';
+  $handler->display->display_options['filters']['field_reps_core_image_fid']['table'] = 'field_data_field_reps_core_image';
+  $handler->display->display_options['filters']['field_reps_core_image_fid']['field'] = 'field_reps_core_image_fid';
+  $handler->display->display_options['filters']['field_reps_core_image_fid']['operator'] = 'not empty';
 
   /* Display: Block full listing */
   $handler = $view->new_display('block', 'Block full listing', 'block_1');
