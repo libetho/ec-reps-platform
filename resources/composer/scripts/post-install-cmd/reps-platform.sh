@@ -37,11 +37,11 @@ if [ -d "lib/vendor/ec-europa/ec-$TYPE-platform" ] ; then
   if ! [ -e $MAKE ] 2> /dev/null && [ -e $MAKE".example" ] ; then
     mv $MAKE".example" $MAKE;
   elif [ -e $MAKE ] ; then
-    COMMENT="\n\n; ============="
-    COMMENT="$COMMENT\n; ${TYPE^} platform"
-    COMMENT="$COMMENT\n; =============\n"
-    INCLUDE='includes[] = "$TYPE-platform.make"'
-    grep -q "$INCLUDE" "$MAKE" || echo "$COMMENT$INCLUDE" >> "$MAKE"
+    COMMENT="\n\n; ================="
+    COMMENT="$COMMENT\n; Platform for $TYPE"
+    COMMENT="$COMMENT\n; =================\n"
+    INCLUDE='includes[] = "'$TYPE'-platform.make"'
+    grep -qF "$INCLUDE" "$MAKE" || echo "$COMMENT$INCLUDE" >> "$MAKE"
   else
     echo "No site.make file found, $TYPE-platform.make not included!"
   fi
