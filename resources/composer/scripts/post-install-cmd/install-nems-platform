@@ -1,0 +1,74 @@
+#!/bin/bash
+
+
+# Set needed variables.
+JSON="lib/composer.json"
+MAKE="resources/site.make"
+SCRIPT=$(basename $0)
+TYPE=${SCRIPT#"install-"}
+TYPE=${TYPE%"-platform"}
+VERSION="dev-master"
+GITIGNORE="lib/.gitignore"
+IGNORES=( "vendor/" "lib/*/$TYPE" "composer.lock" )
+FOLDERS=( "features" "libraries" "modules" "themes" )
+
+
+# Expand lib folder with nems-platform.
+if [ ! -e $JSON ] ; then
+  composer init --working-dir="lib"
+  composer require "ec-europa/ec-$TYPE-platform:$VERSION" --working-dir="lib"
+elif grep -q "ec-europa/ec-$TYPE-platform" $JSON ; then
+  composer install --working-dir="lib"
+else
+  composer require "ec-europa/ec-$TYPE-platform:$VERSION" --working-dir="lib"
+fi
+
+
+# If the package is present update the lib source code.
+if [ -d "lib/vendor/ec-europa/ec-$TYPE-platform" ] ; then
+
+  # Rebuild $TYPE related sources.
+  rm -rf lib/*/$TYPE
+
+  for FOLDER in "${FOLDERS[@]}"
+  do
+    # If platform provides the folder create it and copy sources.
+    if [ -d lib/vendor/ec-europa/ec-$TYPE-platform/lib/$FOLDER ] ; then
+      if ! [ -d lib/$FOLDER ] ; then
+        mkdir lib/$FOLDER
+      fi
+      mkdir -p lib/$FOLDER/$TYPE
+      cp -r lib/vendor/ec-europa/ec-$TYPE-platform/lib/$FOLDER/* lib/$FOLDER/$TYPE
+    fi
+  done
+
+  # Copy the platform make file.
+  cp -f lib/vendor/ec-europa/ec-$TYPE-platform/resources/$TYPE-platform.make resources/$TYPE-platform.make
+
+
+  # Include the $TYPE-platform.make file.
+  if ! [ -e $MAKE ] 2> /dev/null && [ -e $MAKE".example" ] ; then
+    mv $MAKE".example" $MAKE;
+  elif [ -e $MAKE ] ; then
+    COMMENT="\n\n; ================="
+    COMMENT="$COMMENT\n; Platform for $TYPE"
+    COMMENT="$COMMENT\n; =================\n"
+    INCLUDE='includes[] = "'$TYPE'-platform.make"'
+    grep -qF "$INCLUDE" "$MAKE" || echo -e "$COMMENT$INCLUDE" >> "$MAKE"
+  else
+    echo "No site.make file found, $TYPE-platform.make not included!"
+  fi
+fi
+
+
+# Add gitignore to lib/ folder to avoid committing platform code.
+if ! [ -e $GITIGNORE ] ; then
+  touch $GITIGNORE
+  echo -e "# Platform $TYPE code ignores.\n# ===========================" >> $GITIGNORE
+fi
+if [ -e $GITIGNORE ] ; then
+  for IGNORE in "${IGNORES[@]}"
+  do
+    grep -qF "$IGNORE" $GITIGNORE || echo -e "$IGNORE" >> $GITIGNORE
+  done
+fi
