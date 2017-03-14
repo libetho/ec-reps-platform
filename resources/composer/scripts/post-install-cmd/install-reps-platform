@@ -7,17 +7,20 @@ MAKE="resources/site.make"
 SCRIPT=$(basename $0)
 TYPE=${SCRIPT#"install-"}
 TYPE=${TYPE%"-platform"}
-VERSION="dev-master"
+VERSION="~1.0"
 GITIGNORE="lib/.gitignore"
 IGNORES=( "vendor/" "*/$TYPE" "composer.lock" )
 FOLDERS=( "features" "libraries" "modules" "themes" )
 
 
-# Expand lib folder with nems-platform.
+# Expand lib folder with $TYPE-platform.
 if [ ! -e $JSON ] ; then
   composer init --working-dir="lib"
   composer require "ec-europa/ec-$TYPE-platform:$VERSION" --working-dir="lib"
 elif grep -q "ec-europa/ec-$TYPE-platform" $JSON ; then
+  if [[ $VERSION == "~"* ]] ; then
+    rm lib/composer.lock
+  fi
   composer install --working-dir="lib"
 else
   composer require "ec-europa/ec-$TYPE-platform:$VERSION" --working-dir="lib"
