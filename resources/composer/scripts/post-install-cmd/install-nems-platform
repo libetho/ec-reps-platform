@@ -9,7 +9,7 @@ TYPE=${SCRIPT#"install-"}
 TYPE=${TYPE%"-platform"}
 VERSION="dev-master"
 GITIGNORE="lib/.gitignore"
-IGNORES=( "vendor/" "lib/*/$TYPE" "composer.lock" )
+IGNORES=( "vendor/" "*/$TYPE" "composer.lock" )
 FOLDERS=( "features" "libraries" "modules" "themes" )
 
 
