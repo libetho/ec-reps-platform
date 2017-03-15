@@ -1,0 +1,68 @@
+<?php
+/**
+ * @file
+ * Code for the reps_contact_form feature.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function reps_contact_form_form_alter(&$form, &$form_state, $form_id) {
+  if (strstr($form_id, 'webform_client_form')) {
+    $form['captcha'] = array(
+      '#type' => 'captcha',
+      '#title' => 'Security code',
+      '#description' => t('Please type the characters you see in the image into the box below'),
+      '#captcha_type' => 'image_captcha/Image',
+    );
+  }
+}
+
+/**
+ * Implements hook_post_features_enable_feature().
+ */
+function reps_contact_form_post_features_enable_feature($component) {
+  switch ($component) {
+    case 'node':
+      // Enable title_field.
+      if (!module_exists('title')) {
+        module_enable(array('title'));
+      }
+      multisite_config_service('title')->replaceTitleField('node', 'webform', 'title');
+      $type = _reps_core_check_reps_content_type('webform');
+      // Set permissions for REPS Administrator.
+      $rid = _reps_core_check_reps_roles('REPS Administrator');
+      user_role_grant_permissions($rid, array(
+        'delete own ' . $type . ' content',
+        'edit any ' . $type . ' content',
+      ));
+
+      // Set permissions for the Editor role.
+      $rid = _reps_core_check_reps_roles('editor');
+      user_role_grant_permissions($rid, array(
+        'edit any ' . $type . ' content',
+      ));
+      break;
+  }
+}
+
+/**
+ * Implements _reps_contact_form_override function.
+ *
+ * Function to override the variables already exported by another feature.
+ */
+function _reps_contact_form_override() {
+  variable_set('comment_anonymous_webform', 0);
+  variable_set('comment_default_mode_webform', 0);
+  variable_set('comment_default_per_page_webform', '50');
+  variable_set('comment_form_location_webform', 0);
+  variable_set('comment_preview_webform', '1');
+  variable_set('comment_subject_field_webform', 0);
+  variable_set('comment_webform', '1');
+  variable_set('language_content_type_webform', '4');
+  variable_set('menu_options_webform', array(0 => 'main-menu'));
+  variable_set('menu_parent_webform', 'main-menu:0');
+  variable_set('node_options_webform', array(0 => 'status'));
+  variable_set('node_preview_webform', '1');
+  variable_set('node_submitted_webform', 0);
+}

@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Code for the REPS Myths feature.
+ */
+
+include_once 'reps_myths.features.inc';
+
+/**
+ * Helpers to generate a default event listing page.
+ */
+function _reps_myths_create_listing_page() {
+  $pages[] = array(
+    'title' => t('EU Myths'),
+    'path' => 'news/eu-myths',
+    'type' => 'page',
+    'parent' => 'news',
+    'weight' => 0,
+  );
+  foreach ($pages as $page) {
+    if(!drupal_lookup_path('source', $page['path'])) {
+      $nids[] = _reps_core_create_node($page['type'], $page['title'], $page['path']);
+    }
+    $menu_item = menu_get_item(drupal_lookup_path('source', $page['path']));
+    if ($menu_item) {
+      if($page['parent'] !== '0'){
+        $tree =  menu_tree_all_data('main-menu');
+        foreach($tree as $item) {
+          if ($item['link']['link_path'] == drupal_lookup_path('source', $page['parent'])) {
+            $page['parent'] = $item['link']['mlid'];
+            break;
+          }
+        }
+      }
+      _reps_core_menu_item('main-menu', $menu_item['href'], $page['parent'], $menu_item['title'], 'menu', $page['weight'], 'en', $menu_item['title']); 
+    }
+  }
+}

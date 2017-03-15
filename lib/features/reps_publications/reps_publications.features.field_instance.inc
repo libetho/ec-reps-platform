@@ -337,7 +337,7 @@ function reps_publications_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_extensions' => 'txt pdf doc docx ppt odt pps pptx xls xlsx',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -370,6 +370,47 @@ function reps_publications_field_default_field_instances() {
       ),
       'type' => 'file_generic',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_publication-field_tags'.
+  $field_instances['node-reps_publication-field_tags'] = array(
+    'bundle' => 'reps_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 42,
     ),
   );
 
@@ -435,6 +476,7 @@ function reps_publications_field_default_field_instances() {
   t('External Url');
   t('File');
   t('Image');
+  t('Tags');
   t('Title');
 
   return $field_instances;

@@ -32,3 +32,12 @@ function reps_publications_disable() {
 function reps_publications_install() {
   multisite_config_service('title')->replaceTitleField('node', 'reps_publication', 'title');
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Create listing page if necessary.
+ */
+function reps_publications_update_7001() {
+  _reps_publications_create_listing_page();
+}

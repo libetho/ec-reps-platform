@@ -14,6 +14,9 @@ function reps_news_enable() {
       'field_instance',
     ),
   ));
+  
+  // Create listing page.
+  _reps_news_create_listing_page();
 
   drupal_set_message(t("The REPS news feature is now active on your site"));
 }
@@ -61,4 +64,13 @@ function reps_news_install() {
     multisite_config_service('title')->replaceTitleField('node', 'reps_news', 'title');
     title_field_replacement_toggle('taxonomy_term', 'reps_news_categories', 'name');
   }
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Create listing page if necessary.
+ */
+function reps_news_update_7001() {
+  _reps_news_create_listing_page();
 }

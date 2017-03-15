@@ -106,13 +106,19 @@ function reps_events_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '30',
         ),
         'language' => array(
           'weight' => '1',
         ),
         'xmlsitemap' => array(
           'weight' => '3',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(
@@ -197,8 +203,15 @@ function reps_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_reps_event_pattern';
-  $strongarm->value = 'events/[node:title-source-translation]';
+  $strongarm->value = 'events/[node:title]';
   $export['pathauto_node_reps_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_reps_event';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_reps_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -210,9 +223,30 @@ function reps_events_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_moderation_state_reps_event';
+  $strongarm->value = 'published';
+  $export['scheduler_publish_moderation_state_reps_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_reps_event';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_reps_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_revision_reps_event';
   $strongarm->value = 1;
   $export['scheduler_publish_revision_reps_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_reps_event';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_reps_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -227,6 +261,20 @@ function reps_events_strongarm() {
   $strongarm->name = 'scheduler_unpublish_moderation_state_reps_event';
   $strongarm->value = 'expired';
   $export['scheduler_unpublish_moderation_state_reps_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_reps_event';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_reps_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_reps_event';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_revision_reps_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

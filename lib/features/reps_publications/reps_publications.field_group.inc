@@ -29,6 +29,7 @@ function reps_publications_field_group_info() {
       2 => 'field_reps_core_external_url',
       3 => 'field_reps_core_image',
       4 => 'field_reps_publication_file',
+      5 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

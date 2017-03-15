@@ -65,15 +65,15 @@ function reps_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'reps_core-reps_core_twitter_webtools' => array(
-          'module' => 'reps_core',
-          'delta' => 'reps_core_twitter_webtools',
+        'bean-bean-twitter' => array(
+          'module' => 'bean',
+          'delta' => 'bean-twitter',
           'region' => 'sidebar_right',
           'weight' => '1',
         ),
-        'views-reps_sliders-block' => array(
+        'views-reps_sliders-slider_homepage' => array(
           'module' => 'views',
-          'delta' => 'reps_sliders-block',
+          'delta' => 'reps_sliders-slider_homepage',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -92,6 +92,12 @@ function reps_core_context_default_contexts() {
         'views-reps_bean_blocks-block_1' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_1',
+          'region' => 'content',
+          'weight' => '-6',
+        ),
+        'views-12da212b2f93e289c2bd907729707482' => array(
+          'module' => 'views',
+          'delta' => '12da212b2f93e289c2bd907729707482',
           'region' => 'content',
           'weight' => '-6',
         ),
@@ -210,6 +216,12 @@ function reps_core_context_default_contexts() {
           'delta' => 'footer_ipg',
           'region' => 'footer',
           'weight' => '-9',
+        ),
+        'bean-laco' => array(
+          'module' => 'bean',
+          'delta' => 'bean-laco',
+          'region' => 'footer',
+          'weight' => '-8',
         ),
       ),
     ),

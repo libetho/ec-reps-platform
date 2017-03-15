@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Code for the reps contact form feature.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function reps_contact_form_enable() {
+  drupal_set_message(t("The REPS contact form feature is now enabled on your site"));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function reps_contact_form_disable() {
+  multisite_drupal_toolbox_disable_content_type('webform');
+  drupal_set_message(t("The REPS contact form feature is now disabled on your site"));
+}
+
+/**
+ * Implements hook_install().
+ */
+function reps_contact_form_install() {
+  // Overrides already exported variables.
+  _reps_contact_form_override();
+}

@@ -15,6 +15,9 @@ function reps_core_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  if ($module == "feeds" && $api == "feeds_importer_default") {
+    return array("version" => "1");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -31,6 +34,87 @@ function reps_core_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function reps_core_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_fe_nodequeue_export_fields().
+ */
+function reps_core_fe_nodequeue_export_fields() {
+  $nodequeues = array();
+
+  // Exported nodequeues: homepage_additional_block
+  $nodequeues['homepage_additional_block'] = array(
+    'name' => 'homepage_additional_block',
+    'title' => 'Homepage additional block',
+    'subqueue_title' => '',
+    'size' => 6,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'reps_homepage_additional_block',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
+  // Exported nodequeues: slider_footer
+  $nodequeues['slider_footer'] = array(
+    'name' => 'slider_footer',
+    'title' => 'Slider footer',
+    'subqueue_title' => '',
+    'size' => 15,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'reps_slide_footer',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
+  // Exported nodequeues: slider_homepage
+  $nodequeues['slider_homepage'] = array(
+    'name' => 'slider_homepage',
+    'title' => 'Slider homepage',
+    'subqueue_title' => '',
+    'size' => 15,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'reps_slide_homepage',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
+  return $nodequeues;
 }
 
 /**
@@ -197,21 +281,4 @@ function reps_core_node_info() {
   );
   drupal_alter('node_info', $items);
   return $items;
-}
-
-/**
- * Implements hook_weight_features_default_settings().
- */
-function reps_core_weight_features_default_settings() {
-  $settings = array();
-
-  $settings['reps_slide_homepage'] = array(
-    'enabled' => 1,
-    'range' => 20,
-    'menu_weight' => 0,
-    'default' => 0,
-    'sync_translations' => 1,
-  );
-
-  return $settings;
 }

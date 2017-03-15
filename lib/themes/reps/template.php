@@ -6,19 +6,6 @@
  */
 
 /**
- * Implements theme_preprocess_html().
- */
-function reps_preprocess_html(&$variables) {
-  if (empty(page_title_page_get_title())) {
-    $title = strip_tags(drupal_get_title());
-  }
-  else {
-    $title = page_title_page_get_title();
-  }
-  $variables['head_title'] = format_string('!title - European Commission', array('!title' => $title));
-}
-
-/**
  * Implements theme_preprocess_page().
  */
 function reps_preprocess_page(&$variables) {
@@ -112,7 +99,6 @@ function reps_preprocess_page(&$variables) {
   // Adding pathToTheme for Drupal.settings to be used in js files.
   $base_theme = multisite_drupal_toolbox_get_base_theme();
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . drupal_get_path('theme', $base_theme) . '" });', 'inline');
-  drupal_add_js('//europa.eu/webtools/load.js', 'external');
 }
 
 /**
@@ -192,10 +178,91 @@ function reps_preprocess_node(&$vars) {
  *
  * Remove unused block ipg info (just keep the date and the top link).
  */
-function reps_preprocess_block(&$vars) {
-  if ($vars['block']->bid === 'cce_basic_config-footer_ipg') {
-    $pos = strpos($vars['content'], "<ul");
-    $vars['content'] = drupal_substr($vars['content'], 0, ($pos - 3));
+function reps_preprocess_block(&$variables) {
+  if (isset($variables['block']->bid)) {
+    switch ($variables['block']->bid) {
+      case 'cce_basic_config-footer_ipg':
+          $pos = strpos($variables['content'], "<ul");
+          $variables['content'] = drupal_substr($variables['content'], 0, ($pos - 3));
+        break;
+      
+      case 'locale-language':
+        global $language;
+        $languages = language_list();
+        if (($node = menu_get_object('node'))) {
+          $handler = entity_translation_get_handler('node', $node);
+          $translations = $handler->getTranslations();
+          foreach ($languages as $key => $link) {
+            if (!isset($translations->data[$key])) {
+              unset($languages[$key]);
+            }
+          }
+        }
+
+        $items = array();
+        $items[] = array(
+          'data' => '<span class="off-screen">' . t("Current language") . ':</span> ' . $language->language,
+          'class' => array('selected'),
+          'title' => $language->native,
+          'lang' => $language->language,
+        );
+        // Get path of translated content.
+        $translations = translation_path_get_translations(current_path());
+        $language_default = language_default();
+
+        foreach ($languages as $language_object) {
+          $prefix = $language_object->language;
+          $language_name = $language_object->name;
+
+          if (isset($translations[$prefix])) {
+            $path = $translations[$prefix];
+          }
+          else {
+            $path = current_path();
+          }
+
+          // Get the related url alias
+          // Check if the multisite language negotiation
+          // with suffix url is enabled.
+          $language_negociation = variable_get('language_negotiation_language');
+          if (isset($language_negociation['locale-url-suffix'])) {
+            $delimiter = variable_get('language_suffix_delimiter', '_');
+            $alias = drupal_get_path_alias($path, $prefix);
+
+            if ($alias == variable_get('site_frontpage', 'node')) {
+              $path = ($prefix == 'en') ? '' : 'index';
+            }
+            else {
+              if ($alias != $path) {
+                $path = $alias;
+              }
+              else {
+                $path = drupal_get_path_alias(isset($translations[$language_name]) ? $translations[$language_name] : $path, $language_name);
+              }
+            }
+          }
+          else {
+            $path = drupal_get_path_alias($path, $prefix);
+          }
+
+          // Add enabled languages.
+          if ($language_name != $language->name) {
+            $items[] = array(
+              'data' => l($language_name, filter_xss($path), array(
+                'attributes' => array(
+                  'hreflang' => $prefix,
+                  'lang' => $prefix,
+                  'title' => $language_name,
+                ),
+                'language' => $language_object,
+              )),
+            );
+          }
+        }
+
+        $variables['language_list'] = theme('item_list', array('items' => $items));
+        break;
+    }
   }
 }
 
@@ -247,86 +314,20 @@ function reps_preprocess_views_view_unformatted(&$vars) {
 }
 
 /**
- * Implements hook_page_alter().
+ * Implements hook_views_pre_render().
  *
- * Alter info in the html header to implment usage of page_title module.
+ * Alter the link field to make target selectable for the homepage slider.
  */
-function reps_page_alter($page) {
-  // Reference.
-  $node = menu_get_object();
-  $meta_reference = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'reference',
-      'content' => filter_xss(variable_get('meta_reference')),
-    ),
-  );
-  drupal_add_html_head($meta_reference, 'meta_reference');
-
-  // Creator.
-  $meta_creator = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'creator',
-      'content' => filter_xss(variable_get('meta_creator')),
-    ),
-  );
-  drupal_add_html_head($meta_creator, 'meta_creator');
-
-  // Keywords.
-  $keywords = '';
-  if (!empty($node) && !empty($node->field_tags)) {
-    $tags = field_view_field('node', $node, 'field_tags');
-    if (isset($tags['#items'])) {
-      foreach ($tags['#items'] as $value) {
-        $keywords .= $value['taxonomy_term']->name . ', ';
+function reps_views_pre_render(&$view) {
+  if ($view->current_display == 'slider_homepage') {
+    foreach ($view->result as $key => $row) {
+      if (isset($row->field_field_reps_core_external_url) && isset($row->field_title_field)) {
+        foreach ($row->field_field_reps_core_external_url as $k => $link) {
+          $view->result[$key]->field_field_reps_core_external_url[$k]['rendered']['#element']['title'] = $row->field_title_field[0]['raw']['safe_value'];
+        }
       }
     }
   }
-  $keywords .= filter_xss(variable_get('site_name')) . ', ';
-  $keywords .= t('European Commission, European Union, EU');
-  // Keywords.
-  $meta_keywords = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'keywords',
-      'content' => $keywords,
-    ),
-  );
-  drupal_add_html_head($meta_keywords, 'meta_keywords');
-}
-
-/**
- * Implements theme_date_display_range().
- *
- * Returns HTML for a date element formatted as a range.
- */
-function reps_date_display_range($variables) {
-  $attributes_start = $variables['attributes_start'];
-  $attributes_end = $variables['attributes_end'];
-  $show_remaining_days = $variables['show_remaining_days'];
-
-  $start_date = '<span class="date-display-start"' . drupal_attributes($attributes_start) . '>' . $variables['dates']['value']['formatted_date'] . '</span>';
-  $end_date = '<span class="date-display-end"' . drupal_attributes($attributes_end) . '>' . $variables['dates']['value2']['formatted_date'] . ' - ' . $variables['dates']['value']['formatted_time'] . ' - ' . $variables['dates']['value2']['formatted_time'] . '</span>';
-
-  // If microdata attributes for the start date property have been passed in,
-  // add the microdata in meta tags.
-  if (!empty($variables['add_microdata'])) {
-    $start_date .= '<meta' . drupal_attributes($variables['microdata']['value']['#attributes']) . '/>';
-    $end_date .= '<meta' . drupal_attributes($variables['microdata']['value2']['#attributes']) . '/>';
-  }
-
-  // Wrap the result with the attributes.
-  $output = '<div class="date-display-range">' . t('!start-date - !end-date', array(
-    '!start-date' => $start_date,
-    '!end-date' => $end_date,
-  )) . '</div>';
-
-  // Add remaining message and return.
-  return $output . $show_remaining_days;
 }
 
 /**
@@ -354,4 +355,26 @@ function reps_preprocess_social_media_links_platform(&$variables) {
   $variables['attributes']['title'] = check_plain($info['title']);
   $variables['icon_path']  = $icon_folder . $name . '.png';
   $variables['icon_alt'] = isset($info['image alt']) ? $info['image alt'] : $info['title'] . ' ' . t('icon');
+}
+
+/**
+ * Theme an unvailable translation.
+ */
+function reps_entity_translation_unavailable($variables) {
+  global $language;
+  $element = $variables['element'];
+  if ($element['#entity_type'] == 'node') {
+    // Get available langauges based on titles.
+    $available_languages = array_keys($element['#entity']->title_field);
+    // Get available languages of the website.
+    $language_list = language_list();
+    $classes = $element['#entity_type'] . ' ' . $element['#entity_type'] . '-' . $element['#view_mode'];
+    $message = '<p>The requested information is not available in ' . $language->name . '</p><p>Language(s) available:</p><ul>';
+    foreach ($available_languages as $language_extension) {
+      // Display available languages for the current node.
+      $message .= '<li>' . l($language_list[$language_extension]->native, current_path(), array('language' => $language_list[$language_extension])) . '</li>';
+    }
+    $message .= '</ul>';
+    return "<div class=\"$classes\">$message</div>";
+  }
 }

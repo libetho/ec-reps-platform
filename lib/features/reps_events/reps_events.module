@@ -15,3 +15,80 @@ function reps_events_form_alter(&$vars) {
     unset($vars['field_reps_event_location']);
   }
 }
+
+/**
+ * Helpers to generate a default event listing page.
+ */
+function _reps_events_create_listing_page() {
+  $parent = '0';
+  $pages[] = array(
+    'title' => t('Events'),
+    'path' => 'events',
+    'type' => 'page',
+    'parent' => $parent,
+    'weight' => 4,
+  );
+  $pages[] = array(
+    'title' => t('Past events'),
+    'path' => 'events/past-events',
+    'type' => 'page',
+    'parent' => 'events',
+    'weight' => 0,
+  );
+  foreach ($pages as $page) {
+    if(!drupal_lookup_path('source', $page['path'])) {
+      $nids[] = _reps_core_create_node($page['type'], $page['title'], $page['path']);
+    }
+    $menu_item = menu_get_item(drupal_lookup_path('source', $page['path']));
+    if ($menu_item) {
+      if($page['parent'] !== '0'){
+        $tree =  menu_tree_all_data('main-menu');
+        foreach($tree as $item) {
+          if ($item['link']['link_path'] == drupal_lookup_path('source', $page['parent'])) {
+            $page['parent'] = $item['link']['mlid'];
+            break;
+          }
+        }
+      }
+      _reps_core_menu_item('main-menu', $menu_item['href'], $page['parent'], $menu_item['title'], 'menu', $page['weight'], 'en', $menu_item['title']); 
+    }
+  }
+}
+
+/**
+ * Implements reps_events_field_attach_view_alter().
+ */
+function reps_events_field_attach_view_alter(&$output, $context) {
+  if(array_keys($output) and array_keys($output)[0] == 'field_reps_event_date'){
+    foreach ($output['field_reps_event_date']['#items'] as $key => $value) {
+      $output['field_reps_event_date']['#items'][$value['value']] = $value;
+      $output['field_reps_event_date']['#items'][$value['value']]['key'] = $key;
+      unset($output['field_reps_event_date']['#items'][$key]);
+    }
+    ksort($output['field_reps_event_date']['#items']);
+    foreach ($output['field_reps_event_date']['#items'] as $key => $value) {
+      $output['field_reps_event_date'][$value['key'] + count($output['field_reps_event_date']['#items'])] = $output['field_reps_event_date'][$value['key']];
+      unset($output['field_reps_event_date'][$value['key']]);
+      $output['field_reps_event_date'][$value['key']] = $output['field_reps_event_date'][$value['key'] + count($output['field_reps_event_date']['#items'])];
+      unset($output['field_reps_event_date'][$value['key'] + count($output['field_reps_event_date']['#items'])]);
+    }
+  }
+}
+
+/*
+* implements hook_view_pre_render()
+*/
+function reps_events_views_pre_render(&$view) {
+  if ($view->name == 'reps_events') {
+    $nids = array();
+    $result_no_double = array();
+    foreach ($view->result as $key => $result) {
+      $nid = $result->nid;
+      if (!in_array($nid, $nids)) {
+        $result_no_double[] = $view->result[$key];
+        $nids[$key] = $nid;
+      };
+    }
+    $view->result = $result_no_double;
+  }
+}

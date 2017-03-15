@@ -30,5 +30,5 @@ function reps_events_disable() {
  * Implements hook_install().
  */
 function reps_events_install() {
-  multisite_config_service('title')->replaceTitleField('node', 'reps_event', 'title');
+  _reps_events_create_listing_page();
 }

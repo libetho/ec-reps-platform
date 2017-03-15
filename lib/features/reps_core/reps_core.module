@@ -223,7 +223,6 @@ function _reps_core_overrides() {
   // Enable translations for various fields.
   $field_names = array(
     'body',
-    'field_tags',
   );
 
   foreach ($field_names as $field_name) {
@@ -234,6 +233,10 @@ function _reps_core_overrides() {
       field_update_field($field);
     }
   }
+  
+  // Override default values from CCE basic conflicts.
+  variable_set('node_admin_theme', '1');
+  variable_set('locale_field_language_fallback', '0');
 }
 
 /**
@@ -552,4 +555,116 @@ function _reps_core_get_instances($field_name) {
     }
   }
   return $instances;
+}
+
+/**
+ * Create a bean block for Laco.
+ */
+function _reps_core_create_block_laco() {
+  drupal_flush_all_caches();
+  features_revert_module("nexteuropa_webtools");
+
+  $bean = bean_create(array('type' => 'webtools'));
+  $bean->label = t('Reps - laco');
+  $bean->title = '';
+  $bean->delta = 'bean-laco';
+  $bean->field_json_object = [
+    LANGUAGE_NONE => [
+      0 => [
+        'value' => '{
+          "service" : "laco",
+          "include" : "#layout-body .region-content, #sidebar-right .region-sidebar-right",
+          "coverage" : [
+              "document" : "other",
+              "page" : "other"
+          ],
+          "icon" : "all"
+        }',
+      ],
+    ],
+  ];
+  $bean->save();
+}
+
+/**
+ * Create a bean block for Laco.
+ */
+function _reps_core_create_block_twitter() {
+  // Get existing variable for screen name and count.
+  if (variable_get('reps_core_twitter_webtools_config_screen')) {
+    $screen_name = variable_get('reps_core_twitter_webtools_config_screen');
+    $count = variable_get('reps_core_twitter_webtools_config_nbr');
+  }
+  elseif (variable_get('twitter_webtools_config_screen')) {
+    $screen_name = variable_get('twitter_webtools_config_screen');
+    $count = variable_get('twitter_webtools_config_nbr');
+  }
+  else {
+    $screen_name = 'EU_Commission';
+    $count = 3;
+  }
+
+  drupal_flush_all_caches();
+  features_revert_module("nexteuropa_webtools");
+
+  $bean = bean_create(array('type' => 'webtools'));
+  $bean->label = t('Reps - twitter');
+  $bean->title = '';
+  $bean->delta = 'bean-twitter';
+  $bean->field_json_object = [
+    LANGUAGE_NONE => [
+      0 => [
+        'value' => '{
+          "service": "smk",
+          "type": "user",
+          "display_user": true,
+          "display_user_pic": true,
+          "auto_expand_photo": false,
+          "auto_expand_video": false,
+          "screen_name": "' . $screen_name . '",
+          "count": ' . $count . ',
+          "include_rts": false,
+          "rts_display_original": false,
+          "exclude_replies": true,
+          "tweet_more_btn": true
+        }',
+      ],
+    ],
+  ];
+  $bean->save();
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+
+function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
+  if (isset($element['#bundle']) and $element['#bundle'] == 'image') {
+    // Make alt, title and caption required.
+    if (in_array($element['#field_name'], array('field_caption',
+      'field_file_image_title_text',
+      'field_file_image_alt_text',
+    ))) {
+      $element['value']['#required'] = TRUE;
+      if ($element['#field_name'] == 'field_caption') {
+        // Set default value for caption.
+        $element['value']['#default_value'] = '©';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+
+function reps_core_entity_view_alter(&$build, $type) {
+  if ($type == 'file') {
+    if (isset($build['field_tags'])) {
+      unset($build['field_tags']);
+    }
+    if (isset($build['field_folder'])) {
+      unset($build['field_folder']);
+    }
+  }
 }

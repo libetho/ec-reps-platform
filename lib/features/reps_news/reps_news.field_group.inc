@@ -28,7 +28,8 @@ function reps_news_field_group_info() {
       1 => 'field_reps_core_abstract',
       2 => 'field_reps_core_date',
       3 => 'field_reps_core_image',
-      4 => 'field_reps_news_category',
+      4 => 'field_tags',
+      5 => 'field_reps_news_category',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -41,35 +42,6 @@ function reps_news_field_group_info() {
     ),
   );
   $field_groups['group_reps_news_content|node|reps_news|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_news_metadata|node|reps_news|form';
-  $field_group->group_name = 'group_reps_news_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'reps_news';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Metadata',
-    'weight' => '5',
-    'children' => array(
-      0 => 'field_tags',
-      1 => 'field_meta_classification',
-      2 => 'field_meta_description',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_reps_news_metadata|node|reps_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -103,7 +75,6 @@ function reps_news_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
-  t('Metadata');
   t('Related content');
 
   return $field_groups;
