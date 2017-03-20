@@ -11,7 +11,8 @@ mkdir -p lib/modules
 
 # Copy the sources in place.
 cp -r vendor/ec-europa/reps-platform/lib/features/* lib/features/reps
-cp -r vendor/ec-europa/reps-platform/lib/modules/* lib/modules
+cp -r vendor/ec-europa/reps-platform/lib/modules/custom/* lib/modules/custom
+cp -r vendor/ec-europa/reps-platform/lib/modules/nexteuropa/* lib/modules
 cp -r vendor/ec-europa/reps-platform/themes/* lib/themes
 cp -r vendor/ec-europa/reps-platform/reps-platform.make resources/reps-platform.make
 
