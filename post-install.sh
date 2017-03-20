@@ -6,7 +6,7 @@ rm -rf lib/themes/reps
 
 # Create clean folders
 mkdir -p lib/features/reps
-mkdir -p lib/themes/reps
+mkdir -p lib/themes
 mkdir -p lib/modules
 
 # Copy the sources in place.
