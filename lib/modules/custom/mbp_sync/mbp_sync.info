@@ -1,0 +1,8 @@
+name = MBP Sync
+description = Sync current folders and files with MBP and convert hard coded links into file entities.
+core = 7.x
+multisite_version = 2.2
+php = 5.6
+dependencies[] = media_browser_plus
+registry_autoload[] = PSR-4
+registry_autoload_files[] = Drupal/mbp_sync/FileUrlTokenHandler.php
