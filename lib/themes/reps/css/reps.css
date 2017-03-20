@@ -1222,6 +1222,9 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
 body:not(.node-type-reps-homepage) #layout-body {
   margin-top: 50px !important;
 }
+body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
+  margin-bottom: 30px;
+}
 /* Main content image */
 .field-name-field-reps-core-image {
   border-bottom: none;
