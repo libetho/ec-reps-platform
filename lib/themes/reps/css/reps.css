@@ -268,6 +268,7 @@ body.reps #mainContainer #layout-body .block-views .panel-body .more-link a {
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row,
+body.reps #mainContainer #layout-body .view-reps-events .views-row,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row,
 body.reps #mainContainer #layout-body .view-reps-news .views-row,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row {
@@ -277,6 +278,7 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row {
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field {
@@ -284,6 +286,7 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field .views-label,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field .views-label,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field .views-label,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field .views-label,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .views-label,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field .views-label {
@@ -293,6 +296,7 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field .views-label-field-reps-news-category,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field .views-label-field-reps-news-category,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field .views-label-field-reps-news-category,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field .views-label-field-reps-news-category,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .views-label-field-reps-news-category,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field .views-label-field-reps-news-category {
@@ -300,11 +304,13 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-image,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-image-et,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-image-et {
@@ -313,16 +319,19 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .field-content h3,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .field-content h3,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .field-content h3,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .field-content h3,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .field-content h3,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .field-content h3,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-title h3,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-external-url-1 h3,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-external-url-1 h3,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-external-url-1 h3,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-external-url-1 h3,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-external-url-1 h3,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-external-url-1 h3 {
@@ -332,16 +341,19 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .field-content h3 a,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-title h3 a,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-external-url-1 h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-external-url-1 h3 a,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-external-url-1 h3 a,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-external-url-1 h3 a,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-external-url-1 h3 a,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-external-url-1 h3 a {
@@ -349,6 +361,7 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-date div,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-date div,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-date div,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-date div,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-date div,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-date div {
@@ -363,6 +376,7 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-date .views-label,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-date .views-label,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-date .views-label,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-date .views-label,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-date .views-label,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-date .views-label {
@@ -371,13 +385,16 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-abstract,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-abstract,
+body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-abstract,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-abstract,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-abstract,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-abstract {
   color: #333;
+  overflow: hidden;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row.views-row-first,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row.views-row-first,
+body.reps #mainContainer #layout-body .view-reps-events .views-row.views-row-first,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row.views-row-first,
 body.reps #mainContainer #layout-body .view-reps-news .views-row.views-row-first,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row.views-row-first {
