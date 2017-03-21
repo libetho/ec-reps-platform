@@ -266,22 +266,11 @@ body.reps #mainContainer #layout-body .block-views .panel-body .more-link a {
   padding: 5px 0;
   color: #fff;
 }
-body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row {
-  border-top: 1px silver dotted;
-  padding: 15px 0;
-}
-body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row .views-field-field-reps-core-image {
-  float: left;
-  margin-right: 15px;
-}
-body.reps #mainContainer #layout-body .block-views .panel-body .block-publications-full .views-row .views-field-field-reps-core-external-url-1 h3 {
-  font-size: 135%;
-  margin-top: 5px;
-}
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row,
-body.reps #mainContainer #layout-body .view-reps-news .views-row {
+body.reps #mainContainer #layout-body .view-reps-news .views-row,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row {
   border-bottom: 1px #dddddd solid;
   padding: 10px 0;
   min-height: 125px;
@@ -289,13 +278,15 @@ body.reps #mainContainer #layout-body .view-reps-news .views-row {
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field {
   font-size: 90%;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field .views-label,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field .views-label,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field .views-label,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .views-label {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .views-label,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field .views-label {
   font-weight: bold;
   float: left;
   margin-right: 5px;
@@ -303,17 +294,20 @@ body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .v
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field .views-label-field-reps-news-category,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field .views-label-field-reps-news-category,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field .views-label-field-reps-news-category,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .views-label-field-reps-news-category {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field .views-label-field-reps-news-category,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field .views-label-field-reps-news-category {
   color: #333333;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-image,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-image-et,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image-et {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image-et,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-image-et {
   float: left;
   margin: 3px 10px 5px 0;
 }
@@ -321,10 +315,17 @@ body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .f
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .field-content h3,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .field-content h3,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .field-content h3,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .field-content h3,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-title h3,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-title h3,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-title h3 {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-title h3,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-title h3,
+body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-external-url-1 h3,
+body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-external-url-1 h3,
+body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-external-url-1 h3,
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-external-url-1 h3,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-external-url-1 h3 {
   margin: 3px 0;
   font-weight: bold;
   font-size: 100%;
@@ -333,34 +334,53 @@ body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .f
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body .view-reps-news .views-row .field-content h3 a,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .field-content h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-title h3 a,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-title h3 a,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-title h3 a {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-title h3 a,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-title h3 a,
+body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-external-url-1 h3 a,
+body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-external-url-1 h3 a,
+body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-external-url-1 h3 a,
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-external-url-1 h3 a,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-external-url-1 h3 a {
   color: #347c98;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-date div,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-date div,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-date div,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-date div {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-date div,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-date div {
   border-radius: 0;
   background: none;
   color: #666666;
+  display: inline;
   font-weight: normal;
   padding: 0;
   line-height: 1;
   font-size: 90%;
 }
+body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-date .views-label,
+body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-date .views-label,
+body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-date .views-label,
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-date .views-label,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-date .views-label {
+  display: inline;
+  float: none;
+}
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field-field-reps-core-abstract,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field-field-reps-core-abstract,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field-field-reps-core-abstract,
-body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-abstract {
+body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-abstract,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-abstract {
   color: #333;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row.views-row-first,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row.views-row-first,
 body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row.views-row-first,
-body.reps #mainContainer #layout-body .view-reps-news .views-row.views-row-first {
+body.reps #mainContainer #layout-body .view-reps-news .views-row.views-row-first,
+body.reps #mainContainer #layout-body .view-reps-publications .views-row.views-row-first {
   padding-top: 0;
 }
 body.reps #mainContainer #layout-body .view-reps-eu-myth img,
@@ -1492,115 +1512,6 @@ ul.pager li.pager-current {
 }
 .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit]:active:hover {
   padding: 3px 10px;
-}
-/* Publications block */
-.view-reps-publications .view-filters {
-  background: #0047ab;
-  padding: 6px;
-  font-size: 80%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets {
-  margin-bottom: 0;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id {
-  width: 40%;
-  line-height: 1;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id select {
-  display: none;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-widget-filter-keys {
-  width: 40%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-submit-button {
-  width: 20%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget {
-  padding: 0;
-  vertical-align: baseline;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .chosen-container,
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget select,
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input {
-  padding: 2px;
-  font-size: 80%;
-  height: auto;
-  border-radius: 0;
-  margin-top: 0;
-  display: inline;
-  vertical-align: baseline;
-  color: #000;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select {
-  font-size: 130%;
-  width: 100%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container {
-  padding: 0;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul {
-  line-height: 0;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul .search-choice {
-  margin: 1px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul .search-choice span {
-  font-size: 95%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul .search-field {
-  float: left;
-  margin-top: 1px;
-  overflow: hidden;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul input {
-  margin: 0;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container .chosen-drop {
-  font-size: 100%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=text] {
-  margin: 0 3px 0 50px;
-  padding-top: 2px;
-  padding-bottom: 3px;
-  width: 75%;
-  font-size: 105%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit] {
-  background: ButtonFace;
-  color: ButtonText;
-  border: 2px outset ButtonFace;
-  padding: 2px 10px;
-  font-size: 105%;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit]:hover {
-  border-style: inset;
-  -webkit-appearance: push-button;
-}
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit]:active:hover {
-  padding: 3px 10px;
-}
-.view-reps-publications .view-content {
-  margin-top: 25px;
-}
-.view-reps-publications .view-content .views-row {
-  border-bottom: 1px silver dotted;
-  padding-bottom: 15px;
-}
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-image {
-  float: left;
-  margin-right: 15px;
-}
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-external-url-1 h3 {
-  font-size: 120%;
-}
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-date {
-  margin-bottom: 10px;
-}
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-date span,
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-date div {
-  display: inline;
 }
 /* Tables styling */
 .reps table {
