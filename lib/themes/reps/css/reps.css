@@ -939,6 +939,7 @@ body.reps #mainContainer #sidebar-right .block-nexteuropa-europa-search .panel-b
   height: 23px;
   background: url(../images/btn-search.jpg) no-repeat;
 }
+body.reps #mainContainer #sidebar-right #block-bean-bean-share,
 body.reps #mainContainer #sidebar-right #block-bean-share-block,
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools {
   background-color: #eeeeee;
@@ -950,11 +951,17 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtool
   overflow: hidden;
   position: relative;
 }
+body.reps #mainContainer #sidebar-right #block-bean-bean-share .content,
 body.reps #mainContainer #sidebar-right #block-bean-share-block .content,
 body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools .content {
   float: right;
   max-width: 100%;
   padding: 0;
+}
+body.reps #mainContainer #sidebar-right #block-bean-bean-share h2,
+body.reps #mainContainer #sidebar-right #block-bean-share-block h2,
+body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-share-webtools h2 {
+  display: none;
 }
 body.reps #mainContainer #sidebar-right #block-social-media-links-social-media-links {
   background: #eeeeee;
