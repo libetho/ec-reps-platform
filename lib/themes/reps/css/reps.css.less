@@ -312,24 +312,6 @@ body.reps {
 
           .more-link {
             .readMoreLinkStyle;
-          }
-
-          .block-publications-full {
-            
-            .views-row {
-              border-top: 1px silver dotted;
-              padding: 15px 0;
-
-              .views-field-field-reps-core-image {
-                float: left;
-                margin-right: 15px;
-              }
-
-              .views-field-field-reps-core-external-url-1 h3 {
-                font-size: 135%;
-                margin-top: 5px;
-              }
-            }
           } 
         }
       } // #layout-body .block-views
@@ -337,7 +319,8 @@ body.reps {
             #block-views-reps-news-block,
       #block-views-reps-events-block,
       .view-reps-eu-myth ,
-      .view-reps-news {
+      .view-reps-news,
+      .view-reps-publications {
         .views-row {
           border-bottom: 1px #dddddd solid;
           padding: 10px 0;
@@ -364,7 +347,8 @@ body.reps {
           }
 
           .field-content h3,
-          .views-field-title h3 {
+          .views-field-title h3,
+          .views-field-field-reps-core-external-url-1 h3 {
             margin: 3px 0;
             font-weight: bold;
             font-size: 100%;
@@ -374,16 +358,24 @@ body.reps {
             }
           }
 
-          .views-field-field-reps-core-date div {
-            border-radius: 0;
-            background: none;
-            color: #666666;
-            font-weight: normal;
-            padding: 0;
-            line-height: 1;
-            font-size: 90%;
+          .views-field-field-reps-core-date {
+            div {
+              border-radius: 0;
+              background: none;
+              color: #666666;
+              display: inline;
+              font-weight: normal;
+              padding: 0;
+              line-height: 1;
+              font-size: 90%;
+            }
+            
+            .views-label {
+              display: inline;
+              float: none;
+            }
           }
-
+             
           .views-field-field-reps-core-abstract {
             color: #333;
           }
@@ -438,46 +430,49 @@ body.reps {
       } // #block-views-reps-videos-block END
 
       #block-views-reps-publications-block .view-content {
-        margin: 0 -15px;
+      margin: 0 -15px;
 
-        .views-row {
-          overflow: hidden;
-          width: (@fullWidth/3);
-          float: left;
-          padding: 0 15px;
+      .views-row {
+        overflow: hidden;
+        width: (@fullWidth/3);
+        float: left;
+        padding: 0 15px;
+        border-bottom: none;
 
-          .views-field {
-            text-align: center;
-            border: 1px solid #cfcfcf;
-          }
+        .views-field {
+          text-align: center;
+          border: 1px solid #cfcfcf;
+        }
 
-          .views-field-field-reps-core-image {
-            padding: 10px 10px 0;
-            border-bottom: none;
-            max-height: 400px;
+        .views-field-field-reps-core-image {
+          padding: 10px 10px 0;
+          border-bottom: none;
+          float: none;
+          margin-right: 0;
+          max-height: 400px;
 
-            img {
-              height: auto;
-              max-width: 150px;
-              width: 100%;
-            }
-          }
-
-          .views-field-field-reps-core-external-url-1 {
-            border-top: none;
-            padding: 0 5px;
-
-            h3 {
-              font-size: 100%;
-              font-weight: bold;
-              margin: 0;
-              padding: 10px 0;
-            }
+          img {
+            height: auto;
+            max-width: 150px;
+            width: 100%;
           }
         }
-      } // #block-views-reps-publications-block .view-content  END
 
-      .bean-reps-core-sb-right-image-link {
+        .views-field-field-reps-core-external-url-1 {
+          border-top: none;
+          padding: 0 5px;
+
+          h3 {
+            font-size: 100%;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 0;
+          }
+        }
+      }
+    } // #block-views-reps-publications-block .view-content  END
+
+        .bean-reps-core-sb-right-image-link {
         h3 a {
           font-weight: bold;
         }
@@ -1724,140 +1719,6 @@ ul.pager {
     }
   }
 } // .views-filters END
-
-/* Publications block */
-.view-reps-publications .view-filters {
-  background: #0047ab;
-  padding: 6px;
-  font-size: 80%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets {
-  margin-bottom: 0;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id {
-  width: 40%;
-  line-height: 1;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id select {
-  display: none;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-widget-filter-keys {
-  width: 40%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-submit-button {
-  width: 20%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget {
-  padding: 0;
-  vertical-align: baseline;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .chosen-container,
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget select,
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input {
-  padding: 2px;
-  font-size: 80%;
-  height: auto;
-  border-radius: 0;
-  margin-top: 0;
-  display: inline;
-  vertical-align: baseline;
-  color: #000;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select {
-  font-size: 130%;
-  width: 100%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container {
-  padding: 0;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul {
-  line-height: 0;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul .search-choice {
-  margin: 1px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul .search-choice span {
-  font-size: 95%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul .search-field {
-  float: left;
-  margin-top: 1px;
-  overflow: hidden;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container ul input {
-  margin: 0;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget .form-type-select .chosen-container .chosen-drop {
-  font-size: 100%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=text] {
-  margin: 0 3px 0 50px;
-  padding-top: 2px;
-  padding-bottom: 3px;
-  width: 75%;
-  font-size: 105%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit] {
-  background: ButtonFace;
-  color: ButtonText;
-  border: 2px outset ButtonFace;
-  padding: 2px 10px;
-  font-size: 105%;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit]:hover {
-  border-style: inset;
-  -webkit-appearance: push-button;
-}
-
-.view-reps-publications .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit]:active:hover {
-  padding: 3px 10px;
-}
-
-.view-reps-publications .view-content {
-  margin-top: 25px;
-}
-.view-reps-publications .view-content .views-row {
-  border-bottom: 1px silver dotted;
-  padding-bottom: 15px;
-}
-
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-image {
-  float: left;
-  margin-right: 15px;
-}
-
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-external-url-1 h3 {
-  font-size: 120%;
-}
-
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-date {
-  margin-bottom: 10px;
-}
-
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-date span,
-.view-reps-publications .view-content .views-row .views-field-field-reps-core-date div {
-  display: inline;
-}
 
 /* Tables styling */
 .reps table {
