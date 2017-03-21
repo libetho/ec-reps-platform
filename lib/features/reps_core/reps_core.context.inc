@@ -175,41 +175,47 @@ function reps_core_context_default_contexts() {
           'region' => 'sidebar_right',
           'weight' => '-10',
         ),
+        'bean-bean-share' => array(
+          'module' => 'bean',
+          'delta' => 'bean-share',
+          'region' => 'sidebar_right',
+          'weight' => '-9',
+        ),
         'social_media_links-social-media-links' => array(
           'module' => 'social_media_links',
           'delta' => 'social-media-links',
           'region' => 'sidebar_right',
-          'weight' => '-7',
+          'weight' => '-8',
         ),
         'views-reps_bean_blocks-block_3' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_3',
           'region' => 'sidebar_right',
-          'weight' => '-6',
+          'weight' => '-7',
         ),
         'views-reps_bean_blocks-block' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block',
           'region' => 'sidebar_right',
-          'weight' => '-5',
+          'weight' => '-6',
         ),
         'views-reps_bean_blocks-block_2' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_2',
           'region' => 'sidebar_right',
-          'weight' => '-4',
+          'weight' => '-5',
         ),
         'views-reps_bean_blocks-block_4' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_4',
           'region' => 'sidebar_right',
-          'weight' => '-3',
+          'weight' => '-4',
         ),
         'reps_core-reps_core_feedback_form' => array(
           'module' => 'reps_core',
           'delta' => 'reps_core_feedback_form',
           'region' => 'sidebar_right',
-          'weight' => '-2',
+          'weight' => '-3',
         ),
         'cce_basic_config-footer_ipg' => array(
           'module' => 'cce_basic_config',
@@ -217,7 +223,7 @@ function reps_core_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-9',
         ),
-        'bean-laco' => array(
+        'bean-bean-laco' => array(
           'module' => 'bean',
           'delta' => 'bean-laco',
           'region' => 'footer',

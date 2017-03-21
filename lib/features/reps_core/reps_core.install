@@ -43,6 +43,8 @@ function reps_core_enable() {
 
   // Add Block Laco.
   _reps_core_create_block_laco();
+  // Add Block Share.
+  _reps_core_create_block_share();
   // Add Block Twitter.
   _reps_core_create_block_twitter();
 
@@ -229,6 +231,8 @@ function reps_core_update_7002() {
 
   // Add Block Laco.
   _reps_core_create_block_laco();
+  // Add Block Share.
+  _reps_core_create_block_share();
   // Add Block Twitter.
   _reps_core_create_block_twitter();
 

@@ -589,6 +589,29 @@ function _reps_core_create_block_laco() {
 /**
  * Create a bean block for Laco.
  */
+function _reps_core_create_block_share() {
+  drupal_flush_all_caches();
+  features_revert_module("nexteuropa_webtools");
+
+  $bean = bean_create(array('type' => 'webtools'));
+  $bean->label = t('Reps - Share');
+  $bean->title = '';
+  $bean->delta = 'bean-share';
+  $bean->field_json_object = [
+    LANGUAGE_NONE => [
+      0 => [
+        'value' => '{
+          "service" : "sbkm"
+        }',
+      ],
+    ],
+  ];
+  $bean->save();
+}
+
+/**
+ * Create a bean block for Laco.
+ */
 function _reps_core_create_block_twitter() {
   // Get existing variable for screen name and count.
   if (variable_get('reps_core_twitter_webtools_config_screen')) {
