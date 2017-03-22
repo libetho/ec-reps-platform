@@ -3,6 +3,7 @@ description = The core feature fo the REPS websites
 core = 7.x
 package = REPS
 php = 5.2.4
+version = 7.x-2.0
 dependencies[] = bean
 dependencies[] = ckeditor_tabber
 dependencies[] = ec_embedded_video
