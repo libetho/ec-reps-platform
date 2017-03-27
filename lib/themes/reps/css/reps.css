@@ -1559,7 +1559,7 @@ ul.pager li.pager-current {
   border: 1px solid #bbb;
 }
 /* Twitter feed */
-.block-bean-bean-twitter .panel-body {
+#block-bean-bean-twitter .panel-body {
   padding: 0;
 }
 /* Medium + Large */
