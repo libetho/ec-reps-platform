@@ -5,6 +5,9 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
+projects[admin_language][subdir] = "contrib"
+projects[admin_language][version] = 1.0-beta1
+
 projects[admin_theme][subdir] = "contrib"
 projects[admin_theme][version] = 1.0
 
