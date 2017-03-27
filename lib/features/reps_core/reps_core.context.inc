@@ -203,19 +203,19 @@ function reps_core_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_2',
           'region' => 'sidebar_right',
-          'weight' => '-5',
+          'weight' => '6',
         ),
         'views-reps_bean_blocks-block_4' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_4',
           'region' => 'sidebar_right',
-          'weight' => '-4',
+          'weight' => '7',
         ),
         'reps_core-reps_core_feedback_form' => array(
           'module' => 'reps_core',
           'delta' => 'reps_core_feedback_form',
           'region' => 'sidebar_right',
-          'weight' => '-3',
+          'weight' => '8',
         ),
         'cce_basic_config-footer_ipg' => array(
           'module' => 'cce_basic_config',
