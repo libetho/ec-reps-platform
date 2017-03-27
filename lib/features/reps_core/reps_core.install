@@ -203,6 +203,7 @@ function reps_core_update_7002() {
   $modules_to_disable = array(
     'admin_language',
     'multisite_metatags',
+    'multisite_twitterblock',
     'page_title',
     'reps_contact_form',
     'webform_features',
