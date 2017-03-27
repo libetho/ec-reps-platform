@@ -1558,6 +1558,10 @@ ul.pager li.pager-current {
 .reps table td {
   border: 1px solid #bbb;
 }
+/* Twitter feed */
+.block-bean-bean-twitter .panel-body {
+  padding: 0;
+}
 /* Medium + Large */
 @media all and (min-width: 767px) {
   #sidebar-right {
