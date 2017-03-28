@@ -311,7 +311,7 @@ function reps_events_views_default_views() {
   /* Display: Upcoming events listing */
   $handler = $view->new_display('block', 'Upcoming events listing', 'upcoming_events');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Upcoming events';
+  $handler->display->display_options['title'] = '';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-events';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -439,7 +439,7 @@ function reps_events_views_default_views() {
   /* Display: Past events listing */
   $handler = $view->new_display('block', 'Past events listing', 'past_events');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Past events';
+  $handler->display->display_options['title'] = '';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-events';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
