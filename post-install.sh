@@ -13,7 +13,7 @@ mkdir -p lib/modules
 cp -r vendor/ec-europa/reps-platform/lib/features/* lib/features/reps
 cp -r vendor/ec-europa/reps-platform/lib/modules/* lib/modules
 cp -r vendor/ec-europa/reps-platform/lib/themes/* lib/themes
-cp -r vendor/ec-europa/reps-platform/reps-platform.make resources/reps-platform.make
+cp -r vendor/ec-europa/reps-platform/resources/reps-platform.make resources/reps-platform.make
 
 echo REPS Sources copied...
 echo Make sure that you add:
