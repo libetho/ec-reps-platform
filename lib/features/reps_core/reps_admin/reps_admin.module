@@ -331,11 +331,12 @@ function _reps_admin_retrieve_socials() {
 
 function reps_admin_views_pre_view(&$view) {
   if ($view->name === 'core_content_administration') {
+    // Add filter on Sticky content.
     $new_view_filters = $view->display_handler->get_option('filters');
     if (empty($new_view_filters)) {
       $new_view_filters = array();
     }
-    $new_view_filters['field_oferta_industria_value'] = array(
+    $new_view_filters['sticky'] = array(
       'id' => 'sticky',
       'table' => 'node',
       'field' => 'sticky',
@@ -358,6 +359,39 @@ function reps_admin_views_pre_view(&$view) {
     );
     $view_overrides = array();
     $view_overrides['filters'] = $new_view_filters;
+    foreach ($view_overrides as $option => $definition) {
+      $view->display_handler->override_option($option, $definition);
+    }
+    
+    // Add new operation.
+    $new_view_fieds = $view->display_handler->get_option('fields');
+    if (empty($new_view_fieds)) {
+      $new_view_fieds = array();
+    }
+    $new_view_fieds['nodequeue_all_subqueues'] = array(
+      'id' => 'nodequeue_all_subqueues',
+      'table' => 'node',
+      'field' => 'nodequeue_all_subqueues',
+      'label' => 'Nodequeue',
+      'link_to_queue' => 1,
+      'limit' => 0,
+      'qids' => array(
+        1 => 0,
+        2 => 0,
+        3 => 0,
+      ),
+    );
+    // Add Operation.
+    $new_view_fieds['views_bulk_operations']['vbo_operations']['action::nodequeue_add_action'] = array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    );
+    $view_overrides = array();
+    $view_overrides['fields'] = $new_view_fieds;
+    
     foreach ($view_overrides as $option => $definition) {
       $view->display_handler->override_option($option, $definition);
     }
