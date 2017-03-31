@@ -1384,11 +1384,12 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
   font-size: 11px;
   font-weight: 700;
   margin-bottom: 0;
+  min-height: 26px;
 }
 
 .view-reps-sliders .slides .sliderTitle {
   bottom: 16px;
-  font-size: 1.75em;
+  font-size: 20px;
 }
 
 .view-reps-sliders .slides .sliderTitle a,
@@ -1755,7 +1756,7 @@ ul.pager {
 }
 
 /* Twitter feed */
-#block-bean-bean-twitter .panel-body {
+.block-bean-bean-twitter .panel-body {
   padding: 0;  
 }
 
@@ -2062,6 +2063,11 @@ ul.pager {
   body.not-front #layout-body {
     margin-top: 0 !important;
   }
+  
+  .view-reps-sliders .slides .sliderTitle a {
+    font-size: 16px !important;
+    line-height: 16px;
+  }
 } // @media all and (max-width: @screen-sm-min) END
 
 /* xs small only */
@@ -2129,9 +2135,5 @@ ul.pager {
         width: 340px;
       }
     } 
-
-    .slides .sliderTitle {
-      font-size: 1.25em;
-    }
   }
 } // @media all and (max-width: @screen-xs-min) END
