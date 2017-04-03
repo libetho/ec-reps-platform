@@ -246,7 +246,6 @@ function reps_core_block_info() {
   $blocks = array();
   $blocks['reps_core_feedback_form']['info'] = t('Help us to improve');
   $blocks['reps_core_share_webtools']['info'] = t('Webtools share button');
-  $blocks['reps_core_twitter_webtools']['info'] = t('Webtools Twitter block');
   return $blocks;
 }
 
@@ -264,11 +263,6 @@ function reps_core_block_view($delta = '') {
     case 'reps_core_share_webtools':
       $block['subject'] = t('Webtools Share');
       $block['content'] = t('Webtools Share');
-      break;
-
-    case 'reps_core_twitter_webtools':
-      $block['subject'] = t('Webtools Twitter');
-      $block['content'] = t('Webtools Twitter');
       break;
   }
   return $block;
@@ -610,7 +604,7 @@ function _reps_core_create_block_share() {
 }
 
 /**
- * Create a bean block for Laco.
+ * Create a bean block for Twitter.
  */
 function _reps_core_create_block_twitter() {
   // Get existing variable for screen name and count.
@@ -664,7 +658,8 @@ function _reps_core_create_block_twitter() {
 function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
   if (isset($element['#bundle']) and $element['#bundle'] == 'image') {
     // Make alt, title and caption required.
-    if (in_array($element['#field_name'], array('field_file_image_title_text',
+    if (in_array($element['#field_name'], array('field_caption',
+      'field_file_image_title_text',
       'field_file_image_alt_text',
     ))) {
       $element['value']['#required'] = TRUE;
