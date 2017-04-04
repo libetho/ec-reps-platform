@@ -677,9 +677,6 @@ function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
 
 function reps_core_entity_view_alter(&$build, $type) {
   if ($type == 'file') {
-    if (isset($build['field_tags'])) {
-      unset($build['field_tags']);
-    }
     if (isset($build['field_folder'])) {
       unset($build['field_folder']);
     }
