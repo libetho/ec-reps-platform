@@ -674,11 +674,37 @@ function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
 /**
  * Implements hook_entity_view_alter().
  */
-
 function reps_core_entity_view_alter(&$build, $type) {
   if ($type == 'file') {
+    if (isset($build['field_tags'])) {
+      unset($build['field_tags']);
+    }
     if (isset($build['field_folder'])) {
       unset($build['field_folder']);
     }
+  }
+}
+
+function reps_core_strongarm_alter() {
+  if (!empty($items['media_wysiwyg_wysiwyg_browser_plugins'])) {
+    // Prevent platform override.
+    $value = array(
+      0 => 'upload',
+      1 => 'media_browser_plus--media_browser_thumbnails',
+      2 => 'media_browser_plus--media_browser_my_files',
+      3 => 'media_internet',
+    );
+    $items['media_wysiwyg_wysiwyg_browser_plugins']->value = $value;
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function hook_views_default_views_alter(&$views) {
+  if (isset($views['media_browser_plus'])) {
+    // Set the correct titles here.
+    $views['media_browser_plus']->display['media_browser_thumbnails']->display_options['title'] = t('Library');
+    $views['media_browser_plus']->display['media_browser_my_files']->display_options['title'] = t('My files');
   }
 }
