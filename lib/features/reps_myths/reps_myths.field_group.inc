@@ -26,7 +26,6 @@ function reps_myths_field_group_info() {
       0 => 'body',
       1 => 'field_reps_core_abstract',
       2 => 'field_reps_core_image',
-      3 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
