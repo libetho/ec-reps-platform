@@ -1271,7 +1271,8 @@ body:not(.node-type-reps-homepage) #layout-body {
   margin-top: 50px !important;
 }
 body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  background: #f4f4f4;
 }
 /* Main content image */
 .field-name-field-reps-core-image {
@@ -1562,6 +1563,11 @@ ul.pager li.pager-current {
 /* Twitter feed */
 .block-bean-bean-twitter .panel-body {
   padding: 0;
+}
+/* Laco */
+#block-bean-bean-laco {
+  border: none;
+  visibility: hidden;
 }
 /* Medium + Large */
 @media all and (min-width: 767px) {
