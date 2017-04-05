@@ -441,8 +441,9 @@ body.reps #mainContainer #layout-body #block-views-reps-publications-block .view
   border-bottom: none;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field {
-  text-align: center;
   border: 1px solid #cfcfcf;
+  margin-bottom: 0;
+  text-align: center;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field-field-reps-core-image {
   padding: 10px 10px 0;
