@@ -674,11 +674,22 @@ function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
 /**
  * Implements hook_entity_view_alter().
  */
-
 function reps_core_entity_view_alter(&$build, $type) {
   if ($type == 'file') {
+    if (isset($build['field_tags'])) {
+      unset($build['field_tags']);
+    }
     if (isset($build['field_folder'])) {
       unset($build['field_folder']);
     }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function reps_core_preprocess_views_view(&$vars) {
+  if ($vars['name'] == 'reps_contact_points') {
+    $vars['rows'] = str_replace('KML ', '', $vars['rows']);
   }
 }
