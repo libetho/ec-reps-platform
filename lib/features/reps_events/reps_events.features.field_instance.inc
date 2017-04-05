@@ -279,11 +279,12 @@ function reps_events_field_default_field_instances() {
           'video' => 'video',
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
+          'media_internet' => 'media_internet',
           'upload' => 'upload',
-          'youtube' => 0,
         ),
         'progress_indicator' => 'throbber',
       ),
@@ -352,7 +353,14 @@ function reps_events_field_default_field_instances() {
         'allowed_types' => array(
           'image' => 'image',
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -507,11 +515,12 @@ function reps_events_field_default_field_instances() {
           'video' => 'video',
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 'media_internet',
-          'upload' => 0,
-          'youtube' => 0,
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',

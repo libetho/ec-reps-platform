@@ -25,12 +25,13 @@ projects[features_roles_permissions][version] = 1.2
 
 projects[media_browser_plus][subdir] = "contrib"
 projects[media_browser_plus][version] = 3.0-beta4
+projects[media_browser_plus][patch][] = "https://www.drupal.org/files/issues/download-files-in-media-basket-does-not-work-2821063-2.patch"
 
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.0
 
 projects[multiform][subdir] = "contrib"
-projects[multiform][version] = 1.3
+projects[multiform][version] = 1.1
 
 projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = 2.1
