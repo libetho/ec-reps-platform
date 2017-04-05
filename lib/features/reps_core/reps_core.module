@@ -701,10 +701,19 @@ function reps_core_strongarm_alter() {
 /**
  * Implements hook_views_default_views_alter().
  */
-function hook_views_default_views_alter(&$views) {
+function reps_core_views_default_views_alter(&$views) {
   if (isset($views['media_browser_plus'])) {
     // Set the correct titles here.
     $views['media_browser_plus']->display['media_browser_thumbnails']->display_options['title'] = t('Library');
     $views['media_browser_plus']->display['media_browser_my_files']->display_options['title'] = t('My files');
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function reps_core_preprocess_views_view(&$vars) {
+  if ($vars['name'] == 'reps_contact_points') {
+    $vars['rows'] = str_replace('KML ', '', $vars['rows']);
   }
 }
