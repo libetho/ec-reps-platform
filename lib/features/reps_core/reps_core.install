@@ -181,7 +181,7 @@ function reps_core_update_7001() {
  * - webform
  * - reps_migrate
  * - nexteuropa_migrate
- * - weight
+ * - weight.
  *
  * Enable the following list of modules:
  * - extlink

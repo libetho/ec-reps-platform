@@ -91,7 +91,7 @@ function reps_core_default_fe_block_settings() {
     'title' => '',
     'visibility' => 0,
   );
-  
+
   $export['bean-bean-share'] = array(
     'cache' => 1,
     'custom' => 0,

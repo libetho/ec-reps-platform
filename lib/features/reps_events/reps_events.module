@@ -36,21 +36,18 @@ function _reps_events_create_listing_page() {
     'weight' => 0,
   );
   foreach ($pages as $page) {
-    if(!drupal_lookup_path('source', $page['path'])) {
-      $nids[] = _reps_core_create_node($page['type'], $page['title'], $page['path']);
-    }
     $menu_item = menu_get_item(drupal_lookup_path('source', $page['path']));
     if ($menu_item) {
-      if($page['parent'] !== '0'){
-        $tree =  menu_tree_all_data('main-menu');
-        foreach($tree as $item) {
+      if ($page['parent'] !== '0') {
+        $tree = menu_tree_all_data('main-menu');
+        foreach ($tree as $item) {
           if ($item['link']['link_path'] == drupal_lookup_path('source', $page['parent'])) {
             $page['parent'] = $item['link']['mlid'];
             break;
           }
         }
       }
-      _reps_core_menu_item('main-menu', $menu_item['href'], $page['parent'], $menu_item['title'], 'menu', $page['weight'], 'en', $menu_item['title']); 
+      _reps_core_menu_item('main-menu', $menu_item['href'], $page['parent'], $menu_item['title'], 'menu', $page['weight'], 'en', $menu_item['title']);
     }
   }
 }
@@ -59,7 +56,7 @@ function _reps_events_create_listing_page() {
  * Implements reps_events_field_attach_view_alter().
  */
 function reps_events_field_attach_view_alter(&$output, $context) {
-  if(array_keys($output) and array_keys($output)[0] == 'field_reps_event_date'){
+  if (array_keys($output) and array_keys($output)[0] == 'field_reps_event_date') {
     foreach ($output['field_reps_event_date']['#items'] as $key => $value) {
       $output['field_reps_event_date']['#items'][$value['value']] = $value;
       $output['field_reps_event_date']['#items'][$value['value']]['key'] = $key;
@@ -75,9 +72,10 @@ function reps_events_field_attach_view_alter(&$output, $context) {
   }
 }
 
-/*
-* implements hook_view_pre_render()
-*/
+/**
+ * implements hook_view_pre_render()
+ */
+
 function reps_events_views_pre_render(&$view) {
   if ($view->name == 'reps_events') {
     $nids = array();

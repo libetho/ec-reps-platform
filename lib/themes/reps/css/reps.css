@@ -102,9 +102,7 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
-body.reps #mainContainer .region-featured-wrapper {
-  /* MAIN MENU */
-}
+
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -1411,7 +1409,7 @@ dl.ckeditor-tabber dd {
 }
 .quicktabs-wrapper ul.quicktabs-tabs li.active a,
 .quicktabs-wrapper ul.quicktabs-tabs li.active:hover a {
-  color: #0065A2;
+  color: #0065a2;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li:hover {
   background: #b60522;
