@@ -1,4 +1,5 @@
 <?php
+// @codingStandardsIgnoreFile
 
 /**
  * @file
@@ -45,7 +46,7 @@ class FileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterf
     $replacements = array();
 
     if ($type == 'file') {
-      foreach ($tokens as $name => $original) {
+      foreach ($tokens as $original) {
         $entity_id = $this->parseToken($original, 'entity_id');
         if ($entity_id) {
           $entity_info = entity_get_info($type);
@@ -88,5 +89,5 @@ class FileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterf
       return isset($matches[2][0]) && !empty($matches[2][0]) ? $matches[2][0] : '';
     }
   }
-}
 
+}

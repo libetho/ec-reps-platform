@@ -150,6 +150,7 @@ function _mbp_sync_folders_setup_batch() {
   $query->fields('fm', array('fid'));
   $query->fields('ff', array('field_folder_tid'));
   $query->condition('status', FILE_STATUS_PERMANENT, '=');
+  $query->condition('type', 'undefined', '!=');
   $query->condition('field_folder_tid', NULL);
   $result = $query->execute()->fetchAllAssoc('fid');
   // Break them into chunks.
@@ -486,12 +487,11 @@ function _mbp_sync_sync_folders_form_op(array $chunk, &$context) {
     $tid = _mbp_sync_get_media_folder_tid($uri, $context);
     // Add the folder media tid.
     if (!empty($tid)) {
-      // Message displayed under the progressbar.
-      $context['message'] = dt('Assigned term with id "@term" to file "@filename"', array('@term' => $tid, '@filename' => $file->filename));
-
       if (isset($file->field_folder)) {
         $file->field_folder[LANGUAGE_NONE][0]['tid'] = $tid;
         field_attach_update('file', $file);
+        // Message displayed under the progressbar.
+        $context['message'] = dt('Assigned term with id "@term" to file "@filename"', array('@term' => $tid, '@filename' => $file->filename));
       }
     }
     else {
@@ -515,7 +515,6 @@ function _mbp_sync_get_media_folder_tid($dir, &$context) {
   // Check if term or any parent exist
   // starting from current file folder (not parent).
   $reps = array_reverse(explode("/", $dir));
-
   // File is a direct child of media root.
   if (empty($dir)) {
     $root = taxonomy_get_term_by_name(MBP_SYNC_MEDIA_FOLDER_ROOT, MBP_SYNC_MEDIA_FOLDER_VOCABULARY);
@@ -526,7 +525,6 @@ function _mbp_sync_get_media_folder_tid($dir, &$context) {
     $tid = (isset($root->tid)) ? $root->tid : FALSE;
     return $tid;
   }
-
   foreach ($reps as $rep) {
     $tls = taxonomy_get_term_by_name($rep, MBP_SYNC_MEDIA_FOLDER_VOCABULARY);
     // If term is found, check that the parents are the same.
@@ -534,16 +532,26 @@ function _mbp_sync_get_media_folder_tid($dir, &$context) {
       // Extract only the ancestors of current found item.
       $pos = array_search($rep, $reps);
       $ancestors = implode("/", array_reverse(array_slice($reps, $pos)));
+      $match_path = '';
+      $parent = FALSE;
       foreach ($tls as $tl) {
-        if (_mbp_sync_get_media_folder_parents_path($tl, $ancestors)) {
-          // An common ancestor has been found.
-          $to_create = str_replace($ancestors, '', $dir);
-          $to_create = str_replace('//', '', $to_create);
-          // If needed, create children based on that parent.
-          $tid = !empty($to_create) ? _mbp_sync_create_media_folder($to_create, $tl) : $tl->tid;
-          // Exit both loops.
-          break 2;
+        // Compose path for term.
+        $tl_path = _mbp_sync_get_media_folder_path($tl);
+        // Check if in dir.
+        if (strpos($ancestors, $tl_path) === 0 && drupal_strlen($tl_path) > $match_path) {
+          $match_path = $tl_path;
+          $parent = $tl;
         }
+      }
+
+      // If grater then previous match, then save it.
+      if ($parent) {
+        $to_create = drupal_substr($dir, drupal_strlen($match_path));
+        $to_create = str_replace('//', '', $to_create);
+        // If needed, create children based on that parent.
+        $tid = !empty($to_create) ? _mbp_sync_create_media_folder($to_create, $parent) : $parent->tid;
+        // Exit both loops.
+        break;
       }
     }
   }
@@ -565,13 +573,11 @@ function _mbp_sync_get_media_folder_tid($dir, &$context) {
  *
  * @param object $kid
  *   The term looked up for.
- * @param string $ancestors
- *   The path of parents.
  *
- * @return bool
+ * @return string
  *   Result.
  */
-function _mbp_sync_get_media_folder_parents_path($kid, $ancestors) {
+function _mbp_sync_get_media_folder_path($kid) {
   // Reverse the parents and remove the Media Root.
   $parents = array_reverse(taxonomy_get_parents_all($kid->tid));
   array_shift($parents);
@@ -579,11 +585,7 @@ function _mbp_sync_get_media_folder_parents_path($kid, $ancestors) {
   foreach ($parents as $parent) {
     $par[] = $parent->name;
   }
-  $par = implode("/", $par);
-  if ($ancestors == $par) {
-    return TRUE;
-  }
-  return FALSE;
+  return implode("/", $par);
 }
 
 /**
@@ -604,7 +606,8 @@ function _mbp_sync_create_media_folder($tree, $parent) {
   $vocab = taxonomy_vocabulary_machine_name_load(MBP_SYNC_MEDIA_FOLDER_VOCABULARY);
   $to_create = explode('/', $tree);
   foreach ($to_create as $tc) {
-    if (!empty($tc)) {
+    $tc = trim($tc);
+    if ($tc !== '' && $tc !== FALSE) {
       $term = (object) array(
         'name' => $tc,
         'vid' => $vocab->vid,
@@ -727,4 +730,117 @@ function mbp_sync_term_save($term) {
   unset($term->original);
 
   return $status;
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function mbp_sync_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'file_presave') {
+    unset($implementations['media_browser_plus']);
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function mbp_sync_menu_alter(&$items) {
+  // Overwrite callback to use own implementation.
+  $items['admin/content/file/%file/move-to-folder/%taxonomy_term']['page callback'] = 'mbp_sync_move_file_callback';
+}
+
+/**
+ * Move the file to another folder.
+ *
+ * @param object $file
+ *   The file object to update.
+ * @param object $folder
+ *   The folder object to use for the file.
+ *
+ * @return bool
+ *   FALSE on error.
+ */
+function mbp_sync_move_file_callback($file, $folder) {
+  if (empty($file->field_folder[LANGUAGE_NONE][0]['tid']) || $file->field_folder[LANGUAGE_NONE][0]['tid'] != $folder->tid) {
+    return mbp_sync_move_file($folder->tid, $file);
+  }
+  return TRUE;
+}
+
+/**
+ * Moves and saves a file.
+ *
+ * Every managed file that is saved or updated, should pass through this to
+ * ensure the filesystem location matches the folder term.
+ *
+ * @param int $tid
+ *   The folder's term id.
+ * @param object $file
+ *   The file object.
+ * @param int $replace
+ *   Replace behavior when the destination file already exists.
+ * @param bool $save
+ *   Enables or disables saving the file object. Handy for cases in which the
+ *   file object is saved anyway.
+ *
+ * @return bool
+ *   TRUE on success.
+ */
+function mbp_sync_move_file($tid, $file, $replace = NULL, $save = TRUE) {
+
+  // See which file replace handling has to be used.
+  if (is_null($replace)) {
+    $replace = FILE_EXISTS_RENAME;
+    // See if the file entity provides the file_replace property to indicate how
+    // this has to be handled.
+    $actions = array(FILE_EXISTS_REPLACE, FILE_EXISTS_RENAME, FILE_EXISTS_ERROR);
+    if (isset($file->file_replace) && in_array($file->file_replace, $actions)) {
+      $replace = $file->file_replace;
+    }
+  }
+
+  // Ensure the new location is stored in the file entity.
+  $file->field_folder[LANGUAGE_NONE] = array(array('tid' => $tid));
+
+  // No need to process the file path if mpb doesn't mirror to filesystem.
+  if (!variable_get('media_browser_plus_filesystem_folders', TRUE)) {
+    if ($save) {
+      file_save($file);
+    }
+    return TRUE;
+  }
+
+  $local_stream_wrappers = media_get_local_stream_wrappers();
+  $scheme = file_uri_scheme($file->uri);
+
+  // Don't change the uri for non-local files.
+  if (!isset($local_stream_wrappers[$scheme])) {
+    if ($save) {
+      file_save($file);
+    }
+  }
+  else {
+    // Media translation module does need this since it allows the creation of
+    // file references which shouldn't move the referenced file itself when
+    // moved. See http://drupal.org/node/1331818 for details.
+    if (module_exists('media_translation') && media_translation_is_virtual_file($file->fid)) {
+      file_save($file);
+      return TRUE;
+    }
+
+    $folder = taxonomy_term_load($tid);
+    $path = file_stream_wrapper_uri_normalize(file_uri_scheme($file->uri) . '://' . media_browser_plus_construct_dir_path($folder));
+    file_prepare_directory($path, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+    if ($save) {
+      return file_move($file, $path, $replace);
+    }
+    else {
+      if ($uri = file_unmanaged_move($file->uri, $path, $replace)) {
+        $file->uri = $uri;
+        return TRUE;
+      }
+      return FALSE;
+    }
+  }
+  return TRUE;
 }

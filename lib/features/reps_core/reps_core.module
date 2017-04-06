@@ -233,7 +233,7 @@ function _reps_core_overrides() {
       field_update_field($field);
     }
   }
-  
+
   // Override default values from CCE basic conflicts.
   variable_set('node_admin_theme', '1');
   variable_set('locale_field_language_fallback', '0');
@@ -246,7 +246,6 @@ function reps_core_block_info() {
   $blocks = array();
   $blocks['reps_core_feedback_form']['info'] = t('Help us to improve');
   $blocks['reps_core_share_webtools']['info'] = t('Webtools share button');
-  $blocks['reps_core_twitter_webtools']['info'] = t('Webtools Twitter block');
   return $blocks;
 }
 
@@ -264,11 +263,6 @@ function reps_core_block_view($delta = '') {
     case 'reps_core_share_webtools':
       $block['subject'] = t('Webtools Share');
       $block['content'] = t('Webtools Share');
-      break;
-
-    case 'reps_core_twitter_webtools':
-      $block['subject'] = t('Webtools Twitter');
-      $block['content'] = t('Webtools Twitter');
       break;
   }
   return $block;
@@ -610,7 +604,7 @@ function _reps_core_create_block_share() {
 }
 
 /**
- * Create a bean block for Laco.
+ * Create a bean block for Twitter.
  */
 function _reps_core_create_block_twitter() {
   // Get existing variable for screen name and count.
@@ -680,7 +674,6 @@ function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
 /**
  * Implements hook_entity_view_alter().
  */
-
 function reps_core_entity_view_alter(&$build, $type) {
   if ($type == 'file') {
     if (isset($build['field_tags'])) {
@@ -689,5 +682,38 @@ function reps_core_entity_view_alter(&$build, $type) {
     if (isset($build['field_folder'])) {
       unset($build['field_folder']);
     }
+  }
+}
+
+function reps_core_strongarm_alter() {
+  if (!empty($items['media_wysiwyg_wysiwyg_browser_plugins'])) {
+    // Prevent platform override.
+    $value = array(
+      0 => 'upload',
+      1 => 'media_browser_plus--media_browser_thumbnails',
+      2 => 'media_browser_plus--media_browser_my_files',
+      3 => 'media_internet',
+    );
+    $items['media_wysiwyg_wysiwyg_browser_plugins']->value = $value;
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function reps_core_views_default_views_alter(&$views) {
+  if (isset($views['media_browser_plus'])) {
+    // Set the correct titles here.
+    $views['media_browser_plus']->display['media_browser_thumbnails']->display_options['title'] = t('Library');
+    $views['media_browser_plus']->display['media_browser_my_files']->display_options['title'] = t('My files');
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function reps_core_preprocess_views_view(&$vars) {
+  if ($vars['name'] == 'reps_contact_points') {
+    $vars['rows'] = str_replace('KML ', '', $vars['rows']);
   }
 }

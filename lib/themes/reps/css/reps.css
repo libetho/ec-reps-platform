@@ -102,9 +102,7 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
-body.reps #mainContainer .region-featured-wrapper {
-  /* MAIN MENU */
-}
+
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -441,8 +439,9 @@ body.reps #mainContainer #layout-body #block-views-reps-publications-block .view
   border-bottom: none;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field {
-  text-align: center;
   border: 1px solid #cfcfcf;
+  margin-bottom: 0;
+  text-align: center;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content .views-row .views-field-field-reps-core-image {
   padding: 10px 10px 0;
@@ -1424,7 +1423,7 @@ dl.ckeditor-tabber dd {
 }
 .quicktabs-wrapper ul.quicktabs-tabs li.active a,
 .quicktabs-wrapper ul.quicktabs-tabs li.active:hover a {
-  color: #0065A2;
+  color: #0065a2;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li:hover {
   background: #b60522;
@@ -1577,6 +1576,11 @@ ul.pager li.pager-current {
 /* Twitter feed */
 .block-bean-bean-twitter .panel-body {
   padding: 0;
+}
+/* Laco */
+#block-bean-bean-laco {
+  border: none;
+  visibility: hidden;
 }
 /* Medium + Large */
 @media all and (min-width: 767px) {

@@ -182,10 +182,10 @@ function reps_preprocess_block(&$variables) {
   if (isset($variables['block']->bid)) {
     switch ($variables['block']->bid) {
       case 'cce_basic_config-footer_ipg':
-          $pos = strpos($variables['content'], "<ul");
-          $variables['content'] = drupal_substr($variables['content'], 0, ($pos - 3));
+        $pos = strpos($variables['content'], "<ul");
+        $variables['content'] = drupal_substr($variables['content'], 0, ($pos - 3));
         break;
-      
+
       case 'locale-language':
         global $language;
         $languages = language_list();
@@ -208,7 +208,6 @@ function reps_preprocess_block(&$variables) {
         );
         // Get path of translated content.
         $translations = translation_path_get_translations(current_path());
-        $language_default = language_default();
 
         foreach ($languages as $language_object) {
           $prefix = $language_object->language;
@@ -226,7 +225,6 @@ function reps_preprocess_block(&$variables) {
           // with suffix url is enabled.
           $language_negociation = variable_get('language_negotiation_language');
           if (isset($language_negociation['locale-url-suffix'])) {
-            $delimiter = variable_get('language_suffix_delimiter', '_');
             $alias = drupal_get_path_alias($path, $prefix);
 
             if ($alias == variable_get('site_frontpage', 'node')) {
