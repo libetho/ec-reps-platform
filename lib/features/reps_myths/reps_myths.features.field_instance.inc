@@ -268,7 +268,6 @@ function reps_myths_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Image');
-  t('Tags');
   t('Title');
 
   return $field_instances;
