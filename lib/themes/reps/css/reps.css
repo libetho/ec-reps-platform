@@ -1364,6 +1364,10 @@ form .field-name-field-reps-core-image {
 .views-field-field-reps-event-date ul li {
   margin-left: 0;
 }
+.views-field-field-reps-event-date,
+.views-field-field-reps-event-venue {
+  margin-left: 160px;
+}
 /* Tabs */
 dl.ckeditor-tabber dt {
   background: #f3f6f9;
