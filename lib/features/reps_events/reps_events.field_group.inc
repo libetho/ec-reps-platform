@@ -26,11 +26,10 @@ function reps_events_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_reps_core_abstract',
-      2 => 'field_reps_core_external_url',
-      3 => 'field_reps_core_image',
-      4 => 'field_reps_event_date',
-      5 => 'field_reps_event_venue',
-      6 => 'field_reps_registration',
+      2 => 'field_reps_core_image',
+      3 => 'field_reps_event_date',
+      4 => 'field_reps_event_venue',
+      5 => 'field_reps_registration',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
