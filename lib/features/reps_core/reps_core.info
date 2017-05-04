@@ -18,6 +18,7 @@ dependencies[] = feeds_xpathparser
 dependencies[] = flexslider_example
 dependencies[] = mbp_sync
 dependencies[] = media_browser_plus
+dependencies[] = media_bulk_upload
 dependencies[] = menu_admin_per_menu
 dependencies[] = multiform
 dependencies[] = nexteuropa_core
