@@ -450,7 +450,7 @@ function _mbp_sync_find_file($path, &$destination) {
 
   $q = new EntityFieldQuery();
   $q->entityCondition('entity_type', 'file')
-    ->propertyCondition('uri', '%' . $parts[1], 'like');
+    ->propertyCondition('uri', 'public:/' . $parts[1], 'like');
   $query_result = $q->execute();
 
   if (!empty($query_result)) {
