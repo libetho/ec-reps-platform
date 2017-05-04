@@ -703,10 +703,6 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   color: #666666;
   clear: both;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary a[href$=pdf] {
-  background: url(../images/icon_pdf.gif) no-repeat right;
-  padding-right: 20px;
-}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary .inside_table {
   border: 2px solid #b60522;
 }
@@ -1582,6 +1578,15 @@ ul.pager li.pager-current {
 /* Twitter feed */
 #block-bean-bean-twitter .panel-body {
   padding: 0;
+}
+/* File Icons */
+.file {
+  display: inline-block;
+}
+.file img.file-icon {
+  float: right !important;
+  margin-left: 5px;
+  vertical-align: text-bottom;
 }
 /* Laco */
 #block-bean-bean-laco {
