@@ -568,6 +568,7 @@ function _reps_core_create_block_laco() {
         'value' => '{
           "service" : "laco",
           "include" : "#layout-body .region-content, #sidebar-right .region-sidebar-right",
+          "exclude" : ".lang-available",
           "coverage" : {
               "document" : "other",
               "page" : "other"

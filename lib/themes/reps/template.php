@@ -366,7 +366,7 @@ function reps_entity_translation_unavailable($variables) {
     $available_languages = array_keys($element['#entity']->title_field);
     // Get available languages of the website.
     $language_list = language_list();
-    $classes = $element['#entity_type'] . ' ' . $element['#entity_type'] . '-' . $element['#view_mode'];
+    $classes = $element['#entity_type'] . ' ' . $element['#entity_type'] . '-' . $element['#view_mode'] . ' lang-available';
     $message = '<p>The requested information is not available in ' . $language->name . '</p><p>Language(s) available:</p><ul>';
     foreach ($available_languages as $language_extension) {
       // Display available languages for the current node.
