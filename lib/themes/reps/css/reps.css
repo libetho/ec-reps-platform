@@ -102,7 +102,9 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
-
+body.reps #mainContainer .region-featured-wrapper {
+  /* MAIN MENU */
+}
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -1578,7 +1580,7 @@ ul.pager li.pager-current {
   border: 1px solid #bbb;
 }
 /* Twitter feed */
-.block-bean-bean-twitter .panel-body {
+#block-bean-bean-twitter .panel-body {
   padding: 0;
 }
 /* Laco */
