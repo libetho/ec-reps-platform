@@ -4,6 +4,7 @@ core = 7.x
 package = REPS
 php = 5.2.4
 version = 7.x-2.0
+dependencies[] = date_all_day
 dependencies[] = registration
 dependencies[] = reps_core
 features[context][] = reps-events
