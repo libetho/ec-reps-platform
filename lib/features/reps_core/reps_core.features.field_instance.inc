@@ -2323,6 +2323,7 @@ function reps_core_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
@@ -2533,7 +2534,6 @@ function reps_core_field_default_field_instances() {
   t('External Url');
   t('Free content');
   t('Image');
-  t('JSON Object');
   t('Link');
   t('Page');
   t('Page(s)');

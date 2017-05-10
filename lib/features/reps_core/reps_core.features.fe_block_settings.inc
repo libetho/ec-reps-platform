@@ -52,10 +52,10 @@ function reps_core_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['bean-bean-twitter'] = array(
+  $export['bean-bean-share'] = array(
     'cache' => 1,
     'custom' => 0,
-    'delta' => 'bean-twitter',
+    'delta' => 'bean-share',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'bean',
@@ -92,10 +92,10 @@ function reps_core_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['bean-bean-share'] = array(
+  $export['bean-bean-twitter'] = array(
     'cache' => 1,
     'custom' => 0,
-    'delta' => 'bean-share',
+    'delta' => 'bean-twitter',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'bean',
