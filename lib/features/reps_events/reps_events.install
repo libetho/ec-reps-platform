@@ -14,7 +14,7 @@ function reps_events_enable() {
       'field_instance',
     ),
   ));
-
+  _reps_events_create_listing_page();
   drupal_set_message(t("The REPS events feature is now active on your site"));
 }
 
