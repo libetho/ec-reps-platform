@@ -718,3 +718,14 @@ function reps_core_preprocess_views_view(&$vars) {
     $vars['rows'] = str_replace('KML ', '', $vars['rows']);
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function reps_core_form_alter(&$vars) {
+  if (isset($vars['#node_edit_form'])) {
+    unset($vars['field_meta_classification']);
+    unset($vars['field_meta_description']);
+    unset($vars['field_tags']);
+  }
+}
