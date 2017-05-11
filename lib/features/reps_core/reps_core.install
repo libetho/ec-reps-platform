@@ -47,6 +47,10 @@ function reps_core_enable() {
   _reps_core_create_block_share();
   // Add Block Twitter.
   _reps_core_create_block_twitter();
+  
+  // Override default values from CCE basic conflicts.
+  variable_set('node_admin_theme', '1');
+  variable_set('locale_field_language_fallback', '0');
 
   // Drupal set message.
   drupal_set_message(t("The REPS core feature is now active on your site"));

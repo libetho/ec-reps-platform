@@ -36,6 +36,9 @@ function _reps_events_create_listing_page() {
     'weight' => 0,
   );
   foreach ($pages as $page) {
+    if(!drupal_lookup_path('source', $page['path'])) {
+      $nids[] = _reps_core_create_node($page['type'], $page['title'], $page['path']);
+    }
     $menu_item = menu_get_item(drupal_lookup_path('source', $page['path']));
     if ($menu_item) {
       if ($page['parent'] !== '0') {
