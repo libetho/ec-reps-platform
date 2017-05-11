@@ -587,6 +587,7 @@ function reps_core_default_roles_permissions() {
       'access site map' => TRUE,
       'add media from remote sources' => TRUE,
       'add terms in reps_news_categories' => TRUE,
+      'administer beans' => TRUE,
       'administer content translations' => TRUE,
       'administer files' => TRUE,
       'administer meta tags' => TRUE,
