@@ -283,6 +283,7 @@ function reps_core_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['tab_style'] = 'nostyle';
   $handler->display->display_options['style_options']['tab_title_field'] = 'field_reps_cp_type';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Contact point type (field_reps_cp_type) */
@@ -586,7 +587,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_core_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

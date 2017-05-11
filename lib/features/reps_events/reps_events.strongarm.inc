@@ -106,7 +106,7 @@ function reps_events_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
         'language' => array(
           'weight' => '1',
@@ -115,10 +115,10 @@ function reps_events_strongarm() {
           'weight' => '3',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
       ),
       'display' => array(

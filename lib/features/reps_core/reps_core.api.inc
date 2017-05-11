@@ -15,7 +15,6 @@
  *   The link, revisited.
  */
 function _reps_core_menu_link($link, $lang = FALSE) {
-  global $base_url;
   $lang = $lang ? $lang : LANGUAGE_NONE;
   if ($link != '<front>' &&  $link != '<nolink>') {
     $source = drupal_lookup_path('source', $link, $lang);

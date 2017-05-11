@@ -12,7 +12,6 @@ features[field_group][] = group_reps_video_content|node|reps_video|form
 features[field_instance][] = node-reps_video-body
 features[field_instance][] = node-reps_video-field_reps_core_external_url
 features[field_instance][] = node-reps_video-field_reps_core_image
-features[field_instance][] = node-reps_video-field_tags
 features[field_instance][] = node-reps_video-title_field
 features[image][] = thumb_videos__209x156_
 features[node][] = reps_video

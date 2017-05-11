@@ -43,6 +43,8 @@ function reps_core_enable() {
 
   // Add Block Laco.
   _reps_core_create_block_laco();
+  // Add Block Share.
+  _reps_core_create_block_share();
   // Add Block Twitter.
   _reps_core_create_block_twitter();
 
@@ -179,7 +181,7 @@ function reps_core_update_7001() {
  * - webform
  * - reps_migrate
  * - nexteuropa_migrate
- * - weight
+ * - weight.
  *
  * Enable the following list of modules:
  * - extlink
@@ -201,6 +203,7 @@ function reps_core_update_7002() {
   $modules_to_disable = array(
     'admin_language',
     'multisite_metatags',
+    'multisite_twitterblock',
     'page_title',
     'reps_contact_form',
     'webform_features',
@@ -219,6 +222,7 @@ function reps_core_update_7002() {
 
   // Enable additional modules.
   $module_to_enable = array(
+    'administration_language_negotiation',
     'extlink',
     'mbp_sync',
     'media_browser_plus',
@@ -226,9 +230,21 @@ function reps_core_update_7002() {
     'nexteuropa_metatags',
   );
   module_enable($module_to_enable, TRUE);
+  
+  // Alter Media browser settings (swap old tabs with MBP tabs).
+  // We update from here to avoid feature conflicts with ec_embedded_video.
+  $value = array(
+    0 => 'upload',
+    1 => 'media_browser_plus--media_browser_thumbnails',
+    2 => 'media_browser_plus--media_browser_my_files',
+    3 => 'media_internet',
+  );
+  variable_set('media_wysiwyg_wysiwyg_browser_plugins', $value);
 
   // Add Block Laco.
   _reps_core_create_block_laco();
+  // Add Block Share.
+  _reps_core_create_block_share();
   // Add Block Twitter.
   _reps_core_create_block_twitter();
 

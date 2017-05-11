@@ -182,10 +182,10 @@ function reps_preprocess_block(&$variables) {
   if (isset($variables['block']->bid)) {
     switch ($variables['block']->bid) {
       case 'cce_basic_config-footer_ipg':
-          $pos = strpos($variables['content'], "<ul");
-          $variables['content'] = drupal_substr($variables['content'], 0, ($pos - 3));
+        $pos = strpos($variables['content'], "<ul");
+        $variables['content'] = drupal_substr($variables['content'], 0, ($pos - 3));
         break;
-      
+
       case 'locale-language':
         global $language;
         $languages = language_list();
@@ -208,7 +208,6 @@ function reps_preprocess_block(&$variables) {
         );
         // Get path of translated content.
         $translations = translation_path_get_translations(current_path());
-        $language_default = language_default();
 
         foreach ($languages as $language_object) {
           $prefix = $language_object->language;
@@ -226,7 +225,6 @@ function reps_preprocess_block(&$variables) {
           // with suffix url is enabled.
           $language_negociation = variable_get('language_negotiation_language');
           if (isset($language_negociation['locale-url-suffix'])) {
-            $delimiter = variable_get('language_suffix_delimiter', '_');
             $alias = drupal_get_path_alias($path, $prefix);
 
             if ($alias == variable_get('site_frontpage', 'node')) {
@@ -368,7 +366,7 @@ function reps_entity_translation_unavailable($variables) {
     $available_languages = array_keys($element['#entity']->title_field);
     // Get available languages of the website.
     $language_list = language_list();
-    $classes = $element['#entity_type'] . ' ' . $element['#entity_type'] . '-' . $element['#view_mode'];
+    $classes = $element['#entity_type'] . ' ' . $element['#entity_type'] . '-' . $element['#view_mode'] . ' lang-available';
     $message = '<p>The requested information is not available in ' . $language->name . '</p><p>Language(s) available:</p><ul>';
     foreach ($available_languages as $language_extension) {
       // Display available languages for the current node.
