@@ -27,8 +27,10 @@ function reps_events_disable() {
 }
 
 /**
- * Implements hook_install().
+ * Implements hook_update().
+ *
+ * Create listing page if necessary.
  */
-function reps_events_install() {
+function reps_events_update_7001() {
   _reps_events_create_listing_page();
 }
