@@ -222,6 +222,7 @@ function reps_core_update_7002() {
 
   // Enable additional modules.
   $module_to_enable = array(
+    'administration_language_negotiation',
     'extlink',
     'mbp_sync',
     'media_browser_plus',
