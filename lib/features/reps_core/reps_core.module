@@ -30,15 +30,15 @@ function reps_core_help($path, $arg) {
 function reps_core_node_view($node, $view_mode, $langcode) {
   switch ($node->type) {
     case 'reps_news':
-      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'news'));
+      menu_set_active_item(drupal_lookup_path('source', 'news'));
       break;
 
     case 'reps_event':
-      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'events'));
+      menu_set_active_item(drupal_lookup_path('source', 'events'));
       break;
 
     case 'reps_publication':
-      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'publications'));
+      menu_set_active_item(drupal_lookup_path('source', 'publications'));
       break;
 
     case 'reps_video':
