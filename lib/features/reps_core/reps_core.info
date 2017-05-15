@@ -214,6 +214,7 @@ features[variable][] = date_format_short_de_
 features[variable][] = date_format_time
 features[variable][] = date_format_time_bg
 features[variable][] = entity_translation_entity_types
+features[variable][] = entity_translation_settings_bean__webtools
 features[variable][] = extlink_css_exclude
 features[variable][] = field_bundle_settings_node__reps_contact_point
 features[variable][] = field_bundle_settings_node__reps_homepage
