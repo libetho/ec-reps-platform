@@ -568,7 +568,7 @@ function _reps_core_create_block_laco() {
         'value' => '{
           "service" : "laco",
           "include" : "#layout-body .region-content, #sidebar-right .region-sidebar-right",
-          "exclude" : ".lang-available",
+          "exclude" : ".lang-available, .view-reps-homepage-additional-blocks",
           "coverage" : {
               "document" : "other",
               "page" : "other"
@@ -726,6 +726,5 @@ function reps_core_form_alter(&$vars) {
   if (isset($vars['#node_edit_form'])) {
     unset($vars['field_meta_classification']);
     unset($vars['field_meta_description']);
-    unset($vars['field_tags']);
   }
 }
