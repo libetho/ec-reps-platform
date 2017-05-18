@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Test abstract Migration.
+ */
+
 namespace Drupal\nexteuropa_migrate\Tests;
 
 /**

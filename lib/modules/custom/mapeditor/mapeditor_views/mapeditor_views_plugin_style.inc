@@ -10,8 +10,7 @@
 /**
  * Defines views style.
  */
-class mapeditor_views_plugin_style extends views_plugin_style {
-
+class MapeditorViewsPluginStyle extends views_plugin_style {
   /**
    * Save the entity type and info if this view is displaying an entity.
    */
@@ -29,8 +28,8 @@ class mapeditor_views_plugin_style extends views_plugin_style {
   /**
    * Sets default options.
    */
-  public function option_definition() {
-    $options = parent::option_definition();
+  public function optionDefinition() {
+    $options = parent::optionDefinition();
     $options['data_source'] = array('default' => '');
     $options['view_mode'] = array('default' => 'popup');
     $options['settings'] = array();
@@ -55,8 +54,8 @@ class mapeditor_views_plugin_style extends views_plugin_style {
   /**
    * Constructs options form.
    */
-  public function options_form(&$form, &$form_state) {
-    parent::options_form($form, $form_state);
+  public function optionsForm(&$form, &$form_state) {
+    parent::optionsForm($form, $form_state);
 
     // Gets list of fields in this view & flag available geodata fields.
     $handlers = $this->display->handler->get_handlers('field');

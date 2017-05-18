@@ -10,7 +10,7 @@
  *
  * Implements hook_views_plugins().
  */
-function mapeditor_views_views_plugins() {
+function mapeditor_views_plugin_style() {
   $plugins = array(
     'module' => 'mapeditor_views',
     'style' => array(

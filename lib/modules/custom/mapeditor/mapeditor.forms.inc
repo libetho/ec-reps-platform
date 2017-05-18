@@ -82,7 +82,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
     case 'popup':
       $form_element = array(
         '#type' => 'container',
-        '#weight'=> 10,
+        '#weight' => 10,
       );
       $form_element['show'] = array(
         '#title' => t('Show a popup when markers are clicked.'),
@@ -109,7 +109,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
 
       $form_element = array(
         '#type' => 'container',
-        '#weight'=> 12,
+        '#weight' => 12,
       );
       $form_element['initialZoom'] = array(
         '#title' => t('Initial zoom level'),
@@ -140,7 +140,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
     case 'icon':
       $form_element = array(
         '#type' => 'container',
-        '#weight'=> 14,
+        '#weight' => 14,
       );
       $form_element['icon'] = array(
         '#type' => 'select',
@@ -153,7 +153,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
     case 'tile_layer':
       $form_element = array(
         '#type' => 'container',
-        '#weight'=> 16,
+        '#weight' => 16,
       );
       $form_element['tile_layer'] = array(
         '#type' => 'select',
@@ -166,7 +166,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
     case 'height':
       $form_element = array(
         '#type' => 'container',
-        '#weight'=> 6,
+        '#weight' => 6,
       );
       $form_element['height'] = array(
         '#title' => t('Map height'),
@@ -185,7 +185,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
         '#type' => 'fieldset',
         '#title' => t('Map center'),
         '#description' => t('Center of the map. E.g. latitude 50.84 and 4.36 longitude for Brussels'),
-        '#weight'=> 8,
+        '#weight' => 8,
       );
       $form_element['lat'] = array(
         '#title' => t('Latitude'),
@@ -235,7 +235,7 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
     case 'attribution':
       $form_element = array(
         '#type' => 'container',
-        '#weight'=> 16,
+        '#weight' => 16,
       );
       $form_element['attributionControl'] = array(
         '#type' => 'checkbox',
