@@ -36,6 +36,9 @@ projects[multiform][version] = 1.1
 projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = 2.1
 
+projects[page_title][subdir] = "contrib"
+projects[page_title][version] = 2.7
+
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = 1.0-rc3
 
