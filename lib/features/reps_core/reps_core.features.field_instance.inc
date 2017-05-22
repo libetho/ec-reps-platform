@@ -1631,53 +1631,6 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-reps_homepage-field_reps_core_node_reference'.
-  $field_instances['node-reps_homepage-field_reps_core_node_reference'] = array(
-    'bundle' => 'reps_homepage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_reps_core_node_reference',
-    'label' => 'Additional block(s)',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-reps_homepage-title_field'.
   $field_instances['node-reps_homepage-title_field'] = array(
     'bundle' => 'reps_homepage',
