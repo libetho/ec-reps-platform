@@ -1590,6 +1590,10 @@ ul.pager li.pager-current {
   border: none;
   display: none;
 }
+/* Breadcrumb */
+#path .easy-breadcrumb {
+  display: inline;
+}
 /* Medium + Large */
 @media all and (min-width: 767px) {
   #sidebar-right {
