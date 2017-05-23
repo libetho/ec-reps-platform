@@ -583,6 +583,7 @@ function reps_core_default_roles_permissions() {
     'permissions' => array(
       'access administration menu' => TRUE,
       'access administration pages' => TRUE,
+      'access bean overview' => TRUE,
       'access broken links report' => TRUE,
       'access content overview' => TRUE,
       'access media browser' => TRUE,
@@ -714,6 +715,7 @@ function reps_core_default_roles_permissions() {
       'view any reps_core_sb_right_free_content bean' => TRUE,
       'view any reps_core_sb_right_image_link bean' => TRUE,
       'view any webtools bean' => TRUE,
+      'view bean page' => TRUE,
       'view own files' => TRUE,
       'view own private files' => TRUE,
       'view own reps_registration registration' => TRUE,
