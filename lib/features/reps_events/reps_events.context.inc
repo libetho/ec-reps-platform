@@ -30,7 +30,7 @@ function reps_events_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_events-upcoming_events',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '0',
         ),
       ),
     ),
