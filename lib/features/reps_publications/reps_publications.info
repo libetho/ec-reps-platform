@@ -17,7 +17,6 @@ features[field_instance][] = node-reps_publication-field_reps_core_date
 features[field_instance][] = node-reps_publication-field_reps_core_external_url
 features[field_instance][] = node-reps_publication-field_reps_core_image
 features[field_instance][] = node-reps_publication-field_reps_publication_file
-features[field_instance][] = node-reps_publication-field_tags
 features[field_instance][] = node-reps_publication-title_field
 features[node][] = reps_publication
 features[variable][] = comment_anonymous_reps_publication

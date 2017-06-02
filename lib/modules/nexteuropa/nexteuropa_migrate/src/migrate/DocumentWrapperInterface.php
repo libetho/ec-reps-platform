@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Documents wrapper interface.
+ */
+
 namespace Drupal\nexteuropa_migrate\migrate;
 
 /**

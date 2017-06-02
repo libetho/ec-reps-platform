@@ -225,11 +225,12 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date']['element_class'] = 'label label-default label-small';
   $handler->display->display_options['fields']['field_reps_core_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_core_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Field: Abstract */
   $handler->display->display_options['fields']['field_reps_core_abstract']['id'] = 'field_reps_core_abstract';
@@ -316,20 +317,6 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_reps_core_date']['id'] = 'field_reps_core_date';
-  $handler->display->display_options['fields']['field_reps_core_date']['table'] = 'field_data_field_reps_core_date';
-  $handler->display->display_options['fields']['field_reps_core_date']['field'] = 'field_reps_core_date';
-  $handler->display->display_options['fields']['field_reps_core_date']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_core_date']['element_class'] = 'label label-default label-small';
-  $handler->display->display_options['fields']['field_reps_core_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reps_core_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -358,8 +345,9 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date_1']['id'] = 'field_reps_core_date_1';
   $handler->display->display_options['fields']['field_reps_core_date_1']['table'] = 'field_data_field_reps_core_date';
   $handler->display->display_options['fields']['field_reps_core_date_1']['field'] = 'field_reps_core_date';
+  $handler->display->display_options['fields']['field_reps_core_date_1']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_date_1']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -432,11 +420,12 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date']['element_class'] = 'label label-default label-small';
   $handler->display->display_options['fields']['field_reps_core_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_core_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Field: Abstract */
   $handler->display->display_options['fields']['field_reps_core_abstract']['id'] = 'field_reps_core_abstract';
@@ -529,20 +518,6 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_reps_core_date']['id'] = 'field_reps_core_date';
-  $handler->display->display_options['fields']['field_reps_core_date']['table'] = 'field_data_field_reps_core_date';
-  $handler->display->display_options['fields']['field_reps_core_date']['field'] = 'field_reps_core_date';
-  $handler->display->display_options['fields']['field_reps_core_date']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_core_date']['element_class'] = 'label label-default label-small';
-  $handler->display->display_options['fields']['field_reps_core_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reps_core_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -571,8 +546,9 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date_1']['id'] = 'field_reps_core_date_1';
   $handler->display->display_options['fields']['field_reps_core_date_1']['table'] = 'field_data_field_reps_core_date';
   $handler->display->display_options['fields']['field_reps_core_date_1']['field'] = 'field_reps_core_date';
+  $handler->display->display_options['fields']['field_reps_core_date_1']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_date_1']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

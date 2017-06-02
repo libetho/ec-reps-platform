@@ -42,7 +42,7 @@ function reps_core_views_api($module = NULL, $api = NULL) {
 function reps_core_fe_nodequeue_export_fields() {
   $nodequeues = array();
 
-  // Exported nodequeues: homepage_additional_block
+  // Exported nodequeues: homepage_additional_block.
   $nodequeues['homepage_additional_block'] = array(
     'name' => 'homepage_additional_block',
     'title' => 'Homepage additional block',
@@ -66,7 +66,7 @@ function reps_core_fe_nodequeue_export_fields() {
     'count' => 0,
   );
 
-  // Exported nodequeues: slider_footer
+  // Exported nodequeues: slider_footer.
   $nodequeues['slider_footer'] = array(
     'name' => 'slider_footer',
     'title' => 'Slider footer',
@@ -90,7 +90,7 @@ function reps_core_fe_nodequeue_export_fields() {
     'count' => 0,
   );
 
-  // Exported nodequeues: slider_homepage
+  // Exported nodequeues: slider_homepage.
   $nodequeues['slider_homepage'] = array(
     'name' => 'slider_homepage',
     'title' => 'Slider homepage',

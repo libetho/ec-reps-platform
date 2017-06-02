@@ -30,7 +30,7 @@ function reps_myths_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_eu_myth-block_1',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '10',
         ),
       ),
     ),
