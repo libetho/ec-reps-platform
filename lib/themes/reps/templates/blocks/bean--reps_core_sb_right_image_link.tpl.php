@@ -27,7 +27,7 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
- 
+
 ?>
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
