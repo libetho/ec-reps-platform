@@ -8,9 +8,6 @@ core = 7.x
 projects[admin_language][subdir] = "contrib"
 projects[admin_language][version] = 1.0-beta1
 
-projects[admin_theme][subdir] = "contrib"
-projects[admin_theme][version] = 1.0
-
 projects[administration_language_negotiation][subdir] = "contrib"
 projects[administration_language_negotiation][version] = 1.1
 
