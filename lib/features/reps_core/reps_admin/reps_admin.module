@@ -83,7 +83,6 @@ function reps_admin_menu() {
   );
 
   $languages = locale_language_list('name');
-  $enabled = count($languages);
 
   $items['admin/reps/menu/translate'] = array(
     'page callback' => 'drupal_get_form',
@@ -319,6 +318,9 @@ function _reps_admin_retrieve_socials() {
   }
 }
 
+/**
+ * Implements hook_views_pre_view().
+ */
 function reps_admin_views_pre_view(&$view) {
   if ($view->name === 'core_content_administration') {
     // Add filter on Sticky content.
@@ -352,7 +354,7 @@ function reps_admin_views_pre_view(&$view) {
     foreach ($view_overrides as $option => $definition) {
       $view->display_handler->override_option($option, $definition);
     }
-    
+
     // Add new operation.
     $new_view_fieds = $view->display_handler->get_option('fields');
     if (empty($new_view_fieds)) {
@@ -380,8 +382,7 @@ function reps_admin_views_pre_view(&$view) {
       'label' => '',
     );
     $view_overrides = array();
-    $view_overrides['fields'] = $new_view_fieds;
-    
+    $view_overrides['fields'] = $new_view_fieds;    
     foreach ($view_overrides as $option => $definition) {
       $view->display_handler->override_option($option, $definition);
     }
@@ -412,9 +413,9 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
  * Implements hook_theme_registry_alter().
  */
 function reps_admin_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id ==  'reps_event_node_form') { 
+  if ($form_id ==  'reps_event_node_form') {
     if (isset($form['field_reps_event_location'])) {
-      $form['field_reps_event_location']['#access'] = FALSE;  
+      $form['field_reps_event_location']['#access'] = FALSE;
     }
   }
 }

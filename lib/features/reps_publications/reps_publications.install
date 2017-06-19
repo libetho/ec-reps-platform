@@ -14,7 +14,7 @@ function reps_publications_enable() {
       'field_instance',
     ),
   ));
-  
+
   // Create default listing page.
   _reps_publications_create_listing_page();
 

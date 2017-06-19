@@ -47,7 +47,7 @@ function reps_core_enable() {
   _reps_core_create_block_share();
   // Add Block Twitter.
   _reps_core_create_block_twitter();
-  
+
   // Override default values from CCE basic conflicts.
   variable_set('node_admin_theme', '1');
   variable_set('locale_field_language_fallback', '0');
@@ -201,7 +201,6 @@ function reps_core_update_7001() {
  * - nexteuropa_webtools
  * - reps_core
  */
-
 function reps_core_update_7002() {
   // Disable unused modules.
   $modules_to_disable = array(
@@ -234,7 +233,7 @@ function reps_core_update_7002() {
     'nexteuropa_metatags',
   );
   module_enable($module_to_enable, TRUE);
-  
+
   // Alter Media browser settings (swap old tabs with MBP tabs).
   // We update from here to avoid feature conflicts with ec_embedded_video.
   $value = array(

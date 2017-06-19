@@ -123,7 +123,7 @@ function mapeditor_form_mapeditor_map_node_form_alter(&$form, &$form_state, $for
     '#type' => 'radios',
     '#title' => t('Map data'),
     '#options' => array(
-      'entities' => t('Data from website content (nodes))',
+      'entities' => t('Data from website content (nodes)'),
       'csv' => t('Data from CSV field'),
     ),
     '#default_value' => isset($map_definition['source_data']) ? $map_definition['source_data'] : 'entities',

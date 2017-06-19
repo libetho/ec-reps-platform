@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * MigrationAbstract.php
+ */
+
 namespace Drupal\nexteuropa_migrate\migrate;
 
 /**
