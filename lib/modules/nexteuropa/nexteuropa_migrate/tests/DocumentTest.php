@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Test documents Migration.
- */
-
 namespace Drupal\nexteuropa_migrate\Tests;
 
 use Drupal\nexteuropa_migrate\Document;

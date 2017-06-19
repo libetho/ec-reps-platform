@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Migration asbtract.
- */
-
 namespace Drupal\nexteuropa_migrate\migrate;
 
 /**

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Test abstract Migration.
- */
-
 namespace Drupal\nexteuropa_migrate\Tests;
 
 /**
@@ -75,7 +70,7 @@ abstract class MigrateAbstractTest extends \PHPUnit_Framework_TestCase {
   public function getDocument($type, $id) {
     $filename = $this->fixtures[$type][$id];
     $json = file_get_contents($filename);
-    return json_decode($json);
+    return drupal_json_decode($json);
   }
 
   /**
