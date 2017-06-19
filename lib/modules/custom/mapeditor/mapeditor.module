@@ -71,7 +71,7 @@ function mapeditor_menu() {
 
   $items['admin/mapeditor/default_center'] = array(
     'page callback' => '_mapeditor_default_center',
-    'access callback' => TRUE,
+    'access callback' => FALSE,
     'type' => MENU_CALLBACK,
   );
 
@@ -113,8 +113,8 @@ function mapeditor_form_mapeditor_map_node_form_alter(&$form, &$form_state, $for
     '#type' => 'radios',
     '#title' => t('Data type'),
     '#options' => array(
-      'geofield' => 'Latitude and longitude',
-      'nuts' => 'NUTS regions',
+      'geofield' => t('Latitude and longitude'),
+      'nuts' => t('NUTS regions'),
     ),
     '#default_value' => isset($map_definition['data_type']) ? $map_definition['data_type'] : 'geofield',
     '#weight' => 1,
@@ -123,8 +123,8 @@ function mapeditor_form_mapeditor_map_node_form_alter(&$form, &$form_state, $for
     '#type' => 'radios',
     '#title' => t('Map data'),
     '#options' => array(
-      'entities' => 'Data from website content (nodes)',
-      'csv' => 'Data from CSV field',
+      'entities' => t('Data from website content (nodes))',
+      'csv' => t('Data from CSV field'),
     ),
     '#default_value' => isset($map_definition['source_data']) ? $map_definition['source_data'] : 'entities',
     '#weight' => 2,
@@ -182,9 +182,9 @@ function mapeditor_form_mapeditor_map_node_form_alter(&$form, &$form_state, $for
   $url = file_create_url(drupal_get_path('module', 'mapeditor') . '/template-csv-entry-nodes.txt');
   $nuts_url = file_create_url(drupal_get_path('module', 'mapeditor') . '/template-csv-entry-nuts.txt');
   $form['mapeditor_csv_data'][LANGUAGE_NONE][0]['value']['#description'] .= ' ' . t('Download a <a href="!url">template with CSV data for nodes</a> or a <a href="!nuts_url">template with CSV data for NUTS</a>', array(
-      '!url' => $url,
-      '!nuts_url' => $nuts_url,
-    ));
+    '!url' => $url,
+    '!nuts_url' => $nuts_url,
+  ));
 
   $form['height'] = _mapeditor_form_elements('height', $map_definition);
   $form['center'] = _mapeditor_form_elements('center', $map_definition);
@@ -285,7 +285,7 @@ function _mapeditor_map_node_form_submit($form, &$form_state) {
   }
 
   // Stores form field values in the field ui map definition field.
-  $map_definition = json_encode($map_definition);
+  $map_definition = drupal_json_encode($map_definition);
   if (isset($form_state['node'])) {
     $wrnode = entity_metadata_wrapper('node', $form_state['node']);
     $wrnode->mapeditor_map_definition->set($map_definition);
@@ -338,7 +338,6 @@ function mapeditor_node_view($node, $view_mode, $langcode) {
  * @todo improve readability.
  */
 function _mapeditor_show_map($node) {
-  $build = array();
 
   // Loads map node.
   $wrnode = entity_metadata_wrapper('node', $node);
@@ -363,7 +362,7 @@ function _mapeditor_show_map($node) {
     }
 
     else {
-      drupal_set_message('Not enough information to build map.', 'error');
+      drupal_set_message(t('Not enough information to build map.'), 'error');
     }
   }
 
@@ -416,7 +415,7 @@ function _mapeditor_show_map($node) {
       return $mapeditor_map->build;
     }
     else {
-      drupal_set_message('Not enough information to build map.', 'error');
+      drupal_set_message(t('Not enough information to build map.'), 'error');
     }
   }
 
@@ -537,7 +536,7 @@ function _mapeditor_show_map($node) {
         return $mapeditor_map->build;
       }
       else {
-        drupal_set_message('Not enough information to build map.', 'error');
+        drupal_set_message(t('Not enough information to build map.'), 'error');
       }
 
     }
@@ -662,7 +661,7 @@ function _mapeditor_fetch_nodes($filters) {
     return $nodes;
   }
   else {
-    drupal_set_message('Not enough information to build map.', 'error');
+    drupal_set_message(t('Not enough information to build map.'), 'error');
   }
 }
 
@@ -687,15 +686,13 @@ function _mapeditor_zoom_options() {
  */
 function _mapeditor_validate_zoom($form, &$form_state) {
 
-  $initial_zoom = isset($form_state['values']['initial_zoom'][LANGUAGE_NONE]) ? $form_state['values']['initial_zoom'][LANGUAGE_NONE][0]['value'] : NULL;
-
   $max_zoom = isset($form_state['values']['max_zoom'][LANGUAGE_NONE]) ? $form_state['values']['max_zoom'][LANGUAGE_NONE][0]['value'] : NULL;
 
   $min_zoom = isset($form_state['values']['min_zoom'][LANGUAGE_NONE]) ? $form_state['values']['min_zoom'][LANGUAGE_NONE][0]['value'] : NULL;
 
   if (isset($max_zoom) && $max_zoom != "-1" && isset($min_zoom)) {
     if ($max_zoom > $min_zoom) {
-      form_error($element, t('The minimum zoom setting must be less than or equal to the maximum zoom setting'));
+      form_error($form, t('The minimum zoom setting must be less than or equal to the maximum zoom setting'));
     }
   }
 }
@@ -836,7 +833,7 @@ function _mapeditor_process_geofield($items = array()) {
 
   // geophp_load();
   // @todo: check what this does.
-  foreach ($items as $delta => $item) {
+  foreach ($items as $item) {
     $datum = array('type' => $item['geo_type']);
     switch ($item['geo_type']) {
       case 'point':
@@ -888,7 +885,7 @@ function _mapeditor_default_center() {
     $result = drupal_http_request($url);
     if ($result->data) {
       $data = $result->data;
-      $data = $result = substr($data, 1, -1);
+      $data = $result = drupal_substr($data, 1, -1);
       $data = drupal_json_decode($data);
       if (isset($data['features'][0]['geometry'])) {
         $coordinates = $data['features'][0]['geometry']['coordinates'];

@@ -10,7 +10,7 @@
 function mapeditor_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'mapeditor_csv_data'
+  // Exported field_base: 'mapeditor_csv_data'.
   $field_bases['mapeditor_csv_data'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -29,7 +29,7 @@ function mapeditor_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'mapeditor_map_definition'
+  // Exported field_base: 'mapeditor_map_definition'.
   $field_bases['mapeditor_map_definition'] = array(
     'active' => 1,
     'cardinality' => 1,

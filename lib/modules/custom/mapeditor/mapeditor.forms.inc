@@ -213,22 +213,18 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
         drupal_add_library('system', 'drupal.ajax');
         $localities = array();
         foreach (array(
-                   'Brussels Belgium',
-                   'Budapest Hungary',
-                   'Tallinn Estonia',
-                   'Berlin Germany',
-                   ' Slovakia',
-                   'Warsaw Poland',
-                 ) as $locality) {
+          'Brussels Belgium',
+          'Budapest Hungary',
+          'Tallinn Estonia',
+          'Berlin Germany',
+          ' Slovakia',
+          'Warsaw Poland',
+        ) as $locality) {
           $localities[] = l($locality, 'admin/mapeditor/default_center', array(
             'attributes' => array('class' => 'use-ajax'),
             'query' => array('locality' => $locality),
           ));
         }
-        // $localities = implode(', ', $localities);
-        // @todo . enable when figuring out the form element selector
-        // $form_element['lon']['#suffix'] = t('Set one of these localities as
-        // map center: ') . $localities;
       }
       break;
 

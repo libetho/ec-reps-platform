@@ -10,7 +10,7 @@
 function mapeditor_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-mapeditor_map-body'
+  // Exported field_instance: 'node-mapeditor_map-body'.
   $field_instances['node-mapeditor_map-body'] = array(
     'bundle' => 'mapeditor_map',
     'default_value' => NULL,
@@ -66,7 +66,7 @@ function mapeditor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mapeditor_map-mapeditor_csv_data'
+  // Exported field_instance: 'node-mapeditor_map-mapeditor_csv_data'.
   $field_instances['node-mapeditor_map-mapeditor_csv_data'] = array(
     'bundle' => 'mapeditor_map',
     'default_value' => NULL,
@@ -111,7 +111,7 @@ function mapeditor_field_default_field_instances() {
       'weight' => 3,
     ),
   );
-  // Exported field_instance: 'node-mapeditor_map-mapeditor_map_definition'
+  // Exported field_instance: 'node-mapeditor_map-mapeditor_map_definition'.
   $field_instances['node-mapeditor_map-mapeditor_map_definition'] = array(
     'bundle' => 'mapeditor_map',
     'default_value' => NULL,

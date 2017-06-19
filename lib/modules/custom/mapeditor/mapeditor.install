@@ -47,7 +47,6 @@ function mapeditor_uninstall() {
  * Implements hook_enable().
  */
 function mapeditor_enable() {
-  $t = get_t();
   $path = drupal_get_path('module', 'mapeditor') . '/mapeditor.info';
   $info = drupal_parse_info_file($path);
   drupal_set_message(t('Mapeditor %v is now active on your site.', array('%v' => $info['version'])));
@@ -86,10 +85,10 @@ function mapeditor_update_7100() {
 
   // Deletes obsolete variables.
   foreach (array(
-             'geofields',
-             'geobundles',
-             'taxonomy_term_fields_map',
-           ) as $delvar) {
+    'geofields',
+    'geobundles',
+    'taxonomy_term_fields_map',
+  ) as $delvar) {
     variable_del($delvar);
   }
 }
