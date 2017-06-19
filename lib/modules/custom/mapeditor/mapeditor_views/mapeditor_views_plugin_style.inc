@@ -11,6 +11,7 @@
  * Defines views style.
  */
 class MapeditorViewsPluginStyle extends views_plugin_style {
+
   /**
    * Save the entity type and info if this view is displaying an entity.
    */

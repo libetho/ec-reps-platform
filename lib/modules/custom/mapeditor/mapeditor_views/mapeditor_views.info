@@ -6,3 +6,5 @@ dependencies[] = geofield
 dependencies[] = views
 dependencies[] = entity
 files[] = mapeditor_views_plugin_style.inc
+multisite_version = 2.3
+php = 5.2.4
