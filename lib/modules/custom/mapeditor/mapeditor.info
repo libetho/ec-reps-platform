@@ -49,5 +49,5 @@ features[variable][] = node_submitted_mapeditor_map
 features_exclude[field_base][body] = body
 files[] = tests/mapeditor.test
 files[] = tests/mapeditor.common.test
-multisite_version = 1.7
+multisite_version = 2.3
 php = 5.2.4

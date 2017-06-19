@@ -13,3 +13,6 @@ dependencies[] = views
 dependencies[] = geofield
 
 files[] = mapmock.migrate.inc
+
+multisite_version = 2.3
+php = 5.2.4
