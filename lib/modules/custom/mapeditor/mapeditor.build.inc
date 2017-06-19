@@ -57,10 +57,9 @@ class MapeditorMapBuild {
     // Defines which custom JavaScript file to provide to load.js.
     $js_path = base_path() . drupal_get_path('module', 'mapeditor') . "/js/$this->customJs?v=" . rand(0, 33333);
     $options = drupal_json_encode(array(
-        'service' => 'map',
-        'custom' => $js_path,
-      )
-    );
+      'service' => 'map',
+      'custom' => $js_path,
+    ));
     $this->build['load_js_vars'] = array(
       '#type' => 'markup',
       '#markup' => "<script type='application/json'>${options}</script>",

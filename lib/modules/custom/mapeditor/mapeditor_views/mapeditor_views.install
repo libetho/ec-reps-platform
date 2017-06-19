@@ -25,7 +25,6 @@ function mapeditor_views_uninstall() {
  * Implements hook_enable().
  */
 function mapeditor_views_enable() {
-  $t = get_t();
   $path = drupal_get_path('module', 'mapeditor_views') . '/mapeditor_views.info';
   $info = drupal_parse_info_file($path);
   drupal_set_message(t('Mapeditor views %v is now active on your site.', array('%v' => $info['version'])));

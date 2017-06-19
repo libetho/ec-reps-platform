@@ -3,7 +3,6 @@ description = The news feature for the REPS websites
 core = 7.x
 package = REPS
 php = 5.2.4
-version = 7.x-2.0
 dependencies[] = reps_core
 
 features[context][] = reps-news

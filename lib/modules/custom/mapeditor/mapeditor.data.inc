@@ -36,7 +36,7 @@ class MapeditorMapData {
           }
         }
         foreach ($csv_data as $item) {
-          $nut = strtoupper($item[0]);
+          $nut = drupal_strtoupper($item[0]);
           $title = check_plain($item[1]);
           $url = $item[2];
           $this->nuts[$nut] = array(
@@ -54,7 +54,6 @@ class MapeditorMapData {
 
             // @todo . replace w nuts code when JS can handle that.
             $code = $wr_map_item->$field_name->nuts_country->value();
-            $nuts_keys[] = $code;
             if (_mapeditor_fieldcheck('name', $wr_map_item)) {
               $this->nuts[$code]['title'] = $wr_map_item->name->value();
             }

@@ -107,10 +107,9 @@ function _mapeditor_example_page_more() {
   drupal_add_html_head($element, 'async_script');
   $js_path = $base_url . '/' . drupal_get_path('module', 'mapeditor') . '/js/example.js?v=' . rand(0, 33333);
   $options = drupal_json_encode(array(
-      'service' => 'map',
-      'custom' => $js_path,
-    )
-  );
+    'service' => 'map',
+    'custom' => $js_path,
+  ));
   $build['script_init'] = array(
     '#type' => 'markup',
     '#markup' => "<script type='application/json'>${options}</script>",

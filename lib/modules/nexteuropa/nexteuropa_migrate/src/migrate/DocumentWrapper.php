@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Documents wrapper.
+ * DocumentWrapper.php
  */
 
 namespace Drupal\nexteuropa_migrate\migrate;

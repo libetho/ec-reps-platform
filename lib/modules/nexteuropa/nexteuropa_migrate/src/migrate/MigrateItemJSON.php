@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Json item Migration.
+ * MigrateItemJSON.php
  */
 
 namespace Drupal\nexteuropa_migrate\migrate;

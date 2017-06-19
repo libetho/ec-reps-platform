@@ -4,7 +4,6 @@ core = 7.x
 php = 5.2.4
 package = REPS
 dependencies[] = administration_language_negotiation
-dependencies[] = admin_theme
 dependencies[] = reps_core
 configure = admin/config/reps
 features[context][] = reps-admin

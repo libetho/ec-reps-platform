@@ -27,7 +27,6 @@ function ec_geocoder_uninstall() {
  * Implements hook_enable().
  */
 function ec_geocoder_enable() {
-  $t = get_t();
   $path = drupal_get_path('module', 'ec_geocoder') . '/ec_geocoder.info';
   $info = drupal_parse_info_file($path);
   drupal_set_message(t('ec_geocoder %v is now active on your site.', array('%v' => $info['version'])));

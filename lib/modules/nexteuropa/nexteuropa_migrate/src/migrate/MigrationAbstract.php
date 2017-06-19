@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Migration asbtract.
+ * MigrationAbstract.php
  */
 
 namespace Drupal\nexteuropa_migrate\migrate;

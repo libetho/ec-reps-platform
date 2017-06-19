@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Documents Migration.
+ * Document.php
  */
 
 namespace Drupal\nexteuropa_migrate;

@@ -8,3 +8,6 @@ dependencies[] = entity_translation
 dependencies[] = migrate
 dependencies[] = entity
 registry_autoload[] = PSR-4
+
+multisite_version = 2.3
+php = 5.2.4

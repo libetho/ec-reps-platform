@@ -91,15 +91,14 @@ class MapMockUserMigration extends MapMockBaseMigration {
     $this->addFieldMapping('roles')->defaultValue(DRUPAL_AUTHENTICATED_RID);
 
     $this->addUnmigratedSources(array(
-        'last_name',
-        'first_name',
-        'place_birth',
-        'maiden_name',
-        'punch_card_nr',
-        'date_birth',
-        'premium_member',
-      )
-    );
+      'last_name',
+      'first_name',
+      'place_birth',
+      'maiden_name',
+      'punch_card_nr',
+      'date_birth',
+      'premium_member',
+    ));
 
     // Defines unmapped destination fields.
     $this->addUnmigratedDestinations(array(
@@ -134,7 +133,7 @@ class MapMockUserMigration extends MapMockBaseMigration {
    */
   public function prepareRow($row) {
     $row->nick_name = _mapmock_slugify($row->nick_name);
-    $row->country = ucwords(strtoupper($row->country));
+    $row->country = ucwords(drupal_strtoupper($row->country));
   }
 
 }
@@ -217,7 +216,7 @@ class MapMockContentMigration extends MapMockBaseMigration {
    * Tinkers with values before migrating.
    */
   public function prepareRow($row) {
-    $row->tags = ucwords(strtolower($row->{'tag 1'}));
+    $row->tags = ucwords(drupal_strtolower($row->{'tag 1'}));
   }
 
 }

@@ -123,7 +123,7 @@ function _ec_geocoder_callback($form, $form_state) {
       $result = drupal_http_request($url);
       if ($result->data) {
         $data = $result->data;
-        $data = $result = substr($data, 1, -1);
+        $data = $result = drupal_substr($data, 1, -1);
         $data = drupal_json_decode($data);
         if (isset($data['features'][0]['geometry'])) {
           $coordinates = $data['features'][0]['geometry']['coordinates'];

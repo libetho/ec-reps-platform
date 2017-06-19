@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Test news Migration.
+ * NextEuropaMigrateTestNewsMigrationTest.php
  */
 
 namespace Drupal\nexteuropa_migrate\Tests;

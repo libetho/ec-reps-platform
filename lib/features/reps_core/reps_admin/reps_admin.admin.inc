@@ -564,7 +564,7 @@ function _reps_admin_menu_edit_validate($form, &$form_state) {
   }
   else {
     $operations = array_filter($checks);
-    foreach ($operations as $mlid => $changes) {
+    foreach ($operations as $changes) {
       if (isset($changes['link_path'])) {
         $view = drupal_valid_path($changes['link_path']);
         if (!$view) {
@@ -633,7 +633,7 @@ function _reps_admin_menu_delete_validate($form, &$form_state) {
     $deletable = array();
 
     if (!empty($allowed)) {
-      foreach ($allowed as $parent => $items) {
+      foreach ($allowed as $items) {
         if (!empty($items)) {
           foreach ($items as $del_mlid => $delete) {
             $deletable[$del_mlid] = $delete;
@@ -669,7 +669,7 @@ function _reps_admin_menu_delete_submit($form, &$form_state) {
  */
 function _reps_admin_menu_add_submit($form, &$form_state) {
   $values = $form_state['values'];
-  $item = _reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
+  _reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
   if ($item) {
     drupal_set_message(t("We've successfully created the menu item %title", array('%title' => $values['title'])));
     $form_state['redirect'] = 'admin/reps/menu';
@@ -787,7 +787,7 @@ function _reps_admin_format_values($items) {
   foreach ($items as $key => $values) {
     $old_values[$key] = array();
     if (!empty($values['children'])) {
-      foreach ($values['children'] as $mlid => $item) {
+      foreach ($values['children'] as $item) {
         $old_values[$key]['children'][$item['mlid']] = array(
           'link_title' => $item['link_title'],
           'weight' => $item['weight'],

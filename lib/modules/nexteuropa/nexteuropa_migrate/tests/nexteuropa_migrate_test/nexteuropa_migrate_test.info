@@ -75,3 +75,5 @@ files[] = includes/nexteuropa_migrate_test.articles.inc
 files[] = includes/nexteuropa_migrate_test.categories.inc
 files[] = includes/nexteuropa_migrate_test.news.inc
 hidden = 1
+multisite_version = 2.3
+php = 5.2.4

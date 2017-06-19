@@ -762,7 +762,7 @@ function mbp_sync_menu_alter(&$items) {
  */
 function mbp_sync_move_file_callback($file, $folder) {
   if (empty($file->field_folder[LANGUAGE_NONE][0]['tid']) || $file->field_folder[LANGUAGE_NONE][0]['tid'] != $folder->tid) {
-    return mbp_sync_move_file($folder->tid, $file);
+    return mbp_sync_move_file(filter_xss($folder->tid), filter_xss($file));
   }
   return TRUE;
 }

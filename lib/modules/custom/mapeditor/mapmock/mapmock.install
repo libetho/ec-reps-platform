@@ -26,7 +26,7 @@ function mapmock_install() {
     _mapmock_create_field_nuts_region();
   }
   else {
-    drupal_set_message('NUTS regions module missing.', 'error');
+    drupal_set_message($t('NUTS regions module missing.'), 'error');
     drupal_set_message($t('Nuts regions fields as not created'));
   }
 
@@ -73,7 +73,7 @@ function mapmock_uninstall() {
 /**
  * Create an editor role for testing.
  */
-function mapmock_update_7000() {
+function mapmock_update_7001() {
 
   // Create a default role for site administrators, with all available
   // permissions assigned.

@@ -11,14 +11,13 @@
  * Used among others in a URL to identify and describe a resource.
  */
 function _mapmock_slugify($string) {
-  return strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', check_plain($string)));
+  return drupal_strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', check_plain($string)));
 }
 
 /**
  * Creates the topics taxonomy term.
  */
 function _mapmock_create_taxonomy_term_topics() {
-  $t = get_t();
 
   // Creates the vocabulary if it does not exist already.
   $vocabulary = taxonomy_vocabulary_machine_name_load('topics');
@@ -81,7 +80,7 @@ function _mapmock_create_field_topics() {
   else {
     $array_fields = array(
 
-      // Defines the topics term field/
+      // Defines the topics term field.
       'topics' => array(
         'field_name' => 'topics',
         'cardinality' => -1,
@@ -192,7 +191,7 @@ function _mapmock_create_field_location() {
 
   $array_fields = array(
 
-    // Defines the location field/
+    // Defines the location field.
     'location' => array(
       'field_name' => 'location',
       'type' => 'geofield',
