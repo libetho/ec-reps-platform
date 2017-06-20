@@ -1,10 +1,4 @@
 <?php
-
-/**
- * @file
- * Contains \Drupal\mbp_sync\FileUrlTokenHandler.
- */
-
 namespace Drupal\mbp_sync;
 
 /**

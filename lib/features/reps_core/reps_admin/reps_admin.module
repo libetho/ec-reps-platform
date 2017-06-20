@@ -82,8 +82,6 @@ function reps_admin_menu() {
     'access arguments' => array('administer reps menu'),
   );
 
-  $languages = locale_language_list('name');
-
   $items['admin/reps/menu/translate'] = array(
     'page callback' => 'drupal_get_form',
     'page arguments' => array('_reps_admin_menu_translate'),
@@ -382,7 +380,7 @@ function reps_admin_views_pre_view(&$view) {
       'label' => '',
     );
     $view_overrides = array();
-    $view_overrides['fields'] = $new_view_fieds;    
+    $view_overrides['fields'] = $new_view_fieds;
     foreach ($view_overrides as $option => $definition) {
       $view->display_handler->override_option($option, $definition);
     }
@@ -413,7 +411,7 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
  * Implements hook_theme_registry_alter().
  */
 function reps_admin_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id ==  'reps_event_node_form') {
+  if ($form_id == 'reps_event_node_form') {
     if (isset($form['field_reps_event_location'])) {
       $form['field_reps_event_location']['#access'] = FALSE;
     }

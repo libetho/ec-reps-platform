@@ -27,9 +27,7 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
-
 ?>
-
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if(isset($content['field_reps_core_image'])): ?>
     <div class="content"<?php print $content_attributes; ?>>

@@ -1,12 +1,5 @@
 <?php
-
-/**
- * @file
- * NextEuropaMigrateTestNewsMigrationTest.php
- */
-
 namespace Drupal\nexteuropa_migrate\Tests;
-
 use Drupal\nexteuropa_migrate\Document;
 
 /**
