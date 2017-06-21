@@ -204,7 +204,6 @@ function reps_core_update_7001() {
 function reps_core_update_7002() {
   // Disable unused modules.
   $modules_to_disable = array(
-    'admin_language',
     'multisite_metatags',
     'multisite_twitterblock',
     'page_title',
@@ -225,7 +224,6 @@ function reps_core_update_7002() {
 
   // Enable additional modules.
   $module_to_enable = array(
-    'administration_language_negotiation',
     'extlink',
     'mbp_sync',
     'media_browser_plus',
