@@ -196,12 +196,13 @@ function reps_core_update_7001() {
  * - nexteuropa_metatags
  * - rabbit_hole
  *
- * Adding webtools blocks: Laco, Twitter
- *
  * Revert the following list of features:
  * - admin_language
  * - nexteuropa_webtools
  * - reps_core
+ *
+ * Adding webtools blocks: Laco, Twitter
+ * Overwrite some variables.
  */
 function reps_core_update_7002() {
   // Disable unused modules.
