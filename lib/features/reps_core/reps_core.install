@@ -179,13 +179,14 @@ function reps_core_update_7001() {
  *
  * Disable the following list of modules:
  * - multisite_metatags
+ * - multisite_twitterblock
  * - page_title
  * - reps_contact_form
  * - webform_features
  * - webform
- * - reps_migrate
  * - nexteuropa_migrate
- * - weight.
+ * - reps_migrate
+ * - weight
  *
  * Enable the following list of modules:
  * - extlink
@@ -193,18 +194,19 @@ function reps_core_update_7001() {
  * - media_browser_plus
  * - media_bulk_upload
  * - nexteuropa_metatags
- *
- * Adding webtools blocks: Laco, Twitter
+ * - rabbit_hole
  *
  * Revert the following list of features:
  * - admin_language
  * - nexteuropa_webtools
  * - reps_core
+ *
+ * Adding webtools blocks: Laco, Twitter
+ * Overwrite some variables.
  */
 function reps_core_update_7002() {
   // Disable unused modules.
   $modules_to_disable = array(
-    'admin_language',
     'multisite_metatags',
     'multisite_twitterblock',
     'page_title',
@@ -225,7 +227,6 @@ function reps_core_update_7002() {
 
   // Enable additional modules.
   $module_to_enable = array(
-    'administration_language_negotiation',
     'extlink',
     'mbp_sync',
     'media_browser_plus',
@@ -258,6 +259,7 @@ function reps_core_update_7002() {
 
   // Revert existing modules.
   $modules_to_revert = array(
+    'admin_language',
     'nexteuropa_webtools',
     'reps_core',
   );
