@@ -231,6 +231,7 @@ function reps_core_update_7002() {
     'media_browser_plus',
     'media_bulk_upload',
     'nexteuropa_metatags',
+    'rabbit_hole',
   );
   module_enable($module_to_enable, TRUE);
 
