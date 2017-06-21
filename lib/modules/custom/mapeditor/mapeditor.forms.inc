@@ -15,7 +15,7 @@ function mapeditor_settings() {
   $form['webtools_environment'] = array(
     '#type' => 'textfield',
     '#title' => t('Webtools environment'),
-    '#default_value' => variable_get('webtools_environment', MAPEDITOR_WEBTOOLS_ENVIRONMENT),
+    '#default_value' => variable_get('mapeditor_webtools_environment', MAPEDITOR_WEBTOOLS_ENVIRONMENT),
     '#description' => t('Webtools environment from where to use the load.js library'),
     '#size' => '60',
   );
@@ -205,27 +205,6 @@ function _mapeditor_form_elements($group, $settings, $options = NULL) {
         // @todo do
         // '#element_validate' => array('mapeditor_validate_center'),
       );
-
-      // Kickstarts finding a map center by providing the coordinates of some
-      // European towns.
-      // https://en.wikipedia.org/wiki/Geographical_midpoint_of_Europe
-      if (module_exists('ec_geocoder')) {
-        drupal_add_library('system', 'drupal.ajax');
-        $localities = array();
-        foreach (array(
-          'Brussels Belgium',
-          'Budapest Hungary',
-          'Tallinn Estonia',
-          'Berlin Germany',
-          ' Slovakia',
-          'Warsaw Poland',
-        ) as $locality) {
-          $localities[] = l($locality, 'admin/mapeditor/default_center', array(
-            'attributes' => array('class' => 'use-ajax'),
-            'query' => array('locality' => $locality),
-          ));
-        }
-      }
       break;
 
     case 'attribution':

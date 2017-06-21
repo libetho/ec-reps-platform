@@ -110,7 +110,7 @@ function reps_events_field_default_field_instances() {
     'bundle' => 'reps_event',
     'default_value' => array(
       0 => array(
-        'value' => 'Europäische Kommission - Vertretung in Deutschland',
+        'value' => 'Europåª³che Kommission - Vertretung in Deutschland',
       ),
     ),
     'deleted' => 0,
