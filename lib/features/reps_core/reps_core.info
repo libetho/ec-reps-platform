@@ -27,6 +27,7 @@ dependencies[] = nexteuropa_metatags
 dependencies[] = nexteuropa_multilingual
 dependencies[] = nexteuropa_webtools
 dependencies[] = nodequeue
+dependencies[] = rabbit_hole
 dependencies[] = redirect
 dependencies[] = reps_admin
 dependencies[] = scheduler

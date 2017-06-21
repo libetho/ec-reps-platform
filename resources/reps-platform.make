@@ -36,6 +36,9 @@ projects[nodequeue][version] = 2.1
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
 
+projects[rabbit_hole][subdir] = "contrib"
+projects[rabbit_hole][version] = 2.23
+
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = 1.0-rc3
 
