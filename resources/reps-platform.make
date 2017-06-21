@@ -8,9 +8,6 @@ core = 7.x
 projects[admin_language][subdir] = "contrib"
 projects[admin_language][version] = 1.0-beta1
 
-projects[administration_language_negotiation][subdir] = "contrib"
-projects[administration_language_negotiation][version] = 1.1
-
 projects[ckeditor_tabber][subdir] = "contrib"
 projects[ckeditor_tabber][version] = 1.3
 
