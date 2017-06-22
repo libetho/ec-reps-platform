@@ -116,7 +116,14 @@ function reps_core_field_default_field_instances() {
         'allowed_types' => array(
           'image' => 'image',
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -960,76 +967,6 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_json_object'.
-  $field_instances['node-page-field_json_object'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'nexteuropa_json_field',
-        'settings' => array(),
-        'type' => 'json_settings_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_json_object',
-    'label' => 'JSON Object',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'basic_html' => 'basic_html',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'basic_html' => array(
-              'weight' => 5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'js_to_load' => array(
-        'nexteuropa_webtools_smartloader_prurl' => 0,
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => -1,
-    ),
-  );
-
   // Exported field_instance: 'node-page-field_meta_classification'.
   $field_instances['node-page-field_meta_classification'] = array(
     'bundle' => 'page',
@@ -1038,14 +975,14 @@ function reps_core_field_default_field_instances() {
         'tid' => 16,
       ),
     ),
-    'deleted' => 0,
+    'deleted' => 1,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1075,26 +1012,22 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
   // Exported field_instance: 'node-page-field_meta_description'.
   $field_instances['node-page-field_meta_description'] = array(
     'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => NULL,
-      ),
-    ),
-    'deleted' => 0,
+    'default_value' => NULL,
+    'deleted' => 1,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1155,6 +1088,76 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_json_object'.
+  $field_instances['node-page-field_json_object'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 1,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'nexteuropa_json_field',
+        'settings' => array(),
+        'type' => 'json_settings_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_json_object',
+    'label' => 'JSON Object',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'js_to_load' => array(
+        'nexteuropa_webtools_smartloader_prurl' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => -3,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_reps_core_abstract'.
   $field_instances['node-page-field_reps_core_abstract'] = array(
     'bundle' => 'page',
@@ -1167,7 +1170,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => -9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1230,13 +1233,12 @@ function reps_core_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'file_entity',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'file_view_mode' => 'default',
         ),
-        'type' => 'image',
-        'weight' => 0,
+        'type' => 'file_rendered',
+        'weight' => -10,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1283,9 +1285,12 @@ function reps_core_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'upload' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
         'progress_indicator' => 'throbber',
       ),
@@ -1306,7 +1311,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => -6,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1379,7 +1384,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => -5,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1446,7 +1451,7 @@ function reps_core_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 2,
+        'weight' => -7,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1520,7 +1525,7 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 8,
+        'weight' => -4,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1563,11 +1568,12 @@ function reps_core_field_default_field_instances() {
           'video' => 'video',
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 'media_internet',
-          'upload' => 0,
-          'youtube' => 0,
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',
@@ -1820,7 +1826,7 @@ function reps_core_field_default_field_instances() {
   $field_instances['node-reps_homepage-field_meta_classification'] = array(
     'bundle' => 'reps_homepage',
     'default_value' => NULL,
-    'deleted' => 0,
+    'deleted' => 1,
     'description' => '',
     'display' => array(
       'default' => array(
@@ -1863,7 +1869,7 @@ function reps_core_field_default_field_instances() {
         'value' => NULL,
       ),
     ),
-    'deleted' => 0,
+    'deleted' => 1,
     'description' => '',
     'display' => array(
       'default' => array(
@@ -1935,13 +1941,8 @@ function reps_core_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1969,46 +1970,6 @@ function reps_core_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-reps_homepage-field_tags'.
-  $field_instances['node-reps_homepage-field_tags'] = array(
-    'bundle' => 'reps_homepage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
     ),
   );
 
@@ -2231,7 +2192,14 @@ function reps_core_field_default_field_instances() {
         'allowed_types' => array(
           'image' => 'image',
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -2487,9 +2455,12 @@ function reps_core_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'upload' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
         'progress_indicator' => 'throbber',
       ),
@@ -2647,6 +2618,7 @@ function reps_core_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
@@ -2697,7 +2669,7 @@ function reps_core_field_default_field_instances() {
         'class' => '',
         'configurable_title' => 0,
         'rel' => '',
-        'target' => 'default',
+        'target' => 'user',
         'title' => '',
       ),
       'display' => array(
@@ -2784,9 +2756,12 @@ function reps_core_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'upload' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
         ),
         'progress_indicator' => 'throbber',
       ),
@@ -2862,7 +2837,6 @@ function reps_core_field_default_field_instances() {
   t('Page(s)');
   t('Position');
   t('Related video');
-  t('Tags');
   t('The Title of the block.');
   t('Title');
   t('Weight');

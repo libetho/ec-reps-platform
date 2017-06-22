@@ -1,0 +1,17 @@
+name = REPS contact form
+description = The contact form for the reps application
+core = 7.x
+package = REPS
+php = 5.2.4
+dependencies[] = webform
+dependencies[] = webform_features
+features[features_api][] = api:2
+__drupal_alter_by_ref[][node][webform] = webform
+features[ctools][] = strongarm:strongarm:1
+features[field_instance][] = node-webform-title_field
+features[webform][] = reps_contact_form
+features_exclude[dependencies][cce_basic_config] = cce_basic_config
+features_exclude[dependencies][features] = features
+features_exclude[dependencies][nexteuropa_multilingual] = nexteuropa_multilingual
+features_exclude[field_instance][node-webform-body] = node-webform-body
+multisite_version = 2.1

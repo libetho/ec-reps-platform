@@ -9,6 +9,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function reps_events_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -78,25 +81,9 @@ function reps_events_default_registration_type() {
     "locked" : "0",
     "default_state" : null,
     "weight" : "0",
+    "entity_type" : "registration_type",
     "rdf_mapping" : [],
     "data" : { "held_expire" : "1", "held_expire_state" : "canceled" }
   }');
   return $items;
-}
-
-/**
- * Implements hook_weight_features_default_settings().
- */
-function reps_events_weight_features_default_settings() {
-  $settings = array();
-
-  $settings['reps_event'] = array(
-    'enabled' => 1,
-    'range' => 20,
-    'menu_weight' => 0,
-    'default' => 0,
-    'sync_translations' => 1,
-  );
-
-  return $settings;
 }

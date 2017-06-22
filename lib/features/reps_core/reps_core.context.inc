@@ -65,15 +65,15 @@ function reps_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'reps_core-reps_core_twitter_webtools' => array(
-          'module' => 'reps_core',
-          'delta' => 'reps_core_twitter_webtools',
+        'bean-bean-twitter' => array(
+          'module' => 'bean',
+          'delta' => 'bean-twitter',
           'region' => 'sidebar_right',
           'weight' => '1',
         ),
-        'views-reps_sliders-block' => array(
+        'views-reps_sliders-slider_homepage' => array(
           'module' => 'views',
-          'delta' => 'reps_sliders-block',
+          'delta' => 'reps_sliders-slider_homepage',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -92,6 +92,12 @@ function reps_core_context_default_contexts() {
         'views-reps_bean_blocks-block_1' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_1',
+          'region' => 'content',
+          'weight' => '-6',
+        ),
+        'views-12da212b2f93e289c2bd907729707482' => array(
+          'module' => 'views',
+          'delta' => '12da212b2f93e289c2bd907729707482',
           'region' => 'content',
           'weight' => '-6',
         ),
@@ -169,47 +175,59 @@ function reps_core_context_default_contexts() {
           'region' => 'sidebar_right',
           'weight' => '-10',
         ),
+        'bean-bean-share' => array(
+          'module' => 'bean',
+          'delta' => 'bean-share',
+          'region' => 'sidebar_right',
+          'weight' => '-9',
+        ),
         'social_media_links-social-media-links' => array(
           'module' => 'social_media_links',
           'delta' => 'social-media-links',
           'region' => 'sidebar_right',
-          'weight' => '-7',
+          'weight' => '-8',
         ),
         'views-reps_bean_blocks-block_3' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_3',
           'region' => 'sidebar_right',
-          'weight' => '-6',
+          'weight' => '-7',
         ),
         'views-reps_bean_blocks-block' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block',
           'region' => 'sidebar_right',
-          'weight' => '-5',
+          'weight' => '-6',
         ),
         'views-reps_bean_blocks-block_2' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_2',
           'region' => 'sidebar_right',
-          'weight' => '-4',
+          'weight' => '6',
         ),
         'views-reps_bean_blocks-block_4' => array(
           'module' => 'views',
           'delta' => 'reps_bean_blocks-block_4',
           'region' => 'sidebar_right',
-          'weight' => '-3',
+          'weight' => '7',
         ),
         'reps_core-reps_core_feedback_form' => array(
           'module' => 'reps_core',
           'delta' => 'reps_core_feedback_form',
           'region' => 'sidebar_right',
-          'weight' => '-2',
+          'weight' => '8',
         ),
         'cce_basic_config-footer_ipg' => array(
           'module' => 'cce_basic_config',
           'delta' => 'footer_ipg',
           'region' => 'footer',
           'weight' => '-9',
+        ),
+        'bean-bean-laco' => array(
+          'module' => 'bean',
+          'delta' => 'bean-laco',
+          'region' => 'footer',
+          'weight' => '-8',
         ),
       ),
     ),

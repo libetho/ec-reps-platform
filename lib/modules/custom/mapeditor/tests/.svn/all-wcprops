@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/tests
+END
+mapeditor.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/tests/mapeditor.test
+END
+mapeditor.common.test
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/tests/mapeditor.common.test
+END

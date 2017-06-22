@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/mapmock
+END
+mapmock.info
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/mapmock/mapmock.info
+END
+mapmock.migrate.inc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/mapmock/mapmock.migrate.inc
+END
+mapmock.module
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/mapmock/mapmock.module
+END
+mapmock.install
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/CITnet/svn/MULTISITE/!svn/ver/8186/trunk/custom_subsites/malta/modules/custom/mapeditor/mapmock/mapmock.install
+END

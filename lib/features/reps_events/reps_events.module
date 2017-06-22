@@ -15,3 +15,39 @@ function reps_events_form_alter(&$vars) {
     unset($vars['field_reps_event_location']);
   }
 }
+
+/**
+ * Helpers to generate a default event listing page.
+ */
+function _reps_events_create_listing_page() {
+  $parent = '0';
+  $pages[] = array(
+    'title' => t('Events'),
+    'path' => 'events',
+    'type' => 'page',
+    'parent' => $parent,
+    'weight' => 4,
+  );
+  $pages[] = array(
+    'title' => t('Past events'),
+    'path' => 'events/past-events',
+    'type' => 'page',
+    'parent' => 'events',
+    'weight' => 0,
+  );
+  foreach ($pages as $page) {
+    $menu_item = menu_get_item(drupal_lookup_path('source', $page['path']));
+    if ($menu_item) {
+      if ($page['parent'] !== '0') {
+        $tree = menu_tree_all_data('main-menu');
+        foreach ($tree as $item) {
+          if ($item['link']['link_path'] == drupal_lookup_path('source', $page['parent'])) {
+            $page['parent'] = $item['link']['mlid'];
+            break;
+          }
+        }
+      }
+      _reps_core_menu_item('main-menu', $menu_item['href'], $page['parent'], $menu_item['title'], 'menu', $page['weight'], 'en', $menu_item['title']);
+    }
+  }
+}

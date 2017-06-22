@@ -15,7 +15,6 @@
  *   The link, revisited.
  */
 function _reps_core_menu_link($link, $lang = FALSE) {
-  global $base_url;
   $lang = $lang ? $lang : LANGUAGE_NONE;
   if ($link != '<front>' &&  $link != '<nolink>') {
     $source = drupal_lookup_path('source', $link, $lang);
@@ -34,24 +33,6 @@ function _reps_core_menu_link($link, $lang = FALSE) {
   }
 
   return $link;
-}
-
-/**
- * Add system languages.
- *
- * @param array $languages
- *   Array of languages codes.
- */
-function _reps_core_add_languages($languages = array()) {
-  // Enabling languages. TO BE MOVED!
-  if (module_exists('locale')) {
-    include_once DRUPAL_ROOT . '/includes/locale.inc';
-    if (!empty($languages)) {
-      foreach ($languages as $lang) {
-        locale_add_language($lang);
-      }
-    }
-  }
 }
 
 /**
@@ -110,7 +91,7 @@ function _reps_core_menu_item($menu, $link, $plid, $title, $module, $weight, $la
     'language' => $lang,
     'plid' => $plid,
     'enabled' => 1,
-    'expanded' => 1,
+    'expanded' => 0,
     'link_path' => $link,
     'locked' => TRUE,
     'link_title' => $title,
@@ -146,6 +127,7 @@ function _reps_core_create_node($type, $title, $path = 'node', $lang = LANGUAGE_
   $node->type = $type;
   node_object_prepare($node);
   $node->uid = 1;
+  $node->status = 1;
   $node->title = $title;
   $node->language = $lang;
   $node->path['alias'] = $path;

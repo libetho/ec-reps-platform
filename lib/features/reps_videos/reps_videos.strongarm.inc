@@ -103,9 +103,15 @@ function reps_videos_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '30',
         ),
         'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
           'weight' => '30',
         ),
       ),
@@ -176,6 +182,13 @@ function reps_videos_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_reps_video';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_enable_reps_video';
   $strongarm->value = 1;
   $export['scheduler_publish_enable_reps_video'] = $strongarm;
@@ -190,9 +203,23 @@ function reps_videos_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_reps_video';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_revision_reps_video';
   $strongarm->value = 1;
   $export['scheduler_publish_revision_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_reps_video';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_reps_video'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -211,9 +238,23 @@ function reps_videos_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_reps_video';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_revision_reps_video';
   $strongarm->value = 1;
   $export['scheduler_unpublish_revision_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_reps_video';
+  $strongarm->value = '1';
+  $export['scheduler_use_vertical_tabs_reps_video'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

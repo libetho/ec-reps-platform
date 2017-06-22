@@ -266,7 +266,14 @@ function reps_publications_field_default_field_instances() {
         'allowed_types' => array(
           'image' => 'image',
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -337,7 +344,7 @@ function reps_publications_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_extensions' => 'txt pdf doc docx ppt odt pps pptx xls xlsx',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -435,6 +442,7 @@ function reps_publications_field_default_field_instances() {
   t('External Url');
   t('File');
   t('Image');
+  t('Tags');
   t('Title');
 
   return $field_instances;

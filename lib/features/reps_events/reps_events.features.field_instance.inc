@@ -23,7 +23,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -64,7 +64,7 @@ function reps_events_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -1,
+      'weight' => -2,
     ),
   );
 
@@ -83,7 +83,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -108,7 +108,11 @@ function reps_events_field_default_field_instances() {
   // Exported field_instance: 'node-reps_event-field_meta_description'.
   $field_instances['node-reps_event-field_meta_description'] = array(
     'bundle' => 'reps_event',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'Europ媳che Kommission - Vertretung in Deutschland',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -116,7 +120,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -240,7 +244,7 @@ function reps_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -2,
+      'weight' => -3,
     ),
   );
 
@@ -255,7 +259,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -308,7 +312,7 @@ function reps_events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -323,7 +327,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -376,11 +380,12 @@ function reps_events_field_default_field_instances() {
           'video' => 'video',
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
+          'media_internet' => 'media_internet',
           'upload' => 'upload',
-          'youtube' => 0,
         ),
         'progress_indicator' => 'throbber',
       ),
@@ -397,12 +402,11 @@ function reps_events_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'file_entity',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'homepage_thumbs',
+          'file_view_mode' => 'default',
         ),
-        'type' => 'image',
+        'type' => 'file_rendered',
         'weight' => 0,
       ),
       'full' => array(
@@ -436,7 +440,7 @@ function reps_events_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '250x0',
+      'min_resolution' => '150x0',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -450,7 +454,14 @@ function reps_events_field_default_field_instances() {
         'allowed_types' => array(
           'image' => 'image',
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -492,7 +503,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -562,7 +573,7 @@ function reps_events_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -605,11 +616,12 @@ function reps_events_field_default_field_instances() {
           'video' => 'video',
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 'media_internet',
-          'upload' => 0,
-          'youtube' => 0,
+          'upload' => 'upload',
         ),
       ),
       'type' => 'media_generic',
@@ -672,15 +684,17 @@ function reps_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 1,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 0,
+      'weight' => -1,
     ),
   );
 
@@ -693,10 +707,9 @@ function reps_events_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -759,7 +772,7 @@ function reps_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -775,7 +788,7 @@ function reps_events_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -811,7 +824,7 @@ function reps_events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 2,
+      'weight' => 0,
     ),
   );
 
@@ -830,7 +843,7 @@ function reps_events_field_default_field_instances() {
           'label' => NULL,
         ),
         'type' => 'registration_link',
-        'weight' => 9,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -865,59 +878,7 @@ function reps_events_field_default_field_instances() {
       'module' => 'registration',
       'settings' => array(),
       'type' => 'registration_select',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-reps_event-field_tags'.
-  $field_instances['node-reps_event-field_tags'] = array(
-    'bundle' => 'reps_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'popup' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags',
-    'label' => 'Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -932,7 +893,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
@@ -1043,9 +1004,7 @@ function reps_events_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Date');
-  t('Description metatag');
   t('External Link');
-  t('IPG Classification');
   t('Image');
   t('Location');
   t('Name');
@@ -1053,7 +1012,6 @@ function reps_events_field_default_field_instances() {
   t('Related Document(s)');
   t('Related Link(s)');
   t('Related video');
-  t('Tags');
   t('Title');
   t('Venue');
 

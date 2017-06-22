@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * reps_admin.strongarm.inc
@@ -15,22 +14,17 @@ function reps_admin_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_language_pages';
-  $strongarm->value = 'admin/*';
+  $strongarm->value = 'admin/*
+node/*/edit
+admin_menu/*';
   $export['admin_language_pages'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'admin_language_translate_admin_menu';
-  $strongarm->value = '1';
-  $export['admin_language_translate_admin_menu'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'admin_language_visibility';
-  $strongarm->value = '1';
-  $export['admin_language_visibility'] = $strongarm;
+  $strongarm->name = 'admin_theme';
+  $strongarm->value = 'seven';
+  $export['admin_theme'] = $strongarm;
 
   return $export;
 }

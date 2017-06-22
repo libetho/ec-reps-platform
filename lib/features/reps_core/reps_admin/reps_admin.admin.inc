@@ -24,27 +24,6 @@ function _reps_admin_feedback($form, &$form_state) {
 }
 
 /**
- * Reps core admin form.
- */
-function _reps_admin_settings_twitter_webtools($form, &$form_state) {
-  $form['reps_core_twitter_webtools_config_screen'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Screen name'),
-    '#default_value' => variable_get('reps_core_twitter_webtools_config_screen', NULL),
-  );
-
-  $form['reps_core_twitter_webtools_config_nbr'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Number of tweets'),
-    '#default_value' => variable_get('reps_core_twitter_webtools_config_nbr', NULL),
-    '#element_validate' => array('element_validate_number'),
-  );
-  $form['#validate'][] = '_reps_admin_feedback_validate';
-
-  return system_settings_form($form);
-}
-
-/**
  * Reps core menu admin form.
  */
 function _reps_admin_menu_add($form, &$form_state, $mlid = NULL) {
@@ -521,12 +500,6 @@ function _reps_admin_feedback_validate($form, &$form_state) {
       form_error($form['reps_core_feedback_form_id'], t('%name must be a number.', array('%name' => $form['reps_core_feedback_form_id']['#title'])));
     }
   }
-  elseif (isset($form_state['values']) && isset($form_state['values']['reps_core_twitter_webtools_config_nbr'])) {
-    $value = $form_state['values']['reps_core_twitter_webtools_config_nbr'];
-    if (in_array($value, array('', 'NULL')) || !is_numeric($value)) {
-      form_error($form['reps_core_twitter_webtools_config_nbr'], t('%name must be a number.', array('%name' => $form['reps_core_twitter_webtools_config_nbr']['#title'])));
-    }
-  }
 }
 
 /**
@@ -591,7 +564,7 @@ function _reps_admin_menu_edit_validate($form, &$form_state) {
   }
   else {
     $operations = array_filter($checks);
-    foreach ($operations as $mlid => $changes) {
+    foreach ($operations as $changes) {
       if (isset($changes['link_path'])) {
         $view = drupal_valid_path($changes['link_path']);
         if (!$view) {
@@ -660,7 +633,7 @@ function _reps_admin_menu_delete_validate($form, &$form_state) {
     $deletable = array();
 
     if (!empty($allowed)) {
-      foreach ($allowed as $parent => $items) {
+      foreach ($allowed as $items) {
         if (!empty($items)) {
           foreach ($items as $del_mlid => $delete) {
             $deletable[$del_mlid] = $delete;
@@ -696,8 +669,7 @@ function _reps_admin_menu_delete_submit($form, &$form_state) {
  */
 function _reps_admin_menu_add_submit($form, &$form_state) {
   $values = $form_state['values'];
-  $item = _reps_core_menu_item('main-menu', $values['path'], $values['parent'], $values['title'], 'menu', $values['weight'], $values['lang'], $values['title'], $tsid = NULL, FALSE);
-  if ($item) {
+  if ($form) {
     drupal_set_message(t("We've successfully created the menu item %title", array('%title' => $values['title'])));
     $form_state['redirect'] = 'admin/reps/menu';
   }
@@ -814,7 +786,7 @@ function _reps_admin_format_values($items) {
   foreach ($items as $key => $values) {
     $old_values[$key] = array();
     if (!empty($values['children'])) {
-      foreach ($values['children'] as $mlid => $item) {
+      foreach ($values['children'] as $item) {
         $old_values[$key]['children'][$item['mlid']] = array(
           'link_title' => $item['link_title'],
           'weight' => $item['weight'],

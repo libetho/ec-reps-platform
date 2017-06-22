@@ -32,11 +32,6 @@ function reps_core_enable() {
     'reps_news',
   ));
 
-  // Enable title_field.
-  if (!module_exists('title')) {
-    module_enable(array('title'));
-  }
-
   multisite_config_service('title')->replaceTitleField('node', 'reps_slide_footer', 'title');
   multisite_config_service('title')->replaceTitleField('node', 'reps_slide_homepage', 'title');
   multisite_config_service('title')->replaceTitleField('node', 'reps_contact_point', 'title');
@@ -45,6 +40,17 @@ function reps_core_enable() {
 
   // Override some of the options exported in multisite core features.
   _reps_core_overrides();
+
+  // Add Block Laco.
+  _reps_core_create_block_laco();
+  // Add Block Share.
+  _reps_core_create_block_share();
+  // Add Block Twitter.
+  _reps_core_create_block_twitter();
+
+  // Override default values from CCE basic conflicts.
+  variable_set('node_admin_theme', '1');
+  variable_set('locale_field_language_fallback', '0');
 
   // Drupal set message.
   drupal_set_message(t("The REPS core feature is now active on your site"));
@@ -63,17 +69,11 @@ function reps_core_disable() {
  * Implements hook_install().
  */
 function reps_core_install() {
-  // Enable title_field.
-  if (!module_exists('multisite_metatags')) {
-    module_enable(array('multisite_metatags'));
-  }
   // Set site name.
   variable_set('site_name', 'Reps');
   // Enable the reps subtheme.
   theme_enable(array('reps'));
   variable_set('theme_default', 'reps');
-  variable_set('classification', '16000');
-  variable_set('meta_configuration', '16000');
   variable_set('file_private_path', '');
   // Activate drupal search.
   $active_search = variable_get('search_active_modules');
@@ -86,7 +86,6 @@ function reps_core_install() {
   // Create default blank pages.
   _reps_core_create_default_pages();
 
-  variable_set('pathauto_node_pattern', '');
   $entity_translation_entity_types = array(
     'node' => 'node',
     'taxonomy_term' => 'taxonomy_term',
@@ -161,8 +160,6 @@ function reps_core_install() {
 function reps_core_uninstall() {
   variable_set('site_name', '');
   variable_set('theme_default', 'ec_resp');
-  variable_set('classification', '');
-  variable_set('meta_configuration', '');
   variable_set('site_frontpage', 'node');
   theme_disable(array('reps'));
 }
@@ -175,4 +172,101 @@ function reps_core_update_7001() {
   $active_search = variable_get('search_active_modules');
   $active_search['node'] = 'node';
   variable_set('search_active_modules', $active_search);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Disable the following list of modules:
+ * - multisite_metatags
+ * - multisite_twitterblock
+ * - page_title
+ * - reps_contact_form
+ * - webform_features
+ * - webform
+ * - nexteuropa_migrate
+ * - reps_migrate
+ * - weight.
+ *
+ * Enable the following list of modules:
+ * - extlink
+ * - mbp_sync
+ * - media_browser_plus
+ * - media_bulk_upload
+ * - nexteuropa_metatags
+ * - rabbit_hole.
+ *
+ * Revert the following list of features:
+ * - admin_language
+ * - nexteuropa_webtools
+ * - reps_core.
+ *
+ * Adding webtools blocks: Laco, Twitter.
+ * Overwrite some variables.
+ */
+function reps_core_update_7002() {
+  // Disable unused modules.
+  $modules_to_disable = array(
+    'multisite_metatags',
+    'multisite_twitterblock',
+    'page_title',
+    'reps_contact_form',
+    'webform_features',
+    'webform',
+    'reps_migrate',
+    'nexteuropa_migrate',
+    'weight',
+  );
+  foreach ($modules_to_disable as $key => $module) {
+    if (!module_exists($module)) {
+      unset($modules_to_disable[$key]);
+    }
+  }
+  module_disable($modules_to_disable, TRUE);
+  drupal_uninstall_modules($modules_to_disable, TRUE);
+
+  // Enable additional modules.
+  $module_to_enable = array(
+    'extlink',
+    'mbp_sync',
+    'media_browser_plus',
+    'media_bulk_upload',
+    'nexteuropa_metatags',
+    'rabbit_hole',
+  );
+  module_enable($module_to_enable, TRUE);
+
+  // Alter Media browser settings (swap old tabs with MBP tabs).
+  // We update from here to avoid feature conflicts with ec_embedded_video.
+  $value = array(
+    0 => 'upload',
+    1 => 'media_browser_plus--media_browser_thumbnails',
+    2 => 'media_browser_plus--media_browser_my_files',
+    3 => 'media_internet',
+  );
+  variable_set('media_wysiwyg_wysiwyg_browser_plugins', $value);
+
+  // Add Block Laco.
+  _reps_core_create_block_laco();
+  // Add Block Share.
+  _reps_core_create_block_share();
+  // Add Block Twitter.
+  _reps_core_create_block_twitter();
+
+  // Override default values from CCE basic conflicts.
+  variable_set('node_admin_theme', '1');
+  variable_set('locale_field_language_fallback', '0');
+
+  // Revert existing modules.
+  $modules_to_revert = array(
+    'admin_language',
+    'nexteuropa_webtools',
+    'reps_core',
+  );
+  foreach ($modules_to_revert as $key => $module) {
+    if (!module_exists($module)) {
+      unset($modules_to_revert[$key]);
+    }
+  }
+  features_revert_module($modules_to_revert);
 }
