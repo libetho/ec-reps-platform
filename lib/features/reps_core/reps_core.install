@@ -186,7 +186,7 @@ function reps_core_update_7001() {
  * - webform
  * - nexteuropa_migrate
  * - reps_migrate
- * - weight
+ * - weight.
  *
  * Enable the following list of modules:
  * - extlink
@@ -194,14 +194,14 @@ function reps_core_update_7001() {
  * - media_browser_plus
  * - media_bulk_upload
  * - nexteuropa_metatags
- * - rabbit_hole
+ * - rabbit_hole.
  *
  * Revert the following list of features:
  * - admin_language
  * - nexteuropa_webtools
- * - reps_core
+ * - reps_core.
  *
- * Adding webtools blocks: Laco, Twitter
+ * Adding webtools blocks: Laco, Twitter.
  * Overwrite some variables.
  */
 function reps_core_update_7002() {
