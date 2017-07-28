@@ -1298,6 +1298,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 .field-name-field-reps-core-image img {
   height: auto;
   margin: 0 !important;
+  max-width: 300px;
   width: 100%;
 }
 form .field-name-field-reps-core-image {
