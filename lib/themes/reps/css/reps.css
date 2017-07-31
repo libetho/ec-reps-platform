@@ -700,6 +700,10 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   color: #666666;
   clear: both;
 }
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary a[href$=pdf] {
+  background: url(../images/icon_pdf.gif) no-repeat right;
+  padding-right: 20px;
+}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary .inside_table {
   border: 2px solid #b60522;
 }
