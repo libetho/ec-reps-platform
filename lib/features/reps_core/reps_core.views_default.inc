@@ -543,7 +543,6 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_external_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_core_external_url']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_reps_core_external_url']['type'] = 'link_plain';
   /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -602,7 +601,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['text'] = '<div class="sliderImgSmall">[field_reps_core_image]
 <div class="sliderContent">
-<p class="sliderTitle">[field_reps_core_external_url]</p>
+<p class="sliderTitle">[title_field]</p>
 [body]
 </div>
 </div>';
