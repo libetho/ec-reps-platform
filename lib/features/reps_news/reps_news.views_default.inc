@@ -380,27 +380,22 @@ function reps_news_views_default_views() {
     'image_style' => 'homepage_thumbs',
     'image_link' => '',
   );
-  /* Field: Plain text title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['ui_name'] = 'Plain text title';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Linked Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['ui_name'] = 'Linked Title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Field: Link */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
@@ -409,7 +404,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_external_url']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_external_url']['alter']['text'] = '<h3><a href="[field_reps_core_external_url-url]" target="_blank">[title_field]</a></h3>';
   $handler->display->display_options['fields']['field_reps_core_external_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reps_core_external_url']['empty'] = '[title]';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['empty'] = '<h3><a href="[path]" target="_blank">[title_field]</a></h3>';
   $handler->display->display_options['fields']['field_reps_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['type'] = 'link_plain';
   /* Field: Content: Date */
@@ -437,6 +432,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_news_category']['id'] = 'field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category']['table'] = 'field_data_field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category']['field'] = 'field_reps_news_category';
+  $handler->display->display_options['fields']['field_reps_news_category']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_news_category']['settings'] = array(
     'link' => 0,
   );
@@ -465,10 +461,12 @@ function reps_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Content: Category (field_reps_news_category) */
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['id'] = 'field_reps_news_category_target_id';
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['table'] = 'field_data_field_reps_news_category';
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['field'] = 'field_reps_news_category_target_id';
+  $handler->display->display_options['filters']['field_reps_news_category_target_id']['group'] = 1;
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['operator_id'] = 'field_reps_news_category_target_id_op';
   $handler->display->display_options['filters']['field_reps_news_category_target_id']['expose']['operator'] = 'field_reps_news_category_target_id_op';
@@ -477,6 +475,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
   $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
   $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';

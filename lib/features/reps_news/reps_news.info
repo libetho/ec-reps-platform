@@ -57,4 +57,6 @@ features[variable][] = scheduler_unpublish_revision_reps_news
 features[variable][] = scheduler_use_vertical_tabs_reps_news
 features[views_view][] = reps_categories
 features[views_view][] = reps_news
+features_exclude[field_base][field_meta_classification] = field_meta_classification
+features_exclude[field_base][field_meta_description] = field_meta_description
 multisite_version = 2.2
