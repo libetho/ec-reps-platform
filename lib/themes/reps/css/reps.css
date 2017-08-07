@@ -680,7 +680,6 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   padding: 5px;
 }
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary h2 {
-  clear: both;
   color: #b60522;
   font-size: 150%;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
