@@ -488,7 +488,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['display_description'] = 'RSS including news listing for Follow us block';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
