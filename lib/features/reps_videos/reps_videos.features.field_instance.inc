@@ -291,7 +291,6 @@ function reps_videos_field_default_field_instances() {
   t('Body');
   t('External Link');
   t('Image');
-  t('Tags');
   t('Title');
 
   return $field_instances;
