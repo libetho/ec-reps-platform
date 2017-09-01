@@ -238,6 +238,7 @@ function reps_videos_views_default_views() {
 
   /* Display: Block Full listing */
   $handler = $view->new_display('block', 'Block Full listing', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
