@@ -14,6 +14,7 @@ dependencies[] = entity
 configure = admin/config/system/mapeditor/settings
 feature_sets[mapeditor][title] = Mapeditor
 feature_sets[mapeditor][description] = Content type (Mapeditor Map), a Views style plugin and a field formatter for creating maps with the corporate Map JavaScript library.
+feature_sets[mapeditor][documentation] = ''
 feature_sets[mapeditor][icon] = mapeditor_icon.png
 feature_sets[mapeditor][enable][] = mapeditor
 feature_sets[mapeditor][disable][] = mapeditor

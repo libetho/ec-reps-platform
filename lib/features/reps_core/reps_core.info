@@ -37,6 +37,7 @@ dependencies[] = taxonomy_access_fix
 dependencies[] = views_tree
 feature_sets[reps_core][title] = REPS core
 feature_sets[reps_core][description] = description
+feature_sets[reps_core][documentation] = ''
 feature_sets[reps_core][icon] = reps_core.png
 feature_sets[reps_core][enable][] = reps_core
 feature_sets[reps_core][disable][] = reps_core
