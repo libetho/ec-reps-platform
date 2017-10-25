@@ -1,5 +1,7 @@
 #!/bin/bash
 
+MAKE=../../../resources/site.make
+
 # If the package is present update the lib source code.
 if [ -d "vendor/ec-europa/ec-reps-platform" ] ; then
 
@@ -20,17 +22,17 @@ if [ -d "vendor/ec-europa/ec-reps-platform" ] ; then
   cp -f vendor/ec-europa/ec-reps-platform/resources/reps-platform.make reps-platform.make
 
   # Include the reps-platform.make file.
-  if ! [ -e site.make ] 2> /dev/null && [ -e site.make".example" ] ; then
-    mv site.make".example" site.make;
+  if ! [ -e $MAKE ] 2> /dev/null && [ -e $MAKE".example" ] ; then
+    mv $MAKE".example" $MAKE;
   fi
-  if [ -e site.make ] ; then
+  if [ -e $MAKE ] ; then
     COMMENT="\n\n; ================="
     COMMENT="$COMMENT\n; Platform for reps"
     COMMENT="$COMMENT\n; =================\n"
     INCLUDE='includes[] = "'reps'-platform.make"'
     grep -qF "$INCLUDE" "site.make" || echo -e "$COMMENT$INCLUDE" >> "site.make"
   else
-    echo "No site.make file found, reps-platform.make not included!"
+    echo "No $MAKE file found, reps-platform.make not included!"
   fi
 fi
 
