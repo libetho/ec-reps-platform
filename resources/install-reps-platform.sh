@@ -30,7 +30,7 @@ if [ -d "vendor/ec-europa/ec-reps-platform" ] ; then
     COMMENT="$COMMENT\n; Platform for reps"
     COMMENT="$COMMENT\n; =================\n"
     INCLUDE='includes[] = "'reps'-platform.make"'
-    grep -qF "$INCLUDE" "site.make" || echo -e "$COMMENT$INCLUDE" >> "site.make"
+    grep -qF "$INCLUDE" "$MAKE" || echo -e "$COMMENT$INCLUDE" >> "$MAKE"
   else
     echo "No $MAKE file found, reps-platform.make not included!"
   fi
