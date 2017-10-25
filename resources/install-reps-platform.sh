@@ -19,7 +19,7 @@ if [ -d "vendor/ec-europa/ec-reps-platform" ] ; then
   cp -r vendor/ec-europa/ec-reps-platform/lib/features/* modules/features/reps
   cp -r vendor/ec-europa/ec-reps-platform/lib/modules/* modules/custom/reps
   cp -r vendor/ec-europa/ec-reps-platform/lib/themes/* themes/reps
-  cp -f vendor/ec-europa/ec-reps-platform/resources/reps-platform.make reps-platform.make
+  cp -f vendor/ec-europa/ec-reps-platform/resources/reps-platform.make ../../../resources/reps-platform.make
 
   # Include the reps-platform.make file.
   if ! [ -e $MAKE ] 2> /dev/null && [ -e $MAKE".example" ] ; then
