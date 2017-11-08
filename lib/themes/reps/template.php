@@ -361,7 +361,8 @@ function reps_preprocess_social_media_links_platform(&$variables) {
 function reps_entity_translation_unavailable($variables) {
   global $language;
   $element = $variables['element'];
-  if ($element['#entity_type'] == 'node') {
+  if ($element['#entity_type'] == 'node' && isset($element['#entity']->title_field) && is_array($element['#entity']->title_field)) {
+
     // Get available langauges based on titles.
     $available_languages = array_keys($element['#entity']->title_field);
     // Get available languages of the website.
