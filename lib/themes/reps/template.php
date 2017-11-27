@@ -377,3 +377,12 @@ function reps_entity_translation_unavailable($variables) {
     return "<div class=\"$classes\">$message</div>";
   }
 }
+
+/**
+ *  Implements hook_form_alter().
+ */
+function reps_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'nexteuropa_europa_search_search_form') {
+	unset($form['search_input_group']['QueryText']['#title']);  
+  }
+}
