@@ -172,7 +172,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More events';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
@@ -181,6 +181,19 @@ function reps_events_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|sticky';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
@@ -262,7 +275,6 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
-  $handler->display->display_options['fields']['field_reps_event_venue']['empty'] = '[field_reps_event_location]';
   $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -342,6 +354,19 @@ function reps_events_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|sticky';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
@@ -423,6 +448,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
@@ -495,6 +521,19 @@ function reps_events_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|sticky';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
@@ -576,6 +615,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;

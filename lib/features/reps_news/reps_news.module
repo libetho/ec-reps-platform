@@ -35,3 +35,20 @@ function _reps_news_create_listing_page() {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function reps_news_preprocess_field(&$variables, $hook) {
+  if ($variables['element']['#bundle'] == 'reps_news' and $variables['element']['#view_mode'] == 'teaser') {
+    if ($variables['element']['#field_name'] == 'title_field') {
+      if (!empty($variables['element']['#object']->field_reps_core_external_url)) {
+        global $language;
+        $variables['items'][0]['#markup'] = '<h3>' . l($variables['element']['#items'][0]['safe_value'] , $variables['element']['#object']->field_reps_core_external_url[$language->language][0]['url']) . '</h3>';
+      } 
+      else {
+        $variables['items'][0]['#markup'] = '<h3>' . l($variables['element']['#items'][0]['safe_value'] , drupal_get_path_alias('node/' . $variables['element']['#object']->nid)) . '</h3>';
+      }
+    }
+  }
+}

@@ -7,9 +7,11 @@ dependencies[] = reps_core
 
 features[context][] = reps-news
 features[ctools][] = context:context:3
+features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[ds_layout_settings][] = node|reps_news|teaser
 features[features_api][] = api:2
 features[field_base][] = field_reps_news_category
 features[field_base][] = name_field
