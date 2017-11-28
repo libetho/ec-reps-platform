@@ -77,7 +77,7 @@
   border-radius: 0;
   background: none;
   padding: 0;
-  border-bottom: none;
+  border-bottom: 1px dashed #878c92;
   margin: 10px 0 5px;
   line-height: 1;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
@@ -317,7 +317,6 @@ body.reps {
       } // #layout-body .block-views
 
             #block-views-reps-news-block,
-      #block-views-reps-events-block,
       .view-reps-events,
       .view-reps-eu-myth ,
       .view-reps-news,
@@ -1486,7 +1485,41 @@ form .field-name-field-reps-core-image {
   }
 }
 
-/* Additional Styles for events */
+/* Additional Styles for news and events */
+#block-views-reps-news-block,
+#block-views-reps-events-block {
+ 
+  .group-left,
+  .group-right {
+    width: auto;
+    
+    .field-name-field-reps-core-image {
+      float: none;
+      margin: 3px 10px 5px 0;
+      padding: 0;
+    }
+  }
+
+  .group-right {
+    float: none;
+    overflow: hidden;
+    
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 3px;
+      
+      a {
+        color: #347c98;
+      }
+    }
+    
+    .field-label {
+      width: auto;
+    }
+  } 
+}
+
 .views-field-field-reps-event-date  ul{
   list-style: none;
   overflow: hidden;
