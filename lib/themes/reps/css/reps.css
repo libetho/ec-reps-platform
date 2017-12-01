@@ -47,7 +47,7 @@
   border-radius: 0;
   background: none;
   padding: 0;
-  border-bottom: none;
+  border-bottom: 1px dashed #878c92;
   margin: 10px 0 5px;
   line-height: 1;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
@@ -242,7 +242,7 @@ body.reps #mainContainer #layout-body .block-views .panel-heading {
   border-radius: 0;
   background: none;
   padding: 0;
-  border-bottom: none;
+  border-bottom: 1px dashed #878c92;
   margin: 10px 0 5px;
   line-height: 1;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
@@ -1943,5 +1943,13 @@ ul.pager li.pager-current {
   }
   body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li {
     height: 190px;
+  }
+  .group-left,
+  .group-right {
+    width: 100% !important;
+  }
+  .group-left img,
+  .group-right img {
+    width: auto;
   }
 }
