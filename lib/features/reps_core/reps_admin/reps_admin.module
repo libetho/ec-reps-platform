@@ -11,6 +11,13 @@ include_once 'reps_admin.features.inc';
  * Implements hook_menu().
  */
 function reps_admin_menu() {
+  $items['node/%node/%'] = array(
+    'page callback' => 'reps_admin_wysiwyg_view_file',
+    'page arguments' => array(2),
+    'access arguments' => array('use media wysiwyg'),
+    'type' => MENU_CALLBACK,
+  );
+
   // Configuration page.
   $items['admin/reps'] = array(
     'title' => 'REPS configurations',
