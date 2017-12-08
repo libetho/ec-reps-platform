@@ -471,3 +471,30 @@ function seven_file_upload_help($variables) {
 
   return implode('<br />', $descriptions);
 }
+
+/**
+ * Callback: serves images requested by the new file token.
+ *
+ * @param string $filetoken
+ *   File token passed through url.
+ */
+function reps_admin_wysiwyg_view_file($filetoken) {
+  $fid = str_replace(array('[file:', ':url]'), '', $filetoken);
+  $fid = intval($fid);
+  $path = FALSE;
+
+  if (!empty($fid)) {
+    $file = file_load($fid);
+
+    if (!empty($file)) {
+      $path = file_create_url($file->uri);
+    }
+  }
+
+  if (!empty($path)) {
+    drupal_goto($path);
+  }
+  else {
+    drupal_not_found();
+  }
+}
