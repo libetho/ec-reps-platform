@@ -26,7 +26,7 @@
 .smallScreensMenu ul li a:hover,
 .smallScreensMenu ul li a:focus {
   background: #0065a2 !important;
-  color: #aaaaaa !important;
+  color: #ffffff !important;
 }
 .readMoreLinkStyle {
   font-weight: bold;
@@ -1694,7 +1694,7 @@ ul.pager li.pager-current {
   #main-menu ul li a:hover,
   #main-menu ul li a:focus {
     background: #0065a2 !important;
-    color: #aaaaaa !important;
+    color: #ffffff !important;
   }
   #main-menu .visible-sm,
   #main-menu .visible-xs {
@@ -1924,7 +1924,7 @@ ul.pager li.pager-current {
   #main-menu ul li a:hover,
   #main-menu ul li a:focus {
     background: #0065a2 !important;
-    color: #aaaaaa !important;
+    color: #ffffff !important;
   }
   #main-menu .visible-ex1 ul li.first {
     display: none;
