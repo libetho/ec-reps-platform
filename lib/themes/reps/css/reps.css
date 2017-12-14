@@ -1556,8 +1556,7 @@ ul.pager li.pager-current {
 }
 /* Tables styling */
 .reps table {
-  background: #f6f6f6;
-  border: 2px solid #b60522;
+  border: none;
 }
 .reps table caption {
   font-style: italic;
@@ -1566,9 +1565,11 @@ ul.pager li.pager-current {
 }
 .reps table th {
   background: #bbb;
-  border-bottom: none;
+  border: 1px solid #bbb;
 }
-.reps table thead,
+.reps table thead tr {
+  border: none;
+}
 .reps table tbody {
   border: none;
 }
