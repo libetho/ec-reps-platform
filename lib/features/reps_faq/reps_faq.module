@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the REPS FaQ feature.
+ */
+
+include_once 'reps_faq.features.inc';
