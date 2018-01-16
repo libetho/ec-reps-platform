@@ -1598,27 +1598,34 @@ ul.pager li.pager-current {
 #path .easy-breadcrumb {
   display: inline;
 }
-/* Videos Section */
-.view-reps-videos .view-content {
-  margin: 0 -15px;
-}
-.view-reps-videos .view-content .views-row {
-  width: 33%;
+/* Display Suite 2 columns for FaQ. */
+.ds-2col .group-left {
   float: left;
-  padding: 0 15px;
-  margin-top: 10px;
-  border: none;
+  width: auto;
 }
-.view-reps-videos .view-content .views-row img {
-  max-width: 100%;
-  margin-bottom: 4px;
-  height: auto;
+.ds-2col .group-left div {
+  float: none;
+  padding: 0;
 }
-.view-reps-videos .view-content .views-row .views-field-title-field-et {
-  font-size: 120%;
-  font-weight: bold;
+.ds-2col .group-left .field-name-field-reps-core-image {
+  margin: 0 10px 10px 0;
 }
-.view-reps-videos .view-content .views-row .views-field-title-field-et a {
+.ds-2col .group-left .field-name-field-reps-core-image img {
+  border: 1px #cdcdcd solid;
+  max-width: 150px;
+  width: 150px;
+}
+.ds-2col .group-right {
+  float: none;
+  overflow: hidden;
+  width: auto;
+}
+.ds-2col .group-right h3 {
+  font-size: 12.6px;
+  font-weight: 700;
+  margin: 0;
+}
+.ds-2col .group-right h3 a {
   color: #347c98;
 }
 /* Medium + Large */

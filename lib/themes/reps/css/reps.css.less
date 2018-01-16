@@ -1819,35 +1819,45 @@ ul.pager {
   display: inline;
 }
 
-/* Videos Section */
-.view-reps-videos {
-  .view-content {
-    margin: 0 -15px;
-
-    .views-row {
-      width: 33%;
-      float: left;
-      padding: 0 15px;
-      margin-top: 10px;
-      border: none;
-
-      img {
-        max-width: 100%;
-        margin-bottom: 4px;
-        height: auto;
-      }
-
-      .views-field-title-field-et {
-        font-size: 120%;
-        font-weight: bold;
-
-        a {
-          color: #347c98;
-        }
-      }
-    }
+/* Display Suite 2 columns for FaQ. */
+.ds-2col {
+  
+  .group-left {
+	float: left;
+	width: auto;
+	
+	div {
+	  float: none;
+	  padding: 0;
+	}
+	
+    .field-name-field-reps-core-image {
+	  margin: 0 10px 10px 0;
+	  
+	  img {
+        border: 1px #cdcdcd solid;
+	    max-width: 150px;
+	    width: 150px;
+	  } 
+	}
   }
-} // .view-reps-videos END
+  
+  .group-right {
+	float: none;
+	overflow: hidden;
+	width: auto;
+	
+	h3 {
+	  font-size: 12.6px;
+	  font-weight: 700;
+	  margin: 0;
+	  
+	  a {
+		color: #347c98;
+	  }
+	}
+  }
+}
 
 /* Medium + Large */
 @media all and (min-width: @screen-xs-max) {
