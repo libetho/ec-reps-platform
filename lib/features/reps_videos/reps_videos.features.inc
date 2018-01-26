@@ -31,7 +31,7 @@ function reps_videos_fe_nodequeue_export_fields() {
   $nodequeues = array();
 
   // Exported nodequeues: videos
-  $nodequeues['videos'] = (object) array(
+  $nodequeues['videos'] = array(
     'name' => 'videos',
     'title' => 'Videos',
     'subqueue_title' => '',
