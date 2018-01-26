@@ -9,9 +9,6 @@
  * Implements hook_ctools_plugin_api().
  */
 function reps_videos_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
-  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -25,6 +22,39 @@ function reps_videos_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function reps_videos_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_fe_nodequeue_export_fields().
+ */
+function reps_videos_fe_nodequeue_export_fields() {
+  $nodequeues = array();
+
+  // Exported nodequeues: videos
+  $nodequeues['videos'] = (object) array(
+    'name' => 'videos',
+    'title' => 'Videos',
+    'subqueue_title' => '',
+    'size' => 20,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'reps_video',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
+  return $nodequeues;
 }
 
 /**
