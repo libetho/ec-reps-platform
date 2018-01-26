@@ -308,7 +308,7 @@ function reps_core_strongarm() {
     'bean' => 'bean',
     'comment' => 0,
     'registration' => 0,
-    'file' => 0,
+    'file' => 'file',
     'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
