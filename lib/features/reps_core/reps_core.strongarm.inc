@@ -845,6 +845,70 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+
+  $strongarm->name = 'rh_module_reps_contact_point';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_reps_contact_point'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_reps_homepage_additional_block';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_reps_slide_footer';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_reps_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_reps_video';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_contact_point';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_contact_point'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_homepage_additional_block';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_slide_footer';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_slide_homepage';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_video';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_expand_fieldset_page';
   $strongarm->value = '0';
   $export['scheduler_expand_fieldset_page'] = $strongarm;
