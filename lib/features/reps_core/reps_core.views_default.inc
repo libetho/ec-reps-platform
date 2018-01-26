@@ -552,6 +552,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = '[field_reps_core_external_url]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Small image */
   $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
