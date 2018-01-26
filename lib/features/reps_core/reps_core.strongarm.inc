@@ -909,6 +909,20 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_action_reps_contact_point_categories';
+  $strongarm->value = '1';
+  $export['rh_taxonomy_term_action_reps_contact_point_categories'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_action_reps_news_categories';
+  $strongarm->value = '1';
+  $export['rh_taxonomy_term_action_reps_news_categories'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_expand_fieldset_page';
   $strongarm->value = '0';
   $export['scheduler_expand_fieldset_page'] = $strongarm;
