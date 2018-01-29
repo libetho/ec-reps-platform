@@ -32,6 +32,7 @@ features[variable][] = menu_parent_reps_video
 features[variable][] = node_options_reps_video
 features[variable][] = node_preview_reps_video
 features[variable][] = node_submitted_reps_video
+features[variable][] = rh_node_override_reps_video
 features[variable][] = scheduler_expand_fieldset_reps_video
 features[variable][] = scheduler_publish_enable_reps_video
 features[variable][] = scheduler_publish_moderation_state_reps_video
