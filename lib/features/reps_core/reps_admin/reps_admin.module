@@ -498,3 +498,19 @@ function reps_admin_wysiwyg_view_file($filetoken) {
     drupal_not_found();
   }
 }
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function reps_admin_preprocess_page(&$variables) {
+  $path = current_path();
+  switch ($path) {
+    case 'admin/content/file/list':
+      $item = menu_get_item('file/add');
+      $variables['action_links'][] = array(
+        '#theme' => 'menu_local_action',
+        '#link' => $item,
+      );
+      break;
+  }
+}
