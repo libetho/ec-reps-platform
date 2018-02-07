@@ -48,7 +48,7 @@ function reps_faq_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 47,
     ),
   );
 
@@ -126,7 +126,7 @@ function reps_faq_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 46,
     ),
   );
 
@@ -171,8 +171,15 @@ function reps_faq_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -192,14 +199,13 @@ function reps_faq_field_default_field_instances() {
           ),
           'source_reference' => array(
             'autocomplete' => 0,
-            'search_all_fields' => 0,
           ),
         ),
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'homepage_thumbs',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
-      'weight' => 3,
+      'type' => 'media_generic',
+      'weight' => 45,
     ),
   );
 
