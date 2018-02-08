@@ -172,7 +172,7 @@ function reps_faq_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_reps_faq';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_reps_faq'] = $strongarm;
