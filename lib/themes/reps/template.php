@@ -386,3 +386,21 @@ function reps_form_alter(&$form, &$form_state, $form_id) {
 	unset($form['search_input_group']['QueryText']['#title']);
   }
 }
+
+/**
+ * Implements drupal_add_html_head().
+ */
+function reps_html_head_alter(&$head_elements) {
+  if(!isset($head_elements['metatag_og:image_0'])) {
+    global $base_url;
+	$head_elements[] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'og:image',
+        'content' => $base_url . '/' . drupal_get_path('theme', 'reps') . '/images/logos/logo.png',
+      ),
+    );
+  }
+  $head_elements['metatag_date_0']['#value'] = format_date(node_load(arg(1))->created, 'short');
+}
