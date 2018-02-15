@@ -149,6 +149,12 @@ function reps_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Content: Date (field_reps_core_date) */
+  $handler->display->display_options['filters']['field_reps_core_date_value']['id'] = 'field_reps_core_date_value';
+  $handler->display->display_options['filters']['field_reps_core_date_value']['table'] = 'field_data_field_reps_core_date';
+  $handler->display->display_options['filters']['field_reps_core_date_value']['field'] = 'field_reps_core_date_value';
+  $handler->display->display_options['filters']['field_reps_core_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_reps_core_date_value']['default_date'] = '-3 month';
 
   /* Display: Home page news block */
   $handler = $view->new_display('block', 'Home page news block', 'block');
