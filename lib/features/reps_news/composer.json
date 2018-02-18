@@ -2,8 +2,10 @@
     "name": "ec-reps-platform/reps_news",
     "description": "The news feature for the REPS websites",
     "type": "drupal-custom-module",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "non-feature-branches": [
-        "release/*"
+        "release/.*"
     ],
     "require": {
         "ec-reps-platform/reps_core": "self.version"

@@ -2,7 +2,9 @@
     "name": "ec-reps-platform/reps",
     "description": "Sub theme of default theme, ec_resp",
     "type": "drupal-custom-theme",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "non-feature-branches": [
-        "release/*"
+        "release/.*"
     ]
 }

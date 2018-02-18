@@ -36,7 +36,19 @@
     },
     "require-dev": {
         "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
-        "verbruggenalex/toolkit": "dev-develop"
+        "verbruggenalex/toolkit": "dev-develop",
+        "ec-reps-platform/reps_myths": "dev-master",
+        "ec-reps-platform/reps_videos": "dev-master",
+        "ec-reps-platform/reps_events": "dev-master",
+        "ec-reps-platform/reps_contact_form": "dev-master",
+        "ec-reps-platform/reps_core": "dev-master",
+        "ec-reps-platform/reps_publications": "dev-master",
+        "ec-reps-platform/reps_migrate": "dev-master",
+        "ec-reps-platform/reps_news": "dev-master",
+        "ec-reps-platform/mbp_sync": "dev-master",
+        "ec-reps-platform/mapeditor": "dev-master",
+        "ec-reps-platform/nexteuropa_migrate": "dev-master",
+        "ec-reps-platform/reps": "dev-master"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -81,54 +93,6 @@
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/7"
-        },
-        "ec-reps-platform/reps_myths": {
-            "type": "path",
-            "url": "lib/features/reps_myths"
-        },
-        "ec-reps-platform/reps_videos": {
-            "type": "path",
-            "url": "lib/features/reps_videos"
-        },
-        "ec-reps-platform/reps_events": {
-            "type": "path",
-            "url": "lib/features/reps_events"
-        },
-        "ec-reps-platform/reps_contact_form": {
-            "type": "path",
-            "url": "lib/features/reps_contact_form"
-        },
-        "ec-reps-platform/reps_core": {
-            "type": "path",
-            "url": "lib/features/reps_core"
-        },
-        "ec-reps-platform/reps_publications": {
-            "type": "path",
-            "url": "lib/features/reps_publications"
-        },
-        "ec-reps-platform/reps_migrate": {
-            "type": "path",
-            "url": "lib/features/reps_migrate"
-        },
-        "ec-reps-platform/reps_news": {
-            "type": "path",
-            "url": "lib/features/reps_news"
-        },
-        "ec-reps-platform/mbp_sync": {
-            "type": "path",
-            "url": "lib/modules/custom/mbp_sync"
-        },
-        "ec-reps-platform/mapeditor": {
-            "type": "path",
-            "url": "lib/modules/custom/mapeditor"
-        },
-        "ec-reps-platform/nexteuropa_migrate": {
-            "type": "path",
-            "url": "lib/modules/nexteuropa/nexteuropa_migrate"
-        },
-        "ec-reps-platform/reps": {
-            "type": "path",
-            "url": "lib/themes/reps"
         }
     }
 }

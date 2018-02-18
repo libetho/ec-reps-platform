@@ -2,7 +2,9 @@
     "name": "ec-reps-platform/mapeditor",
     "description": "Allows building maps using the corporate JavaScript library",
     "type": "drupal-custom-module",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "non-feature-branches": [
-        "release/*"
+        "release/.*"
     ]
 }
