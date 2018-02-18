@@ -1,5 +1,8 @@
 {
     "name": "ec-reps-platform/reps",
     "description": "Sub theme of default theme, ec_resp",
-    "type": "drupal-custom-theme"
+    "type": "drupal-custom-theme",
+    "non-feature-branches": [
+        "release/*"
+    ]
 }

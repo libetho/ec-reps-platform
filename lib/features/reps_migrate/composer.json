@@ -2,6 +2,9 @@
     "name": "ec-reps-platform/reps_migrate",
     "description": "The migrate feature for the REPS malta website",
     "type": "drupal-custom-module",
+    "non-feature-branches": [
+        "release/*"
+    ],
     "require": {
         "ec-reps-platform/reps_core": "self.version",
         "ec-reps-platform/nexteuropa_migrate": "self.version"

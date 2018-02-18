@@ -2,6 +2,9 @@
     "name": "ec-reps-platform/reps_core",
     "description": "The core feature fo the REPS websites",
     "type": "drupal-custom-module",
+    "non-feature-branches": [
+        "release/*"
+    ],
     "require": {
         "ec-reps-platform/mbp_sync": "self.version",
         "ec-reps-platform/reps_admin": "self.version"

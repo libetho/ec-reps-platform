@@ -1,6 +1,7 @@
 {
     "name": "ec-europa/ec-reps-platform",
     "description": "Modules, features and theme sourcecode for the reps platform",
+    "non-feature-branches": ["release/.*"],
     "require": {
         "php": ">=5.6",
         "verbruggenalex/multisite_drupal_standard": "~2.4.0",

@@ -1,5 +1,8 @@
 {
     "name": "ec-reps-platform/mbp_sync",
     "description": "Sync current folders and files with MBP and convert hard coded links into file entities.",
-    "type": "drupal-custom-module"
+    "type": "drupal-custom-module",
+    "non-feature-branches": [
+        "release/*"
+    ]
 }
