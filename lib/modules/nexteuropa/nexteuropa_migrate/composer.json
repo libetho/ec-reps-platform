@@ -1,14 +1,6 @@
 {
-  "require-dev": {
-    "behat/mink": "~1.6",
-    "behat/mink-goutte-driver": "~1.1",
-    "phpunit/phpunit": "4.5.*",
-    "drupal/drupal-driver": "dev-master",
-    "symfony/dependency-injection": "~2.6"
-  },
-  "autoload": {
-    "psr-4": {
-      "Drupal\\nexteuropa_migrate\\Tests\\": "./tests/"
-    }
-  }
+    "name": "ec-reps-platform/nexteuropa_migrate",
+    "version": "1.0.0",
+    "type": "drupal-custom-module",
+    "description": "Migrate plugin using standard Integration Layers document format."
 }

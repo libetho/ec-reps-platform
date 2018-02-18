@@ -1,0 +1,6 @@
+{
+    "name": "ec-reps-platform/reps",
+    "version": "1.0.0",
+    "type": "drupal-custom-theme",
+    "description": "Sub theme of default theme, ec_resp"
+}

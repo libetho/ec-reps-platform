@@ -1,0 +1,6 @@
+{
+    "name": "ec-reps-platform/reps_events",
+    "version": "1.0.0",
+    "type": "drupal-custom-module",
+    "description": "The events feature for the REPS websites"
+}

@@ -2,6 +2,133 @@
     "name": "ec-europa/ec-reps-platform",
     "description": "Modules, features and theme sourcecode for the reps platform",
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.6",
+        "verbruggenalex/multisite_drupal_standard": "~2.4.0"
+    },
+    "require-dev": {
+        "composer/satis": "~1.0.0",
+        "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
+        "verbruggenalex/toolkit": "dev-develop",
+        "drupal/admin_language": "1.0.0-beta1",
+        "drupal/ckeditor_tabber": "1.3.0",
+        "drupal/features_extra": "1.0.0",
+        "drupal/features_roles_permissions": "1.2.0",
+        "drupal/media_browser_plus": "3.0.0-beta4",
+        "drupal/menu_admin_per_menu": "1.0.0",
+        "drupal/multiform": "1.1.0",
+        "drupal/nodequeue": "2.1.0",
+        "drupal/page_title": "2.7.0",
+        "drupal/rabbit_hole": "2.23.0",
+        "drupal/redirect": "1.0.0-rc3",
+        "drupal/social_media_links": "1.4.0",
+        "drupal/taxonomy_access_fix": "2.2.0",
+        "drupal/views_tree": "2.0.0",
+        "drupal/webform_features": "3.0.0-beta3",
+        "drupal/weight": "2.4.0",
+        "ec-reps-platform/reps_myths": "1.0.0",
+        "ec-reps-platform/reps_videos": "1.0.0",
+        "ec-reps-platform/reps_events": "1.0.0",
+        "ec-reps-platform/reps_contact_form": "1.0.0",
+        "ec-reps-platform/reps_core": "1.0.0",
+        "ec-reps-platform/reps_publications": "1.0.0",
+        "ec-reps-platform/reps_migrate": "1.0.0",
+        "ec-reps-platform/reps_news": "1.0.0",
+        "ec-reps-platform/mbp_sync": "1.0.0",
+        "ec-reps-platform/mapeditor": "1.0.0",
+        "ec-reps-platform/nexteuropa_migrate": "1.0.0",
+        "ec-reps-platform/reps": "1.0.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "project-builder": {
+            "build-dir": {
+                "--dev": "build/{$branch}",
+                "--no-dev": "dist/{$branch}"
+            },
+            "root-dir": {
+                "--dev": "drupal/drupal",
+                "--no-dev": "drupal/drupal"
+            }
+        },
+        "installer-paths": {
+            "profiles/{$name}/": [
+                "type:drupal-profile"
+            ],
+            "sites/all/drush/{$name}/": [
+                "type:drupal-drush"
+            ],
+            "sites/all/libraries/{$name}/": [
+                "type:drupal-library"
+            ],
+            "sites/all/modules/contrib/{$name}/": [
+                "type:drupal-module"
+            ],
+            "sites/all/modules/features/{$name}/": [
+                "type:drupal-custom-module"
+            ],
+            "sites/all/themes/contrib/{$name}/": [
+                "type:drupal-theme"
+            ]
+        },
+        "patches": {
+            "drupal/media_browser_plus": [
+                "https://www.drupal.org/files/issues/download-files-in-media-basket-does-not-work-2821063-2.patch"
+            ]
+        }
+    },
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/7"
+        },
+        "ec-reps-platform/reps_myths": {
+            "type": "path",
+            "url": "lib/features/reps_myths"
+        },
+        "ec-reps-platform/reps_videos": {
+            "type": "path",
+            "url": "lib/features/reps_videos"
+        },
+        "ec-reps-platform/reps_events": {
+            "type": "path",
+            "url": "lib/features/reps_events"
+        },
+        "ec-reps-platform/reps_contact_form": {
+            "type": "path",
+            "url": "lib/features/reps_contact_form"
+        },
+        "ec-reps-platform/reps_core": {
+            "type": "path",
+            "url": "lib/features/reps_core"
+        },
+        "ec-reps-platform/reps_publications": {
+            "type": "path",
+            "url": "lib/features/reps_publications"
+        },
+        "ec-reps-platform/reps_migrate": {
+            "type": "path",
+            "url": "lib/features/reps_migrate"
+        },
+        "ec-reps-platform/reps_news": {
+            "type": "path",
+            "url": "lib/features/reps_news"
+        },
+        "ec-reps-platform/mbp_sync": {
+            "type": "path",
+            "url": "lib/modules/custom/mbp_sync"
+        },
+        "ec-reps-platform/mapeditor": {
+            "type": "path",
+            "url": "lib/modules/custom/mapeditor"
+        },
+        "ec-reps-platform/nexteuropa_migrate": {
+            "type": "path",
+            "url": "lib/modules/nexteuropa/nexteuropa_migrate"
+        },
+        "ec-reps-platform/reps": {
+            "type": "path",
+            "url": "lib/themes/reps"
+        }
     }
 }

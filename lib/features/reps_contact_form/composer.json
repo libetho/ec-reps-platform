@@ -1,0 +1,6 @@
+{
+    "name": "ec-reps-platform/reps_contact_form",
+    "version": "1.0.0",
+    "type": "drupal-custom-module",
+    "description": "The contact form for the reps application"
+}

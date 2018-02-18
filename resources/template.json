@@ -1,0 +1,55 @@
+{
+    "name": "ec-europa/ec-reps-platform",
+    "description": "Modules, features and theme sourcecode for the reps platform",
+    "require": {
+        "php": ">=5.6",
+        "verbruggenalex/multisite_drupal_standard": "~2.4.0"
+    },
+    "require-dev": {
+        "composer/satis": "~1.0.0",
+        "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
+        "verbruggenalex/toolkit": "dev-develop"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "project-builder": {
+            "build-dir": {
+                "--dev": "build/{$branch}",
+                "--no-dev": "dist/{$branch}"
+            },
+            "root-dir": {
+                "--dev": "drupal/drupal",
+                "--no-dev": "drupal/drupal"
+            }
+        },
+        "installer-paths": {
+            "profiles/{$name}/": [
+                "type:drupal-profile"
+            ],
+            "sites/all/drush/{$name}/": [
+                "type:drupal-drush"
+            ],
+            "sites/all/libraries/{$name}/": [
+                "type:drupal-library"
+            ],
+            "sites/all/modules/contrib/{$name}/": [
+                "type:drupal-module"
+            ],
+            "sites/all/modules/features/{$name}/": [
+                "type:drupal-custom-module"
+            ],
+            "sites/all/themes/contrib/{$name}/": [
+                "type:drupal-theme"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/7"
+        }
+    }
+}

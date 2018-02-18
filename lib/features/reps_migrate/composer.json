@@ -1,0 +1,6 @@
+{
+    "name": "ec-reps-platform/reps_migrate",
+    "version": "1.0.0",
+    "type": "drupal-custom-module",
+    "description": "The migrate feature for the REPS malta website"
+}
