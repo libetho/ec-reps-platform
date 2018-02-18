@@ -1,6 +1,8 @@
 {
     "name": "ec-reps-platform/reps_videos",
-    "version": "1.0.0",
+    "description": "The videos feature for the REPS websites",
     "type": "drupal-custom-module",
-    "description": "The videos feature for the REPS websites"
+    "require": {
+        "ec-reps-platform/reps_core": "self.version"
+    }
 }

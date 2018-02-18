@@ -1,6 +1,5 @@
 {
     "name": "ec-reps-platform/nexteuropa_migrate",
-    "version": "1.0.0",
-    "type": "drupal-custom-module",
-    "description": "Migrate plugin using standard Integration Layers document format."
+    "description": "Migrate plugin using standard Integration Layers document format.",
+    "type": "drupal-custom-module"
 }

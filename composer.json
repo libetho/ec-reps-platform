@@ -3,12 +3,7 @@
     "description": "Modules, features and theme sourcecode for the reps platform",
     "require": {
         "php": ">=5.6",
-        "verbruggenalex/multisite_drupal_standard": "~2.4.0"
-    },
-    "require-dev": {
-        "composer/satis": "~1.0.0",
-        "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
-        "verbruggenalex/toolkit": "dev-develop",
+        "verbruggenalex/multisite_drupal_standard": "~2.4.0",
         "drupal/admin_language": "1.0.0-beta1",
         "drupal/ckeditor_tabber": "1.3.0",
         "drupal/features_extra": "1.0.0",
@@ -25,18 +20,22 @@
         "drupal/views_tree": "2.0.0",
         "drupal/webform_features": "3.0.0-beta3",
         "drupal/weight": "2.4.0",
-        "ec-reps-platform/reps_myths": "1.0.0",
-        "ec-reps-platform/reps_videos": "1.0.0",
-        "ec-reps-platform/reps_events": "1.0.0",
-        "ec-reps-platform/reps_contact_form": "1.0.0",
-        "ec-reps-platform/reps_core": "1.0.0",
-        "ec-reps-platform/reps_publications": "1.0.0",
-        "ec-reps-platform/reps_migrate": "1.0.0",
-        "ec-reps-platform/reps_news": "1.0.0",
-        "ec-reps-platform/mbp_sync": "1.0.0",
-        "ec-reps-platform/mapeditor": "1.0.0",
-        "ec-reps-platform/nexteuropa_migrate": "1.0.0",
-        "ec-reps-platform/reps": "1.0.0"
+        "ec-reps-platform/reps_myths": "self.version",
+        "ec-reps-platform/reps_videos": "self.version",
+        "ec-reps-platform/reps_events": "self.version",
+        "ec-reps-platform/reps_contact_form": "self.version",
+        "ec-reps-platform/reps_core": "self.version",
+        "ec-reps-platform/reps_publications": "self.version",
+        "ec-reps-platform/reps_migrate": "self.version",
+        "ec-reps-platform/reps_news": "self.version",
+        "ec-reps-platform/mbp_sync": "self.version",
+        "ec-reps-platform/mapeditor": "self.version",
+        "ec-reps-platform/nexteuropa_migrate": "self.version",
+        "ec-reps-platform/reps": "self.version"
+    },
+    "require-dev": {
+        "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
+        "verbruggenalex/toolkit": "dev-develop"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

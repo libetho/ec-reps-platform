@@ -1,6 +1,8 @@
 {
     "name": "ec-reps-platform/reps_publications",
-    "version": "1.0.0",
+    "description": "The publications feature for the REPS websites",
     "type": "drupal-custom-module",
-    "description": "The publications feature for the REPS websites"
+    "require": {
+        "ec-reps-platform/reps_core": "self.version"
+    }
 }
