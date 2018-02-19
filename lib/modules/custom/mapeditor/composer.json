@@ -3,8 +3,5 @@
     "description": "Allows building maps using the corporate JavaScript library",
     "type": "drupal-custom-module",
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "non-feature-branches": [
-        "release/.*"
-    ]
+    "prefer-stable": true
 }

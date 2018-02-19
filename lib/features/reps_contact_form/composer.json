@@ -3,8 +3,5 @@
     "description": "The contact form for the reps application",
     "type": "drupal-custom-module",
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "non-feature-branches": [
-        "release/.*"
-    ]
+    "prefer-stable": true
 }

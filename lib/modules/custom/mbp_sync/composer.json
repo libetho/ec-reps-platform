@@ -3,8 +3,5 @@
     "description": "Sync current folders and files with MBP and convert hard coded links into file entities.",
     "type": "drupal-custom-module",
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "non-feature-branches": [
-        "release/.*"
-    ]
+    "prefer-stable": true
 }

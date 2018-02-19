@@ -9,9 +9,6 @@
         "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
         "verbruggenalex/toolkit": "dev-develop"
     },
-    "non-feature-branches": [
-        "release/.*"
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
