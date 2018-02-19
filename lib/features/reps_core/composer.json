@@ -5,7 +5,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "ec-reps-platform/mbp_sync": "self.version",
-        "ec-reps-platform/reps_admin": "self.version"
+        "ec-reps-platform/mbp_sync": "self.version"
     }
 }

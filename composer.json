@@ -1,6 +1,7 @@
 {
     "name": "ec-europa/ec-reps-platform",
     "description": "Modules, features and theme sourcecode for the reps platform",
+    "version": "dev-release/4.x",
     "require": {
         "php": ">=5.6",
         "verbruggenalex/multisite_drupal_standard": "~2.4.0",
@@ -35,7 +36,19 @@
     },
     "require-dev": {
         "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
-        "verbruggenalex/toolkit": "dev-develop"
+        "verbruggenalex/toolkit": "dev-develop",
+        "ec-reps-platform/reps_myths": "self.version",
+        "ec-reps-platform/reps_videos": "self.version",
+        "ec-reps-platform/reps_events": "self.version",
+        "ec-reps-platform/reps_contact_form": "self.version",
+        "ec-reps-platform/reps_core": "self.version",
+        "ec-reps-platform/reps_publications": "self.version",
+        "ec-reps-platform/reps_migrate": "self.version",
+        "ec-reps-platform/reps_news": "self.version",
+        "ec-reps-platform/mbp_sync": "self.version",
+        "ec-reps-platform/mapeditor": "self.version",
+        "ec-reps-platform/nexteuropa_migrate": "self.version",
+        "ec-reps-platform/reps": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
