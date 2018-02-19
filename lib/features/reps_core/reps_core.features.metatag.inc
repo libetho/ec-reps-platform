@@ -11,7 +11,7 @@ function reps_core_metatag_export_default() {
   $config = array();
 
   // Exported Metatag config instance: global:frontpage.
-  $config['global:frontpage'] = (object) array(
+  $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
     'disabled' => TRUE,
     'config' => array(
@@ -49,19 +49,19 @@ function reps_core_metatag_export_default() {
   );
 
   // Exported Metatag config instance: node:page.
-  $config['node:page'] = (object) array(
+  $config['node:page'] = array(
     'instance' => 'node:page',
     'config' => array(),
   );
 
   // Exported Metatag config instance: node:reps_event.
-  $config['node:reps_event'] = (object) array(
+  $config['node:reps_event'] = array(
     'instance' => 'node:reps_event',
     'config' => array(),
   );
 
   // Exported Metatag config instance: node:reps_homepage.
-  $config['node:reps_homepage'] = (object) array(
+  $config['node:reps_homepage'] = array(
     'instance' => 'node:reps_homepage',
     'config' => array(
       'og:image' => array(
@@ -71,7 +71,7 @@ function reps_core_metatag_export_default() {
   );
 
   // Exported Metatag config instance: node:reps_news.
-  $config['node:reps_news'] = (object) array(
+  $config['node:reps_news'] = array(
     'instance' => 'node:reps_news',
     'config' => array(),
   );
