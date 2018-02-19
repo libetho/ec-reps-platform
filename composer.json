@@ -19,11 +19,7 @@
         "drupal/taxonomy_access_fix": "2.2.0",
         "drupal/views_tree": "2.0.0",
         "drupal/webform_features": "3.0.0-beta3",
-        "drupal/weight": "2.4.0"
-    },
-    "require-dev": {
-        "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
-        "verbruggenalex/toolkit": "dev-develop",
+        "drupal/weight": "2.4.0",
         "ec-reps-platform/reps_myths": "self.version",
         "ec-reps-platform/reps_videos": "self.version",
         "ec-reps-platform/reps_events": "self.version",
@@ -37,6 +33,13 @@
         "ec-reps-platform/nexteuropa_migrate": "self.version",
         "ec-reps-platform/reps": "self.version"
     },
+    "require-dev": {
+        "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
+        "verbruggenalex/toolkit": "dev-develop"
+    },
+    "non-feature-branches": [
+        "release-.*"
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {

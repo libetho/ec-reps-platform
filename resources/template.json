@@ -6,10 +6,12 @@
         "verbruggenalex/multisite_drupal_standard": "~2.4.0"
     },
     "require-dev": {
-        "composer/satis": "~1.0.0",
         "verbruggenalex/composer-project-builder-plugin": "dev-master as 1.0.0",
         "verbruggenalex/toolkit": "dev-develop"
     },
+    "non-feature-branches": [
+        "release/.*"
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
@@ -44,8 +46,6 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "repositories": {
         "0": {
             "type": "composer",
