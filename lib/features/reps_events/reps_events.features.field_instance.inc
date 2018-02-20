@@ -41,7 +41,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -62,6 +62,119 @@ function reps_events_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => -2,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_event-field_meta_classification'.
+  $field_instances['node-reps_event-field_meta_classification'] = array(
+    'bundle' => 'reps_event',
+    'default_value' => array(
+      0 => array(
+        'tid' => 16,
+      ),
+    ),
+    'deleted' => 1,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meta_classification',
+    'label' => 'IPG Classification',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_event-field_meta_description'.
+  $field_instances['node-reps_event-field_meta_description'] = array(
+    'bundle' => 'reps_event',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Europ媳che Kommission - Vertretung in Deutschland',
+      ),
+    ),
+    'deleted' => 1,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meta_description',
+    'label' => 'Description metatag',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
     ),
   );
 
@@ -184,7 +297,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -252,7 +365,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -502,7 +615,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -579,7 +692,7 @@ function reps_events_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'event_date_format',
@@ -587,7 +700,7 @@ function reps_events_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => 0,
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -652,7 +765,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -716,7 +829,7 @@ function reps_events_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -781,7 +894,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -817,6 +930,58 @@ function reps_events_field_default_field_instances() {
       'settings' => array(),
       'type' => 'registration_select',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_event-field_tags'.
+  $field_instances['node-reps_event-field_tags'] = array(
+    'bundle' => 'reps_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 3,
     ),
   );
 
@@ -947,7 +1112,9 @@ function reps_events_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Date');
+  t('Description metatag');
   t('External Link');
+  t('IPG Classification');
   t('Image');
   t('Location');
   t('Name');
@@ -955,6 +1122,7 @@ function reps_events_field_default_field_instances() {
   t('Related Document(s)');
   t('Related Link(s)');
   t('Related video');
+  t('Tags');
   t('Title');
   t('Venue');
 

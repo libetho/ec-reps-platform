@@ -1343,7 +1343,6 @@ form .field-name-field-reps-core-image {
 }
 #block-views-reps-news-block .group-right h3,
 #block-views-reps-events-block .group-right h3 {
-  font-size: 1.5rem;
   font-weight: bold;
   margin-top: 3px;
 }
@@ -1617,6 +1616,7 @@ ul.pager li.pager-current {
 }
 .ds-2col .group-right {
   float: none;
+  font-size: 12.6px;
   overflow: hidden;
   width: auto;
 }

@@ -20,39 +20,6 @@ function reps_events_user_default_permissions() {
     'module' => 'registration',
   );
 
-  // Exported permission: 'administer registration'.
-  $permissions['administer registration'] = array(
-    'name' => 'administer registration',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'registration',
-  );
-
-  // Exported permission: 'administer registration states'.
-  $permissions['administer registration states'] = array(
-    'name' => 'administer registration states',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'registration',
-  );
-
-  // Exported permission: 'administer registration types'.
-  $permissions['administer registration types'] = array(
-    'name' => 'administer registration types',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'registration',
-  );
-
   // Exported permission: 'administer reps_registration registration'.
   $permissions['administer reps_registration registration'] = array(
     'name' => 'administer reps_registration registration',

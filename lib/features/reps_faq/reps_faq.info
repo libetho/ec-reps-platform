@@ -53,6 +53,7 @@ features[variable][] = scheduler_unpublish_required_reps_faq
 features[variable][] = scheduler_unpublish_revision_reps_faq
 features[variable][] = scheduler_use_vertical_tabs_reps_faq
 features[variable][] = workbench_moderation_default_state_reps_faq
+features[variable][] = xmlsitemap_settings_node_reps_faq
 features[views_view][] = reps_faq
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
