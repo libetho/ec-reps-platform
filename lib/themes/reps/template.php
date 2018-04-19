@@ -402,5 +402,11 @@ function reps_html_head_alter(&$head_elements) {
       ),
     );
   }
-  $head_elements['metatag_date_0']['#value'] = format_date(node_load(arg(1))->created, 'short');
+  if(node_load(arg(1)) !== FALSE) {
+    $date = format_date(node_load(arg(1))->created, 'short');
+  }
+  else {
+    $date = format_date(time(), 'short');
+  }
+  $head_elements['metatag_date_0']['#value'] = $date;
 }
