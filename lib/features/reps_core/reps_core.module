@@ -663,6 +663,10 @@ function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
       'field_file_image_alt_text',
     ))) {
       $element['value']['#required'] = TRUE;
+      if ($element['#field_name'] == 'field_caption') {	
+        // Set default value for caption.	
+        $element['value']['#default_value'] = 'copyright';	
+      }
     }
   }
 }
