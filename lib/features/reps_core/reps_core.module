@@ -730,3 +730,10 @@ function reps_core_form_alter(&$vars) {
     unset($vars['field_meta_description']);
   }
 }
+
+/**
+ * Alter the default filter options for the Sanitize HTML text filter.
+ */
+function reps_core_multisite_drupal_toolbox_filter_options_alter(&$filter_options) {
+  $filter_options['valid_elements']['iframe'] = array('*' => TRUE);
+}
