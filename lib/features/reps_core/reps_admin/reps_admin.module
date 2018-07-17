@@ -299,7 +299,6 @@ function _reps_admin_form_weight(array $one, array $two) {
   if (isset($one['weight']) && isset($two['weight'])) {
     return $one['weight'] < $two['weight'] ? -1 : 1;
   }
-
   return 0;
 }
 

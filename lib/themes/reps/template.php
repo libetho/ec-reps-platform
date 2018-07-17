@@ -201,7 +201,7 @@ function reps_preprocess_block(&$variables) {
 
         $items = array();
         $items[] = array(
-          'data' => '<span class="off-screen">' . t("Current language") . ':</span> ' . $language->language,
+          'data' => t('<span class="off-screen"> Current language :</span> @language', array('@language' => $language->language)),
           'class' => array('selected'),
           'title' => $language->native,
           'lang' => $language->language,
@@ -351,7 +351,7 @@ function reps_preprocess_social_media_links_platform(&$variables) {
   }
 
   $variables['attributes']['title'] = check_plain($info['title']);
-  $variables['icon_path']  = $icon_folder . $name . '.png';
+  $variables['icon_path'] = $icon_folder . $name . '.png';
   $variables['icon_alt'] = isset($info['image alt']) ? $info['image alt'] : $info['title'] . ' ' . t('icon');
 }
 
