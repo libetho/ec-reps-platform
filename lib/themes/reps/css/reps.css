@@ -204,8 +204,8 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a {
   border: none;
   border-left: 1px solid #ffffff;
-  background: none;
-  color: #e7e7e7;
+  background: none !important;
+  color: #e7e7e7 !important;
   margin: 0;
   padding: 0 10px 0;
 }
@@ -1612,14 +1612,24 @@ ul.pager li.pager-current {
   .mobile-user-bar .navbar-header {
     display: none;
   }
+  body.reps #mainContainer .region-featured-wrapper #main-menu {
+    font-size: 0.9em;
+  }
+  body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li a {
+    padding: 0.6em;
+  }
 }
 /* Small and x-small */
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .mobile-user-bar {
     z-index: 5000;
   }
   .mobile-user-bar .affix {
     position: absolute !important;
+  }
+  .mobile-user-bar .navbar-header {
+    position: static;
+    width: auto;
   }
   #path {
     display: block !important;

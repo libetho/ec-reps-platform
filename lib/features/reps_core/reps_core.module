@@ -665,7 +665,7 @@ function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
       $element['value']['#required'] = TRUE;
       if ($element['#field_name'] == 'field_caption') {
         // Set default value for caption.
-        $element['value']['#default_value'] = '©';
+        $element['value']['#default_value'] = 'copyright';
       }
     }
   }
@@ -729,4 +729,11 @@ function reps_core_form_alter(&$vars) {
     unset($vars['field_meta_classification']);
     unset($vars['field_meta_description']);
   }
+}
+
+/**
+ * Alter the default filter options for the Sanitize HTML text filter.
+ */
+function reps_core_multisite_drupal_toolbox_filter_options_alter(&$filter_options) {
+  $filter_options['valid_elements']['iframe'] = array('*' => TRUE);
 }
