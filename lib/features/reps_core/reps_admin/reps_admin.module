@@ -307,7 +307,7 @@ function _reps_admin_form_weight(array $one, array $two) {
  */
 function _reps_admin_retrieve_socials() {
   if (module_exists('social_media_links')) {
-    $socials = array_keys(social_media_links_platforms());
+    $socials = array_keys(reps_core_social_media_links_platforms());
     return $socials;
   }
   else {
