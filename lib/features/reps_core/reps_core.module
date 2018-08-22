@@ -272,7 +272,7 @@ function reps_core_block_view($delta = '') {
  * Prepare the feedback form.
  */
 function _reps_core_feedback_form() {
-  $form['#action'] = url('http://webtools.ec.europa.eu/form-tools/process.php', array('external' => TRUE));
+  $form['#action'] = url('https://webtools.ec.europa.eu/form-tools/process.php', array('external' => TRUE));
 
   $form['reps_core_feeback_form']['form-found'] = array(
     '#attributes' => array('id' => 'form-found'),
