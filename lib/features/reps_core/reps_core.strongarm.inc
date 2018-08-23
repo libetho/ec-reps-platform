@@ -686,6 +686,13 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'nexteuropa_europa_search_url';
+  $strongarm->value = 'https://ec.europa.eu/search';
+  $export['nexteuropa_europa_search_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_reps_contact_point';
   $strongarm->value = array(
     0 => 'status',

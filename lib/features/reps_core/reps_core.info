@@ -246,6 +246,7 @@ features[variable][] = menu_parent_reps_homepage
 features[variable][] = menu_parent_reps_homepage_additional_block
 features[variable][] = menu_parent_reps_slide_footer
 features[variable][] = menu_parent_reps_slide_homepage
+features[variable][] = nexteuropa_europa_search_url
 features[variable][] = node_options_reps_contact_point
 features[variable][] = node_options_reps_homepage
 features[variable][] = node_options_reps_homepage_additional_block
