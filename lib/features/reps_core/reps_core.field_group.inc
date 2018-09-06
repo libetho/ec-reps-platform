@@ -137,7 +137,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'More Info',
-    'weight' => '7',
+    'weight' => '4',
     'children' => array(
       0 => 'field_reps_core_more_info_body',
       1 => 'field_reps_core_more_info_link',
@@ -222,7 +222,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       1 => 'field_reps_core_image',
       2 => 'field_reps_core_abstract',
@@ -251,7 +251,7 @@ function reps_core_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related Content',
-    'weight' => '6',
+    'weight' => '3',
     'children' => array(
       0 => 'field_reps_core_related_video',
     ),

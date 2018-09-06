@@ -44,7 +44,7 @@ function reps_core_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 1,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 32768,
       'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
