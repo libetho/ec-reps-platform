@@ -2,7 +2,7 @@ name = REPS News
 description = The news feature for the REPS websites
 core = 7.x
 package = REPS
-php = 5.2.4
+php = 5.6
 dependencies[] = reps_core
 
 features[context][] = reps-news
@@ -57,4 +57,4 @@ features[variable][] = scheduler_unpublish_revision_reps_news
 features[variable][] = scheduler_use_vertical_tabs_reps_news
 features[views_view][] = reps_categories
 features[views_view][] = reps_news
-multisite_version = 2.2
+multisite_version = 2.5

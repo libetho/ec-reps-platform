@@ -74,3 +74,15 @@ function reps_news_install() {
 function reps_news_update_7001() {
   _reps_news_create_listing_page();
 }
+
+/**
+ * Remove fields from old multisite metatags feature;
+ */
+function reps_news_update_7002() {
+  if ($instance = field_info_instance('node', 'field_meta_classification', 'reps_news')) {
+    field_delete_instance($instance);
+  }
+  if ($instance = field_info_instance('node', 'field_meta_description', 'reps_news')) {
+    field_delete_instance($instance);
+  }
+}
