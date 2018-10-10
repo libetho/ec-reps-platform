@@ -8,15 +8,6 @@
 include_once 'reps_events.features.inc';
 
 /**
- * Implements reps_events_form_alter().
- */
-function reps_events_form_alter(&$vars) {
-  if ($vars['#id'] == 'reps-event-node-form') {
-    unset($vars['field_reps_event_location']);
-  }
-}
-
-/**
  * Helpers to generate a default event listing page.
  */
 function _reps_events_create_listing_page() {

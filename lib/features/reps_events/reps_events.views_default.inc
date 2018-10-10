@@ -262,7 +262,6 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
-  $handler->display->display_options['fields']['field_reps_event_venue']['empty'] = '[field_reps_event_location]';
   $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -423,6 +422,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
@@ -576,6 +576,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -613,6 +614,8 @@ function reps_events_views_default_views() {
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'rss_fields';

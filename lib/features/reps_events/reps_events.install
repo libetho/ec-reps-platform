@@ -36,13 +36,8 @@ function reps_events_update_7001() {
 }
 
 /**
- * Remove fields from old multisite metatags feature;
+ * Delete fields field_reps_event_location.
  */
 function reps_events_update_7002() {
-  if ($instance = field_info_instance('node', 'field_meta_classification', 'reps_event')) {
-    field_delete_instance($instance);
-  }
-  if ($instance = field_info_instance('node', 'field_meta_description', 'reps_event')) {
-    field_delete_instance($instance);
-  }
+  field_delete_field('field_reps_event_location');
 }
