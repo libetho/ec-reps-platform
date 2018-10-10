@@ -1634,19 +1634,18 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-reps_homepage-field_reps_core_node_reference'.
-  $field_instances['node-reps_homepage-field_reps_core_node_reference'] = array(
+  // Exported field_instance: 'node-reps_homepage-field_tags'.
+  $field_instances['node-reps_homepage-field_tags'] = array(
     'bundle' => 'reps_homepage',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1656,22 +1655,21 @@ function reps_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_reps_core_node_reference',
-    'label' => 'Additional block(s)',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 5,
     ),
   );

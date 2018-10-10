@@ -62,7 +62,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['table'] = 'field_data_field_reps_rightcol_weight';
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['field'] = 'field_reps_rightcol_weight_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Page(s) (field_reps_core_node_reference) */
+  /* Contextual filter: Block: Page(s) (field_reps_core_node_reference) */
   $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['id'] = 'field_reps_core_node_reference_target_id';
   $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['table'] = 'field_data_field_reps_core_node_reference';
   $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['field'] = 'field_reps_core_node_reference_target_id';
@@ -162,7 +162,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['table'] = 'field_data_field_reps_rightcol_weight';
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['field'] = 'field_reps_rightcol_weight_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Page(s) (field_reps_core_node_reference) */
+  /* Contextual filter: Block: Page(s) (field_reps_core_node_reference) */
   $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['id'] = 'field_reps_core_node_reference_target_id';
   $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['table'] = 'field_data_field_reps_core_node_reference';
   $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['field'] = 'field_reps_core_node_reference_target_id';
@@ -217,7 +217,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Field: Page(s) (field_reps_core_node_reference) */
+  /* Filter criterion: Block: Page(s) (field_reps_core_node_reference) */
   $handler->display->display_options['filters']['field_reps_core_node_reference_target_id']['id'] = 'field_reps_core_node_reference_target_id';
   $handler->display->display_options['filters']['field_reps_core_node_reference_target_id']['table'] = 'field_data_field_reps_core_node_reference';
   $handler->display->display_options['filters']['field_reps_core_node_reference_target_id']['field'] = 'field_reps_core_node_reference_target_id';
@@ -250,7 +250,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['filters']['field_reps_rightcol_position_value']['value'] = array(
     0 => '0',
   );
-  /* Filter criterion: Field: Page(s) (field_reps_core_node_reference) */
+  /* Filter criterion: Block: Page(s) (field_reps_core_node_reference) */
   $handler->display->display_options['filters']['field_reps_core_node_reference_target_id']['id'] = 'field_reps_core_node_reference_target_id';
   $handler->display->display_options['filters']['field_reps_core_node_reference_target_id']['table'] = 'field_data_field_reps_core_node_reference';
   $handler->display->display_options['filters']['field_reps_core_node_reference_target_id']['field'] = 'field_reps_core_node_reference_target_id';

@@ -449,6 +449,7 @@ function reps_core_default_roles_permissions() {
       'import contact_points_edic feeds' => TRUE,
       'import contact_points_tem feeds' => TRUE,
       'import media' => TRUE,
+      'manage feature multisite_crop_and_resize' => TRUE,
       'manipulate all queues' => TRUE,
       'manipulate queues' => TRUE,
       'moderate content from draft to needs_review' => TRUE,

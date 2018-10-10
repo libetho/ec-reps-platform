@@ -197,7 +197,7 @@ function reps_core_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'body',
-      1 => 'field_reps_core_node_reference',
+      1 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
