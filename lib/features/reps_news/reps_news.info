@@ -24,6 +24,7 @@ features[field_instance][] = node-reps_news-field_reps_core_image
 features[field_instance][] = node-reps_news-field_reps_core_related_links
 features[field_instance][] = node-reps_news-field_reps_core_related_video
 features[field_instance][] = node-reps_news-field_reps_news_category
+features[field_instance][] = node-reps_news-field_tags
 features[field_instance][] = node-reps_news-title_field
 features[field_instance][] = taxonomy_term-reps_news_categories-name_field
 features[node][] = reps_news
