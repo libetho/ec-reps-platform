@@ -104,7 +104,7 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: External Url: translated */
+  /* Field: Entity translation: Link: translated */
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['id'] = 'field_reps_core_external_url_et';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['field'] = 'field_reps_core_external_url_et';
@@ -174,14 +174,14 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More videos';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: External Url: translated */
+  /* Field: Entity translation: Link: translated */
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['id'] = 'field_reps_core_external_url_et';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['field'] = 'field_reps_core_external_url_et';
