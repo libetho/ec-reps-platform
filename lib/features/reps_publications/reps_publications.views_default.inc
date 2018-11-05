@@ -88,11 +88,12 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date']['field'] = 'field_reps_core_date';
   $handler->display->display_options['fields']['field_reps_core_date']['label'] = 'Publication date';
   $handler->display->display_options['fields']['field_reps_core_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'event_date_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -145,7 +146,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More Publications';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
@@ -240,6 +241,8 @@ function reps_publications_views_default_views() {
 
   /* Display: Block full listing */
   $handler = $view->new_display('block', 'Block full listing', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
   $export['reps_publications'] = $view;
 
   return $export;
