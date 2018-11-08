@@ -74,4 +74,3 @@ function reps_news_install() {
 function reps_news_update_7001() {
   _reps_news_create_listing_page();
 }
-

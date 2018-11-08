@@ -280,7 +280,7 @@ function reps_core_update_7003() {
 }
 
 /**
- * remove field_reps_core_node_reference from homepage.
+ * Remove field_reps_core_node_reference from homepage.
  */
 function reps_core_update_7004() {
   if ($instance = field_info_instance('node', 'field_reps_core_node_reference', 'reps_homepage')) {
