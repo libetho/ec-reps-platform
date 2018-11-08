@@ -170,7 +170,6 @@ features[roles_permissions][] = administrator
 features[roles_permissions][] = anonymous user
 features[roles_permissions][] = editor
 features[taxonomy][] = reps_contact_point_categories
-features[taxonomy][] = reps_news_categories
 features[user_role][] = REPS Administrator
 features[variable][] = classification
 features[variable][] = comment_anonymous_reps_contact_point

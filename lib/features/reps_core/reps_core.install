@@ -287,3 +287,28 @@ function reps_core_update_7004() {
     field_delete_instance($instance);
   }
 }
+
+/**
+ * Delete old permissions settings.
+ */
+function reps_core_update_7005() {
+  // REPS administrator.
+  $role = user_role_load_by_name('REPS Administrator');
+  user_role_revoke_permissions($role->rid, array(
+    'assign node weight',
+    'set page title',
+  ));
+  // Administrator.
+  $role = user_role_load_by_name('administrator');
+  user_role_revoke_permissions($role->rid, array(
+    'administer page titles',
+    'assign node weight',
+    'set page title',
+  ));
+  // Editor.
+  $role = user_role_load_by_name('editor');
+  user_role_revoke_permissions($role->rid, array(
+    'assign node weight',
+    'set page title',
+  ));
+}

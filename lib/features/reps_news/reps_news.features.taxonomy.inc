@@ -1,24 +1,23 @@
 <?php
-
 /**
  * @file
- * reps_core.features.taxonomy.inc
+ * reps_news.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function reps_core_taxonomy_default_vocabularies() {
+function reps_news_taxonomy_default_vocabularies() {
   return array(
-    'reps_contact_point_categories' => (object) array(
-      'name' => 'REPS Contact point categories',
-      'machine_name' => 'reps_contact_point_categories',
-      'description' => '',
+    'reps_news_categories' => (object) array(
+      'name' => 'REPS News Categories',
+      'machine_name' => 'reps_news_categories',
+      'description' => 't',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 1,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 32768,
       'entity_type' => 'taxonomy_vocabulary',
       'rdf_mapping' => array(
         'rdftype' => array(
