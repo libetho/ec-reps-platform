@@ -118,6 +118,67 @@ function reps_core_fe_nodequeue_export_fields() {
 }
 
 /**
+ * Implements hook_metatag_export_default_alter().
+ */
+function reps_core_metatag_export_default_alter(&$data) {
+  if (isset($data['node'])) {
+    $data['node']->config = array(
+      'title' => array(
+        'value' => '[node:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[node:title]',
+      ),
+      'keywords' => array(
+        'value' => '[node:field-tags]',
+      ),
+      'revisit-after' => array(
+        'value' => 15,
+        'period' => 'day',
+      ),
+      'dcterms.title' => array(
+        'value' => '[node:title]',
+      ),
+      'dcterms.creator' => array(
+        'value' => '[node:author]',
+      ),
+      'dcterms.description' => array(
+        'value' => '[node:summary]',
+      ),
+      'dcterms.date' => array(
+        'value' => '[node:created:custom:Y-m-d\\TH:iP]',
+      ),
+      'dcterms.language' => array(
+        'value' => '[node:language]',
+      ),
+      'og:type' => array(
+        'value' => '[node:content-type]',
+      ),
+      'og:title' => array(
+        'value' => '[node:title] - [site:name] - European Commission',
+      ),
+      'og:description' => array(
+        'value' => '[node:title]',
+      ),
+      'og:updated_time' => array(
+        'value' => '[node:changed:custom:c]',
+      ),
+      'og:image' => array(
+        'value' => '[node:field-reps-core-image:file:url]',
+      ),
+      'article:published_time' => array(
+        'value' => '[node:created:custom:c]',
+      ),
+      'article:modified_time' => array(
+        'value' => '[node:changed:custom:c]',
+      ),
+    ); /* WAS: '' */
+    $data['node']->disabled = FALSE; /* WAS: '' */
+    $data['node']->instance = 'node'; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function reps_core_image_default_styles() {

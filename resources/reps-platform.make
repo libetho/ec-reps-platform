@@ -14,6 +14,9 @@ projects[ckeditor_tabber][version] = 1.3
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = 1.0
 
+projects[features_override][subdir] = "contrib"
+projects[features_override][version] = 2.0-rc3
+
 projects[features_roles_permissions][subdir] = "contrib"
 projects[features_roles_permissions][version] = 1.2
 
