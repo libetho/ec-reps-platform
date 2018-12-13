@@ -1077,7 +1077,7 @@ function reps_core_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '115x0',
+      'min_resolution' => '600x600',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),

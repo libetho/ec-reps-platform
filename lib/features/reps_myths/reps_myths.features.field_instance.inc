@@ -169,7 +169,7 @@ function reps_myths_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '150x0',
+      'min_resolution' => '600x600',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
