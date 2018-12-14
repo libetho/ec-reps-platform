@@ -377,3 +377,30 @@ function reps_entity_translation_unavailable($variables) {
     return "<div class=\"$classes\">$message</div>";
   }
 }
+
+/**
+ * Implements drupal_add_html_head().
+ */
+function reps_html_head_alter(&$head_elements) {
+  // OG:image.
+  if(!isset($head_elements['metatag_og:image_0'])) {
+    global $base_url;
+	  $head_elements[] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'og:image',
+        'content' => $base_url . '/' . drupal_get_path('theme', 'reps') . '/images/logos/logo.png',
+      ),
+    );
+  }
+
+  // Meta date.
+  if (node_load(arg(1)) != FALSE) {
+    $date = node_load(arg(1))->created;
+  }
+  else {
+    $date = time();
+  }
+  $head_elements['metatag_date_0']['#value'] = format_date($date, 'event_date_format');
+}
