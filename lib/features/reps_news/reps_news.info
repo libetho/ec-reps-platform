@@ -27,6 +27,7 @@ features[field_instance][] = node-reps_news-field_reps_news_category
 features[field_instance][] = node-reps_news-field_tags
 features[field_instance][] = node-reps_news-title_field
 features[field_instance][] = taxonomy_term-reps_news_categories-name_field
+features[metatag][] = node:reps_news
 features[node][] = reps_news
 features[taxonomy][] = reps_news_categories
 features[user_permission][] = add terms in reps_news_categories

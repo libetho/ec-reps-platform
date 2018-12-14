@@ -16,6 +16,7 @@ features[field_instance][] = node-reps_faq-body
 features[field_instance][] = node-reps_faq-field_reps_core_abstract
 features[field_instance][] = node-reps_faq-field_reps_core_image
 features[field_instance][] = node-reps_faq-title_field
+features[metatag][] = node:reps_faq
 features[node][] = reps_faq
 features[user_permission][] = create reps_faq content
 features[user_permission][] = delete any reps_faq content

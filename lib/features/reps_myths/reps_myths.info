@@ -15,6 +15,7 @@ features[field_instance][] = node-reps_eu_myth-field_reps_core_abstract
 features[field_instance][] = node-reps_eu_myth-field_reps_core_image
 features[field_instance][] = node-reps_eu_myth-field_tags
 features[field_instance][] = node-reps_eu_myth-title_field
+features[metatag][] = node:reps_eu_myth
 features[node][] = reps_eu_myth
 features[user_permission][] = create reps_eu_myth content
 features[user_permission][] = delete any reps_eu_myth content

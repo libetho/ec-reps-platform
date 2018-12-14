@@ -33,6 +33,7 @@ features[field_instance][] = node-reps_event-field_tags
 features[field_instance][] = node-reps_event-title_field
 features[field_instance][] = registration-reps_registration-field_reps_register_name
 features[image][] = thumbs_events_listing__width__250px_
+features[metatag][] = node:reps_event
 features[node][] = reps_event
 features[registration_type][] = reps_registration
 features[user_permission][] = administer own reps_registration registration
