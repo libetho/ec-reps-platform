@@ -11,7 +11,7 @@ function reps_core_metatag_export_default() {
   $config = array();
 
   // Exported Metatag config instance: node:page.
-  $config['node:page'] = (object) array(
+  $config['node:page'] = array(
     'instance' => 'node:page',
     'config' => array(
       'revisit-after' => array(
@@ -25,7 +25,7 @@ function reps_core_metatag_export_default() {
   );
 
   // Exported Metatag config instance: node:reps_homepage.
-  $config['node:reps_homepage'] = (object) array(
+  $config['node:reps_homepage'] = array(
     'instance' => 'node:reps_homepage',
     'config' => array(
       'revisit-after' => array(

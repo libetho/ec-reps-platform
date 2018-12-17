@@ -11,7 +11,7 @@ function reps_news_metatag_export_default() {
   $config = array();
 
   // Exported Metatag config instance: node:reps_news.
-  $config['node:reps_news'] = (object) array(
+  $config['node:reps_news'] = array(
     'instance' => 'node:reps_news',
     'config' => array(
       'revisit-after' => array(

@@ -1553,24 +1553,7 @@ ul.pager li.pager-current {
 }
 /* Tables styling */
 .reps table {
-  background: #f6f6f6;
-  border: 2px solid #b60522;
-}
-.reps table caption {
-  font-style: italic;
-  text-align: right;
-  padding: 3px;
-}
-.reps table th {
-  background: #bbb;
-  border-bottom: none;
-}
-.reps table thead,
-.reps table tbody {
-  border: none;
-}
-.reps table td {
-  border: 1px solid #bbb;
+  border-collapse: initial;
 }
 /* Twitter feed */
 #block-bean-bean-twitter .panel-body {

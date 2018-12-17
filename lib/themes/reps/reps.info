@@ -3,7 +3,12 @@ description = Sub theme of default theme, ec_resp
 package = Fpfis_cms_theme
 core = "7.x"
 base theme = ec_resp
-php = 5.2.4
+php = 5.6
+
+; ========================================
+; CSS FOAD
+; ========================================
+stylesheets[all][] = system.theme.css
 
 stylesheets[all][] = "css/reps.css"
 stylesheets[print][] = "css/reps-print.css"
@@ -30,4 +35,4 @@ regions[footer] = "Footer"
 
 settings[shortcut_module_link] = 0
 
-multisite_version = 2.2
+multisite_version = 2.5
