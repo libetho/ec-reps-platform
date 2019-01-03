@@ -1577,6 +1577,40 @@ ul.pager li.pager-current {
 #path .easy-breadcrumb {
   display: inline;
 }
+/* Additional formats from Wysiwyg editor. */
+h2.italic-title {
+  font-style: italic;
+}
+h3.subtitle {
+  color: #333;
+  font-style: italic;
+}
+div.special-container {
+  padding: 5px 10px;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+span.rtl {
+  direction: rtl;
+}
+span.ltr {
+  direction: ltr;
+}
+p.top-button {
+  display: inline-block;
+}
+p.top-button a {
+  background: #002b7f;
+  font-size: 1.3em;
+  padding: 8px 50px 8px 50px;
+  display: block;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: none;
+}
+p.top-button a:hover {
+  background: #26437f;
+}
 /* Medium + Large */
 @media all and (min-width: 767px) {
   #sidebar-right {

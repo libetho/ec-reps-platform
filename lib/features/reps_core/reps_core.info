@@ -12,7 +12,6 @@ dependencies[] = extlink
 dependencies[] = fe_block
 dependencies[] = fe_nodequeue
 dependencies[] = features_roles_permissions
-dependencies[] = features_override
 dependencies[] = feeds
 dependencies[] = feeds_xpathparser
 dependencies[] = flexslider_example
