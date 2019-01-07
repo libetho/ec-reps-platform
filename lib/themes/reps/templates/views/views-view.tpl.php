@@ -59,7 +59,9 @@
     <?php if ($rows): ?>
       <?php print $rows; ?>
     <?php else: ?>
-      <?php print t('No results found'); ?>
+      <div class="view-empty">
+        <?php print $empty; ?>
+      </div>
     <?php endif; ?>
   </div>
 
