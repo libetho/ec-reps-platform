@@ -161,20 +161,6 @@ function reps_menu_link(&$variables) {
 }
 
 /**
- * Implements theme_preprocess_node().
- *
- * Remove info about field reps_event_location (old field).
- * To force usage of the new field_reps_event venue in template (new field).
- */
-function reps_preprocess_node(&$vars) {
-  if ($vars['type'] == 'reps_event') {
-    if ($vars['field_reps_event_venue']) {
-      unset($vars['content']['field_reps_event_location']);
-    }
-  }
-}
-
-/**
  * Implements theme_preprocess_block().
  *
  * Remove unused block ipg info (just keep the date and the top link).
