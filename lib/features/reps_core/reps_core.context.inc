@@ -107,6 +107,12 @@ function reps_core_context_default_contexts() {
           'region' => 'content',
           'weight' => '5',
         ),
+        'views-reps_publications-block' => array(
+          'module' => 'views',
+          'delta' => 'reps_publications-block',
+          'region' => 'content',
+          'weight' => '6',
+        ),
         'views-reps_sliders-block_1' => array(
           'module' => 'views',
           'delta' => 'reps_sliders-block_1',
