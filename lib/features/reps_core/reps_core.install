@@ -312,3 +312,14 @@ function reps_core_update_7005() {
     'set page title',
   ));
 }
+
+/**
+ * Disable and uninstall Weight module.
+ */
+function reps_core_update_7006() {
+  $modules = array(
+    'weight',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}
