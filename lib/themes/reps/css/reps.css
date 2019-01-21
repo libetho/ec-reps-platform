@@ -837,28 +837,6 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-page 
   float: none;
   margin: 0;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .view-reps-videos .view-content {
-  margin: 0 -15px;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .view-reps-videos .view-content .views-row {
-  width: 33%;
-  float: left;
-  padding: 0 15px;
-  margin-top: 10px;
-  border: none;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .view-reps-videos .view-content .views-row img {
-  max-width: 100%;
-  margin-bottom: 4px;
-  height: auto;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .view-reps-videos .view-content .views-row .views-field-title-field-et {
-  font-size: 120%;
-  font-weight: bold;
-}
-body.reps #mainContainer #layout-body #block-system-main .panel-body .view-reps-videos .view-content .views-row .views-field-title-field-et a {
-  color: #347c98;
-}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .view-reps-publications .views-field-field-reps-core-image {
   max-width: 150px;
 }
@@ -1302,6 +1280,31 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 }
 form .field-name-field-reps-core-image {
   float: none;
+}
+/* Reps_videos_block. */
+.view-reps-videos .view-content {
+  margin: 0 -15px;
+}
+.view-reps-videos .view-content .views-row {
+  width: 33%;
+  float: left;
+  padding: 0 15px;
+  margin-top: 10px;
+  border: none;
+}
+.view-reps-videos .view-content .views-row img {
+  max-width: 100%;
+  margin-bottom: 4px;
+  height: auto;
+}
+.view-reps-videos .view-content .views-row .views-field-title-field-et,
+.view-reps-videos .view-content .views-row .views-field-title-field {
+  font-size: 105%;
+  font-weight: bold;
+}
+.view-reps-videos .view-content .views-row .views-field-title-field-et a,
+.view-reps-videos .view-content .views-row .views-field-title-field a {
+  color: #347c98;
 }
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {
