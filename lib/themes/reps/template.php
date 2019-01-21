@@ -369,9 +369,9 @@ function reps_entity_translation_unavailable($variables) {
  */
 function reps_html_head_alter(&$head_elements) {
   // OG:image.
-  if(!isset($head_elements['metatag_og:image_0'])) {
+  if (!isset($head_elements['metatag_og:image_0'])) {
     global $base_url;
-	  $head_elements[] = array(
+    $head_elements[] = array(
       '#type' => 'html_tag',
       '#tag' => 'meta',
       '#attributes' => array(

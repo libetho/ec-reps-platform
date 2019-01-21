@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * reps_news.features.metatag.inc
+ * Reps_news.features.metatag.inc.
  */
 
 /**
