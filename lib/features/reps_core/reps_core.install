@@ -270,3 +270,56 @@ function reps_core_update_7002() {
   }
   features_revert_module($modules_to_revert);
 }
+
+/**
+ * Delete fields field_meta_classification and field_meta_description.
+ */
+function reps_core_update_7003() {
+  field_delete_field('field_meta_classification');
+  field_delete_field('field_meta_description');
+}
+
+/**
+ * Remove field_reps_core_node_reference from homepage.
+ */
+function reps_core_update_7004() {
+  if ($instance = field_info_instance('node', 'field_reps_core_node_reference', 'reps_homepage')) {
+    field_delete_instance($instance);
+  }
+}
+
+/**
+ * Delete old permissions settings.
+ */
+function reps_core_update_7005() {
+  // REPS administrator.
+  $role = user_role_load_by_name('REPS Administrator');
+  user_role_revoke_permissions($role->rid, array(
+    'assign node weight',
+    'set page title',
+  ));
+  // Administrator.
+  $role = user_role_load_by_name('administrator');
+  user_role_revoke_permissions($role->rid, array(
+    'administer page titles',
+    'assign node weight',
+    'set page title',
+  ));
+  // Editor.
+  $role = user_role_load_by_name('editor');
+  user_role_revoke_permissions($role->rid, array(
+    'assign node weight',
+    'set page title',
+  ));
+}
+
+/**
+ * Disable and uninstall Weight module.
+ */
+function reps_core_update_7006() {
+  $modules = array(
+    'weight',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}

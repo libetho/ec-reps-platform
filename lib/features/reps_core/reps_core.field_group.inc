@@ -197,7 +197,7 @@ function reps_core_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'body',
-      1 => 'field_reps_core_node_reference',
+      1 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -227,6 +227,7 @@ function reps_core_field_group_info() {
       1 => 'field_reps_core_image',
       2 => 'field_reps_core_abstract',
       3 => 'field_ne_body',
+      4 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

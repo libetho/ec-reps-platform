@@ -405,14 +405,3 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
     }
   }
 }
-
-/**
- * Implements hook_theme_registry_alter().
- */
-function reps_admin_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'reps_event_node_form') {
-    if (isset($form['field_reps_event_location'])) {
-      $form['field_reps_event_location']['#access'] = FALSE;
-    }
-  }
-}

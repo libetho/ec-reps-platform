@@ -161,20 +161,6 @@ function reps_menu_link(&$variables) {
 }
 
 /**
- * Implements theme_preprocess_node().
- *
- * Remove info about field reps_event_location (old field).
- * To force usage of the new field_reps_event venue in template (new field).
- */
-function reps_preprocess_node(&$vars) {
-  if ($vars['type'] == 'reps_event') {
-    if ($vars['field_reps_event_venue']) {
-      unset($vars['content']['field_reps_event_location']);
-    }
-  }
-}
-
-/**
  * Implements theme_preprocess_block().
  *
  * Remove unused block ipg info (just keep the date and the top link).
@@ -376,4 +362,31 @@ function reps_entity_translation_unavailable($variables) {
     $message .= '</ul>';
     return "<div class=\"$classes\">$message</div>";
   }
+}
+
+/**
+ * Implements drupal_add_html_head().
+ */
+function reps_html_head_alter(&$head_elements) {
+  // OG:image.
+  if (!isset($head_elements['metatag_og:image_0'])) {
+    global $base_url;
+    $head_elements[] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'og:image',
+        'content' => $base_url . '/' . drupal_get_path('theme', 'reps') . '/images/logos/logo.png',
+      ),
+    );
+  }
+
+  // Meta date.
+  if (node_load(arg(1)) != FALSE) {
+    $date = node_load(arg(1))->created;
+  }
+  else {
+    $date = time();
+  }
+  $head_elements['metatag_date_0']['#value'] = format_date($date, 'event_date_format');
 }

@@ -658,15 +658,15 @@ function _reps_core_create_block_twitter() {
 function reps_core_field_widget_form_alter(&$element, &$form_state, $context) {
   if (isset($element['#bundle']) and $element['#bundle'] == 'image') {
     // Make alt, title and caption required.
-    if (in_array($element['#field_name'], array('field_caption',
+    if (in_array($element['#field_name'], array(
       'field_file_image_title_text',
       'field_file_image_alt_text',
     ))) {
       $element['value']['#required'] = TRUE;
-      if ($element['#field_name'] == 'field_caption') {
-        // Set default value for caption.
-        $element['value']['#default_value'] = 'copyright';
-      }
+    }
+    if ($element['#field_name'] == 'field_caption') {
+      // Set default value for caption.
+      $element['value']['#default_value'] = 'copyright';
     }
   }
 }
@@ -718,16 +718,6 @@ function reps_core_views_default_views_alter(&$views) {
 function reps_core_preprocess_views_view(&$vars) {
   if ($vars['name'] == 'reps_contact_points') {
     $vars['rows'] = str_replace('KML ', '', $vars['rows']);
-  }
-}
-
-/**
- * Implements hook_form_alter().
- */
-function reps_core_form_alter(&$vars) {
-  if (isset($vars['#node_edit_form'])) {
-    unset($vars['field_meta_classification']);
-    unset($vars['field_meta_description']);
   }
 }
 

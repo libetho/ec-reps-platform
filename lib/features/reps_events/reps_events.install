@@ -34,3 +34,10 @@ function reps_events_disable() {
 function reps_events_update_7001() {
   _reps_events_create_listing_page();
 }
+
+/**
+ * Delete fields field_reps_event_location.
+ */
+function reps_events_update_7002() {
+  field_delete_field('field_reps_event_location');
+}

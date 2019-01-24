@@ -308,7 +308,7 @@ function reps_core_strongarm() {
     'bean' => 'bean',
     'comment' => 0,
     'registration' => 0,
-    'file' => 0,
+    'file' => 'file',
     'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
@@ -1133,7 +1133,7 @@ function reps_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_revision_page';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['scheduler_unpublish_revision_page'] = $strongarm;
 
   $strongarm = new stdClass();

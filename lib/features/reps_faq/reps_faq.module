@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Code for the REPS FaQ feature.
+ */
+
+include_once 'reps_faq.features.inc';
+
+/**
+ * Implements hook_node_view().
+ */
+function reps_faq_node_view($node, $view_mode, $langcode) {
+  switch ($node->type) {
+    case 'reps_faq':
+      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'news/faq'));
+      break;
+
+  }
+}

@@ -169,7 +169,7 @@ function reps_myths_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '150x0',
+      'min_resolution' => '600x600',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -217,6 +217,46 @@ function reps_myths_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-reps_eu_myth-field_tags'.
+  $field_instances['node-reps_eu_myth-field_tags'] = array(
+    'bundle' => 'reps_eu_myth',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 12,
     ),
   );
 
@@ -268,6 +308,7 @@ function reps_myths_field_default_field_instances() {
   t('Abstract');
   t('Body');
   t('Image');
+  t('Tags');
   t('Title');
 
   return $field_instances;

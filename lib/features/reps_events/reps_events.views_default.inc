@@ -172,7 +172,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More events';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
@@ -262,7 +262,6 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
-  $handler->display->display_options['fields']['field_reps_event_venue']['empty'] = '[field_reps_event_location]';
   $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -342,6 +341,17 @@ function reps_events_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No Results';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>No confirmed dates for upcoming events.<br />
+Please come back later, or browse our <a href="events/past-events">past events</a>.</p>
+';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
@@ -423,6 +433,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
@@ -576,6 +587,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -613,6 +625,8 @@ function reps_events_views_default_views() {
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'rss_fields';

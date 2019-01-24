@@ -160,7 +160,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More news';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
@@ -285,7 +285,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['display_description'] = 'RSS including news listing for Follow us block';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
@@ -375,6 +375,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_image']['field'] = 'field_reps_core_image';
   $handler->display->display_options['fields']['field_reps_core_image']['label'] = '';
   $handler->display->display_options['fields']['field_reps_core_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_core_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_reps_core_image']['settings'] = array(
     'image_style' => 'homepage_thumbs',
@@ -437,6 +438,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_news_category']['id'] = 'field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category']['table'] = 'field_data_field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category']['field'] = 'field_reps_news_category';
+  $handler->display->display_options['fields']['field_reps_news_category']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_news_category']['settings'] = array(
     'link' => 0,
   );
@@ -489,7 +491,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['display_description'] = 'RSS including news listing for Follow us block';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;

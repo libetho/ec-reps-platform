@@ -885,36 +885,7 @@ body.reps {
               margin: 0;
           } // .node-page END
 
-          .view-reps-videos {
-            .view-content {
-              margin: 0 -15px;
-
-              .views-row {
-                width: 33%;
-                float: left;
-                padding: 0 15px;
-                margin-top: 10px;
-                border: none;
-
-                img {
-                  max-width: 100%;
-                  margin-bottom: 4px;
-                  height: auto;
-                }
-
-                .views-field-title-field-et {
-                  font-size: 120%;
-                  font-weight: bold;
-
-                  a {
-                    color: #347c98;
-                  }
-                }
-              }
-            }
-          } // .view-reps-videos END
-
-                    .view-reps-publications {
+          .view-reps-publications {
             .views-field-field-reps-core-image {
               max-width: 150px;
             }
@@ -1452,6 +1423,37 @@ form .field-name-field-reps-core-image {
   float: none;
 }
 
+/* Reps_videos_block. */
+.view-reps-videos {
+  .view-content {
+    margin: 0 -15px;
+
+    .views-row {
+      width: 33%;
+      float: left;
+      padding: 0 15px;
+      margin-top: 10px;
+      border: none;
+
+      img {
+        max-width: 100%;
+        margin-bottom: 4px;
+        height: auto;
+      }
+
+      .views-field-title-field-et,
+      .views-field-title-field {
+        font-size: 105%;
+        font-weight: bold;
+
+        a {
+          color: #347c98;
+        }
+      }
+    }
+  }
+} // .view-reps-videos END
+
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {
   margin-right: -15px;
@@ -1751,29 +1753,7 @@ ul.pager {
 
 /* Tables styling */
 .reps table {
-  background: #f6f6f6;
-  border: 2px solid @maltaRed;
-  
-  caption {
-    font-style: italic;
-    text-align: right;
-    padding: 3px;
-    
-  }
-  
-  th {
-    background: #bbb;
-    border-bottom: none;
-  }
-  
-  thead,
-  tbody {
-    border: none;    
-  }
-  
-  td {
-    border: 1px solid #bbb;
-  }
+  border-collapse: initial;
 }
 
 /* Twitter feed */
@@ -1801,6 +1781,48 @@ ul.pager {
 /* Breadcrumb */
 #path .easy-breadcrumb {
   display: inline;
+}
+
+/* Additional formats from Wysiwyg editor. */
+h2.italic-title {
+  font-style: italic;
+}
+
+h3.subtitle {
+  color: #333;
+  font-style: italic
+}
+
+div.special-container {
+  padding: 5px 10px;
+	background: #eee;
+	border: 1px solid #ccc;
+}
+
+span.rtl {
+  direction: rtl;
+}
+
+span.ltr {
+  direction: ltr;
+}
+
+p.top-button {
+  display: inline-block;
+}
+
+p.top-button a {
+  background: #002b7f;
+  font-size: 1.3em;
+  padding: 8px 50px 8px 50px;
+  display: block;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: none;
+}
+
+p.top-button a:hover {
+  background: #26437f;
 }
 
 /* Medium + Large */

@@ -123,6 +123,7 @@ function reps_publications_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -442,7 +443,6 @@ function reps_publications_field_default_field_instances() {
   t('External Url');
   t('File');
   t('Image');
-  t('Tags');
   t('Title');
 
   return $field_instances;

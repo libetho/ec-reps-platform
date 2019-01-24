@@ -89,11 +89,6 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Promoted to front page */
-  $handler->display->display_options['filters']['promote']['id'] = 'promote';
-  $handler->display->display_options['filters']['promote']['table'] = 'node';
-  $handler->display->display_options['filters']['promote']['field'] = 'promote';
-  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -104,7 +99,7 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: External Url: translated */
+  /* Field: Entity translation: Link: translated */
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['id'] = 'field_reps_core_external_url_et';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['field'] = 'field_reps_core_external_url_et';
@@ -174,14 +169,14 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More videos';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: External Url: translated */
+  /* Field: Entity translation: Link: translated */
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['id'] = 'field_reps_core_external_url_et';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['table'] = 'field_data_field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url_et']['field'] = 'field_reps_core_external_url_et';
@@ -212,6 +207,73 @@ function reps_videos_views_default_views() {
   $handler->display->display_options['fields']['title_field_et']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['title_field_et']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_video' => 'reps_video',
+  );
+  /* Filter criterion: Field: Title (title_field:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+
+  /* Display: Block Full listing */
+  $handler = $view->new_display('block', 'Block Full listing', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['offset'] = '';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Link */
+  $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['field'] = 'field_reps_core_external_url';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_reps_core_external_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_core_external_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['type'] = 'link_plain';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_reps_core_image_1']['id'] = 'field_reps_core_image_1';
+  $handler->display->display_options['fields']['field_reps_core_image_1']['table'] = 'field_data_field_reps_core_image';
+  $handler->display->display_options['fields']['field_reps_core_image_1']['field'] = 'field_reps_core_image';
+  $handler->display->display_options['fields']['field_reps_core_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_core_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_core_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_reps_core_image_1']['settings'] = array(
+    'image_style' => 'thumb_videos__209x156_',
+    'image_link' => '',
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['path'] = '[field_reps_core_external_url]';
+  $handler->display->display_options['fields']['title_field']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   $export['reps_videos'] = $view;
 
   return $export;
