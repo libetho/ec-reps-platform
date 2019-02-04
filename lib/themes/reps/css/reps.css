@@ -404,23 +404,20 @@ body.reps #mainContainer #layout-body .view-reps-news img {
 body.reps #mainContainer #layout-body #block-views-reps-news-block .panel-heading {
   border-bottom: 1px dashed #878c92;
 }
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body {
-  margin: 15px -15px 0;
-}
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row {
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row {
   float: left;
-  width: 33.33333333%;
   padding: 0 15px;
+  width: 33.33333333%;
 }
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row img {
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row img {
   width: 100%;
   height: auto;
 }
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row .views-field-title-field-et {
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row .views-field-title-field-et {
   font-weight: bold;
   margin-top: 10px;
 }
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-body .views-row-last {
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row-last {
   margin-right: 0;
   width: 33.33333333%;
 }
@@ -1282,27 +1279,35 @@ form .field-name-field-reps-core-image {
   float: none;
 }
 /* Reps_videos_block. */
+#block-system-main .view-reps-videos .view-content,
 .view-reps-videos .view-content {
   margin: 0 -15px;
 }
+#block-system-main .view-reps-videos .view-content .views-row,
 .view-reps-videos .view-content .views-row {
-  width: 33%;
-  float: left;
-  padding: 0 15px;
-  margin-top: 10px;
   border: none;
+  border-top: none;
+  float: left;
+  margin-top: 10px;
+  padding: 0 15px;
+  width: 33%;
 }
+#block-system-main .view-reps-videos .view-content .views-row img,
 .view-reps-videos .view-content .views-row img {
   max-width: 100%;
   margin-bottom: 4px;
   height: auto;
 }
+#block-system-main .view-reps-videos .view-content .views-row .views-field-title-field-et,
 .view-reps-videos .view-content .views-row .views-field-title-field-et,
+#block-system-main .view-reps-videos .view-content .views-row .views-field-title-field,
 .view-reps-videos .view-content .views-row .views-field-title-field {
   font-size: 105%;
   font-weight: bold;
 }
+#block-system-main .view-reps-videos .view-content .views-row .views-field-title-field-et a,
 .view-reps-videos .view-content .views-row .views-field-title-field-et a,
+#block-system-main .view-reps-videos .view-content .views-row .views-field-title-field a,
 .view-reps-videos .view-content .views-row .views-field-title-field a {
   color: #347c98;
 }
