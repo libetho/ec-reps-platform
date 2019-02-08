@@ -511,6 +511,7 @@ function reps_core_default_roles_permissions() {
       'use text format basic_html' => TRUE,
       'use text format filtered_html' => TRUE,
       'use text format full_html' => TRUE,
+      'use text format full_html_track' => TRUE,
       'use workbench_moderation my drafts tab' => TRUE,
       'use workbench_moderation needs review tab' => TRUE,
       'version management edits' => TRUE,
