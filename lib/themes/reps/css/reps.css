@@ -1903,8 +1903,8 @@ p.top-button a:hover {
 @media all and (max-width: 480px) {
   .field-name-field-reps-core-image {
     float: none;
+    padding: 0;
   }
-
   #path {
     display: none !important;
   }
