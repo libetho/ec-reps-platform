@@ -1047,7 +1047,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'reps_main_content_image',
         ),
         'type' => 'file_rendered',
         'weight' => -10,
@@ -2523,7 +2523,6 @@ function reps_core_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Abstract');
-  t('Additional block(s)');
   t('Body');
   t('Contact point type');
   t('Date');
@@ -2535,6 +2534,7 @@ function reps_core_field_default_field_instances() {
   t('Page(s)');
   t('Position');
   t('Related video');
+  t('Tags');
   t('The Title of the block.');
   t('Title');
   t('Weight');

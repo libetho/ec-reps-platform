@@ -401,29 +401,25 @@ body.reps {
       }
 
       #block-views-reps-videos-block {
-        .panel-body {
-          margin: 15px -15px 0;
+        .views-row {
+          float: left;
+          padding: 0 15px;
+          width: (@fullWidth/3);
 
-          .views-row {
-            float: left;
-            width: (@fullWidth/3);
-            padding: 0 15px;
-
-            img {
-              width: 100%;
-              height: auto;
-            }
-
-            .views-field-title-field-et {
-              font-weight: bold;
-              margin-top: 10px;
-            }
+          img {
+            width: 100%;
+            height: auto;
           }
 
-          .views-row-last {
-            margin-right: 0;
-            width: (@fullWidth/3);
+          .views-field-title-field-et {
+            font-weight: bold;
+            margin-top: 10px;
           }
+        }
+
+        .views-row-last {
+          margin-right: 0;
+          width: (@fullWidth/3);
         }
 
         .more-link {
@@ -1424,16 +1420,18 @@ form .field-name-field-reps-core-image {
 }
 
 /* Reps_videos_block. */
+#block-system-main .view-reps-videos,
 .view-reps-videos {
   .view-content {
     margin: 0 -15px;
 
     .views-row {
-      width: 33%;
-      float: left;
-      padding: 0 15px;
-      margin-top: 10px;
       border: none;
+      border-top:none;
+      float: left;
+      margin-top: 10px;
+      padding: 0 15px;
+      width: 33%;
 
       img {
         max-width: 100%;
@@ -1859,6 +1857,10 @@ p.top-button a:hover {
 
 /* Small and x-small */
 @media all and (max-width: 767px) {
+  .field-name-field-reps-core-image {
+    float: none;
+    padding: 0;
+  }
 
   .mobile-user-bar {
     z-index: 5000;
