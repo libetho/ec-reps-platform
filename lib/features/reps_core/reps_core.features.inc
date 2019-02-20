@@ -15,10 +15,16 @@ function reps_core_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
   }
   if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  if ($module == "file_entity" && $api == "file_default_displays") {
     return array("version" => "1");
   }
   if ($module == "flexslider" && $api == "flexslider_default_preset") {
@@ -163,6 +169,22 @@ function reps_core_image_default_styles() {
         'data' => array(
           'width' => 82,
           'height' => 76,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: reps_main_content_image.
+  $styles['reps_main_content_image'] = array(
+    'label' => 'REPS main content image',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 300,
+          'height' => '',
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),
