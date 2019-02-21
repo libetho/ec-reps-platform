@@ -7,7 +7,7 @@
 /**
  * Implements hook_metatag_export_default().
  */
-function reps_news_metatag_export_default() {
+function reps_myths_metatag_export_default() {
   $config = array();
 
   // Exported Metatag config instance: node:reps_news.
