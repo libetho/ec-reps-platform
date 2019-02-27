@@ -7,11 +7,11 @@
 /**
  * Implements hook_metatag_export_default().
  */
-function reps_news_metatag_export_default() {
+function reps_myths_metatag_export_default() {
   $config = array();
 
   // Exported Metatag config instance: node:reps_news.
-  $config['node:reps_eu_myth'] = (object) array(
+  $config['node:reps_eu_myth'] = array(
     'instance' => 'node:reps_eu_myth',
     'config' => array(
       'revisit-after' => array(
