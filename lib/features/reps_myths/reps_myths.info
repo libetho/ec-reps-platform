@@ -36,6 +36,7 @@ features[variable][] = menu_parent_reps_eu_myth
 features[variable][] = node_options_reps_eu_myth
 features[variable][] = node_preview_reps_eu_myth
 features[variable][] = node_submitted_reps_eu_myth
+features[variable][] = pathauto_node_reps_eu_myth_pattern
 features[views_view][] = reps_eu_myth
 multisite_version = 2.5
 php = 5.6
