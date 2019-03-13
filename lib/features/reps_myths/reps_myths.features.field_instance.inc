@@ -133,7 +133,7 @@ function reps_myths_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'reps_main_content_image',
         ),
         'type' => 'file_rendered',
         'weight' => 0,
