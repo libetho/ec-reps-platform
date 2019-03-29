@@ -392,16 +392,15 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Linked Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['ui_name'] = 'Linked Title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['ui_name'] = 'Linked Title';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
   /* Field: Field: Link */
   $handler->display->display_options['fields']['field_reps_core_external_url']['id'] = 'field_reps_core_external_url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['table'] = 'field_data_field_reps_core_external_url';
@@ -410,7 +409,7 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_external_url']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_external_url']['alter']['text'] = '<h3><a href="[field_reps_core_external_url-url]" target="_blank">[title_field]</a></h3>';
   $handler->display->display_options['fields']['field_reps_core_external_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reps_core_external_url']['empty'] = '[title]';
+  $handler->display->display_options['fields']['field_reps_core_external_url']['empty'] = '[title_field_1]';
   $handler->display->display_options['fields']['field_reps_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_reps_core_external_url']['type'] = 'link_plain';
   /* Field: Content: Date */
