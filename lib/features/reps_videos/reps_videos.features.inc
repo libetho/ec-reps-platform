@@ -38,7 +38,7 @@ function reps_videos_fe_nodequeue_export_fields() {
     'name' => 'videos',
     'title' => 'Videos',
     'subqueue_title' => '',
-    'size' => 6,
+    'size' => 0,
     'link' => '',
     'link_remove' => '',
     'owner' => 'nodequeue',
