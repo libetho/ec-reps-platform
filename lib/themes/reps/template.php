@@ -168,10 +168,6 @@ function reps_menu_link(&$variables) {
 function reps_preprocess_block(&$variables) {
   if (isset($variables['block']->bid)) {
     switch ($variables['block']->bid) {
-      case 'cce_basic_config-footer_ipg':
-        $pos = strpos($variables['content'], "<ul");
-        $variables['content'] = drupal_substr($variables['content'], 0, ($pos - 3));
-        break;
 
       case 'locale-language':
         global $language;
@@ -389,4 +385,23 @@ function reps_html_head_alter(&$head_elements) {
     $date = time();
   }
   $head_elements['metatag_date_0']['#value'] = format_date($date, 'event_date_format');
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function reps_block_view_alter(&$data, $block) {
+  if (isset($data['subject'])) {
+    switch ($data['subject']) {
+      case 'Latest update':
+        $content = array(
+          // @todo Instead of hardcoding the date format, use format_date().
+          t('Last update: @date', array('@date' => date('d/m/Y'))),
+          '|',
+          t('<a href="#top-page">Top</a>'),
+        );
+        $data['content'] = implode(' ', $content);
+        break;
+    }
+  }
 }
