@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_myths.strongarm.inc
@@ -62,6 +63,19 @@ function reps_myths_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__reps_eu_myth';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-current',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_node__reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__reps_eu_myth';
   $strongarm->value = array(
     'view_modes' => array(
@@ -91,6 +105,9 @@ function reps_myths_strongarm() {
       ),
       'revision' => array(
         'custom_settings' => FALSE,
+      ),
+      'reps_main_content_image' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
