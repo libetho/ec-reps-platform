@@ -25,13 +25,6 @@ function reps_myths_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
-      'reps_main_content_image' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -71,13 +64,6 @@ function reps_myths_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'reps_main_content_image' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -165,15 +151,6 @@ function reps_myths_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'reps_main_content_image' => array(
-        'label' => 'hidden',
-        'module' => 'file_entity',
-        'settings' => array(
-          'file_view_mode' => 'reps_main_content_image',
-        ),
-        'type' => 'file_rendered',
-        'weight' => 0,
-      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -257,12 +234,6 @@ function reps_myths_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
-      'reps_main_content_image' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -298,12 +269,6 @@ function reps_myths_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
