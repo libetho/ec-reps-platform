@@ -34,7 +34,7 @@ projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
 
 projects[rabbit_hole][subdir] = "contrib"
-projects[rabbit_hole][version] = 2.23
+projects[rabbit_hole][version] = 2.25
 
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = 1.0-rc3
