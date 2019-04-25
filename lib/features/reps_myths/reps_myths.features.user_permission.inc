@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_myths.features.user_permission.inc
@@ -13,35 +14,54 @@ function reps_myths_user_default_permissions() {
   // Exported permission: 'create reps_eu_myth content'.
   $permissions['create reps_eu_myth content'] = array(
     'name' => 'create reps_eu_myth content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any reps_eu_myth content'.
   $permissions['delete any reps_eu_myth content'] = array(
     'name' => 'delete any reps_eu_myth content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own reps_eu_myth content'.
   $permissions['delete own reps_eu_myth content'] = array(
     'name' => 'delete own reps_eu_myth content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any reps_eu_myth content'.
   $permissions['edit any reps_eu_myth content'] = array(
     'name' => 'edit any reps_eu_myth content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own reps_eu_myth content'.
   $permissions['edit own reps_eu_myth content'] = array(
     'name' => 'edit own reps_eu_myth content',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
