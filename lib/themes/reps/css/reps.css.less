@@ -1575,7 +1575,8 @@ dl.ckeditor-tabber {
       display: block;
       margin: 0;
       padding: 0;
-      position: absolute;
+      // position: absolute;
+      width: 100% !important;
       
       a {
         display: block;
@@ -1619,6 +1620,28 @@ dl.ckeditor-tabber {
     z-index: 50;
   }
 }
+
+/* REPR-1479 Sweden - tabs not responsive */
+
+@media all and (max-width: @screen-md -1) {
+  
+  ul.quicktabs-tabs.quicktabs-style-nostyle{
+    margin:0;
+    padding:0;
+  }
+}
+
+@media all and (min-width: @screen-md ) {
+  
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+
+  position: absolute;
+  width: 50% !important;
+}
+
+}
+
+
 
 /* Pager */
 ul.pager {

@@ -102,6 +102,9 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
+body.reps #mainContainer .region-featured-wrapper {
+  /* MAIN MENU */
+}
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -1411,7 +1414,7 @@ dl.ckeditor-tabber dd {
   display: block;
   margin: 0;
   padding: 0;
-  position: absolute;
+  width: 100% !important;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li a {
   display: block;
@@ -1447,6 +1450,19 @@ dl.ckeditor-tabber dd {
   padding: 50px 12px 12px;
   position: relative;
   z-index: 50;
+}
+/* REPR-1479 Sweden - tabs not responsive */
+@media all and (max-width: 768px -1) {
+  ul.quicktabs-tabs.quicktabs-style-nostyle {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+    width: 50% !important;
+  }
 }
 /* Pager */
 ul.pager {
@@ -1653,7 +1669,6 @@ p.top-button a:hover {
     float: none;
     padding: 0;
   }
-
   .mobile-user-bar {
     z-index: 5000;
   }
