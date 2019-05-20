@@ -102,9 +102,6 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
-body.reps #mainContainer .region-featured-wrapper {
-  /* MAIN MENU */
-}
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -1397,7 +1394,6 @@ dl.ckeditor-tabber dd {
   display: block;
   margin: 0;
   padding: 0;
-  position: absolute;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li a {
   display: block;
@@ -1408,6 +1404,9 @@ dl.ckeditor-tabber dd {
   position: relative;
   text-align: center;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li.last {
   border-right: 1px solid #cccccc;
@@ -1433,6 +1432,21 @@ dl.ckeditor-tabber dd {
   padding: 50px 12px 12px;
   position: relative;
   z-index: 50;
+}
+/* REPR-1479 Sweden - tabs not responsive */
+@media all and (max-width: 991px) {
+  ul.quicktabs-tabs.quicktabs-style-nostyle {
+    margin: 0;
+    padding: 0;
+  }
+  ul.quicktabs-tabs.quicktabs-style-nostyle li {
+    min-width: 100% !important;
+  }
+}
+@media all and (min-width: 992px) {
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+  }
 }
 /* Pager */
 ul.pager {

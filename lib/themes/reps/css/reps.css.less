@@ -179,8 +179,7 @@ body.reps {
         }
       } // button END
 
-      /* MAIN MENU */
-
+      // Main menu
       #main-menu {
         margin: 12px 9px 0;
         box-shadow: 2px 2px 2px #d4d4d4;
@@ -1554,7 +1553,7 @@ dl.ckeditor-tabber {
       display: block;
       margin: 0;
       padding: 0;
-      position: absolute;
+      // width: 100% !important;
       
       a {
         display: block;
@@ -1565,6 +1564,9 @@ dl.ckeditor-tabber {
         position: relative;
         text-align: center;
         width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -1597,6 +1599,25 @@ dl.ckeditor-tabber {
     position: relative;
     z-index: 50;
   }
+}
+
+/* REPR-1479 Sweden - tabs not responsive */
+
+@media all and (max-width:@screen-sm-max) {
+  
+  ul.quicktabs-tabs.quicktabs-style-nostyle{
+    margin:0;
+    padding:0;
+    li { min-width:100% !important; }
+  }
+}
+
+@media all and (min-width: @screen-md ) {
+
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+  }
+
 }
 
 /* Pager */
