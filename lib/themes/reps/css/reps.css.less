@@ -1574,7 +1574,7 @@ dl.ckeditor-tabber {
       display: block;
       margin: 0;
       padding: 0;
-      width: 100% !important;
+      // width: 100% !important;
       
       a {
         display: block;
@@ -1585,6 +1585,9 @@ dl.ckeditor-tabber {
         position: relative;
         text-align: center;
         width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -1626,6 +1629,7 @@ dl.ckeditor-tabber {
   ul.quicktabs-tabs.quicktabs-style-nostyle{
     margin:0;
     padding:0;
+    li { min-width:100% !important; }
   }
 }
 
@@ -1633,7 +1637,6 @@ dl.ckeditor-tabber {
 
   .quicktabs-wrapper ul.quicktabs-tabs li {
     position: absolute;
-    width: 50% !important;
   }
 
 }
@@ -2160,9 +2163,9 @@ p.top-button a:hover {
     display: none !important;
   }
 
-  body.not-front #layout-body {
-    margin-top: 0 !important;
-  }
+  // body.not-front #layout-body {
+  //   margin-top: 0 !important;
+  // }
   
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;

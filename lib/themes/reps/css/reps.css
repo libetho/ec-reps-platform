@@ -1411,7 +1411,6 @@ dl.ckeditor-tabber dd {
   display: block;
   margin: 0;
   padding: 0;
-  width: 100% !important;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li a {
   display: block;
@@ -1422,6 +1421,9 @@ dl.ckeditor-tabber dd {
   position: relative;
   text-align: center;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li.last {
   border-right: 1px solid #cccccc;
@@ -1454,11 +1456,13 @@ dl.ckeditor-tabber dd {
     margin: 0;
     padding: 0;
   }
+  ul.quicktabs-tabs.quicktabs-style-nostyle li {
+    min-width: 100% !important;
+  }
 }
 @media all and (min-width: 992px) {
   .quicktabs-wrapper ul.quicktabs-tabs li {
     position: absolute;
-    width: 50% !important;
   }
 }
 /* Pager */
@@ -1910,9 +1914,6 @@ p.top-button a:hover {
   }
   .node-type-reps-homepage #main-menu .container > div:not(.visible-ex1) {
     display: none !important;
-  }
-  body.not-front #layout-body {
-    margin-top: 0 !important;
   }
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;
