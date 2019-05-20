@@ -1623,7 +1623,7 @@ dl.ckeditor-tabber {
 
 /* REPR-1479 Sweden - tabs not responsive */
 
-@media all and (max-width: @screen-md -1) {
+@media all and (max-width:@screen-sm-max) {
   
   ul.quicktabs-tabs.quicktabs-style-nostyle{
     margin:0;
@@ -1632,16 +1632,13 @@ dl.ckeditor-tabber {
 }
 
 @media all and (min-width: @screen-md ) {
-  
+
   .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+    width: 50% !important;
+  }
 
-  position: absolute;
-  width: 50% !important;
 }
-
-}
-
-
 
 /* Pager */
 ul.pager {

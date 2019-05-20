@@ -1452,13 +1452,13 @@ dl.ckeditor-tabber dd {
   z-index: 50;
 }
 /* REPR-1479 Sweden - tabs not responsive */
-@media all and (max-width: 768px -1) {
+@media all and (max-width: 991px) {
   ul.quicktabs-tabs.quicktabs-style-nostyle {
     margin: 0;
     padding: 0;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 992px) {
   .quicktabs-wrapper ul.quicktabs-tabs li {
     position: absolute;
     width: 50% !important;
