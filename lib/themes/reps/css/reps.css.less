@@ -1366,10 +1366,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
   margin-right: 5px;
 }
 
-body:not(.node-type-reps-homepage) #layout-body {
-  margin-top: 50px !important;
-}
-
 body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
   padding-bottom: 30px;
   background: #f4f4f4;
@@ -1484,23 +1480,6 @@ form .field-name-field-reps-core-image {
       display: block;
       font-size: 16px;
       margin-top: 3px;
-    }
-  }
-}
-
-@media all and (max-width: @screen-sm-min) {
-  .view-reps-homepage-additional-blocks .views-row {
-    float: none;
-	  width: @fullWidth;
-	
-    img {
-      float: left;
-      max-width: 200px;
-    }
-    
-    span {
-      display: table;
-      padding-left: 10px;
     }
   }
 }
@@ -1828,7 +1807,12 @@ p.top-button a:hover {
 }
 
 /* Medium + Large */
-@media all and (min-width: @screen-xs-max) {
+@media all and (min-width:@screen-sm-min) {
+  
+  body:not(.node-type-reps-homepage) #layout-body {
+  margin-top: 50px !important;
+}
+
   #sidebar-right {
     display: block !important;
     width: 25%;
@@ -1859,8 +1843,41 @@ p.top-button a:hover {
   }
 }
 
-/* Small and x-small */
-@media all and (max-width: 767px) {
+/* Small and x-small : max 767px */
+@media all and (max-width:767px) {
+  
+    .view-reps-homepage-additional-blocks .views-row {
+    float: none;
+	  width: @fullWidth;
+	
+    img {
+      float: left;
+      max-width: 200px;
+    }
+    
+    span {
+      display: table;
+      padding-left: 10px;
+    }
+  }
+  
+  /*REPR-1512 text should be forced to be under the main image. */
+  body.reps #mainContainer #layout-body #block-system-main .panel-body{
+    node-page .content .field-type-text-with-summary img.right,
+    .node-full .content div:not(.leaflet-map) img:first-child{
+      display: block;
+      margin: 0 0 10px 0 !important;
+      min-width:100%;
+      float:none;
+    }
+      
+    }
+  /*REPR-1512 title is overlapping menu : override ec_resp.css. */  
+    .mobile-user-bar.affix + .region-featured #main-menu .navbar {
+    top: 0;
+  }
+    
+    
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
@@ -2142,15 +2159,12 @@ p.top-button a:hover {
     display: none !important;
   }
 
-  body.not-front #layout-body {
-    margin-top: 0 !important;
-  }
-  
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;
     line-height: 16px;
   }
 } // @media all and (max-width: @screen-sm-min) END
+
 
 /* xs small only */
 @media all and (max-width: @screen-xs-min) {

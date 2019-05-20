@@ -102,6 +102,9 @@ body.reps #mainContainer #block-menu-menu-service-tools li a {
 body.reps #mainContainer #block-menu-menu-service-tools li.first a {
   border-left: none;
 }
+body.reps #mainContainer .region-featured-wrapper {
+  /* MAIN MENU */
+}
 body.reps #mainContainer .region-featured-wrapper .home-button,
 body.reps #mainContainer .region-featured-wrapper button#menu-button {
   float: left;
@@ -1236,9 +1239,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
 #edit-field-reps-cp-type-tid-wrapper {
   margin-right: 5px;
 }
-body:not(.node-type-reps-homepage) #layout-body {
-  margin-top: 50px !important;
-}
 body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
   padding-bottom: 30px;
   background: #f4f4f4;
@@ -1339,20 +1339,6 @@ form .field-name-field-reps-core-image {
   display: block;
   font-size: 16px;
   margin-top: 3px;
-}
-@media all and (max-width: 768px) {
-  .view-reps-homepage-additional-blocks .views-row {
-    float: none;
-    width: 100%;
-  }
-  .view-reps-homepage-additional-blocks .views-row img {
-    float: left;
-    max-width: 200px;
-  }
-  .view-reps-homepage-additional-blocks .views-row span {
-    display: table;
-    padding-left: 10px;
-  }
 }
 /* Fixing issue with backend */
 .logged-in .alert-warning {
@@ -1623,7 +1609,10 @@ p.top-button a:hover {
   background: #26437f;
 }
 /* Medium + Large */
-@media all and (min-width: 767px) {
+@media all and (min-width: 768px) {
+  body:not(.node-type-reps-homepage) #layout-body {
+    margin-top: 50px !important;
+  }
   #sidebar-right {
     display: block !important;
     width: 25%;
@@ -1647,13 +1636,36 @@ p.top-button a:hover {
     padding: 0.6em;
   }
 }
-/* Small and x-small */
+/* Small and x-small : max 767px */
 @media all and (max-width: 767px) {
+  .view-reps-homepage-additional-blocks .views-row {
+    float: none;
+    width: 100%;
+  }
+  .view-reps-homepage-additional-blocks .views-row img {
+    float: left;
+    max-width: 200px;
+  }
+  .view-reps-homepage-additional-blocks .views-row span {
+    display: table;
+    padding-left: 10px;
+  }
+  /*REPR-1512 text should be forced to be under the main image. */
+  body.reps #mainContainer #layout-body #block-system-main .panel-body node-page .content .field-type-text-with-summary img.right,
+  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map) img:first-child {
+    display: block;
+    margin: 0 0 10px 0 !important;
+    min-width: 100%;
+    float: none;
+  }
+  /*REPR-1512 title is overlapping menu : override ec_resp.css. */
+  .mobile-user-bar.affix + .region-featured #main-menu .navbar {
+    top: 0;
+  }
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
   }
-
   .mobile-user-bar {
     z-index: 5000;
   }
@@ -1898,9 +1910,6 @@ p.top-button a:hover {
   }
   .node-type-reps-homepage #main-menu .container > div:not(.visible-ex1) {
     display: none !important;
-  }
-  body.not-front #layout-body {
-    margin-top: 0 !important;
   }
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;
