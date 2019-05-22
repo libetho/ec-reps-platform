@@ -22,6 +22,38 @@
 @h1Color: #878c92;
 @maltaRed: #b60522;
 
+/* functions*/
+
+/* REPR-1305 => ct videos display */
+
+.repr-flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.repr-flex-text(){
+  
+  flex: 2 1 30%;
+  padding: 0 0 0 10px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
+
+/* end REPR-1305 */
+
+
 /* custom styles */
 
 .smallScreensMenu {
@@ -180,8 +212,7 @@ body.reps {
         }
       } // button END
 
-      /* MAIN MENU */
-
+      // Main menu
       #main-menu {
         margin: 12px 9px 0;
         box-shadow: 2px 2px 2px #d4d4d4;
@@ -1367,10 +1398,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
   margin-right: 5px;
 }
 
-body:not(.node-type-reps-homepage) #layout-body {
-  margin-top: 50px !important;
-}
-
 body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
   padding-bottom: 30px;
   background: #f4f4f4;
@@ -1489,23 +1516,6 @@ form .field-name-field-reps-core-image {
   }
 }
 
-@media all and (max-width: @screen-sm-min) {
-  .view-reps-homepage-additional-blocks .views-row {
-    float: none;
-	  width: @fullWidth;
-	
-    img {
-      float: left;
-      max-width: 200px;
-    }
-    
-    span {
-      display: table;
-      padding-left: 10px;
-    }
-  }
-}
-
 /* Fixing issue with backend */
 .logged-in .alert-warning {
   display: block;
@@ -1576,7 +1586,7 @@ dl.ckeditor-tabber {
       display: block;
       margin: 0;
       padding: 0;
-      position: absolute;
+      // width: 100% !important;
       
       a {
         display: block;
@@ -1587,6 +1597,9 @@ dl.ckeditor-tabber {
         position: relative;
         text-align: center;
         width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -1619,6 +1632,25 @@ dl.ckeditor-tabber {
     position: relative;
     z-index: 50;
   }
+}
+
+/* REPR-1479 Sweden - tabs not responsive */
+
+@media all and (max-width:@screen-sm-max) {
+  
+  ul.quicktabs-tabs.quicktabs-style-nostyle{
+    margin:0;
+    padding:0;
+    li { min-width:100% !important; }
+  }
+}
+
+@media all and (min-width: @screen-md ) {
+
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+  }
+
 }
 
 /* Pager */
@@ -1829,7 +1861,12 @@ p.top-button a:hover {
 }
 
 /* Medium + Large */
-@media all and (min-width: @screen-xs-max) {
+@media all and (min-width:@screen-sm-min) {
+  
+  body:not(.node-type-reps-homepage) #layout-body {
+  margin-top: 50px !important;
+}
+
   #sidebar-right {
     display: block !important;
     width: 25%;
@@ -1875,44 +1912,14 @@ line-height: normal;
 
 /*REPR-1305*/
 
-.repr-flex() {
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  flex-wrap: wrap;
-  align-items: flex-end;
-}
-.repr-flex-text(){
-  
-   flex: 2 1 30%;
-     padding: 0 0 0 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-  
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-
-}
-
-
-
 
 @media all and (max-width:@screen-xxs - 1){
   
   #block-system-main .view-reps-videos .view-content .views-row img,
   .view-reps-videos .view-content .views-row img {
    min-width: 100%;
-  
+  }
 }
-}
-
-
 
  @media all and (min-width:@screen-xxs) and (max-width:@screen-sm - 1) {
 
@@ -1924,7 +1931,7 @@ line-height: normal;
      max-width: 150px;
    }
    
-   > .views-field-title-field-et,
+   > .views-field-title-field-et
     {
     .repr-flex-text();
    }
@@ -1934,12 +1941,9 @@ line-height: normal;
  
  /* video page alternative */
  
-  @media all and (min-width:@screen-xxs) and (max-width:@screen-xs),
-   @media all and (min-width:@screen-xs + 1) and (max-width:@screen-sm - 1)
-  {
-
- 
-  .view-reps-videos .view-content .views-row {
+  @media all and (min-width:@screen-xxs) and (max-width:@screen-sm - 1) {
+    
+    .view-reps-videos .view-content .views-row {
 
     .repr-flex();
   
@@ -1974,8 +1978,43 @@ line-height: normal;
 
 /* END REPS - REPR-1305*/
 
-/* Small and x-small */
-@media all and (max-width: 767px) {
+
+
+/* Small and x-small : max 767px */
+@media all and (max-width:767px) {
+  
+    .view-reps-homepage-additional-blocks .views-row {
+    float: none;
+	  width: @fullWidth;
+	
+    img {
+      float: left;
+      max-width: 200px;
+    }
+    
+    span {
+      display: table;
+      padding-left: 10px;
+    }
+  }
+  
+  /*REPR-1512 text should be forced to be under the main image. */
+  body.reps #mainContainer #layout-body #block-system-main .panel-body{
+    node-page .content .field-type-text-with-summary img.right,
+    .node-full .content div:not(.leaflet-map) img:first-child{
+      display: block;
+      margin: 0 0 10px 0 !important;
+      min-width:100%;
+      float:none;
+    }
+      
+    }
+  /*REPR-1512 title is overlapping menu : override ec_resp.css. */  
+    .mobile-user-bar.affix + .region-featured #main-menu .navbar {
+    top: 0;
+  }
+    
+    
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
@@ -2257,15 +2296,12 @@ line-height: normal;
     display: none !important;
   }
 
-  body.not-front #layout-body {
-    margin-top: 0 !important;
-  }
-  
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;
     line-height: 16px;
   }
 } // @media all and (max-width: @screen-sm-min) END
+
 
 /* xs small only */
 @media all and (max-width: @screen-xs-min) {
