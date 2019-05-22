@@ -1305,7 +1305,6 @@ form .field-name-field-reps-core-image {
 .view-reps-videos .view-content .views-row .views-field-title-field-et,
 #block-system-main .view-reps-videos .view-content .views-row .views-field-title-field,
 .view-reps-videos .view-content .views-row .views-field-title-field {
-  font-size: 105%;
   font-weight: bold;
 }
 #block-system-main .view-reps-videos .view-content .views-row .views-field-title-field-et a,
@@ -1689,7 +1688,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   }
   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row > .views-field-title-field-et {
     flex: 2 1 30%;
-    padding: 0 0 0 10px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
@@ -1698,6 +1696,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    padding: 0 0 0 10px;
   }
 }
 /* video page alternative */
@@ -1716,9 +1715,11 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     flex-wrap: wrap;
     align-items: flex-end;
   }
+  .view-reps-videos .view-content .views-row > .views-field-field-reps-core-image-1 {
+    margin-right: 10px;
+  }
   .view-reps-videos .view-content .views-row > .views-field-title-field {
     flex: 2 1 30%;
-    padding: 0 0 0 10px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
@@ -1727,6 +1728,13 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+  }
+}
+/* the text is crushed against the left-column */
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .view-reps-videos .view-content .views-row > .views-field-title-field {
+    padding: 0;
+    font-size: 12px;
   }
 }
 @media all and (max-width: 767px) {
@@ -1743,6 +1751,12 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   }
   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row:not(.views-row-last) {
     border-bottom: 1px #dddddd solid;
+  }
+}
+@media all and (min-width: 768px) {
+  .view-reps-videos .view-content .views-row .views-field-title-field .views-field-title-field-et,
+  .view-reps-videos .view-content .views-row .views-field-title-field .views-field-title-field {
+    font-size: 105%;
   }
 }
 /* END REPS - REPR-1305*/

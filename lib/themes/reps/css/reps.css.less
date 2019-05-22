@@ -38,7 +38,6 @@
 .repr-flex-text(){
   
   flex: 2 1 30%;
-  padding: 0 0 0 10px;
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
@@ -1473,7 +1472,6 @@ form .field-name-field-reps-core-image {
 
       .views-field-title-field-et,
       .views-field-title-field {
-        font-size: 105%;
         font-weight: bold;
 
         a {
@@ -1483,6 +1481,7 @@ form .field-name-field-reps-core-image {
     }
   }
 } // .view-reps-videos END
+
 
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {
@@ -1934,6 +1933,7 @@ line-height: normal;
    > .views-field-title-field-et
     {
     .repr-flex-text();
+    padding: 0 0 0 10px;
    }
 
    }
@@ -1947,8 +1947,23 @@ line-height: normal;
 
     .repr-flex();
   
+   > .views-field-field-reps-core-image-1 {
+    margin-right: 10px;
+   }
    > .views-field-title-field {
     .repr-flex-text();
+   }
+
+   }
+ }
+ /* the text is crushed against the left-column */
+   @media all and (min-width:@screen-xs + 1) and (max-width:@screen-sm - 1) {
+    
+    .view-reps-videos .view-content .views-row {
+  
+   > .views-field-title-field {
+     padding:0;
+     font-size: 12px
    }
 
    }
@@ -1974,6 +1989,18 @@ line-height: normal;
       border-bottom: 1px #dddddd solid;
    }
 
+ }
+ 
+ @media all and (min-width:@screen-sm){
+   
+   .view-reps-videos .view-content .views-row .views-field-title-field{
+     
+      .views-field-title-field-et,
+      .views-field-title-field {
+        font-size: 105%;
+      }
+   }
+   
  }
 
 /* END REPS - REPR-1305*/
@@ -2009,6 +2036,7 @@ line-height: normal;
     }
       
     }
+    
   /*REPR-1512 title is overlapping menu : override ec_resp.css. */  
     .mobile-user-bar.affix + .region-featured #main-menu .navbar {
     top: 0;
