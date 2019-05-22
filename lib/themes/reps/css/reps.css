@@ -1715,9 +1715,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     flex-wrap: wrap;
     align-items: flex-end;
   }
-  .view-reps-videos .view-content .views-row > .views-field-field-reps-core-image-1 {
-    margin-right: 10px;
-  }
   .view-reps-videos .view-content .views-row > .views-field-title-field {
     flex: 2 1 30%;
     overflow-wrap: break-word;
@@ -1728,6 +1725,9 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+  }
+  .view-reps-videos .view-content .views-row > .views-field-field-reps-core-image-1 {
+    margin-right: 10px;
   }
 }
 /* the text is crushed against the left-column */
