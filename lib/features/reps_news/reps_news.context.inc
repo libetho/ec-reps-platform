@@ -30,7 +30,7 @@ function reps_news_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_news-block_1',
           'region' => 'content',
-          'weight' => '0',
+          'weight' => '10',
         ),
       ),
     ),
