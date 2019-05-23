@@ -31,7 +31,7 @@ function reps_news_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_news-all_news_listing',
           'region' => 'content',
-          'weight' => '-9',
+          'weight' => '10',
         ),
       ),
     ),
