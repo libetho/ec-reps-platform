@@ -1,5 +1,6 @@
 /* screen sizes definition */
 
+@screen-xxs: 365px;
 @screen-xs: 480px;
 @screen-xs-min: @screen-xs;
 @screen-xs-max: (@screen-sm-min - 1);
@@ -20,6 +21,37 @@
 
 @h1Color: #878c92;
 @maltaRed: #b60522;
+
+/* functions*/
+
+/* REPR-1305 => ct videos display */
+
+.reps-flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.reps-flex-text(){
+  
+  flex: 2 1 30%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
+
+/* end REPR-1305 */
+
 
 /* custom styles */
 
@@ -421,9 +453,6 @@ body.reps {
           width: (@fullWidth/3);
         }
 
-        .more-link {
-          margin-right: 15px;
-        }
       } // #block-views-reps-videos-block END
 
       #block-views-reps-publications-block .view-content {
@@ -1440,7 +1469,6 @@ form .field-name-field-reps-core-image {
 
       .views-field-title-field-et,
       .views-field-title-field {
-        font-size: 105%;
         font-weight: bold;
 
         a {
@@ -1450,6 +1478,7 @@ form .field-name-field-reps-core-image {
     }
   }
 } // .view-reps-videos END
+
 
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {
@@ -1864,6 +1893,113 @@ p.top-button a:hover {
   }
 }
 
+/* REPS HARMONIZE HOMEPAGE */
+
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-heading,
+body.reps #mainContainer #layout-body #block-views-reps-events-block .panel-heading {
+ border-bottom: 1px dashed #878c92;
+}
+
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row > .views-field-title-field-et{
+
+font-size:13px;
+line-height: normal;
+}
+
+/*REPR-1305*/
+@media all and (max-width:@screen-xxs - 1){
+  
+  #block-system-main .view-reps-videos .view-content .views-row img,
+  .view-reps-videos .view-content .views-row img {
+   min-width: 100%;
+  }
+}
+
+ @media all and (min-width:@screen-xxs) and (max-width:@screen-sm - 1) {
+
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row {
+
+    .reps-flex();
+    
+    > .views-field-field-reps-core-image{
+     max-width: 150px;
+   }
+    
+   
+   > .views-field-title-field-et {
+      .reps-flex-text();
+      padding: 0 0 0 10px;
+   }
+
+   }
+ }
+ 
+ /* video page alternative */
+ 
+  @media all and (min-width:@screen-xxs) and (max-width:@screen-sm - 1) {
+    
+    .view-reps-videos .view-content .views-row {
+
+    .reps-flex();
+  
+     > .views-field-title-field {
+      .reps-flex-text();
+     }
+      > .views-field-field-reps-core-image-1 {
+        margin-right: 10px;
+   }
+
+   }
+ }
+ /* the text is crushed against the left-column */
+   @media all and (min-width:@screen-xs + 1) and (max-width:@screen-sm - 1) {
+    
+    .view-reps-videos .view-content .views-row {
+  
+     > .views-field-title-field {
+       padding:0;
+       font-size: 12px
+     }
+
+   }
+ }
+ 
+
+ @media all and (max-width:@screen-sm - 1 ){
+
+   #block-system-main .view-reps-videos .view-content,
+   .view-reps-videos .view-content {
+    margin: 0 !important;
+  }
+
+
+   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row,
+   #block-system-main .view-reps-videos .view-content .views-row, .view-reps-videos .view-content .views-row {
+    float:none;
+    padding:10px 0;
+    width: 100%;
+   }
+
+   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row:not(.views-row-last){
+      border-bottom: 1px #dddddd solid;
+   }
+
+ }
+ 
+ @media all and (min-width:@screen-sm){
+   
+   .view-reps-videos .view-content .views-row .views-field-title-field{
+     
+      .views-field-title-field-et,
+      .views-field-title-field {
+        font-size: 105%;
+      }
+   }
+   
+ } /* END REPS - REPR-1305*/
+
+
+
 /* Small and x-small : max 767px */
 @media all and (max-width:767px) {
   
@@ -1893,6 +2029,7 @@ p.top-button a:hover {
     }
       
     }
+    
   /*REPR-1512 title is overlapping menu : override ec_resp.css. */  
     .mobile-user-bar.affix + .region-featured #main-menu .navbar {
     top: 0;
