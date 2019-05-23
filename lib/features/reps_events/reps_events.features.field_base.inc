@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Reps_events.features.field_base.inc.
+ * reps_events.features.field_base.inc
  */
 
 /**
