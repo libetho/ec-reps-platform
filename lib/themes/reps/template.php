@@ -405,3 +405,24 @@ function reps_block_view_alter(&$data, $block) {
     }
   }
 }
+
+/**
+ * Preprocesses the wrapping HTML.
+ *
+ * @param array &$variables
+ *   Template variables.
+ */
+function reps_preprocess_html(&$variables) {
+  // Avoid Styling on phone number with Edge.
+  $meta_format_detection = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'format-detection',
+      'content' => 'telephone=no',
+    ),
+  );
+
+  // Add header meta tag.
+  drupal_add_html_head($meta_format_detection, 'meta_format_detection');
+}
