@@ -323,3 +323,14 @@ function reps_core_update_7006() {
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
 }
+
+
+/**
+ * Enable Display Suite Extras (ds_extras) module.
+ */
+function reps_core_update_7007() {
+ $module_to_enable = array(
+    'ds_extras',
+  );
+  module_enable($module_to_enable, TRUE);
+}
