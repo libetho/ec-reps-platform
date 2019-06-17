@@ -1325,14 +1325,18 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
   max-width: 300px;
 }
 /* A VERIFIER EFFETS COLLATERAUX */
-.field-name-field-reps-core-image .field-item {
+div:not(.reps_ne_image) > .field-name-field-reps-core-image {
+  float: right;
+  padding: 10px 0 10px 10px;
+}
+div:not(.reps_ne_image) > .field-name-field-reps-core-image .field-item {
   padding-right: 0;
   width: auto;
 }
-.field-name-field-reps-core-image .field-image-caption {
+div:not(.reps_ne_image) > .field-name-field-reps-core-image .field-image-caption {
   display: none;
 }
-.field-name-field-reps-core-image img {
+div:not(.reps_ne_image) > .field-name-field-reps-core-image img {
   height: auto;
   margin: 0 !important;
   width: 100%;
