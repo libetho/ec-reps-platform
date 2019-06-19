@@ -1286,6 +1286,24 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ultimate_cron_plugin_scheduler_default';
+  $strongarm->value = 'simple';
+  $export['ultimate_cron_plugin_scheduler_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ultimate_cron_plugin_scheduler_simple_settings';
+  $strongarm->value = array(
+    'rules' => array(
+      0 => '*/15+@ * * * *',
+    ),
+  );
+  $export['ultimate_cron_plugin_scheduler_simple_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'weight_frontpage';
   $strongarm->value = 0;
   $export['weight_frontpage'] = $strongarm;

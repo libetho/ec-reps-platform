@@ -44,6 +44,9 @@ projects[social_media_links][version] = 1.4
 
 projects[taxonomy_access_fix][subdir] = "contrib"
 projects[taxonomy_access_fix][version] = 2.2
+
+projects[ultimate_cron][subdir] = "contrib"
+projects[ultimate_cron][version] = 2.8
   
 projects[views_tree][subdir] = "contrib"
 projects[views_tree][version] = 2.0

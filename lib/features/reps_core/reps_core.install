@@ -334,3 +334,10 @@ function reps_core_update_7007() {
   );
   module_enable($module_to_enable, TRUE);
 }
+
+/**
+ * Enable Ultimate Cron.
+ */
+function reps_core_update_7008() {
+  module_enable(array('ultimate_cron'));
+}
