@@ -982,7 +982,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -9,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1050,7 +1050,7 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'reps_main_content_image',
         ),
         'type' => 'file_rendered',
-        'weight' => -10,
+        'weight' => 0,
       ),
       'popup' => array(
         'label' => 'above',
