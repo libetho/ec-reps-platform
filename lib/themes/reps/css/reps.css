@@ -811,9 +811,6 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .reps-img-right {
   float: right;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-name-field-tags {
-  display: none;
-}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content ul.links.inline {
   display: none;
 }
@@ -1556,9 +1553,6 @@ ul.pager li.pager-current {
   display: none;
 }
 .view-filters .views-exposed-widgets .views-widget-filter-keys {
-  width: 40%;
-}
-.view-filters .views-exposed-widgets .views-widget-filter-combine {
   width: 40%;
 }
 .view-filters .views-exposed-widgets .views-submit-button {
