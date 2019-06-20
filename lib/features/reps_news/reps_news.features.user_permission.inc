@@ -27,6 +27,7 @@ function reps_news_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -74,6 +75,7 @@ function reps_news_user_default_permissions() {
   $permissions['edit own reps_news content'] = array(
     'name' => 'edit own reps_news content',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -83,7 +85,11 @@ function reps_news_user_default_permissions() {
   // Exported permission: 'edit terms in reps_news_categories'.
   $permissions['edit terms in reps_news_categories'] = array(
     'name' => 'edit terms in reps_news_categories',
-    'roles' => array(),
+    'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+    ),
     'module' => 'taxonomy',
   );
 

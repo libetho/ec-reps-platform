@@ -16,6 +16,7 @@ function reps_videos_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -56,6 +57,7 @@ function reps_videos_user_default_permissions() {
   $permissions['edit own reps_video content'] = array(
     'name' => 'edit own reps_video content',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
