@@ -21,6 +21,37 @@
 @h1Color: #878c92;
 @maltaRed: #b60522;
 
+/* functions*/
+
+/* REPR-1305 => ct videos display */
+
+.reps-flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.reps-flex-text(){
+  
+  flex: 2 1 30%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
+
+/* end REPR-1305 */
+
+
 /* custom styles */
 
 .smallScreensMenu {
@@ -179,8 +210,7 @@ body.reps {
         }
       } // button END
 
-      /* MAIN MENU */
-
+      // Main menu
       #main-menu {
         margin: 12px 9px 0;
         box-shadow: 2px 2px 2px #d4d4d4;
@@ -422,9 +452,6 @@ body.reps {
           width: (@fullWidth/3);
         }
 
-        .more-link {
-          margin-right: 15px;
-        }
       } // #block-views-reps-videos-block END
 
       #block-views-reps-publications-block .view-content {
@@ -1366,10 +1393,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
   margin-right: 5px;
 }
 
-body:not(.node-type-reps-homepage) #layout-body {
-  margin-top: 50px !important;
-}
-
 body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
   padding-bottom: 30px;
   background: #f4f4f4;
@@ -1535,7 +1558,6 @@ form .field-name-field-reps-core-image {
 
       .views-field-title-field-et,
       .views-field-title-field {
-        font-size: 105%;
         font-weight: bold;
 
         a {
@@ -1545,6 +1567,7 @@ form .field-name-field-reps-core-image {
     }
   }
 } // .view-reps-videos END
+
 
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {
@@ -1574,23 +1597,6 @@ form .field-name-field-reps-core-image {
       display: block;
       font-size: 16px;
       margin-top: 3px;
-    }
-  }
-}
-
-@media all and (max-width: @screen-sm-min) {
-  .view-reps-homepage-additional-blocks .views-row {
-    float: none;
-	  width: @fullWidth;
-	
-    img {
-      float: left;
-      max-width: 200px;
-    }
-    
-    span {
-      display: table;
-      padding-left: 10px;
     }
   }
 }
@@ -1665,7 +1671,7 @@ dl.ckeditor-tabber {
       display: block;
       margin: 0;
       padding: 0;
-      position: absolute;
+      // width: 100% !important;
       
       a {
         display: block;
@@ -1676,6 +1682,9 @@ dl.ckeditor-tabber {
         position: relative;
         text-align: center;
         width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -1708,6 +1717,25 @@ dl.ckeditor-tabber {
     position: relative;
     z-index: 50;
   }
+}
+
+/* REPR-1479 Sweden - tabs not responsive */
+
+@media all and (max-width:@screen-sm-max) {
+  
+  ul.quicktabs-tabs.quicktabs-style-nostyle{
+    margin:0;
+    padding:0;
+    li { min-width:100% !important; }
+  }
+}
+
+@media all and (min-width: @screen-md ) {
+
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+  }
+
 }
 
 /* Pager */
@@ -1918,7 +1946,12 @@ p.top-button a:hover {
 }
 
 /* Medium + Large */
-@media all and (min-width: @screen-xs-max) {
+@media all and (min-width:@screen-sm-min) {
+  
+  body:not(.node-type-reps-homepage) #layout-body {
+  margin-top: 50px !important;
+}
+
   #sidebar-right {
     display: block !important;
     width: 25%;
@@ -1949,8 +1982,149 @@ p.top-button a:hover {
   }
 }
 
-/* Small and x-small */
-@media all and (max-width: 767px) {
+/* REPS HARMONIZE HOMEPAGE */
+
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-heading,
+body.reps #mainContainer #layout-body #block-views-reps-events-block .panel-heading {
+ border-bottom: 1px dashed #878c92;
+}
+
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row > .views-field-title-field-et{
+
+font-size:13px;
+line-height: normal;
+}
+
+/*REPR-1305*/
+@media all and (max-width:@screen-xxs - 1){
+  
+  #block-system-main .view-reps-videos .view-content .views-row img,
+  .view-reps-videos .view-content .views-row img {
+   min-width: 100%;
+  }
+}
+
+ @media all and (min-width:@screen-xxs) and (max-width:@screen-sm - 1) {
+
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row {
+
+    .reps-flex();
+    
+    > .views-field-field-reps-core-image{
+     max-width: 150px;
+   }
+    
+   
+   > .views-field-title-field-et {
+      .reps-flex-text();
+      padding: 0 0 0 10px;
+   }
+
+   }
+ }
+ 
+ /* video page alternative */
+ 
+  @media all and (min-width:@screen-xxs) and (max-width:@screen-sm - 1) {
+    
+    .view-reps-videos .view-content .views-row {
+
+    .reps-flex();
+  
+     > .views-field-title-field {
+      .reps-flex-text();
+     }
+      > .views-field-field-reps-core-image-1 {
+        margin-right: 10px;
+   }
+
+   }
+ }
+ /* the text is crushed against the left-column */
+   @media all and (min-width:@screen-xs + 1) and (max-width:@screen-sm - 1) {
+    
+    .view-reps-videos .view-content .views-row {
+  
+     > .views-field-title-field {
+       padding:0;
+       font-size: 12px
+     }
+
+   }
+ }
+ 
+
+ @media all and (max-width:@screen-sm - 1 ){
+
+   #block-system-main .view-reps-videos .view-content,
+   .view-reps-videos .view-content {
+    margin: 0 !important;
+  }
+
+
+   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row,
+   #block-system-main .view-reps-videos .view-content .views-row, .view-reps-videos .view-content .views-row {
+    float:none;
+    padding:10px 0;
+    width: 100%;
+   }
+
+   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row:not(.views-row-last){
+      border-bottom: 1px #dddddd solid;
+   }
+
+ }
+ 
+ @media all and (min-width:@screen-sm){
+   
+   .view-reps-videos .view-content .views-row .views-field-title-field{
+     
+      .views-field-title-field-et,
+      .views-field-title-field {
+        font-size: 105%;
+      }
+   }
+   
+ } /* END REPS - REPR-1305*/
+
+
+
+/* Small and x-small : max 767px */
+@media all and (max-width:767px) {
+  
+    .view-reps-homepage-additional-blocks .views-row {
+    float: none;
+	  width: @fullWidth;
+	
+    img {
+      float: left;
+      max-width: 200px;
+    }
+    
+    span {
+      display: table;
+      padding-left: 10px;
+    }
+  }
+  
+  /*REPR-1512 text should be forced to be under the main image. */
+  body.reps #mainContainer #layout-body #block-system-main .panel-body{
+    node-page .content .field-type-text-with-summary img.right,
+    .node-full .content div:not(.leaflet-map) img:first-child{
+      display: block;
+      margin: 0 0 10px 0 !important;
+      min-width:100%;
+      float:none;
+    }
+      
+    }
+    
+  /*REPR-1512 title is overlapping menu : override ec_resp.css. */  
+    .mobile-user-bar.affix + .region-featured #main-menu .navbar {
+    top: 0;
+  }
+    
+    
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
@@ -2232,15 +2406,12 @@ p.top-button a:hover {
     display: none !important;
   }
 
-  body.not-front #layout-body {
-    margin-top: 0 !important;
-  }
-  
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;
     line-height: 16px;
   }
 } // @media all and (max-width: @screen-sm-min) END
+
 
 /* xs small only */
 @media all and (max-width: @screen-xs-min) {

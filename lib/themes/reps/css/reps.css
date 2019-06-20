@@ -1,5 +1,8 @@
 /* screen sizes definition */
 /* custom variables */
+/* functions*/
+/* REPR-1305 => ct videos display */
+/* end REPR-1305 */
 /* custom styles */
 .smallScreensMenu {
   background: none !important;
@@ -423,9 +426,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row-last {
   margin-right: 0;
   width: 33.33333333%;
-}
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .more-link {
-  margin-right: 15px;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content {
   margin: 0 -15px;
@@ -1239,9 +1239,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-block {
 #edit-field-reps-cp-type-tid-wrapper {
   margin-right: 5px;
 }
-body:not(.node-type-reps-homepage) #layout-body {
-  margin-top: 50px !important;
-}
 body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage {
   padding-bottom: 30px;
   background: #f4f4f4;
@@ -1384,7 +1381,6 @@ form .field-name-field-reps-core-image {
 .view-reps-videos .view-content .views-row .views-field-title-field-et,
 #block-system-main .view-reps-videos .view-content .views-row .views-field-title-field,
 .view-reps-videos .view-content .views-row .views-field-title-field {
-  font-size: 105%;
   font-weight: bold;
 }
 #block-system-main .view-reps-videos .view-content .views-row .views-field-title-field-et a,
@@ -1418,20 +1414,6 @@ form .field-name-field-reps-core-image {
   display: block;
   font-size: 16px;
   margin-top: 3px;
-}
-@media all and (max-width: 768px) {
-  .view-reps-homepage-additional-blocks .views-row {
-    float: none;
-    width: 100%;
-  }
-  .view-reps-homepage-additional-blocks .views-row img {
-    float: left;
-    max-width: 200px;
-  }
-  .view-reps-homepage-additional-blocks .views-row span {
-    display: table;
-    padding-left: 10px;
-  }
 }
 /* Fixing issue with backend */
 .logged-in .alert-warning {
@@ -1490,7 +1472,6 @@ dl.ckeditor-tabber dd {
   display: block;
   margin: 0;
   padding: 0;
-  position: absolute;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li a {
   display: block;
@@ -1501,6 +1482,9 @@ dl.ckeditor-tabber dd {
   position: relative;
   text-align: center;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .quicktabs-wrapper ul.quicktabs-tabs li.last {
   border-right: 1px solid #cccccc;
@@ -1526,6 +1510,21 @@ dl.ckeditor-tabber dd {
   padding: 50px 12px 12px;
   position: relative;
   z-index: 50;
+}
+/* REPR-1479 Sweden - tabs not responsive */
+@media all and (max-width: 991px) {
+  ul.quicktabs-tabs.quicktabs-style-nostyle {
+    margin: 0;
+    padding: 0;
+  }
+  ul.quicktabs-tabs.quicktabs-style-nostyle li {
+    min-width: 100% !important;
+  }
+}
+@media all and (min-width: 992px) {
+  .quicktabs-wrapper ul.quicktabs-tabs li {
+    position: absolute;
+  }
 }
 /* Pager */
 ul.pager {
@@ -1702,7 +1701,10 @@ p.top-button a:hover {
   background: #26437f;
 }
 /* Medium + Large */
-@media all and (min-width: 767px) {
+@media all and (min-width: 768px) {
+  body:not(.node-type-reps-homepage) #layout-body {
+    margin-top: 50px !important;
+  }
   #sidebar-right {
     display: block !important;
     width: 25%;
@@ -1726,8 +1728,140 @@ p.top-button a:hover {
     padding: 0.6em;
   }
 }
-/* Small and x-small */
+/* REPS HARMONIZE HOMEPAGE */
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .panel-heading,
+body.reps #mainContainer #layout-body #block-views-reps-events-block .panel-heading {
+  border-bottom: 1px dashed #878c92;
+}
+body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row > .views-field-title-field-et {
+  font-size: 13px;
+  line-height: normal;
+}
+/*REPR-1305*/
+@media all and (max-width: 364px) {
+  #block-system-main .view-reps-videos .view-content .views-row img,
+  .view-reps-videos .view-content .views-row img {
+    min-width: 100%;
+  }
+}
+@media all and (min-width: 365px) and (max-width: 767px) {
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row > .views-field-field-reps-core-image {
+    max-width: 150px;
+  }
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row > .views-field-title-field-et {
+    flex: 2 1 30%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding: 0 0 0 10px;
+  }
+}
+/* video page alternative */
+@media all and (min-width: 365px) and (max-width: 767px) {
+  .view-reps-videos .view-content .views-row {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .view-reps-videos .view-content .views-row > .views-field-title-field {
+    flex: 2 1 30%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .view-reps-videos .view-content .views-row > .views-field-field-reps-core-image-1 {
+    margin-right: 10px;
+  }
+}
+/* the text is crushed against the left-column */
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .view-reps-videos .view-content .views-row > .views-field-title-field {
+    padding: 0;
+    font-size: 12px;
+  }
+}
 @media all and (max-width: 767px) {
+  #block-system-main .view-reps-videos .view-content,
+  .view-reps-videos .view-content {
+    margin: 0 !important;
+  }
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row,
+  #block-system-main .view-reps-videos .view-content .views-row,
+  .view-reps-videos .view-content .views-row {
+    float: none;
+    padding: 10px 0;
+    width: 100%;
+  }
+  body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row:not(.views-row-last) {
+    border-bottom: 1px #dddddd solid;
+  }
+}
+@media all and (min-width: 768px) {
+  .view-reps-videos .view-content .views-row .views-field-title-field .views-field-title-field-et,
+  .view-reps-videos .view-content .views-row .views-field-title-field .views-field-title-field {
+    font-size: 105%;
+  }
+}
+/* END REPS - REPR-1305*/
+/* Small and x-small : max 767px */
+@media all and (max-width: 767px) {
+  .view-reps-homepage-additional-blocks .views-row {
+    float: none;
+    width: 100%;
+  }
+  .view-reps-homepage-additional-blocks .views-row img {
+    float: left;
+    max-width: 200px;
+  }
+  .view-reps-homepage-additional-blocks .views-row span {
+    display: table;
+    padding-left: 10px;
+  }
+  /*REPR-1512 text should be forced to be under the main image. */
+  body.reps #mainContainer #layout-body #block-system-main .panel-body node-page .content .field-type-text-with-summary img.right,
+  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map) img:first-child {
+    display: block;
+    margin: 0 0 10px 0 !important;
+    min-width: 100%;
+    float: none;
+  }
+  /*REPR-1512 title is overlapping menu : override ec_resp.css. */
+  .mobile-user-bar.affix + .region-featured #main-menu .navbar {
+    top: 0;
+  }
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
@@ -1976,9 +2110,6 @@ p.top-button a:hover {
   }
   .node-type-reps-homepage #main-menu .container > div:not(.visible-ex1) {
     display: none !important;
-  }
-  body.not-front #layout-body {
-    margin-top: 0 !important;
   }
   .view-reps-sliders .slides .sliderTitle a {
     font-size: 16px !important;
