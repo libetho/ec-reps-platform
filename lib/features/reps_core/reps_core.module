@@ -728,9 +728,6 @@ function reps_core_multisite_drupal_toolbox_filter_options_alter(&$filter_option
   $filter_options['valid_elements']['iframe'] = array('*' => TRUE);
 }
 
-
-
-
 /**
  * Implements hook_ds_field_theme_functions_info().
  */
@@ -785,28 +782,30 @@ function _reps_core_ds_field_items_comma(array $variables) {
   return '<div class="' . check_plain($classes) . '">' . $output . '</div>';
 }
 
-
-
+/**
+ * @param array $variables
+ *
+ * @return string
+ *
+ * @see theme_ds_field_external_url()
+ */
 function _reps_core_ds_field_external_url(array $variables) {
-  
-  
+  global $language;
+
   $node = $variables['element']['#object'];
   $markup =  $variables['element'][0]['#markup'];
   $classes = $variables['classes'];
-  $lg= $GLOBALS['language']->language;
+  $lg= $language->language;
   $regExp = '/<a href=\"([^\"]*)\">/iU';
-  
+
   if (isset($config['classes'])) {
     $classes .= ' ' . $config['classes'];
   }
-   if (!empty($node->field_reps_core_external_url[$lg])) {
+  if (!empty($node->field_reps_core_external_url[$lg])) {
     $link = $node->field_reps_core_external_url[$lg][0]['display_url']; 
     $replace = '<a href="'.$link.'" target="_blank">';
-     $markup =  preg_replace($regExp , $replace,$markup);
+    $markup =  preg_replace($regExp , $replace,$markup);
   }
-  
-   return '<div class="' . check_plain($classes) . '">'.$markup.'</div>';
+
+  return '<div class="' . check_plain($classes) . '">'.$markup.'</div>';
 }
-  
-  
-  
