@@ -17,6 +17,47 @@ function mbp_sync_nexteuropa_token_token_handlers() {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function mbp_sync_menu() {
+  $items['img-token/%'] = array(
+    'page callback' => 'mbp_sync_wysiwyg_view_file',
+    'page arguments' => array(1),
+    'access arguments' => array('use media wysiwyg'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Callback: serves images requested by the new file token.
+ *
+ * @param string $filetoken
+ *   File token passed through url.
+ */
+function mbp_sync_wysiwyg_view_file($filetoken) {
+  $fid = str_replace(array('[file:', ':url]'), '', $filetoken);
+  $fid = intval($fid);
+  $path = FALSE;
+
+  if (!empty($fid)) {
+    $file = file_load($fid);
+
+    if (!empty($file)) {
+      $path = file_create_url($file->uri);
+    }
+  }
+
+  if (!empty($path)) {
+    drupal_goto($path);
+  }
+  else {
+    drupal_not_found();
+  }
+}
+
+/**
  * Initialize drush batch request.
  */
 function _mbp_sync_file_tokens_setup_batch() {
@@ -843,4 +884,26 @@ function mbp_sync_move_file($tid, $file, $replace = NULL, $save = TRUE) {
     }
   }
   return TRUE;
+}
+
+/**
+ * Implements hook_wysiwyg_plugin().
+ *
+ * Provides a plugin to tokenize media on save.
+ */
+function mbp_sync_wysiwyg_plugin($editor, $version) {
+  $plugins = array();
+
+  switch ($editor) {
+    case 'ckeditor':
+      $plugins['tokenize_media'] = array(
+        'path' => drupal_get_path('module', 'mbp_sync') . '/plugins/tokenize_media',
+        'filename' => 'plugin.js',
+        'extensions' => array('tokenise_media' => t('MBP Sync Tokenise media')),
+        'load' => TRUE,
+      );
+      break;
+  }
+
+  return $plugins;
 }
