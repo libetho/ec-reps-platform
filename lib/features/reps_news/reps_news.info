@@ -56,6 +56,7 @@ features[variable][] = comment_form_location_reps_news
 features[variable][] = comment_preview_reps_news
 features[variable][] = comment_reps_news
 features[variable][] = comment_subject_field_reps_news
+features[variable][] = ds_extras_field_template
 features[variable][] = field_bundle_settings_node__reps_news
 features[variable][] = language_content_type_reps_news
 features[variable][] = menu_options_reps_news
