@@ -6,6 +6,7 @@ php = 5.6
 dependencies[] = bean
 dependencies[] = ckeditor_tabber
 dependencies[] = ds
+dependencies[] = ds_extras
 dependencies[] = ec_embedded_video
 dependencies[] = ecas_env
 dependencies[] = entityreference

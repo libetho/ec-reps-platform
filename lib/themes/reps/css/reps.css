@@ -269,16 +269,6 @@ body.reps #mainContainer #layout-body .block-views .panel-body .more-link a {
   padding: 5px 0;
   color: #fff;
 }
-body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row,
-body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row,
-body.reps #mainContainer #layout-body .view-reps-events .views-row,
-body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row,
-body.reps #mainContainer #layout-body .view-reps-news .views-row,
-body.reps #mainContainer #layout-body .view-reps-publications .views-row {
-  border-bottom: 1px #dddddd solid;
-  padding: 10px 0;
-  min-height: 125px;
-}
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field,
 body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field,
@@ -1337,11 +1327,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 .field-name-field-caption {
   max-width: 300px;
 }
-.field-name-field-reps-core-image {
-  border-bottom: none;
-  float: right;
-  padding: 10px 0 10px 10px;
-}
+/* A VERIFIER EFFETS COLLATERAUX */
 .field-name-field-reps-core-image .field-item {
   padding-right: 0;
   width: auto;
@@ -1569,6 +1555,9 @@ ul.pager li.pager-current {
   display: none;
 }
 .view-filters .views-exposed-widgets .views-widget-filter-keys {
+  width: 40%;
+}
+.view-filters .views-exposed-widgets .views-widget-filter-combine {
   width: 40%;
 }
 .view-filters .views-exposed-widgets .views-submit-button {

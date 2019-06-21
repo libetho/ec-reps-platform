@@ -67,7 +67,7 @@ function reps_events_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -99,6 +99,12 @@ function reps_events_strongarm() {
       'rss_newsletter' => array(
         'custom_settings' => FALSE,
       ),
+      'reps_main_content_image' => array(
+        'custom_settings' => FALSE,
+      ),
+      'homepage' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -128,6 +134,14 @@ function reps_events_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'homepage' => array(
             'weight' => '10',
             'visible' => FALSE,
           ),

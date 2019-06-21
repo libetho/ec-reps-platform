@@ -46,27 +46,5 @@ function reps_news_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'name_field'.
-  $field_bases['name_field'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'name_field',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 1,
-    'type' => 'text',
-  );
-
   return $field_bases;
 }

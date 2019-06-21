@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_news.context.inc
@@ -26,9 +27,9 @@ function reps_news_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-reps_news-block_1' => array(
+        'views-reps_news-all_news_listing' => array(
           'module' => 'views',
-          'delta' => 'reps_news-block_1',
+          'delta' => 'reps_news-all_news_listing',
           'region' => 'content',
           'weight' => '10',
         ),

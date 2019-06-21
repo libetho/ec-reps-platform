@@ -67,7 +67,7 @@ function reps_news_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -97,6 +97,12 @@ function reps_news_strongarm() {
         'custom_settings' => FALSE,
       ),
       'rss_newsletter' => array(
+        'custom_settings' => TRUE,
+      ),
+      'reps_main_content_image' => array(
+        'custom_settings' => FALSE,
+      ),
+      'homepage' => array(
         'custom_settings' => TRUE,
       ),
     ),
@@ -133,6 +139,14 @@ function reps_news_strongarm() {
             'visible' => FALSE,
           ),
           'rss_newsletter' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'homepage' => array(
             'weight' => '9',
             'visible' => FALSE,
           ),
@@ -208,6 +222,13 @@ function reps_news_strongarm() {
   $strongarm->name = 'pathauto_node_reps_news_pattern';
   $strongarm->value = 'news/[node:title]';
   $export['pathauto_node_reps_news_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_reps_news_categories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_reps_news_categories_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
