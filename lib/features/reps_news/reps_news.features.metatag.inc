@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_news.features.metatag.inc
@@ -13,6 +14,7 @@ function reps_news_metatag_export_default() {
   // Exported Metatag config instance: node:reps_news.
   $config['node:reps_news'] = array(
     'instance' => 'node:reps_news',
+    'disabled' => FALSE,
     'config' => array(
       'revisit-after' => array(
         'value' => 15,
