@@ -33,7 +33,7 @@ function reps_videos_views_api($module = NULL, $api = NULL) {
 function reps_videos_fe_nodequeue_export_fields() {
   $nodequeues = array();
 
-  // Exported nodequeues: videos
+  // Exported nodequeues: videos.
   $nodequeues['videos'] = array(
     'name' => 'videos',
     'title' => 'Videos',
