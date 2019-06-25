@@ -17,6 +17,6 @@ function ds_reps_news_events() {
       'reps_ne_body' => t('REPS News and Events body'),
       'reps_ne_footer' => t('REPS News and Events footer'),
     ),
-     'css' => TRUE,
+    'css' => TRUE,
   );
 }
