@@ -9,7 +9,7 @@
  * Implements hook_drush_command().
  */
 function mbp_sync_drush_command() {
-  $items  = array();
+  $items = array();
   $items['mbp-sync-folder-terms'] = array(
     'callback' => 'drush_mbp_sync_folder_terms',
     'description' => dt('Parse the file entities and assign the term folders.'),

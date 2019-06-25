@@ -1,4 +1,6 @@
 <?php
+use Drupal\nexteuropa_token\TokenHandlerInterface;
+
 namespace Drupal\mbp_sync;
 
 /**
@@ -6,7 +8,7 @@ namespace Drupal\mbp_sync;
  *
  * @package Drupal\mbp_sync
  */
-class FileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterface {
+class FileUrlTokenHandler implements TokenHandlerInterface {
 
   /**
    * {@inheritdoc}
@@ -67,12 +69,12 @@ class FileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterf
    * It also provides an additional $item to extract other token's parts.
    *
    * @param string $original
-   *    Token string, in its original format, eg. [node:1:view-mode:full].
+   *   Token string, in its original format, eg. [node:1:view-mode:full].
    * @param string $item
-   *    Item to be extracted when parsing the token.
+   *   Item to be extracted when parsing the token.
    *
    * @return string
-   *    Extracted item.
+   *   Extracted item.
    */
   protected function parseToken($original, $item = 'entity_id') {
     $matches = array();

@@ -220,7 +220,7 @@ function _mbp_sync_block_op($block, $destination, &$context) {
     // Is it a managed file ?
     if (strpos($path, $destination) !== FALSE) {
       if ($fid = _mbp_sync_find_file($path, $destination)) {
-        // Replace file path with token.
+        // Replace image by a media token.
         $html = str_replace($src, "[file:{$fid}:url]", $html);
         $hasChanged = TRUE;
       }
@@ -385,13 +385,20 @@ function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
 
       foreach ($images as $image) {
         $src = $image->getAttribute('src');
+        // Reset token to its path value.
+        if (strpos($src, '[file:')) {
+          $path = token_replace($src);
+        }
+        // Clean url if absolute path.
         $path = strtok($src, '?');
         $path = strtok($path, '#');
+
         // Is it a managed file ?
         if (strpos($path, $destination) !== FALSE) {
           if ($fid = _mbp_sync_find_file($path, $destination)) {
-            // Replace file path with token.
-            $html = str_replace($src, "[file:{$fid}:url]", $html);
+            // Replace file path with media tag.
+            $tag = _mbp_sync_create_media_file_tag($fid);
+            $html = str_replace($src, $tag, $html);
             $hasChanged = TRUE;
           }
         }
@@ -508,7 +515,7 @@ function _mbp_sync_sync_folders_form_op(array $chunk, &$context) {
  * @param array $context
  *   Batch context.
  *
- * @return int $tid
+ * @return int
  *   The found term id.
  */
 function _mbp_sync_get_media_folder_tid($dir, &$context) {
@@ -843,4 +850,51 @@ function mbp_sync_move_file($tid, $file, $replace = NULL, $save = TRUE) {
     }
   }
   return TRUE;
+}
+
+/**
+ * Helper function to create file media tags.
+ *
+ * @param int $fid
+ *   The file id.
+ *
+ * @return string
+ *   Json encoded media tag.
+ */
+ //@TODO Rewrite this function to be a global one for entity.
+function _mbp_sync_create_media_file_tag($fid) {
+  $file = file_load($fid);
+
+  $file_info = array(array(array(
+    'fid' => $fid,
+    'view_mode' => 'default',
+    'fields' => array(
+      'format' => 'default',
+      'field_file_image_alt_text[und][0][value]' => $file->field_file_image_alt_text[LANGUAGE_NONE][0]['value'] ?: NULL,
+      'field_file_image_title_text[und][0][value]' => $file->field_file_image_title_text[LANGUAGE_NONE][0]['value'] ?: NULL,
+      'field_caption[und][0][value]' => $file->field_caption[LANGUAGE_NONE][0]['value'] ? : NULL,
+    ),
+    //@TODO Find where this value is coming from.
+    'link_text' => $link_text ? : NULL,
+    'type' => 'media',
+    'field_deltas' => array(
+      '1' => array(
+        'format' => 'default',
+        'field_file_image_alt_text[und][0][value]' => $file->field_file_image_alt_text[LANGUAGE_NONE][0]['value'] ?: NULL,
+        'field_file_image_title_text[und][0][value]' => $file->field_file_image_title_text[LANGUAGE_NONE][0]['value'] ?: NULL,
+        'field_caption[und][0][value]' => $file->field_caption[LANGUAGE_NONE][0]['value'] ?: NULL,
+      ),
+    ),
+    'attributes' => array(
+      'alt' => $file->alt,
+      'title' => $file->title,
+      'style' => '',
+      'class' => 'media-element file-default',
+      'data-delta' => '1',
+    ),
+  ),
+  ),
+  );
+
+  return drupal_json_encode($file_info);
 }
