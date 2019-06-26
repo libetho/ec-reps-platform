@@ -8,7 +8,7 @@ namespace Drupal\mbp_sync;
  *
  * @package Drupal\mbp_sync
  */
-class FileUrlTokenHandler implements TokenHandlerInterface {
+class FileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterface {
 
   /**
    * {@inheritdoc}

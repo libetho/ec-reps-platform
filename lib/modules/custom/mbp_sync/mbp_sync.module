@@ -220,7 +220,7 @@ function _mbp_sync_block_op($block, $destination, &$context) {
     // Is it a managed file ?
     if (strpos($path, $destination) !== FALSE) {
       if ($fid = _mbp_sync_find_file($path, $destination)) {
-        // Replace image by a media token.
+        // Replace file path with token.
         $html = str_replace($src, "[file:{$fid}:url]", $html);
         $hasChanged = TRUE;
       }
@@ -377,7 +377,7 @@ function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
 
       $doc = new DOMDocument();
       libxml_use_internal_errors(TRUE);
-      $doc->loadHTML($html);
+      $doc->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
       libxml_clear_errors();
 
       // Parse the images first.
@@ -387,7 +387,7 @@ function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
         $src = $image->getAttribute('src');
         // Reset token to its path value.
         if (strpos($src, '[file:')) {
-          $path = token_replace($src);
+          $src = token_replace($src);
         }
         // Clean url if absolute path.
         $path = strtok($src, '?');
@@ -398,10 +398,15 @@ function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
           if ($fid = _mbp_sync_find_file($path, $destination)) {
             // Replace file path with media tag.
             $tag = _mbp_sync_create_media_file_tag($fid);
-            $html = str_replace($src, $tag, $html);
+            $image_tag = $doc->createElement('media_tag', $tag);
+            $image->parentNode->replaceChild($image_tag, $image);
             $hasChanged = TRUE;
           }
         }
+      }
+      // Save alter DOM with media tag.
+      if ($hasChanged) {
+        $html = $doc->saveHTML();
       }
 
       // Now the links.
@@ -861,7 +866,6 @@ function mbp_sync_move_file($tid, $file, $replace = NULL, $save = TRUE) {
  * @return string
  *   Json encoded media tag.
  */
- //@TODO Rewrite this function to be a global one for entity.
 function _mbp_sync_create_media_file_tag($fid) {
   $file = file_load($fid);
 
@@ -874,8 +878,7 @@ function _mbp_sync_create_media_file_tag($fid) {
       'field_file_image_title_text[und][0][value]' => $file->field_file_image_title_text[LANGUAGE_NONE][0]['value'] ?: NULL,
       'field_caption[und][0][value]' => $file->field_caption[LANGUAGE_NONE][0]['value'] ? : NULL,
     ),
-    //@TODO Find where this value is coming from.
-    'link_text' => $link_text ? : NULL,
+    'link_text' => NULL,
     'type' => 'media',
     'field_deltas' => array(
       '1' => array(
@@ -895,6 +898,54 @@ function _mbp_sync_create_media_file_tag($fid) {
   ),
   ),
   );
-
+  // Need to test if needed and if wysiwyg decode
+  //array_walk_recursive( $file_info, function (&$entry) { $entry = mb_convert_encoding( $entry, 'UTF-8' ); } );
+  // return json_encode($file_info, JSON_UNESCAPED_UNICODE);
   return drupal_json_encode($file_info);
 }
+
+
+// DEBUG Function
+// Toremove.
+// Get public and private file path (used later).
+if ($wrapper = file_stream_wrapper_get_instance_by_uri('public://')) {
+  $destination = $wrapper->getDirectoryPath();
+}
+
+$node = node_load('57');
+
+$body = $node->body['fi'][0]['value'];
+$doc = new DOMDocument();
+libxml_use_internal_errors(TRUE);
+$doc->loadHTML($body);
+libxml_clear_errors();
+
+// Parse the images first.
+$images = $doc->getElementsByTagName('img');
+
+foreach ($images as $image) {
+  $src = $image->getAttribute('src');
+  // Reset token to its path value.
+  if (strpos($src, '[file:') !== FALSE) {
+    $src = token_replace($src);
+  }
+  // Clean url if absolute path.
+  $path = strtok($src, '?');
+  $path = strtok($path, '#');
+
+  // Is it a managed file ?
+  if (strpos($path, $destination) !== FALSE) {
+    if ($fid = _mbp_sync_find_file($path, $destination)) {
+      // Replace file path with media tag.
+      $tag = _mbp_sync_create_media_file_tag($fid);
+      $image_tag = $doc->createElement('media_tag', $tag);
+      $image->parentNode->replaceChild($image_tag, $image);
+      $hasChanged = TRUE;
+    }
+  }
+
+}
+if ($hasChanged) {
+  $html = html_entity_decode($doc->saveHTML());
+}
+dpm($html);
