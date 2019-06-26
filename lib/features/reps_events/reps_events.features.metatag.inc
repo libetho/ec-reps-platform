@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_events.features.metatag.inc
@@ -13,6 +14,7 @@ function reps_events_metatag_export_default() {
   // Exported Metatag config instance: node:reps_event.
   $config['node:reps_event'] = array(
     'instance' => 'node:reps_event',
+    'disabled' => FALSE,
     'config' => array(
       'revisit-after' => array(
         'value' => 15,

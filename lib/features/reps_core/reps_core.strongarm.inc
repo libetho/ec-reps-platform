@@ -350,6 +350,19 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_file__image';
+  $strongarm->value = array(
+    'default_language' => 'und',
+    'hide_language_selector' => 1,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_file__image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'extlink_css_exclude';
   $strongarm->value = '#block-social-media-links-social-media-links';
   $export['extlink_css_exclude'] = $strongarm;
@@ -572,7 +585,7 @@ function reps_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'file_entity_default_allowed_extensions';
-  $strongarm->value = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm kml xml zip 7z';
+  $strongarm->value = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm kml xml zip 7z geojson';
   $export['file_entity_default_allowed_extensions'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1269,6 +1282,24 @@ function reps_core_strongarm() {
     'rel' => '<none>',
   );
   $export['social_media_links_link_attributes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ultimate_cron_plugin_scheduler_default';
+  $strongarm->value = 'simple';
+  $export['ultimate_cron_plugin_scheduler_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ultimate_cron_plugin_scheduler_simple_settings';
+  $strongarm->value = array(
+    'rules' => array(
+      0 => '*/15+@ * * * *',
+    ),
+  );
+  $export['ultimate_cron_plugin_scheduler_simple_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

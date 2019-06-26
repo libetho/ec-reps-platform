@@ -34,7 +34,7 @@ projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
 
 projects[rabbit_hole][subdir] = "contrib"
-projects[rabbit_hole][version] = 2.23
+projects[rabbit_hole][version] = 2.25
 
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = 1.0-rc3
@@ -44,6 +44,9 @@ projects[social_media_links][version] = 1.4
 
 projects[taxonomy_access_fix][subdir] = "contrib"
 projects[taxonomy_access_fix][version] = 2.2
+
+projects[ultimate_cron][subdir] = "contrib"
+projects[ultimate_cron][version] = 2.8
   
 projects[views_tree][subdir] = "contrib"
 projects[views_tree][version] = 2.0
