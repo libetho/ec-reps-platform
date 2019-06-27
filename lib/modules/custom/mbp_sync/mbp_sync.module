@@ -898,12 +898,9 @@ function _mbp_sync_create_media_file_tag($fid) {
   ),
   ),
   );
-  // Need to test if needed and if wysiwyg decode
-  //array_walk_recursive( $file_info, function (&$entry) { $entry = mb_convert_encoding( $entry, 'UTF-8' ); } );
-  // return json_encode($file_info, JSON_UNESCAPED_UNICODE);
-  return drupal_json_encode($file_info);
-}
 
+  return json_encode($file_info, JSON_UNESCAPED_UNICODE);
+}
 
 // DEBUG Function
 // Toremove.
@@ -917,7 +914,7 @@ $node = node_load('57');
 $body = $node->body['fi'][0]['value'];
 $doc = new DOMDocument();
 libxml_use_internal_errors(TRUE);
-$doc->loadHTML($body);
+$doc->loadHTML('<?xml encoding="utf-8" ?>' . $body);
 libxml_clear_errors();
 
 // Parse the images first.
