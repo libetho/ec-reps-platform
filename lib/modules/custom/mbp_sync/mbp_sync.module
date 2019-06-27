@@ -356,6 +356,7 @@ function _mbp_sync_bean_op($bid, $look_for, $destination, &$context) {
  *   Common scope between batches.
  */
 function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
+
   $node = node_load($nid, NULL, TRUE);
   $updateNode = FALSE;
 
@@ -386,7 +387,7 @@ function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
       foreach ($images as $image) {
         $src = $image->getAttribute('src');
         // Reset token to its path value.
-        if (strpos($src, '[file:')) {
+        if (strpos($src, '[file:') !== FALSE) {
           $src = token_replace($src);
         }
         // Clean url if absolute path.
@@ -404,9 +405,9 @@ function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
           }
         }
       }
-      // Save alter DOM with media tag.
+      // Save altered DOM with media tags.
       if ($hasChanged) {
-        $html = $doc->saveHTML();
+        $html = html_entity_decode($doc->saveHTML());
       }
 
       // Now the links.
@@ -905,6 +906,7 @@ function _mbp_sync_create_media_file_tag($fid) {
 // DEBUG Function
 // Toremove.
 // Get public and private file path (used later).
+$hadChanged = FALSE;
 if ($wrapper = file_stream_wrapper_get_instance_by_uri('public://')) {
   $destination = $wrapper->getDirectoryPath();
 }
@@ -914,7 +916,7 @@ $node = node_load('57');
 $body = $node->body['fi'][0]['value'];
 $doc = new DOMDocument();
 libxml_use_internal_errors(TRUE);
-$doc->loadHTML('<?xml encoding="utf-8" ?>' . $body);
+$doc->loadHTML($body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 libxml_clear_errors();
 
 // Parse the images first.
@@ -926,6 +928,7 @@ foreach ($images as $image) {
   if (strpos($src, '[file:') !== FALSE) {
     $src = token_replace($src);
   }
+
   // Clean url if absolute path.
   $path = strtok($src, '?');
   $path = strtok($path, '#');
