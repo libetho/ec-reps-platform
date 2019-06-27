@@ -114,15 +114,13 @@ function _mbp_sync_file_tokens_setup_batch() {
       continue;
     }
 
-    // Build the operations.
-    foreach ($result['node'] as $node) {
-      $operations[] = array('_mbp_sync_node_op', array(
-        $node->nid,
-        $look_for,
-        $destination,
+    // Build the operation.
+    $operations[$type] = array('_mbp_sync_node_op', array(
+      $result['node'],
+      $look_for,
+      $destination,
       ),
-      );
-    }
+    );
   }
 
   $batch = array(
@@ -346,8 +344,8 @@ function _mbp_sync_bean_op($bid, $look_for, $destination, &$context) {
 /**
  * Parse the links of the body content and translations.
  *
- * @param int $nid
- *   The id of the node parsed.
+ * @param array $list
+ *   The node id list parsed.
  * @param array $look_for
  *   The filetypes identifying files.
  * @param array $destination
@@ -355,90 +353,120 @@ function _mbp_sync_bean_op($bid, $look_for, $destination, &$context) {
  * @param array $context
  *   Common scope between batches.
  */
-function _mbp_sync_node_op($nid, $look_for, $destination, &$context) {
-
-  $node = node_load($nid, NULL, TRUE);
-  $updateNode = FALSE;
-
-  // Walk through the fields.
-  foreach ($look_for as $field) {
-    // Not set, don't parse.
-    if (!isset($node->{$field}) || empty($node->{$field})) {
-      continue;
+function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
+  if (!isset($context['sandbox']['progress'])) {
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['items'] = array_chunk($list, 5);
+    $context['sandbox']['max'] = count($list);
+  }
+  // Load current items.
+  $items = $context['sandbox']['items'][$context['sandbox']['progress']];
+  // Save memory.
+  unset($context['sandbox']['items'][$context['sandbox']['progress']]);
+  // Select our batch nids.
+  $nids = array();
+  if (is_array($items) && !empty($items)) {
+    foreach ($items as $item) {
+      $nids[] = $item->nid;
     }
 
-    foreach ($node->{$field} as $language => $value) {
-      $hasChanged = FALSE;
-      $html = $value['0']['value'];
+    // Load nodes.
+    $nodes = node_load_multiple($nids, NULL, TRUE);
+    $updateNode = FALSE;
 
-      // Don't load resources if not needed.
-      if (strpos($html, $destination) === FALSE) {
-        continue;
-      }
-
-      $doc = new DOMDocument();
-      libxml_use_internal_errors(TRUE);
-      $doc->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-      libxml_clear_errors();
-
-      // Parse the images first.
-      $images = $doc->getElementsByTagName('img');
-
-      foreach ($images as $image) {
-        $src = $image->getAttribute('src');
-        // Reset token to its path value.
-        if (strpos($src, '[file:') !== FALSE) {
-          $src = token_replace($src);
+    // Walk through nodes.
+    foreach ($nodes as $node) {
+      // Walk through the fields.
+      foreach ($look_for as $field) {
+        // Not set, don't parse.
+        if (!isset($node->{$field}) || empty($node->{$field})) {
+          continue;
         }
-        // Clean url if absolute path.
-        $path = strtok($src, '?');
-        $path = strtok($path, '#');
 
-        // Is it a managed file ?
-        if (strpos($path, $destination) !== FALSE) {
-          if ($fid = _mbp_sync_find_file($path, $destination)) {
-            // Replace file path with media tag.
-            $tag = _mbp_sync_create_media_file_tag($fid);
-            $image_tag = $doc->createElement('media_tag', $tag);
-            $image->parentNode->replaceChild($image_tag, $image);
-            $hasChanged = TRUE;
+        foreach ($node->{$field} as $language => $value) {
+          $hasChanged = FALSE;
+          $html = $value['0']['value'];
+
+          // Don't load resources if not needed.
+          if (strpos($html, $destination) === FALSE) {
+            continue;
+          }
+          file_put_contents('batch.txt', print_r(array($html, $destination), 1), FILE_APPEND);
+          $doc = new DOMDocument();
+          libxml_use_internal_errors(TRUE);
+          $doc->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+          libxml_clear_errors();
+
+          // Parse the images first.
+          $images = $doc->getElementsByTagName('img');
+
+          foreach ($images as $image) {
+            $src = $image->getAttribute('src');
+            // Reset token to its path value.
+            if (strpos($src, '[file:') !== FALSE) {
+              $src = token_replace($src);
+            }
+            // Clean url if absolute path.
+            $path = strtok($src, '?');
+            $path = strtok($path, '#');
+
+            // Is it a managed file ?
+            if (strpos($path, $destination) !== FALSE) {
+              if ($fid = _mbp_sync_find_file($path, $destination)) {
+                // Replace file path with media tag.
+                $tag = _mbp_sync_create_media_file_tag($fid);
+                $image_tag = $doc->createElement('media_tag', $tag);
+                $image->parentNode->replaceChild($image_tag, $image);
+                $hasChanged = TRUE;
+              }
+            }
+          }
+
+          // Save altered DOM with media tags.
+          if ($hasChanged) {
+            $html = html_entity_decode($doc->saveHTML());
+          }
+
+          // Now the links.
+          $links = $doc->getElementsByTagName('a');
+
+          foreach ($links as $link) {
+            $href = $link->getAttribute('href');
+            $path = strtok($href, '?');
+            $path = strtok($path, '#');
+            // Is it a managed file ?
+            if (strpos($path, $destination) !== FALSE) {
+              if ($fid = _mbp_sync_find_file($path, $destination)) {
+                // Replace file path with token.
+                $html = str_replace($href, "[file:{$fid}:url]", $html);
+                $hasChanged = TRUE;
+              }
+            }
+          }
+
+          if ($hasChanged) {
+            $node->{$field}[$language]['0']['value'] = $html;
+            $updateNode = TRUE;
           }
         }
       }
-      // Save altered DOM with media tags.
-      if ($hasChanged) {
-        $html = html_entity_decode($doc->saveHTML());
-      }
-
-      // Now the links.
-      $links = $doc->getElementsByTagName('a');
-
-      foreach ($links as $link) {
-        $href = $link->getAttribute('href');
-        $path = strtok($href, '?');
-        $path = strtok($path, '#');
-        // Is it a managed file ?
-        if (strpos($path, $destination) !== FALSE) {
-          if ($fid = _mbp_sync_find_file($path, $destination)) {
-            // Replace file path with token.
-            $html = str_replace($href, "[file:{$fid}:url]", $html);
-            $hasChanged = TRUE;
-          }
-        }
-      }
-
-      if ($hasChanged) {
-        $node->{$field}[$language]['0']['value'] = $html;
-        $updateNode = TRUE;
+      if ($updateNode) {
+        node_save($node);
+        // Message displayed under the progressbar.
+        $context['message'] = dt('Updated node "@title"', array('@title' => $node->title));
       }
     }
   }
-
-  if ($updateNode) {
-    node_save($node);
-
-    // Message displayed under the progressbar.
-    $context['message'] = dt('Updated node "@title"', array('@title' => $node->title));
+  // Update our progress information.
+  $context['sandbox']['progress']++;
+  // Inform the batch engine that we are not finished,
+  // and provide an estimation of the completion level we reached.
+  if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
+    $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+    $context['message'] = dt('@progress % completed for content type @content-type', array(
+      '@progress' => intval($context['sandbox']['progress'] / $context['sandbox']['max'] * 100),
+      '@content-type' => $items[0]->type,
+    ));
   }
 }
 
@@ -902,50 +930,3 @@ function _mbp_sync_create_media_file_tag($fid) {
 
   return json_encode($file_info, JSON_UNESCAPED_UNICODE);
 }
-
-// DEBUG Function
-// Toremove.
-// Get public and private file path (used later).
-$hadChanged = FALSE;
-if ($wrapper = file_stream_wrapper_get_instance_by_uri('public://')) {
-  $destination = $wrapper->getDirectoryPath();
-}
-
-$node = node_load('57');
-
-$body = $node->body['fi'][0]['value'];
-$doc = new DOMDocument();
-libxml_use_internal_errors(TRUE);
-$doc->loadHTML($body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-libxml_clear_errors();
-
-// Parse the images first.
-$images = $doc->getElementsByTagName('img');
-
-foreach ($images as $image) {
-  $src = $image->getAttribute('src');
-  // Reset token to its path value.
-  if (strpos($src, '[file:') !== FALSE) {
-    $src = token_replace($src);
-  }
-
-  // Clean url if absolute path.
-  $path = strtok($src, '?');
-  $path = strtok($path, '#');
-
-  // Is it a managed file ?
-  if (strpos($path, $destination) !== FALSE) {
-    if ($fid = _mbp_sync_find_file($path, $destination)) {
-      // Replace file path with media tag.
-      $tag = _mbp_sync_create_media_file_tag($fid);
-      $image_tag = $doc->createElement('media_tag', $tag);
-      $image->parentNode->replaceChild($image_tag, $image);
-      $hasChanged = TRUE;
-    }
-  }
-
-}
-if ($hasChanged) {
-  $html = html_entity_decode($doc->saveHTML());
-}
-dpm($html);
