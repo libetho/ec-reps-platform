@@ -970,6 +970,51 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_ne_body'.
+  $field_instances['node-page-field_ne_body'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ne_body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => 0,
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => -2,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_reps_core_abstract'.
   $field_instances['node-page-field_reps_core_abstract'] = array(
     'bundle' => 'page',
@@ -1123,7 +1168,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1196,7 +1241,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1263,7 +1308,7 @@ function reps_core_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'popup' => array(
         'label' => 'above',
