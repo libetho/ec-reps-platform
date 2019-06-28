@@ -357,7 +357,11 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
   if (!isset($context['sandbox']['progress'])) {
     $context['sandbox']['progress'] = 0;
     $context['sandbox']['items'] = array_chunk($list, 5);
-    $context['sandbox']['max'] = count($list);
+    $context['sandbox']['max'] = count($context['sandbox']['items']);
+    $context['results']['items_updated'] = 0;
+    $context['message'] = dt('Processing @content-type', array(
+      '@content-type' => $context['sandbox']['items'][0][0]->type,
+    ));
   }
   // Load current items.
   $items = $context['sandbox']['items'][$context['sandbox']['progress']];
@@ -386,12 +390,10 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
         foreach ($node->{$field} as $language => $value) {
           $hasChanged = FALSE;
           $html = $value['0']['value'];
-
           // Don't load resources if not needed.
-          if (strpos($html, $destination) === FALSE) {
+          if (strpos($html, $destination) === FALSE && strpos($html, '[file:') === FALSE) {
             continue;
           }
-          file_put_contents('batch.txt', print_r(array($html, $destination), 1), FILE_APPEND);
           $doc = new DOMDocument();
           libxml_use_internal_errors(TRUE);
           $doc->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -400,7 +402,8 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
           // Parse the images first.
           $images = $doc->getElementsByTagName('img');
 
-          foreach ($images as $image) {
+          while ($images->length) {
+            $image = $images[0];
             $src = $image->getAttribute('src');
             // Reset token to its path value.
             if (strpos($src, '[file:') !== FALSE) {
@@ -409,12 +412,16 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
             // Clean url if absolute path.
             $path = strtok($src, '?');
             $path = strtok($path, '#');
-
             // Is it a managed file ?
             if (strpos($path, $destination) !== FALSE) {
               if ($fid = _mbp_sync_find_file($path, $destination)) {
                 // Replace file path with media tag.
-                $tag = _mbp_sync_create_media_file_tag($fid);
+                $tag = _mbp_sync_create_media_file_tag($fid, array(
+                  'title' => $image->getAttribute('title'),
+                  'alt' => $image->getAttribute('alt'),
+                  'class' => $image->getAttribute('class'),
+                  'style' => $image->getAttribute('style'),
+                ));
                 $image_tag = $doc->createElement('media_tag', $tag);
                 $image->parentNode->replaceChild($image_tag, $image);
                 $hasChanged = TRUE;
@@ -452,6 +459,7 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
       }
       if ($updateNode) {
         node_save($node);
+        $context['results']['items_updated']++ ;
         // Message displayed under the progressbar.
         $context['message'] = dt('Updated node "@title"', array('@title' => $node->title));
       }
@@ -463,9 +471,11 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
   // and provide an estimation of the completion level we reached.
   if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
     $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
-    $context['message'] = dt('@progress % completed for content type @content-type', array(
-      '@progress' => intval($context['sandbox']['progress'] / $context['sandbox']['max'] * 100),
+  }
+  else {
+    $context['message'] = dt('@content-type : @result node(s) were updated.', array(
       '@content-type' => $items[0]->type,
+      '@result' => $context['results']['items_updated'],
     ));
   }
 }
@@ -892,10 +902,13 @@ function mbp_sync_move_file($tid, $file, $replace = NULL, $save = TRUE) {
  * @param int $fid
  *   The file id.
  *
+ * @param array $attributes
+ *   The image attributes.
+ *
  * @return string
  *   Json encoded media tag.
  */
-function _mbp_sync_create_media_file_tag($fid) {
+function _mbp_sync_create_media_file_tag($fid, $attributes = array()) {
   $file = file_load($fid);
 
   $file_info = array(array(array(
@@ -905,7 +918,7 @@ function _mbp_sync_create_media_file_tag($fid) {
       'format' => 'default',
       'field_file_image_alt_text[und][0][value]' => $file->field_file_image_alt_text[LANGUAGE_NONE][0]['value'] ?: NULL,
       'field_file_image_title_text[und][0][value]' => $file->field_file_image_title_text[LANGUAGE_NONE][0]['value'] ?: NULL,
-      'field_caption[und][0][value]' => $file->field_caption[LANGUAGE_NONE][0]['value'] ? : NULL,
+      'field_caption[und][0][value]' => NULL,
     ),
     'link_text' => NULL,
     'type' => 'media',
@@ -918,10 +931,10 @@ function _mbp_sync_create_media_file_tag($fid) {
       ),
     ),
     'attributes' => array(
-      'alt' => $file->alt,
-      'title' => $file->title,
-      'style' => '',
-      'class' => 'media-element file-default',
+      'alt' => $attributes['alt'],
+      'title' => $attributes['title'],
+      'style' => $attributes['style'],
+      'class' => 'media-element file-default ' . $attributes['class'] . '',
       'data-delta' => '1',
     ),
   ),
