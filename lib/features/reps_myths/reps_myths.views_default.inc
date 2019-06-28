@@ -30,7 +30,10 @@ function reps_myths_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
   $handler->display->display_options['fields']['field_reps_core_image']['table'] = 'field_data_field_reps_core_image';
@@ -85,6 +88,10 @@ function reps_myths_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'myths';
   $export['reps_eu_myth'] = $view;
 
   return $export;
