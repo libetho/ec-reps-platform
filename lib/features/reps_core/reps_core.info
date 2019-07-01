@@ -96,7 +96,6 @@ features[field_base][] = field_reps_core_related_video
 features[field_base][] = field_reps_cp_type
 features[field_base][] = field_reps_rightcol_position
 features[field_base][] = field_reps_rightcol_weight
-features[field_group][] = group_page_content|node|page|form
 features[field_group][] = group_reps_add_blocks_content|node|reps_homepage_additional_block|form
 features[field_group][] = group_reps_bean_ql_content|bean|reps_core_quicklinks|form
 features[field_group][] = group_reps_bean_ql_other|bean|reps_core_quicklinks|form
