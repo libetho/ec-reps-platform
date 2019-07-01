@@ -434,7 +434,7 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
           }
           $doc = new DOMDocument();
           libxml_use_internal_errors(TRUE);
-          $doc->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+          $doc->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
           libxml_clear_errors();
 
           // Parse the images first.
