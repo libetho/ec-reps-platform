@@ -667,15 +667,6 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_abstract']['field'] = 'field_reps_core_abstract';
   $handler->display->display_options['fields']['field_reps_core_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_reps_core_abstract']['element_label_colon'] = FALSE;
-  /* Field: Content: Category */
-  $handler->display->display_options['fields']['field_reps_news_category']['id'] = 'field_reps_news_category';
-  $handler->display->display_options['fields']['field_reps_news_category']['table'] = 'field_data_field_reps_news_category';
-  $handler->display->display_options['fields']['field_reps_news_category']['field'] = 'field_reps_news_category';
-  $handler->display->display_options['fields']['field_reps_news_category']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_reps_news_category']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_reps_news_category']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

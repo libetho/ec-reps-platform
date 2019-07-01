@@ -823,3 +823,18 @@ function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
      $form['body']['#weight'] = -2;
    }
 }
+
+/*
+ * Implements hook_menu_local_tasks_alter().
+ */
+function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  if(!empty($root_path) && $root_path == 'admin/content/file/list'){
+    $item = menu_get_item('file/add'); 
+    if ($item['access']) {       
+      $data['actions']['output'][] = array(
+        '#theme' => 'menu_local_action',
+        '#link' => $item,
+      );
+    }  
+  }  
+}
