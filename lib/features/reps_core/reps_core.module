@@ -814,3 +814,12 @@ function _reps_core_ds_field_external_url(array $variables) {
 
   return '<div class="' . check_plain($classes) . '">' . $markup . '</div>';
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
+   if (!isset($form['field_ne_body'])) {
+     $form['body']['#weight'] = -2;
+   }
+}
