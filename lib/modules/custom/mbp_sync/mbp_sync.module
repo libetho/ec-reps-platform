@@ -434,7 +434,12 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
           }
           $doc = new DOMDocument();
           libxml_use_internal_errors(TRUE);
-          $doc->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+          if (LIBXML_VERSION >= 20708) {
+            $doc->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+          }
+          else {
+            $doc->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+          }
           libxml_clear_errors();
 
           // Parse the images first.
@@ -470,6 +475,9 @@ function _mbp_sync_node_op($list, $look_for, $destination, &$context) {
           // Save altered DOM with media tags.
           if ($hasChanged) {
             $html = html_entity_decode($doc->saveHTML());
+            if (LIBXML_VERSION < 20708) {
+              $html = preg_replace('/\<\?xml encoding="utf-8" \?\>/', '', $html);
+            }
           }
 
           // Now the links.
