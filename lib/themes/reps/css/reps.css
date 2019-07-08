@@ -811,9 +811,6 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .reps-img-right {
   float: right;
 }
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-name-field-tags {
-  display: none;
-}
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content ul.links.inline {
   display: none;
 }
