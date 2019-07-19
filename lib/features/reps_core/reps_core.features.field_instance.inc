@@ -297,13 +297,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
     ),
@@ -325,6 +321,43 @@ function reps_core_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'bean-reps_core_sb_right_blue_button-field_reps_display_region'.
+  $field_instances['bean-reps_core_sb_right_blue_button-field_reps_display_region'] = array(
+    'bundle' => 'reps_core_sb_right_blue_button',
+    'default_value' => array(
+      0 => array(
+        'value' => 'right_sidebar',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 13,
     ),
   );
 
@@ -527,13 +560,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
     ),
@@ -555,6 +584,43 @@ function reps_core_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'bean-reps_core_sb_right_free_content-field_reps_display_region'.
+  $field_instances['bean-reps_core_sb_right_free_content-field_reps_display_region'] = array(
+    'bundle' => 'reps_core_sb_right_free_content',
+    'default_value' => array(
+      0 => array(
+        'value' => 'right_sidebar',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 13,
     ),
   );
 
@@ -792,6 +858,44 @@ function reps_core_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'bean-reps_core_sb_right_image_link-field_reps_display_region'.
+  $field_instances['bean-reps_core_sb_right_image_link-field_reps_display_region'] = array(
+    'bundle' => 'reps_core_sb_right_image_link',
+    'default_value' => array(
+      0 => array(
+        'value' => 'right_sidebar',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 13,
     ),
   );
 
@@ -2470,6 +2574,7 @@ function reps_core_field_default_field_instances() {
   t('Body');
   t('Contact point type');
   t('Date');
+  t('Display');
   t('External Url');
   t('Free content');
   t('Image');
