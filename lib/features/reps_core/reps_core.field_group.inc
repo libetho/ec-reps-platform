@@ -12,34 +12,6 @@ function reps_core_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();
-  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_page_content|node|page|form';
-  $field_group->group_name = 'group_page_content';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'page';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Content',
-    'weight' => 0,
-    'children' => array(
-      0 => 'title_field',
-      1 => 'title',
-      2 => 'field_ne_body',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'classes' => 'group-page-content field-group-tab',
-        'required_fields' => TRUE,
-      ),
-    ),
-  );
-  $field_groups['group_page_content|node|page|form'] = $field_group;
-
-  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_reps_add_blocks_content|node|reps_homepage_additional_block|form';
@@ -226,8 +198,9 @@ function reps_core_field_group_info() {
     'children' => array(
       1 => 'field_reps_core_image',
       2 => 'field_reps_core_abstract',
-      3 => 'field_ne_body',
-      4 => 'field_tags',
+      3 => 'body',
+      4 => 'field_ne_body',
+      5 => 'field_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
