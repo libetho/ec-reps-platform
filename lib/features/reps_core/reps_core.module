@@ -8,7 +8,6 @@
 include_once 'reps_core.features.field_base.inc';
 include_once 'reps_core.features.inc';
 include_once 'reps_core.api.inc';
-// include_once 'reps_core.views.inc';
 
 /**
  * Implements hook_help().
