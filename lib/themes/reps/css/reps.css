@@ -2215,3 +2215,10 @@ div[about*='news/videos'] .link-wrapper.right {
 div[about*='news/videos'] .field-name-body {
   margin-bottom: 0;
 }
+/* REPR-1711 video landing page - body & abstract appear on top */
+div[about*='news/videos'] .link-wrapper.right {
+  display: none;
+}
+div[about*='news/videos'] .field-name-body {
+  margin-bottom: 0;
+}
