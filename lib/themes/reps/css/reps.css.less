@@ -2458,3 +2458,10 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
     padding: 0;
   }
 } // @media all and (max-width: @screen-xs-min) END
+
+/* REPR-1711 video landing page - body & abstract appear on top */
+
+div[about*='news/videos'] {
+  .link-wrapper.right{ display:none; }
+  .field-name-body{ margin-bottom:0; }
+}
