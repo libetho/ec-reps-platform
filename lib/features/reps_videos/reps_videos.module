@@ -64,7 +64,7 @@ function _apply_cookie_consent_banner(&$html) {
   $banner = FALSE;
 
   $video_types = array(
-    'www.youtube.com',
+    'youtube.com',
     'youtu.be',
     'player.cdn.tv1.eu',
     'player.vimeo.com',
@@ -72,6 +72,14 @@ function _apply_cookie_consent_banner(&$html) {
     'cdn1.cache.twofourdigital.net',
     'europa.eu',
     'embed.scribblelive.com',
+    'facebook.com',
+    'google.com',
+    'google.be',
+    'bing.com',
+    'twitter.com',
+    'archive.org',
+    'widgets.twimg.com',
+    'slideshare.net'
   );
   foreach ($video_types as $video_type) {
     if (
