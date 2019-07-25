@@ -68,7 +68,6 @@ function _apply_cookie_consent_banner(&$html) {
   $banner = FALSE;
 
   $video_types = array(
-    'www.youtube.com',
     'youtube.com',
     'youtu.be',
     'player.cdn.tv1.eu',
