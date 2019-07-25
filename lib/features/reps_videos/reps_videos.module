@@ -49,9 +49,8 @@ function reps_videos_post_render($html) {
     if (LIBXML_VERSION < 20708) {
       $html = preg_replace('/\<\?xml encoding="utf-8" \?\>/', '', $html);
     }
+    return $html;
   }
-
-  return $html;
 }
 
 /**
