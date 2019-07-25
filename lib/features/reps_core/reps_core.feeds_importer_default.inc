@@ -66,11 +66,16 @@ function reps_core_feeds_importer_default() {
             'unique' => 1,
           ),
           1 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'title_field',
+            'unique' => FALSE,
+          ),
+          2 => array(
             'source' => 'xpathparser:1',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          2 => array(
+          3 => array(
             'source' => 'xpathparser:2',
             'target' => 'field_reps_cp_type',
             'term_search' => '0',
@@ -149,11 +154,16 @@ function reps_core_feeds_importer_default() {
             'unique' => 1,
           ),
           1 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'title_field',
+            'unique' => FALSE,
+          ),
+          2 => array(
             'source' => 'xpathparser:1',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          2 => array(
+          3 => array(
             'source' => 'xpathparser:2',
             'target' => 'field_reps_cp_type',
             'term_search' => '0',
@@ -232,11 +242,16 @@ function reps_core_feeds_importer_default() {
             'unique' => 1,
           ),
           1 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'title_field',
+            'unique' => FALSE,
+          ),
+          2 => array(
             'source' => 'xpathparser:1',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          2 => array(
+          3 => array(
             'source' => 'xpathparser:2',
             'target' => 'field_reps_cp_type',
             'term_search' => '0',
