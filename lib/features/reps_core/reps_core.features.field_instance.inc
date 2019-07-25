@@ -982,7 +982,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => -9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1050,7 +1050,7 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'reps_main_content_image',
         ),
         'type' => 'file_rendered',
-        'weight' => 0,
+        'weight' => -10,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1123,7 +1123,7 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => -4,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1202,7 +1202,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => -6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1263,7 +1263,7 @@ function reps_core_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 4,
+        'weight' => -8,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1337,7 +1337,7 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 6,
+        'weight' => -5,
       ),
       'popup' => array(
         'label' => 'above',
@@ -1404,7 +1404,7 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => -11,
       ),
       'popup' => array(
         'label' => 'above',
