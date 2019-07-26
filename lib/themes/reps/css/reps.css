@@ -1244,9 +1244,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 /*REPR-1302 news & events : text always appear under the image. */
 /* 364px */
 @media all and (max-width: 364px) {
-  body.reps #mainContainer #layout-body {
-    /* end .views-row */
-  }
   body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image-et,
   body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-image-et,
   body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image,
@@ -1263,10 +1260,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 }
 /* 365px < screen > 667*/
 @media all and (min-width: 365px) and (max-width: 767px) {
-  body.reps #mainContainer #layout-body .view-reps-news,
-  body.reps #mainContainer #layout-body .view-reps-events {
-    /* end view-row */
-  }
   body.reps #mainContainer #layout-body .view-reps-news .views-row,
   body.reps #mainContainer #layout-body .view-reps-events .views-row {
     display: -webkit-box;
