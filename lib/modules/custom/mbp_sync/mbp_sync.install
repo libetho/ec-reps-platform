@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Code for the mbp sync module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function mbp_sync_enable() {
+  drupal_set_message(t("MBP sync module is now active on your site"));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function mbp_sync_disable() {
+  drupal_set_message(t("MBP sync module is now disabled on your site"));
+}
+
+/**
+ * Enable mbp_sync_image view mode.
+ */
+function mbp_sync_update_7001() {
+  $settings = field_bundle_settings('file', 'image');
+  $settings['view_modes']['mbp_sync_image']['custom_settings'] = TRUE;
+  field_bundle_settings('file', 'image', $settings);
+}
