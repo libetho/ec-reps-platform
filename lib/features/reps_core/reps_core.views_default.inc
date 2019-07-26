@@ -12,6 +12,165 @@ function reps_core_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'reps_bean_blocks_global';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'bean';
+  $view->human_name = 'REPS bean blocks global';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'bean-right';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  /* Field: Block: Internal, numeric block ID */
+  $handler->display->display_options['fields']['bid']['id'] = 'bid';
+  $handler->display->display_options['fields']['bid']['table'] = 'bean';
+  $handler->display->display_options['fields']['bid']['field'] = 'bid';
+  /* Filter criterion: Block: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'bean';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_core_sb_right_free_content' => 'reps_core_sb_right_free_content',
+    'reps_core_sb_right_image_link' => 'reps_core_sb_right_image_link',
+  );
+  /* Filter criterion: Broken/missing handler */
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['id'] = 'field_reps_rightcol_position_value';
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['table'] = 'field_data_field_reps_rightcol_position';
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['field'] = 'field_reps_rightcol_position_value';
+  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Homepage Quicklinks */
+  $handler = $view->new_display('block', 'Homepage Quicklinks', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'bean-quicklinks';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_reps_core_image']['id'] = 'field_reps_core_image';
+  $handler->display->display_options['fields']['field_reps_core_image']['table'] = 'field_data_field_reps_core_image';
+  $handler->display->display_options['fields']['field_reps_core_image']['field'] = 'field_reps_core_image';
+  $handler->display->display_options['fields']['field_reps_core_image']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_core_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_core_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_reps_core_image']['settings'] = array(
+    'image_style' => 'quicklinks_homepage__83x76_',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_reps_core_image']['group_column'] = 'entity_id';
+  /* Field: Target node */
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['id'] = 'field_reps_core_node_reference';
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['table'] = 'field_data_field_reps_core_node_reference';
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['field'] = 'field_reps_core_node_reference';
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['ui_name'] = 'Target node';
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_reps_core_node_reference']['settings'] = array(
+    'view_mode' => 'token',
+    'links' => 1,
+  );
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['alter']['path'] = 'node/[field_reps_core_node_reference]';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Abstract: translated */
+  $handler->display->display_options['fields']['field_reps_core_abstract_et']['id'] = 'field_reps_core_abstract_et';
+  $handler->display->display_options['fields']['field_reps_core_abstract_et']['table'] = 'field_data_field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract_et']['field'] = 'field_reps_core_abstract_et';
+  $handler->display->display_options['fields']['field_reps_core_abstract_et']['label'] = '';
+  $handler->display->display_options['fields']['field_reps_core_abstract_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reps_core_abstract_et']['type'] = 'text_plain';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Block: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'bean';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_core_quicklinks' => 'reps_core_quicklinks',
+  );
+
+  /* Display: Right column  -  reps bean */
+  $handler = $view->new_display('block', 'Right column  -  reps bean', 'block_reps_bean');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Block: Weight (field_reps_rightcol_weight) */
+  $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['id'] = 'field_reps_rightcol_weight_value';
+  $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['table'] = 'field_data_field_reps_rightcol_weight';
+  $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['field'] = 'field_reps_rightcol_weight_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Block: Page(s) (field_reps_core_node_reference) */
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['id'] = 'field_reps_core_node_reference_target_id';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['table'] = 'field_data_field_reps_core_node_reference';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['field'] = 'field_reps_core_node_reference_target_id';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['exception']['value'] = 'none';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_reps_core_node_reference_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'OR',
+    2 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Block: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'bean';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_core_sb_right_blue_button' => 'reps_core_sb_right_blue_button',
+    'reps_core_sb_right_free_content' => 'reps_core_sb_right_free_content',
+    'reps_core_sb_right_image_link' => 'reps_core_sb_right_image_link',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Block: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'bean';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'webtools' => 'webtools',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Block: Display (field_reps_display_region) */
+  $handler->display->display_options['filters']['field_reps_display_region_value']['id'] = 'field_reps_display_region_value';
+  $handler->display->display_options['filters']['field_reps_display_region_value']['table'] = 'field_data_field_reps_display_region';
+  $handler->display->display_options['filters']['field_reps_display_region_value']['field'] = 'field_reps_display_region_value';
+  $handler->display->display_options['filters']['field_reps_display_region_value']['value'] = array(
+    'right_sidebar' => 'right_sidebar',
+  );
+  $handler->display->display_options['filters']['field_reps_display_region_value']['group'] = 2;
+  $handler->display->display_options['block_description'] = 'Right column - reps beans';
+  $export['reps_bean_blocks_global'] = $view;
+
+  $view = new view();
   $view->name = 'reps_contact_points';
   $view->description = '';
   $view->tag = 'default';
