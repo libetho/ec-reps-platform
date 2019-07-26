@@ -2208,13 +2208,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     height: 190px;
   }
 }
-/* REPR-1711 video landing page - body & abstract appear on top */
-div[about*='news/videos'] .link-wrapper.right {
-  display: none;
-}
-div[about*='news/videos'] .field-name-body {
-  margin-bottom: 0;
-}
+
 /* REPR-1711 video landing page - body & abstract appear on top */
 div[about*='news/videos'] .link-wrapper.right {
   display: none;
