@@ -161,6 +161,19 @@ function reps_menu_link(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function reps_preprocess_node(&$variables) {
+
+  // REPR-1538 add class when abstract is empty.
+  $variables['no_abstract'] = '';
+  if (empty($variables['content']['field_reps_core_abstract'])) {
+    $variables['no_abstract'] = 'no-abstract';
+  }
+
+}
+
+/**
  * Implements theme_preprocess_block().
  *
  * Remove unused block ipg info (just keep the date and the top link).

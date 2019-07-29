@@ -1244,9 +1244,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 /*REPR-1302 news & events : text always appear under the image. */
 /* 364px */
 @media all and (max-width: 364px) {
-  body.reps #mainContainer #layout-body {
-    /* end .views-row */
-  }
   body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image-et,
   body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field-field-reps-core-image-et,
   body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image,
@@ -1263,10 +1260,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 }
 /* 365px < screen > 667*/
 @media all and (min-width: 365px) and (max-width: 767px) {
-  body.reps #mainContainer #layout-body .view-reps-news,
-  body.reps #mainContainer #layout-body .view-reps-events {
-    /* end view-row */
-  }
   body.reps #mainContainer #layout-body .view-reps-news .views-row,
   body.reps #mainContainer #layout-body .view-reps-events .views-row {
     display: -webkit-box;
@@ -1336,10 +1329,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
   max-width: 300px;
 }
 /* A VERIFIER EFFETS COLLATERAUX */
-div:not(.reps_ne_image) > .field-name-field-reps-core-image {
-  float: right;
-  padding: 10px 0 10px 10px;
-}
 div:not(.reps_ne_image) > .field-name-field-reps-core-image .field-item {
   padding-right: 0;
   width: auto;
@@ -1348,7 +1337,6 @@ div:not(.reps_ne_image) > .field-name-field-reps-core-image .field-image-caption
   display: none;
 }
 div:not(.reps_ne_image) > .field-name-field-reps-core-image img {
-  height: auto;
   margin: 0 !important;
   width: 100%;
 }
@@ -1698,8 +1686,15 @@ p.top-button a {
 p.top-button a:hover {
   background: #26437f;
 }
-/* Medium + Large */
+/* 768px Medium + Large */
 @media all and (min-width: 768px) {
+  div:not(.reps_ne_image) > .field-name-field-reps-core-image {
+    float: right;
+    padding: 5px 0 10px 10px;
+  }
+  .content-abstract.no-abstract > .field-name-field-reps-core-image {
+    float: none;
+  }
   body:not(.node-type-reps-homepage) #layout-body {
     margin-top: 50px !important;
   }
@@ -1863,6 +1858,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
+    max-width: 100%;
   }
   .mobile-user-bar {
     z-index: 5000;
@@ -2114,7 +2110,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     line-height: 16px;
   }
 }
-/* xs small only */
+/* xs small only 480px */
 @media all and (max-width: 480px) {
   #path {
     display: none !important;
@@ -2167,11 +2163,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   }
   body.reps #mainContainer #layout-body .block-views .flexslider ul.slides li {
     height: 190px;
-  }
-  div:not(.reps_ne_image) > .field-name-field-reps-core-image {
-    float: none;
-    max-width: 100%;
-    padding: 0;
   }
 }
 /* REPR-1711 video landing page - body & abstract appear on top */
