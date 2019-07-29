@@ -1754,19 +1754,31 @@ ul.pager {
     color: #fff;
   }
 } // ul.pager END
-/* Exposed Froms */
+
+/* Exposed Forms */
+
 
 .view-filters {
   background: @maltaRed;
   padding: 6px;
   font-size: 80%;
+  .views-exposed-form {
+    .views-exposed-widget.views-widget-filter-combine{ 
+      float:none;
+       margin-bottom:0.5em;
+      
+    }
+    
+  }
 
   .views-exposed-widgets {
-    margin-bottom: 0;
+    margin-bottom:0;
+    
 
     .views-widget-filter-field_reps_news_category_target_id {
-      width: 40%;
+      width: 100%;
       line-height: 1;
+      margin-bottom:0.5em;
 
       select {
         display: none;
@@ -1777,7 +1789,7 @@ ul.pager {
       width: 40%;
     }
     .views-submit-button {
-      width: 20%;
+      // width: 20%;
     }
 
     .views-exposed-widget {
@@ -1834,10 +1846,10 @@ ul.pager {
       }
 
       input[type=text] {
-        margin: 0 3px 0 50px;
+        margin: 0 3px 0 0px;
         padding-top: 2px;
         padding-bottom: 3px;
-        width: 75%;
+        width: 100%;
         font-size: 105%;
       }
       input[type=submit] {
@@ -1858,7 +1870,69 @@ ul.pager {
       }
     }
   }
-} // .views-filters END
+}
+
+/* 480px */
+
+@media all and (min-width:@screen-xs-min + 40) {
+  .view-filters{
+.views-exposed-form {
+   .views-exposed-widget.views-widget-filter-combine {
+      float:left;
+       margin-bottom:0;
+         input[type=text] {
+        // width: 75%;
+      }
+    }
+    
+  }
+  .views-exposed-widget.views-submit-button{ float:right; }
+  }
+}
+
+/* 768 */
+
+@media all and (min-width:@screen-sm-min) {
+  
+  .view-filters{
+    
+    .views-exposed-widgets {
+      .views-widget-filter-field_reps_news_category_target_id {
+         width: 40%;
+         margin: 0 0.5em 0 0;
+      }
+       .views-exposed-widgets {
+         
+        input[type=text] {
+        margin: 0 3px 0 50px;
+        padding-top: 2px;
+        padding-bottom: 3px;
+        
+      }
+         
+         
+       }
+       
+    }
+      
+    }
+    
+  }  
+  
+  /* 942px */
+  @media all and (min-width:@screen-md) {
+    .view-filters {
+      .views-exposed-widgets {
+        .views-widget-filter-field_reps_news_category_target_id {
+         margin: 0 1em 0 0;
+      }
+    }
+      
+    }
+  }
+// .views-filters END
+
+
 /* Tables styling */
 
 .reps table {

@@ -1538,27 +1538,29 @@ ul.pager li.pager-current {
   border: 1px solid #69c;
   color: #fff;
 }
-/* Exposed Froms */
+/* Exposed Forms */
 .view-filters {
   background: #b60522;
   padding: 6px;
   font-size: 80%;
 }
+.view-filters .views-exposed-form .views-exposed-widget.views-widget-filter-combine {
+  float: none;
+  margin-bottom: 0.5em;
+}
 .view-filters .views-exposed-widgets {
   margin-bottom: 0;
 }
 .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id {
-  width: 40%;
+  width: 100%;
   line-height: 1;
+  margin-bottom: 0.5em;
 }
 .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id select {
   display: none;
 }
 .view-filters .views-exposed-widgets .views-widget-filter-keys {
   width: 40%;
-}
-.view-filters .views-exposed-widgets .views-submit-button {
-  width: 20%;
 }
 .view-filters .views-exposed-widgets .views-exposed-widget {
   padding: 0;
@@ -1606,10 +1608,10 @@ ul.pager li.pager-current {
   font-size: 100%;
 }
 .view-filters .views-exposed-widgets .views-exposed-widget input[type=text] {
-  margin: 0 3px 0 50px;
+  margin: 0 3px 0 0px;
   padding-top: 2px;
   padding-bottom: 3px;
-  width: 75%;
+  width: 100%;
   font-size: 105%;
 }
 .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit] {
@@ -1625,6 +1627,35 @@ ul.pager li.pager-current {
 }
 .view-filters .views-exposed-widgets .views-exposed-widget input[type=submit]:active:hover {
   padding: 3px 10px;
+}
+/* 365px narrow */
+/*480px*/
+@media all and (min-width: 520px) {
+  .view-filters .views-exposed-form .views-exposed-widget.views-widget-filter-combine {
+    float: left;
+    margin-bottom: 0;
+  }
+  .view-filters .views-exposed-widget.views-submit-button {
+    float: right;
+  }
+}
+/* 768 */
+@media all and (min-width: 768px) {
+  .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id {
+    width: 40%;
+    margin: 0 0.5em 0 0;
+  }
+  .view-filters .views-exposed-widgets .views-exposed-widgets input[type=text] {
+    margin: 0 3px 0 50px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+  }
+}
+/* 942px */
+@media all and (min-width: 992px) {
+  .view-filters .views-exposed-widgets .views-widget-filter-field_reps_news_category_target_id {
+    margin: 0 1em 0 0;
+  }
 }
 /* Tables styling */
 .reps table {
