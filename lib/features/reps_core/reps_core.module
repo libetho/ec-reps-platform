@@ -510,6 +510,11 @@ function reps_core_social_media_links_platform_info_alter(&$platforms) {
     'base url' => 'https://www.flickr.com/',
   );
   // Add additional platform(s).
+  $platforms['facebook_2'] = array(
+    'title' => t('Facebook'),
+    'base url' => 'https://www.facebook.com/',
+  );
+  // Add additional platform(s).
   $platforms['instagram'] = array(
     'title' => t('Instagram'),
     'base url' => 'https://www.instagram.com/',
@@ -829,13 +834,13 @@ function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   if(!empty($root_path) && $root_path == 'admin/content/file/list'){
-    $item = menu_get_item('file/add'); 
-    if ($item['access']) {       
+    $item = menu_get_item('file/add');
+    if ($item['access']) {
       $data['actions']['output'][] = array(
         '#theme' => 'menu_local_action',
         '#link' => $item,
       );
-    }  
-  }  
+    }
+  }
 }
 
