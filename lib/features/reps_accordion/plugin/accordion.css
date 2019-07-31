@@ -1,3 +1,9 @@
+div.accordion::before{
+  content:'';
+  display:table;
+  clear:both;
+}
+
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary div.accordion h3.ui-accordion-header {
   background: #f3f6f9;
   border-color: #cccccc;
