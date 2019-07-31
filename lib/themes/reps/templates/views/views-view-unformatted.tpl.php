@@ -16,7 +16,7 @@
   <?php endif; ?>
   <div
     <?php if ($classes_array[$id]): ?> 
-      <?php print ' class="' . $classes_array[$id] . '"';  ?> 
+      <?php print ' class="' . $classes_array[$id] . '"'; ?>
     <?php endif; ?>
   >
     <?php print $row; ?>
