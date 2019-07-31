@@ -59,7 +59,7 @@ function reps_news_strongarm() {
   $strongarm->name = 'comment_subject_field_reps_news';
   $strongarm->value = 1;
   $export['comment_subject_field_reps_news'] = $strongarm;
-  
+
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -313,6 +313,16 @@ function reps_news_strongarm() {
   $strongarm->name = 'scheduler_use_vertical_tabs_reps_news';
   $strongarm->value = '1';
   $export['scheduler_use_vertical_tabs_reps_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_reps_news';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.4',
+  );
+  $export['xmlsitemap_settings_node_reps_news'] = $strongarm;
 
   return $export;
 }
