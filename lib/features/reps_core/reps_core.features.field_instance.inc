@@ -1263,7 +1263,7 @@ function reps_core_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => -8,
+        'weight' => 4,
       ),
       'popup' => array(
         'label' => 'above',
