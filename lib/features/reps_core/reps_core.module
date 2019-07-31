@@ -825,14 +825,14 @@ function _reps_core_ds_field_external_url(array $variables) {
  */
 function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   if(!empty($root_path) && $root_path == 'admin/content/file/list'){
-    $item = menu_get_item('file/add'); 
-    if ($item['access']) {       
+    $item = menu_get_item('file/add');
+    if ($item['access']) {
       $data['actions']['output'][] = array(
         '#theme' => 'menu_local_action',
         '#link' => $item,
       );
-    }  
-  }  
+    }
+  }
 }
 
 /**
