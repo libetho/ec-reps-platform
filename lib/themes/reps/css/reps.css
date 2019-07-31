@@ -2202,7 +2202,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   }
 }
 
-/* REPR-1711 video landing page - body & abstract appear on top. */
+/* REPR-1711 video landing page - body & abstract appear on top */
 div[about*='news/videos'] .link-wrapper.right {
   display: none;
 }
