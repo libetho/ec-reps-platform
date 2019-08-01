@@ -94,7 +94,7 @@
       <?php print render($content['field_reps_core_abstract']); ?>
       <div class="clearfix"></div>
     </div>
-  <?php print render($content); ?>
+    <?php print render($content); ?>
   </div>
   <?php print isset($content['comments']) ? render($content['comments']) : ''; ?>
 </div>

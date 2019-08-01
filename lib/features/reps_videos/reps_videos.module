@@ -26,7 +26,7 @@ function reps_videos_node_view_alter(&$build) {
  * @see reps_videos_node_view_alter()
  *
  * @return string
- *  The page html.
+ *   The page html.
  */
 function reps_videos_post_render($html) {
 
@@ -84,7 +84,7 @@ function _apply_cookie_consent_banner(&$html) {
     'twitter.com',
     'archive.org',
     'widgets.twimg.com',
-    'slideshare.net'
+    'slideshare.net',
   );
   foreach ($video_types as $video_type) {
     if (

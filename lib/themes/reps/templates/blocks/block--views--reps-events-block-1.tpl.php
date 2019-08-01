@@ -54,13 +54,10 @@
   <div class="<?php print ($panel ? 'panel-heading' : ''); ?>">
     <?php print $block->subject ?>
   </div>
-<?php endif;?>
+<?php endif; ?>
 <?php print render($title_suffix); ?>
 
   <div class="<?php print ($panel && $body_class ? 'panel-body' : ''); ?> content"<?php print $content_attributes; ?>>
-  <?php
-    print $content;
-   ?>
+    <?php print $content; ?>
   </div>
-
 </div>
