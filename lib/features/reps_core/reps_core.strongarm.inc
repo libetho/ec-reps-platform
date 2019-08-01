@@ -350,6 +350,19 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_file__document';
+  $strongarm->value = array(
+    'default_language' => 'und',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_file__document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_settings_file__image';
   $strongarm->value = array(
     'default_language' => 'und',
@@ -1307,6 +1320,30 @@ function reps_core_strongarm() {
   $strongarm->name = 'weight_frontpage';
   $strongarm->value = 0;
   $export['weight_frontpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_multilingual';
+  $strongarm->value = 1;
+  $export['xmlsitemap_multilingual'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_multilingual_only_nodes';
+  $strongarm->value = 1;
+  $export['xmlsitemap_multilingual_only_nodes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_page';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_page'] = $strongarm;
 
   return $export;
 }

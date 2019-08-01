@@ -340,3 +340,18 @@ function reps_core_update_7007() {
 function reps_core_update_7008() {
   module_enable(array('ultimate_cron'));
 }
+
+
+/**
+ * Enable REPS WYSIWYG Accordion Plugin.
+ */
+function reps_core_update_7009() {
+  module_enable(array('reps_accordion'));
+}
+
+/**
+ * Enable xml sitemap.
+ */
+function reps_core_update_7010() {
+  module_enable(array('xmlsitemap_node'));
+}
