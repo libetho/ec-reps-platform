@@ -89,7 +89,7 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <div class="content clearfix"<?php print $content_attributes; ?>>
-    <?php if ($prefix_display):?>
+    <?php if ($prefix_display): ?>
     <div class="node-private label label-default clearfix">
       <span class="glyphicon glyphicon-lock"></span>
       <?php print t('This content is private'); ?>
@@ -111,7 +111,7 @@
       <?php print render($content['field_reps_core_more_info_body']); ?>
       <?php print render($content['field_reps_core_more_info_link']); ?>
     </div>
-  <?php endif;?>
+  <?php endif; ?>
     <?php if ($suffix_display): ?>
     <div class="row node-info">
       <div class="node-info-submitted col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
@@ -123,7 +123,7 @@
         </div>
       </div>
     </div>
-    <?php endif;?>
+    <?php endif; ?>
 
     <div class="link-wrapper right">
       <?php print render($content['links']); ?>
