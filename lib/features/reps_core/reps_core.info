@@ -33,6 +33,7 @@ dependencies[] = nodequeue
 dependencies[] = rabbit_hole
 dependencies[] = redirect
 dependencies[] = reps_admin
+dependencies[] = reps_videos
 dependencies[] = scheduler
 dependencies[] = site_map
 dependencies[] = social_media_links
