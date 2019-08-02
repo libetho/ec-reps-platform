@@ -98,3 +98,23 @@ function _apply_cookie_consent_banner(&$html) {
   }
   return $banner;
 }
+
+/**
+ * Implements hook_csp_list_alter().
+ *
+ * Alter the list of domains to be whitelisted for iframes.
+ */
+function reps_videos_csp_list_alter(&$domains) {
+  // Allow extra domains.
+  $extra_domains = array(
+    'e.issuu.com',
+    'medfarm.uu.se',
+    'streamer.bg',
+    'videolevels.com',
+    'www.blitzvideoserver.de',
+    'www.roguemotion.graphics',
+    'www.streamcode.net',
+    'www.streamera.tv',
+  );
+  $domains = array_merge($extra_domains, $domains);
+}
