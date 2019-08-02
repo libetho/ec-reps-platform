@@ -78,6 +78,7 @@ features[variable][] = scheduler_unpublish_moderation_state_reps_news
 features[variable][] = scheduler_unpublish_required_reps_news
 features[variable][] = scheduler_unpublish_revision_reps_news
 features[variable][] = scheduler_use_vertical_tabs_reps_news
+features[variable][] = xmlsitemap_settings_node_reps_news
 features[views_view][] = reps_categories
 features[views_view][] = reps_news
 multisite_version = 2.5

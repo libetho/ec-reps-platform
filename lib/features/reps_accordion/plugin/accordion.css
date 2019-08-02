@@ -1,0 +1,44 @@
+div.accordion::before{
+  content:'';
+  display:table;
+  clear:both;
+}
+
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary div.accordion h3.ui-accordion-header {
+  background: #f3f6f9;
+  border-color: #cccccc;
+  border-radius: 0;
+  color: #0065a2;
+  font-size: 12.5px;
+  margin: 0;
+  padding: 12px 2.2em;
+  line-height: 1.3;
+  text-decoration: none;
+  list-style: none;
+}
+div.accordion-content:not(:last-child) {
+  border-bottom: none;
+}
+
+div.accordion h3.ui-accordion-header:not(.ui-accordion-header-active) {
+  border-bottom: none;
+}
+
+div.accordion h3:last-of-type {
+  border-bottom: 1px solid #ccc !important;
+}
+
+div.accordion-content {
+  margin: 0;
+  padding: 1em 2.2em;
+  border-top: 0;
+  overflow: auto;
+  border: 1px solid #ccc;
+  color: #222;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+  border-color: #cccccc;
+  border-radius: 0;
+}
