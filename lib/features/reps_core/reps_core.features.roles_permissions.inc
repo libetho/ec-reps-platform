@@ -59,7 +59,6 @@ function reps_core_default_roles_permissions() {
       'create any webtools bean' => TRUE,
       'create files' => TRUE,
       'create page content' => TRUE,
-      'create reps_homepage content' => TRUE,
       'create reps_homepage_additional_block content' => TRUE,
       'create reps_slide_footer content' => TRUE,
       'create reps_slide_homepage content' => TRUE,
