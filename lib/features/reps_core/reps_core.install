@@ -349,6 +349,13 @@ function reps_core_update_7009() {
 }
 
 /**
+ * Enable xml sitemap.
+ */
+function reps_core_update_7010() {
+  module_enable(array('xmlsitemap_node'));
+}
+
+/**
  * Enable Rabbit Hole sub modules.
  */
 function reps_core_update_7011() {

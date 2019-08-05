@@ -5,7 +5,7 @@
  * Default theme implementation of main page.
  */
 ?><!DOCTYPE html>
-<html lang="<?php print $language->language;?>">
+<html lang="<?php print $language->language; ?>">
   <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <?php print $head; ?>
@@ -13,7 +13,7 @@
     <?php print $styles; ?>
     <?php print $scripts; ?>
   </head>
-  <body class="<?php print $classes; ?> reps" <?php print $attributes;?>>
+  <body class="<?php print $classes; ?> reps" <?php print $attributes; ?>>
     <div id="skip-link">
       <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
     </div>
