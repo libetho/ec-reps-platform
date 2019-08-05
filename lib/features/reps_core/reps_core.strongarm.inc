@@ -913,13 +913,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'rh_node_action_reps_video';
-  $strongarm->value = '2';
-  $export['rh_node_action_reps_video'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_classification';
   $strongarm->value = '2';
   $export['rh_taxonomy_term_action_classification'] = $strongarm;
@@ -944,13 +937,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'rh_taxonomy_term_action_reps_contact_point_categories';
   $strongarm->value = '2';
   $export['rh_taxonomy_term_action_reps_contact_point_categories'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rh_taxonomy_term_action_reps_news_categories';
-  $strongarm->value = '2';
-  $export['rh_taxonomy_term_action_reps_news_categories'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
