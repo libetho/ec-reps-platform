@@ -2,7 +2,7 @@
 
 /**
  * @file
- * reps_core.features.roles_permissions.inc
+ * Reps_core.features.roles_permissions.inc.
  */
 
 /**
@@ -62,7 +62,6 @@ function reps_core_default_roles_permissions() {
       'create reps_homepage_additional_block content' => TRUE,
       'create reps_slide_footer content' => TRUE,
       'create reps_slide_homepage content' => TRUE,
-      'create reps_video content' => TRUE,
       'create url aliases' => TRUE,
       'delete any audio files' => TRUE,
       'delete any document files' => TRUE,
@@ -75,7 +74,6 @@ function reps_core_default_roles_permissions() {
       'delete any reps_homepage_additional_block content' => TRUE,
       'delete any reps_slide_footer content' => TRUE,
       'delete any reps_slide_homepage content' => TRUE,
-      'delete any reps_video content' => TRUE,
       'delete any video files' => TRUE,
       'delete any webtools bean' => TRUE,
       'delete own audio files' => TRUE,
@@ -85,7 +83,6 @@ function reps_core_default_roles_permissions() {
       'delete own reps_homepage_additional_block content' => TRUE,
       'delete own reps_slide_footer content' => TRUE,
       'delete own reps_slide_homepage content' => TRUE,
-      'delete own reps_video content' => TRUE,
       'delete own video files' => TRUE,
       'delete revisions' => TRUE,
       'download any audio files' => TRUE,
@@ -108,7 +105,6 @@ function reps_core_default_roles_permissions() {
       'edit any reps_homepage_additional_block content' => TRUE,
       'edit any reps_slide_footer content' => TRUE,
       'edit any reps_slide_homepage content' => TRUE,
-      'edit any reps_video content' => TRUE,
       'edit any video files' => TRUE,
       'edit any webtools bean' => TRUE,
       'edit meta tags' => TRUE,
@@ -116,6 +112,7 @@ function reps_core_default_roles_permissions() {
       'edit own document files' => TRUE,
       'edit own image files' => TRUE,
       'edit own page content' => TRUE,
+      'edit own reps_homepage content' => TRUE,
       'edit own reps_homepage_additional_block content' => TRUE,
       'edit own reps_slide_footer content' => TRUE,
       'edit own reps_slide_homepage content' => TRUE,
@@ -303,6 +300,7 @@ function reps_core_default_roles_permissions() {
       'create any reps_core_sb_right_free_content bean' => TRUE,
       'create any reps_core_sb_right_image_link bean' => TRUE,
       'create any webtools bean' => TRUE,
+      'create editorial_team content' => TRUE,
       'create files' => TRUE,
       'create page content' => TRUE,
       'create reps_contact_point content' => TRUE,
@@ -310,11 +308,11 @@ function reps_core_default_roles_permissions() {
       'create reps_homepage_additional_block content' => TRUE,
       'create reps_slide_footer content' => TRUE,
       'create reps_slide_homepage content' => TRUE,
-      'create reps_video content' => TRUE,
       'create translation jobs' => TRUE,
       'create url aliases' => TRUE,
       'delete any audio files' => TRUE,
       'delete any document files' => TRUE,
+      'delete any editorial_team content' => TRUE,
       'delete any image files' => TRUE,
       'delete any page content' => TRUE,
       'delete any reps_contact_point content' => TRUE,
@@ -326,11 +324,11 @@ function reps_core_default_roles_permissions() {
       'delete any reps_homepage_additional_block content' => TRUE,
       'delete any reps_slide_footer content' => TRUE,
       'delete any reps_slide_homepage content' => TRUE,
-      'delete any reps_video content' => TRUE,
       'delete any video files' => TRUE,
       'delete any webtools bean' => TRUE,
       'delete own audio files' => TRUE,
       'delete own document files' => TRUE,
+      'delete own editorial_team content' => TRUE,
       'delete own image files' => TRUE,
       'delete own page content' => TRUE,
       'delete own reps_contact_point content' => TRUE,
@@ -338,7 +336,6 @@ function reps_core_default_roles_permissions() {
       'delete own reps_homepage_additional_block content' => TRUE,
       'delete own reps_slide_footer content' => TRUE,
       'delete own reps_slide_homepage content' => TRUE,
-      'delete own reps_video content' => TRUE,
       'delete own video files' => TRUE,
       'delete revisions' => TRUE,
       'display admin pages in another language' => TRUE,
@@ -353,6 +350,7 @@ function reps_core_default_roles_permissions() {
       'download own video files' => TRUE,
       'edit any audio files' => TRUE,
       'edit any document files' => TRUE,
+      'edit any editorial_team content' => TRUE,
       'edit any image files' => TRUE,
       'edit any page content' => TRUE,
       'edit any reps_contact_point content' => TRUE,
@@ -364,7 +362,6 @@ function reps_core_default_roles_permissions() {
       'edit any reps_homepage_additional_block content' => TRUE,
       'edit any reps_slide_footer content' => TRUE,
       'edit any reps_slide_homepage content' => TRUE,
-      'edit any reps_video content' => TRUE,
       'edit any video files' => TRUE,
       'edit any webtools bean' => TRUE,
       'edit bean view mode' => TRUE,
@@ -373,6 +370,7 @@ function reps_core_default_roles_permissions() {
       'edit own audio files' => TRUE,
       'edit own comments' => TRUE,
       'edit own document files' => TRUE,
+      'edit own editorial_team content' => TRUE,
       'edit own image files' => TRUE,
       'edit own page content' => TRUE,
       'edit own reps_contact_point content' => TRUE,
@@ -380,7 +378,6 @@ function reps_core_default_roles_permissions() {
       'edit own reps_homepage_additional_block content' => TRUE,
       'edit own reps_slide_footer content' => TRUE,
       'edit own reps_slide_homepage content' => TRUE,
-      'edit own reps_video content' => TRUE,
       'edit own video files' => TRUE,
       'flush caches' => TRUE,
       'generate features' => TRUE,
@@ -490,7 +487,6 @@ function reps_core_default_roles_permissions() {
       'use text format basic_html' => TRUE,
       'use text format filtered_html' => TRUE,
       'use text format full_html' => TRUE,
-      'use text format full_html_track' => TRUE,
       'use workbench_moderation my drafts tab' => TRUE,
       'use workbench_moderation needs review tab' => TRUE,
       'version management edits' => TRUE,
@@ -520,7 +516,7 @@ function reps_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: anonymous user.
+  // Exported role: anonymous user
   $roles['anonymous user'] = (object) array(
     'name' => 'anonymous user',
     'weight' => 0,
@@ -538,7 +534,7 @@ function reps_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: editor.
+  // Exported role: editor
   $roles['editor'] = (object) array(
     'name' => 'editor',
     'weight' => 4,
@@ -570,7 +566,6 @@ function reps_core_default_roles_permissions() {
       'delete own reps_homepage_additional_block content' => TRUE,
       'delete own reps_slide_footer content' => TRUE,
       'delete own reps_slide_homepage content' => TRUE,
-      'delete own reps_video content' => TRUE,
       'delete own video files' => TRUE,
       'delete revisions' => TRUE,
       'download any audio files' => TRUE,
@@ -592,7 +587,6 @@ function reps_core_default_roles_permissions() {
       'edit any reps_homepage_additional_block content' => TRUE,
       'edit any reps_slide_footer content' => TRUE,
       'edit any reps_slide_homepage content' => TRUE,
-      'edit any reps_video content' => TRUE,
       'edit any video files' => TRUE,
       'edit meta tags' => TRUE,
       'edit own audio files' => TRUE,
@@ -602,7 +596,6 @@ function reps_core_default_roles_permissions() {
       'edit own reps_homepage_additional_block content' => TRUE,
       'edit own reps_slide_footer content' => TRUE,
       'edit own reps_slide_homepage content' => TRUE,
-      'edit own reps_video content' => TRUE,
       'edit own video files' => TRUE,
       'flush caches' => TRUE,
       'manage feature nexteuropa_varnish' => TRUE,
