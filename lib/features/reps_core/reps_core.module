@@ -613,19 +613,9 @@ function _reps_core_create_block_share() {
  * Create a bean block for Twitter.
  */
 function _reps_core_create_block_twitter() {
-  // Get existing variable for screen name and count.
-  if (variable_get('reps_core_twitter_webtools_config_screen')) {
-    $screen_name = variable_get('reps_core_twitter_webtools_config_screen');
-    $count = variable_get('reps_core_twitter_webtools_config_nbr');
-  }
-  elseif (variable_get('twitter_webtools_config_screen')) {
-    $screen_name = variable_get('twitter_webtools_config_screen');
-    $count = variable_get('twitter_webtools_config_nbr');
-  }
-  else {
-    $screen_name = 'EU_Commission';
-    $count = 3;
-  }
+  // Initial values for a fresh install
+  $screen_name = 'EU_Commission';
+  $count = 3;
 
   drupal_flush_all_caches();
   features_revert_module("nexteuropa_webtools");
