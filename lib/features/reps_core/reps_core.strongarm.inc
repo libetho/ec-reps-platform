@@ -899,6 +899,20 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_contact_point';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_contact_point'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_homepage_additional_block';
+  $strongarm->value = '2';
+  $export['rh_node_action_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_reps_slide_footer';
   $strongarm->value = '2';
   $export['rh_node_action_reps_slide_footer'] = $strongarm;
