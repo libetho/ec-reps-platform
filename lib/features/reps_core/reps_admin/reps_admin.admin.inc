@@ -445,8 +445,14 @@ function _reps_admin_settings_social($form, &$form_state) {
   }
   else {
     foreach ($enabled as $social) {
-      $def[$social]['platform_value'] = $social_links[$social]['platform_value'];
-      $def[$social]['weight'] = $social_links[$social]['weight'];
+      if (!empty($social_links[$social])) {
+        $def[$social]['platform_value'] = $social_links[$social]['platform_value'];
+        $def[$social]['weight'] = $social_links[$social]['weight'];
+      }
+      else {
+        $def[$social]['platform_value'] = '';
+        $def[$social]['weight'] = 0;
+      }
     }
   }
 
