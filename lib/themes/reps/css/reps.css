@@ -405,8 +405,10 @@ body.reps #mainContainer #layout-body .view-reps-publications .views-row.views-r
   padding-top: 0;
 }
 body.reps #mainContainer #layout-body .view-reps-eu-myth img,
-body.reps #mainContainer #layout-body .view-reps-news img {
+body.reps #mainContainer #layout-body .view-reps-news img,
+body.reps #mainContainer #layout-body .view-reps-events img {
   border: 1px #cdcdcd solid;
+  width: 100%;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .panel-heading {
   border-bottom: 1px dashed #878c92;
