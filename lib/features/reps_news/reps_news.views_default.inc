@@ -487,7 +487,6 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['path'] = 'newsletter.rss';
   $handler->display->display_options['sitename_title'] = 0;
-
   $export['reps_news'] = $view;
 
   return $export;
