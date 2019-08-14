@@ -357,6 +357,7 @@ function reps_admin_views_pre_view(&$view) {
     if (empty($new_view_fieds)) {
       $new_view_fieds = array();
     }
+    // Additional columns in content view.
     $new_view_fieds['nodequeue_all_subqueues'] = array(
       'id' => 'nodequeue_all_subqueues',
       'table' => 'node',
@@ -369,6 +370,13 @@ function reps_admin_views_pre_view(&$view) {
         2 => 0,
         3 => 0,
       ),
+    );
+    $new_view_fieds['nid'] = array(
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'label' => 'Node ID',
+      'limit' => 0,
     );
     // Add Operation.
     $new_view_fieds['views_bulk_operations']['vbo_operations']['action::nodequeue_add_action'] = array(

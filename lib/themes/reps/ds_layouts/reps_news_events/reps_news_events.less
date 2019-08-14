@@ -91,9 +91,44 @@
   .reps_ne_footer {
     width: 100%;
   }
+  
+   /*REPR-1658*/
+  
+  .view-reps-eu-myth{
+    
+    .reps_ne_image {
+    width:300px;
+    }
+  }
+  
+   
 }
 
 @media screen and (min-width:768px) {
+  
+  /*REPR-1658*/
+  
+  .view-reps-eu-myth{
+    .reps_news_events_wrapper{
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+
+    .reps_ne_body {
+       flex: 2 1 30%;
+    }
+ 
+  }
+ 
+  }
   .reps_news_events_wrapper {
     &:after {
       content: "";
