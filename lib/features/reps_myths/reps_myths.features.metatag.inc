@@ -2,7 +2,7 @@
 
 /**
  * @file
- * reps_myths.features.metatag.inc
+ * Reps_myths.features.metatag.inc.
  */
 
 /**

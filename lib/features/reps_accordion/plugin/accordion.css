@@ -1,10 +1,37 @@
-div.accordion::before{
-  content:'';
-  display:table;
-  clear:both;
+.cke_editable div.accordion h3 {
+  display: block;
+  position: relative;
+  margin: 2px 5px 0 5px;
+  padding: .5em 2.2em .5em .7em;
+  min-height: 0;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 1px solid #aaa;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
 }
 
-body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary div.accordion h3.ui-accordion-header {
+.cke_editable div.accordion-content {
+  margin: 0 5px 2px 5px;
+  padding: 1em 2.2em;
+  border-top: 0;
+  overflow: auto;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid #aaa;
+  color: #222;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+/* Accordion styling */
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary h3.ui-accordion-header {
   background: #f3f6f9;
   border-color: #cccccc;
   border-radius: 0;
@@ -12,33 +39,25 @@ body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full 
   font-size: 12.5px;
   margin: 0;
   padding: 12px 2.2em;
-  line-height: 1.3;
-  text-decoration: none;
-  list-style: none;
 }
-div.accordion-content:not(:last-child) {
+
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary h3.ui-accordion-header:not(.ui-accordion-header-active) {
   border-bottom: none;
 }
 
-div.accordion h3.ui-accordion-header:not(.ui-accordion-header-active) {
-  border-bottom: none;
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary h3.ui-accordion-header-active {
+  background: #f3f6f9;
 }
 
-div.accordion h3:last-of-type {
-  border-bottom: 1px solid #ccc !important;
+body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary .ui-accordion h3:last-of-type {
+  border-bottom: 1px solid #ccc;
 }
 
-div.accordion-content {
-  margin: 0;
-  padding: 1em 2.2em;
-  border-top: 0;
-  overflow: auto;
-  border: 1px solid #ccc;
-  color: #222;
-  line-height: 1.3;
-  text-decoration: none;
-  font-size: 100%;
-  list-style: none;
+.accordion-content {
   border-color: #cccccc;
   border-radius: 0;
+}
+
+.accordion-content:not(:last-child) {
+  border-bottom: none;
 }
