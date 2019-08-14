@@ -30,7 +30,7 @@ function reps_publications_context_default_contexts() {
           'module' => 'views',
           'delta' => 'reps_publications-block_1',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '10',
         ),
       ),
     ),
