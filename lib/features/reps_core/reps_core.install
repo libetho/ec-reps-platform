@@ -340,3 +340,13 @@ function reps_core_update_7007() {
 function reps_core_update_7008() {
   module_enable(array('ultimate_cron'));
 }
+
+/**
+ * Delete all content of type contact point.
+ */
+function reps_core_update_7011() {
+  $result= db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
+  foreach ($result as $record) {
+    node_delete($record->nid);
+  }
+}
