@@ -342,9 +342,34 @@ function reps_core_update_7008() {
 }
 
 /**
- * Delete all content of type contact point.
+ * Enable REPS WYSIWYG Accordion Plugin.
+ */
+function reps_core_update_7009() {
+  module_enable(array('reps_accordion'));
+}
+
+/**
+ * Enable xml sitemap.
+ */
+function reps_core_update_7010() {
+  module_enable(array('xmlsitemap_node'));
+}
+
+/**
+ * Enable Rabbit Hole sub modules.
  */
 function reps_core_update_7011() {
+  $module_to_enable = array(
+    'rh_node',
+    'rh_taxonomy',
+  );
+  module_enable($module_to_enable, TRUE);
+}
+
+/**
+ * Delete all content of type contact point.
+ */
+function reps_core_update_7012() {
   $result= db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
   foreach ($result as $record) {
     node_delete($record->nid);
