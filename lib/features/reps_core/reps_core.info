@@ -210,6 +210,7 @@ features[ultimate_cron_job][] = job_scheduler_cron
 features[ultimate_cron_job][] = linkchecker_cron
 features[ultimate_cron_job][] = queue_rules_scheduler_tasks
 features[ultimate_cron_job][] = search_cron
+features[user_permission][] = use xmlsitemap
 features[user_role][] = REPS Administrator
 features[variable][] = classification
 features[variable][] = comment_anonymous_reps_contact_point
