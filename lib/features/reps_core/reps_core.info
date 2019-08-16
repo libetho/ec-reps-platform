@@ -376,6 +376,7 @@ features[variable][] = xmlsitemap_multilingual
 features[variable][] = xmlsitemap_multilingual_only_nodes
 features[variable][] = xmlsitemap_settings_node_page
 features[views_view][] = reps_bean_blocks
+features[views_view][] = reps_bean_blocks_global
 features[views_view][] = reps_contact_points
 features[views_view][] = reps_homepage_additional_blocks
 features[views_view][] = reps_sliders

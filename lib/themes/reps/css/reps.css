@@ -1017,24 +1017,24 @@ body.reps #mainContainer #sidebar-right #block-reps-core-reps-core-feedback-form
   font-size: 120%;
   color: #333;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row {
   border: 1px #268bc1 solid;
   padding: 10px;
   margin-bottom: 20px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row h3,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-title-field {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .entity-bean h3,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-title-field {
   font-size: 110%;
   margin-top: 5px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row h3 a div,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-title-field a div,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row h3 a:visited div,
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-title-field a:visited div {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .entity-bean h3 a div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-title-field a div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .entity-bean h3 a:visited div,
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-title-field a:visited div {
   color: #268bc1;
   font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-reps-core-more-info-link {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-field-reps-core-more-info-link {
   font-size: 90%;
   text-align: right;
   padding-left: 10px;
@@ -1047,21 +1047,21 @@ body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field
   float: right;
   width: 200px;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-reps-core-more-info-link a {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-field-reps-core-more-info-link a {
   margin-top: 0;
   padding: 5px 0;
   color: #fff;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-reps-core-more-info-link a {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-field-reps-core-more-info-link a {
   padding: 5px 0;
   display: block;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row img {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img {
   max-width: 213px;
   width: 100%;
   height: auto;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks .views-row .field-name-field-caption {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-field-caption {
   display: none;
 }
 body.reps #mainContainer a.btn-back-top {

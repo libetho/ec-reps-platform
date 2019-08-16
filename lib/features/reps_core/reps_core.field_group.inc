@@ -424,9 +424,9 @@ function reps_core_field_group_info() {
     'label' => 'Position',
     'weight' => '2',
     'children' => array(
-      0 => 'field_reps_rightcol_position',
+      0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_core_node_reference',
+      2 => 'field_reps_display_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -453,9 +453,9 @@ function reps_core_field_group_info() {
     'label' => 'Position',
     'weight' => '2',
     'children' => array(
-      0 => 'field_reps_rightcol_position',
+      0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_core_node_reference',
+      2 => 'field_reps_display_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -482,9 +482,9 @@ function reps_core_field_group_info() {
     'label' => 'Position',
     'weight' => '2',
     'children' => array(
-      0 => 'field_reps_rightcol_position',
+      0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_core_node_reference',
+      2 => 'field_reps_display_region',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
