@@ -65,12 +65,6 @@ function reps_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'bean-bean-twitter' => array(
-          'module' => 'bean',
-          'delta' => 'bean-twitter',
-          'region' => 'sidebar_right',
-          'weight' => '1',
-        ),
         'views-reps_sliders-slider_homepage' => array(
           'module' => 'views',
           'delta' => 'reps_sliders-slider_homepage',
