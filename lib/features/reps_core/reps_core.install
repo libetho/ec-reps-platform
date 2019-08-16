@@ -369,7 +369,7 @@ function reps_core_update_7011() {
 /**
  * Disable and uninstall webform_features module.
  */
-function reps_core_update_7006() {
+function reps_core_update_7012() {
   $modules = array(
     'webform_features',
   );
