@@ -433,10 +433,12 @@ body.reps {
         }
       } // #block-views-reps-news-block END
       .view-reps-eu-myth,
-      .view-reps-news {
+      .view-reps-news,
+      .view-reps-events {
 
         img {
           border: 1px #cdcdcd solid;
+          width: 100%;
         }
       }
 
@@ -1406,7 +1408,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
         float: none !important;
       }
     }
-    /* end .views-row */
+
     .view-reps-eu-myth,
     .view-reps-news,
     .view-reps-news .views-row .views-field-field-reps-core-image-et,
@@ -1458,7 +1460,6 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
           width: 100%;
         }
       }
-      /* end view-row */
     }
     .view-reps-events .views-row>.views-field-field-reps-event-date,
     .view-reps-news .views-row>.views-label-field-reps-news-category,
@@ -1467,10 +1468,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
     }
   }
   /* end body.reps #mainContainer #layout-body*/
-}
-
-/* end 365px < screen > 667*/
-
+}/* end 365px < screen > 667*/
 @media all and (max-width: @screen-sm - 1) {
   body.reps #mainContainer #layout-body .view-reps-events .views-row>.views-field-field-reps-event-date {
     margin-left: 0;
@@ -1506,10 +1504,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 /* A VERIFIER EFFETS COLLATERAUX */
 
 div:not(.reps_ne_image)>.field-name-field-reps-core-image {
-  // border-bottom: none;
-  float: right;
-  padding: 10px 0 10px 10px;
-
+  
   .field-item {
     padding-right: 0;
     width: auto;
@@ -1520,7 +1515,6 @@ div:not(.reps_ne_image)>.field-name-field-reps-core-image {
   }
 
   img {
-    height: auto;
     margin: 0 !important;
     width: 100%;
   }
@@ -1764,19 +1758,26 @@ ul.pager {
     color: #fff;
   }
 } // ul.pager END
-/* Exposed Froms */
 
+/* Exposed Forms */
 .view-filters {
   background: @maltaRed;
   padding: 6px;
   font-size: 80%;
+  .views-exposed-form {
+    .views-exposed-widget.views-widget-filter-combine{ 
+      float:none;
+       margin-bottom:0.5em;
+    }
+  }
 
   .views-exposed-widgets {
-    margin-bottom: 0;
-
+    margin-bottom:0;
+    
     .views-widget-filter-field_reps_news_category_target_id {
-      width: 40%;
+      width: 100%;
       line-height: 1;
+      margin-bottom:0.5em;
 
       select {
         display: none;
@@ -1786,10 +1787,6 @@ ul.pager {
     .views-widget-filter-keys {
       width: 40%;
     }
-    .views-submit-button {
-      width: 20%;
-    }
-
     .views-exposed-widget {
       padding: 0;
       vertical-align: baseline;
@@ -1844,10 +1841,10 @@ ul.pager {
       }
 
       input[type=text] {
-        margin: 0 3px 0 50px;
+        margin: 0 3px 0 0px;
         padding-top: 2px;
         padding-bottom: 3px;
-        width: 75%;
+        width: 100%;
         font-size: 105%;
       }
       input[type=submit] {
@@ -1868,7 +1865,60 @@ ul.pager {
       }
     }
   }
-} // .views-filters END
+}
+
+/* 480px => 600px */
+@media all and (min-width:@screen-xs-min + 120) {
+  .view-filters{
+    .views-exposed-form {
+     .views-exposed-widget.views-widget-filter-combine {
+        float:left;
+        margin-bottom:0;
+      }
+    }
+    .views-exposed-widget.views-submit-button,
+    .views-exposed-widget.views-reset-button { 
+      float:right;
+    }
+    div[class$='button'] {
+      margin-left:0.5em;
+    }
+ }
+}
+
+/* 768 */
+@media all and (min-width:@screen-sm-min) {
+  .view-filters {
+    .views-exposed-widgets {
+      .views-widget-filter-field_reps_news_category_target_id,
+      .views-widget-filter-combine {
+         width: 40%;
+         margin: 0 0.5em 0 0;
+      }
+      .views-exposed-widgets {
+        input[type=text] {
+          margin: 0 3px 0 50px;
+          padding-top: 2px;
+          padding-bottom: 3px;
+        }
+      }
+    }
+   }
+}  
+  
+/* 942px */
+@media all and (min-width:@screen-md) {
+  .view-filters {
+    .views-exposed-widgets {
+      .views-widget-filter-field_reps_news_category_target_id {
+       margin: 0 1em 0 0;
+      }
+    }
+  }
+}
+// .views-filters END
+
+
 /* Tables styling */
 
 .reps table {
@@ -1949,9 +1999,19 @@ p.top-button a:hover {
   background: #26437f;
 }
 
-/* Medium + Large */
+/* 768px Medium + Large */
 
 @media all and (min-width:@screen-sm-min) {
+  
+  div:not(.reps_ne_image)>.field-name-field-reps-core-image {
+  float: right;
+  padding: 5px 0 10px 10px;
+}
+
+.content-abstract.no-abstract>.field-name-field-reps-core-image{
+  float:none;
+  
+}
 
   body:not(.node-type-reps-homepage) #layout-body {
     margin-top: 50px !important;
@@ -1969,6 +2029,8 @@ p.top-button a:hover {
   #content-wrapper {
     width: 75% !important;
   }
+  
+  
 }
 
 /* Medium */
@@ -2020,7 +2082,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
       max-width: 150px;
     }
 
-
     >.views-field-title-field-et {
       .reps-flex-text();
       padding: 0 0 0 10px;
@@ -2048,7 +2109,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
 }
 
 /* the text is crushed against the left-column */
-
 @media all and (min-width:@screen-xs + 1) and (max-width:@screen-sm - 1) {
 
   .view-reps-videos .view-content .views-row {
@@ -2138,6 +2198,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
   .field-name-field-reps-core-image {
     float: none;
     padding: 0;
+    max-width:100%;
   }
 
   .mobile-user-bar {
@@ -2415,7 +2476,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
     line-height: 16px;
   }
 } // @media all and (max-width: @screen-sm-min) END
-/* xs small only */
+/* xs small only 480px */
 
 @media all and (max-width: @screen-xs-min) {
   #path {
@@ -2461,12 +2522,8 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
     height: 190px;
   }
 
-  div:not(.reps_ne_image)>.field-name-field-reps-core-image {
-    float: none;
-    max-width: 100%;
-    padding: 0;
-  }
 } // @media all and (max-width: @screen-xs-min) END
+
 
 /* REPR-1711 video landing page - body & abstract appear on top */
 
