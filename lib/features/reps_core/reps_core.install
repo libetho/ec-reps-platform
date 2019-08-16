@@ -365,3 +365,14 @@ function reps_core_update_7011() {
   );
   module_enable($module_to_enable, TRUE);
 }
+
+/**
+ * Disable and uninstall webform_features module.
+ */
+function reps_core_update_7006() {
+  $modules = array(
+    'webform_features',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}
