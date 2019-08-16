@@ -976,6 +976,39 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-webtools-field_reps_display_region'.
+  $field_instances['bean-webtools-field_reps_display_region'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_reps_core_abstract'.
   $field_instances['node-page-field_reps_core_abstract'] = array(
     'bundle' => 'page',

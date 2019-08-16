@@ -140,6 +140,7 @@ features[field_instance][] = bean-reps_core_sb_right_image_link-field_reps_core_
 features[field_instance][] = bean-reps_core_sb_right_image_link-field_reps_rightcol_position
 features[field_instance][] = bean-reps_core_sb_right_image_link-field_reps_rightcol_weight
 features[field_instance][] = bean-reps_core_sb_right_image_link-title_field
+features[field_instance][] = bean-webtools-field_reps_display_region
 features[field_instance][] = node-page-field_reps_core_abstract
 features[field_instance][] = node-page-field_reps_core_image
 features[field_instance][] = node-page-field_reps_core_more_info_body
