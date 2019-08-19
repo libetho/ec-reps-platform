@@ -976,6 +976,42 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-webtools-field_reps_core_node_reference'.
+  $field_instances['bean-webtools-field_reps_core_node_reference'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_core_node_reference',
+    'label' => 'Page(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'bean-webtools-field_reps_display_region'.
   $field_instances['bean-webtools-field_reps_display_region'] = array(
     'bundle' => 'webtools',
@@ -984,10 +1020,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 5,
       ),
     ),
@@ -1005,7 +1040,39 @@ function reps_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'bean-webtools-field_reps_rightcol_weight'.
+  $field_instances['bean-webtools-field_reps_rightcol_weight'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_rightcol_weight',
+    'label' => 'Weight',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
