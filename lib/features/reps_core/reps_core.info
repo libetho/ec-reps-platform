@@ -117,6 +117,7 @@ features[field_group][] = group_reps_rightcol_other|bean|reps_core_sb_right_imag
 features[field_group][] = group_reps_rightcol_position|bean|reps_core_sb_right_blue_button|form
 features[field_group][] = group_reps_rightcol_position|bean|reps_core_sb_right_free_content|form
 features[field_group][] = group_reps_rightcol_position|bean|reps_core_sb_right_image_link|form
+features[field_group][] = group_reps_rightcol_position|bean|webtools|form
 features[field_group][] = group_reps_slide_footer_content|node|reps_slide_footer|form
 features[field_group][] = group_reps_slide_hp_content|node|reps_slide_homepage|form
 features[field_instance][] = bean-reps_core_quicklinks-field_reps_core_abstract

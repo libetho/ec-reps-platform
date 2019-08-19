@@ -1040,7 +1040,7 @@ function reps_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 14,
     ),
   );
 
@@ -1072,7 +1072,7 @@ function reps_core_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 13,
     ),
   );
 
