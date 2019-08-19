@@ -1056,7 +1056,8 @@ body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row
   padding: 5px 0;
   display: block;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img:not(.wt-smk-user-pic),
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img:not(.wt-smk-user-pic) {
   max-width: 213px;
   width: 100%;
   height: auto;
