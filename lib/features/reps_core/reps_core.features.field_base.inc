@@ -377,11 +377,6 @@ function reps_core_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        -5 => -5,
-        -4 => -4,
-        -3 => -3,
-        -2 => -2,
-        -1 => -1 ,
         0 => 0,
         1 => 1,
         2 => 2,
