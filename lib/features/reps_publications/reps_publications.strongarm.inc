@@ -67,7 +67,7 @@ function reps_publications_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'full' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'teaser' => array(
         'custom_settings' => FALSE,
@@ -91,6 +91,12 @@ function reps_publications_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'homepage' => array(
+        'custom_settings' => FALSE,
+      ),
+      'reps_main_content_image' => array(
         'custom_settings' => FALSE,
       ),
     ),
