@@ -297,13 +297,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
     ),
@@ -329,23 +325,28 @@ function reps_core_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'bean-reps_core_sb_right_blue_button-field_reps_rightcol_position'.
-  $field_instances['bean-reps_core_sb_right_blue_button-field_reps_rightcol_position'] = array(
+  // 'bean-reps_core_sb_right_blue_button-field_reps_display_region'.
+  $field_instances['bean-reps_core_sb_right_blue_button-field_reps_display_region'] = array(
     'bundle' => 'reps_core_sb_right_blue_button',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'right_sidebar',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_reps_rightcol_position',
-    'label' => 'Position',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -559,13 +560,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
     ),
@@ -591,24 +588,28 @@ function reps_core_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'bean-reps_core_sb_right_free_content-field_reps_rightcol_position'.
-  $field_instances['bean-reps_core_sb_right_free_content-field_reps_rightcol_position'] = array(
+  // 'bean-reps_core_sb_right_free_content-field_reps_display_region'.
+  $field_instances['bean-reps_core_sb_right_free_content-field_reps_display_region'] = array(
     'bundle' => 'reps_core_sb_right_free_content',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'right_sidebar',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_reps_rightcol_position',
-    'label' => 'Position',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -861,24 +862,29 @@ function reps_core_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'bean-reps_core_sb_right_image_link-field_reps_rightcol_position'.
-  $field_instances['bean-reps_core_sb_right_image_link-field_reps_rightcol_position'] = array(
+  // 'bean-reps_core_sb_right_image_link-field_reps_display_region'.
+  $field_instances['bean-reps_core_sb_right_image_link-field_reps_display_region'] = array(
     'bundle' => 'reps_core_sb_right_image_link',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'right_sidebar',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_reps_rightcol_position',
-    'label' => 'Position',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -970,6 +976,106 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-webtools-field_reps_core_node_reference'.
+  $field_instances['bean-webtools-field_reps_core_node_reference'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_core_node_reference',
+    'label' => 'Page(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'bean-webtools-field_reps_display_region'.
+  $field_instances['bean-webtools-field_reps_display_region'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_display_region',
+    'label' => 'Display',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'bean-webtools-field_reps_rightcol_weight'.
+  $field_instances['bean-webtools-field_reps_rightcol_weight'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_rightcol_weight',
+    'label' => 'Weight',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_reps_core_abstract'.
   $field_instances['node-page-field_reps_core_abstract'] = array(
     'bundle' => 'page',
@@ -983,6 +1089,12 @@ function reps_core_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => -9,
+      ),
+      'reps_main_content_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1053,6 +1165,12 @@ function reps_core_field_default_field_instances() {
         'weight' => -10,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1131,6 +1249,12 @@ function reps_core_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'reps_main_content_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1204,6 +1328,12 @@ function reps_core_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => -6,
       ),
+      'reps_main_content_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1266,6 +1396,12 @@ function reps_core_field_default_field_instances() {
         'weight' => 4,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1340,6 +1476,12 @@ function reps_core_field_default_field_instances() {
         'weight' => 10,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1446,6 +1588,12 @@ function reps_core_field_default_field_instances() {
         'weight' => -11,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2565,13 +2713,13 @@ function reps_core_field_default_field_instances() {
   t('Body');
   t('Contact point type');
   t('Date');
+  t('Display');
   t('External Url');
   t('Free content');
   t('Image');
   t('Link');
   t('Page');
   t('Page(s)');
-  t('Position');
   t('Related video');
   t('Tags');
   t('The Title of the block.');
