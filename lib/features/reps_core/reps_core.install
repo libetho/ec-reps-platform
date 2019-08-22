@@ -367,9 +367,33 @@ function reps_core_update_7011() {
 }
 
 /**
- * Disable and uninstall webform_features module.
+ * Delete all content of type contact point and reimport feeds.
  */
 function reps_core_update_7012() {
+  $result= db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
+  foreach ($result as $record) {
+    node_delete($record->nid);
+  }
+
+  // Define the id (machine name) of the importer you want to use.
+  $importers = array(
+    'contact_points_edc',
+    'contact_points_edic',
+    'contact_points_tem',
+  );
+
+  // Load the Feeds Source object.
+  foreach ($importers as $importer) {
+    $source = feeds_source($importer);
+    // Execute the import.
+    $source->startImport();
+  }
+}
+
+/**
+ * Disable and uninstall webform_features module.
+ */
+function reps_core_update_7015() {
   $modules = array(
     'webform_features',
   );
