@@ -365,7 +365,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_blue_button-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_blue_button-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_blue_button',
-    'default_value' =>NULL,
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(

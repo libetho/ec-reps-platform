@@ -366,11 +366,11 @@ function reps_core_update_7011() {
   module_enable($module_to_enable, TRUE);
 }
 
-/*
+/**
  * Delete all content of type contact point and reimport feeds.
  */
 function reps_core_update_7012() {
-  $result= db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
+  $result = db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
   foreach ($result as $record) {
     node_delete($record->nid);
   }
@@ -391,7 +391,7 @@ function reps_core_update_7012() {
 }
 
 /**
- * Forcing reerting reps_core to apply upgrade 7014
+ * Forcing reerting reps_core to apply upgrade 7014.
  */
 function reps_core_update_7013() {
   features_revert(
@@ -405,8 +405,7 @@ function reps_core_update_7013() {
 }
 
 /**
- * Add default value for existing bean entities,
- * Delete unsused field_reps_rightcol_position field instances.
+ * Add value for existing entities delete unsused rightcol_position field.
  */
 function reps_core_update_7014() {
   // Set default value for field_reps_display_region in existing bean blocks.
@@ -420,7 +419,7 @@ function reps_core_update_7014() {
       'language' => LANGUAGE_NONE,
     ))->execute();
 
-  foreach($entities as $entity) {
+  foreach ($entities as $entity) {
     if ($entity->type != 'webtools' or $entity->delta == 'bean-twitter') {
       if (empty($entity->{$field_name})) {
 
@@ -431,14 +430,14 @@ function reps_core_update_7014() {
         if ($entity->delta == 'bean-twitter') {
           // Set weight to 0 for twitter bean block.
           $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 3;
-          // Get frontpage ID
+          // Get frontpage ID.
           $site_frontpage = str_replace('node/', '', drupal_get_normal_path(variable_get('site_frontpage')));
           foreach (language_list() as $language) {
             $entity->field_reps_core_node_reference[$language->language][0]['target_id'] = $site_frontpage;
           }
         }
 
-        // Other blocks weight has to be set
+        // Other blocks weight has to be set.
         else {
           // Get positioning base on old field value.
           $old_position_value = array_values($entity->field_reps_rightcol_position)[0][0]['value'];
@@ -457,7 +456,11 @@ function reps_core_update_7014() {
   }
 
   // Delete the unsused field instance.
-  $bean_types = array('reps_core_sb_right_blue_button', 'reps_core_sb_right_free_content', 'reps_core_sb_right_image_link');
+  $bean_types = array(
+    'reps_core_sb_right_blue_button',
+    'reps_core_sb_right_free_content',
+    'reps_core_sb_right_image_link',
+  );
   foreach ($bean_types as $bean_type) {
     if ($instance = field_info_instance('bean', 'field_reps_rightcol_position', $bean_type)) {
       field_delete_instance($instance);
