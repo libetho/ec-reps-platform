@@ -1056,10 +1056,8 @@ body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row
   padding: 5px 0;
   display: block;
 }
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img:not(.wt-smk-user-pic),
-body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img:not(.wt-smk-user-pic) {
+body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img {
   max-width: 213px;
-  width: 100%;
   height: auto;
 }
 body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-field-caption {
@@ -1565,7 +1563,6 @@ ul.pager li.pager-current {
 .view-filters .views-exposed-widgets .views-widget-filter-keys {
   width: 40%;
 }
-
 .view-filters .views-exposed-widgets .views-exposed-widget {
   padding: 0;
   vertical-align: baseline;
