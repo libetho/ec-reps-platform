@@ -1075,7 +1075,7 @@ body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row
   display: block;
 }
 body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row img {
-  max-width: 213px;
+  max-width: 100%;
   height: auto;
 }
 body.reps #mainContainer #sidebar-right .view-reps-bean-blocks-global .views-row .field-name-field-caption {
