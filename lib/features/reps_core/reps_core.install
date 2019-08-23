@@ -391,7 +391,7 @@ function reps_core_update_7012() {
 }
 
 /**
- * Forcing reerting reps_core to apply upgrade 7014.
+ * Forcing reverting reps_core to apply upgrade 7014.
  */
 function reps_core_update_7013() {
   features_revert(
@@ -466,4 +466,14 @@ function reps_core_update_7014() {
       field_delete_instance($instance);
     }
   }
+
+/**
+ * Disable and uninstall webform_features module.
+ */
+function reps_core_update_7015() {
+  $modules = array(
+    'webform_features',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
 }
