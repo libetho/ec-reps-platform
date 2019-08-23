@@ -466,6 +466,7 @@ function reps_core_update_7014() {
       field_delete_instance($instance);
     }
   }
+}
 
 /**
  * Disable and uninstall webform_features module.
