@@ -65,12 +65,6 @@ function reps_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'bean-bean-twitter' => array(
-          'module' => 'bean',
-          'delta' => 'bean-twitter',
-          'region' => 'sidebar_right',
-          'weight' => '1',
-        ),
         'views-reps_sliders-slider_homepage' => array(
           'module' => 'views',
           'delta' => 'reps_sliders-slider_homepage',
@@ -173,49 +167,31 @@ function reps_core_context_default_contexts() {
           'module' => 'nexteuropa_europa_search',
           'delta' => 'nexteuropa_europa_search_form',
           'region' => 'sidebar_right',
-          'weight' => '-10',
+          'weight' => '-49',
         ),
         'bean-bean-share' => array(
           'module' => 'bean',
           'delta' => 'bean-share',
           'region' => 'sidebar_right',
-          'weight' => '-9',
+          'weight' => '-48',
         ),
         'social_media_links-social-media-links' => array(
           'module' => 'social_media_links',
           'delta' => 'social-media-links',
           'region' => 'sidebar_right',
-          'weight' => '-8',
+          'weight' => '-47',
         ),
-        'views-reps_bean_blocks-block_3' => array(
+        'views-6655c835809d265eeae1ee6d59ff859a' => array(
           'module' => 'views',
-          'delta' => 'reps_bean_blocks-block_3',
+          'delta' => '6655c835809d265eeae1ee6d59ff859a',
           'region' => 'sidebar_right',
-          'weight' => '-7',
-        ),
-        'views-reps_bean_blocks-block' => array(
-          'module' => 'views',
-          'delta' => 'reps_bean_blocks-block',
-          'region' => 'sidebar_right',
-          'weight' => '-6',
-        ),
-        'views-reps_bean_blocks-block_2' => array(
-          'module' => 'views',
-          'delta' => 'reps_bean_blocks-block_2',
-          'region' => 'sidebar_right',
-          'weight' => '6',
-        ),
-        'views-reps_bean_blocks-block_4' => array(
-          'module' => 'views',
-          'delta' => 'reps_bean_blocks-block_4',
-          'region' => 'sidebar_right',
-          'weight' => '7',
+          'weight' => '-46',
         ),
         'reps_core-reps_core_feedback_form' => array(
           'module' => 'reps_core',
           'delta' => 'reps_core_feedback_form',
           'region' => 'sidebar_right',
-          'weight' => '8',
+          'weight' => '-45',
         ),
         'cce_basic_config-footer_ipg' => array(
           'module' => 'cce_basic_config',
