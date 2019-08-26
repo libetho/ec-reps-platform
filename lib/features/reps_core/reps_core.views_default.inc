@@ -46,13 +46,6 @@ function reps_core_views_default_views() {
     'reps_core_sb_right_free_content' => 'reps_core_sb_right_free_content',
     'reps_core_sb_right_image_link' => 'reps_core_sb_right_image_link',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['id'] = 'field_reps_rightcol_position_value';
-  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['table'] = 'field_data_field_reps_rightcol_position';
-  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['field'] = 'field_reps_rightcol_position_value';
-  $handler->display->display_options['filters']['field_reps_rightcol_position_value']['value'] = array(
-    1 => '1',
-  );
 
   /* Display: Homepage Quicklinks */
   $handler = $view->new_display('block', 'Homepage Quicklinks', 'block_1');

@@ -367,7 +367,31 @@ function reps_core_update_7011() {
 }
 
 /**
- * Forcing reerting reps_core to apply upgrade 7014
+ * Delete all content of type contact point and reimport feeds.
+ */
+function reps_core_update_7012() {
+  $result = db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
+  foreach ($result as $record) {
+    node_delete($record->nid);
+  }
+
+  // Define the id (machine name) of the importer you want to use.
+  $importers = array(
+    'contact_points_edc',
+    'contact_points_edic',
+    'contact_points_tem',
+  );
+
+  // Load the Feeds Source object.
+  foreach ($importers as $importer) {
+    $source = feeds_source($importer);
+    // Execute the import.
+    $source->startImport();
+  }
+}
+
+/**
+ * Forcing reverting reps_core to apply upgrade 7014.
  */
 function reps_core_update_7013() {
   features_revert(
@@ -381,32 +405,39 @@ function reps_core_update_7013() {
 }
 
 /**
- * Add default value for existing bean entities,
- * Delete unsused field_reps_rightcol_position field instances.
+ * Add value for existing entities delete unsused rightcol_position field.
  */
-function reps_core_update_7015() {
+function reps_core_update_7014() {
   // Set default value for field_reps_display_region in existing bean blocks.
   $field_name = 'field_reps_display_region';
   $entity_type = 'bean';
   $entities = entity_load($entity_type);
-  $field_instance = field_info_instance($entity_type, $field_name , 'reps_core_sb_right_image_link');
+  $field_instance = field_info_instance($entity_type, $field_name, 'reps_core_sb_right_image_link');
   $default_value = $field_instance['default_value'][0]['value'];
-  foreach($entities as $entity) {
+  db_update('field_data_field_reps_rightcol_weight')
+    ->fields(array(
+      'language' => LANGUAGE_NONE,
+    ))->execute();
+
+  foreach ($entities as $entity) {
     if ($entity->type != 'webtools' or $entity->delta == 'bean-twitter') {
       if (empty($entity->{$field_name})) {
+
         // Force specific blocks in right columns.
         $entity->{$field_name}[LANGUAGE_NONE][0]['value'] = $default_value;
+
         // Twitter feed case.
         if ($entity->delta == 'bean-twitter') {
-          // Set weight to 0 for twitter bbean block.
+          // Set weight to 0 for twitter bean block.
           $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 3;
-          // Get frontpage ID
+          // Get frontpage ID.
           $site_frontpage = str_replace('node/', '', drupal_get_normal_path(variable_get('site_frontpage')));
           foreach (language_list() as $language) {
             $entity->field_reps_core_node_reference[$language->language][0]['target_id'] = $site_frontpage;
           }
         }
-        // Other blocks weight has to be set
+
+        // Other blocks weight has to be set.
         else {
           // Get positioning base on old field value.
           $old_position_value = array_values($entity->field_reps_rightcol_position)[0][0]['value'];
@@ -425,10 +456,28 @@ function reps_core_update_7015() {
   }
 
   // Delete the unsused field instance.
-  $bean_types = array('reps_core_sb_right_blue_button', 'reps_core_sb_right_free_content', 'reps_core_sb_right_image_link');
+  $bean_types = array(
+    'reps_core_sb_right_blue_button',
+    'reps_core_sb_right_free_content',
+    'reps_core_sb_right_image_link',
+  );
   foreach ($bean_types as $bean_type) {
     if ($instance = field_info_instance('bean', 'field_reps_rightcol_position', $bean_type)) {
       field_delete_instance($instance);
     }
   }
+<<<<<<< HEAD
+=======
+}
+
+/**
+ * Disable and uninstall webform_features module.
+ */
+function reps_core_update_7015() {
+  $modules = array(
+    'webform_features',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+>>>>>>> 40386c914fb48bdf1c0e6e844a4f1fb1c8b9bf7a
 }

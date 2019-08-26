@@ -270,44 +270,6 @@ function reps_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
 }
 
 /**
- * Implements theme_preprocess_views_view_unformatted().
- *
- * Add div to group items in the rendering of the unformated views.
- */
-function reps_preprocess_views_view_unformatted(&$vars) {
-  if ($vars['view']->name !== 'reps_bean_blocks') {
-    $vars['prefix'] = array();
-    $vars['suffix'] = array();
-    $group = 1;
-    $last_row = count($vars['rows']) - 1;
-
-    foreach ($vars['rows'] as $id => &$row) {
-
-      $vars['prefix'][$id] = '';
-      $vars['suffix'][$id] = '';
-
-      // Apply modular arithmetic.
-      $remainder = $id % 3;
-
-      // First div => 3 items.
-      if ($remainder == 0) {
-        $vars['prefix'][$id] = "<div class=\"group group-$group\">";
-      }
-
-      if ($remainder == 2) {
-        $vars['suffix'][$id] = '<div class="clearfix"></div></div>';
-        $group++;
-      }
-
-      // Close the div in case there are not enough items.
-      if ($last_row == $id && $remainder != 2 && $remainder != 8) {
-        $vars['suffix'][$id] = '</div>';
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_views_pre_render().
  *
  * Alter the link field to make target selectable for the homepage slider.

@@ -365,11 +365,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_blue_button-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_blue_button-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_blue_button',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -628,11 +624,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_free_content-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_free_content-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_free_content',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -903,11 +895,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_image_link-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_image_link-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_image_link',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
