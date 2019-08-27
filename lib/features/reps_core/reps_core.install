@@ -414,10 +414,6 @@ function reps_core_update_7014() {
   $entities = entity_load($entity_type);
   $field_instance = field_info_instance($entity_type, $field_name, 'reps_core_sb_right_image_link');
   $default_value = $field_instance['default_value'][0]['value'];
-  db_update('field_data_field_reps_rightcol_weight')
-    ->fields(array(
-      'language' => LANGUAGE_NONE,
-    ))->execute();
 
   foreach ($entities as $entity) {
     if ($entity->type != 'webtools' or $entity->delta == 'bean-twitter') {
@@ -454,6 +450,10 @@ function reps_core_update_7014() {
       }
     }
   }
+
+  db_delete('field_data_field_reps_rightcol_weight')
+  ->condition('language', LANGUAGE_NONE, '<>')
+  ->execute();
 
   // Delete the unsused field instance.
   $bean_types = array(
