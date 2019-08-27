@@ -292,7 +292,7 @@ function _reps_admin_prepare_menu_tree($menu = 'main-menu') {
  * @param array $two
  *   Second parameter for comparison.
  *
- * @return 1|0
+ * @return -1|0|1
  *   Value of the comparison.
  */
 function _reps_admin_form_weight(array $one, array $two) {
