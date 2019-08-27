@@ -292,7 +292,7 @@ function _reps_admin_prepare_menu_tree($menu = 'main-menu') {
  * @param array $two
  *   Second parameter for comparison.
  *
- * @return -1|0|1
+ * @return 1|0
  *   Value of the comparison.
  */
 function _reps_admin_form_weight(array $one, array $two) {
@@ -410,6 +410,25 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
       $theme_registry[$key]['theme path'] = $module_path;
       $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
       $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function reps_admin_form_alter(&$form, &$form_state, $form_id) {
+  // views_form_core_content_administration_page.
+  if ($form_id == 'views_exposed_form') {
+    $options = &$form['type']['#options'];
+    if (!empty($options)) {
+      $node_entities = node_type_get_types();
+      foreach ($node_entities as $node_entity) {
+        $type = $node_entity->type;
+        if (!user_access('edit any ' . $type . ' content')) {
+          unset($options[$type]);
+        }
+      }
     }
   }
 }
