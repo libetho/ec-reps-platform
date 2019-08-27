@@ -415,18 +415,16 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_id_alter().
  */
-function reps_admin_form_alter(&$form, &$form_state, $form_id) {
-  // views_form_core_content_administration_page.
-  if ($form_id == 'views_exposed_form') {
+function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+
+if ($form['#id'] == 'views-exposed-form-core-content-administration-page') {
     $options = &$form['type']['#options'];
     if (!empty($options)) {
-      $node_entities = node_type_get_types();
-      foreach ($node_entities as $node_entity) {
-        $type = $node_entity->type;
-        if (!user_access('edit any ' . $type . ' content')) {
-          unset($options[$type]);
+      foreach ($options as $option=>$name) {
+        if ( ($option != 'All') && (!user_access('edit any ' . $option . ' content')) ) {
+          unset($options[$option]);
         }
       }
     }
