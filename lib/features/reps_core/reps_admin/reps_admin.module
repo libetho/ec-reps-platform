@@ -292,7 +292,7 @@ function _reps_admin_prepare_menu_tree($menu = 'main-menu') {
  * @param array $two
  *   Second parameter for comparison.
  *
- * @return -1|0|1
+ * @return 1|0
  *   Value of the comparison.
  */
 function _reps_admin_form_weight(array $one, array $two) {
@@ -419,11 +419,11 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
  */
 function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
 
-if ($form['#id'] == 'views-exposed-form-core-content-administration-page') {
+  if ($form['#id'] == 'views-exposed-form-core-content-administration-page') {
     $options = &$form['type']['#options'];
     if (!empty($options)) {
-      foreach ($options as $option=>$name) {
-        if ( ($option != 'All') && (!user_access('edit any ' . $option . ' content')) ) {
+      foreach ($options as $option => $name) {
+        if (($option != 'All') && (!user_access('edit any ' . $option . ' content'))) {
           unset($options[$option]);
         }
       }
