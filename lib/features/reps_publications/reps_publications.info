@@ -50,5 +50,6 @@ features[variable][] = scheduler_unpublish_moderation_state_reps_publication
 features[variable][] = scheduler_unpublish_required_reps_publication
 features[variable][] = scheduler_unpublish_revision_reps_publication
 features[variable][] = scheduler_use_vertical_tabs_reps_publication
+features[variable][] = xmlsitemap_settings_node_reps_publication
 features[views_view][] = reps_publications
 multisite_version = 2.5
