@@ -8,7 +8,7 @@
   max-width: 100% !important;
   height: auto !important;
 }
-.media-element-container img {
+.media-element-container img:not(.file-icon) {
   width: 100% !important;
   height: auto !important;
 }
