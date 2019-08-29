@@ -510,6 +510,11 @@ function reps_core_social_media_links_platform_info_alter(&$platforms) {
     'base url' => 'https://www.flickr.com/',
   );
   // Add additional platform(s).
+  $platforms['facebook_2'] = array(
+    'title' => t('Facebook'),
+    'base url' => 'https://www.facebook.com/',
+  );
+  // Add additional platform(s).
   $platforms['instagram'] = array(
     'title' => t('Instagram'),
     'base url' => 'https://www.instagram.com/',
@@ -728,9 +733,6 @@ function reps_core_multisite_drupal_toolbox_filter_options_alter(&$filter_option
   $filter_options['valid_elements']['iframe'] = array('*' => TRUE);
 }
 
-
-
-
 /**
  * Implements hook_ds_field_theme_functions_info().
  */
@@ -743,9 +745,13 @@ function reps_core_ds_field_theme_functions_info() {
 }
 
 /**
+ * Add coma separator between multiple values.
+ *
  * @param array $variables
+ *   Variables.
  *
  * @return string
+ *   html
  *
  * @see theme_ds_field_minimal()
  */
@@ -754,7 +760,7 @@ function _reps_core_ds_field_items_comma(array $variables) {
 
   // Render the items.
   $items_html_parts = [];
-  foreach ($variables['items'] as $delta => $item) {
+  foreach ($variables['items'] as $item) {
     $item_html = drupal_render($item);
     $items_html_parts[] = $item_html;
   }
@@ -767,12 +773,12 @@ function _reps_core_ds_field_items_comma(array $variables) {
 
     if (!isset($config['lb-col'])) {
       $label_html .= ':&nbsp;';
-      $label_tag = $variables['element']['#label_display']=='inline'?'span':'div';
+      $label_tag = $variables['element']['#label_display'] == 'inline' ? 'span' : 'div';
     }
-    $label_html = '<'.$label_tag.'><strong>' . $label_html . '</strong></'.$label_tag.'>';
+    $label_html = '<' . $label_tag . '><strong>' . $label_html . '</strong></' . $label_tag . '>';
 
     // Prepend the label to the output.
-    $output = $label_html . '<'.$label_tag.' >'. $output. '</'.$label_tag.'>';
+    $output = $label_html . '<' . $label_tag . ' >' . $output . '</' . $label_tag . '>';
   }
 
   // Add an outer wrapper.
@@ -785,28 +791,55 @@ function _reps_core_ds_field_items_comma(array $variables) {
   return '<div class="' . check_plain($classes) . '">' . $output . '</div>';
 }
 
-
-
+/**
+ * Add target _blank on external links.
+ *
+ * @param array $variables
+ *   Variable.
+ *
+ * @return string
+ *   html.
+ *
+ * @see theme_ds_field_external_url()
+ */
 function _reps_core_ds_field_external_url(array $variables) {
-  
-  
+  global $language;
+
   $node = $variables['element']['#object'];
-  $markup =  $variables['element'][0]['#markup'];
+  $markup = $variables['element'][0]['#markup'];
   $classes = $variables['classes'];
-  $lg= $GLOBALS['language']->language;
+  $lg = $language->language;
   $regExp = '/<a href=\"([^\"]*)\">/iU';
-  
-  if (isset($config['classes'])) {
-    $classes .= ' ' . $config['classes'];
+
+  if (!empty($node->field_reps_core_external_url[$lg])) {
+    $link = $node->field_reps_core_external_url[$lg][0]['display_url'];
+    $replace = '<a href="' . $link . '" target="_blank">';
+    $markup = preg_replace($regExp, $replace, $markup);
   }
-   if (!empty($node->field_reps_core_external_url[$lg])) {
-    $link = $node->field_reps_core_external_url[$lg][0]['display_url']; 
-    $replace = '<a href="'.$link.'" target="_blank">';
-     $markup =  preg_replace($regExp , $replace,$markup);
-  }
-  
-   return '<div class="' . check_plain($classes) . '">'.$markup.'</div>';
+
+  return '<div class="' . check_plain($classes) . '">' . $markup . '</div>';
 }
-  
-  
-  
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  if (!empty($root_path) && $root_path == 'admin/content/file/list') {
+    $item = menu_get_item('file/add');
+    if ($item['access']) {
+      $data['actions']['output'][] = array(
+        '#theme' => 'menu_local_action',
+        '#link' => $item,
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!isset($form['field_ne_body'])) {
+    $form['body']['#weight'] = -2;
+  }
+}

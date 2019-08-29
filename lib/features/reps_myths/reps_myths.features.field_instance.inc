@@ -25,14 +25,17 @@ function reps_myths_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'reps_main_content_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -70,11 +73,18 @@ function reps_myths_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
-      'teaser' => array(
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -151,10 +161,19 @@ function reps_myths_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'teaser' => array(
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
         'weight' => 0,
       ),
     ),
@@ -234,11 +253,17 @@ function reps_myths_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
-      'teaser' => array(
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -274,11 +299,22 @@ function reps_myths_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 5,
       ),
-      'teaser' => array(
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => 'content',
+          'title_style' => '_none',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',

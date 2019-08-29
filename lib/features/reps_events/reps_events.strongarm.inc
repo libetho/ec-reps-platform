@@ -162,9 +162,7 @@ function reps_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_reps_event';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_reps_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -216,44 +214,9 @@ function reps_events_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_reps_event_de_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_reps_event_de_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_reps_event_en_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_reps_event_en_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_reps_event_fr_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_reps_event_fr_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_reps_event_nl_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_reps_event_nl_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_reps_event_pattern';
   $strongarm->value = 'events/[node:title]';
   $export['pathauto_node_reps_event_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_reps_event_und_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_reps_event_und_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -331,6 +294,16 @@ function reps_events_strongarm() {
   $strongarm->name = 'scheduler_use_vertical_tabs_reps_event';
   $strongarm->value = '1';
   $export['scheduler_use_vertical_tabs_reps_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_reps_event';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.4',
+  );
+  $export['xmlsitemap_settings_node_reps_event'] = $strongarm;
 
   return $export;
 }

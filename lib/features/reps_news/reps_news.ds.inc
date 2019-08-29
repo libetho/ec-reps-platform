@@ -2,7 +2,7 @@
 
 /**
  * @file
- * reps_news.ds.inc
+ * Reps_news.ds.inc.
  */
 
 /**

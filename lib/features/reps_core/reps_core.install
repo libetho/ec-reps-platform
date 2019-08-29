@@ -324,12 +324,11 @@ function reps_core_update_7006() {
   drupal_uninstall_modules($modules);
 }
 
-
 /**
  * Enable Display Suite Extras (ds_extras) module.
  */
 function reps_core_update_7007() {
- $module_to_enable = array(
+  $module_to_enable = array(
     'ds_extras',
   );
   module_enable($module_to_enable, TRUE);
@@ -340,4 +339,29 @@ function reps_core_update_7007() {
  */
 function reps_core_update_7008() {
   module_enable(array('ultimate_cron'));
+}
+
+/**
+ * Enable REPS WYSIWYG Accordion Plugin.
+ */
+function reps_core_update_7009() {
+  module_enable(array('reps_accordion'));
+}
+
+/**
+ * Enable xml sitemap.
+ */
+function reps_core_update_7010() {
+  module_enable(array('xmlsitemap_node'));
+}
+
+/**
+ * Enable Rabbit Hole sub modules.
+ */
+function reps_core_update_7011() {
+  $module_to_enable = array(
+    'rh_node',
+    'rh_taxonomy',
+  );
+  module_enable($module_to_enable, TRUE);
 }

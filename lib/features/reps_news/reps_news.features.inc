@@ -2,7 +2,7 @@
 
 /**
  * @file
- * reps_news.features.inc
+ * Reps_news.features.inc.
  */
 
 /**

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * reps_events.features.inc
+ * Reps_events.features.inc.
  */
 
 /**
