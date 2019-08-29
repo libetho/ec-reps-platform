@@ -9,7 +9,7 @@
   height: auto !important;
 }
 .media-element-container img {
-  width: 100% !important;
+  max-width: 100% !important;
   height: auto !important;
 }
 /* END REPR-1673 */
