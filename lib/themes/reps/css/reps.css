@@ -8,8 +8,8 @@
   max-width: 100% !important;
   height: auto !important;
 }
-.media-element-container img {
-  max-width: 100% !important;
+.media-element-container img:not(.file-icon) {
+  width: 100% !important;
   height: auto !important;
 }
 /* END REPR-1673 */
