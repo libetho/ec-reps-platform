@@ -820,3 +820,13 @@ function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
     $form['body']['#weight'] = -2;
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function reps_core_views_pre_render(&$view) {
+  // REPR-1730 deny access to nodequeue views for anonymous.
+  if ($view->tag == 'nodequeue' && user_is_anonymous()) {
+    drupal_access_denied();
+  }
+}
