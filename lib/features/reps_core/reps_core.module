@@ -848,13 +848,8 @@ function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_views_pre_render().
  */
 function reps_core_views_pre_render(&$view) {
-  if ($view->tag == 'nodequeue') {
-    if (user_is_anonymous()) {
-      drupal_not_found();
-      drupal_exit();
-    }
-    else {
-      return;   /* I will not deny acces to user admin  */
-    }
+  // REPR-1730 deny access to nodequeue views for anonymous.
+  if ($view->tag == 'nodequeue' && user_is_anonymous()) {
+    drupal_access_denied();
   }
 }
