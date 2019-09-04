@@ -426,7 +426,7 @@ function reps_core_field_group_info() {
     'children' => array(
       0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_display_region',
+      2 => 'field_reps_right_column',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -455,7 +455,7 @@ function reps_core_field_group_info() {
     'children' => array(
       0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_display_region',
+      2 => 'field_reps_right_column',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -484,7 +484,7 @@ function reps_core_field_group_info() {
     'children' => array(
       0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_display_region',
+      2 => 'field_reps_right_column',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -509,11 +509,11 @@ function reps_core_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Poistion',
+    'label' => 'Position',
     'weight' => '33',
     'children' => array(
-      0 => 'field_reps_core_node_reference',
-      1 => 'field_reps_display_region',
+      0 => 'field_reps_right_column',
+      1 => 'field_reps_core_node_reference',
       2 => 'field_reps_rightcol_weight',
     ),
     'format_type' => 'tab',

@@ -335,30 +335,30 @@ function reps_core_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_reps_display_region'.
-  $field_bases['field_reps_display_region'] = array(
+  // Exported field_base: 'field_reps_right_column'.
+  $field_bases['field_reps_right_column'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_reps_display_region',
+    'field_name' => 'field_reps_right_column',
     'indexes' => array(
       'value' => array(
         0 => 'value',
       ),
     ),
-    'locked' => 1,
+    'locked' => 0,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'content' => 'Content',
-        'right_sidebar' => 'Right sidebar',
+        0 => '',
+        1 => '',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_reps_rightcol_weight'.

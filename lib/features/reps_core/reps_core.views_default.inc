@@ -153,14 +153,14 @@ function reps_core_views_default_views() {
     'webtools' => 'webtools',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Block: Display (field_reps_display_region) */
-  $handler->display->display_options['filters']['field_reps_display_region_value']['id'] = 'field_reps_display_region_value';
-  $handler->display->display_options['filters']['field_reps_display_region_value']['table'] = 'field_data_field_reps_display_region';
-  $handler->display->display_options['filters']['field_reps_display_region_value']['field'] = 'field_reps_display_region_value';
-  $handler->display->display_options['filters']['field_reps_display_region_value']['value'] = array(
-    'right_sidebar' => 'right_sidebar',
+  /* Filter criterion: Block: Right Column (field_reps_right_column) */
+  $handler->display->display_options['filters']['field_reps_right_column_value']['id'] = 'field_reps_right_column_value';
+  $handler->display->display_options['filters']['field_reps_right_column_value']['table'] = 'field_data_field_reps_right_column';
+  $handler->display->display_options['filters']['field_reps_right_column_value']['field'] = 'field_reps_right_column_value';
+  $handler->display->display_options['filters']['field_reps_right_column_value']['value'] = array(
+    1 => '1',
   );
-  $handler->display->display_options['filters']['field_reps_display_region_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_reps_right_column_value']['group'] = 2;
   $handler->display->display_options['block_description'] = 'Right column - reps beans';
   $export['reps_bean_blocks_global'] = $view;
 
