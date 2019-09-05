@@ -252,7 +252,7 @@ function reps_core_field_default_field_bases() {
       ),
       'target_type' => 'node',
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'entityreference',
   );
 
