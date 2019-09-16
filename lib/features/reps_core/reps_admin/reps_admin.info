@@ -12,5 +12,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = admin_language_pages
 features[variable][] = admin_theme
+features[views_view][] = reps_bean_block_overview
 features[wysiwyg][] = full_html
 multisite_version = 2.5

@@ -408,8 +408,8 @@ function reps_core_update_7013() {
  * Add value for existing entities delete unsused rightcol_position field.
  */
 function reps_core_update_7014() {
-  // Set default value for field_reps_display_region in existing bean blocks.
-  $field_name = 'field_reps_display_region';
+  // Set default value for field_reps_right_column in existing bean blocks.
+  $field_name = 'field_reps_right_column';
   $entity_type = 'bean';
   $entities = entity_load($entity_type);
   $field_instance = field_info_instance($entity_type, $field_name, 'reps_core_sb_right_image_link');
@@ -417,37 +417,32 @@ function reps_core_update_7014() {
 
   foreach ($entities as $entity) {
     if ($entity->type != 'webtools' or $entity->delta == 'bean-twitter') {
-      if (empty($entity->{$field_name})) {
+      // Force specific blocks in right columns.
+      $entity->{$field_name}[LANGUAGE_NONE][0]['value'] = $default_value;
 
-        // Force specific blocks in right columns.
-        $entity->{$field_name}[LANGUAGE_NONE][0]['value'] = $default_value;
-
-        // Twitter feed case.
-        if ($entity->delta == 'bean-twitter') {
-          // Set weight to 0 for twitter bean block.
-          $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 3;
-          // Get frontpage ID.
-          $site_frontpage = str_replace('node/', '', drupal_get_normal_path(variable_get('site_frontpage')));
-          foreach (language_list() as $language) {
-            $entity->field_reps_core_node_reference[$language->language][0]['target_id'] = $site_frontpage;
-          }
-        }
-
-        // Other blocks weight has to be set.
-        else {
-          // Get positioning base on old field value.
-          $old_position_value = array_values($entity->field_reps_rightcol_position)[0][0]['value'];
-          // Reset old values.
-          $entity->field_reps_rightcol_weight = array();
-          if ($old_position_value == 1) {
-            $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 1;
-          }
-          else {
-            $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 5;
-          }
-        }
-        field_attach_update($entity_type, $entity);
+      // Twitter feed case.
+      if ($entity->delta == 'bean-twitter') {
+        // Set weight to 3 for twitter bean block.
+        $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 3;
+        // Get frontpage ID.
+        $site_frontpage = str_replace('node/', '', drupal_get_normal_path(variable_get('site_frontpage')));
+        $entity->field_reps_core_node_reference[LANGUAGE_NONE][0]['target_id'] = $site_frontpage;
       }
+
+      // Other blocks weight has to be set.
+      else {
+        // Get positioning base on old field value.
+        $old_position_value = array_values($entity->field_reps_rightcol_position)[0][0]['value'];
+        // Reset old values.
+        $entity->field_reps_rightcol_weight = array();
+        if ($old_position_value == 1) {
+          $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 1;
+        }
+        else {
+          $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 5;
+        }
+      }
+      field_attach_update($entity_type, $entity);
     }
   }
 
