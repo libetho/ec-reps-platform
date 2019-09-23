@@ -63,7 +63,7 @@
   max-width: 100% !important;
   height: auto !important;
 
-  img {
+  img:not(.file-icon) {
     width: 100% !important;
     height: auto !important;
   }
@@ -558,7 +558,6 @@ body.reps {
         }
       } // #block-views-reps-bean-blocks-block-1 .panel-body END
       .bean-reps-core-sb-right-blue-button {
-        margin: -11px;
         background: #004494 url(../images/bk_link_newsletter.gif) no-repeat left;
         height: 50px;
         p {
@@ -1030,6 +1029,7 @@ body.reps {
           }
         }
       } // .block-nexteuropa-europa-search END
+
       #block-bean-bean-share,
       #block-bean-share-block,
       #block-reps-core-reps-core-share-webtools {
@@ -1128,12 +1128,37 @@ body.reps {
           }
         } // .panel-body END
       } // #block-reps-core-reps-core-feedback-form END
-      .view-reps-bean-blocks .views-row {
+      
+      .view-reps-bean-blocks-global .views-row {
         border: 1px #268bc1 solid;
-        padding: 10px;
         margin-bottom: 20px;
 
-        h3,
+        .entity {
+          padding: 10px;
+        }
+
+        .bean-reps-core-sb-right-blue-button,
+        .bean-webtools,
+        .bean-reps-core-sb-right-free-content {
+          padding: 0;
+        }
+
+        .field-name-title-field {
+          background-color: #074a8b;
+          color: #fff;
+          margin-top: 0 !important;
+          padding: 7px;
+        }
+
+        .field-name-field-reps-core-abstract {
+          padding: 10px;
+        }
+
+        .smk-more {
+          margin-left: 10px;
+        }
+
+        .entity-bean h3,
         .field-name-title-field {
           font-size: 110%;
           margin-top: 5px;
@@ -1160,15 +1185,14 @@ body.reps {
         }
 
         img {
-          max-width: 213px;
-          width: 100%;
+          max-width: 100%;
           height: auto;
         }
 
         .field-name-field-caption {
           display: none;
         }
-      } // .view-reps-bean-blocks END
+      } // .view-reps-bean-blocks-global END
     } // #sidebar-right END
     a.btn-back-top {
       z-index: 50;
@@ -1404,6 +1428,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
         float: none !important;
       }
     }
+
     .view-reps-eu-myth,
     .view-reps-news,
     .view-reps-news .views-row .views-field-field-reps-core-image-et,
@@ -1463,10 +1488,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
     }
   }
   /* end body.reps #mainContainer #layout-body*/
-}
-
-/* end 365px < screen > 667*/
-
+}/* end 365px < screen > 667*/
 @media all and (max-width: @screen-sm - 1) {
   body.reps #mainContainer #layout-body .view-reps-events .views-row>.views-field-field-reps-event-date {
     margin-left: 0;
@@ -1501,6 +1523,7 @@ body.reps #mainContainer #layout-body #block-views-reps-sliders-slider-homepage 
 
 /* A VERIFIER EFFETS COLLATERAUX */
 
+
 div:not(.reps_ne_image)>.field-name-field-reps-core-image {
   
   .field-item {
@@ -1513,6 +1536,7 @@ div:not(.reps_ne_image)>.field-name-field-reps-core-image {
   }
 
   img {
+
     margin: 0 !important;
     width: 100%;
   }
@@ -1758,7 +1782,6 @@ ul.pager {
 } // ul.pager END
 
 /* Exposed Forms */
-
 .view-filters {
   background: @maltaRed;
   padding: 6px;
@@ -2081,6 +2104,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
       max-width: 150px;
     }
 
+
     >.views-field-title-field-et {
       .reps-flex-text();
       padding: 0 0 0 10px;
@@ -2108,7 +2132,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
 }
 
 /* the text is crushed against the left-column */
-
 @media all and (min-width:@screen-xs + 1) and (max-width:@screen-sm - 1) {
 
   .view-reps-videos .view-content .views-row {
@@ -2522,8 +2545,8 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
     height: 190px;
   }
 
-} // @media all and (max-width: @screen-xs-min) END
 
+} // @media all and (max-width: @screen-xs-min) END
 
 /* REPR-1711 video landing page - body & abstract appear on top */
 
