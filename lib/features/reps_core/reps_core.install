@@ -386,7 +386,9 @@ function reps_core_update_7012() {
   foreach ($importers as $importer) {
     $source = feeds_source($importer);
     // Execute the import.
-    $source->startImport();
+    if (!empty($source->config['FeedsHTTPFetcher']['source'])) {
+      $source->startImport();
+    }
   }
 }
 
