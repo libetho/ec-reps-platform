@@ -401,3 +401,13 @@ function reps_preprocess_html(&$variables) {
   // Add header meta tag.
   drupal_add_html_head($meta_format_detection, 'meta_format_detection');
 }
+
+
+/**
+ * Implements theme_js_alter().
+ */
+function reps_js_alter(&$js) {
+  // Add GLOBAN to all pages.
+  $webtool_url = str_replace('https:', '', variable_get('nexteuropa_webtools_smartloader_prurl'));
+  $js[$webtool_url]['data'] = $webtool_url . '?globan=1110';
+}
