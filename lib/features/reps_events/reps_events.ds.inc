@@ -72,7 +72,7 @@ function reps_events_ds_layout_settings_info() {
       'reps_ne_body' => array(
         2 => 'field_reps_core_abstract',
         3 => 'field_reps_event_date',
-        4 => 'field_reps_event_venue',
+        4 => 'field_reps_event_venue'
       ),
     ),
     'fields' => array(
