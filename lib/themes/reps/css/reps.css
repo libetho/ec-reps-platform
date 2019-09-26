@@ -2226,12 +2226,14 @@ div[about*='news/videos'] .link-wrapper.right {
 div[about*='news/videos'] .field-name-body {
   margin-bottom: 0;
 }
-/* REPR-1711 video landing page - body & abstract appear on top */
-div[about*='news/videos'] .link-wrapper.right {
-  display: none;
+/*REPR-1754 Spain - pop up display problem*/
+.wtPopup.ttip_modal .wtPopupContent {
+  padding: 0 20px;
+  max-height: 92%;
+  overflow: auto;
 }
-div[about*='news/videos'] .field-name-body {
-  margin-bottom: 0;
+.wtPopup.ttip_modal .wtPopupContent .ttip_content:last-child {
+  padding-bottom: 20px;
 }
 
 /*REPR-1754 Spain - pop up display problem*/
