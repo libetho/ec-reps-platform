@@ -401,3 +401,10 @@ function reps_preprocess_html(&$variables) {
   // Add header meta tag.
   drupal_add_html_head($meta_format_detection, 'meta_format_detection');
 }
+
+/**
+ * Theme the way an 'all day' label will look.
+ */
+function reps_date_all_day_label() {
+  return '';
+}
