@@ -21,7 +21,7 @@ projects[features_roles_permissions][version] = 1.2
 ; https://www.drupal.org/project/feeds/issues/2333667
 ; https://webgate.ec.europa.eu/CITnet/jira/browse/REPR-1719?focusedCommentId=3485574&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-3485574
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = 2.0-beta4
+projects[feeds][version] = 2.0-beta3
 projects[feeds][patch][] = "patches/feeds_beta3_delete_if_empty_source-2333667-15.patch"
 
 projects[mbp_sync][download][type] = git
