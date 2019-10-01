@@ -613,7 +613,7 @@ function _reps_core_create_block_share() {
  * Create a bean block for Twitter.
  */
 function _reps_core_create_block_twitter() {
-  // Initial values for a fresh install
+  // Initial values for a fresh install.
   $screen_name = 'EU_Commission';
   $count = 3;
 
@@ -814,7 +814,7 @@ function _reps_core_ds_field_external_url(array $variables) {
  * Implements hook_menu_local_tasks_alter().
  */
 function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
-  if(!empty($root_path) && $root_path == 'admin/content/file/list'){
+  if (!empty($root_path) && $root_path == 'admin/content/file/list') {
     $item = menu_get_item('file/add');
     if ($item['access']) {
       $data['actions']['output'][] = array(
@@ -829,7 +829,7 @@ function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
  * Implements hook_form_FORM_ID_alter().
  */
 function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
-   if (!isset($form['field_ne_body'])) {
-     $form['body']['#weight'] = -2;
-   }
+  if (!isset($form['field_ne_body'])) {
+    $form['body']['#weight'] = -2;
+  }
 }

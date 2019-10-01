@@ -1,7 +1,7 @@
-div.accordion::before{
-  content:'';
-  display:table;
-  clear:both;
+div.accordion::before {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content .field-type-text-with-summary div.accordion h3.ui-accordion-header {
