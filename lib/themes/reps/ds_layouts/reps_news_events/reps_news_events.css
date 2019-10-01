@@ -32,6 +32,9 @@
   padding: 0;
   line-height: 1;
 }
+.reps_ne_body ul {
+  overflow: auto;
+}
 @media screen and (max-width: 364px) {
   .reps_ne_image {
     margin: 5px 0;
