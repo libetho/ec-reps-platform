@@ -139,9 +139,6 @@ function reps_admin_permission() {
     'administer reps social links' => array(
       'title' => t('Administer REPS social links'),
     ),
-    'administer reps twitter webtools' => array(
-      'title' => t('Administer REPS Twitter webtools'),
-    ),
   );
 }
 
