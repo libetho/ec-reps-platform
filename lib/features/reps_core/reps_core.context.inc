@@ -185,13 +185,13 @@ function reps_core_context_default_contexts() {
           'module' => 'views',
           'delta' => '6655c835809d265eeae1ee6d59ff859a',
           'region' => 'sidebar_right',
-          'weight' => '-46',
+          'weight' => '-40',
         ),
         'reps_core-reps_core_feedback_form' => array(
           'module' => 'reps_core',
           'delta' => 'reps_core_feedback_form',
           'region' => 'sidebar_right',
-          'weight' => '-45',
+          'weight' => '-39',
         ),
         'cce_basic_config-footer_ipg' => array(
           'module' => 'cce_basic_config',

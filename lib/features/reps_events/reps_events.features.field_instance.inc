@@ -699,13 +699,13 @@ function reps_events_field_default_field_instances() {
       'homepage' => array(
         'label' => 'inline',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'link_default',
         'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'link_default',
         'weight' => 7,
       ),
     ),

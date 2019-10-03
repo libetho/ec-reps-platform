@@ -25,25 +25,19 @@ function reps_core_help($path, $arg) {
 }
 
 /**
- * Implements hook_node_view().
+ * Implements hook_node_access().
  */
-function reps_core_node_view($node, $view_mode, $langcode) {
-  switch ($node->type) {
-    case 'reps_news':
-      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'news'));
-      break;
-
-    case 'reps_event':
-      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'events'));
-      break;
-
-    case 'reps_publication':
-      menu_tree_set_path('main-menu', drupal_lookup_path('source', 'publications'));
-      break;
-
-    case 'reps_video':
-      menu_tree_set_path('videos');
-      break;
+function reps_core_node_access($node, $op, $account) {
+  // REPR-1644 Deny access to node edit for landing pages for editor.
+  if (!empty($node->type) && $node->type == 'page' && $op == 'update' && in_array('editor', $account->roles)
+    && in_array(drupal_get_path_alias('node/' . $node->nid), array(
+      'news',
+      'events',
+      'services/publications',
+      'news/videos',
+      'news/eu-myths',
+    ))) {
+    return NODE_ACCESS_DENY;
   }
 }
 
@@ -613,19 +607,9 @@ function _reps_core_create_block_share() {
  * Create a bean block for Twitter.
  */
 function _reps_core_create_block_twitter() {
-  // Get existing variable for screen name and count.
-  if (variable_get('reps_core_twitter_webtools_config_screen')) {
-    $screen_name = variable_get('reps_core_twitter_webtools_config_screen');
-    $count = variable_get('reps_core_twitter_webtools_config_nbr');
-  }
-  elseif (variable_get('twitter_webtools_config_screen')) {
-    $screen_name = variable_get('twitter_webtools_config_screen');
-    $count = variable_get('twitter_webtools_config_nbr');
-  }
-  else {
-    $screen_name = 'EU_Commission';
-    $count = 3;
-  }
+  // Initial values for a fresh install.
+  $screen_name = 'EU_Commission';
+  $count = 3;
 
   drupal_flush_all_caches();
   features_revert_module("nexteuropa_webtools");
@@ -812,7 +796,7 @@ function _reps_core_ds_field_external_url(array $variables) {
   $regExp = '/<a href=\"([^\"]*)\">/iU';
 
   if (!empty($node->field_reps_core_external_url[$lg])) {
-    $link = $node->field_reps_core_external_url[$lg][0]['display_url'];
+    $link = $node->field_reps_core_external_url[$lg][0]['url'];
     $replace = '<a href="' . $link . '" target="_blank">';
     $markup = preg_replace($regExp, $replace, $markup);
   }
@@ -841,5 +825,16 @@ function reps_core_menu_local_tasks_alter(&$data, $router_item, $root_path) {
 function reps_core_form_page_node_form_alter(&$form, &$form_state, $form_id) {
   if (!isset($form['field_ne_body'])) {
     $form['body']['#weight'] = -2;
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function reps_core_views_pre_render(&$view) {
+  // REPR-1730 deny access to nodequeue views for anonymous.
+  if ($view->tag == 'nodequeue' && user_is_anonymous()) {
+    drupal_access_denied();
+    drupal_exit();
   }
 }

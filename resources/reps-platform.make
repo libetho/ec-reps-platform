@@ -24,6 +24,11 @@ projects[feeds][subdir] = "contrib"
 projects[feeds][version] = 2.0-beta3
 projects[feeds][patch][] = "patches/feeds_beta3_delete_if_empty_source-2333667-15.patch"
 
+projects[mbp_sync][download][type] = git
+projects[mbp_sync][download][url] = https://github.com/ec-europa/mbp-sync-reference.git
+projects[mbp_sync][download][tag] = 1.0-rc1
+projects[mbp_sync][subdir] = custom
+
 projects[media_browser_plus][subdir] = "contrib"
 projects[media_browser_plus][version] = 3.0-beta4
 projects[media_browser_plus][patch][] = "https://www.drupal.org/files/issues/download-files-in-media-basket-does-not-work-2821063-2.patch"

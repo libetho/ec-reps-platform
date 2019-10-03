@@ -134,9 +134,7 @@ function reps_publications_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_reps_publication';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_reps_publication'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -254,6 +252,16 @@ function reps_publications_strongarm() {
   $strongarm->name = 'scheduler_use_vertical_tabs_reps_publication';
   $strongarm->value = '1';
   $export['scheduler_use_vertical_tabs_reps_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_reps_publication';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_reps_publication'] = $strongarm;
 
   return $export;
 }
