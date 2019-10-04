@@ -33,6 +33,7 @@ function reps_core_node_access($node, $op, $account) {
     && in_array(drupal_get_path_alias('node/' . $node->nid), array(
       'news',
       'events',
+      'events/past-events',
       'services/publications',
       'news/videos',
       'news/eu-myths',
