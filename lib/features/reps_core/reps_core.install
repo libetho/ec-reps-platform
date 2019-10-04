@@ -425,7 +425,7 @@ function reps_core_update_7014() {
       // Twitter feed case.
       if ($entity->delta == 'bean-twitter') {
         // Set weight to 3 for twitter bean block.
-        $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 3;
+        $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 5;
         // Get frontpage ID.
         $site_frontpage = str_replace('node/', '', drupal_get_normal_path(variable_get('site_frontpage')));
         $entity->field_reps_core_node_reference[LANGUAGE_NONE][0]['target_id'] = $site_frontpage;
@@ -441,7 +441,7 @@ function reps_core_update_7014() {
           $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 1;
         }
         else {
-          $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 5;
+          $entity->field_reps_rightcol_weight[LANGUAGE_NONE][0]['value'] = 10;
         }
       }
       field_attach_update($entity_type, $entity);
@@ -449,8 +449,8 @@ function reps_core_update_7014() {
   }
 
   db_delete('field_data_field_reps_rightcol_weight')
-  ->condition('language', LANGUAGE_NONE, '<>')
-  ->execute();
+    ->condition('language', LANGUAGE_NONE, '<>')
+    ->execute();
 
   // Delete the unsused field instance.
   $bean_types = array(

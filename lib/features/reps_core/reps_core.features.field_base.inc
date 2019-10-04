@@ -347,7 +347,7 @@ function reps_core_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
@@ -383,6 +383,11 @@ function reps_core_field_default_field_bases() {
         3 => 3,
         4 => 4,
         5 => 5,
+        6 => 6,
+        7 => 7,
+        8 => 8,
+        9 => 9,
+        10 => 10,
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
