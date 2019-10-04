@@ -16,4 +16,21 @@ Feature: Custom tests for repr
     | video |
  
   Then I should not see the text "REPR-1739"
-	
+
+	@api
+  Scenario Outline: REPR-1739 check that anonymous do not have access
+  at all to the detail page for vocabularies.
+
+  Given I am an anonymous user
+  Given I am viewing a "<vocabulary>" term with the name "REPR-1739"
+
+  Examples:
+  | vocabulary |
+    | classification |
+    | Media Folders |
+    | Metatags ESS GF |
+    | REPS Contact point categories |
+    | Tags |
+    | REPS News Categories |
+
+  Then I should not see the text "REPR-1739"
