@@ -986,7 +986,7 @@ function reps_core_strongarm() {
   $strongarm->name = 'rh_taxonomy_term_action_tags';
   $strongarm->value = '3';
   $export['rh_taxonomy_term_action_tags'] = $strongarm;
-  
+
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;

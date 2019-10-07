@@ -449,8 +449,8 @@ function reps_core_update_7014() {
   }
 
   db_delete('field_data_field_reps_rightcol_weight')
-  ->condition('language', LANGUAGE_NONE, '<>')
-  ->execute();
+    ->condition('language', LANGUAGE_NONE, '<>')
+    ->execute();
 
   // Delete the unsused field instance.
   $bean_types = array(
