@@ -68,6 +68,7 @@ features[variable][] = page_title_type_reps_news
 features[variable][] = page_title_type_reps_news_showfield
 features[variable][] = pathauto_node_reps_news_pattern
 features[variable][] = rh_taxonomy_term_action_reps_news_categories
+features[variable][] = rh_taxonomy_term_redirect_reps_news_categories
 features[variable][] = scheduler_expand_fieldset_reps_news
 features[variable][] = scheduler_publish_enable_reps_news
 features[variable][] = scheduler_publish_moderation_state_reps_news
