@@ -161,6 +161,19 @@ function reps_menu_link(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function reps_preprocess_node(&$variables) {
+
+  // REPR-1538 add class when abstract is empty.
+  $variables['no_abstract'] = '';
+  if (empty($variables['content']['field_reps_core_abstract'])) {
+    $variables['no_abstract'] = 'no-abstract';
+  }
+
+}
+
+/**
  * Implements theme_preprocess_block().
  *
  * Remove unused block ipg info (just keep the date and the top link).
@@ -254,44 +267,6 @@ function reps_preprocess_block(&$variables) {
  */
 function reps_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
   $form['field_reps_news_category_tid']['#options']['All'] = t('- Choose a category -');
-}
-
-/**
- * Implements theme_preprocess_views_view_unformatted().
- *
- * Add div to group items in the rendering of the unformated views.
- */
-function reps_preprocess_views_view_unformatted(&$vars) {
-  if ($vars['view']->name !== 'reps_bean_blocks') {
-    $vars['prefix'] = array();
-    $vars['suffix'] = array();
-    $group = 1;
-    $last_row = count($vars['rows']) - 1;
-
-    foreach ($vars['rows'] as $id => &$row) {
-
-      $vars['prefix'][$id] = '';
-      $vars['suffix'][$id] = '';
-
-      // Apply modular arithmetic.
-      $remainder = $id % 3;
-
-      // First div => 3 items.
-      if ($remainder == 0) {
-        $vars['prefix'][$id] = "<div class=\"group group-$group\">";
-      }
-
-      if ($remainder == 2) {
-        $vars['suffix'][$id] = '<div class="clearfix"></div></div>';
-        $group++;
-      }
-
-      // Close the div in case there are not enough items.
-      if ($last_row == $id && $remainder != 2 && $remainder != 8) {
-        $vars['suffix'][$id] = '</div>';
-      }
-    }
-  }
 }
 
 /**
@@ -425,4 +400,11 @@ function reps_preprocess_html(&$variables) {
 
   // Add header meta tag.
   drupal_add_html_head($meta_format_detection, 'meta_format_detection');
+}
+
+/**
+ * Theme the way an 'all day' label will look.
+ */
+function reps_date_all_day_label() {
+  return '';
 }

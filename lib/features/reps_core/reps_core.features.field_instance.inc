@@ -297,13 +297,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
     ),
@@ -324,15 +320,19 @@ function reps_core_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 33,
     ),
   );
 
   // Exported field_instance:
-  // 'bean-reps_core_sb_right_blue_button-field_reps_rightcol_position'.
-  $field_instances['bean-reps_core_sb_right_blue_button-field_reps_rightcol_position'] = array(
+  // 'bean-reps_core_sb_right_blue_button-field_reps_right_column'.
+  $field_instances['bean-reps_core_sb_right_blue_button-field_reps_right_column'] = array(
     'bundle' => 'reps_core_sb_right_blue_button',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -343,10 +343,11 @@ function reps_core_field_default_field_instances() {
         'weight' => 2,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_reps_rightcol_position',
-    'label' => 'Position',
-    'required' => 1,
+    'field_name' => 'field_reps_right_column',
+    'label' => 'Right Column',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -354,9 +355,11 @@ function reps_core_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 13,
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 32,
     ),
   );
 
@@ -364,11 +367,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_blue_button-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_blue_button-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_blue_button',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -559,13 +558,9 @@ function reps_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
     ),
@@ -586,30 +581,34 @@ function reps_core_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 33,
     ),
   );
 
   // Exported field_instance:
-  // 'bean-reps_core_sb_right_free_content-field_reps_rightcol_position'.
-  $field_instances['bean-reps_core_sb_right_free_content-field_reps_rightcol_position'] = array(
+  // 'bean-reps_core_sb_right_free_content-field_reps_right_column'.
+  $field_instances['bean-reps_core_sb_right_free_content-field_reps_right_column'] = array(
     'bundle' => 'reps_core_sb_right_free_content',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_reps_rightcol_position',
-    'label' => 'Position',
-    'required' => 1,
+    'field_name' => 'field_reps_right_column',
+    'label' => 'Right Column',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -617,9 +616,11 @@ function reps_core_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 13,
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 32,
     ),
   );
 
@@ -627,11 +628,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_free_content-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_free_content-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_free_content',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -856,30 +853,34 @@ function reps_core_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 33,
     ),
   );
 
   // Exported field_instance:
-  // 'bean-reps_core_sb_right_image_link-field_reps_rightcol_position'.
-  $field_instances['bean-reps_core_sb_right_image_link-field_reps_rightcol_position'] = array(
+  // 'bean-reps_core_sb_right_image_link-field_reps_right_column'.
+  $field_instances['bean-reps_core_sb_right_image_link-field_reps_right_column'] = array(
     'bundle' => 'reps_core_sb_right_image_link',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_reps_rightcol_position',
-    'label' => 'Position',
-    'required' => 1,
+    'field_name' => 'field_reps_right_column',
+    'label' => 'Right Column',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -887,9 +888,11 @@ function reps_core_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 13,
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 32,
     ),
   );
 
@@ -897,11 +900,7 @@ function reps_core_field_default_field_instances() {
   // 'bean-reps_core_sb_right_image_link-field_reps_rightcol_weight'.
   $field_instances['bean-reps_core_sb_right_image_link-field_reps_rightcol_weight'] = array(
     'bundle' => 'reps_core_sb_right_image_link',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -970,6 +969,112 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-webtools-field_reps_core_node_reference'.
+  $field_instances['bean-webtools-field_reps_core_node_reference'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_core_node_reference',
+    'label' => 'Page(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'bean-webtools-field_reps_right_column'.
+  $field_instances['bean-webtools-field_reps_right_column'] = array(
+    'bundle' => 'webtools',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_right_column',
+    'label' => 'Right Column',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'bean-webtools-field_reps_rightcol_weight'.
+  $field_instances['bean-webtools-field_reps_rightcol_weight'] = array(
+    'bundle' => 'webtools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_reps_rightcol_weight',
+    'label' => 'Weight',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_reps_core_abstract'.
   $field_instances['node-page-field_reps_core_abstract'] = array(
     'bundle' => 'page',
@@ -982,7 +1087,13 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => -9,
+      ),
+      'reps_main_content_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1050,9 +1161,15 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'reps_main_content_image',
         ),
         'type' => 'file_rendered',
-        'weight' => 0,
+        'weight' => -10,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1123,9 +1240,15 @@ function reps_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1196,9 +1319,15 @@ function reps_core_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -6,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1271,6 +1400,12 @@ function reps_core_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'reps_main_content_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1337,9 +1472,15 @@ function reps_core_field_default_field_instances() {
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 6,
+        'weight' => 10,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1393,6 +1534,45 @@ function reps_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_tags'.
+  $field_instances['node-page-field_tags'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => -1,
+    ),
+  );
+
   // Exported field_instance: 'node-page-title_field'.
   $field_instances['node-page-title_field'] = array(
     'bundle' => 'page',
@@ -1404,9 +1584,15 @@ function reps_core_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => -11,
       ),
       'popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'reps_main_content_image' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2532,8 +2718,8 @@ function reps_core_field_default_field_instances() {
   t('Link');
   t('Page');
   t('Page(s)');
-  t('Position');
   t('Related video');
+  t('Right Column');
   t('Tags');
   t('The Title of the block.');
   t('Title');

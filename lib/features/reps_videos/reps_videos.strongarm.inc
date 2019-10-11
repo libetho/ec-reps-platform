@@ -182,6 +182,20 @@ function reps_videos_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_reps_video';
+  $strongarm->value = '3';
+  $export['rh_node_action_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_reps_video';
+  $strongarm->value = 'customerror/404';
+  $export['rh_node_redirect_reps_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_expand_fieldset_reps_video';
   $strongarm->value = '0';
   $export['scheduler_expand_fieldset_reps_video'] = $strongarm;

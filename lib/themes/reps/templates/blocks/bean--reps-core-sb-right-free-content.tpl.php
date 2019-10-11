@@ -37,5 +37,5 @@
       print render($content['field_reps_core_more_info_link']);
     ?>
   </div>
-  <?php endif;?>
+  <?php endif; ?>
 </div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_admin.features.wysiwyg.inc
@@ -60,6 +61,9 @@ function reps_admin_wysiwyg_default_profiles() {
           'media' => 1,
           'break' => 1,
         ),
+        'reps_accordion_plugin' => array(
+          'reps_accordion_plugin_button' => 1,
+        ),
       ),
       'theme' => 'advanced',
       'language' => 'en',
@@ -98,10 +102,10 @@ Language: LTR=span.ltr',
       'pasteFromWordRemoveStyles' => 1,
     ),
     'preferences' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
       'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 1,
+      'user_choose' => 0,
       'version' => '4.4.8.ccd0038',
     ),
     'name' => 'formatfull_html',

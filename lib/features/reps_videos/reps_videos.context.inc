@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * reps_videos.context.inc
@@ -29,8 +30,8 @@ function reps_videos_context_default_contexts() {
         'views-reps_videos-block_1' => array(
           'module' => 'views',
           'delta' => 'reps_videos-block_1',
-          'region' => 'content',
-          'weight' => '-10',
+          'region' => 'content_bottom',
+          'weight' => '0',
         ),
       ),
     ),

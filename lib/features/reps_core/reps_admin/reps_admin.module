@@ -139,9 +139,6 @@ function reps_admin_permission() {
     'administer reps social links' => array(
       'title' => t('Administer REPS social links'),
     ),
-    'administer reps twitter webtools' => array(
-      'title' => t('Administer REPS Twitter webtools'),
-    ),
   );
 }
 
@@ -292,7 +289,7 @@ function _reps_admin_prepare_menu_tree($menu = 'main-menu') {
  * @param array $two
  *   Second parameter for comparison.
  *
- * @return -1|0|1
+ * @return 1|0
  *   Value of the comparison.
  */
 function _reps_admin_form_weight(array $one, array $two) {
@@ -357,6 +354,7 @@ function reps_admin_views_pre_view(&$view) {
     if (empty($new_view_fieds)) {
       $new_view_fieds = array();
     }
+    // Additional columns in content view.
     $new_view_fieds['nodequeue_all_subqueues'] = array(
       'id' => 'nodequeue_all_subqueues',
       'table' => 'node',
@@ -369,6 +367,13 @@ function reps_admin_views_pre_view(&$view) {
         2 => 0,
         3 => 0,
       ),
+    );
+    $new_view_fieds['nid'] = array(
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'label' => 'Node ID',
+      'limit' => 0,
     );
     // Add Operation.
     $new_view_fieds['views_bulk_operations']['vbo_operations']['action::nodequeue_add_action'] = array(
@@ -402,6 +407,23 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
       $theme_registry[$key]['theme path'] = $module_path;
       $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
       $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_id_alter().
+ */
+function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form['#id'] == 'views-exposed-form-core-content-administration-page') {
+    $options = &$form['type']['#options'];
+    if (!empty($options)) {
+      foreach ($options as $option => $name) {
+        if (($option != 'All') && (!user_access('edit any ' . $option . ' content'))) {
+          unset($options[$option]);
+        }
+      }
     }
   }
 }
