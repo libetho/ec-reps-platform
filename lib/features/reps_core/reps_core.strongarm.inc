@@ -327,9 +327,9 @@ function reps_core_strongarm() {
     'node' => 'node',
     'taxonomy_term' => 'taxonomy_term',
     'bean' => 'bean',
+    'file' => 'file',
     'comment' => 0,
     'registration' => 0,
-    'file' => 'file',
     'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
@@ -372,6 +372,19 @@ function reps_core_strongarm() {
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_file__image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_file__video';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_file__video'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
