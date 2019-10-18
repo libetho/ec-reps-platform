@@ -13,7 +13,7 @@ Feature: Custom tests for repr
     | Slide footer |
     | Slide homepage |
     | Homepage additional block |
-    | Video |
+    | reps_video |
  
   Then I should not see the text "REPR-1739"
 
