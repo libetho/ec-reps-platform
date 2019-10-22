@@ -40,7 +40,7 @@ projects[multiform][subdir] = "contrib"
 projects[multiform][version] = 1.4
 
 projects[nodequeue][subdir] = "contrib"
-projects[nodequeue][version] = 2.1
+projects[nodequeue][version] = 2.x-dev
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
