@@ -367,9 +367,26 @@ function reps_core_update_7011() {
 }
 
 /**
- * Delete all content of type contact point and reimport feeds.
+ * Forcing reverting reps_core to apply upgrade 13 & 14 + enbale feeds_tamper.
  */
 function reps_core_update_7012() {
+  module_enable(array('feeds_tamper'));
+  features_revert(
+    array(
+      'reps_core' => array(
+        'field_base',
+        'field_instance',
+        'feeds_tamper',
+        'feeds_importer',
+      ),
+    )
+  );
+}
+
+/**
+ * Delete all content of type contact point and reimport feeds.
+ */
+function reps_core_update_7013() {
   $result = db_query("SELECT nid FROM {node} AS n WHERE n.type = 'reps_contact_point'");
   foreach ($result as $record) {
     node_delete($record->nid);
@@ -392,19 +409,6 @@ function reps_core_update_7012() {
   }
 }
 
-/**
- * Forcing reverting reps_core to apply upgrade 7014.
- */
-function reps_core_update_7013() {
-  features_revert(
-    array(
-      'reps_core' => array(
-        'field_base',
-        'field_instance',
-      ),
-    )
-  );
-}
 
 /**
  * Add value for existing entities delete unsused rightcol_position field.
