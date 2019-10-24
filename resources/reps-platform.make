@@ -40,17 +40,13 @@ projects[multiform][subdir] = "contrib"
 projects[multiform][version] = 1.4
 
 projects[nodequeue][subdir] = "contrib"
-projects[nodequeue][version] = 2.x-dev
+projects[nodequeue][version] = 2.x
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
 
 projects[rabbit_hole][subdir] = "contrib"
 projects[rabbit_hole][version] = 2.25
-
-projects[redirect][subdir] = "contrib"
-projects[redirect][version] = 1.x-dev
-projects[redirect][patch][] = "https://www.drupal.org/files/issues/2019-10-03/3085342-2.patch"
 
 projects[social_media_links][subdir] = "contrib"
 projects[social_media_links][version] = 1.4
