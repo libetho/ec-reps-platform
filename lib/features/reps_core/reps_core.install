@@ -409,7 +409,6 @@ function reps_core_update_7013() {
   }
 }
 
-
 /**
  * Add value for existing entities delete unsused rightcol_position field.
  */
