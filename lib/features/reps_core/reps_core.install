@@ -367,7 +367,7 @@ function reps_core_update_7011() {
 }
 
 /**
- * Forcing reverting reps_core to apply upgrade 13 & 14 + enbale feeds_tamper.
+ * Forcing reverting reps_core to apply upgrade 13 & 14 + enable feeds_tamper.
  */
 function reps_core_update_7012() {
   module_enable(array('feeds_tamper'));
