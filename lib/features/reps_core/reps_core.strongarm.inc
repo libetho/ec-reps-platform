@@ -376,6 +376,19 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_file__video';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 1,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_file__video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'extlink_css_exclude';
   $strongarm->value = '#block-social-media-links-social-media-links';
   $export['extlink_css_exclude'] = $strongarm;
@@ -900,64 +913,127 @@ function reps_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_reps_contact_point';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_node_action_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_reps_homepage_additional_block';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_node_action_reps_homepage_additional_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_reps_slide_footer';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_node_action_reps_slide_footer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_reps_slide_homepage';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_node_action_reps_slide_homepage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_reps_contact_point';
+  $strongarm->value = 'customerror/404';
+  $export['rh_node_redirect_reps_contact_point'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_reps_homepage_additional_block';
+  $strongarm->value = 'customerror/404';
+  $export['rh_node_redirect_reps_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_reps_slide_footer';
+  $strongarm->value = 'customerror/404';
+  $export['rh_node_redirect_reps_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_reps_slide_homepage';
+  $strongarm->value = 'customerror/404';
+  $export['rh_node_redirect_reps_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_classification';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_taxonomy_term_action_classification'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_media_folders';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_taxonomy_term_action_media_folders'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_metatags_ess_gf';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_taxonomy_term_action_metatags_ess_gf'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_reps_contact_point_categories';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_taxonomy_term_action_reps_contact_point_categories'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_tags';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['rh_taxonomy_term_action_tags'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_redirect_classification';
+  $strongarm->value = 'customerror/404';
+  $export['rh_taxonomy_term_redirect_classification'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_redirect_media_folders';
+  $strongarm->value = 'customerror/404';
+  $export['rh_taxonomy_term_redirect_media_folders'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_redirect_metatags_ess_gf';
+  $strongarm->value = 'customerror/404';
+  $export['rh_taxonomy_term_redirect_metatags_ess_gf'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_redirect_reps_contact_point_categories';
+  $strongarm->value = 'customerror/404';
+  $export['rh_taxonomy_term_redirect_reps_contact_point_categories'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_taxonomy_term_redirect_tags';
+  $strongarm->value = 'customerror/404';
+  $export['rh_taxonomy_term_redirect_tags'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -424,9 +424,9 @@ function reps_core_field_group_info() {
     'label' => 'Position',
     'weight' => '2',
     'children' => array(
-      0 => 'field_reps_rightcol_position',
+      0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_core_node_reference',
+      2 => 'field_reps_right_column',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -453,9 +453,9 @@ function reps_core_field_group_info() {
     'label' => 'Position',
     'weight' => '2',
     'children' => array(
-      0 => 'field_reps_rightcol_position',
+      0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_core_node_reference',
+      2 => 'field_reps_right_column',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -482,9 +482,9 @@ function reps_core_field_group_info() {
     'label' => 'Position',
     'weight' => '2',
     'children' => array(
-      0 => 'field_reps_rightcol_position',
+      0 => 'field_reps_core_node_reference',
       1 => 'field_reps_rightcol_weight',
-      2 => 'field_reps_core_node_reference',
+      2 => 'field_reps_right_column',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -498,6 +498,35 @@ function reps_core_field_group_info() {
     ),
   );
   $field_groups['group_reps_rightcol_position|bean|reps_core_sb_right_image_link|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_reps_rightcol_position|bean|webtools|form';
+  $field_group->group_name = 'group_reps_rightcol_position';
+  $field_group->entity_type = 'bean';
+  $field_group->bundle = 'webtools';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Position',
+    'weight' => '33',
+    'children' => array(
+      0 => 'field_reps_right_column',
+      1 => 'field_reps_core_node_reference',
+      2 => 'field_reps_rightcol_weight',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-reps-rightcol-position field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_reps_rightcol_position|bean|webtools|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

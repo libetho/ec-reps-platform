@@ -88,6 +88,10 @@ function reps_myths_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'myths';
   $export['reps_eu_myth'] = $view;
 
   return $export;

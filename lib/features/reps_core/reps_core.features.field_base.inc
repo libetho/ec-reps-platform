@@ -252,7 +252,7 @@ function reps_core_field_default_field_bases() {
       ),
       'target_type' => 'node',
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'entityreference',
   );
 
@@ -335,13 +335,13 @@ function reps_core_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_reps_rightcol_position'.
-  $field_bases['field_reps_rightcol_position'] = array(
+  // Exported field_base: 'field_reps_right_column'.
+  $field_bases['field_reps_right_column'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_reps_rightcol_position',
+    'field_name' => 'field_reps_right_column',
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -351,13 +351,13 @@ function reps_core_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Bottom section',
-        1 => 'Top section',
+        0 => '',
+        1 => '',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'list_boolean',
   );
 
@@ -377,16 +377,22 @@ function reps_core_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        0 => 0,
         1 => 1,
         2 => 2,
         3 => 3,
         4 => 4,
         5 => 5,
+        6 => 6,
+        7 => 7,
+        8 => 8,
+        9 => 9,
+        10 => 10,
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'list_integer',
   );
 
