@@ -30,12 +30,6 @@ function reps_videos_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'belgium' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'belgium',
-        'weight' => 0,
-      ),
       'ec_resp' => array(
         'region' => '',
         'status' => 0,
