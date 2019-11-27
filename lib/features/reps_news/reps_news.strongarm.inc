@@ -256,7 +256,7 @@ function reps_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_redirect_reps_news_categories';
   $strongarm->value = 'customerror/404';
-  $export['rh_node_redirect_reps_contact_point'] = $strongarm;
+  $export['rh_taxonomy_term_redirect_reps_news_categories'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
