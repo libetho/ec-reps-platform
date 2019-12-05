@@ -37,8 +37,7 @@ projects[multiform][subdir] = "contrib"
 projects[multiform][version] = 1.4
 
 projects[nodequeue][subdir] = "contrib"
-projects[nodequeue][version] = 2.1
-projects[nodequeue][patch][] = https://www.drupal.org/files/issues/remove_create_function_2885212_2.patch
+projects[nodequeue][version] = 2.2
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
