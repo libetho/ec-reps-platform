@@ -17,12 +17,9 @@ projects[features_extra][version] = 1.0
 projects[features_roles_permissions][subdir] = "contrib"
 projects[features_roles_permissions][version] = 1.2
 
-; Add an option to delete all nodes when the feed source is empty.
-; https://www.drupal.org/project/feeds/issues/2333667
-; https://webgate.ec.europa.eu/CITnet/jira/browse/REPR-1719?focusedCommentId=3485574&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-3485574
 projects[feeds][subdir] = "contrib"
-projects[feeds][version] = 2.0-beta3
-projects[feeds][patch][] = "patches/feeds_beta3_delete_if_empty_source-2333667-15.patch"
+projects[feeds][version] = 2.0-beta4
+projects[feeds][patch][] = https://www.drupal.org/files/issues/feeds_delete_if_empty_source-2333667-8.patch
 
 projects[mbp_sync][download][type] = git
 projects[mbp_sync][download][url] = https://github.com/ec-europa/mbp-sync-reference.git
@@ -40,8 +37,7 @@ projects[multiform][subdir] = "contrib"
 projects[multiform][version] = 1.4
 
 projects[nodequeue][subdir] = "contrib"
-projects[nodequeue][version] = 2.1
-projects[nodequeue][patch][] = https://www.drupal.org/files/issues/remove_create_function_2885212_2.patch
+projects[nodequeue][version] = 2.2
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
