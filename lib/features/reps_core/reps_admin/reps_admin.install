@@ -36,3 +36,10 @@ function reps_admin_update_7001() {
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Enable NextEuropa Administration Language.
+ */
+function reps_admin_update_7002() {
+  module_enable(array('nexteuropa_admin_language'));
+}

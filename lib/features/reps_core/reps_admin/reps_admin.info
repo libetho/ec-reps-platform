@@ -3,6 +3,7 @@ description = The administration tools for the REPS application
 core = 7.x
 php = 5.6
 package = REPS
+dependencies[] = nexteuropa_admin_language
 dependencies[] = reps_core
 configure = admin/config/reps
 features[context][] = reps-admin
