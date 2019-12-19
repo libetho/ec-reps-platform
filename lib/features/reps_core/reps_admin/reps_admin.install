@@ -25,3 +25,14 @@ function reps_admin_disable() {
 function reps_admin_uninstall() {
   drupal_set_message(t("The REPS admin feature has been uninstalled."));
 }
+
+/**
+ * Disable and uninstall webform_features module.
+ */
+function reps_admin_update_7001() {
+  $modules = array(
+    'admin_language',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}
