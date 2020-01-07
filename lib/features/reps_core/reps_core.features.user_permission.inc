@@ -571,15 +571,6 @@ function reps_core_user_default_permissions() {
     'module' => 'flexslider',
   );
 
-  // Exported permission: 'administer group'.
-  $permissions['administer group'] = array(
-    'name' => 'administer group',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'og',
-  );
-
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
@@ -1257,15 +1248,6 @@ function reps_core_user_default_permissions() {
     'module' => 'bean',
   );
 
-  // Exported permission: 'create editorial_team content'.
-  $permissions['create editorial_team content'] = array(
-    'name' => 'create editorial_team content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create files'.
   $permissions['create files'] = array(
     'name' => 'create files',
@@ -1371,15 +1353,6 @@ function reps_core_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'delete any editorial_team content'.
-  $permissions['delete any editorial_team content'] = array(
-    'name' => 'delete any editorial_team content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'delete any image files'.
@@ -1530,15 +1503,6 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'delete own editorial_team content'.
-  $permissions['delete own editorial_team content'] = array(
-    'name' => 'delete own editorial_team content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'delete own image files'.
@@ -1765,15 +1729,6 @@ function reps_core_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'edit any editorial_team content'.
-  $permissions['edit any editorial_team content'] = array(
-    'name' => 'edit any editorial_team content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any image files'.
   $permissions['edit any image files'] = array(
     'name' => 'edit any image files',
@@ -1972,15 +1927,6 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'edit own editorial_team content'.
-  $permissions['edit own editorial_team content'] = array(
-    'name' => 'edit own editorial_team content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own image files'.
@@ -2208,39 +2154,6 @@ function reps_core_user_default_permissions() {
   // Exported permission: 'moderate content from published to archived'.
   $permissions['moderate content from published to archived'] = array(
     'name' => 'moderate content from published to archived',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from published to draft'.
-  $permissions['moderate content from published to draft'] = array(
-    'name' => 'moderate content from published to draft',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from published to expired'.
-  $permissions['moderate content from published to expired'] = array(
-    'name' => 'moderate content from published to expired',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from published to needs_review'.
-  $permissions['moderate content from published to needs_review'] = array(
-    'name' => 'moderate content from published to needs_review',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'administrator' => 'administrator',
@@ -2479,15 +2392,6 @@ function reps_core_user_default_permissions() {
       'administrator' => 'administrator',
       'contributor' => 'contributor',
       'editor' => 'editor',
-    ),
-    'module' => 'better_formats',
-  );
-
-  // Exported permission: 'show format selection for tmgmt_job'.
-  $permissions['show format selection for tmgmt_job'] = array(
-    'name' => 'show format selection for tmgmt_job',
-    'roles' => array(
-      'administrator' => 'administrator',
     ),
     'module' => 'better_formats',
   );
