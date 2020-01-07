@@ -2396,15 +2396,6 @@ function reps_core_user_default_permissions() {
     'module' => 'better_formats',
   );
 
-  // Exported permission: 'show format selection for tmgmt_job'.
-  $permissions['show format selection for tmgmt_job'] = array(
-    'name' => 'show format selection for tmgmt_job',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'better_formats',
-  );
-
   // Exported permission: 'show format selection for user'.
   $permissions['show format selection for user'] = array(
     'name' => 'show format selection for user',
