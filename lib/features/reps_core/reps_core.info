@@ -456,7 +456,6 @@ features[user_permission][] = show format selection for flagging
 features[user_permission][] = show format selection for node
 features[user_permission][] = show format selection for rules_config
 features[user_permission][] = show format selection for taxonomy_term
-features[user_permission][] = show format selection for tmgmt_job
 features[user_permission][] = show format selection for user
 features[user_permission][] = show format tips
 features[user_permission][] = show more format tips link
