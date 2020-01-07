@@ -25,3 +25,15 @@ function reps_admin_disable() {
 function reps_admin_uninstall() {
   drupal_set_message(t("The REPS admin feature has been uninstalled."));
 }
+
+/**
+ * Uninstall admin_language module and enable nexteuropa_admin_language module.
+ */
+function reps_admin_update_7001() {
+  $modules = array(
+    'admin_language',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+  module_enable(array('nexteuropa_admin_language'));
+}
