@@ -57,9 +57,6 @@ projects[ultimate_cron][version] = 2.8
 projects[views_tree][subdir] = "contrib"
 projects[views_tree][version] = 2.0
 
-projects[webform_features][subdir] = "contrib"
-projects[webform_features][version] = 3.0-beta3
-
 projects[weight][subdir] = "contrib"
 projects[weight][version] = 2.4 
 

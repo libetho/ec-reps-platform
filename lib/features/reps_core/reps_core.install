@@ -478,3 +478,14 @@ function reps_core_update_7015() {
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Disable and uninstall features_roles_permissions module.
+ */
+function reps_core_update_7016() {
+  $modules = array(
+    'features_roles_permissions',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}
