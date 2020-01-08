@@ -1601,15 +1601,6 @@ function reps_core_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'display admin pages in another language'.
-  $permissions['display admin pages in another language'] = array(
-    'name' => 'display admin pages in another language',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_language',
-  );
-
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
@@ -2589,15 +2580,6 @@ function reps_core_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
-  );
-
-  // Exported permission: 'use all enabled languages'.
-  $permissions['use all enabled languages'] = array(
-    'name' => 'use all enabled languages',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'admin_language',
   );
 
   // Exported permission: 'use ctools import'.
