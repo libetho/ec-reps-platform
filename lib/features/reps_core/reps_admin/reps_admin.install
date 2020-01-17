@@ -27,7 +27,7 @@ function reps_admin_uninstall() {
 }
 
 /**
- * Uninstall admin_language module and enable nexteuropa_admin_language module.
+ * Uninstall admin_language module.
  */
 function reps_admin_update_7001() {
   $modules = array(
@@ -35,5 +35,4 @@ function reps_admin_update_7001() {
   );
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
-  module_enable(array('nexteuropa_admin_language'));
 }
