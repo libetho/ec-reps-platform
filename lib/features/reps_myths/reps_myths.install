@@ -31,12 +31,19 @@ function reps_myths_install() {
  * Copy post date into field_reps_core_date.
  */
 function reps_myths_update_7001() {
+  // Revert field instance to be able to copy data in field_reps_core_date.
+  features_revert(array(
+    'reps_myths' => array(
+      'field_instance',
+    ),
+  ));
   // Selecting nid of type reps_eu_myth.
   $query= db_select('node', 'n')
     ->fields('n', array('nid'))
     ->condition('type','reps_eu_myth')
     ->execute();
   $results = $query->fetchCol();
+  // Update field_reps_core_date value.
   foreach($results as $nid) {
     $node = node_load($nid);
     $node->field_reps_core_date[LANGUAGE_NONE][0]['value'] = $node->created;
