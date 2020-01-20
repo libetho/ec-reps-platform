@@ -37,15 +37,15 @@ function reps_myths_update_7001() {
       'field_instance',
     ),
   ));
-  // Selecting nid of type reps_eu_myth.
+  // Selecting nodes of type reps_eu_myth.
   $query = db_select('node', 'n')
     ->fields('n', array('nid'))
     ->condition('type', 'reps_eu_myth')
     ->execute();
   $results = $query->fetchCol();
+  $nodes = node_load_multiple($results);
   // Update field_reps_core_date value.
-  foreach ($results as $nid) {
-    $node = node_load($nid);
+  foreach ($nodes as $node) {
     $node->field_reps_core_date[LANGUAGE_NONE][0]['value'] = $node->created;
     node_save($node);
   }
