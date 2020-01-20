@@ -30,6 +30,7 @@ features[features_api][] = api:2
 features[field_group][] = group_reps_myths_content|node|reps_eu_myth|form
 features[field_instance][] = node-reps_eu_myth-body
 features[field_instance][] = node-reps_eu_myth-field_reps_core_abstract
+features[field_instance][] = node-reps_eu_myth-field_reps_core_date
 features[field_instance][] = node-reps_eu_myth-field_reps_core_image
 features[field_instance][] = node-reps_eu_myth-field_tags
 features[field_instance][] = node-reps_eu_myth-title_field
