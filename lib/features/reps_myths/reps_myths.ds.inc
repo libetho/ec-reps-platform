@@ -25,12 +25,14 @@ function reps_myths_ds_layout_settings_info() {
       ),
       'reps_ne_body' => array(
         1 => 'title_field',
-        2 => 'field_reps_core_abstract',
+        2 => 'field_reps_core_date',
+        3 => 'field_reps_core_abstract',
       ),
     ),
     'fields' => array(
       'field_reps_core_image' => 'reps_ne_image',
       'title_field' => 'reps_ne_body',
+      'field_reps_core_date' => 'reps_ne_body',
       'field_reps_core_abstract' => 'reps_ne_body',
     ),
     'classes' => array(),

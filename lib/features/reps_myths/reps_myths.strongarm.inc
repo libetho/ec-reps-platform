@@ -109,6 +109,9 @@ function reps_myths_strongarm() {
       'reps_main_content_image' => array(
         'custom_settings' => TRUE,
       ),
+      'homepage' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -126,6 +129,12 @@ function reps_myths_strongarm() {
         ),
         'redirect' => array(
           'weight' => '6',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(),
