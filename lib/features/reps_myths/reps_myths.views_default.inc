@@ -62,11 +62,21 @@ function reps_myths_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_abstract']['field'] = 'field_reps_core_abstract';
   $handler->display->display_options['fields']['field_reps_core_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_reps_core_abstract']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Date (field_reps_core_date) */
   $handler->display->display_options['sorts']['field_reps_core_date_value']['id'] = 'field_reps_core_date_value';
   $handler->display->display_options['sorts']['field_reps_core_date_value']['table'] = 'field_data_field_reps_core_date';
   $handler->display->display_options['sorts']['field_reps_core_date_value']['field'] = 'field_reps_core_date_value';
   $handler->display->display_options['sorts']['field_reps_core_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

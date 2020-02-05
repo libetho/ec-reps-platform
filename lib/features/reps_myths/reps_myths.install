@@ -30,7 +30,7 @@ function reps_myths_install() {
 /**
  * Copy post date into field_reps_core_date.
  */
-function reps_myths_update_7001() {
+function _reps_myths_update_7001() {
   // Revert field instance to be able to copy data in field_reps_core_date.
   features_revert(array(
     'reps_myths' => array(
