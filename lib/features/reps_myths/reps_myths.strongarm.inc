@@ -109,6 +109,9 @@ function reps_myths_strongarm() {
       'reps_main_content_image' => array(
         'custom_settings' => TRUE,
       ),
+      'homepage' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -126,6 +129,12 @@ function reps_myths_strongarm() {
         ),
         'redirect' => array(
           'weight' => '6',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(),
@@ -184,6 +193,107 @@ function reps_myths_strongarm() {
   $strongarm->name = 'pathauto_node_reps_eu_myth_pattern';
   $strongarm->value = 'news/eu-myths/[node:title]';
   $export['pathauto_node_reps_eu_myth_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_reps_eu_myth';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_reps_eu_myth';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_moderation_state_reps_eu_myth';
+  $strongarm->value = 'published';
+  $export['scheduler_publish_moderation_state_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_reps_eu_myth';
+  $strongarm->value = 'error';
+  $export['scheduler_publish_past_date_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_reps_eu_myth';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_reps_eu_myth';
+  $strongarm->value = 1;
+  $export['scheduler_publish_revision_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_reps_eu_myth';
+  $strongarm->value = 1;
+  $export['scheduler_publish_touch_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_default_time_reps_eu_myth';
+  $strongarm->value = '';
+  $export['scheduler_unpublish_default_time_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_reps_eu_myth';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_moderation_state_reps_eu_myth';
+  $strongarm->value = 'draft';
+  $export['scheduler_unpublish_moderation_state_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_reps_eu_myth';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_reps_eu_myth';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_revision_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_reps_eu_myth';
+  $strongarm->value = '1';
+  $export['scheduler_use_vertical_tabs_reps_eu_myth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_reps_eu_myth';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_reps_eu_myth'] = $strongarm;
 
   return $export;
 }

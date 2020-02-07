@@ -5,7 +5,7 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
-projects[admin_language][subdir] = "contrib"
+projects[admin_language][subdir] = "contrib"	
 projects[admin_language][version] = 1.0-beta1
 
 projects[ckeditor_tabber][subdir] = "contrib"
@@ -31,7 +31,7 @@ projects[media_browser_plus][version] = 3.0-beta4
 projects[media_browser_plus][patch][] = "https://www.drupal.org/files/issues/download-files-in-media-basket-does-not-work-2821063-2.patch"
 
 projects[menu_admin_per_menu][subdir] = "contrib"
-projects[menu_admin_per_menu][version] = 1.0
+projects[menu_admin_per_menu][version] = 1.1
 
 projects[multiform][subdir] = "contrib"
 projects[multiform][version] = 1.4
@@ -46,19 +46,16 @@ projects[rabbit_hole][subdir] = "contrib"
 projects[rabbit_hole][version] = 2.25
 
 projects[social_media_links][subdir] = "contrib"
-projects[social_media_links][version] = 1.4
+projects[social_media_links][version] = 1.5
 
 projects[taxonomy_access_fix][subdir] = "contrib"
-projects[taxonomy_access_fix][version] = 2.2
+projects[taxonomy_access_fix][version] = 2.3
 
 projects[ultimate_cron][subdir] = "contrib"
 projects[ultimate_cron][version] = 2.8
   
 projects[views_tree][subdir] = "contrib"
 projects[views_tree][version] = 2.0
-
-projects[webform_features][subdir] = "contrib"
-projects[webform_features][version] = 3.0-beta3
 
 projects[weight][subdir] = "contrib"
 projects[weight][version] = 2.4 

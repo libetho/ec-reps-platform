@@ -478,3 +478,26 @@ function reps_core_update_7015() {
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Disable and uninstall features_roles_permissions module.
+ */
+function reps_core_update_7016() {
+  $modules = array(
+    'features_roles_permissions',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}
+
+/**
+ * Enable Reps_myths, excepted on Italy.
+ */
+function reps_core_update_7017() {
+  if (!in_array(variable_get('site_name'), array('Italy', 'Italia'))) {
+    $module_to_enable = array(
+      'reps_myths',
+    );
+    module_enable($module_to_enable, TRUE);
+  }
+}
