@@ -487,15 +487,6 @@ function reps_core_user_default_permissions() {
     'module' => 'feature_set',
   );
 
-  // Exported permission: 'administer features'.
-  $permissions['administer features'] = array(
-    'name' => 'administer features',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'features',
-  );
-
   // Exported permission: 'administer feeds'.
   $permissions['administer feeds'] = array(
     'name' => 'administer feeds',
@@ -578,15 +569,6 @@ function reps_core_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'image',
-  );
-
-  // Exported permission: 'administer jquery update'.
-  $permissions['administer jquery update'] = array(
-    'name' => 'administer jquery update',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'jquery_update',
   );
 
   // Exported permission: 'administer languages'.
@@ -703,15 +685,6 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'metatag',
-  );
-
-  // Exported permission: 'administer modules'.
-  $permissions['administer modules'] = array(
-    'name' => 'administer modules',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'system',
   );
 
   // Exported permission: 'administer navigation menu items'.
