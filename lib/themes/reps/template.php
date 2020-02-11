@@ -189,7 +189,7 @@ function reps_preprocess_block(&$variables) {
           $handler = entity_translation_get_handler('node', $node);
           $translations = $handler->getTranslations();
           foreach ($languages as $key => $link) {
-            if (!isset($translations->data[$key])) {
+            if (!isset($translations->data[$key]) || $translations->data[$key]['status'] == '0') {
               unset($languages[$key]);
             }
           }
@@ -328,7 +328,9 @@ function reps_entity_translation_unavailable($variables) {
     $message = '<p>The requested information is not available in ' . $language->name . '</p><p>Language(s) available:</p><ul>';
     foreach ($available_languages as $language_extension) {
       // Display available languages for the current node.
-      $message .= '<li>' . l($language_list[$language_extension]->native, current_path(), array('language' => $language_list[$language_extension])) . '</li>';
+      if ($element['#entity']->translations->data[$language_extension]['status'] == 1) {
+        $message .= '<li>' . l($language_list[$language_extension]->native, current_path(), array('language' => $language_list[$language_extension])) . '</li>';
+      }
     }
     $message .= '</ul>';
     return "<div class=\"$classes\">$message</div>";
