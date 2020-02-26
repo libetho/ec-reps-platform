@@ -220,15 +220,14 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a {
   border: none;
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid #fff;
   background: none !important;
-  color: #e7e7e7 !important;
   margin: 0;
   padding: 0 10px 0;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a:hover,
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a:focus {
-  color: #ffffff;
+  color: #fff;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li.first a {
   border-left: 0;
@@ -2197,11 +2196,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   #main-menu ul li {
     border-bottom: 1px solid #cce2ed;
   }
-  #main-menu ul li a {
-    color: #003366 !important;
-    background: none !important;
-    padding: 7px 10px !important;
-  }
+
   #main-menu ul li a.active {
     font-weight: bold;
   }
