@@ -1642,7 +1642,17 @@ form .field-name-field-reps-core-image {
 dl.ckeditor-tabber {
   dt {
     background: #f3f6f9;
-    border-color: #cccccc;
+    border-color: #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    
+    a {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   dt.current {
@@ -1663,9 +1673,10 @@ dl.ckeditor-tabber {
   }
 
   dd {
-    border-color: #cccccc;
+    border-color: #ccc;
   }
 } // dl.ckeditor-tabber END
+
 .quicktabs-wrapper {
   margin: 1em 0px;
 
@@ -2554,6 +2565,7 @@ div[about*='news/videos'] {
 }
 
 /*REPR-1754 Spain - pop up display problem*/
+
 .wtPopup.ttip_modal .wtPopupContent {
   padding: 0 20px;
   max-height: 92%;

@@ -1442,7 +1442,16 @@ form .field-name-field-reps-core-image {
 /* Tabs */
 dl.ckeditor-tabber dt {
   background: #f3f6f9;
-  border-color: #cccccc;
+  border-color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+dl.ckeditor-tabber dt a {
+  width: 100%;
+  text-align: center;
 }
 dl.ckeditor-tabber dt.current {
   background: #fff !important;
@@ -1458,7 +1467,7 @@ dl.ckeditor-tabber dt:hover a {
   color: #fff;
 }
 dl.ckeditor-tabber dd {
-  border-color: #cccccc;
+  border-color: #ccc;
 }
 .quicktabs-wrapper {
   margin: 1em 0px;
