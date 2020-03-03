@@ -1066,6 +1066,8 @@ function reps_core_user_default_permissions() {
     'name' => 'bypass rh_node',
     'roles' => array(
       'administrator' => 'administrator',
+      'REPS Administrator' => 'REPS Administrator',
+      'editor' => 'editor',
     ),
     'module' => 'rabbit_hole',
   );
