@@ -87,8 +87,8 @@ body.reps {
   font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
   color: #000000;
   line-height: 1.5;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: #fff !important;
+  background-color: #fff !important;
   position: relative;
   filter: none;
 }
@@ -125,21 +125,21 @@ body.reps #mainContainer .region-featured-wrapper button#menu-button {
   margin: 5px 0 5px 15px;
   border-radius: 0;
   padding: 5px 10px;
-  color: #ffffff;
+  color: #fff;
   background: #074a8b;
   border: 1px solid #69c;
   font-size: 115%;
 }
 body.reps #mainContainer .region-featured-wrapper .home-button a,
 body.reps #mainContainer .region-featured-wrapper button#menu-button a {
-  color: #ffffff;
+  color: #fff;
 }
 body.reps #mainContainer .region-featured-wrapper .home-button:hover,
 body.reps #mainContainer .region-featured-wrapper .home-button:focus,
 body.reps #mainContainer .region-featured-wrapper button#menu-button:hover,
 body.reps #mainContainer .region-featured-wrapper button#menu-button:focus,
 body.reps #mainContainer .region-featured-wrapper button#menu-button.menu-open {
-  background: #ffffff;
+  background: #fff;
   color: #000000;
   border: 1px solid #000000;
   text-decoration: none;
@@ -195,7 +195,7 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li a.active,
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li a:hover,
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li a:focus {
-  color: #ffffff;
+  color: #fff;
   background: #b60522;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail a {
@@ -220,15 +220,14 @@ body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container 
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a {
   border: none;
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid #fff;
   background: none !important;
-  color: #e7e7e7 !important;
   margin: 0;
   padding: 0 10px 0;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a:hover,
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li a:focus {
-  color: #ffffff;
+  color: #fff;
 }
 body.reps #mainContainer .region-featured-wrapper #main-menu .navbar .container div ul li.active-trail ul li.first a {
   border-left: 0;
@@ -1443,22 +1442,20 @@ form .field-name-field-reps-core-image {
 /* Tabs */
 dl.ckeditor-tabber dt {
   background: #f3f6f9;
-  border-color: #cccccc;
+  border-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   align-items: center;
 }
-
 dl.ckeditor-tabber dt a {
   width: 100%;
   text-align: center;
 }
-
 dl.ckeditor-tabber dt.current {
-  background: #ffffff !important;
-  border-bottom-color: #ffffff;
+  background: #fff !important;
+  border-bottom-color: #fff;
 }
 dl.ckeditor-tabber dt.current a {
   color: #0065a2 !important;
@@ -1467,10 +1464,10 @@ dl.ckeditor-tabber dt:hover {
   background: #b60522;
 }
 dl.ckeditor-tabber dt:hover a {
-  color: #ffffff;
+  color: #fff;
 }
 dl.ckeditor-tabber dd {
-  border-color: #cccccc;
+  border-color: #ccc;
 }
 .quicktabs-wrapper {
   margin: 1em 0px;
@@ -1745,7 +1742,7 @@ p.top-button a {
   padding: 8px 50px 8px 50px;
   display: block;
   border-radius: 4px;
-  color: #ffffff;
+  color: #fff;
   transition: none;
 }
 p.top-button a:hover {
@@ -2003,7 +2000,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   #main-menu .visible-sm ul li.active-trail,
   #main-menu .visible-xs ul li.active-trail {
     display: block;
-    background: #ffffff;
+    background: #fff;
     margin: 0 !important;
   }
   #main-menu .visible-sm ul li.active-trail a,
@@ -2062,13 +2059,13 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   }
   #main-menu .visible-sm ul li.active-trail.open ul,
   #main-menu .visible-xs ul li.active-trail.open ul {
-    background: #ffffff !important;
+    background: #fff !important;
   }
   #main-menu .visible-sm ul li.active-trail.open ul li,
   #main-menu .visible-xs ul li.active-trail.open ul li {
     display: block !important;
     clear: both;
-    background: #ffffff !important;
+    background: #fff !important;
     margin: 0 !important;
     width: 100% !important;
   }
@@ -2077,11 +2074,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     padding: 5px 10px !important;
     font-size: 105%;
     color: #036 !important;
-  }
-  #main-menu .visible-sm ul li.active-trail.open ul li a:hover,
-  #main-menu .visible-xs ul li.active-trail.open ul li a:hover {
-    background: #036 !important;
-    color: #ffffff !important;
   }
   #main-menu .visible-sm ul li.active-trail.dropdown.open li,
   #main-menu .visible-xs ul li.active-trail.dropdown.open li {
@@ -2245,11 +2237,4 @@ div[about*='news/videos'] .field-name-body {
 }
 .wtPopup.ttip_modal .wtPopupContent .ttip_content:last-child {
   padding-bottom: 20px;
-}
-
-/*REPR-1754 Spain - pop up display problem*/
-.wtPopup.ttip_modal .wtPopupContent {
-  padding: 0 20px;
-  max-height: 92%;
-  overflow: auto;
 }
