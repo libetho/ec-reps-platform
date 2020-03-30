@@ -101,7 +101,7 @@
       a:hover,
       a:focus {
         background: #0065a2 !important;
-        color: #aaaaaa !important;
+        color: #fff !important;
       }
     }
   }
@@ -2368,6 +2368,11 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
               padding: 5px 10px !important;
               font-size: 105%;
               color: #036 !important;
+              &:focus,
+              &:active {
+                text-decoration: underline;
+                
+              }
             }
           }
         }
