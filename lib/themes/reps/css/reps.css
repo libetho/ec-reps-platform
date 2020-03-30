@@ -39,7 +39,7 @@
 .smallScreensMenu ul li a:hover,
 .smallScreensMenu ul li a:focus {
   background: #0065a2 !important;
-  color: #aaaaaa !important;
+  color: #fff !important;
 }
 .readMoreLinkStyle {
   font-weight: bold;
@@ -1978,7 +1978,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   #main-menu ul li a:hover,
   #main-menu ul li a:focus {
     background: #0065a2 !important;
-    color: #aaaaaa !important;
+    color: #fff !important;
   }
   #main-menu .visible-sm,
   #main-menu .visible-xs {
@@ -2074,6 +2074,12 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     padding: 5px 10px !important;
     font-size: 105%;
     color: #036 !important;
+  }
+  #main-menu .visible-sm ul li.active-trail.open ul li a:focus,
+  #main-menu .visible-xs ul li.active-trail.open ul li a:focus,
+  #main-menu .visible-sm ul li.active-trail.open ul li a:active,
+  #main-menu .visible-xs ul li.active-trail.open ul li a:active {
+    text-decoration: underline;
   }
   #main-menu .visible-sm ul li.active-trail.dropdown.open li,
   #main-menu .visible-xs ul li.active-trail.dropdown.open li {
@@ -2200,7 +2206,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   #main-menu ul li a:hover,
   #main-menu ul li a:focus {
     background: #0065a2 !important;
-    color: #aaaaaa !important;
+    color: #fff !important;
   }
   #main-menu .visible-ex1 ul li.first {
     display: none;
