@@ -1767,7 +1767,7 @@ p.top-button a:hover {
   #sidebar-right .wtShareButton {
     min-width: 0;
   }
-  #content-wrapper {
+  #content-wrapper.col-sm-8 {
     width: 75% !important;
   }
 }
