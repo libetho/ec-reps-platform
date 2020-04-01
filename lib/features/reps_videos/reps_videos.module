@@ -90,8 +90,7 @@ function _apply_cookie_consent_banner(&$html) {
     if (
       !empty($html) &&
       strpos($html, 'iframe') !== FALSE &&
-      strpos($html, $video_type) !== FALSE &&
-      strpos($html, NEXTEUROPA_COOKIE_CONSENT_KIT_IFRAME_SRC) === FALSE
+      strpos($html, $video_type) !== FALSE
     ) {
       $banner = TRUE;
     }
