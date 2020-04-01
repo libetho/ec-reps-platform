@@ -5,7 +5,7 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
-projects[admin_language][subdir] = "contrib"	
+projects[admin_language][subdir] = "contrib"
 projects[admin_language][version] = 1.0-beta1
 
 projects[ckeditor_tabber][subdir] = "contrib"
