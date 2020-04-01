@@ -29,28 +29,28 @@ function reps_videos_node_view_alter(&$build) {
  *   The page html.
  */
 function reps_videos_post_render($html) {
-
-  if (_apply_cookie_consent_banner($html)) {
-    $doc = new DOMDocument();
-    if (LIBXML_VERSION >= 20708) {
-      $doc->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-    }
-    else {
-      $doc->loadHTML('<?xml encoding="utf-8" ?>' . $html);
-    }
-    $iframes = $doc->getElementsByTagName('iframe');
-
-    foreach ($iframes as $iframe) {
-      $new_path = EC_EMBEDDED_VIDEO_COOKIE_CONSENT_WEBSERVICE_PRURL . '?oriurl=' . $iframe->getAttribute('src');
-      $iframe->setAttribute('src', $new_path);
-    }
-
-    $html = html_entity_decode($doc->saveHTML());
-    if (LIBXML_VERSION < 20708) {
-      $html = preg_replace('/\<\?xml encoding="utf-8" \?\>/', '', $html);
+  if (module_exists('nexteuropa_cookie_consent_kit')) {
+    if (_apply_cookie_consent_banner($html)) {
+      $doc = new DOMDocument();
+      if (LIBXML_VERSION >= 20708) {
+        $doc->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+      }
+      else {
+        $doc->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+      }
+      $iframes = $doc->getElementsByTagName('iframe');
+      foreach ($iframes as $iframe) {
+        if (strpos($iframe->getAttribute('src'), NEXTEUROPA_COOKIE_CONSENT_KIT_IFRAME_SRC) === FALSE) {
+          $new_path = NEXTEUROPA_COOKIE_CONSENT_KIT_IFRAME_SRC . '?oriurl=' . $iframe->getAttribute('src');
+          $iframe->setAttribute('src', $new_path);
+        }
+      }
+      $html = html_entity_decode($doc->saveHTML());
+      if (LIBXML_VERSION < 20708) {
+        $html = preg_replace('/\<\?xml encoding="utf-8" \?\>/', '', $html);
+      }
     }
   }
-
   return $html;
 }
 
@@ -90,8 +90,7 @@ function _apply_cookie_consent_banner(&$html) {
     if (
       !empty($html) &&
       strpos($html, 'iframe') !== FALSE &&
-      strpos($html, $video_type) !== FALSE &&
-      strpos($html, EC_EMBEDDED_VIDEO_COOKIE_CONSENT_WEBSERVICE_PRURL) === FALSE
+      strpos($html, $video_type) !== FALSE
     ) {
       $banner = TRUE;
     }
