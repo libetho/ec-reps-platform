@@ -698,12 +698,14 @@ function reps_events_field_default_field_instances() {
       ),
       'homepage' => array(
         'label' => 'inline',
+        'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'inline',
+        'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 7,

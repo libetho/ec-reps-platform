@@ -31,6 +31,7 @@ features[field_base][] = field_reps_event_venue
 features[field_base][] = field_reps_register_name
 features[field_base][] = field_reps_registration
 features[field_group][] = group_reps_event_content|node|reps_event|form
+features[field_group][] = group_reps_event_metadata|node|reps_event|form
 features[field_group][] = group_reps_event_rel|node|reps_event|form
 features[field_instance][] = node-reps_event-body
 features[field_instance][] = node-reps_event-field_reps_core_abstract
