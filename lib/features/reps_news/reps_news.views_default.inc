@@ -296,7 +296,8 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date_1']['field'] = 'field_reps_core_date';
   $handler->display->display_options['fields']['field_reps_core_date_1']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_date_1']['settings'] = array(
-    'format_type' => 'event_date_format',
+    'format_type' => 'custom',
+    'custom_date_format' => 'D, d M Y H:i:s O',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -474,7 +475,8 @@ function reps_news_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_date_1']['field'] = 'field_reps_core_date';
   $handler->display->display_options['fields']['field_reps_core_date_1']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_reps_core_date_1']['settings'] = array(
-    'format_type' => 'event_date_format',
+    'format_type' => 'custom',
+    'custom_date_format' => 'D, d M Y H:i:s O',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

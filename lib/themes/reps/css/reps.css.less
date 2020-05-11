@@ -101,7 +101,7 @@
       a:hover,
       a:focus {
         background: #0065a2 !important;
-        color: #aaaaaa !important;
+        color: #fff !important;
       }
     }
   }
@@ -164,8 +164,8 @@ body.reps {
   font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
   color: #000000;
   line-height: 1.5;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: #fff !important;
+  background-color: #fff !important;
   position: relative;
   filter: none;
 
@@ -207,13 +207,13 @@ body.reps {
         margin: 5px 0 5px 15px;
         border-radius: 0;
         padding: 5px 10px;
-        color: #ffffff;
+        color: #fff;
         background: #074a8b;
         border: 1px solid #69c;
         font-size: 115%;
 
         a {
-          color: #ffffff;
+          color: #fff;
         }
       } // .home-button END
       .home-button:hover,
@@ -221,7 +221,7 @@ body.reps {
       button#menu-button:hover,
       button#menu-button:focus,
       button#menu-button.menu-open {
-        background: #ffffff;
+        background: #fff;
         color: #000000;
         border: 1px solid #000000;
         text-decoration: none;
@@ -278,7 +278,7 @@ body.reps {
                 a.active,
                 a:hover,
                 a:focus {
-                  color: #ffffff;
+                  color: #fff;
                   background: @maltaRed;
                 }
               } // ul li END
@@ -306,16 +306,15 @@ body.reps {
 
                     a {
                       border: none;
-                      border-left: 1px solid #ffffff;
+                      border-left: 1px solid #fff;
                       background: none !important;
-                      color: #e7e7e7 !important;
                       margin: 0;
                       padding: 0 10px 0;
                     }
 
                     a:hover,
                     a:focus {
-                      color: #ffffff;
+                      color: #fff;
                     }
                   }
 
@@ -1643,12 +1642,22 @@ form .field-name-field-reps-core-image {
 dl.ckeditor-tabber {
   dt {
     background: #f3f6f9;
-    border-color: #cccccc;
+    border-color: #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    
+    a {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   dt.current {
-    background: #ffffff !important;
-    border-bottom-color: #ffffff;
+    background: #fff !important;
+    border-bottom-color: #fff;
 
     a {
       color: #0065a2 !important;
@@ -1659,14 +1668,15 @@ dl.ckeditor-tabber {
     background: @maltaRed;
 
     a {
-      color: #ffffff;
+      color: #fff;
     }
   }
 
   dd {
-    border-color: #cccccc;
+    border-color: #ccc;
   }
 } // dl.ckeditor-tabber END
+
 .quicktabs-wrapper {
   margin: 1em 0px;
 
@@ -1959,8 +1969,6 @@ ul.pager {
   display: inline-block;
 
   img.file-icon {
-    float: right !important;
-    margin-left: 5px;
     vertical-align: text-bottom;
   }
 }
@@ -2013,7 +2021,7 @@ p.top-button a {
   padding: 8px 50px 8px 50px;
   display: block;
   border-radius: 4px;
-  color: #ffffff;
+  color: #fff;
   transition: none;
 }
 
@@ -2048,7 +2056,7 @@ p.top-button a:hover {
     }
   }
 
-  #content-wrapper {
+  #content-wrapper.col-sm-8 {
     width: 75% !important;
   }
   
@@ -2203,7 +2211,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
   /*REPR-1512 text should be forced to be under the main image. */
   body.reps #mainContainer #layout-body #block-system-main .panel-body {
     node-page .content .field-type-text-with-summary img.right,
-    .node-full .content div:not(.leaflet-map) img:first-child {
+    .node-full .content div:not(.leaflet-map, .file) img:first-child {
       display: block;
       margin: 0 0 10px 0 !important;
       min-width: 100%;
@@ -2284,7 +2292,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
 
       ul li.active-trail {
         display: block;
-        background: #ffffff;
+        background: #fff;
         margin: 0 !important;
 
         a {
@@ -2345,12 +2353,12 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
         }
 
         ul {
-          background: #ffffff !important;
+          background: #fff !important;
 
           li {
             display: block !important;
             clear: both;
-            background: #ffffff !important;
+            background: #fff !important;
             margin: 0 !important;
             width: 100% !important;
 
@@ -2358,11 +2366,11 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row>
               padding: 5px 10px !important;
               font-size: 105%;
               color: #036 !important;
-            }
-
-            a:hover {
-              background: #036 !important;
-              color: #ffffff !important;
+              &:focus,
+              &:active {
+                text-decoration: underline;
+                
+              }
             }
           }
         }
@@ -2560,6 +2568,7 @@ div[about*='news/videos'] {
 }
 
 /*REPR-1754 Spain - pop up display problem*/
+
 .wtPopup.ttip_modal .wtPopupContent {
   padding: 0 20px;
   max-height: 92%;

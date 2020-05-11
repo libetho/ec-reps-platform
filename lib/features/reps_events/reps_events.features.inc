@@ -83,10 +83,10 @@ function reps_events_default_registration_type() {
     "label" : "Register",
     "locked" : "0",
     "default_state" : null,
+    "data" : { "held_expire" : "1", "held_expire_state" : "canceled" },
     "weight" : "0",
     "entity_type" : "registration_type",
-    "rdf_mapping" : [],
-    "data" : { "held_expire" : "1", "held_expire_state" : "canceled" }
+    "rdf_mapping" : []
   }');
   return $items;
 }
