@@ -17,6 +17,10 @@ projects[features_extra][version] = 1.0
 projects[features_roles_permissions][subdir] = "contrib"
 projects[features_roles_permissions][version] = 1.2
 
+projects[feeds][subdir] = "contrib"
+projects[feeds][version] = 2.0-beta4
+projects[feeds][patch][] = https://www.drupal.org/files/issues/feeds_delete_if_empty_source-2333667-8.patch
+
 projects[mbp_sync][download][type] = git
 projects[mbp_sync][download][url] = https://github.com/ec-europa/mbp-sync-reference.git
 projects[mbp_sync][download][tag] = 1.0-rc1
