@@ -501,3 +501,19 @@ function reps_core_update_7017() {
     module_enable($module_to_enable, TRUE);
   }
 }
+
+/**
+ * Temporary disabling feeds then reactive it.
+ */
+function reps_core_update_7018() {
+  if (!in_array(variable_get('site_name'), array('Spain', 'España'))) {
+    db_update('system')
+      ->expression('status', '0')
+      ->condition('name', 'feeds')
+      ->condition('type', 'module')
+      ->execute();
+
+    db_truncate('cache_bootstrap')->execute();
+    module_enable(array('feeds'));
+  }
+}
