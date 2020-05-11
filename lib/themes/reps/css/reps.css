@@ -1904,7 +1904,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     padding-left: 10px;
   }
   /*REPR-1512 text should be forced to be under the main image. */
-  body.reps #mainContainer #layout-body #block-system-main .panel-body node-page .content .field-type-text-with-summary img.right,
+  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-page .content .field-type-text-with-summary img.right,
   body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map, .file) img:first-child {
     display: block;
     margin: 0 0 10px 0 !important;
