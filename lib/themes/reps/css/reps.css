@@ -1911,6 +1911,10 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     min-width: 100%;
     float: none;
   }
+  /*REPR-1871 social images width should not be 100%*/
+  .reps-no-grow-media-element-container img {
+    min-width: auto;
+  }
   /*REPR-1512 title is overlapping menu : override ec_resp.css. */
   .mobile-user-bar.affix + .region-featured #main-menu .navbar {
     top: 0;
