@@ -2394,6 +2394,7 @@ function reps_core_user_default_permissions() {
     'name' => 'upload webtools custom js',
     'roles' => array(
       'site admin' => 'site admin',
+      'REPS Administrator' => 'REPS Administrator',
     ),
     'module' => 'nexteuropa_webtools',
   );
