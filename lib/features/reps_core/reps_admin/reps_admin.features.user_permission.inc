@@ -15,7 +15,7 @@ function reps_admin_user_default_permissions() {
   $permissions['accept translation jobs'] = array(
     'name' => 'accept translation jobs',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'tmgmt',
   );
@@ -25,7 +25,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'access nexteuropa user management views',
     'roles' => array(
       'User management' => 'User management',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'nexteuropa_user_management',
   );
@@ -35,7 +35,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'access site map',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'anonymous user' => 'anonymous user',
       'editor' => 'editor',
     ),
@@ -46,7 +46,7 @@ function reps_admin_user_default_permissions() {
   $permissions['access site-wide contact form'] = array(
     'name' => 'access site-wide contact form',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'contact',
@@ -56,7 +56,7 @@ function reps_admin_user_default_permissions() {
   $permissions['access user contact forms'] = array(
     'name' => 'access user contact forms',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'contact',
@@ -67,7 +67,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'add media from remote sources',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'media_internet',
@@ -77,7 +77,7 @@ function reps_admin_user_default_permissions() {
   $permissions['add terms in classification'] = array(
     'name' => 'add terms in classification',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -86,7 +86,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer contact forms'] = array(
     'name' => 'administer contact forms',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'contact',
   );
@@ -95,7 +95,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer drafty'] = array(
     'name' => 'administer drafty',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'drafty',
   );
@@ -104,7 +104,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer features'] = array(
     'name' => 'administer features',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'features',
   );
@@ -113,7 +113,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer feeds_tamper'] = array(
     'name' => 'administer feeds_tamper',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'feeds_tamper',
   );
@@ -122,7 +122,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer gelf_log settings'] = array(
     'name' => 'administer gelf_log settings',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'gelf_log',
   );
@@ -131,7 +131,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer group'] = array(
     'name' => 'administer group',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'og',
   );
@@ -140,7 +140,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer jquery update'] = array(
     'name' => 'administer jquery update',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'jquery_update',
   );
@@ -149,7 +149,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer menu-flexslider-example menu items'] = array(
     'name' => 'administer menu-flexslider-example menu items',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -158,7 +158,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'system',
   );
@@ -167,7 +167,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer nexteuropa cookie consent kit configuration'] = array(
     'name' => 'administer nexteuropa cookie consent kit configuration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'nexteuropa_cookie_consent_kit',
   );
@@ -176,7 +176,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer nexteuropa laco settings'] = array(
     'name' => 'administer nexteuropa laco settings',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'nexteuropa_laco',
   );
@@ -185,7 +185,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer software updates'] = array(
     'name' => 'administer software updates',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'system',
   );
@@ -194,7 +194,7 @@ function reps_admin_user_default_permissions() {
   $permissions['administer xmlsitemap'] = array(
     'name' => 'administer xmlsitemap',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'xmlsitemap',
   );
@@ -203,7 +203,7 @@ function reps_admin_user_default_permissions() {
   $permissions['create translation jobs'] = array(
     'name' => 'create translation jobs',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'tmgmt',
@@ -213,7 +213,7 @@ function reps_admin_user_default_permissions() {
   $permissions['delete terms in classification'] = array(
     'name' => 'delete terms in classification',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -222,7 +222,7 @@ function reps_admin_user_default_permissions() {
   $permissions['delete terms in media_folders'] = array(
     'name' => 'delete terms in media_folders',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -231,7 +231,7 @@ function reps_admin_user_default_permissions() {
   $permissions['delete terms in metatags_ess_gf'] = array(
     'name' => 'delete terms in metatags_ess_gf',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -240,7 +240,7 @@ function reps_admin_user_default_permissions() {
   $permissions['delete terms in reps_contact_point_categories'] = array(
     'name' => 'delete terms in reps_contact_point_categories',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -249,7 +249,7 @@ function reps_admin_user_default_permissions() {
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -258,7 +258,7 @@ function reps_admin_user_default_permissions() {
   $permissions['diff view changes'] = array(
     'name' => 'diff view changes',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'diff',
@@ -268,7 +268,7 @@ function reps_admin_user_default_permissions() {
   $permissions['edit terms in classification'] = array(
     'name' => 'edit terms in classification',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -277,7 +277,7 @@ function reps_admin_user_default_permissions() {
   $permissions['edit terms in media_folders'] = array(
     'name' => 'edit terms in media_folders',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -286,7 +286,7 @@ function reps_admin_user_default_permissions() {
   $permissions['edit terms in metatags_ess_gf'] = array(
     'name' => 'edit terms in metatags_ess_gf',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -295,7 +295,7 @@ function reps_admin_user_default_permissions() {
   $permissions['edit terms in reps_contact_point_categories'] = array(
     'name' => 'edit terms in reps_contact_point_categories',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -304,7 +304,7 @@ function reps_admin_user_default_permissions() {
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'taxonomy',
   );
@@ -313,7 +313,7 @@ function reps_admin_user_default_permissions() {
   $permissions['manage feature nexteuropa_trackedchanges'] = array(
     'name' => 'manage feature nexteuropa_trackedchanges',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'multisite_drupal_features_set_standard',
   );
@@ -322,7 +322,7 @@ function reps_admin_user_default_permissions() {
   $permissions['manage features'] = array(
     'name' => 'manage features',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'features',
   );
@@ -332,7 +332,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'moderate content from published to draft',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -343,7 +343,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'moderate content from published to expired',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -354,7 +354,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'moderate content from published to needs_review',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -365,7 +365,7 @@ function reps_admin_user_default_permissions() {
     'name' => 'nexteuropa manage users non restricted operations',
     'roles' => array(
       'User management' => 'User management',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'nexteuropa_user_management',
   );
@@ -374,7 +374,7 @@ function reps_admin_user_default_permissions() {
   $permissions['php redirect rh_node'] = array(
     'name' => 'php redirect rh_node',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'rabbit_hole',
   );
@@ -383,7 +383,7 @@ function reps_admin_user_default_permissions() {
   $permissions['php redirect rh_taxonomy'] = array(
     'name' => 'php redirect rh_taxonomy',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'rabbit_hole',
   );
@@ -392,7 +392,7 @@ function reps_admin_user_default_permissions() {
   $permissions['scheduler workbench'] = array(
     'name' => 'scheduler workbench',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'scheduler_workbench',
   );
@@ -401,7 +401,7 @@ function reps_admin_user_default_permissions() {
   $permissions['show format selection for og_membership'] = array(
     'name' => 'show format selection for og_membership',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'better_formats',
   );
@@ -410,7 +410,7 @@ function reps_admin_user_default_permissions() {
   $permissions['show format selection for og_membership_type'] = array(
     'name' => 'show format selection for og_membership_type',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'better_formats',
   );
@@ -419,7 +419,7 @@ function reps_admin_user_default_permissions() {
   $permissions['show format selection for tmgmt_job'] = array(
     'name' => 'show format selection for tmgmt_job',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'better_formats',
   );
@@ -428,7 +428,7 @@ function reps_admin_user_default_permissions() {
   $permissions['submit translation jobs'] = array(
     'name' => 'submit translation jobs',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'tmgmt',
@@ -438,7 +438,7 @@ function reps_admin_user_default_permissions() {
   $permissions['tamper contact_points_edc'] = array(
     'name' => 'tamper contact_points_edc',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'feeds_tamper',
   );
@@ -447,7 +447,7 @@ function reps_admin_user_default_permissions() {
   $permissions['tamper contact_points_edic'] = array(
     'name' => 'tamper contact_points_edic',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'feeds_tamper',
   );
@@ -456,7 +456,7 @@ function reps_admin_user_default_permissions() {
   $permissions['tamper contact_points_tem'] = array(
     'name' => 'tamper contact_points_tem',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'feeds_tamper',
   );

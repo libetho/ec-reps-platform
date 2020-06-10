@@ -38,7 +38,7 @@ function reps_admin_update_7001() {
 }
 
 /**
- * Attach admin maintenance and user manager roles to users maintenance.
+ * Attach site admin and user manager roles to users maintenance.
  */
 function reps_admin_update_7002() {
   features_revert(array(
@@ -62,7 +62,7 @@ function reps_admin_update_7002() {
     }
   }
   $roles_to_attach = array(
-    'admin maintenance',
+    'site admin',
     'User management',
   );
   foreach ($roles_to_attach as $role) {

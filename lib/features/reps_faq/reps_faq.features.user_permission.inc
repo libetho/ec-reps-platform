@@ -15,7 +15,7 @@ function reps_faq_user_default_permissions() {
     'name' => 'create reps_faq content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'cem' => 'cem',
       'editor' => 'editor',
     ),
@@ -27,7 +27,7 @@ function reps_faq_user_default_permissions() {
     'name' => 'delete any reps_faq content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'cem' => 'cem',
     ),
     'module' => 'node',
@@ -38,7 +38,7 @@ function reps_faq_user_default_permissions() {
     'name' => 'delete own reps_faq content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'cem' => 'cem',
       'editor' => 'editor',
     ),
@@ -50,7 +50,7 @@ function reps_faq_user_default_permissions() {
     'name' => 'edit any reps_faq content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'cem' => 'cem',
       'editor' => 'editor',
     ),
@@ -62,7 +62,7 @@ function reps_faq_user_default_permissions() {
     'name' => 'edit own reps_faq content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'cem' => 'cem',
       'editor' => 'editor',
     ),

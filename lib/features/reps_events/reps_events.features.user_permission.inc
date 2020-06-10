@@ -15,7 +15,7 @@ function reps_events_user_default_permissions() {
   $permissions['administer own reps_registration registration'] = array(
     'name' => 'administer own reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -24,7 +24,7 @@ function reps_events_user_default_permissions() {
   $permissions['administer reps_registration registration'] = array(
     'name' => 'administer reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -34,7 +34,7 @@ function reps_events_user_default_permissions() {
     'name' => 'create reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -44,7 +44,7 @@ function reps_events_user_default_permissions() {
   $permissions['create reps_registration registration'] = array(
     'name' => 'create reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -53,7 +53,7 @@ function reps_events_user_default_permissions() {
   $permissions['create reps_registration registration other anonymous'] = array(
     'name' => 'create reps_registration registration other anonymous',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -62,7 +62,7 @@ function reps_events_user_default_permissions() {
   $permissions['create reps_registration registration other users'] = array(
     'name' => 'create reps_registration registration other users',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -71,7 +71,7 @@ function reps_events_user_default_permissions() {
   $permissions['create reps_registration registration self'] = array(
     'name' => 'create reps_registration registration self',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -81,7 +81,7 @@ function reps_events_user_default_permissions() {
     'name' => 'delete any reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
@@ -90,7 +90,7 @@ function reps_events_user_default_permissions() {
   $permissions['delete any reps_registration registration'] = array(
     'name' => 'delete any reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -100,7 +100,7 @@ function reps_events_user_default_permissions() {
     'name' => 'delete own reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -110,7 +110,7 @@ function reps_events_user_default_permissions() {
   $permissions['delete own reps_registration registration'] = array(
     'name' => 'delete own reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -120,7 +120,7 @@ function reps_events_user_default_permissions() {
     'name' => 'edit any reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -131,7 +131,7 @@ function reps_events_user_default_permissions() {
     'name' => 'edit own reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -141,7 +141,7 @@ function reps_events_user_default_permissions() {
   $permissions['edit reps_registration registration state'] = array(
     'name' => 'edit reps_registration registration state',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -150,7 +150,7 @@ function reps_events_user_default_permissions() {
   $permissions['show format selection for registration'] = array(
     'name' => 'show format selection for registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'better_formats',
   );
@@ -159,7 +159,7 @@ function reps_events_user_default_permissions() {
   $permissions['update any reps_registration registration'] = array(
     'name' => 'update any reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -168,7 +168,7 @@ function reps_events_user_default_permissions() {
   $permissions['update own reps_registration registration'] = array(
     'name' => 'update own reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -177,7 +177,7 @@ function reps_events_user_default_permissions() {
   $permissions['view own reps_registration registration'] = array(
     'name' => 'view own reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
@@ -186,7 +186,7 @@ function reps_events_user_default_permissions() {
   $permissions['view reps_registration registration'] = array(
     'name' => 'view reps_registration registration',
     'roles' => array(
-      'admin maintenance' => 'admin maintenance',
+      'site admin' => 'site admin',
     ),
     'module' => 'registration',
   );
