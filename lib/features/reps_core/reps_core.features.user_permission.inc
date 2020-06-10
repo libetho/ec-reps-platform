@@ -48,15 +48,6 @@ function reps_core_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'access all views'.
-  $permissions['access all views'] = array(
-    'name' => 'access all views',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'views',
-  );
-
   // Exported permission: 'access bean overview'.
   $permissions['access bean overview'] = array(
     'name' => 'access bean overview',
@@ -432,15 +423,6 @@ function reps_core_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'administer contexts'.
-  $permissions['administer contexts'] = array(
-    'name' => 'administer contexts',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'context_ui',
-  );
-
   // Exported permission: 'administer easy_breadcrumb'.
   $permissions['administer easy_breadcrumb'] = array(
     'name' => 'administer easy_breadcrumb',
@@ -448,15 +430,6 @@ function reps_core_user_default_permissions() {
       'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'easy_breadcrumb',
-  );
-
-  // Exported permission: 'administer ecas'.
-  $permissions['administer ecas'] = array(
-    'name' => 'administer ecas',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'ecas',
   );
 
   // Exported permission: 'administer entity translation'.
@@ -505,25 +478,6 @@ function reps_core_user_default_permissions() {
     'module' => 'field_group',
   );
 
-  // Exported permission: 'administer fields'.
-  $permissions['administer fields'] = array(
-    'name' => 'administer fields',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'field',
-  );
-
-  // Exported permission: 'administer file types'.
-  $permissions['administer file types'] = array(
-    'name' => 'administer file types',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: 'administer files'.
   $permissions['administer files'] = array(
     'name' => 'administer files',
@@ -533,15 +487,6 @@ function reps_core_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'administer filters'.
-  $permissions['administer filters'] = array(
-    'name' => 'administer filters',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'filter',
   );
 
   // Exported permission: 'administer flags'.
@@ -744,16 +689,6 @@ function reps_core_user_default_permissions() {
     'module' => 'pathauto',
   );
 
-  // Exported permission: 'administer permissions'.
-  $permissions['administer permissions'] = array(
-    'name' => 'administer permissions',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'user',
-  );
-
   // Exported permission: 'administer print'.
   $permissions['administer print'] = array(
     'name' => 'administer print',
@@ -866,16 +801,6 @@ function reps_core_user_default_permissions() {
     'module' => 'search',
   );
 
-  // Exported permission: 'administer site configuration'.
-  $permissions['administer site configuration'] = array(
-    'name' => 'administer site configuration',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'system',
-  );
-
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
@@ -894,15 +819,6 @@ function reps_core_user_default_permissions() {
       'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'taxonomy_browser',
-  );
-
-  // Exported permission: 'administer themes'.
-  $permissions['administer themes'] = array(
-    'name' => 'administer themes',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'system',
   );
 
   // Exported permission: 'administer tmgmt'.
@@ -950,16 +866,6 @@ function reps_core_user_default_permissions() {
     'module' => 'menu_admin_per_menu',
   );
 
-  // Exported permission: 'administer users'.
-  $permissions['administer users'] = array(
-    'name' => 'administer users',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'user',
-  );
-
   // Exported permission: 'administer uuid'.
   $permissions['administer uuid'] = array(
     'name' => 'administer uuid',
@@ -976,15 +882,6 @@ function reps_core_user_default_permissions() {
       'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'video',
-  );
-
-  // Exported permission: 'administer views'.
-  $permissions['administer views'] = array(
-    'name' => 'administer views',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'views',
   );
 
   // Exported permission: 'administer voting api'.
@@ -1042,25 +939,6 @@ function reps_core_user_default_permissions() {
     'module' => 'video',
   );
 
-  // Exported permission: 'bypass file access'.
-  $permissions['bypass file access'] = array(
-    'name' => 'bypass file access',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: 'bypass node access'.
-  $permissions['bypass node access'] = array(
-    'name' => 'bypass node access',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'bypass rh_node'.
   $permissions['bypass rh_node'] = array(
     'name' => 'bypass rh_node',
@@ -1079,15 +957,6 @@ function reps_core_user_default_permissions() {
       'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rabbit_hole',
-  );
-
-  // Exported permission: 'bypass rules access'.
-  $permissions['bypass rules access'] = array(
-    'name' => 'bypass rules access',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'rules',
   );
 
   // Exported permission: 'bypass workbench moderation'.
@@ -1992,15 +1861,6 @@ function reps_core_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
-  // Exported permission: 'generate features'.
-  $permissions['generate features'] = array(
-    'name' => 'generate features',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'features',
-  );
-
   // Exported permission: 'import contact_points_edc feeds'.
   $permissions['import contact_points_edc feeds'] = array(
     'name' => 'import contact_points_edc feeds',
@@ -2214,15 +2074,6 @@ function reps_core_user_default_permissions() {
       'contributor' => 'contributor',
     ),
     'module' => 'video',
-  );
-
-  // Exported permission: 'rename features'.
-  $permissions['rename features'] = array(
-    'name' => 'rename features',
-    'roles' => array(
-      'admin maintenance' => 'admin maintenance',
-    ),
-    'module' => 'features',
   );
 
   // Exported permission: 'revert revisions'.
