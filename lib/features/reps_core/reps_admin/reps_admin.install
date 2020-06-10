@@ -36,3 +36,37 @@ function reps_admin_update_7001() {
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Attach admin maintenance and user manager roles to users maintenance.
+ */
+function reps_admin_update_7002() {
+  features_revert(array(
+    'reps_core' => array(
+      'user_role',
+      'user_permission',
+    ),
+  ));
+  $usernames = array(
+    'danjoju',
+    'kieleda',
+    'lemaith',
+    'libetho',
+    'n0023soa',
+    'settemi',
+  );
+  foreach($usernames as $username) {
+    $user = user_load_by_name($username);
+    if (!empty($user)) {
+      $userids[] = $user->uid;
+    }
+  }
+  $roles_to_attach = array(
+    'admin maintenance',
+    'User management',
+  );
+  foreach ($roles_to_attach as $role) {
+    $rid = $role->rid;
+    user_multiple_role_edit($userids, 'add_role', $role->rid);
+  }
+}
