@@ -15,7 +15,7 @@ function reps_core_user_default_permissions() {
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -27,7 +27,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'cem' => 'cem',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -40,7 +40,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'cem' => 'cem',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -52,7 +52,7 @@ function reps_core_user_default_permissions() {
   $permissions['access all views'] = array(
     'name' => 'access all views',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'views',
   );
@@ -62,7 +62,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access bean overview',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
@@ -74,7 +74,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access broken links report',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'linkchecker',
@@ -84,7 +84,7 @@ function reps_core_user_default_permissions() {
   $permissions['access coffee'] = array(
     'name' => 'access coffee',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'coffee',
   );
@@ -93,7 +93,7 @@ function reps_core_user_default_permissions() {
   $permissions['access comments'] = array(
     'name' => 'access comments',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'comment',
@@ -104,7 +104,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -116,7 +116,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
@@ -127,7 +127,7 @@ function reps_core_user_default_permissions() {
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'contextual',
@@ -137,7 +137,7 @@ function reps_core_user_default_permissions() {
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'dashboard',
   );
@@ -147,7 +147,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access ecas import users function',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ecas_import_users',
   );
@@ -157,7 +157,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access media browser',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -169,7 +169,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access own broken links report',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -180,7 +180,7 @@ function reps_core_user_default_permissions() {
   $permissions['access print'] = array(
     'name' => 'access print',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -191,7 +191,7 @@ function reps_core_user_default_permissions() {
   $permissions['access rules debug'] = array(
     'name' => 'access rules debug',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rules',
   );
@@ -200,7 +200,7 @@ function reps_core_user_default_permissions() {
   $permissions['access send by email'] = array(
     'name' => 'access send by email',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'print_mail',
@@ -210,7 +210,7 @@ function reps_core_user_default_permissions() {
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'system',
   );
@@ -220,7 +220,7 @@ function reps_core_user_default_permissions() {
     'name' => 'access site reports',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'system',
   );
@@ -229,7 +229,7 @@ function reps_core_user_default_permissions() {
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'editorial team member' => 'editorial team member',
     ),
@@ -240,7 +240,7 @@ function reps_core_user_default_permissions() {
   $permissions['access workbench'] = array(
     'name' => 'access workbench',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editorial team member' => 'editorial team member',
@@ -253,7 +253,7 @@ function reps_core_user_default_permissions() {
     'name' => 'add terms in media_folders',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -262,7 +262,7 @@ function reps_core_user_default_permissions() {
   $permissions['add terms in metatags_ess_gf'] = array(
     'name' => 'add terms in metatags_ess_gf',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -271,7 +271,7 @@ function reps_core_user_default_permissions() {
   $permissions['add terms in reps_contact_point_categories'] = array(
     'name' => 'add terms in reps_contact_point_categories',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -280,7 +280,7 @@ function reps_core_user_default_permissions() {
   $permissions['add terms in tags'] = array(
     'name' => 'add terms in tags',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -289,7 +289,7 @@ function reps_core_user_default_permissions() {
   $permissions['admin_classes'] = array(
     'name' => 'admin_classes',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ds_ui',
   );
@@ -298,7 +298,7 @@ function reps_core_user_default_permissions() {
   $permissions['admin_display_suite'] = array(
     'name' => 'admin_display_suite',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ds',
   );
@@ -307,7 +307,7 @@ function reps_core_user_default_permissions() {
   $permissions['admin_fields'] = array(
     'name' => 'admin_fields',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ds_ui',
   );
@@ -316,7 +316,7 @@ function reps_core_user_default_permissions() {
   $permissions['admin_view_modes'] = array(
     'name' => 'admin_view_modes',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ds_ui',
   );
@@ -325,7 +325,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer CAPTCHA settings'] = array(
     'name' => 'administer CAPTCHA settings',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'captcha',
   );
@@ -334,7 +334,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'system',
   );
@@ -343,7 +343,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer autologout'] = array(
     'name' => 'administer autologout',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'autologout',
   );
@@ -352,7 +352,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer bean settings'] = array(
     'name' => 'administer bean settings',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -361,7 +361,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer bean types'] = array(
     'name' => 'administer bean types',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -371,7 +371,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer beans',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -380,7 +380,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'block',
   );
@@ -389,7 +389,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer chr'] = array(
     'name' => 'administer chr',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'chr',
   );
@@ -398,7 +398,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer coffee'] = array(
     'name' => 'administer coffee',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'coffee',
   );
@@ -407,7 +407,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'comment',
   );
@@ -417,7 +417,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer content translations',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'i18n_node',
@@ -427,7 +427,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -436,7 +436,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer contexts'] = array(
     'name' => 'administer contexts',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'context_ui',
   );
@@ -445,7 +445,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer easy_breadcrumb'] = array(
     'name' => 'administer easy_breadcrumb',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'easy_breadcrumb',
   );
@@ -454,7 +454,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer ecas'] = array(
     'name' => 'administer ecas',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ecas',
   );
@@ -463,7 +463,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer entity translation'] = array(
     'name' => 'administer entity translation',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'entity_translation',
   );
@@ -472,7 +472,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer facets'] = array(
     'name' => 'administer facets',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'facetapi',
   );
@@ -481,7 +481,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer feature sets'] = array(
     'name' => 'administer feature sets',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'cem' => 'cem',
     ),
     'module' => 'feature_set',
@@ -491,7 +491,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer feeds'] = array(
     'name' => 'administer feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -500,7 +500,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'field_group',
   );
@@ -509,7 +509,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer fields'] = array(
     'name' => 'administer fields',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'field',
   );
@@ -519,7 +519,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer file types',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -529,7 +529,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -539,7 +539,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'filter',
   );
@@ -548,7 +548,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer flags'] = array(
     'name' => 'administer flags',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'flag',
   );
@@ -557,7 +557,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer flexslider'] = array(
     'name' => 'administer flexslider',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'flexslider',
   );
@@ -566,7 +566,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'image',
   );
@@ -576,7 +576,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer languages',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'locale',
   );
@@ -585,7 +585,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer linkchecker'] = array(
     'name' => 'administer linkchecker',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'linkchecker',
   );
@@ -595,7 +595,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer main-menu menu items',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -604,7 +604,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer management menu items'] = array(
     'name' => 'administer management menu items',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -613,7 +613,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'media',
   );
@@ -623,7 +623,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer menu',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'menu',
@@ -633,7 +633,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer menu attributes'] = array(
     'name' => 'administer menu attributes',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_attributes',
   );
@@ -643,7 +643,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer menu-breadcrumb-menu menu items',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -653,7 +653,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer menu-reps-services menu items',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -662,7 +662,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer menu-service-tools menu items'] = array(
     'name' => 'administer menu-service-tools menu items',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -671,7 +671,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer menu_token'] = array(
     'name' => 'administer menu_token',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_token',
   );
@@ -681,7 +681,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer meta tags',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'metatag',
@@ -691,7 +691,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer navigation menu items'] = array(
     'name' => 'administer navigation menu items',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -701,7 +701,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer nexteuropa_piwik',
     'roles' => array(
       'PIWIK administrator' => 'PIWIK administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'nexteuropa_piwik',
   );
@@ -710,7 +710,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer nodequeue'] = array(
     'name' => 'administer nodequeue',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'nodequeue',
   );
@@ -720,7 +720,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -730,7 +730,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer password policy'] = array(
     'name' => 'administer password policy',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'password_policy',
   );
@@ -739,7 +739,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'pathauto',
   );
@@ -749,7 +749,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer permissions',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'user',
   );
@@ -758,7 +758,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer print'] = array(
     'name' => 'administer print',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'print',
   );
@@ -767,7 +767,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer quicktabs'] = array(
     'name' => 'administer quicktabs',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'quicktabs',
   );
@@ -776,7 +776,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer realname'] = array(
     'name' => 'administer realname',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'realname',
   );
@@ -786,7 +786,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer redirects',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'redirect',
   );
@@ -795,7 +795,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer reps menu'] = array(
     'name' => 'administer reps menu',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'reps_admin',
   );
@@ -805,7 +805,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer reps settings',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'reps_admin',
   );
@@ -815,7 +815,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer reps social links',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'reps_admin',
   );
@@ -824,7 +824,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer rh_node'] = array(
     'name' => 'administer rh_node',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rabbit_hole',
   );
@@ -833,7 +833,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer rh_taxonomy'] = array(
     'name' => 'administer rh_taxonomy',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rabbit_hole',
   );
@@ -842,7 +842,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer rules'] = array(
     'name' => 'administer rules',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rules',
   );
@@ -851,7 +851,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer scheduler'] = array(
     'name' => 'administer scheduler',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'scheduler',
   );
@@ -861,7 +861,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer search',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'search',
   );
@@ -871,7 +871,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer site configuration',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'system',
   );
@@ -881,7 +881,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer taxonomy',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'taxonomy',
@@ -891,7 +891,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer taxonomy_browser'] = array(
     'name' => 'administer taxonomy_browser',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'taxonomy_browser',
   );
@@ -900,7 +900,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer themes'] = array(
     'name' => 'administer themes',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'system',
   );
@@ -909,7 +909,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer tmgmt'] = array(
     'name' => 'administer tmgmt',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'tmgmt',
   );
@@ -918,7 +918,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer translation tasks'] = array(
     'name' => 'administer translation tasks',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'tmgmt_local',
   );
@@ -927,7 +927,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer ultimate cron'] = array(
     'name' => 'administer ultimate cron',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ultimate_cron',
   );
@@ -936,7 +936,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'path',
   );
@@ -945,7 +945,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer user-menu menu items'] = array(
     'name' => 'administer user-menu menu items',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'menu_admin_per_menu',
   );
@@ -955,7 +955,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'user',
   );
@@ -964,7 +964,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer uuid'] = array(
     'name' => 'administer uuid',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'uuid',
   );
@@ -973,7 +973,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer video presets'] = array(
     'name' => 'administer video presets',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'video',
   );
@@ -982,7 +982,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer views'] = array(
     'name' => 'administer views',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'views',
   );
@@ -991,7 +991,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer voting api'] = array(
     'name' => 'administer voting api',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'votingapi',
   );
@@ -1000,7 +1000,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer webtools'] = array(
     'name' => 'administer webtools',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'nexteuropa_webtools',
   );
@@ -1009,7 +1009,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer workbench'] = array(
     'name' => 'administer workbench',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'workbench',
   );
@@ -1019,7 +1019,7 @@ function reps_core_user_default_permissions() {
     'name' => 'administer workbench moderation',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'workbench_moderation',
   );
@@ -1028,7 +1028,7 @@ function reps_core_user_default_permissions() {
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'system',
   );
@@ -1037,7 +1037,7 @@ function reps_core_user_default_permissions() {
   $permissions['bypass conversion video'] = array(
     'name' => 'bypass conversion video',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'video',
   );
@@ -1047,7 +1047,7 @@ function reps_core_user_default_permissions() {
     'name' => 'bypass file access',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -1056,7 +1056,7 @@ function reps_core_user_default_permissions() {
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1065,7 +1065,7 @@ function reps_core_user_default_permissions() {
   $permissions['bypass rh_node'] = array(
     'name' => 'bypass rh_node',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'REPS Administrator' => 'REPS Administrator',
       'editor' => 'editor',
     ),
@@ -1076,7 +1076,7 @@ function reps_core_user_default_permissions() {
   $permissions['bypass rh_taxonomy'] = array(
     'name' => 'bypass rh_taxonomy',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rabbit_hole',
   );
@@ -1085,7 +1085,7 @@ function reps_core_user_default_permissions() {
   $permissions['bypass rules access'] = array(
     'name' => 'bypass rules access',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rules',
   );
@@ -1095,7 +1095,7 @@ function reps_core_user_default_permissions() {
     'name' => 'bypass workbench moderation',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -1105,7 +1105,7 @@ function reps_core_user_default_permissions() {
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'user',
   );
@@ -1114,7 +1114,7 @@ function reps_core_user_default_permissions() {
   $permissions['change own logout threshold'] = array(
     'name' => 'change own logout threshold',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'autologout',
   );
@@ -1123,7 +1123,7 @@ function reps_core_user_default_permissions() {
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'user',
   );
@@ -1132,7 +1132,7 @@ function reps_core_user_default_permissions() {
   $permissions['clear contact_points_edc feeds'] = array(
     'name' => 'clear contact_points_edc feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -1141,7 +1141,7 @@ function reps_core_user_default_permissions() {
   $permissions['clear contact_points_edic feeds'] = array(
     'name' => 'clear contact_points_edic feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -1150,7 +1150,7 @@ function reps_core_user_default_permissions() {
   $permissions['clear contact_points_tem feeds'] = array(
     'name' => 'clear contact_points_tem feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -1159,7 +1159,7 @@ function reps_core_user_default_permissions() {
   $permissions['context ajax block access'] = array(
     'name' => 'context ajax block access',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'context_ui',
   );
@@ -1168,7 +1168,7 @@ function reps_core_user_default_permissions() {
   $permissions['convert on submission'] = array(
     'name' => 'convert on submission',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'video',
   );
@@ -1178,7 +1178,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create any reps_core_quicklinks bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1188,7 +1188,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create any reps_core_sb_right_blue_button bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1198,7 +1198,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create any reps_core_sb_right_free_content bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1208,7 +1208,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create any reps_core_sb_right_image_link bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1218,7 +1218,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create any webtools bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1228,7 +1228,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -1241,7 +1241,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1251,7 +1251,7 @@ function reps_core_user_default_permissions() {
   $permissions['create reps_contact_point content'] = array(
     'name' => 'create reps_contact_point content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1260,7 +1260,7 @@ function reps_core_user_default_permissions() {
   $permissions['create reps_homepage content'] = array(
     'name' => 'create reps_homepage content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1270,7 +1270,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create reps_homepage_additional_block content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1281,7 +1281,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create reps_slide_footer content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1292,7 +1292,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create reps_slide_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1303,7 +1303,7 @@ function reps_core_user_default_permissions() {
     'name' => 'create url aliases',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
@@ -1315,7 +1315,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any audio files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -1325,7 +1325,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any document files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -1335,7 +1335,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any image files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -1345,7 +1345,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1354,7 +1354,7 @@ function reps_core_user_default_permissions() {
   $permissions['delete any reps_contact_point content'] = array(
     'name' => 'delete any reps_contact_point content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1364,7 +1364,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_core_quicklinks bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1374,7 +1374,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_core_sb_right_blue_button bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1384,7 +1384,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_core_sb_right_free_content bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1394,7 +1394,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_core_sb_right_image_link bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1403,7 +1403,7 @@ function reps_core_user_default_permissions() {
   $permissions['delete any reps_homepage content'] = array(
     'name' => 'delete any reps_homepage content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1413,7 +1413,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_homepage_additional_block content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1423,7 +1423,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_slide_footer content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1433,7 +1433,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any reps_slide_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1443,7 +1443,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any video files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -1453,7 +1453,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete any webtools bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1463,7 +1463,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own audio files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1474,7 +1474,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own document files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1485,7 +1485,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own image files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -1497,7 +1497,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1507,7 +1507,7 @@ function reps_core_user_default_permissions() {
   $permissions['delete own reps_contact_point content'] = array(
     'name' => 'delete own reps_contact_point content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1516,7 +1516,7 @@ function reps_core_user_default_permissions() {
   $permissions['delete own reps_homepage content'] = array(
     'name' => 'delete own reps_homepage content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1526,7 +1526,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own reps_homepage_additional_block content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1537,7 +1537,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own reps_slide_footer content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1548,7 +1548,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own reps_slide_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1559,7 +1559,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete own video files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1570,7 +1570,7 @@ function reps_core_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1580,7 +1580,7 @@ function reps_core_user_default_permissions() {
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'admin_menu',
   );
@@ -1590,7 +1590,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download any audio files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1601,7 +1601,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download any document files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1612,7 +1612,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download any image files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1623,7 +1623,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download any video files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1634,7 +1634,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download own audio files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1645,7 +1645,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download own document files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1656,7 +1656,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download own image files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1667,7 +1667,7 @@ function reps_core_user_default_permissions() {
     'name' => 'download own video files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1678,7 +1678,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any audio files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1689,7 +1689,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any document files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1700,7 +1700,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any image files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1711,7 +1711,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1721,7 +1721,7 @@ function reps_core_user_default_permissions() {
   $permissions['edit any reps_contact_point content'] = array(
     'name' => 'edit any reps_contact_point content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1731,7 +1731,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_core_quicklinks bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'bean',
@@ -1742,7 +1742,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_core_sb_right_blue_button bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'bean',
@@ -1753,7 +1753,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_core_sb_right_free_content bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'bean',
@@ -1764,7 +1764,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_core_sb_right_image_link bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'bean',
@@ -1775,7 +1775,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1785,7 +1785,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_homepage_additional_block content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1796,7 +1796,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_slide_footer content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1807,7 +1807,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any reps_slide_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1818,7 +1818,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any video files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1829,7 +1829,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit any webtools bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1838,7 +1838,7 @@ function reps_core_user_default_permissions() {
   $permissions['edit bean view mode'] = array(
     'name' => 'edit bean view mode',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'bean',
   );
@@ -1847,7 +1847,7 @@ function reps_core_user_default_permissions() {
   $permissions['edit link settings'] = array(
     'name' => 'edit link settings',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'linkchecker',
   );
@@ -1857,7 +1857,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit meta tags',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -1869,7 +1869,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own audio files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1879,7 +1879,7 @@ function reps_core_user_default_permissions() {
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'comment',
   );
@@ -1889,7 +1889,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own document files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1900,7 +1900,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own image files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -1912,7 +1912,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1922,7 +1922,7 @@ function reps_core_user_default_permissions() {
   $permissions['edit own reps_contact_point content'] = array(
     'name' => 'edit own reps_contact_point content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1932,7 +1932,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own reps_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'node',
   );
@@ -1942,7 +1942,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own reps_homepage_additional_block content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1953,7 +1953,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own reps_slide_footer content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1964,7 +1964,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own reps_slide_homepage content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -1975,7 +1975,7 @@ function reps_core_user_default_permissions() {
     'name' => 'edit own video files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1986,7 +1986,7 @@ function reps_core_user_default_permissions() {
     'name' => 'flush caches',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'admin_menu',
@@ -1996,7 +1996,7 @@ function reps_core_user_default_permissions() {
   $permissions['generate features'] = array(
     'name' => 'generate features',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'features',
   );
@@ -2005,7 +2005,7 @@ function reps_core_user_default_permissions() {
   $permissions['import contact_points_edc feeds'] = array(
     'name' => 'import contact_points_edc feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -2014,7 +2014,7 @@ function reps_core_user_default_permissions() {
   $permissions['import contact_points_edic feeds'] = array(
     'name' => 'import contact_points_edic feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -2023,7 +2023,7 @@ function reps_core_user_default_permissions() {
   $permissions['import contact_points_tem feeds'] = array(
     'name' => 'import contact_points_tem feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -2032,7 +2032,7 @@ function reps_core_user_default_permissions() {
   $permissions['import media'] = array(
     'name' => 'import media',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'media_bulk_upload',
   );
@@ -2042,7 +2042,7 @@ function reps_core_user_default_permissions() {
     'name' => 'manage feature nexteuropa_varnish',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'cem' => 'cem',
       'editor' => 'editor',
     ),
@@ -2054,7 +2054,7 @@ function reps_core_user_default_permissions() {
     'name' => 'manipulate all queues',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'nodequeue',
@@ -2065,7 +2065,7 @@ function reps_core_user_default_permissions() {
     'name' => 'manipulate queues',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'nodequeue',
@@ -2076,7 +2076,7 @@ function reps_core_user_default_permissions() {
     'name' => 'moderate content from draft to needs_review',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2088,7 +2088,7 @@ function reps_core_user_default_permissions() {
     'name' => 'moderate content from needs_review to draft',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2100,7 +2100,7 @@ function reps_core_user_default_permissions() {
     'name' => 'moderate content from needs_review to published',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -2111,7 +2111,7 @@ function reps_core_user_default_permissions() {
     'name' => 'moderate content from needs_review to validated',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -2122,7 +2122,7 @@ function reps_core_user_default_permissions() {
     'name' => 'moderate content from published to archived',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -2133,7 +2133,7 @@ function reps_core_user_default_permissions() {
     'name' => 'moderate content from validated to published',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -2144,7 +2144,7 @@ function reps_core_user_default_permissions() {
     'name' => 'multisite_workbench_moderation_view_bulk_update',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'multisite_workbench_moderation_view',
@@ -2154,7 +2154,7 @@ function reps_core_user_default_permissions() {
   $permissions['node-specific print configuration'] = array(
     'name' => 'node-specific print configuration',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'print_ui',
   );
@@ -2163,7 +2163,7 @@ function reps_core_user_default_permissions() {
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'pathauto',
   );
@@ -2172,7 +2172,7 @@ function reps_core_user_default_permissions() {
   $permissions['override default scheduler time'] = array(
     'name' => 'override default scheduler time',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'scheduler_workbench',
@@ -2182,7 +2182,7 @@ function reps_core_user_default_permissions() {
   $permissions['override player dimensions'] = array(
     'name' => 'override player dimensions',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'video',
   );
@@ -2191,7 +2191,7 @@ function reps_core_user_default_permissions() {
   $permissions['post comments'] = array(
     'name' => 'post comments',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'comment',
@@ -2201,7 +2201,7 @@ function reps_core_user_default_permissions() {
   $permissions['provide translation services'] = array(
     'name' => 'provide translation services',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'tmgmt_local',
   );
@@ -2210,7 +2210,7 @@ function reps_core_user_default_permissions() {
   $permissions['re convert video'] = array(
     'name' => 're convert video',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
     ),
     'module' => 'video',
@@ -2220,7 +2220,7 @@ function reps_core_user_default_permissions() {
   $permissions['rename features'] = array(
     'name' => 'rename features',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'features',
   );
@@ -2230,7 +2230,7 @@ function reps_core_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2241,7 +2241,7 @@ function reps_core_user_default_permissions() {
   $permissions['run cron jobs'] = array(
     'name' => 'run cron jobs',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ultimate_cron',
   );
@@ -2252,7 +2252,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'PIWIK administrator' => 'PIWIK administrator',
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -2264,7 +2264,7 @@ function reps_core_user_default_permissions() {
   $permissions['search content'] = array(
     'name' => 'search content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
@@ -2274,7 +2274,7 @@ function reps_core_user_default_permissions() {
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'user',
   );
@@ -2283,7 +2283,7 @@ function reps_core_user_default_permissions() {
   $permissions['send unlimited emails'] = array(
     'name' => 'send unlimited emails',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'print_mail',
   );
@@ -2293,7 +2293,7 @@ function reps_core_user_default_permissions() {
     'name' => 'show format selection for bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'better_formats',
   );
@@ -2302,7 +2302,7 @@ function reps_core_user_default_permissions() {
   $permissions['show format selection for comment'] = array(
     'name' => 'show format selection for comment',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
     ),
     'module' => 'better_formats',
@@ -2313,7 +2313,7 @@ function reps_core_user_default_permissions() {
     'name' => 'show format selection for file',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2324,7 +2324,7 @@ function reps_core_user_default_permissions() {
   $permissions['show format selection for flagging'] = array(
     'name' => 'show format selection for flagging',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'better_formats',
   );
@@ -2333,7 +2333,7 @@ function reps_core_user_default_permissions() {
   $permissions['show format selection for node'] = array(
     'name' => 'show format selection for node',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
@@ -2345,7 +2345,7 @@ function reps_core_user_default_permissions() {
   $permissions['show format selection for rules_config'] = array(
     'name' => 'show format selection for rules_config',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'better_formats',
   );
@@ -2355,7 +2355,7 @@ function reps_core_user_default_permissions() {
     'name' => 'show format selection for taxonomy_term',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2367,7 +2367,7 @@ function reps_core_user_default_permissions() {
     'name' => 'show format selection for user',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2379,7 +2379,7 @@ function reps_core_user_default_permissions() {
     'name' => 'show format tips',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2391,7 +2391,7 @@ function reps_core_user_default_permissions() {
     'name' => 'show more format tips link',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2402,7 +2402,7 @@ function reps_core_user_default_permissions() {
   $permissions['skip CAPTCHA'] = array(
     'name' => 'skip CAPTCHA',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'captcha',
   );
@@ -2411,7 +2411,7 @@ function reps_core_user_default_permissions() {
   $permissions['skip comment approval'] = array(
     'name' => 'skip comment approval',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'comment',
@@ -2421,7 +2421,7 @@ function reps_core_user_default_permissions() {
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'entity_translation',
   );
@@ -2431,7 +2431,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate admin strings',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'i18n_string',
@@ -2442,7 +2442,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate any entity',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'entity_translation',
@@ -2453,7 +2453,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate bean entities',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'entity_translation',
@@ -2463,7 +2463,7 @@ function reps_core_user_default_permissions() {
   $permissions['translate file entities'] = array(
     'name' => 'translate file entities',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'entity_translation',
   );
@@ -2473,7 +2473,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate interface',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'locale',
   );
@@ -2483,7 +2483,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate node entities',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'entity_translation',
@@ -2494,7 +2494,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate taxonomy_term entities',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'entity_translation',
@@ -2505,7 +2505,7 @@ function reps_core_user_default_permissions() {
     'name' => 'translate user-defined strings',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'i18n_string',
@@ -2515,7 +2515,7 @@ function reps_core_user_default_permissions() {
   $permissions['unlock contact_points_edc feeds'] = array(
     'name' => 'unlock contact_points_edc feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -2524,7 +2524,7 @@ function reps_core_user_default_permissions() {
   $permissions['unlock contact_points_edic feeds'] = array(
     'name' => 'unlock contact_points_edic feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -2533,7 +2533,7 @@ function reps_core_user_default_permissions() {
   $permissions['unlock contact_points_tem feeds'] = array(
     'name' => 'unlock contact_points_tem feeds',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'feeds',
   );
@@ -2542,7 +2542,7 @@ function reps_core_user_default_permissions() {
   $permissions['upload webtools custom js'] = array(
     'name' => 'upload webtools custom js',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'nexteuropa_webtools',
   );
@@ -2551,7 +2551,7 @@ function reps_core_user_default_permissions() {
   $permissions['use advanced search'] = array(
     'name' => 'use advanced search',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
@@ -2561,7 +2561,7 @@ function reps_core_user_default_permissions() {
   $permissions['use ctools import'] = array(
     'name' => 'use ctools import',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ctools',
   );
@@ -2570,7 +2570,7 @@ function reps_core_user_default_permissions() {
   $permissions['use default thumb'] = array(
     'name' => 'use default thumb',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'video',
   );
@@ -2579,7 +2579,7 @@ function reps_core_user_default_permissions() {
   $permissions['use flag import'] = array(
     'name' => 'use flag import',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'flag',
   );
@@ -2589,7 +2589,7 @@ function reps_core_user_default_permissions() {
     'name' => 'use media wysiwyg',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'media_wysiwyg',
@@ -2599,7 +2599,7 @@ function reps_core_user_default_permissions() {
   $permissions['use text format basic_html'] = array(
     'name' => 'use text format basic_html',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
@@ -2611,7 +2611,7 @@ function reps_core_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
@@ -2623,7 +2623,7 @@ function reps_core_user_default_permissions() {
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
@@ -2636,7 +2636,7 @@ function reps_core_user_default_permissions() {
     'name' => 'use workbench_moderation my drafts tab',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -2649,7 +2649,7 @@ function reps_core_user_default_permissions() {
     'name' => 'use workbench_moderation needs review tab',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -2661,7 +2661,7 @@ function reps_core_user_default_permissions() {
   $permissions['use xmlsitemap'] = array(
     'name' => 'use xmlsitemap',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'xmlsitemap',
   );
@@ -2671,7 +2671,7 @@ function reps_core_user_default_permissions() {
     'name' => 'version management edits',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
     ),
@@ -2682,7 +2682,7 @@ function reps_core_user_default_permissions() {
   $permissions['view advanced help index'] = array(
     'name' => 'view advanced help index',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'advanced_help',
   );
@@ -2691,7 +2691,7 @@ function reps_core_user_default_permissions() {
   $permissions['view advanced help popup'] = array(
     'name' => 'view advanced help popup',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'advanced_help',
   );
@@ -2700,7 +2700,7 @@ function reps_core_user_default_permissions() {
   $permissions['view advanced help topic'] = array(
     'name' => 'view advanced help topic',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'advanced_help',
   );
@@ -2709,7 +2709,7 @@ function reps_core_user_default_permissions() {
   $permissions['view alert message'] = array(
     'name' => 'view alert message',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'multisite_drupal_toolbox',
   );
@@ -2719,7 +2719,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view all unpublished content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -2732,7 +2732,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view any reps_core_quicklinks bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'editor' => 'editor',
     ),
@@ -2744,7 +2744,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view any reps_core_sb_right_blue_button bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'editor' => 'editor',
     ),
@@ -2756,7 +2756,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view any reps_core_sb_right_free_content bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'editor' => 'editor',
     ),
@@ -2768,7 +2768,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view any reps_core_sb_right_image_link bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'editor' => 'editor',
     ),
@@ -2780,7 +2780,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view any webtools bean',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
@@ -2793,7 +2793,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view bean page',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
     ),
@@ -2804,7 +2804,7 @@ function reps_core_user_default_permissions() {
   $permissions['view bean revisions'] = array(
     'name' => 'view bean revisions',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editorial team member' => 'editorial team member',
     ),
     'module' => 'bean',
@@ -2814,7 +2814,7 @@ function reps_core_user_default_permissions() {
   $permissions['view cron jobs'] = array(
     'name' => 'view cron jobs',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'ultimate_cron',
   );
@@ -2823,7 +2823,7 @@ function reps_core_user_default_permissions() {
   $permissions['view files'] = array(
     'name' => 'view files',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -2834,7 +2834,7 @@ function reps_core_user_default_permissions() {
   $permissions['view moderation history'] = array(
     'name' => 'view moderation history',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editorial team member' => 'editorial team member',
@@ -2846,7 +2846,7 @@ function reps_core_user_default_permissions() {
   $permissions['view moderation messages'] = array(
     'name' => 'view moderation messages',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editorial team member' => 'editorial team member',
@@ -2859,7 +2859,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -2872,7 +2872,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view own private files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'contributor' => 'contributor',
       'editor' => 'editor',
       'editorial team member' => 'editorial team member',
@@ -2884,7 +2884,7 @@ function reps_core_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
@@ -2898,7 +2898,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view private files',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'file_entity',
   );
@@ -2907,7 +2907,7 @@ function reps_core_user_default_permissions() {
   $permissions['view rate results page'] = array(
     'name' => 'view rate results page',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
     ),
     'module' => 'rate',
   );
@@ -2916,7 +2916,7 @@ function reps_core_user_default_permissions() {
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editorial team member' => 'editorial team member',
@@ -2929,7 +2929,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view scheduled content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'scheduler',
@@ -2940,7 +2940,7 @@ function reps_core_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'admin maintenance' => 'admin maintenance',
       'editor' => 'editor',
     ),
     'module' => 'system',

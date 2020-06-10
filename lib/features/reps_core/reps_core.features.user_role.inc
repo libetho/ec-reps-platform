@@ -17,5 +17,11 @@ function reps_core_user_default_roles() {
     'weight' => 5,
   );
 
+  // Exported role: admin maintenance.
+  $roles['admin maintenance'] = (object) array(
+    'name' => 'admin maintenance',
+    'weight' => 6,
+  );
+
   return $roles;
 }
