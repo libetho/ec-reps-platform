@@ -1911,7 +1911,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
     min-width: 100%;
     float: none;
   }
-  
   /*REPR-1512 title is overlapping menu : override ec_resp.css. */
   .mobile-user-bar.affix + .region-featured #main-menu .navbar {
     top: 0;
@@ -2243,7 +2242,9 @@ div[about*='news/videos'] .field-name-body {
 .wtPopup.ttip_modal .wtPopupContent .ttip_content:last-child {
   padding-bottom: 20px;
 }
+
 /*REPR-1871 social images width should not be 100%*/
-  .reps-no-grow-container img {
-    min-width: auto;
+.reps-no-grow-container img {
+  min-width: auto;
 }
+
