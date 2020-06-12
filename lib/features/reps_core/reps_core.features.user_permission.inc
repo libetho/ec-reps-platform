@@ -578,6 +578,7 @@ function reps_core_user_default_permissions() {
   $permissions['administer menu attributes'] = array(
     'name' => 'administer menu attributes',
     'roles' => array(
+      'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
     ),
     'module' => 'menu_attributes',
