@@ -102,20 +102,20 @@ function reps_preprocess_page(&$variables) {
   drupal_add_js('https://ec.europa.eu/wel/surveys/wr_survey01/wr_survey.js', 'external');
 }
 
+
 /**
- * Implements theme_menu_tree_main_menu().
- */
+* Implements theme_menu_tree_main_menu().
+*/
 function reps_menu_tree__main_submenu($variables) {
+  // dpm($variables);
+ 
   if (strpos($variables['tree'], 'dropdown-menu')) {
     // There is a dropdown in this tree.
     $variables['tree'] = str_replace('nav navbar-nav', 'list-group list-group-flush list-unstyled', $variables['tree']);
-    return '<ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
   }
-  else {
-    // There is no dropdown in this tree, simply return it in a <ul>.
-    return '<span><b class="caret"></b></span><ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
-  }
+  return '<ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
 }
+
 
 /**
  * Implements theme_menu_tree().
@@ -130,9 +130,11 @@ function reps_menu_tree__submenu($variables) {
  * Implements theme_menu_link().
  */
 function reps_menu_link(&$variables) {
+ 
   if ($variables['element']['#original_link']['depth'] < 3) {
     $element = $variables['element'];
     $sub_menu = '';
+    $caret='';
 
     // Test if there is a sub menu.
     if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
@@ -149,6 +151,10 @@ function reps_menu_link(&$variables) {
       else {
         $element['#below']['#theme_wrappers'][0] = 'menu_tree__submenu';
       }
+      //REPR-1878 menu broken when third level is used//
+      if($element['#original_link']['menu_name'] === 'main-menu' && $variables['element']['#original_link']['depth'] == 1) {
+        $caret = '<span><b class="caret"></b></span>';
+      }
 
       // Render sub menu.
       $sub_menu = drupal_render($element['#below']);
@@ -156,7 +162,7 @@ function reps_menu_link(&$variables) {
 
     $element['#localized_options']['html'] = TRUE;
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-    return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+    return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $caret . $sub_menu . "</li>\n";
   }
 }
 
@@ -170,7 +176,6 @@ function reps_preprocess_node(&$variables) {
   if (empty($variables['content']['field_reps_core_abstract'])) {
     $variables['no_abstract'] = 'no-abstract';
   }
-
 }
 
 /**
