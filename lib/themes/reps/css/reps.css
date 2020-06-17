@@ -1905,7 +1905,8 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   }
   /*REPR-1512 text should be forced to be under the main image. */
   body.reps #mainContainer #layout-body #block-system-main .panel-body .node-page .content .field-type-text-with-summary img.right,
-  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map, .file) img:first-child {
+  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map,
+  .file) img:first-child {
     display: block;
     margin: 0 0 10px 0 !important;
     min-width: 100%;
@@ -2241,4 +2242,9 @@ div[about*='news/videos'] .field-name-body {
 }
 .wtPopup.ttip_modal .wtPopupContent .ttip_content:last-child {
   padding-bottom: 20px;
+}
+
+/*REPR-1871 social images width should not be 100%*/
+.reps-no-grow-container img {
+  min-width: auto;
 }
