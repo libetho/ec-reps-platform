@@ -54,19 +54,23 @@ function reps_admin_update_7002() {
     'libetho',
     'n0023soa',
     'settemi',
+    'siebean'
   );
   foreach($usernames as $username) {
     $user = user_load_by_name($username);
     if (!empty($user)) {
-      $userids[] = $user->uid;
+      $userids[$username] = $user->uid;
     }
   }
   $roles_to_attach = array(
     'site admin',
     'User management',
   );
-  foreach ($roles_to_attach as $role) {
-    $role = user_role_load_by_name($role);
+  foreach ($roles_to_attach as $rolename) {
+    $role = user_role_load_by_name($rolename);
     user_multiple_role_edit($userids, 'add_role', $role->rid);
+    if ($rolename == 'site admin') {
+      user_multiple_role_edit(array($userids['siebean']), 'remove_role', $role->rid);
+    }
   }
 }
