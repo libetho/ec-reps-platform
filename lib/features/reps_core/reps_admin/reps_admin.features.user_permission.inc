@@ -35,9 +35,9 @@ function reps_admin_user_default_permissions() {
     'name' => 'access site map',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
       'anonymous user' => 'anonymous user',
       'editor' => 'editor',
+      'site admin' => 'site admin',
     ),
     'module' => 'site_map',
   );
@@ -46,8 +46,8 @@ function reps_admin_user_default_permissions() {
   $permissions['access site-wide contact form'] = array(
     'name' => 'access site-wide contact form',
     'roles' => array(
-      'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
+      'site admin' => 'site admin',
     ),
     'module' => 'contact',
   );
@@ -56,8 +56,8 @@ function reps_admin_user_default_permissions() {
   $permissions['access user contact forms'] = array(
     'name' => 'access user contact forms',
     'roles' => array(
-      'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
+      'site admin' => 'site admin',
     ),
     'module' => 'contact',
   );
@@ -67,8 +67,8 @@ function reps_admin_user_default_permissions() {
     'name' => 'add media from remote sources',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
       'editor' => 'editor',
+      'site admin' => 'site admin',
     ),
     'module' => 'media_internet',
   );
@@ -125,15 +125,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'gelf_log',
-  );
-
-  // Exported permission: 'administer group'.
-  $permissions['administer group'] = array(
-    'name' => 'administer group',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'og',
   );
 
   // Exported permission: 'administer jquery update'.
@@ -204,7 +195,6 @@ function reps_admin_user_default_permissions() {
     'name' => 'create translation jobs',
     'roles' => array(
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'tmgmt',
   );
@@ -258,8 +248,8 @@ function reps_admin_user_default_permissions() {
   $permissions['diff view changes'] = array(
     'name' => 'diff view changes',
     'roles' => array(
-      'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
+      'site admin' => 'site admin',
     ),
     'module' => 'diff',
   );
@@ -327,39 +317,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'features',
   );
 
-  // Exported permission: 'moderate content from published to draft'.
-  $permissions['moderate content from published to draft'] = array(
-    'name' => 'moderate content from published to draft',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from published to expired'.
-  $permissions['moderate content from published to expired'] = array(
-    'name' => 'moderate content from published to expired',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from published to needs_review'.
-  $permissions['moderate content from published to needs_review'] = array(
-    'name' => 'moderate content from published to needs_review',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
   // Exported permission: 'nexteuropa manage users non restricted operations'.
   $permissions['nexteuropa manage users non restricted operations'] = array(
     'name' => 'nexteuropa manage users non restricted operations',
@@ -397,39 +354,11 @@ function reps_admin_user_default_permissions() {
     'module' => 'scheduler_workbench',
   );
 
-  // Exported permission: 'show format selection for og_membership'.
-  $permissions['show format selection for og_membership'] = array(
-    'name' => 'show format selection for og_membership',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'better_formats',
-  );
-
-  // Exported permission: 'show format selection for og_membership_type'.
-  $permissions['show format selection for og_membership_type'] = array(
-    'name' => 'show format selection for og_membership_type',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'better_formats',
-  );
-
-  // Exported permission: 'show format selection for tmgmt_job'.
-  $permissions['show format selection for tmgmt_job'] = array(
-    'name' => 'show format selection for tmgmt_job',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'better_formats',
-  );
-
   // Exported permission: 'submit translation jobs'.
   $permissions['submit translation jobs'] = array(
     'name' => 'submit translation jobs',
     'roles' => array(
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'tmgmt',
   );

@@ -30,7 +30,6 @@ function reps_core_user_default_permissions() {
       'site admin' => 'site admin',
       'cem' => 'cem',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'admin_menu',
   );
@@ -43,7 +42,6 @@ function reps_core_user_default_permissions() {
       'site admin' => 'site admin',
       'cem' => 'cem',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'system',
   );
@@ -55,7 +53,6 @@ function reps_core_user_default_permissions() {
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'bean',
   );
@@ -109,7 +106,6 @@ function reps_core_user_default_permissions() {
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'node',
   );
@@ -119,7 +115,6 @@ function reps_core_user_default_permissions() {
     'name' => 'access contextual links',
     'roles' => array(
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'contextual',
   );
@@ -149,7 +144,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'media',
@@ -161,7 +155,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'linkchecker',
@@ -222,7 +215,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'user',
   );
@@ -233,8 +225,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'workbench',
   );
@@ -569,7 +559,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'menu',
   );
@@ -808,7 +797,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'taxonomy',
   );
@@ -1099,9 +1087,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'file_entity',
   );
@@ -1175,7 +1161,6 @@ function reps_core_user_default_permissions() {
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'path',
   );
@@ -1356,7 +1341,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1728,7 +1712,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'metatag',
@@ -1771,7 +1754,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'file_entity',
@@ -1938,7 +1920,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -1950,7 +1931,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'workbench_moderation',
@@ -2034,7 +2014,6 @@ function reps_core_user_default_permissions() {
     'name' => 'override default scheduler time',
     'roles' => array(
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'scheduler_workbench',
   );
@@ -2072,7 +2051,6 @@ function reps_core_user_default_permissions() {
     'name' => 're convert video',
     'roles' => array(
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
     ),
     'module' => 'video',
   );
@@ -2083,7 +2061,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -2107,7 +2084,6 @@ function reps_core_user_default_permissions() {
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'scheduler',
   );
@@ -2155,7 +2131,6 @@ function reps_core_user_default_permissions() {
     'name' => 'show format selection for comment',
     'roles' => array(
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
     ),
     'module' => 'better_formats',
   );
@@ -2166,7 +2141,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'better_formats',
@@ -2187,7 +2161,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'better_formats',
@@ -2208,7 +2181,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'better_formats',
@@ -2220,7 +2192,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'better_formats',
@@ -2232,7 +2203,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'better_formats',
@@ -2244,7 +2214,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'better_formats',
@@ -2295,7 +2264,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'entity_translation',
   );
@@ -2454,7 +2422,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'filter',
@@ -2466,7 +2433,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'filter',
@@ -2478,7 +2444,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'filter',
@@ -2490,9 +2455,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'workbench_moderation',
   );
@@ -2503,9 +2466,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'workbench_moderation',
   );
@@ -2525,7 +2486,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'version_management',
@@ -2573,9 +2533,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'workbench_moderation',
   );
@@ -2648,7 +2606,6 @@ function reps_core_user_default_permissions() {
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'bean',
   );
@@ -2658,7 +2615,6 @@ function reps_core_user_default_permissions() {
     'name' => 'view bean revisions',
     'roles' => array(
       'site admin' => 'site admin',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'bean',
   );
@@ -2689,8 +2645,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'workbench_moderation',
   );
@@ -2701,8 +2655,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'workbench_moderation',
   );
@@ -2713,9 +2665,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'file_entity',
   );
@@ -2726,9 +2676,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'site admin' => 'site admin',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'file_entity',
   );
@@ -2739,9 +2687,7 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
       'editor' => 'editor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'node',
   );
@@ -2771,8 +2717,6 @@ function reps_core_user_default_permissions() {
     'roles' => array(
       'site admin' => 'site admin',
       'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
-      'editorial team member' => 'editorial team member',
     ),
     'module' => 'node',
   );
