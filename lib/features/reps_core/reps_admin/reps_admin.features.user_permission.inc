@@ -100,15 +100,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'drafty',
   );
 
-  // Exported permission: 'administer features'.
-  $permissions['administer features'] = array(
-    'name' => 'administer features',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'features',
-  );
-
   // Exported permission: 'administer feeds_tamper'.
   $permissions['administer feeds_tamper'] = array(
     'name' => 'administer feeds_tamper',
@@ -127,15 +118,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'gelf_log',
   );
 
-  // Exported permission: 'administer jquery update'.
-  $permissions['administer jquery update'] = array(
-    'name' => 'administer jquery update',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'jquery_update',
-  );
-
   // Exported permission: 'administer menu-flexslider-example menu items'.
   $permissions['administer menu-flexslider-example menu items'] = array(
     'name' => 'administer menu-flexslider-example menu items',
@@ -143,15 +125,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'menu_admin_per_menu',
-  );
-
-  // Exported permission: 'administer modules'.
-  $permissions['administer modules'] = array(
-    'name' => 'administer modules',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'system',
   );
 
   // Exported permission: 'administer nexteuropa cookie consent kit configuration'.
@@ -170,15 +143,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'nexteuropa_laco',
-  );
-
-  // Exported permission: 'administer software updates'.
-  $permissions['administer software updates'] = array(
-    'name' => 'administer software updates',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'system',
   );
 
   // Exported permission: 'administer xmlsitemap'.
@@ -306,15 +270,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'multisite_drupal_features_set_standard',
-  );
-
-  // Exported permission: 'manage features'.
-  $permissions['manage features'] = array(
-    'name' => 'manage features',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'features',
   );
 
   // Exported permission: 'nexteuropa manage users non restricted operations'.
