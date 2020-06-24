@@ -36,3 +36,58 @@ function reps_admin_update_7001() {
   module_disable($modules, TRUE);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Attach site admin and user manager roles to users maintenance.
+ */
+function reps_admin_update_7002() {
+  features_revert(array(
+    'reps_core' => array(
+      'user_role',
+      'user_permission',
+    ),
+  ));
+  $usernames = array(
+    'danjoju',
+    'kieleda',
+    'lemaith',
+    'libetho',
+    'n0023soa',
+    'settemi',
+    'siebean',
+  );
+  foreach ($usernames as $username) {
+    $user = user_load_by_name($username);
+    if (empty($user)) {
+      $new_user = array(
+        'name' => $username,
+        'status' => 1,
+        'init' => $username,
+      );
+      $user = user_save(NULL, $new_user);
+      if (!empty($user)) {
+        db_insert('authmap')
+          ->fields(array(
+            'uid' => $user->uid,
+            'authname' => $username,
+            'module' => 'ecas',
+          ))
+          ->execute();
+      }
+    }
+    if (!empty($user)) {
+      $userids[$username] = $user->uid;
+    }
+  }
+  $roles_to_attach = array(
+    'site admin',
+    'User management',
+  );
+  foreach ($roles_to_attach as $rolename) {
+    $role = user_role_load_by_name($rolename);
+    user_multiple_role_edit($userids, 'add_role', $role->rid);
+    if ($rolename == 'site admin') {
+      user_multiple_role_edit(array($userids['siebean']), 'remove_role', $role->rid);
+    }
+  }
+}
