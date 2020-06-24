@@ -2,13 +2,13 @@
 
 /**
  * @file
- * reps_core.features.user_role.inc
+ * reps_admin.features.user_role.inc
  */
 
 /**
  * Implements hook_user_default_roles().
  */
-function reps_core_user_default_roles() {
+function reps_admin_user_default_roles() {
   $roles = array();
 
   // Exported role: REPS Administrator.

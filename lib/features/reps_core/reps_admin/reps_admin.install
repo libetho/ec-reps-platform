@@ -46,6 +46,10 @@ function reps_admin_update_7002() {
       'user_role',
       'user_permission',
     ),
+    'reps_admin' => array(
+      'user_role',
+      'user_permission',
+    ),
   ));
   $usernames = array(
     'danjoju',
