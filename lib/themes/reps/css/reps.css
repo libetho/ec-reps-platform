@@ -2242,3 +2242,9 @@ div[about*='news/videos'] .field-name-body {
 .wtPopup.ttip_modal .wtPopupContent .ttip_content:last-child {
   padding-bottom: 20px;
 }
+/*REPR-1871 social images width should not be 100%*/
+.reps-no-grow-container img,
+body.reps #mainContainer #layout-body .view-reps-events .reps-no-grow-container img {
+  min-width: auto;
+  width: auto;
+}
