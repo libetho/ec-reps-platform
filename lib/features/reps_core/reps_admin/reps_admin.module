@@ -415,7 +415,6 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
  * Implements hook_form_FORM_ID_alter().
  */
 function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-
   if ($form['#id'] == 'views-exposed-form-core-content-administration-page') {
     $options = &$form['type']['#options'];
     if (!empty($options)) {
@@ -425,5 +424,16 @@ function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id
         }
       }
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function reps_admin_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['#node_edit_form']) && $form['#node_edit_form'] == TRUE && !empty($form_state['node']->path['source'])) {
+    $form_state['node']->path['alias'] = drupal_get_path_alias($form_state['node']->path['source']);
+    $form_state['node']->path['language'] = LANGUAGE_NONE;
+    $form_state['node']->path['pathauto'] = FALSE;
   }
 }
