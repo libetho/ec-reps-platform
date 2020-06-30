@@ -34,7 +34,7 @@ projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.1
 
 projects[multiform][subdir] = "contrib"
-projects[multiform][version] = 1.4
+projects[multiform][version] = 1.6
 
 projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = 2.2

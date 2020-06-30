@@ -16,7 +16,7 @@ function reps_videos_user_default_permissions() {
     'name' => 'create reps_video content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -27,7 +27,7 @@ function reps_videos_user_default_permissions() {
     'name' => 'delete any reps_video content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
@@ -37,7 +37,7 @@ function reps_videos_user_default_permissions() {
     'name' => 'delete own reps_video content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -48,7 +48,7 @@ function reps_videos_user_default_permissions() {
     'name' => 'edit any reps_video content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -59,7 +59,7 @@ function reps_videos_user_default_permissions() {
     'name' => 'edit own reps_video content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',

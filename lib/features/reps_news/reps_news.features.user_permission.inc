@@ -16,7 +16,7 @@ function reps_news_user_default_permissions() {
     'name' => 'add terms in reps_news_categories',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'taxonomy_access_fix',
@@ -27,7 +27,7 @@ function reps_news_user_default_permissions() {
     'name' => 'create reps_news content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -38,7 +38,7 @@ function reps_news_user_default_permissions() {
     'name' => 'delete any reps_news content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
@@ -48,7 +48,7 @@ function reps_news_user_default_permissions() {
     'name' => 'delete own reps_news content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -66,7 +66,7 @@ function reps_news_user_default_permissions() {
     'name' => 'edit any reps_news content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -77,7 +77,7 @@ function reps_news_user_default_permissions() {
     'name' => 'edit own reps_news content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'node',
@@ -88,7 +88,7 @@ function reps_news_user_default_permissions() {
     'name' => 'edit terms in reps_news_categories',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'administrator' => 'administrator',
+      'site admin' => 'site admin',
       'editor' => 'editor',
     ),
     'module' => 'taxonomy',
