@@ -69,7 +69,6 @@ features[user_permission][] = administer fieldgroups
 features[user_permission][] = administer files
 features[user_permission][] = administer flags
 features[user_permission][] = administer flexslider
-features[user_permission][] = administer gelf_log settings
 features[user_permission][] = administer image styles
 features[user_permission][] = administer languages
 features[user_permission][] = administer linkchecker

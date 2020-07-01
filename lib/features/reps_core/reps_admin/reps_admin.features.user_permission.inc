@@ -595,15 +595,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'flexslider',
   );
 
-  // Exported permission: 'administer gelf_log settings'.
-  $permissions['administer gelf_log settings'] = array(
-    'name' => 'administer gelf_log settings',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'gelf_log',
-  );
-
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
