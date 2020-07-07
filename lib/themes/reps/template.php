@@ -102,20 +102,16 @@ function reps_preprocess_page(&$variables) {
   drupal_add_js('https://ec.europa.eu/wel/surveys/wr_survey01/wr_survey.js', 'external');
 }
 
-
 /**
-* Implements theme_menu_tree_main_menu().
-*/
+ * Implements theme_menu_tree_main_menu().
+ */
 function reps_menu_tree__main_submenu($variables) {
-  // dpm($variables);
- 
   if (strpos($variables['tree'], 'dropdown-menu')) {
     // There is a dropdown in this tree.
     $variables['tree'] = str_replace('nav navbar-nav', 'list-group list-group-flush list-unstyled', $variables['tree']);
   }
   return '<ul class="dropdown-menu menu clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
 }
-
 
 /**
  * Implements theme_menu_tree().
@@ -130,11 +126,11 @@ function reps_menu_tree__submenu($variables) {
  * Implements theme_menu_link().
  */
 function reps_menu_link(&$variables) {
- 
+
   if ($variables['element']['#original_link']['depth'] < 3) {
     $element = $variables['element'];
     $sub_menu = '';
-    $caret='';
+    $caret = '';
 
     // Test if there is a sub menu.
     if ($element['#below'] && !theme_get_setting('disable_dropdown_menu') && !in_array('dropdown', $element['#attributes']['class'])) {
@@ -151,8 +147,8 @@ function reps_menu_link(&$variables) {
       else {
         $element['#below']['#theme_wrappers'][0] = 'menu_tree__submenu';
       }
-      //REPR-1878 menu broken when third level is used//
-      if($element['#original_link']['menu_name'] === 'main-menu' && $variables['element']['#original_link']['depth'] == 1) {
+      // REPR-1878 menu broken when third level is used//.
+      if ($element['#original_link']['menu_name'] === 'main-menu' && $variables['element']['#original_link']['depth'] == 1) {
         $caret = '<span><b class="caret"></b></span>';
       }
 
