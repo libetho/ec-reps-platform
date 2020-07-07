@@ -2047,6 +2047,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   #main-menu .visible-xs ul li.active-trail ul.dropdown-menu li.active-trail a {
     border-left: none !important;
     width: 100% !important;
+    font-weight: 700;
   }
   #main-menu .visible-sm ul li.active-trail.open .caret,
   #main-menu .visible-xs ul li.active-trail.open .caret {
