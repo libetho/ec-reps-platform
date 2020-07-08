@@ -28,7 +28,8 @@ function reps_news_field_group_info() {
       1 => 'field_reps_core_abstract',
       2 => 'field_reps_core_date',
       3 => 'field_reps_core_image',
-      4 => 'field_reps_news_category',
+      4 => 'field_tags',
+      5 => 'field_reps_news_category',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
