@@ -1,6 +1,13 @@
 /* screen sizes definition */
 /* custom variables */
-/* functions*/
+/* mixins*/
+.mx-grid-3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
 /* REPR-1305 => ct videos display */
 /* end REPR-1305 */
 /* REPR-1673 body images responsive */
@@ -1392,6 +1399,25 @@ form .field-name-field-reps-core-image {
 #block-system-main .view-reps-videos .view-content .views-row .views-field-title-field a,
 .view-reps-videos .view-content .views-row .views-field-title-field a {
   color: #347c98;
+}
+@media all and (min-width: 768px) {
+  #block-system-main .view-reps-videos .view-content,
+  .view-reps-videos .view-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1.5rem 3.5rem;
+    margin: 0;
+  }
+  #block-system-main .view-reps-videos .view-content .views-row,
+  .view-reps-videos .view-content .views-row {
+    float: none;
+    margin-top: 0;
+    padding: 0;
+    width: auto;
+  }
 }
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {

@@ -22,7 +22,17 @@
 @h1Color: #878c92;
 @maltaRed: #b60522;
 
-/* functions*/
+/* mixins*/
+.mx-grid-3 {
+
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+}
+
+
 
 /* REPR-1305 => ct videos display */
 
@@ -1576,7 +1586,26 @@ form .field-name-field-reps-core-image {
       }
     }
   }
-} // .view-reps-videos END
+}
+@media all and (min-width: @screen-sm ) {
+
+  #block-system-main .view-reps-videos,
+  .view-reps-videos {
+    .view-content {
+      .mx-grid-3();
+      grid-gap: 1.5rem 3.5rem;
+      margin: 0;
+      .views-row {
+        float: none;
+        margin-top:0;
+        padding: 0;
+        width: auto;
+      }
+    }
+  }
+}
+
+// .view-reps-videos END
 /* Homepage additinal block */
 
 .view-reps-homepage-additional-blocks {
