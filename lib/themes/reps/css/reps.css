@@ -1401,8 +1401,8 @@ form .field-name-field-reps-core-image {
   color: #347c98;
 }
 @media all and (min-width: 768px) {
-  #block-system-main .view-reps-videos .view-content,
-  .view-reps-videos .view-content {
+  .not-front #block-system-main .view-reps-videos .view-content,
+  .not-front .view-reps-videos .view-content {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -1411,8 +1411,8 @@ form .field-name-field-reps-core-image {
     grid-gap: 1.5rem 3.5rem;
     margin: 0;
   }
-  #block-system-main .view-reps-videos .view-content .views-row,
-  .view-reps-videos .view-content .views-row {
+  .not-front #block-system-main .view-reps-videos .view-content .views-row,
+  .not-front .view-reps-videos .view-content .views-row {
     float: none;
     margin-top: 0;
     padding: 0;
