@@ -419,11 +419,6 @@ body.reps #mainContainer #layout-body .view-reps-events img {
 body.reps #mainContainer #layout-body #block-views-reps-news-block .panel-heading {
   border-bottom: 1px dashed #878c92;
 }
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row {
-  float: left;
-  padding: 0 15px;
-  width: 33.33333333%;
-}
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row img {
   width: 100%;
   height: auto;
@@ -431,10 +426,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row .views-field-title-field-et {
   font-weight: bold;
   margin-top: 10px;
-}
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row-last {
-  margin-right: 0;
-  width: 33.33333333%;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content {
   margin: 0 -15px;
@@ -1377,10 +1368,8 @@ form .field-name-field-reps-core-image {
 .view-reps-videos .view-content .views-row {
   border: none;
   border-top: none;
-  float: left;
   margin-top: 10px;
   padding: 0 15px;
-  width: 33%;
 }
 #block-system-main .view-reps-videos .view-content .views-row img,
 .view-reps-videos .view-content .views-row img {
@@ -1401,8 +1390,8 @@ form .field-name-field-reps-core-image {
   color: #347c98;
 }
 @media all and (min-width: 768px) {
-  .not-front #block-system-main .view-reps-videos .view-content,
-  .not-front .view-reps-videos .view-content {
+  #block-system-main .view-reps-videos .view-content,
+  .view-reps-videos .view-content {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -1411,9 +1400,8 @@ form .field-name-field-reps-core-image {
     grid-gap: 1.5rem 3.5rem;
     margin: 0;
   }
-  .not-front #block-system-main .view-reps-videos .view-content .views-row,
-  .not-front .view-reps-videos .view-content .views-row {
-    float: none;
+  #block-system-main .view-reps-videos .view-content .views-row,
+  .view-reps-videos .view-content .views-row {
     margin-top: 0;
     padding: 0;
     width: auto;
@@ -1900,7 +1888,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row,
   #block-system-main .view-reps-videos .view-content .views-row,
   .view-reps-videos .view-content .views-row {
-    float: none;
     padding: 10px 0;
     width: 100%;
   }
