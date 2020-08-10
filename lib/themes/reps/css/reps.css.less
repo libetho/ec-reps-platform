@@ -1590,6 +1590,35 @@ form .field-name-field-reps-core-image {
         padding: 0;
         width: auto;
       }
+      /* IE 11 hack */
+      & > *:nth-child(1),
+        > *:nth-child(2),
+        > *:nth-child(3) {
+          -ms-grid-row: 1;
+        }
+      & > *:nth-child(4),
+        > *:nth-child(5),
+        > *:nth-child(6) {
+          -ms-grid-row: 2;
+        }
+      & > *:nth-child(7),
+      > *:nth-child(8),
+      > *:nth-child(9) {
+        -ms-grid-row: 3;
+      }
+      & > *:nth-child(1),
+        > *:nth-child(3n+ 4){
+          -ms-grid-column: 1;
+        }
+       & > *:nth-child(2),
+         > *:nth-child(4),
+         > *:nth-child(7) {
+        -ms-grid-column: 3;
+      }
+      & > *:nth-child(3n+3) {
+        -ms-grid-column: 5;
+      }
+
     }
   }
 }
