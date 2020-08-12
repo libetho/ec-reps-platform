@@ -1399,12 +1399,55 @@ form .field-name-field-reps-core-image {
     grid-template-rows: auto;
     grid-gap: 1.5rem 3.5rem;
     margin: 0;
+    /* IE 11 hack */
   }
   #block-system-main .view-reps-videos .view-content .views-row,
   .view-reps-videos .view-content .views-row {
     margin-top: 0;
     padding: 0;
     width: auto;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(1),
+  .view-reps-videos .view-content > *:nth-child(1),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(2),
+  .view-reps-videos .view-content > *:nth-child(2),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(3),
+  .view-reps-videos .view-content > *:nth-child(3) {
+    -ms-grid-row: 1;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(4),
+  .view-reps-videos .view-content > *:nth-child(4),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(5),
+  .view-reps-videos .view-content > *:nth-child(5),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(6),
+  .view-reps-videos .view-content > *:nth-child(6) {
+    -ms-grid-row: 2;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(7),
+  .view-reps-videos .view-content > *:nth-child(7),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(8),
+  .view-reps-videos .view-content > *:nth-child(8),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(9),
+  .view-reps-videos .view-content > *:nth-child(9) {
+    -ms-grid-row: 3;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(1),
+  .view-reps-videos .view-content > *:nth-child(1),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(3n+ 4),
+  .view-reps-videos .view-content > *:nth-child(3n+ 4) {
+    -ms-grid-column: 1;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(2),
+  .view-reps-videos .view-content > *:nth-child(2),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(4),
+  .view-reps-videos .view-content > *:nth-child(4),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(7),
+  .view-reps-videos .view-content > *:nth-child(7) {
+    -ms-grid-column: 3;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(3n+3),
+  .view-reps-videos .view-content > *:nth-child(3n+3) {
+    -ms-grid-column: 5;
   }
 }
 /* Homepage additinal block */
