@@ -4,7 +4,7 @@
 .mx-grid-3 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 10fr 1fr 10fr 1fr 10fr;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
 }
@@ -1394,7 +1394,7 @@ form .field-name-field-reps-core-image {
   .view-reps-videos .view-content {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 10fr 1fr 10fr 1fr 10fr;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-gap: 1.5rem 3.5rem;
