@@ -1613,13 +1613,13 @@ ul.pager li a {
   border-radius: 0;
   padding: 2px 7px;
   color: #074a8b;
-  border: 1px solid #074a8b;
+  border: 1px solid rgba(7, 74, 139, 0.5);
   background: #fff;
 }
 ul.pager li.pager-current {
   padding: 2px 7px;
   background: #074a8b;
-  border: 1px solid #074a8b;
+  border: 1px solid rgba(7, 74, 139, 0.5);
   color: #fff;
 }
 /* Exposed Forms */
