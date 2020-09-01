@@ -392,6 +392,36 @@ function reps_admin_views_pre_view(&$view) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function reps_admin_form_views_form_core_content_administration_page_alter(&$form, &$form_state, $form_id) {
+  $form['#validate'][] = '_reps_admin_views_form_core_content_administration_page_form_validate';
+}
+
+/**
+ * Custom validation handler.
+ *
+ * REPR-1875 - Custom validation handler to avoid
+ * republishing a page and losing drafts.
+ *
+ * @see reps_admin_form_views_form_core_content_administration_page_alter
+ */
+function _reps_admin_views_form_core_content_administration_page_form_validate($form, &$form_state) {
+  $nodes = $form_state['selection'];
+  if (!empty($nodes) && $form_state['operation']->operationId == 'action::node_publish_action') {
+    // Check if one node of the list is already published.
+    foreach ($nodes as $nid) {
+      $node = node_load($nid);
+      if ($node->status == NODE_PUBLISHED) {
+        form_set_error('views_bulk_operations', t("The page %node-title is already published, you can't publish it again.", array(
+          '%node-title' => $node->title,
+        )));
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_theme_registry_alter().
  */
 function reps_admin_theme_registry_alter(&$theme_registry) {
