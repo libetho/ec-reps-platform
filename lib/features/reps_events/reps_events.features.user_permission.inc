@@ -34,8 +34,8 @@ function reps_events_user_default_permissions() {
     'name' => 'create reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
       'editor' => 'editor',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
@@ -100,8 +100,8 @@ function reps_events_user_default_permissions() {
     'name' => 'delete own reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
       'editor' => 'editor',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
@@ -120,8 +120,8 @@ function reps_events_user_default_permissions() {
     'name' => 'edit any reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
       'editor' => 'editor',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
@@ -131,8 +131,8 @@ function reps_events_user_default_permissions() {
     'name' => 'edit own reps_event content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
       'editor' => 'editor',
+      'site admin' => 'site admin',
     ),
     'module' => 'node',
   );
