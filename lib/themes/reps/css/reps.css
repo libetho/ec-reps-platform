@@ -1,6 +1,13 @@
 /* screen sizes definition */
 /* custom variables */
-/* functions*/
+/* mixins*/
+.mx-grid-3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10fr 1fr 10fr 1fr 10fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
 /* REPR-1305 => ct videos display */
 /* end REPR-1305 */
 /* REPR-1673 body images responsive */
@@ -412,11 +419,6 @@ body.reps #mainContainer #layout-body .view-reps-events img {
 body.reps #mainContainer #layout-body #block-views-reps-news-block .panel-heading {
   border-bottom: 1px dashed #878c92;
 }
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row {
-  float: left;
-  padding: 0 15px;
-  width: 33.33333333%;
-}
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row img {
   width: 100%;
   height: auto;
@@ -424,10 +426,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
 body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row .views-field-title-field-et {
   font-weight: bold;
   margin-top: 10px;
-}
-body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row-last {
-  margin-right: 0;
-  width: 33.33333333%;
 }
 body.reps #mainContainer #layout-body #block-views-reps-publications-block .view-content {
   margin: 0 -15px;
@@ -1370,10 +1368,8 @@ form .field-name-field-reps-core-image {
 .view-reps-videos .view-content .views-row {
   border: none;
   border-top: none;
-  float: left;
   margin-top: 10px;
   padding: 0 15px;
-  width: 33%;
 }
 #block-system-main .view-reps-videos .view-content .views-row img,
 .view-reps-videos .view-content .views-row img {
@@ -1392,6 +1388,67 @@ form .field-name-field-reps-core-image {
 #block-system-main .view-reps-videos .view-content .views-row .views-field-title-field a,
 .view-reps-videos .view-content .views-row .views-field-title-field a {
   color: #347c98;
+}
+@media all and (min-width: 768px) {
+  #block-system-main .view-reps-videos .view-content,
+  .view-reps-videos .view-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 10fr 1fr 10fr 1fr 10fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1.5rem 3.5rem;
+    margin: 0;
+    /* IE 11 hack */
+  }
+  #block-system-main .view-reps-videos .view-content .views-row,
+  .view-reps-videos .view-content .views-row {
+    margin-top: 0;
+    padding: 0;
+    width: auto;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(1),
+  .view-reps-videos .view-content > *:nth-child(1),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(2),
+  .view-reps-videos .view-content > *:nth-child(2),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(3),
+  .view-reps-videos .view-content > *:nth-child(3) {
+    -ms-grid-row: 1;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(4),
+  .view-reps-videos .view-content > *:nth-child(4),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(5),
+  .view-reps-videos .view-content > *:nth-child(5),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(6),
+  .view-reps-videos .view-content > *:nth-child(6) {
+    -ms-grid-row: 2;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(7),
+  .view-reps-videos .view-content > *:nth-child(7),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(8),
+  .view-reps-videos .view-content > *:nth-child(8),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(9),
+  .view-reps-videos .view-content > *:nth-child(9) {
+    -ms-grid-row: 3;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(1),
+  .view-reps-videos .view-content > *:nth-child(1),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(3n+ 4),
+  .view-reps-videos .view-content > *:nth-child(3n+ 4) {
+    -ms-grid-column: 1;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(2),
+  .view-reps-videos .view-content > *:nth-child(2),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(4),
+  .view-reps-videos .view-content > *:nth-child(4),
+  #block-system-main .view-reps-videos .view-content > *:nth-child(7),
+  .view-reps-videos .view-content > *:nth-child(7) {
+    -ms-grid-column: 3;
+  }
+  #block-system-main .view-reps-videos .view-content > *:nth-child(3n+3),
+  .view-reps-videos .view-content > *:nth-child(3n+3) {
+    -ms-grid-column: 5;
+  }
 }
 /* Homepage additinal block */
 .view-reps-homepage-additional-blocks {
@@ -1555,14 +1612,14 @@ ul.pager li {
 ul.pager li a {
   border-radius: 0;
   padding: 2px 7px;
-  color: #9bbcdd;
-  border: 1px solid #cde;
+  color: #074a8b;
+  border: 1px solid rgba(7, 74, 139, 0.5);
   background: #fff;
 }
 ul.pager li.pager-current {
   padding: 2px 7px;
-  background: #6eb0f4;
-  border: 1px solid #69c;
+  background: #074a8b;
+  border: 1px solid rgba(7, 74, 139, 0.5);
   color: #fff;
 }
 /* Exposed Forms */
@@ -1874,7 +1931,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row,
   #block-system-main .view-reps-videos .view-content .views-row,
   .view-reps-videos .view-content .views-row {
-    float: none;
     padding: 10px 0;
     width: 100%;
   }
@@ -1902,15 +1958,6 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   .view-reps-homepage-additional-blocks .views-row span {
     display: table;
     padding-left: 10px;
-  }
-  /*REPR-1512 text should be forced to be under the main image. */
-  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-page .content .field-type-text-with-summary img.right,
-  body.reps #mainContainer #layout-body #block-system-main .panel-body .node-full .content div:not(.leaflet-map,
-  .file) img:first-child {
-    display: block;
-    margin: 0 0 10px 0 !important;
-    min-width: 100%;
-    float: none;
   }
   /*REPR-1512 title is overlapping menu : override ec_resp.css. */
   .mobile-user-bar.affix + .region-featured #main-menu .navbar {
@@ -2048,6 +2095,7 @@ body.reps #mainContainer #layout-body #block-views-reps-videos-block .views-row 
   #main-menu .visible-xs ul li.active-trail ul.dropdown-menu li.active-trail a {
     border-left: none !important;
     width: 100% !important;
+    font-weight: 700;
   }
   #main-menu .visible-sm ul li.active-trail.open .caret,
   #main-menu .visible-xs ul li.active-trail.open .caret {

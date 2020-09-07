@@ -415,7 +415,6 @@ function reps_admin_theme_registry_alter(&$theme_registry) {
  * Implements hook_form_FORM_ID_alter().
  */
 function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-
   if ($form['#id'] == 'views-exposed-form-core-content-administration-page') {
     $options = &$form['type']['#options'];
     if (!empty($options)) {
@@ -426,4 +425,23 @@ function reps_admin_form_views_exposed_form_alter(&$form, &$form_state, $form_id
       }
     }
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function reps_admin_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['#node_edit_form']) && $form['#node_edit_form'] == TRUE && !empty($form['path']['source']['#value'])) {
+    $form['#after_build'][] = 'reps_admin_node_edit_form_after_build';
+  }
+}
+
+/**
+ * Implements after_build for node edit form().
+ */
+function reps_admin_node_edit_form_after_build(&$form, &$form_state) {
+  if (!empty($form['path']['alias']['#default_value']) && !empty($form['translation'])) {
+    $form['path']['pathauto']['#checked'] = FALSE;
+  };
+  return $form;
 }

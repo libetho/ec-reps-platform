@@ -27,9 +27,10 @@ function reps_events_field_group_info() {
       0 => 'body',
       1 => 'field_reps_core_abstract',
       2 => 'field_reps_core_image',
-      3 => 'field_reps_event_date',
-      4 => 'field_reps_event_venue',
-      5 => 'field_reps_registration',
+      3 => 'field_tags',
+      4 => 'field_reps_event_date',
+      5 => 'field_reps_event_venue',
+      6 => 'field_reps_registration',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -44,7 +45,7 @@ function reps_events_field_group_info() {
   $field_groups['group_reps_event_content|node|reps_event|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_reps_event_metadata|node|reps_event|form';
   $field_group->group_name = 'group_reps_event_metadata';

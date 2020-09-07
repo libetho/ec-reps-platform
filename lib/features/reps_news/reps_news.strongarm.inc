@@ -136,13 +136,16 @@ function reps_news_strongarm() {
           'weight' => '1',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(

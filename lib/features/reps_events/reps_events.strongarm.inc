@@ -112,19 +112,22 @@ function reps_events_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '6',
         ),
         'language' => array(
           'weight' => '1',
         ),
         'xmlsitemap' => array(
-          'weight' => '3',
+          'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(
