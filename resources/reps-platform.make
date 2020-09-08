@@ -19,7 +19,10 @@ projects[features_roles_permissions][version] = 1.2
 
 projects[feeds][subdir] = "contrib"
 projects[feeds][version] = 2.0-beta4
+projects[feeds][patch][] = https://www.drupal.org/files/issues/2020-04-05/feeds-php73-3013743-12-d7.patch
 projects[feeds][patch][] = https://www.drupal.org/files/issues/feeds_delete_if_empty_source-2333667-8.patch
+projects[feeds][patch][] = https://www.drupal.org/files/issues/2019-05-17/1139676_removing_the_PHP_7.2_warning.patch
+projects[feeds][patch][] = https://www.drupal.org/files/issues/2020-01-03/phpcs_ignore_safe_mode-3104226-2.patch
 
 projects[mbp_sync][download][type] = git
 projects[mbp_sync][download][url] = https://github.com/ec-europa/mbp-sync-reference.git
@@ -53,13 +56,12 @@ projects[taxonomy_access_fix][version] = 2.3
 
 projects[ultimate_cron][subdir] = "contrib"
 projects[ultimate_cron][version] = 2.8
-  
+
 projects[views_tree][subdir] = "contrib"
 projects[views_tree][version] = 2.0
 
 projects[weight][subdir] = "contrib"
-projects[weight][version] = 2.4 
-
+projects[weight][version] = 2.4
 
 ; =========
 ; Libraries

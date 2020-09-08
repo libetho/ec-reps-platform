@@ -517,3 +517,20 @@ function reps_core_update_7018() {
     module_enable(array('feeds'));
   }
 }
+
+/**
+ * Disable unused solr modules.
+ */
+function reps_core_update_7019() {
+  $modules = array(
+    'apachesolr',
+    'apachesolr_access',
+    'apachesolr_attachments',
+    'apachesolr_multilingual',
+    'apachesolr_multisitesearch',
+    'apachesolr_search',
+    'solr_config',
+  );
+  module_disable($modules, TRUE);
+  drupal_uninstall_modules($modules);
+}
