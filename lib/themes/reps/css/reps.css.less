@@ -23,6 +23,7 @@
 @maltaRed: #b60522;
 
 /* mixins*/
+
 .mx-grid-3 {
 
   display: -ms-grid;
@@ -472,8 +473,6 @@ body.reps {
 
         .views-row {
           overflow: hidden;
-          width: (@fullWidth/3);
-          float: left;
           padding: 0 15px;
           border-bottom: none;
 
@@ -481,7 +480,6 @@ body.reps {
             border: 1px solid #cfcfcf;
             margin-bottom: 0;
             text-align: center;
-
           }
 
           .views-field-field-reps-core-image {
@@ -510,7 +508,65 @@ body.reps {
             }
           }
         }
-      } // #block-views-reps-publications-block .view-content  END
+      }
+ @media screen and (max-width:@screen-xxs) {
+    #block-views-reps-publications-block .view-content {
+      .views-row {
+        .views-field-field-reps-core-image {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+ }
+
+ @media screen and (min-width:@screen-xxs) and (max-width:@screen-sm-max) {
+    #block-views-reps-publications-block .view-content {
+      .views-row {
+        border: 1px solid #cfcfcf;
+        margin: 0 0 15px 15px;
+        padding: 5px;
+        .reps-flex();
+         flex-wrap: nowrap;
+        width: calc(100% - 30px);
+
+        .views-field {
+          border: none;
+        }
+        .views-field-field-reps-core-image {
+          padding:0;
+        }
+       .views-field-field-reps-core-external-url-1 {
+          padding: 0 0 0 10px;
+          text-align: left;
+          a {
+            .reps-flex-text();
+          }
+        }
+      }
+    }
+ }
+    @media screen and (min-width:@screen-sm-min) {
+
+       #block-views-reps-publications-block .view-content {
+
+        .views-row {
+          width: (@fullWidth/3);
+          float: left;
+
+          .views-field-field-reps-core-image {
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+
+      // #block-views-reps-publications-block .view-content END
+
       .bean-reps-core-sb-right-image-link {
         h3 a {
           font-weight: bold;
@@ -908,6 +964,7 @@ body.reps {
             float: none;
             margin: 0;
           } // .node-page END
+
           .view-reps-publications {
             .views-field-field-reps-core-image {
               max-width: 150px;
