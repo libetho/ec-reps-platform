@@ -30,6 +30,6 @@
 ?>
 <?php if (isset($content['title_field'])): ?>
   <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>  
-    <p><?php print render($content['#markup']['title']); ?></p>
+    <p><?php print $content['#markup']['title']; ?></p>
   </div>
 <?php endif; ?>

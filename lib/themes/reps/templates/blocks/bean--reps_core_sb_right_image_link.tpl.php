@@ -33,10 +33,10 @@
     <div class="content"<?php print $content_attributes; ?>>
       <?php if (is_string(render($content['title_field']))): ?>
         <h3>
-          <?php print render($content['#markup']['title']); ?>
+          <?php print $content['#markup']['title']; ?>
         </h3>
       <?php endif; ?>
-      <?php print render($content['#markup']['image']); ?>
+      <?php print $content['#markup']['image']; ?>
     </div>
   <?php endif; ?>
 </div>
