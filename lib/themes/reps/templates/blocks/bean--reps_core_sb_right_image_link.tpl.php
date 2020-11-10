@@ -33,18 +33,10 @@
     <div class="content"<?php print $content_attributes; ?>>
       <?php if (is_string(render($content['title_field']))): ?>
         <h3>
-          <a href="<?php print ($content['field_reps_core_external_url']['#items'][0]['url']); ?>"
-            <?php if (isset($content['field_reps_core_external_url']['#items'][0]['attributes']['target'])): ?> target="<?php print ($content['field_reps_core_external_url']['#items'][0]['attributes']['target']); ?>"
-            <?php endif; ?>>
-            <?php print (strip_tags(render($content['title_field']))); ?>
-          </a>
+          <?php print $content['#markup']['title']; ?>
         </h3>
       <?php endif; ?>
-      <a href="<?php print ($content['field_reps_core_external_url']['#items'][0]['url']); ?>" 
-        <?php if (isset($content['field_reps_core_external_url']['#items'][0]['attributes']['target'])): ?>target="<?php print ($content['field_reps_core_external_url']['#items'][0]['attributes']['target']); ?>"
-        <?php endif; ?>>
-        <?php print (render($content['field_reps_core_image'])); ?>
-      </a>
+      <?php print $content['#markup']['image']; ?>
     </div>
   <?php endif; ?>
 </div>
