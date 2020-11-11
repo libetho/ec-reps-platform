@@ -411,3 +411,32 @@ function reps_preprocess_html(&$variables) {
 function reps_date_all_day_label() {
   return '';
 }
+
+
+/**
+ * Implements theme_preprocess_entity().
+ */
+function reps_process_entity(&$variables) {
+  if ($variables['entity_type'] == 'bean'
+    and in_array($variables['bean']->type, array(
+      'reps_core_sb_right_image_link',
+      'reps_core_sb_right_blue_button',
+    ))) {
+    $variables['content']['#markup']['title'] = l(
+      $variables['content']['title_field']['#items'][0]['value'],
+      $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
+      array('attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'])
+    );
+
+    if ($variables['bean']->type = 'reps_core_sb_right_image_link') {
+      $variables['content']['#markup']['image'] = l(
+        render($variables['content']['field_reps_core_image']),
+        $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
+        array(
+          'attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'],
+          'html' => TRUE,
+        )
+      );
+    }
+  }
+}
