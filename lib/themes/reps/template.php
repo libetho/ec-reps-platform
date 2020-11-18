@@ -412,7 +412,6 @@ function reps_date_all_day_label() {
   return '';
 }
 
-
 /**
  * Implements theme_preprocess_entity().
  */
