@@ -102,7 +102,7 @@ body.reps {
 body.reps #mainContainer {
   max-width: 984px;
   min-width: 200px;
-  margin: 0 auto 10px;
+  margin: 28px auto 10px;
   border: 1px solid #666666;
   border-top: none;
   overflow: hidden;
