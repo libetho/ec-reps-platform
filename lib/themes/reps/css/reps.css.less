@@ -368,6 +368,10 @@ body.reps {
           .more-link {
             .readMoreLinkStyle;
           }
+          /* REPR-1901: Review styling publications page */
+          .page-publications .views-row {
+            margin-bottom: 30px;
+          }
         }
       } // #layout-body .block-views
       #block-views-reps-news-block,
@@ -397,7 +401,7 @@ body.reps {
           .views-field-field-reps-core-image,
           .views-field-field-reps-core-image-et {
             float: left;
-            margin: 3px 10px 5px 0;
+            margin: 0 10px 5px 0;
           }
 
           .field-content h3,
@@ -434,9 +438,6 @@ body.reps {
             color: #333;
             overflow: hidden;
           }
-        } // .views-row
-        .views-row.views-row-first {
-          padding-top: 0;
         }
       } // #block-views-reps-news-block END
       .view-reps-eu-myth,
@@ -2667,7 +2668,7 @@ div[about*='news/videos'] {
   }
 }
 
-/*REPR-1871 social images width should not be 100%*/
+/* REPR-1871 social images width should not be 100% */
   .reps-no-grow-container img,
   body.reps #mainContainer #layout-body .view-reps-events .reps-no-grow-container img {
     min-width: auto;
