@@ -286,6 +286,9 @@ body.reps #mainContainer #layout-body .block-views .panel-body .more-link a {
   padding: 5px 0;
   color: #fff;
 }
+body.reps #mainContainer #layout-body .block-views .panel-body .page-publications .views-row {
+  margin-bottom: 30px;
+}
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .views-field,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .views-field,
 body.reps #mainContainer #layout-body .view-reps-events .views-row .views-field,
@@ -325,7 +328,7 @@ body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row .views-field
 body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-field-reps-core-image-et,
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-image-et {
   float: left;
-  margin: 3px 10px 5px 0;
+  margin: 0 10px 5px 0;
 }
 body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row .field-content h3,
 body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row .field-content h3,
@@ -401,14 +404,6 @@ body.reps #mainContainer #layout-body .view-reps-news .views-row .views-field-fi
 body.reps #mainContainer #layout-body .view-reps-publications .views-row .views-field-field-reps-core-abstract {
   color: #333;
   overflow: hidden;
-}
-body.reps #mainContainer #layout-body #block-views-reps-news-block .views-row.views-row-first,
-body.reps #mainContainer #layout-body #block-views-reps-events-block .views-row.views-row-first,
-body.reps #mainContainer #layout-body .view-reps-events .views-row.views-row-first,
-body.reps #mainContainer #layout-body .view-reps-eu-myth .views-row.views-row-first,
-body.reps #mainContainer #layout-body .view-reps-news .views-row.views-row-first,
-body.reps #mainContainer #layout-body .view-reps-publications .views-row.views-row-first {
-  padding-top: 0;
 }
 body.reps #mainContainer #layout-body .view-reps-eu-myth img,
 body.reps #mainContainer #layout-body .view-reps-news img,
