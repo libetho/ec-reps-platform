@@ -120,7 +120,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -130,7 +130,7 @@ function reps_events_views_default_views() {
   $handler->display->display_options['sorts']['field_reps_event_date_value']['table'] = 'field_data_field_reps_event_date';
   $handler->display->display_options['sorts']['field_reps_event_date_value']['field'] = 'field_reps_event_date_value';
   $handler->display->display_options['sorts']['field_reps_event_date_value']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -276,10 +276,11 @@ function reps_events_views_default_views() {
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['label'] = 'Plaats';
   $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -294,7 +295,7 @@ function reps_events_views_default_views() {
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -317,7 +318,7 @@ function reps_events_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Content: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -460,10 +461,11 @@ Please come back later, or browse our <a href="events/past-events">past events</
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['label'] = 'Plaats';
   $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -478,7 +480,7 @@ Please come back later, or browse our <a href="events/past-events">past events</
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -627,11 +629,12 @@ Please come back later, or browse our <a href="events/past-events">past events</
   $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
   $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['label'] = 'Plaats';
   $handler->display->display_options['fields']['field_reps_event_venue']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -680,7 +683,7 @@ Please come back later, or browse our <a href="events/past-events">past events</
     'guid_field_is_permalink' => 1,
   );
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Author */
+  /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -721,7 +724,7 @@ Please come back later, or browse our <a href="events/past-events">past events</
   $handler->display->display_options['fields']['created']['second_date_format'] = 'event_date_format';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
