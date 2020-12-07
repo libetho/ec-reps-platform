@@ -803,7 +803,7 @@ function _reps_core_ds_field_external_url(array $variables) {
   $regExp = '/<a href=\"([^\"]*)\">/iU';
 
   if (!empty($node->field_reps_core_external_url[$lg])) {
-    $link = $node->field_reps_core_external_url[$lg][0]['url'];
+    $link = $node->field_reps_core_external_url[$lg][0]['original_url'];
     $replace = '<a href="' . $link . '" target="_blank">';
     $markup = preg_replace($regExp, $replace, $markup);
   }
