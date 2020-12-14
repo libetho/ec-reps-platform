@@ -421,21 +421,36 @@ function reps_process_entity(&$variables) {
       'reps_core_sb_right_image_link',
       'reps_core_sb_right_blue_button',
     ))) {
-    $variables['content']['#markup']['title'] = l(
-      $variables['content']['title_field']['#items'][0]['value'],
-      $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
-      array('attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'])
-    );
-
-    if ($variables['bean']->type = 'reps_core_sb_right_image_link') {
-      $variables['content']['#markup']['image'] = l(
-        render($variables['content']['field_reps_core_image']),
+    if (!empty($variables['content']['title_field'])) {
+      $variables['content']['#markup']['title'] = l(
+        $variables['content']['title_field']['#items'][0]['value'],
         $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
-        array(
-          'attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'],
-          'html' => TRUE,
-        )
+        array('attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'])
       );
+      if ($variables['bean']->type = 'reps_core_sb_right_image_link') {
+        $variables['content']['#markup']['image'] = l(
+          render($variables['content']['field_reps_core_image']),
+          $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
+          array(
+            'attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'],
+            'html' => TRUE,
+          )
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_fields().
+ */
+function reps_preprocess_views_view_unformatted(&$vars) {
+  if ($vars['view']->name == 'reps_bean_blocks_global') {
+    global $language;
+    foreach ($vars['view']->result as $key => $result) {
+      if (!empty($result->field_data_title_field_language) && $result->field_data_title_field_language !== $language->language) {
+        unset($vars['rows'][$key]);
+      }
     }
   }
 }
