@@ -111,6 +111,8 @@ function reps_core_views_default_views() {
 
   /* Display: Right column  -  reps bean */
   $handler = $view->new_display('block', 'Right column  -  reps bean', 'block_reps_bean');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
