@@ -989,15 +989,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'uuid',
   );
 
-  // Exported permission: 'administer video presets'.
-  $permissions['administer video presets'] = array(
-    'name' => 'administer video presets',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'video',
-  );
-
   // Exported permission: 'administer voting api'.
   $permissions['administer voting api'] = array(
     'name' => 'administer voting api',
@@ -1051,15 +1042,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'system',
-  );
-
-  // Exported permission: 'bypass conversion video'.
-  $permissions['bypass conversion video'] = array(
-    'name' => 'bypass conversion video',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'video',
   );
 
   // Exported permission: 'bypass honeypot protection'.
@@ -1163,15 +1145,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'context_ui',
-  );
-
-  // Exported permission: 'convert on submission'.
-  $permissions['convert on submission'] = array(
-    'name' => 'convert on submission',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'video',
   );
 
   // Exported permission: 'create any reps_core_quicklinks bean'.
@@ -2289,15 +2262,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'scheduler_workbench',
   );
 
-  // Exported permission: 'override player dimensions'.
-  $permissions['override player dimensions'] = array(
-    'name' => 'override player dimensions',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'video',
-  );
-
   // Exported permission: 'php redirect rh_node'.
   $permissions['php redirect rh_node'] = array(
     'name' => 'php redirect rh_node',
@@ -2333,15 +2297,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'tmgmt_local',
-  );
-
-  // Exported permission: 're convert video'.
-  $permissions['re convert video'] = array(
-    'name' => 're convert video',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'video',
   );
 
   // Exported permission: 'revert revisions'.
@@ -2710,15 +2665,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'ctools',
-  );
-
-  // Exported permission: 'use default thumb'.
-  $permissions['use default thumb'] = array(
-    'name' => 'use default thumb',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'video',
   );
 
   // Exported permission: 'use flag import'.
