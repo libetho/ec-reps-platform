@@ -427,7 +427,7 @@ function reps_process_entity(&$variables) {
         $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
         array('attributes' => $variables['content']['field_reps_core_external_url']['#items'][0]['attributes'])
       );
-      if ($variables['bean']->type = 'reps_core_sb_right_image_link') {
+      if ($variables['bean']->type == 'reps_core_sb_right_image_link') {
         $variables['content']['#markup']['image'] = l(
           render($variables['content']['field_reps_core_image']),
           $variables['content']['field_reps_core_external_url']['#items'][0]['original_url'],
@@ -445,7 +445,7 @@ function reps_process_entity(&$variables) {
  * Implements template_preprocess_views_view_fields().
  */
 function reps_preprocess_views_view_unformatted(&$vars) {
-  if ($vars['view']->name == 'reps_bean_blocks_global') {
+  if ($vars['view']->current_display == 'block_reps_bean') {
     global $language;
     foreach ($vars['view']->result as $key => $result) {
       if (!empty($result->field_data_title_field_language) && $result->field_data_title_field_language !== $language->language) {
