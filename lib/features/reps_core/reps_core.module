@@ -30,8 +30,6 @@ function reps_core_help($path, $arg) {
 function reps_core_node_access($node, $op, $account) {
   // REPR-1644 Deny access to node edit for landing pages for editor.
   if (!empty($node->type)
-    && empty($node->body)
-    && empty($node->field_reps_core_abstract)
     && $node->type == 'page'
     && $op == 'update'
     && in_array('editor', $account->roles)
