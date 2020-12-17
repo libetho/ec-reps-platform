@@ -445,7 +445,8 @@ function reps_process_entity(&$variables) {
  * Implements template_preprocess_views_view_fields().
  */
 function reps_preprocess_views_view_unformatted(&$vars) {
-  if ($vars['view']->current_display == 'block_reps_bean') {
+  if ($vars['view']->name == 'reps_bean_blocks_global'
+    && $vars['view']->current_display == 'block_reps_bean') {
     global $language;
     foreach ($vars['view']->result as $key => $result) {
       if (!empty($result->field_data_title_field_language) && $result->field_data_title_field_language !== $language->language) {
