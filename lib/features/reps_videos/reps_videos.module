@@ -41,7 +41,7 @@ function reps_videos_post_render($html) {
       $iframes = $doc->getElementsByTagName('iframe');
       foreach ($iframes as $iframe) {
         if (strpos($iframe->getAttribute('src'), NEXTEUROPA_COOKIE_CONSENT_KIT_IFRAME_SRC) === FALSE) {
-          $new_path = NEXTEUROPA_COOKIE_CONSENT_KIT_IFRAME_SRC . '?oriurl=' . $iframe->getAttribute('src');
+          $new_path = NEXTEUROPA_COOKIE_CONSENT_KIT_IFRAME_SRC . '?oriurl=' . rawurlencode($iframe->getAttribute('src'));
           $iframe->setAttribute('src', $new_path);
         }
       }
