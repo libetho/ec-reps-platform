@@ -11,15 +11,6 @@
 function reps_admin_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'accept translation jobs'.
-  $permissions['accept translation jobs'] = array(
-    'name' => 'accept translation jobs',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'tmgmt',
-  );
-
   // Exported permission: 'access PDF version'.
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
@@ -218,18 +209,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'access site map'.
-  $permissions['access site map'] = array(
-    'name' => 'access site map',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'anonymous user' => 'anonymous user',
-      'editor' => 'editor',
-      'site admin' => 'site admin',
-    ),
-    'module' => 'site_map',
-  );
-
   // Exported permission: 'access site reports'.
   $permissions['access site reports'] = array(
     'name' => 'access site reports',
@@ -278,17 +257,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'workbench',
-  );
-
-  // Exported permission: 'add media from remote sources'.
-  $permissions['add media from remote sources'] = array(
-    'name' => 'add media from remote sources',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'editor' => 'editor',
-      'site admin' => 'site admin',
-    ),
-    'module' => 'media_internet',
   );
 
   // Exported permission: 'add terms in classification'.
@@ -1026,15 +994,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
-  // Exported permission: 'administer xmlsitemap'.
-  $permissions['administer xmlsitemap'] = array(
-    'name' => 'administer xmlsitemap',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'xmlsitemap',
-  );
-
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
@@ -1268,15 +1227,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'create translation jobs'.
-  $permissions['create translation jobs'] = array(
-    'name' => 'create translation jobs',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'tmgmt',
   );
 
   // Exported permission: 'create url aliases'.
@@ -2480,15 +2430,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'comment',
-  );
-
-  // Exported permission: 'submit translation jobs'.
-  $permissions['submit translation jobs'] = array(
-    'name' => 'submit translation jobs',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'tmgmt',
   );
 
   // Exported permission: 'tamper contact_points_edc'.
