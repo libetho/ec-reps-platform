@@ -146,7 +146,7 @@ function reps_admin_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'News - CSV Export';
+  $handler->display->display_options['title'] = 'CSV - Export Summary';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -172,6 +172,23 @@ function reps_admin_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Abstract */
+  $handler->display->display_options['fields']['field_reps_core_abstract']['id'] = 'field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['table'] = 'field_data_field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['field'] = 'field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '200',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'trim_options' => array(
+      'text' => 0,
+    ),
+    'trim_preserve_tags' => '',
+  );
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_reps_core_date']['id'] = 'field_reps_core_date';
   $handler->display->display_options['fields']['field_reps_core_date']['table'] = 'field_data_field_reps_core_date';
@@ -185,12 +202,6 @@ function reps_admin_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['date_format'] = 'event_date_format';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'event_date_format';
   /* Field: Content: Category */
   $handler->display->display_options['fields']['field_reps_news_category']['id'] = 'field_reps_news_category';
   $handler->display->display_options['fields']['field_reps_news_category']['table'] = 'field_data_field_reps_news_category';
@@ -200,20 +211,18 @@ function reps_admin_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_reps_news_category']['delta_offset'] = '0';
-  /* Field: Field: Abstract */
-  $handler->display->display_options['fields']['field_reps_core_abstract']['id'] = 'field_reps_core_abstract';
-  $handler->display->display_options['fields']['field_reps_core_abstract']['table'] = 'field_data_field_reps_core_abstract';
-  $handler->display->display_options['fields']['field_reps_core_abstract']['field'] = 'field_reps_core_abstract';
-  $handler->display->display_options['fields']['field_reps_core_abstract']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_reps_core_abstract']['type'] = 'smart_trim_format';
-  $handler->display->display_options['fields']['field_reps_core_abstract']['settings'] = array(
-    'trim_length' => '200',
-  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Language(s)';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[nid]';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'event_date_format';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'event_date_format';
   /* Sort criterion: Content: Nid */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
@@ -233,8 +242,8 @@ function reps_admin_views_default_views() {
     'reps_news' => 'reps_news',
   );
 
-  /* Display: Data export */
-  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  /* Display: Data export - news */
+  $handler = $view->new_display('views_data_export', 'Data export - news', 'views_data_export_1');
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
@@ -247,6 +256,121 @@ function reps_admin_views_default_views() {
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
   $handler->display->display_options['path'] = 'csv-export/news';
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Data export - events */
+  $handler = $view->new_display('views_data_export', 'Data export - events', 'views_data_export_2');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = '1';
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['newline_token'] = '1';
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Language(s)';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[nid]';
+  /* Field: Field: Tags */
+  $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
+  $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
+  $handler->display->display_options['fields']['field_tags']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_tags']['delta_offset'] = '0';
+  /* Field: Field: Abstract */
+  $handler->display->display_options['fields']['field_reps_core_abstract']['id'] = 'field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['table'] = 'field_data_field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['field'] = 'field_reps_core_abstract';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['field_reps_core_abstract']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '200',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'trim_options' => array(
+      'text' => 0,
+    ),
+    'trim_preserve_tags' => '',
+  );
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_reps_event_date']['id'] = 'field_reps_event_date';
+  $handler->display->display_options['fields']['field_reps_event_date']['table'] = 'field_data_field_reps_event_date';
+  $handler->display->display_options['fields']['field_reps_event_date']['field'] = 'field_reps_event_date';
+  $handler->display->display_options['fields']['field_reps_event_date']['label'] = 'Start date';
+  $handler->display->display_options['fields']['field_reps_event_date']['settings'] = array(
+    'format_type' => 'short',
+    'custom_date_format' => '',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_reps_event_date_1']['id'] = 'field_reps_event_date_1';
+  $handler->display->display_options['fields']['field_reps_event_date_1']['table'] = 'field_data_field_reps_event_date';
+  $handler->display->display_options['fields']['field_reps_event_date_1']['field'] = 'field_reps_event_date';
+  $handler->display->display_options['fields']['field_reps_event_date_1']['label'] = 'End date';
+  $handler->display->display_options['fields']['field_reps_event_date_1']['settings'] = array(
+    'format_type' => 'short',
+    'custom_date_format' => '',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Venue */
+  $handler->display->display_options['fields']['field_reps_event_venue']['id'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['table'] = 'field_data_field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['field'] = 'field_reps_event_venue';
+  $handler->display->display_options['fields']['field_reps_event_venue']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_reps_event_venue']['settings'] = array(
+    'custom_title' => '',
+  );
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'event_date_format';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'event_date_format';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'reps_event' => 'reps_event',
+  );
+  $handler->display->display_options['path'] = 'csv-export/events';
   $handler->display->display_options['sitename_title'] = 0;
   $export['reps_csv_export'] = $view;
 

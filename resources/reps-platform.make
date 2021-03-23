@@ -31,6 +31,9 @@ projects[menu_admin_per_menu][version] = 1.1
 projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = 2.2
 
+projects[node_type_count][subdir] = "contrib"
+projects[node_type_count][version] = 1.2
+
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = 2.7
 

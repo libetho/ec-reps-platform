@@ -445,3 +445,12 @@ function reps_admin_node_edit_form_after_build(&$form, &$form_state) {
   };
   return $form;
 }
+
+function reps_admin_preprocess_views_view_field(&$vars) {
+  if ($vars['view']->name == 'reps_csv_export'
+    && $vars['field']->field == 'nothing'
+    && !empty($vars['output'])) {
+    $node = node_load($vars['output']);
+    $vars['output'] = implode('/',array_keys($node->translations->data));
+  }
+}
