@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Reps_events.views_default.inc.
+ * reps_events.views_default.inc
  */
 
 /**

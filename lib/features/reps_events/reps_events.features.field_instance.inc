@@ -601,6 +601,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -621,6 +622,7 @@ function reps_events_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'event_date_format',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -641,7 +643,8 @@ function reps_events_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'event_date_format',
+          'custom_date_format' => '',
+          'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
