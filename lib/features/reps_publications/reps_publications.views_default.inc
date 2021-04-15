@@ -108,7 +108,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['field_reps_publication_file']['label'] = '';
   $handler->display->display_options['fields']['field_reps_publication_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_reps_publication_file']['click_sort_column'] = 'fid';
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -118,7 +118,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['sorts']['field_reps_core_date_value_1']['table'] = 'field_data_field_reps_core_date';
   $handler->display->display_options['sorts']['field_reps_core_date_value_1']['field'] = 'field_reps_core_date_value';
   $handler->display->display_options['sorts']['field_reps_core_date_value_1']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -142,6 +142,8 @@ function reps_publications_views_default_views() {
 
   /* Display: Block Hompage */
   $handler = $view->new_display('block', 'Block Hompage', 'block');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'block-hp-publications';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -207,7 +209,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['fields']['field_reps_core_external_url_1']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -233,7 +235,7 @@ function reps_publications_views_default_views() {
   $handler->display->display_options['filters']['field_reps_core_image_fid']['table'] = 'field_data_field_reps_core_image';
   $handler->display->display_options['filters']['field_reps_core_image_fid']['field'] = 'field_reps_core_image_fid';
   $handler->display->display_options['filters']['field_reps_core_image_fid']['operator'] = 'not empty';
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Content: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
