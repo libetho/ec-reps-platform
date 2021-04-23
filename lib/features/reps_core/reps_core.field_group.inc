@@ -130,34 +130,6 @@ function reps_core_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_reps_cp_content|node|reps_contact_point|form';
-  $field_group->group_name = 'group_reps_cp_content';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'reps_contact_point';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Content',
-    'weight' => '3',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_reps_cp_type',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_reps_cp_content|node|reps_contact_point|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_reps_homepage_content|node|reps_homepage|form';
   $field_group->group_name = 'group_reps_homepage_content';
   $field_group->entity_type = 'node';

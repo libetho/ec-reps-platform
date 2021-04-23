@@ -39,7 +39,11 @@ function reps_core_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_reps_core_date',
-    'indexes' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
     'locked' => 1,
     'module' => 'date',
     'settings' => array(
@@ -305,34 +309,6 @@ function reps_core_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'media',
-  );
-
-  // Exported field_base: 'field_reps_cp_type'.
-  $field_bases['field_reps_cp_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_reps_cp_type',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'reps_contact_point_categories',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 1,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_reps_right_column'.

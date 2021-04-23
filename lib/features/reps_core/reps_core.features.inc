@@ -70,6 +70,7 @@ function reps_core_fe_nodequeue_export_fields() {
     'reverse' => 0,
     'insert_at_front' => 0,
     'i18n' => 0,
+    'unique_entries' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'reps_homepage_additional_block',
@@ -94,6 +95,7 @@ function reps_core_fe_nodequeue_export_fields() {
     'reverse' => 0,
     'insert_at_front' => 0,
     'i18n' => 0,
+    'unique_entries' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'reps_slide_footer',
@@ -118,6 +120,7 @@ function reps_core_fe_nodequeue_export_fields() {
     'reverse' => 0,
     'insert_at_front' => 0,
     'i18n' => 0,
+    'unique_entries' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'reps_slide_homepage',
@@ -266,14 +269,6 @@ function reps_core_image_default_styles() {
  */
 function reps_core_node_info() {
   $items = array(
-    'reps_contact_point' => array(
-      'name' => t('Contact point'),
-      'base' => 'node_content',
-      'description' => t('Use this content to add a pin on the map "contact points"'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'reps_homepage' => array(
       'name' => t('Homepage'),
       'base' => 'node_content',
