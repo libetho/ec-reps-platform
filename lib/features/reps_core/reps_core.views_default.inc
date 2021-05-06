@@ -193,10 +193,6 @@ function reps_core_views_default_views() {
   $handler->display->display_options['style_options']['tab_style'] = 'nostyle';
   $handler->display->display_options['style_options']['tab_title_field'] = 'field_reps_cp_type';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_reps_cp_type_tid']['id'] = 'field_reps_cp_type_tid';
-  $handler->display->display_options['relationships']['field_reps_cp_type_tid']['table'] = 'field_data_field_reps_cp_type';
-  $handler->display->display_options['relationships']['field_reps_cp_type_tid']['field'] = 'field_reps_cp_type_tid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -212,13 +208,6 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_reps_cp_type']['id'] = 'field_reps_cp_type';
-  $handler->display->display_options['fields']['field_reps_cp_type']['table'] = 'field_data_field_reps_cp_type';
-  $handler->display->display_options['fields']['field_reps_cp_type']['field'] = 'field_reps_cp_type';
-  $handler->display->display_options['fields']['field_reps_cp_type']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_cp_type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_reps_cp_type']['element_label_colon'] = FALSE;
   /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
