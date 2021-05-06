@@ -1,0 +1,102 @@
+.bsim-legend {
+  padding: 5px 15px 10px;
+  font: 14px/16px Arial,Helvetica,sans-serif;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  color: #555;
+  margin: 10px;
+}
+.bsim-legend h2 {
+  font-size: 16px;
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+.bsim-legend .wt-form-fields {
+  padding: 0;
+}
+.bsim-legend .wt-form .wt-form-field {
+  padding: 3px 0;
+  margin: 0;
+  border-top: 1px solid #ddd;
+}
+.bsim-legend .wt-form .wt-form-field:first-child {
+  border: 0;
+}
+.bsim-legend .wt-form-field i {
+  background-size: auto 20px;
+  min-height: 20px;
+  height: 20px;
+  right: 0;
+}
+.bsim-legend .wt-form input[type='checkbox'] + label:before {
+  height: 20px;
+  left: 5px;
+  width: 20px;
+  background-size: auto 18px;
+}
+.bsim-legend .wt-form input[type='checkbox']:checked + label:before {
+  background-size: auto 18px;
+}
+
+.bsim-legend .wt-form input[type='checkbox'] + label {
+  padding: 0 0 0 33px;
+  min-height: 30px;
+  max-width: 180px;
+}
+.bsim-legend .wt-form input[type='checkbox'] + label span {
+  font-size: 14px;
+}
+.bsim-tab {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  font-family: Arial, Verdana;
+}
+.bsim-tablist {
+  background-color: #f3f6f9;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.bsim-tablist button {
+  border: 0;
+  padding: 12px 16px;
+  outline: none;
+  color: #0065a2;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left: 1px solid #ccc;
+  background-color: #f3f6f9;
+  border-bottom: 1px solid #ccc;
+}
+.bsim-tablist button[aria-selected='true'] {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.bsim-tablist button:first-child {
+  border-left: 0;
+}
+.bsim-panel {
+  padding: 20px;
+  font-size: 14px;
+}
+.bsim-panel h3 {
+  font-size: 18px;
+  color: #0065a2;
+  margin: 0;
+  padding: 10px 0;
+}
+.bsim-desc p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+.bsim-panel div {
+  margin-bottom: 25px;
+}
+.bsim-name {
+  font-weight: bold;
+}
