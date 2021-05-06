@@ -291,4 +291,5 @@ features[user_role][] = site admin
 features[variable][] = admin_theme
 features[views_view][] = reps_bean_block_overview
 features[wysiwyg][] = full_html
-multisite_version = 2.5
+multisite_version = 2.6
+php = 7.3
