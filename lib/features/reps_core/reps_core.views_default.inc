@@ -111,7 +111,23 @@ function reps_core_views_default_views() {
 
   /* Display: Right column  -  reps bean */
   $handler = $view->new_display('block', 'Right column  -  reps bean', 'block_reps_bean');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['uses_fields'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Title (title_field:language) */
+  $handler->display->display_options['fields']['language']['id'] = 'language';
+  $handler->display->display_options['fields']['language']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['language']['field'] = 'language';
+  $handler->display->display_options['fields']['language']['label'] = '';
+  $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Block: Weight (field_reps_rightcol_weight) */
   $handler->display->display_options['sorts']['field_reps_rightcol_weight_value']['id'] = 'field_reps_rightcol_weight_value';
@@ -172,7 +188,7 @@ function reps_core_views_default_views() {
   $view->human_name = 'REPS Contact Points';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
@@ -193,10 +209,6 @@ function reps_core_views_default_views() {
   $handler->display->display_options['style_options']['tab_style'] = 'nostyle';
   $handler->display->display_options['style_options']['tab_title_field'] = 'field_reps_cp_type';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Contact point type (field_reps_cp_type) */
-  $handler->display->display_options['relationships']['field_reps_cp_type_tid']['id'] = 'field_reps_cp_type_tid';
-  $handler->display->display_options['relationships']['field_reps_cp_type_tid']['table'] = 'field_data_field_reps_cp_type';
-  $handler->display->display_options['relationships']['field_reps_cp_type_tid']['field'] = 'field_reps_cp_type_tid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -212,14 +224,6 @@ function reps_core_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Contact point type */
-  $handler->display->display_options['fields']['field_reps_cp_type']['id'] = 'field_reps_cp_type';
-  $handler->display->display_options['fields']['field_reps_cp_type']['table'] = 'field_data_field_reps_cp_type';
-  $handler->display->display_options['fields']['field_reps_cp_type']['field'] = 'field_reps_cp_type';
-  $handler->display->display_options['fields']['field_reps_cp_type']['label'] = '';
-  $handler->display->display_options['fields']['field_reps_cp_type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_reps_cp_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reps_cp_type']['type'] = 'taxonomy_term_reference_plain';
   /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
@@ -242,14 +246,11 @@ function reps_core_views_default_views() {
     'reps_contact_point' => 'reps_contact_point',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
-
-  /* Display: Contact points list */
-  $handler = $view->new_display('block', 'Contact points list', 'block');
   $export['reps_contact_points'] = $view;
 
   $view = new view();
@@ -322,7 +323,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['sorts']['position']['field'] = 'position';
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -409,7 +410,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['sorts']['position']['field'] = 'position';
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -527,7 +528,7 @@ function reps_core_views_default_views() {
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -595,7 +596,7 @@ function reps_core_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

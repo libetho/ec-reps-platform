@@ -11,15 +11,6 @@
 function reps_admin_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'accept translation jobs'.
-  $permissions['accept translation jobs'] = array(
-    'name' => 'accept translation jobs',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'tmgmt',
-  );
-
   // Exported permission: 'access PDF version'.
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
@@ -218,18 +209,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'access site map'.
-  $permissions['access site map'] = array(
-    'name' => 'access site map',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'anonymous user' => 'anonymous user',
-      'editor' => 'editor',
-      'site admin' => 'site admin',
-    ),
-    'module' => 'site_map',
-  );
-
   // Exported permission: 'access site reports'.
   $permissions['access site reports'] = array(
     'name' => 'access site reports',
@@ -280,17 +259,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'workbench',
   );
 
-  // Exported permission: 'add media from remote sources'.
-  $permissions['add media from remote sources'] = array(
-    'name' => 'add media from remote sources',
-    'roles' => array(
-      'REPS Administrator' => 'REPS Administrator',
-      'editor' => 'editor',
-      'site admin' => 'site admin',
-    ),
-    'module' => 'media_internet',
-  );
-
   // Exported permission: 'add terms in classification'.
   $permissions['add terms in classification'] = array(
     'name' => 'add terms in classification',
@@ -313,15 +281,6 @@ function reps_admin_user_default_permissions() {
   // Exported permission: 'add terms in metatags_ess_gf'.
   $permissions['add terms in metatags_ess_gf'] = array(
     'name' => 'add terms in metatags_ess_gf',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'taxonomy_access_fix',
-  );
-
-  // Exported permission: 'add terms in reps_contact_point_categories'.
-  $permissions['add terms in reps_contact_point_categories'] = array(
-    'name' => 'add terms in reps_contact_point_categories',
     'roles' => array(
       'site admin' => 'site admin',
     ),
@@ -1026,15 +985,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
-  // Exported permission: 'administer xmlsitemap'.
-  $permissions['administer xmlsitemap'] = array(
-    'name' => 'administer xmlsitemap',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'xmlsitemap',
-  );
-
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
@@ -1109,33 +1059,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: 'clear contact_points_edc feeds'.
-  $permissions['clear contact_points_edc feeds'] = array(
-    'name' => 'clear contact_points_edc feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
-  );
-
-  // Exported permission: 'clear contact_points_edic feeds'.
-  $permissions['clear contact_points_edic feeds'] = array(
-    'name' => 'clear contact_points_edic feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
-  );
-
-  // Exported permission: 'clear contact_points_tem feeds'.
-  $permissions['clear contact_points_tem feeds'] = array(
-    'name' => 'clear contact_points_tem feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
   );
 
   // Exported permission: 'context ajax block access'.
@@ -1219,15 +1142,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create reps_contact_point content'.
-  $permissions['create reps_contact_point content'] = array(
-    'name' => 'create reps_contact_point content',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create reps_homepage content'.
   $permissions['create reps_homepage content'] = array(
     'name' => 'create reps_homepage content',
@@ -1268,15 +1182,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'create translation jobs'.
-  $permissions['create translation jobs'] = array(
-    'name' => 'create translation jobs',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'tmgmt',
   );
 
   // Exported permission: 'create url aliases'.
@@ -1325,15 +1230,6 @@ function reps_admin_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
-      'site admin' => 'site admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any reps_contact_point content'.
-  $permissions['delete any reps_contact_point content'] = array(
-    'name' => 'delete any reps_contact_point content',
-    'roles' => array(
       'site admin' => 'site admin',
     ),
     'module' => 'node',
@@ -1482,15 +1378,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own reps_contact_point content'.
-  $permissions['delete own reps_contact_point content'] = array(
-    'name' => 'delete own reps_contact_point content',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete own reps_homepage content'.
   $permissions['delete own reps_homepage content'] = array(
     'name' => 'delete own reps_homepage content',
@@ -1576,15 +1463,6 @@ function reps_admin_user_default_permissions() {
   // Exported permission: 'delete terms in metatags_ess_gf'.
   $permissions['delete terms in metatags_ess_gf'] = array(
     'name' => 'delete terms in metatags_ess_gf',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in reps_contact_point_categories'.
-  $permissions['delete terms in reps_contact_point_categories'] = array(
-    'name' => 'delete terms in reps_contact_point_categories',
     'roles' => array(
       'site admin' => 'site admin',
     ),
@@ -1746,15 +1624,6 @@ function reps_admin_user_default_permissions() {
     'roles' => array(
       'REPS Administrator' => 'REPS Administrator',
       'editor' => 'editor',
-      'site admin' => 'site admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any reps_contact_point content'.
-  $permissions['edit any reps_contact_point content'] = array(
-    'name' => 'edit any reps_contact_point content',
-    'roles' => array(
       'site admin' => 'site admin',
     ),
     'module' => 'node',
@@ -1950,15 +1819,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own reps_contact_point content'.
-  $permissions['edit own reps_contact_point content'] = array(
-    'name' => 'edit own reps_contact_point content',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit own reps_homepage content'.
   $permissions['edit own reps_homepage content'] = array(
     'name' => 'edit own reps_homepage content',
@@ -2040,15 +1900,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in reps_contact_point_categories'.
-  $permissions['edit terms in reps_contact_point_categories'] = array(
-    'name' => 'edit terms in reps_contact_point_categories',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in tags'.
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
@@ -2067,33 +1918,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'admin_menu',
-  );
-
-  // Exported permission: 'import contact_points_edc feeds'.
-  $permissions['import contact_points_edc feeds'] = array(
-    'name' => 'import contact_points_edc feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
-  );
-
-  // Exported permission: 'import contact_points_edic feeds'.
-  $permissions['import contact_points_edic feeds'] = array(
-    'name' => 'import contact_points_edic feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
-  );
-
-  // Exported permission: 'import contact_points_tem feeds'.
-  $permissions['import contact_points_tem feeds'] = array(
-    'name' => 'import contact_points_tem feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
   );
 
   // Exported permission: 'import media'.
@@ -2482,42 +2306,6 @@ function reps_admin_user_default_permissions() {
     'module' => 'comment',
   );
 
-  // Exported permission: 'submit translation jobs'.
-  $permissions['submit translation jobs'] = array(
-    'name' => 'submit translation jobs',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'tmgmt',
-  );
-
-  // Exported permission: 'tamper contact_points_edc'.
-  $permissions['tamper contact_points_edc'] = array(
-    'name' => 'tamper contact_points_edc',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds_tamper',
-  );
-
-  // Exported permission: 'tamper contact_points_edic'.
-  $permissions['tamper contact_points_edic'] = array(
-    'name' => 'tamper contact_points_edic',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds_tamper',
-  );
-
-  // Exported permission: 'tamper contact_points_tem'.
-  $permissions['tamper contact_points_tem'] = array(
-    'name' => 'tamper contact_points_tem',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds_tamper',
-  );
-
   // Exported permission: 'toggle field translatability'.
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
@@ -2609,33 +2397,6 @@ function reps_admin_user_default_permissions() {
       'site admin' => 'site admin',
     ),
     'module' => 'i18n_string',
-  );
-
-  // Exported permission: 'unlock contact_points_edc feeds'.
-  $permissions['unlock contact_points_edc feeds'] = array(
-    'name' => 'unlock contact_points_edc feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
-  );
-
-  // Exported permission: 'unlock contact_points_edic feeds'.
-  $permissions['unlock contact_points_edic feeds'] = array(
-    'name' => 'unlock contact_points_edic feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
-  );
-
-  // Exported permission: 'unlock contact_points_tem feeds'.
-  $permissions['unlock contact_points_tem feeds'] = array(
-    'name' => 'unlock contact_points_tem feeds',
-    'roles' => array(
-      'site admin' => 'site admin',
-    ),
-    'module' => 'feeds',
   );
 
   // Exported permission: 'upload webtools custom js'.

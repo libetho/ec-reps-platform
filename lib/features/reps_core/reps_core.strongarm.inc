@@ -21,13 +21,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_reps_contact_point';
-  $strongarm->value = '0';
-  $export['comment_anonymous_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_reps_homepage';
   $strongarm->value = '0';
   $export['comment_anonymous_reps_homepage'] = $strongarm;
@@ -52,13 +45,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'comment_anonymous_reps_slide_homepage';
   $strongarm->value = '0';
   $export['comment_anonymous_reps_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_reps_contact_point';
-  $strongarm->value = 1;
-  $export['comment_default_mode_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -91,13 +77,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_reps_contact_point';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_reps_homepage';
   $strongarm->value = '50';
   $export['comment_default_per_page_reps_homepage'] = $strongarm;
@@ -122,13 +101,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'comment_default_per_page_reps_slide_homepage';
   $strongarm->value = '50';
   $export['comment_default_per_page_reps_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_reps_contact_point';
-  $strongarm->value = 1;
-  $export['comment_form_location_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -161,13 +133,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_reps_contact_point';
-  $strongarm->value = '1';
-  $export['comment_preview_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_reps_homepage';
   $strongarm->value = '1';
   $export['comment_preview_reps_homepage'] = $strongarm;
@@ -196,13 +161,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_reps_contact_point';
-  $strongarm->value = '1';
-  $export['comment_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_reps_homepage';
   $strongarm->value = '1';
   $export['comment_reps_homepage'] = $strongarm;
@@ -227,13 +185,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'comment_reps_slide_homepage';
   $strongarm->value = '1';
   $export['comment_reps_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_reps_contact_point';
-  $strongarm->value = 1;
-  $export['comment_subject_field_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -392,57 +343,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'extlink_css_exclude';
   $strongarm->value = '#block-social-media-links-social-media-links';
   $export['extlink_css_exclude'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__reps_contact_point';
-  $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
-      'popup' => array(
-        'custom_settings' => TRUE,
-      ),
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'rss' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-      'revision' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'path' => array(
-          'weight' => '2',
-        ),
-        'language' => array(
-          'weight' => '1',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -611,15 +511,8 @@ function reps_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'file_entity_default_allowed_extensions';
-  $strongarm->value = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm kml xml zip 7z geojson';
+  $strongarm->value = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm kml xml zip 7z geojson epub';
   $export['file_entity_default_allowed_extensions'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_reps_contact_point';
-  $strongarm->value = '4';
-  $export['language_content_type_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -670,13 +563,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_reps_contact_point';
-  $strongarm->value = array();
-  $export['menu_options_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_reps_homepage';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -707,13 +593,6 @@ function reps_core_strongarm() {
     0 => 'main-menu',
   );
   $export['menu_options_reps_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_reps_contact_point';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -749,16 +628,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'nexteuropa_europa_search_url';
   $strongarm->value = 'https://ec.europa.eu/search';
   $export['nexteuropa_europa_search_url'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_reps_contact_point';
-  $strongarm->value = array(
-    0 => 'status',
-    1 => 'revision',
-  );
-  $export['node_options_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -807,13 +676,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_reps_contact_point';
-  $strongarm->value = '1';
-  $export['node_preview_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_reps_homepage';
   $strongarm->value = '1';
   $export['node_preview_reps_homepage'] = $strongarm;
@@ -838,13 +700,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'node_preview_reps_slide_homepage';
   $strongarm->value = '1';
   $export['node_preview_reps_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_reps_contact_point';
-  $strongarm->value = 0;
-  $export['node_submitted_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -912,13 +767,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'rh_node_action_reps_contact_point';
-  $strongarm->value = '3';
-  $export['rh_node_action_reps_contact_point'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_reps_homepage_additional_block';
   $strongarm->value = '3';
   $export['rh_node_action_reps_homepage_additional_block'] = $strongarm;
@@ -936,13 +784,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'rh_node_action_reps_slide_homepage';
   $strongarm->value = '3';
   $export['rh_node_action_reps_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rh_node_redirect_reps_contact_point';
-  $strongarm->value = 'customerror/404';
-  $export['rh_node_redirect_reps_contact_point'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -989,13 +830,6 @@ function reps_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'rh_taxonomy_term_action_reps_contact_point_categories';
-  $strongarm->value = '3';
-  $export['rh_taxonomy_term_action_reps_contact_point_categories'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'rh_taxonomy_term_action_tags';
   $strongarm->value = '3';
   $export['rh_taxonomy_term_action_tags'] = $strongarm;
@@ -1020,13 +854,6 @@ function reps_core_strongarm() {
   $strongarm->name = 'rh_taxonomy_term_redirect_metatags_ess_gf';
   $strongarm->value = 'customerror/404';
   $export['rh_taxonomy_term_redirect_metatags_ess_gf'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rh_taxonomy_term_redirect_reps_contact_point_categories';
-  $strongarm->value = 'customerror/404';
-  $export['rh_taxonomy_term_redirect_reps_contact_point_categories'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
