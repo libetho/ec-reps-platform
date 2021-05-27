@@ -30,8 +30,6 @@ function reps_core_help($path, $arg) {
 function reps_core_node_access($node, $op, $account) {
   // REPR-1644 Deny access to node edit for landing pages for editor.
   if (!empty($node->type)
-    && empty($node->body)
-    && empty($node->field_reps_core_abstract)
     && $node->type == 'page'
     && $op == 'update'
     && in_array('editor', $account->roles)
@@ -803,7 +801,7 @@ function _reps_core_ds_field_external_url(array $variables) {
   $regExp = '/<a href=\"([^\"]*)\">/iU';
 
   if (!empty($node->field_reps_core_external_url[$lg])) {
-    $link = $node->field_reps_core_external_url[$lg][0]['url'];
+    $link = $node->field_reps_core_external_url[$lg][0]['original_url'];
     $replace = '<a href="' . $link . '" target="_blank">';
     $markup = preg_replace($regExp, $replace, $markup);
   }
